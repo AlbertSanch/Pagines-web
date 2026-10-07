@@ -18,7 +18,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
-  [{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora del coste de un viaje en coche","url":"https://ahorrometro.es/calculadoras/coste-viaje-coche","description":"Calcula cuánto cuesta un viaje en coche: litros de gasolina o diésel, peajes, ida y vuelta y cuánto paga cada pasajero. Gratis y al instante.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora del coste de un viaje en coche","url":"https://ahorrometro.es/calculadoras/coste-viaje-coche","description":"Calcula cuánto cuesta un viaje en coche: litros de gasolina o diésel, peajes, ida y vuelta y cuánto paga cada pasajero. Gratis y al instante.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-10-07"},
    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Calculadora del coste de un viaje en coche","item":"https://ahorrometro.es/calculadoras/coste-viaje-coche"}]}]
   </script>
   <link rel="stylesheet" href="../assets/style.css">
@@ -44,13 +44,12 @@
 </header>
 
 <main class="container">
-  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
-      <a href="../precio-luz-hoy">Precio de la luz</a> › Coste de viaje en coche</nav>
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a> › Coste de viaje en coche</nav>
   <div class="layout">
     <article>
       <h1>Calculadora del coste de un viaje en coche</h1>
       <p class="lead">Calcula cuánto gastarás en combustible y peajes en tu próximo viaje, y cuánto le toca pagar a cada persona.</p>
-      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en octubre de 2026</p>
 
       <div class="calc">
         <div class="row">
@@ -67,23 +66,31 @@
         </div>
         <div class="row">
           <div class="field">
-            <label for="precio">Precio del combustible (€/litro)</label>
-            <input id="precio" type="number" min="0" step="0.01" value="1.55" inputmode="decimal">
+            <label for="combustible">Combustible</label>
+            <select id="combustible">
+              <option value="gasolina95">Gasolina 95</option>
+              <option value="gasolina98">Gasolina 98</option>
+              <option value="diesel">Diésel</option>
+              <option value="glp">GLP (autogás)</option>
+            </select>
           </div>
           <div class="field">
-            <label for="peajes">Peajes y aparcamiento (€, solo ida)</label>
-            <input id="peajes" type="number" min="0" step="0.01" value="0" inputmode="decimal">
+            <label for="precio">Precio del combustible (€/litro)</label>
+            <input id="precio" type="number" min="0" step="0.01" value="1.55" inputmode="decimal">
+            <small id="precio-nota">Precio medio orientativo. Cámbialo por el de tu gasolinera.</small>
           </div>
         </div>
         <div class="row">
           <div class="field">
+            <label for="peajes">Peajes y aparcamiento (€, solo ida)</label>
+            <input id="peajes" type="number" min="0" step="0.01" value="0" inputmode="decimal">
+          </div>
+          <div class="field">
             <label for="pax">Número de personas</label>
             <input id="pax" type="number" min="1" step="1" value="2" inputmode="numeric">
           </div>
-          <div class="field" style="justify-content:flex-end">
-            <label class="check"><input type="checkbox" id="vuelta" checked> Ida y vuelta</label>
-          </div>
         </div>
+        <label class="check"><input type="checkbox" id="vuelta" checked> Ida y vuelta</label>
         <button class="btn" id="calcular">Calcular coste</button>
         <div class="result" id="res" aria-live="polite"></div>
       </div>
@@ -190,25 +197,69 @@
 </div>
 <script src="../assets/main.js"></script>
 <script>
-document.getElementById('calcular').addEventListener('click', function () {
-  var km = num('km'), cons = num('cons'), precio = num('precio'), peajes = num('peajes') || 0, pax = Math.max(1, Math.round(num('pax')));
-  if (!(km > 0 && cons > 0 && precio > 0)) { showResult('res', '<p>Introduce la distancia, el consumo y el precio del combustible.</p>'); return; }
-  var factor = document.getElementById('vuelta').checked ? 2 : 1;
-  var kmTotal = km * factor;
-  var litros = kmTotal * cons / 100;
-  var combustible = litros * precio;
-  var total = combustible + peajes * factor;
-  showResult('res',
-    '<div>Coste total del viaje</div>' +
-    '<div class="big">' + eur(total) + '</div>' +
-    '<div class="stats">' +
-      '<div class="stat"><b>' + eur(total / pax) + '</b><span>por persona (' + pax + ')</span></div>' +
-      '<div class="stat"><b>' + fmt(litros, 1) + ' L</b><span>de combustible</span></div>' +
-      '<div class="stat"><b>' + eur(combustible) + '</b><span>en combustible</span></div>' +
-      '<div class="stat"><b>' + fmt(kmTotal, 0) + ' km</b><span>recorridos</span></div>' +
-    '</div>' +
-    '<p>Coste por kilómetro: ' + eur(total / kmTotal) + '.</p>');
-});
+(function () {
+  // Precios medios orientativos (€/L). Se pueden sobrescribir desde la URL: ?combustible=diesel&precio=1.47
+  var PRECIOS = { gasolina95: 1.55, gasolina98: 1.70, diesel: 1.48, glp: 0.95 };
+  var NOMBRES = { gasolina95: 'gasolina 95', gasolina98: 'gasolina 98', diesel: 'diésel', glp: 'GLP' };
+  var CAMPOS = ['km', 'cons', 'precio', 'peajes', 'pax'];
+  var sel = document.getElementById('combustible');
+  var precioEl = document.getElementById('precio');
+  var nota = document.getElementById('precio-nota');
+
+  // Rellena el formulario con los parámetros de la URL (para enlazar desde otras páginas)
+  var q = new URLSearchParams(location.search);
+  if (PRECIOS[q.get('combustible')]) sel.value = q.get('combustible');
+  precioEl.value = PRECIOS[sel.value];
+  CAMPOS.forEach(function (id) {
+    var v = parseFloat(String(q.get(id) || '').replace(',', '.'));
+    if (v >= 0) document.getElementById(id).value = v;
+  });
+  if (q.get('vuelta') === '0') document.getElementById('vuelta').checked = false;
+  if (q.get('precio')) nota.textContent = 'Precio traído de la página anterior. Puedes cambiarlo.';
+
+  sel.addEventListener('change', function () {
+    precioEl.value = PRECIOS[sel.value];
+    nota.textContent = 'Precio medio orientativo. Cámbialo por el de tu gasolinera.';
+    calcular(false);
+  });
+
+  function calcular(scroll) {
+    var km = num('km'), cons = num('cons'), precio = num('precio'), peajes = num('peajes') || 0, pax = Math.max(1, Math.round(num('pax') || 1));
+    var res = document.getElementById('res');
+    if (!(km > 0 && cons > 0 && precio > 0)) {
+      res.innerHTML = '<p>Introduce la distancia, el consumo y el precio del combustible.</p>';
+      res.classList.add('show');
+      return;
+    }
+    var factor = document.getElementById('vuelta').checked ? 2 : 1;
+    var kmTotal = km * factor;
+    var litros = kmTotal * cons / 100;
+    var combustible = litros * precio;
+    var peajesTotal = peajes * factor;
+    var total = combustible + peajesTotal;
+    // Bajar de 120 a 110 km/h ahorra en torno a un 10 % de combustible
+    var ahorro110 = combustible * 0.10;
+    var html =
+      '<div>Coste total del viaje' + (factor === 2 ? ' (ida y vuelta)' : '') + '</div>' +
+      '<div class="big">' + eur(total) + '</div>' +
+      '<div class="stats">' +
+        '<div class="stat"><b>' + eur(total / pax) + '</b><span>por persona (' + pax + ')</span></div>' +
+        '<div class="stat"><b>' + fmt(litros, 1) + ' L</b><span>de ' + NOMBRES[sel.value] + '</span></div>' +
+        '<div class="stat"><b>' + eur(combustible) + '</b><span>en combustible</span></div>' +
+        (peajesTotal > 0 ? '<div class="stat"><b>' + eur(peajesTotal) + '</b><span>en peajes y aparcamiento</span></div>' : '') +
+        '<div class="stat"><b>' + fmt(kmTotal, 0) + ' km</b><span>recorridos</span></div>' +
+      '</div>' +
+      '<p>Coste por kilómetro: ' + eur(total / kmTotal) + '. Si vas a 110 km/h en lugar de 120, ahorrarías unos <strong>' + eur(ahorro110) + '</strong> en combustible.</p>';
+    if (scroll) showResult('res', html);
+    else { res.innerHTML = html; res.classList.add('show'); }
+  }
+
+  document.getElementById('calcular').addEventListener('click', function () { calcular(true); });
+  CAMPOS.concat('vuelta').forEach(function (id) {
+    document.getElementById(id).addEventListener('input', function () { calcular(false); });
+  });
+  calcular(false);
+})();
 </script>
 </body>
 </html>
