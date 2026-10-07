@@ -66,3 +66,9 @@ Busca y reemplaza en todos los archivos:
   la lista de provincias de `precio-gasolina-hoy.html` y sus entradas del `sitemap.xml`
   (entre los comentarios `PROVINCIAS:INICIO` y `PROVINCIAS:FIN`). No edites esas partes a mano:
   se sobrescriben en cada actualización. El diseño de esas páginas está en `scripts/paginas_provincia.py`.
+
+## 8. Si cambias `style.css` o `main.js`
+Cloudflare deja que los navegadores guarden estos archivos varias horas. Cuando los cambies,
+sube el número de versión en todas las páginas (`style.css?v=2` → `style.css?v=3`, y lo mismo con
+`main.js`), incluida la plantilla de `scripts/paginas_provincia.py`, para que los visitantes vean
+el cambio al momento.
