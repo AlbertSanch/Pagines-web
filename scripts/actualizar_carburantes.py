@@ -12,6 +12,7 @@ Uso:
 
 import argparse
 import json
+import os
 import statistics
 import sys
 import time
@@ -21,6 +22,9 @@ from pathlib import Path
 
 URL = ("https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/"
        "PreciosCarburantes/EstacionesTerrestres/")
+# El Ministerio corta las conexiones desde GitHub Actions; si se define esta variable,
+# se descarga a través del Worker de Cloudflare (cloudflare/proxy-carburantes.js).
+PROXY = os.environ.get("CARBURANTES_PROXY", "").strip()
 SALIDA = Path(__file__).resolve().parent.parent / "ahorrometro" / "datos" / "carburantes.json"
 MAS_BARATAS = 5  # gasolineras más baratas que se guardan por provincia y combustible
 
@@ -49,19 +53,21 @@ PROVINCIAS = {
 
 
 def descargar():
-    peticion = urllib.request.Request(URL, headers={
-        "Accept": "application/json",
-        "User-Agent": "ahorrometro.es (actualizacion de precios de carburantes)",
-    })
-    ultimo_error = None
-    for intento in range(4):
-        try:
-            with urllib.request.urlopen(peticion, timeout=120) as r:
-                return json.loads(r.read().decode("utf-8-sig"))
-        except Exception as e:  # el servidor del Ministerio falla a ratos
-            ultimo_error = e
-            time.sleep(15 * (intento + 1))
-    raise SystemExit(f"No se ha podido descargar los datos del Ministerio: {ultimo_error}")
+    errores = []
+    for url in filter(None, [PROXY, URL]):
+        peticion = urllib.request.Request(url, headers={
+            "Accept": "application/json",
+            "User-Agent": "ahorrometro.es (actualizacion de precios de carburantes)",
+        })
+        for intento in range(3):
+            try:
+                with urllib.request.urlopen(peticion, timeout=120) as r:
+                    return json.loads(r.read().decode("utf-8-sig"))
+            except Exception as e:  # el servidor del Ministerio falla a ratos
+                errores.append(f"{url} (intento {intento + 1}): {e}")
+                print(errores[-1], file=sys.stderr)
+                time.sleep(10 * (intento + 1))
+    raise SystemExit("No se han podido descargar los datos del Ministerio.")
 
 
 def precio(texto):
