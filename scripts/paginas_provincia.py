@@ -184,9 +184,11 @@ def pagina(codigo, resumen, gasolineras):
     media95 = litro(g95["media"]) if g95 else "—"
     diesel = prov.get("diesel")
     media_die = litro(diesel["media"]) if diesel else "—"
-    descripcion = (f"Precio de la gasolina y el diésel hoy en {nombre}: gasolina 95 a {media95} €/L y diésel a "
-                   f"{media_die} €/L de media. Las gasolineras más baratas de la provincia, con datos oficiales del Ministerio.")
-    titulo_pagina = f"Precio de la gasolina hoy en {nombre}: gasolineras más baratas | Ahorrómetro"
+    descripcion = (f"Gasolina 95 a {media95} €/L y diésel a {media_die} €/L de media hoy en {nombre}. "
+                   f"Las gasolineras más baratas, con datos oficiales del Ministerio.")
+    titulo_pagina = f"Gasolina hoy en {nombre}: precio y gasolineras más baratas"
+    if len(titulo_pagina) > 60:
+        titulo_pagina = f"Gasolina hoy en {nombre}: gasolineras más baratas"
 
     return PLANTILLA.format(
         titulo=e(titulo_pagina), descripcion=e(descripcion), url=url, nombre=e(nombre), iso=iso,
