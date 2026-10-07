@@ -53,3 +53,12 @@ Busca y reemplaza en todos los archivos:
 - Ahorro por bajar 1 °C la calefacción
 - Gasto de agua de la ducha frente al baño
 - Cuánto ahorro cambiando a bombillas LED
+
+## 7. Precio de la gasolina (se actualiza solo)
+- La página `precio-gasolina-hoy.html` lee el archivo `datos/carburantes.json`.
+- Ese archivo lo genera el proceso automático de GitHub **Precios de carburantes**
+  (`.github/workflows/precios-carburantes.yml`) dos veces al día, con los datos del Ministerio.
+  Cada actualización hace un commit en `main` y Cloudflare Pages la publica sola.
+- Para forzar una actualización: en GitHub, pestaña **Actions → Precios de carburantes → Run workflow**.
+- Si el proceso falla, GitHub te avisará por correo. La web seguirá mostrando los últimos precios guardados.
+- La calculadora de viaje usa también este archivo para proponer el precio medio de España.

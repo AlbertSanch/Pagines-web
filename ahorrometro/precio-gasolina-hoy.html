@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Precio de la gasolina y el diésel hoy por provincias | Ahorrómetro</title>
+  <meta name="description" content="Precio medio de la gasolina 95, la 98, el diésel y el GLP hoy en España y en cada provincia, con las gasolineras más baratas. Datos oficiales del Ministerio, actualizados cada día.">
+  <link rel="canonical" href="https://ahorrometro.es/precio-gasolina-hoy">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Precio de la gasolina y el diésel hoy por provincias">
+  <meta property="og:description" content="Precio medio de hoy en España y en tu provincia, y las gasolineras más baratas. Datos oficiales del Ministerio.">
+  <meta property="og:url" content="https://ahorrometro.es/precio-gasolina-hoy">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Precio de la gasolina y el diésel hoy","url":"https://ahorrometro.es/precio-gasolina-hoy","description":"Precio medio de la gasolina 95, la 98, el diésel y el GLP hoy en España y en cada provincia, con las gasolineras más baratas. Datos oficiales del Ministerio.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-10-07"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Precio de la gasolina hoy","item":"https://ahorrometro.es/precio-gasolina-hoy"}]},
+   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"¿De dónde salen los precios de la gasolina?","acceptedAnswer":{"@type":"Answer","text":"Del Ministerio para la Transición Ecológica y el Reto Demográfico. Todas las gasolineras de España están obligadas a comunicarle sus precios, y el Ministerio los publica como datos abiertos. Esta página los resume dos veces al día."}},
+    {"@type":"Question","name":"¿Por qué la gasolina es más barata en Canarias?","acceptedAnswer":{"@type":"Answer","text":"Porque en Canarias no se aplican el IVA ni el impuesto especial sobre hidrocarburos de la península. En su lugar hay un impuesto propio, el IGIC, y un impuesto autonómico sobre combustibles más bajos. Ceuta y Melilla también tienen una fiscalidad reducida."}},
+    {"@type":"Question","name":"¿Qué diferencia hay entre la gasolina 95 y la 98?","acceptedAnswer":{"@type":"Answer","text":"El octanaje. La 98 resiste mejor la detonación y la recomiendan algunos motores de alto rendimiento. Si el manual de tu coche admite gasolina 95, la 98 no te hará gastar menos ni cuidará más el motor."}},
+    {"@type":"Question","name":"¿Los precios incluyen impuestos?","acceptedAnswer":{"@type":"Answer","text":"Sí. Son los precios por litro que ves en el surtidor, con todos los impuestos incluidos."}}]}]
+  </script>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+  <style>
+    /* Estilos propios de esta página (el resto viene de assets/style.css) */
+    .gp-controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin: 8px 0 20px; }
+    .gp-controls label { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: .95rem; }
+    .gp-controls select { font: inherit; padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px; background: #fff; max-width: 100%; }
+
+    .gp-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .gp-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; display: flex; flex-direction: column; gap: 4px; box-shadow: var(--shadow); }
+    .gp-card.main { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .gp-card p { margin: 0; }
+    .gp-name { font-weight: 700; }
+    .gp-price { font-weight: 800; font-size: clamp(1.8rem, 5vw, 2.3rem); line-height: 1.1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+    .gp-price small { font-size: .45em; font-weight: 600; letter-spacing: 0; opacity: .8; margin-left: 3px; }
+    .gp-sub { font-size: .86rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .gp-card.main .gp-sub { color: #fff; opacity: .85; }
+    .gp-card a { margin-top: auto; padding-top: 8px; font-size: .9rem; font-weight: 600; }
+    .gp-card.main a { color: #fff; }
+
+    .gp-switch { display: inline-flex; flex-wrap: wrap; background: var(--primary-soft); border-radius: 999px; padding: 4px; gap: 2px; }
+    .gp-switch button { border: 0; background: transparent; font: inherit; font-weight: 700; font-size: .92rem; color: var(--muted); padding: 7px 14px; border-radius: 999px; cursor: pointer; }
+    .gp-switch button[aria-pressed="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+
+    table.data td.num, table.data th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    table.data tr.sel td { background: var(--primary-soft); font-weight: 700; }
+    table.data td .sub { display: block; font-size: .83rem; color: var(--muted); font-weight: 400; }
+    .gp-cheap { color: #2f9e63; font-weight: 700; }
+    .gp-dear { color: #d2553c; font-weight: 700; }
+    .gp-rank { color: var(--muted); width: 2.5rem; }
+    .gp-link { font: inherit; background: none; border: 0; padding: 0; color: var(--primary); text-decoration: underline; cursor: pointer; text-align: left; }
+    .gp-status { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; text-align: center; }
+    .gp-status p { margin: 0; }
+    .gp-updated { font-size: .88rem; color: var(--muted); margin: 10px 0 0; }
+
+    @media (max-width: 860px) { .gp-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 420px) { .gp-cards { gap: 10px; } .gp-card { padding: 14px; } }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="./" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="./">Inicio</a>
+      <a href="./#calculadoras">Calculadoras</a>
+      <a href="precio-luz-hoy">Precio de la luz</a>
+      <a href="precio-gasolina-hoy">Precio de la gasolina</a>
+      <a href="sobre-nosotros">Sobre nosotros</a>
+      <a href="contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="./">Inicio</a> › Precio de la gasolina hoy</nav>
+  <h1>Precio de la gasolina y el diésel hoy</h1>
+  <p class="lead">Precio medio por litro en <strong id="zona-texto">España</strong> y las gasolineras más baratas. Datos oficiales del Ministerio, con impuestos incluidos.</p>
+
+  <div class="gp-controls">
+    <label>Provincia
+      <select id="provincia"><option value="">Toda España</option></select>
+    </label>
+  </div>
+
+  <div id="app" aria-live="polite">
+    <div class="gp-status"><p>Cargando los precios del Ministerio…</p></div>
+  </div>
+  <noscript><div class="gp-status"><p>Activa JavaScript para ver los precios de los carburantes.</p></div></noscript>
+
+  <div class="ad-slot"><!-- ADSENSE: anuncio bajo los precios -->Publicidad</div>
+
+  <section class="affiliate">
+    <h2>Gasta menos en cada depósito</h2>
+    <div class="aff-grid">
+      <a class="aff-item" href="https://www.amazon.es/s?k=compresor%20portatil%20neumaticos%20coche&amp;tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🛞</span><b>Compresor portátil para neumáticos</b><span class="aff-desc">Con las ruedas a la presión correcta el coche gasta menos.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+      <a class="aff-item" href="https://www.amazon.es/s?k=obd2%20bluetooth%20diagnosis%20coche&amp;tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">📟</span><b>Lector OBD2 Bluetooth</b><span class="aff-desc">Mide el consumo real de tu coche desde el móvil.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+      <a class="aff-item" href="https://www.amazon.es/s?k=soporte%20movil%20coche&amp;tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">📱</span><b>Soporte de móvil para el coche</b><span class="aff-desc">Lleva el navegador a la vista para llegar a la gasolinera barata.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+    </div>
+    <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+  </section>
+
+  <div class="content">
+    <h2>Cómo se calcula el precio medio</h2>
+    <p>Todas las gasolineras de España deben comunicar sus precios al Ministerio para la Transición Ecológica y el Reto Demográfico, que los publica como datos abiertos. Dos veces al día descargamos esos precios y calculamos la media de cada provincia y de toda España, contando solo las gasolineras abiertas al público general.</p>
+    <p>La media es simple: cada gasolinera cuenta lo mismo, venda mucho o poco. Por eso puede diferir un poco de otras estadísticas que ponderan por volumen de ventas.</p>
+
+    <h2>Cuánto se ahorra eligiendo bien la gasolinera</h2>
+    <p>Dentro de una misma provincia, entre la gasolinera más barata y la media suele haber entre 10 y 20 céntimos por litro. Con un depósito de 50 litros son entre 5 y 10 euros cada vez que repostas. Las gasolineras automáticas y las de supermercados suelen estar entre las más baratas; las de autopista, entre las más caras.</p>
+    <p>Para saber cuánto te costará un viaje con el precio de tu provincia, usa el botón «Calcular un viaje» de cada combustible: abrirá la <a href="calculadoras/coste-viaje-coche">calculadora del coste de un viaje en coche</a> con el precio ya puesto.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <details>
+      <summary>¿De dónde salen los precios de la gasolina?</summary>
+      <p>Del Ministerio para la Transición Ecológica y el Reto Demográfico. Todas las gasolineras de España están obligadas a comunicarle sus precios, y el Ministerio los publica como datos abiertos. Esta página los resume dos veces al día.</p>
+    </details>
+    <details>
+      <summary>¿Por qué la gasolina es más barata en Canarias?</summary>
+      <p>Porque en Canarias no se aplican el IVA ni el impuesto especial sobre hidrocarburos de la península. En su lugar hay un impuesto propio, el IGIC, y un impuesto autonómico sobre combustibles más bajos. Ceuta y Melilla también tienen una fiscalidad reducida.</p>
+    </details>
+    <details>
+      <summary>¿Qué diferencia hay entre la gasolina 95 y la 98?</summary>
+      <p>El octanaje. La 98 resiste mejor la detonación y la recomiendan algunos motores de alto rendimiento. Si el manual de tu coche admite gasolina 95, la 98 no te hará gastar menos ni cuidará más el motor.</p>
+    </details>
+    <details>
+      <summary>¿Los precios incluyen impuestos?</summary>
+      <p>Sí. Son los precios por litro que ves en el surtidor, con todos los impuestos incluidos.</p>
+    </details>
+
+    <h3>Calcula cuánto gastas</h3>
+    <ul>
+      <li><a href="calculadoras/coste-viaje-coche">Coste de un viaje en coche</a></li>
+      <li><a href="calculadoras/cargar-coche-electrico">Cuánto cuesta cargar un coche eléctrico</a></li>
+      <li><a href="precio-luz-hoy">Precio de la luz hoy, hora a hora</a></li>
+    </ul>
+    <p class="note">Fuente de los datos: Ministerio para la Transición Ecológica y el Reto Demográfico, Geoportal de gasolineras. Los precios pueden haber cambiado desde la última actualización; confírmalos en el surtidor.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Ahorrómetro</h4>
+        <p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p>
+      </div>
+      <div>
+        <h4>Calculadoras</h4>
+        <ul>
+          <li><a href="calculadoras/consumo-electrico">Consumo eléctrico</a></li>
+          <li><a href="calculadoras/placas-solares">Placas solares</a></li>
+          <li><a href="calculadoras/coste-viaje-coche">Viaje en coche</a></li>
+          <li><a href="calculadoras/pintura">Pintura</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Información</h4>
+        <ul>
+          <li><a href="sobre-nosotros">Sobre nosotros</a></li>
+          <li><a href="contacto">Contacto</a></li>
+          <li><a href="aviso-legal">Aviso legal</a></li>
+          <li><a href="politica-privacidad">Política de privacidad</a></li>
+          <li><a href="politica-cookies">Política de cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="assets/main.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var FUELS = [
+    { key: "gasolina95", name: "Gasolina 95" },
+    { key: "diesel", name: "Diésel" },
+    { key: "gasolina98", name: "Gasolina 98" },
+    { key: "glp", name: "GLP (autogás)" }
+  ];
+  var STORE_KEY = "ahorrometro-provincia";
+  var DEPOSITO = 50; // litros, para calcular el ahorro por depósito
+
+  var state = { data: null, prov: "", fuel: "gasolina95" };
+  var app = document.getElementById("app");
+  var select = document.getElementById("provincia");
+
+  var fmtL = new Intl.NumberFormat("es-ES", { minimumFractionDigits: 3, maximumFractionDigits: 3 });
+  function litro(p) { return fmtL.format(p); }
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function fuelName(key) { for (var i = 0; i < FUELS.length; i++) if (FUELS[i].key === key) return FUELS[i].name; return key; }
+
+  // "07/10/2026 9:47:23" -> "martes, 7 de octubre de 2026, a las 9:47"
+  function fechaLarga(s) {
+    var m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2})/.exec(s || "");
+    if (!m) return "";
+    var d = new Date(Date.UTC(+m[3], +m[2] - 1, +m[1]));
+    return new Intl.DateTimeFormat("es-ES", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(d) +
+      ", a las " + m[4] + ":" + m[5];
+  }
+
+  function zona() { return state.prov ? state.data.provincias[state.prov] : null; }
+  function zonaNombre() { return state.prov ? state.data.provincias[state.prov].nombre : "España"; }
+  function stats(key) { return state.prov ? zona()[key] : state.data.espana[key]; }
+
+  function calcLink(key, price) {
+    var q = "combustible=" + key + "&precio=" + price.toFixed(3) + "&zona=" + encodeURIComponent(zonaNombre());
+    return "calculadoras/coste-viaje-coche?" + q;
+  }
+
+  function render() {
+    var d = state.data, html = "";
+    document.getElementById("zona-texto").textContent = state.prov ? zonaNombre() : "España";
+
+    // Tarjetas por combustible
+    html += '<section class="gp-cards">';
+    FUELS.forEach(function (f, i) {
+      var s = stats(f.key);
+      if (!s) {
+        html += '<div class="gp-card"><p class="gp-name">' + f.name + '</p><p class="gp-sub">No hay gasolineras con ' + esc(f.name) + " en esta zona.</p></div>";
+        return;
+      }
+      html += '<div class="gp-card' + (i === 0 ? " main" : "") + '">' +
+        '<p class="gp-name">' + f.name + "</p>" +
+        '<p class="gp-price">' + litro(s.media) + "<small>€/L</small></p>" +
+        '<p class="gp-sub">Desde ' + litro(s.min) + " €/L</p>" +
+        '<p class="gp-sub">' + s.n.toLocaleString("es-ES") + " gasolineras</p>" +
+        '<a href="' + calcLink(f.key, s.media) + '">Calcular un viaje →</a></div>';
+    });
+    html += "</section>";
+    html += '<p class="gp-updated">Precio medio en ' + esc(zonaNombre()) + ". Datos del Ministerio del " + esc(fechaLarga(d.fechaMinisterio) || "último día disponible") + ".</p>";
+
+    // Selector de combustible para las tablas
+    html += '<section><h2>Comparar por combustible</h2><div class="gp-switch" role="group" aria-label="Combustible">';
+    FUELS.forEach(function (f) {
+      html += '<button type="button" data-fuel="' + f.key + '" aria-pressed="' + (f.key === state.fuel) + '">' + f.name + "</button>";
+    });
+    html += "</div></section>";
+
+    var key = state.fuel, name = fuelName(key);
+
+    // Gasolineras más baratas de la provincia
+    if (state.prov) {
+      var s = stats(key);
+      html += "<section><h2>Gasolineras más baratas de " + esc(zonaNombre()) + ": " + esc(name) + "</h2>";
+      if (!s) {
+        html += "<p>No hay gasolineras con " + esc(name) + " en esta provincia.</p>";
+      } else {
+        html += "<p>Llenando un depósito de " + DEPOSITO + " litros en la más barata ahorras <strong class=\"gp-cheap\">" +
+          eur((s.media - s.min) * DEPOSITO) + "</strong> frente al precio medio de la provincia.</p>" +
+          '<div class="table-wrap"><table class="data"><thead><tr><th>Gasolinera</th><th class="num">Precio</th><th>Mapa</th></tr></thead><tbody>';
+        s.baratas.forEach(function (b) {
+          var map = (b.lat != null && b.lon != null) ? '<a href="https://www.google.com/maps/search/?api=1&amp;query=' + b.lat + "," + b.lon + '" target="_blank" rel="noopener">Cómo llegar</a>' : "";
+          html += "<tr><td><strong>" + esc(b.rotulo || "Gasolinera") + '</strong><span class="sub">' + esc(b.direccion) + " · " + esc(b.municipio) + "</span></td>" +
+            '<td class="num gp-cheap">' + litro(b.precio) + " €</td><td>" + map + "</td></tr>";
+        });
+        html += "</tbody></table></div>";
+      }
+      html += "</section>";
+    }
+
+    // Ranking de provincias
+    var rows = Object.keys(d.provincias).filter(function (c) { return d.provincias[c][key]; })
+      .sort(function (a, b) { return d.provincias[a][key].media - d.provincias[b][key].media; });
+    var media = d.espana[key] ? d.espana[key].media : null;
+    html += "<section><h2>Precio medio de " + esc(name) + " por provincias</h2>" +
+      "<p>De la más barata a la más cara. Pulsa una provincia para ver sus gasolineras más baratas.</p>" +
+      '<div class="table-wrap"><table class="data"><thead><tr><th class="gp-rank">#</th><th>Provincia</th><th class="num">Precio medio</th><th class="num">Más barata</th><th class="num">Frente a la media</th></tr></thead><tbody>';
+    rows.forEach(function (c, i) {
+      var p = d.provincias[c][key], diff = media != null ? p.media - media : 0;
+      html += '<tr class="' + (c === state.prov ? "sel" : "") + '"><td class="gp-rank">' + (i + 1) + "</td>" +
+        '<td><button type="button" class="gp-link" data-prov="' + c + '">' + esc(d.provincias[c].nombre) + "</button></td>" +
+        '<td class="num">' + litro(p.media) + ' €</td><td class="num">' + litro(p.min) + " €</td>" +
+        '<td class="num ' + (diff < -0.0005 ? "gp-cheap" : diff > 0.0005 ? "gp-dear" : "") + '">' + (diff > 0 ? "+" : "") + litro(diff) + " €</td></tr>";
+    });
+    html += "</tbody></table></div></section>";
+
+    app.innerHTML = html;
+  }
+
+  function setProv(code, scroll) {
+    state.prov = code && state.data.provincias[code] ? code : "";
+    select.value = state.prov;
+    try { localStorage.setItem(STORE_KEY, state.prov); } catch (e) {}
+    render();
+    if (scroll) app.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  app.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-fuel],[data-prov]");
+    if (!t) return;
+    if (t.dataset.fuel) { state.fuel = t.dataset.fuel; render(); }
+    else setProv(t.dataset.prov, true);
+  });
+  select.addEventListener("change", function () { setProv(select.value, false); });
+
+  function load() {
+    app.innerHTML = '<div class="gp-status"><p>Cargando los precios del Ministerio…</p></div>';
+    fetch("datos/carburantes.json", { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.json();
+    }).then(function (d) {
+      state.data = d;
+      var codes = Object.keys(d.provincias).sort(function (a, b) { return d.provincias[a].nombre.localeCompare(d.provincias[b].nombre, "es"); });
+      select.innerHTML = '<option value="">Toda España</option>' + codes.map(function (c) {
+        return '<option value="' + c + '">' + esc(d.provincias[c].nombre) + "</option>";
+      }).join("");
+      var saved = "";
+      try { saved = localStorage.getItem(STORE_KEY) || ""; } catch (e) {}
+      setProv(saved, false);
+    }).catch(function () {
+      app.innerHTML = '<div class="gp-status"><p>No se han podido cargar los precios. Vuelve a intentarlo en unos minutos.</p>' +
+        '<p style="margin-top:12px"><button class="btn" type="button" id="retry">Volver a cargar</button></p></div>';
+      document.getElementById("retry").onclick = load;
+    });
+  }
+  load();
+})();
+</script>
+</body>
+</html>
