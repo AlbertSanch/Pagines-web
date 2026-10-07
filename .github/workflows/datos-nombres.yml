@@ -1,4 +1,4 @@
-# Descarga los datos de nombres del INE y regenera cuantossellaman.es (carpeta cuantossellaman/web).
+# Descarga los datos de nombres y apellidos del INE y regenera cuantossellaman.es (carpeta cuantossellaman/web).
 # El INE publica los nombres de la población en mayo y los de los recién nacidos en noviembre;
 # por eso se ejecuta el 1 de junio, el 1 de julio y el 1 de diciembre, y también a mano.
 # Si la descarga falla o el formato del INE cambia, el workflow falla y NO publica nada:
@@ -36,7 +36,7 @@ jobs:
           python-version: "3.12"
 
       - name: Instalar dependencias
-        run: pip install openpyxl
+        run: pip install openpyxl xlrd
 
       - name: Descargar ficheros del INE
         run: python cuantossellaman/scripts/descargar_ine.py

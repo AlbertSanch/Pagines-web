@@ -18,11 +18,10 @@ IMPRESCINDIBLES = [
     "nombres_por_edad_media.xlsx",   # todos los nombres con 20 o más personas, con edad media
     "nombres_mas_frecuentes.xlsx",   # top 100 de España y top 50 por provincia de residencia
     "nombres_por_fecha.xlsx",        # top 50 por década de nacimiento (España y por provincia de nacimiento)
+    "apellidos_frecuencia.xls",      # todos los apellidos con 20 o más personas como primer apellido
+    "apellidos_mas_frecuentes.xls",  # top 100 de España y top 50 por provincia
 ]
-OPCIONALES = [
-    "apellidos_frecuencia.xls",      # preparado para la sección de apellidos
-    "apellidos_mas_frecuentes.xls",
-]
+OPCIONALES = []
 PRIMER_ANIO_BEBES = 2002
 SALIDA = Path(__file__).resolve().parent.parent / "datos-ine"
 CABECERAS = {"User-Agent": "Mozilla/5.0 (cuantossellaman.es; datos abiertos del INE)"}

@@ -64,3 +64,81 @@ def mostrar(nombre_ine):
 def normalizar(texto):
     """Forma para buscar: minúsculas, sin tildes, espacios simples ('  María  José' -> 'maria jose')."""
     return " ".join(_sin_tilde(texto).lower().replace("·", "").split())
+
+
+# ------------------------------------------------------------------------------------- Apellidos
+# Apellidos frecuentes que llevan tilde y no siguen la regla de los patronímicos en -ez.
+APELLIDOS_CON_TILDE = """
+Álvarez García Martín Marín Díaz Muñoz Cortés León Román Durán Galán Beltrán Millán Roldán Julián
+Adán Chacón Calderón Alarcón Rincón Colón Aragón Pinzón Ramón Simón Garzón Carrión Barragán Guzmán
+Guillén Jerónimo Cristóbal Andrés Tomás Nicolás Inés Ginés Moisés Valdés Hernán Agustín Fermín
+Joaquín Jesús Ángel María Sáez Díez Sáenz Laínez Castañón Arévalo Ávila Álamo Cánovas Cáceres
+Córdoba Málaga Gómara Bolívar Galván Bernabé Cebrián Lucía Montalbán Morán Quintín Sebastián
+Tristán Valentín Zurbarán Álvaro Ávalos Herrán Lázaro Ríos Gascón Garcés Solís Alcántara Bárcena
+Cámara Cárdenas Fábregas Mármol Úbeda Ágreda Ábalos Belén Ibáñez Ordóñez Núñez Rubén Cristián
+""".split()
+_APELLIDOS = {_sin_tilde(w): w for w in APELLIDOS_CON_TILDE}
+# Apellidos en -EZ que se pronuncian agudos y no llevan tilde
+_EZ_SIN_TILDE = {"VALDEZ", "ALDEZ", "GODEZ"}
+_VOCALES = "AEIOU"
+_FUERTES = "AEO"
+_ACENTO = {"A": "á", "E": "é", "I": "í", "O": "ó", "U": "ú"}
+
+
+def _patronimico(p):
+    """Apellidos en -EZ llanos: Pérez, López, Rodríguez, Gutiérrez, Suárez... (tilde en la penúltima sílaba)."""
+    raiz = p[:-2]
+    if len(raiz) < 2 or not any(c in _VOCALES for c in raiz):
+        return None
+    if raiz[-1] == "U" and len(raiz) > 1 and raiz[-2] in "QG":  # RODRIGU-EZ, VAZQU-EZ: la u no suena
+        raiz = raiz[:-1]
+    # último grupo de vocales de la raíz
+    fin = max(i for i, c in enumerate(raiz) if c in _VOCALES)
+    ini = fin
+    while ini > 0 and raiz[ini - 1] in _VOCALES:
+        ini -= 1
+    grupo = raiz[ini:fin + 1]
+    # en un diptongo la tilde va en la vocal abierta (GUTIERREZ -> Gutiérrez, SUAREZ -> Suárez)
+    k = next((j for j, c in enumerate(grupo) if c in _FUERTES), len(grupo) - 1)
+    pos = ini + k
+    palabra = p.capitalize()
+    return palabra[:pos] + _ACENTO[p[pos]] + palabra[pos + 1:]
+
+
+def mostrar_apellido(ine):
+    """'SANCHEZ' -> 'Sánchez'; 'GARCIA' -> 'García'; 'DE LA FUENTE' -> 'de la Fuente'."""
+    partes = []
+    for i, p in enumerate(ine.split()):
+        if p in PARTICULAS:
+            partes.append(p.lower())
+            continue
+        trozos = []
+        for x in p.split("-"):
+            clave = _sin_tilde(x)
+            if clave in TILDES_APELLIDOS_EXTRA:
+                trozos.append(TILDES_APELLIDOS_EXTRA[clave])
+            elif clave in _APELLIDOS:
+                trozos.append(_APELLIDOS[clave])
+            elif clave.endswith("EZ") and len(clave) > 4 and clave not in _EZ_SIN_TILDE:
+                trozos.append(_patronimico(clave) or x.capitalize())
+            else:
+                trozos.append(x.capitalize())
+        partes.append("-".join(trozos))
+    texto = " ".join(partes)
+    return texto[:1].upper() + texto[1:]
+
+
+TILDES_APELLIDOS_EXTRA = {}
+
+
+def _cargar_correcciones_apellidos():
+    ruta = Path(__file__).resolve().parent.parent / "content" / "tildes-apellidos.csv"
+    if not ruta.exists():
+        return
+    with ruta.open(encoding="utf-8") as f:
+        for fila in csv.reader(f):
+            if len(fila) >= 2 and fila[0].strip() and not fila[0].lstrip().startswith("#"):
+                TILDES_APELLIDOS_EXTRA[_sin_tilde(fila[0].strip())] = fila[1].strip()
+
+
+_cargar_correcciones_apellidos()
