@@ -73,6 +73,15 @@
     </div>
   </a>
 
+  <a class="card-link" href="consumo-electrodomesticos" style="display:flex;gap:16px;align-items:center;border-color:var(--primary);background:var(--primary-soft);margin-bottom:8px">
+    <div class="icon">🔌</div>
+    <div>
+      <span class="tag">Con el precio de la luz actual</span>
+      <h3>¿Cuánto gasta cada electrodoméstico?</h3>
+      <p>Horno, lavadora, inducción, aire acondicionado, televisor… Lo que te cuesta cada uno al mes.</p>
+    </div>
+  </a>
+
   <section id="calculadoras">
     <div class="chips" role="group" aria-label="Filtrar calculadoras por tema">
       <button type="button" data-tema="" aria-pressed="true">Todas</button>
@@ -81,6 +90,7 @@
       <button type="button" data-tema="coche" aria-pressed="false">Coche</button>
       <button type="button" data-tema="reformas" aria-pressed="false">Reformas</button>
       <button type="button" data-tema="hogar" aria-pressed="false">Hogar y cocina</button>
+      <button type="button" data-tema="dinero" aria-pressed="false">Dinero y compras</button>
     </div>
     <p class="no-results" id="no-results" hidden>No hay ninguna calculadora con esa búsqueda en este tema. <button type="button" class="link-btn" data-tema="">Ver todas</button></p>
     <h2>🔥 Especial invierno: calefacción</h2>
@@ -224,10 +234,20 @@
         <h3>Conversor de medidas de cocina</h3>
         <p>Tazas, cucharadas y gramos de harina, azúcar, mantequilla, arroz y más.</p>
       </a>
-      <a class="card-link" href="calculadoras/gastos-piso-compartido" data-cat="hogar">
+      <a class="card-link" href="calculadoras/gastos-piso-compartido" data-cat="hogar dinero">
         <div class="icon">🏠</div><span class="tag">Hogar y cocina</span>
         <h3>Gastos de piso compartido</h3>
         <p>Reparte alquiler y facturas a partes iguales o según el tamaño de cada habitación.</p>
+      </a>
+      <a class="card-link" href="calculadoras/calculadora-iva" data-cat="dinero">
+        <div class="icon">🧾</div><span class="tag">Dinero y compras</span>
+        <h3>Calculadora de IVA</h3>
+        <p>Añade o quita el IVA del 21, 10 o 4 % (y el IGIC de Canarias) a cualquier precio.</p>
+      </a>
+      <a class="card-link" href="calculadoras/descuentos" data-cat="dinero">
+        <div class="icon">🏷️</div><span class="tag">Dinero y compras</span>
+        <h3>Calculadora de descuentos</h3>
+        <p>Precio final con rebaja, descuentos acumulados y cuánto ahorras con un 3x2.</p>
       </a>
     </div>
   </section>

@@ -86,3 +86,8 @@ el cambio al momento.
 - Butano, gas natural, gasóleo C, pellets y leña no tienen una fuente oficial automática: sus precios
   siguen escritos a mano en cada calculadora. El butano cambia el tercer martes de enero, marzo, mayo,
   julio, septiembre y noviembre.
+
+## 10. Páginas «¿Cuánto gasta…?»
+- `scripts/paginas_consumo.py` genera `consumo-electrodomesticos.html` y una página por aparato en `cuanto-gasta/`
+  con los costes calculados con el precio de la luz de `datos/luz.json`. Se regeneran solas en cada actualización.
+- Para añadir un aparato, añádelo a la lista `APARATOS` del script. No edites esas páginas a mano.
