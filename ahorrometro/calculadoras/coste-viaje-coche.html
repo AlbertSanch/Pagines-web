@@ -37,6 +37,7 @@
       <a href="../">Inicio</a>
       <a href="../#calculadoras">Calculadoras</a>
       <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../precio-gasolina-hoy">Precio de la gasolina</a>
       <a href="../sobre-nosotros">Sobre nosotros</a>
       <a href="../contacto">Contacto</a>
     </nav>
@@ -146,7 +147,7 @@
         </details>
         <details>
           <summary>¿Dónde veo el precio de la gasolina hoy?</summary>
-          <p>El Ministerio para la Transición Ecológica publica los precios de todas las gasolineras de España en su geoportal oficial, actualizado a diario.</p>
+          <p>En nuestra página del <a href="../precio-gasolina-hoy">precio de la gasolina y el diésel hoy</a> tienes la media de cada provincia y las gasolineras más baratas, con datos oficiales del Ministerio para la Transición Ecológica actualizados cada día.</p>
         </details>
       </div>
     </article>
@@ -215,13 +216,29 @@
     if (v >= 0) document.getElementById(id).value = v;
   });
   if (q.get('vuelta') === '0') document.getElementById('vuelta').checked = false;
-  if (q.get('precio')) nota.textContent = 'Precio traído de la página anterior. Puedes cambiarlo.';
+  var desdeUrl = !!q.get('precio');
+  var NOTA = 'Precio medio orientativo. Cámbialo por el de tu gasolinera.';
+  if (desdeUrl) nota.textContent = q.get('zona')
+    ? 'Precio medio hoy en ' + q.get('zona') + '. Puedes cambiarlo por el de tu gasolinera.'
+    : 'Precio traído de la página anterior. Puedes cambiarlo.';
 
   sel.addEventListener('change', function () {
     precioEl.value = PRECIOS[sel.value];
-    nota.textContent = 'Precio medio orientativo. Cámbialo por el de tu gasolinera.';
+    nota.innerHTML = NOTA;
     calcular(false);
   });
+  precioEl.addEventListener('input', function () { desdeUrl = true; });
+
+  // Precio medio de hoy en España (lo actualiza cada día un proceso automático)
+  fetch('../datos/carburantes.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    if (!d || !d.espana) return;
+    Object.keys(PRECIOS).forEach(function (k) { if (d.espana[k]) PRECIOS[k] = d.espana[k].media; });
+    NOTA = 'Precio medio hoy en España. <a href="../precio-gasolina-hoy">Ver el de tu provincia</a>.';
+    if (desdeUrl) return;
+    precioEl.value = PRECIOS[sel.value];
+    nota.innerHTML = NOTA;
+    calcular(false);
+  }).catch(function () {});
 
   function calcular(scroll) {
     var km = num('km'), cons = num('cons'), precio = num('precio'), peajes = num('peajes') || 0, pax = Math.max(1, Math.round(num('pax') || 1));

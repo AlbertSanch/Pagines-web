@@ -41,10 +41,10 @@ h3 { font-size: 1.15rem; }
 .logo-mark { width: 30px; height: 30px; border-radius: 8px; background: var(--primary); color: #fff; display: grid; place-items: center; font-size: .95rem; }
 .logo span.hl { color: var(--primary); }
 .nav { display: flex; gap: 22px; }
-.nav a { color: var(--text); text-decoration: none; font-weight: 500; font-size: .95rem; }
+.nav a { color: var(--text); text-decoration: none; font-weight: 500; font-size: .95rem; white-space: nowrap; }
 .nav a:hover { color: var(--primary); }
 .nav-toggle { display: none; background: none; border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-size: 1.1rem; cursor: pointer; }
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   .nav-toggle { display: block; }
   .nav { display: none; position: absolute; top: 60px; left: 0; right: 0; background: var(--surface); flex-direction: column; gap: 0; border-bottom: 1px solid var(--border); }
   .nav.open { display: flex; }
