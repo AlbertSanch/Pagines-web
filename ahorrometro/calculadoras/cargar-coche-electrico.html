@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cuánto cuesta cargar un coche eléctrico? En casa y en electrolinera | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuánto cuesta cargar tu coche eléctrico en casa o en un cargador rápido, el coste por cada 100 km y cuánto ahorras frente a un coche de gasolina.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/cargar-coche-electrico">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="¿Cuánto cuesta cargar un coche eléctrico? En casa y en electrolinera">
+  <meta property="og:description" content="Calcula cuánto cuesta cargar tu coche eléctrico en casa o en un cargador rápido, el coste por cada 100 km y cuánto ahorras frente a un coche de gasolina.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/cargar-coche-electrico">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"¿Cuánto cuesta cargar un coche eléctrico?","url":"https://ahorrometro.es/calculadoras/cargar-coche-electrico","description":"Calcula cuánto cuesta cargar tu coche eléctrico en casa o en un cargador rápido, el coste por cada 100 km y cuánto ahorras frente a un coche de gasolina.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"¿Cuánto cuesta cargar un coche eléctrico?","item":"https://ahorrometro.es/calculadoras/cargar-coche-electrico"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Cargar un coche eléctrico</nav>
+  <div class="layout">
+    <article>
+      <h1>¿Cuánto cuesta cargar un coche eléctrico?</h1>
+      <p class="lead">Calcula cuánto te cuesta al mes mover tu coche eléctrico según dónde cargas, cuánto cuesta cada 100 km y cuánto ahorras frente a un coche de gasolina.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="km">Kilómetros al mes</label>
+            <input id="km" type="number" min="0" step="50" value="1000" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="cons">Consumo del coche (kWh/100 km)</label>
+            <input id="cons" type="number" min="5" step="0.5" value="16" inputmode="decimal">
+            <small>Utilitarios: 13–16. SUV y berlinas: 17–22.</small>
+          </div>
+          <div class="field">
+            <label for="bat">Batería (kWh)</label>
+            <input id="bat" type="number" min="10" step="1" value="60" inputmode="numeric">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="casa">% de cargas en casa</label>
+            <input id="casa" type="number" min="0" max="100" step="5" value="90" inputmode="numeric">
+            <small>El resto, en cargadores rápidos.</small>
+          </div>
+          <div class="field">
+            <label for="pCasa">Precio en casa (€/kWh)</label>
+            <input id="pCasa" type="number" min="0" step="0.001" value="0.12" inputmode="decimal">
+            <small>Cargando en horas valle suele estar entre 0,08 y 0,14.</small>
+          </div>
+          <div class="field">
+            <label for="pRapida">Precio en carga rápida (€/kWh)</label>
+            <input id="pRapida" type="number" min="0" step="0.01" value="0.49" inputmode="decimal">
+          </div>
+        </div>
+        <details>
+          <summary>Comparar con un coche de gasolina (opcional)</summary>
+          <div class="row" style="margin-top:12px">
+            <div class="field">
+              <label for="lGas">Consumo gasolina (L/100 km)</label>
+              <input id="lGas" type="number" min="0" step="0.1" value="6.5" inputmode="decimal">
+            </div>
+            <div class="field">
+              <label for="pGas">Precio gasolina (€/L)</label>
+              <input id="pGas" type="number" min="0" step="0.01" value="1.55" inputmode="decimal">
+            </div>
+          </div>
+        </details>
+        <button class="btn" id="calcular" style="margin-top:14px">Calcular coste</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Para cargar en casa</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=cargador%20portatil%20coche%20electrico%20tipo%202%20schuko&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔌</span><b>Cargador portátil tipo 2</b><span class="aff-desc">Carga en un enchufe normal (Schuko) con intensidad ajustable.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=wallbox%20cargador%20coche%20electrico&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🏠</span><b>Wallbox para garaje</b><span class="aff-desc">Carga más rápida y segura; programa la carga en horas valle.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=organizador%20cable%20carga%20coche%20electrico&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🧰</span><b>Organizador de cables de carga</b><span class="aff-desc">Guarda el cable en el maletero o cuélgalo en el garaje.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo se calcula el coste de cargar un eléctrico</h2>
+        <p class="note"><strong>kWh necesarios = Kilómetros × Consumo ÷ 100 × 1,1</strong><br><strong>Coste = kWh × Precio del kWh</strong></p>
+        <p>Multiplicamos por 1,1 porque en cada carga se pierde alrededor de un 10 % de energía en forma de calor, en el cargador y en la batería.</p>
+        <p><strong>Ejemplo:</strong> un coche que gasta 16 kWh/100 km y recorre 1.000 km al mes necesita unos 176 kWh. Cargando el 90 % en casa a 0,12 €/kWh y el resto en carga rápida a 0,49 €/kWh, cuesta unos <strong>28 € al mes</strong>: menos de 3 € cada 100 km. El mismo recorrido con un coche de gasolina que gasta 6,5 L/100 km costaría unos 100 €.</p>
+
+        <h2>¿Dónde sale más barato cargar?</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Dónde</th><th>Precio orientativo</th><th>Coste cada 100 km*</th></tr></thead>
+            <tbody>
+              <tr><td>Casa, en horas valle</td><td>0,08–0,14 €/kWh</td><td>1,40–2,50 €</td></tr>
+              <tr><td>Casa, tarifa normal</td><td>0,15–0,20 €/kWh</td><td>2,60–3,50 €</td></tr>
+              <tr><td>Cargador público lento</td><td>0,25–0,40 €/kWh</td><td>4,40–7,00 €</td></tr>
+              <tr><td>Carga rápida o ultrarrápida</td><td>0,40–0,65 €/kWh</td><td>7,00–11,40 €</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><small>*Coche de 16 kWh/100 km, incluidas las pérdidas de carga. Los precios públicos varían mucho entre operadores.</small></p>
+        <p>Cargar casi siempre en casa y por la noche es lo que hace que un eléctrico sea realmente barato de usar. Si dependes mucho de la carga rápida, el ahorro frente a la gasolina se reduce bastante.</p>
+
+        <h2>Consejos para pagar menos</h2>
+        <ul>
+          <li><strong>Programa la carga en horas valle</strong> desde el coche o el wallbox.</li>
+          <li><strong>Pregunta por tarifas especiales para vehículo eléctrico</strong>: algunas comercializadoras tienen un tramo nocturno muy barato.</li>
+          <li><strong>Con placas solares</strong>, cargar a mediodía puede salir casi gratis. Calcula tu instalación con nuestra <a href="placas-solares">calculadora de placas solares</a>.</li>
+          <li><strong>Evita cargar siempre al 100 %</strong>: para el día a día, entre el 20 y el 80 % es mejor para la batería y la carga es más rápida.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cuánto cuesta llenar la batería de un coche eléctrico?</summary>
+          <p>Depende del tamaño de la batería y del precio del kWh. Una batería de 60 kWh cargada en casa a 0,12 €/kWh cuesta unos 8 € (incluidas pérdidas). En un cargador rápido a 0,49 €/kWh, alrededor de 32 €.</p>
+        </details>
+        <details>
+          <summary>¿Puedo cargar el coche en un enchufe normal?</summary>
+          <p>Sí, con un cargador portátil, pero es lento (unos 10–15 km de autonomía por hora) y conviene que la instalación esté revisada, porque el enchufe trabaja muchas horas a alta intensidad. Para uso diario, lo recomendable es un punto de carga o wallbox instalado por un profesional.</p>
+        </details>
+        <details>
+          <summary>¿Tengo que subir la potencia contratada?</summary>
+          <p>No siempre. Si cargas de noche, cuando casi no hay otros aparatos encendidos, muchas casas pueden cargar a 2,3–3,7 kW sin cambiar la potencia. Algunos wallbox ajustan la carga automáticamente para que no salte el automático.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="coste-viaje-coche">🚗 Coste de un viaje en coche</a></li>
+          <li><a href="placas-solares">☀️ Ahorro con placas solares</a></li>
+          <li><a href="consumo-electrico">⚡ Consumo de cualquier aparato</a></li>
+          <li><a href="termo-electrico">🚿 Gasto del termo eléctrico</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('calcular').addEventListener('click', function () {
+  var km = num('km'), cons = num('cons'), bat = num('bat'), casa = Math.min(100, Math.max(0, num('casa'))) / 100;
+  var pc = num('pCasa'), pr = num('pRapida'), lGas = num('lGas'), pGas = num('pGas');
+  if (!(km >= 0 && cons > 0 && pc >= 0 && pr >= 0)) { showResult('res', '<p>Revisa los datos introducidos.</p>'); return; }
+  var kwh = km * cons / 100 * 1.1;
+  var precioMedio = casa * pc + (1 - casa) * pr;
+  var mes = kwh * precioMedio;
+  var por100 = cons * 1.1 * precioMedio;
+  var gasolina = km * lGas / 100 * pGas;
+  showResult('res',
+    '<div>Cargar tu coche te cuesta aproximadamente</div>' +
+    '<div class="big">' + eur(mes) + ' al mes</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + eur(por100) + '</b><span>cada 100 km</span></div>' +
+      '<div class="stat"><b>' + fmt(kwh, 0) + ' kWh</b><span>al mes (con pérdidas)</span></div>' +
+      '<div class="stat"><b>' + eur(bat * 1.1 * pc) + '</b><span>batería llena en casa</span></div>' +
+      '<div class="stat"><b>' + eur(bat * 1.1 * pr) + '</b><span>batería llena en carga rápida</span></div>' +
+    '</div>' +
+    (gasolina > 0 ? '<p>Con un coche de gasolina harías los mismos kilómetros por unos ' + eur(gasolina) + ' al mes. Ahorras <strong>' + eur((gasolina - mes) * 12) + ' al año</strong> en energía.</p>' : ''));
+});
+</script>
+</body>
+</html>

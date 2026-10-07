@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Precio de la luz hoy por horas (PVPC) | Ahorrómetro</title>
+  <meta name="description" content="Precio de la luz hoy hora a hora en la tarifa regulada PVPC. Consulta la hora más barata y más cara, cuándo poner la lavadora y cuánto cuesta usar cada aparato. Datos oficiales de Red Eléctrica.">
+  <link rel="canonical" href="https://ahorrometro.es/precio-luz-hoy">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Precio de la luz hoy por horas (PVPC)">
+  <meta property="og:description" content="La hora más barata y más cara de hoy, y cuándo poner la lavadora. Datos oficiales de Red Eléctrica.">
+  <meta property="og:url" content="https://ahorrometro.es/precio-luz-hoy">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://apidatos.ree.es">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Precio de la luz hoy, hora a hora","url":"https://ahorrometro.es/precio-luz-hoy","description":"Precio de la luz hoy hora a hora en la tarifa regulada PVPC, con la hora más barata y más cara del día. Datos oficiales de Red Eléctrica.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-29"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Precio de la luz hoy","item":"https://ahorrometro.es/precio-luz-hoy"}]},
+   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"¿A qué hora es más barata la luz hoy?","acceptedAnswer":{"@type":"Answer","text":"Depende de cada día. En esta página se marca en verde la hora más barata de hoy según los precios oficiales del PVPC publicados por Red Eléctrica. Suele coincidir con la madrugada o con las horas centrales del día, cuando hay más producción solar."}},
+    {"@type":"Question","name":"¿Cuándo se publican los precios de la luz de mañana?","acceptedAnswer":{"@type":"Answer","text":"Red Eléctrica publica los precios del PVPC del día siguiente cada tarde, normalmente hacia las 20:30."}},
+    {"@type":"Question","name":"¿Estos precios incluyen impuestos?","acceptedAnswer":{"@type":"Answer","text":"No. Son precios del término de energía del PVPC sin impuestos. Puedes activar la opción de incluir impuestos para sumar de forma aproximada el impuesto eléctrico y el IVA."}},
+    {"@type":"Question","name":"¿Me afectan estos precios si tengo tarifa del mercado libre?","acceptedAnswer":{"@type":"Answer","text":"Solo si tu contrato es de precio indexado o por horas. Con una tarifa de precio fijo pagas lo mismo a cualquier hora; con una de tres periodos, el precio cambia según el tramo punta, llano o valle."}}]}]
+  </script>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+  <style>
+    /* Estilos propios de esta página (el resto viene de assets/style.css) */
+    :root { --cheap: #2f9e63; --mid: #e2a52b; --dear: #d2553c; }
+    .pl-controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin: 8px 0 20px; }
+    .pl-switch { display: inline-flex; background: var(--primary-soft); border-radius: 999px; padding: 4px; }
+    .pl-switch button { border: 0; background: transparent; font: inherit; font-weight: 700; color: var(--muted); padding: 7px 18px; border-radius: 999px; cursor: pointer; }
+    .pl-switch button[aria-pressed="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+    .pl-switch button:disabled { cursor: not-allowed; opacity: .5; }
+    .pl-note { font-size: .85rem; color: var(--muted); flex-basis: 100%; margin-top: -6px; }
+    .pl-note:empty { display: none; }
+    .pl-controls label { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: .95rem; }
+    .pl-controls select { font: inherit; padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
+    .pl-controls input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--primary); }
+
+    .pl-now { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px; background: var(--primary); color: #fff; border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+    .pl-now p { margin: 0; }
+    .pl-now-label { font-weight: 600; opacity: .85; }
+    .pl-now-price { font-weight: 800; font-size: clamp(2.8rem, 9vw, 4.8rem); line-height: 1; letter-spacing: -0.03em; margin: 6px 0 4px !important; font-variant-numeric: tabular-nums; }
+    .pl-now-price small { font-size: .3em; font-weight: 600; letter-spacing: 0; opacity: .85; margin-left: 4px; }
+    .pl-verdict { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; margin-top: 10px !important; }
+    .pl-dot { width: 13px; height: 13px; border-radius: 50%; border: 2px solid #fff; flex: none; }
+    .pl-side { display: grid; gap: 10px; align-content: center; }
+    .pl-stat { background: rgba(255,255,255,.13); border-radius: 10px; padding: 10px 14px; }
+    .pl-stat .k { font-size: .88rem; opacity: .85; }
+    .pl-stat .v { font-weight: 700; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+
+    .pl-hours-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+    .pl-legend { display: flex; gap: 16px; font-size: .88rem; color: var(--muted); flex-wrap: wrap; }
+    .pl-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+    ol.pl-hours { list-style: none; padding: 0; margin: 12px 0 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; }
+    ol.pl-hours li { display: grid; grid-template-columns: 5.6rem 1fr 4.9rem; align-items: center; gap: 10px; padding: 5px 8px; border-radius: 8px; font-variant-numeric: tabular-nums; }
+    ol.pl-hours li.past { opacity: .45; }
+    ol.pl-hours li.current { background: var(--primary-soft); box-shadow: inset 0 0 0 2px var(--text); font-weight: 700; }
+    .pl-time { font-size: .93rem; white-space: nowrap; }
+    .pl-bar { height: 11px; border-radius: 999px; background: #eef2ef; overflow: hidden; }
+    .pl-bar span { display: block; height: 100%; border-radius: 999px; }
+    .pl-price { text-align: right; font-size: .93rem; }
+    .pl-tag { font-size: .7rem; background: var(--text); color: #fff; border-radius: 4px; padding: 0 5px; margin-left: 5px; vertical-align: 1px; }
+    .pl-status { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; text-align: center; }
+    .pl-status p { margin: 0 0 12px; }
+    .pl-save { color: var(--cheap); font-weight: 700; }
+    td .sub { display: block; font-size: .83rem; color: var(--muted); }
+
+    .pl-tramos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 16px 0; }
+    .pl-tramo { border-left: 5px solid; padding: 4px 0 4px 14px; }
+    .pl-tramo p { margin: 0; }
+
+    @media (max-width: 760px) {
+      .pl-now { grid-template-columns: 1fr; padding: 22px; }
+      ol.pl-hours { grid-template-columns: 1fr; }
+      .pl-tramos { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: no-preference) { .pl-bar span { transition: width .4s ease; } }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="./" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="./">Inicio</a>
+      <a href="./#calculadoras">Calculadoras</a>
+      <a href="precio-luz-hoy">Precio de la luz</a>
+      <a href="sobre-nosotros">Sobre nosotros</a>
+      <a href="contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="./">Inicio</a> › Precio de la luz hoy</nav>
+  <h1>Precio de la luz hoy, hora a hora</h1>
+  <p class="lead">Tarifa regulada PVPC del <strong id="date-text">día de hoy</strong>. Datos oficiales de Red Eléctrica, sin impuestos salvo que los actives.</p>
+
+  <div class="pl-controls">
+    <div class="pl-switch" role="group" aria-label="Día">
+      <button type="button" id="btn-today" aria-pressed="true">Hoy</button>
+      <button type="button" id="btn-tomorrow" aria-pressed="false">Mañana</button>
+    </div>
+    <span id="tomorrow-note" class="pl-note" aria-live="polite"></span>
+    <label>Zona
+      <select id="zone">
+        <option value="peninsular">Península</option>
+        <option value="baleares">Baleares</option>
+        <option value="canarias">Canarias</option>
+        <option value="ceuta">Ceuta</option>
+        <option value="melilla">Melilla</option>
+      </select>
+    </label>
+    <label><input type="checkbox" id="taxes"> Incluir impuestos (aprox.)</label>
+  </div>
+
+  <div id="app" aria-live="polite">
+    <div class="pl-status"><p>Cargando los precios de Red Eléctrica…</p></div>
+  </div>
+  <noscript><div class="pl-status"><p>Activa JavaScript para ver los precios de la luz actualizados.</p></div></noscript>
+
+  <div class="ad-slot"><!-- ADSENSE: anuncio bajo los precios -->Publicidad</div>
+
+  <section>
+    <h2>Cuánto cuesta usar cada aparato hoy</h2>
+    <p>Calcula el gasto de cualquier electrodoméstico según su potencia y la hora a la que lo enciendas. La potencia suele venir en la etiqueta o en el manual, en vatios (W).</p>
+    <div class="calc">
+      <div class="row">
+        <div class="field">
+          <label for="c-power">Potencia (W)</label>
+          <input type="number" id="c-power" value="2000" min="1" step="50" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="c-min">Tiempo de uso (minutos)</label>
+          <input type="number" id="c-min" value="60" min="1" step="5" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="c-hour">Hora de uso</label>
+          <select id="c-hour"></select>
+        </div>
+      </div>
+      <div class="result show" id="c-out" style="margin-top:6px"><p>Elige los datos para ver el coste.</p></div>
+    </div>
+  </section>
+
+  <section class="affiliate">
+    <h2>Gasta menos con la luz por horas</h2>
+    <div class="aff-grid">
+      <a class="aff-item" href="https://www.amazon.es/s?k=enchufe%20inteligente%20programable%20wifi&amp;tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">📱</span><b>Enchufe inteligente programable</b><span class="aff-desc">Enciende el termo o un radiador solo en las horas baratas, desde el móvil.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+      <a class="aff-item" href="https://www.amazon.es/s?k=medidor%20consumo%20electrico%20enchufe&amp;tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔌</span><b>Medidor de consumo eléctrico</b><span class="aff-desc">Descubre cuánto gasta de verdad cada aparato de tu casa.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+      <a class="aff-item" href="https://www.amazon.es/s?k=temporizador%20enchufe%20programador&amp;tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">⏲️</span><b>Programador de enchufe</b><span class="aff-desc">La opción más barata para encender aparatos a una hora fija.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+    </div>
+    <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+  </section>
+
+  <div class="content">
+    <h2>Cómo funciona el precio de la luz por horas</h2>
+    <p>Si tienes contratada la tarifa regulada, llamada PVPC (precio voluntario para el pequeño consumidor), pagas la electricidad a un precio distinto cada hora. Red Eléctrica publica cada tarde los precios del día siguiente, así que puedes planificar cuándo poner la lavadora, el lavavajillas o cargar el coche.</p>
+    <p>Los precios de esta página ya incluyen los peajes y cargos de la tarifa 2.0TD, pero no el término de potencia, el alquiler del contador ni los impuestos. Si activas la opción de impuestos, sumamos de forma aproximada el impuesto eléctrico (5,11 %) y el IVA (21 %). Tu factura puede variar si te aplican un tipo reducido o el bono social.</p>
+
+    <h3>Los tres tramos de la tarifa 2.0TD</h3>
+    <p>Además del precio horario, la parte de peajes cambia según el tramo. Esto también afecta a las tarifas de tres periodos del mercado libre.</p>
+    <div class="pl-tramos">
+      <div class="pl-tramo" style="border-color: var(--dear)"><p><strong>Punta</strong></p><p>De 10 a 14 h y de 18 a 22 h, de lunes a viernes.</p></div>
+      <div class="pl-tramo" style="border-color: var(--mid)"><p><strong>Llano</strong></p><p>De 8 a 10 h, de 14 a 18 h y de 22 a 24 h, de lunes a viernes.</p></div>
+      <div class="pl-tramo" style="border-color: var(--cheap)"><p><strong>Valle</strong></p><p>De 0 a 8 h entre semana, y todo el día los fines de semana y festivos nacionales.</p></div>
+    </div>
+
+    <h2>Preguntas frecuentes</h2>
+    <details>
+      <summary>¿A qué hora es más barata la luz hoy?</summary>
+      <p>Depende de cada día. En la tabla de arriba se marca en verde la hora más barata según los precios oficiales. Suele coincidir con la madrugada o con las horas centrales del día, cuando hay más producción solar.</p>
+    </details>
+    <details>
+      <summary>¿Cuándo se publican los precios de mañana?</summary>
+      <p>Red Eléctrica los publica cada tarde, normalmente hacia las 20:30. A partir de esa hora puedes consultarlos con el botón «Mañana».</p>
+    </details>
+    <details>
+      <summary>¿Me afectan estos precios si tengo tarifa del mercado libre?</summary>
+      <p>Solo si tu contrato es de precio indexado o por horas. Con una tarifa de precio fijo pagas lo mismo a cualquier hora; con una de tres periodos, el precio cambia según el tramo punta, llano o valle.</p>
+    </details>
+    <details>
+      <summary>¿Por qué el precio de Canarias o Baleares es diferente?</summary>
+      <p>Son sistemas eléctricos separados de la península, con su propio cálculo. Elige tu zona en el selector de arriba para ver los precios que te corresponden.</p>
+    </details>
+
+    <h3>Calcula cuánto gastas</h3>
+    <ul>
+      <li><a href="calculadoras/consumo-electrico">Consumo eléctrico de cualquier aparato</a></li>
+      <li><a href="calculadoras/termo-electrico">Gasto del termo eléctrico</a></li>
+      <li><a href="calculadoras/cargar-coche-electrico">Cargar un coche eléctrico</a></li>
+      <li><a href="calculadoras/radiador-electrico">Gasto de un radiador eléctrico</a></li>
+    </ul>
+    <p class="note">Fuente de los datos: Red Eléctrica (REData). Los precios se consultan directamente a Red Eléctrica cada vez que abres esta página.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Ahorrómetro</h4>
+        <p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p>
+      </div>
+      <div>
+        <h4>Calculadoras</h4>
+        <ul>
+          <li><a href="calculadoras/consumo-electrico">Consumo eléctrico</a></li>
+          <li><a href="calculadoras/placas-solares">Placas solares</a></li>
+          <li><a href="calculadoras/coste-viaje-coche">Viaje en coche</a></li>
+          <li><a href="calculadoras/pintura">Pintura</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Información</h4>
+        <ul>
+          <li><a href="sobre-nosotros">Sobre nosotros</a></li>
+          <li><a href="contacto">Contacto</a></li>
+          <li><a href="aviso-legal">Aviso legal</a></li>
+          <li><a href="politica-privacidad">Política de privacidad</a></li>
+          <li><a href="politica-cookies">Política de cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="assets/main.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var ZONES = { peninsular: 8741, canarias: 8742, baleares: 8743, ceuta: 8744, melilla: 8745 };
+  var TAX_FACTOR = 1.0511 * 1.21; // impuesto eléctrico + IVA (aproximado)
+
+  // Consumo típico por uso: horas seguidas y kWh totales
+  var APPLIANCES = [
+    { name: "Lavadora", detail: "Ciclo normal, unos 1 kWh", hours: 2, kwh: 1.0 },
+    { name: "Lavavajillas", detail: "Programa eco, unos 1,1 kWh", hours: 2, kwh: 1.1 },
+    { name: "Secadora", detail: "Carga completa, unos 2,5 kWh", hours: 2, kwh: 2.5 },
+    { name: "Horno", detail: "1 hora a media potencia, 1,2 kWh", hours: 1, kwh: 1.2 },
+    { name: "Termo eléctrico", detail: "3 horas a 1.500 W", hours: 3, kwh: 4.5 },
+    { name: "Coche eléctrico", detail: "4 horas a 3,7 kW (enchufe de casa)", hours: 4, kwh: 14.8 }
+  ];
+
+  var state = { day: "today", zone: "peninsular", taxes: false, data: { today: null, tomorrow: null }, loading: false, error: false };
+
+  var app = document.getElementById("app");
+  var btnToday = document.getElementById("btn-today");
+  var btnTomorrow = document.getElementById("btn-tomorrow");
+
+  // ---------- Fechas en hora de Madrid ----------
+  function madridNow() {
+    var parts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Europe/Madrid", year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+    }).formatToParts(new Date());
+    var o = {};
+    parts.forEach(function (p) { o[p.type] = p.value; });
+    return { date: o.year + "-" + o.month + "-" + o.day, hour: parseInt(o.hour, 10), minute: parseInt(o.minute, 10) };
+  }
+  function addDays(ymd, n) {
+    var p = ymd.split("-").map(Number);
+    return new Date(Date.UTC(p[0], p[1] - 1, p[2] + n)).toISOString().slice(0, 10);
+  }
+  function longDate(ymd) {
+    var p = ymd.split("-").map(Number);
+    return new Intl.DateTimeFormat("es-ES", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })
+      .format(new Date(Date.UTC(p[0], p[1] - 1, p[2])));
+  }
+
+  // ---------- Formatos ----------
+  var fmtKwh = new Intl.NumberFormat("es-ES", { minimumFractionDigits: 4, maximumFractionDigits: 4 });
+  var fmtEur = new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  function pad(h) { return String(h).padStart(2, "0"); }
+  function hourRange(h) { return pad(h) + ":00 – " + pad((h + 1) % 24) + ":00"; }
+  function priceOf(p) { return state.taxes ? p * TAX_FACTOR : p; }
+  function fmtPrice(p) { return fmtKwh.format(priceOf(p)); }
+  function fmtCost(c) { return fmtEur.format(state.taxes ? c * TAX_FACTOR : c); }
+
+  // ---------- Datos de Red Eléctrica ----------
+  function fetchDay(ymd, zone) {
+    var url = "https://apidatos.ree.es/es/datos/mercados/precios-mercados-tiempo-real" +
+      "?start_date=" + ymd + "T00:00&end_date=" + ymd + "T23:59" +
+      "&time_trunc=hour&geo_trunc=electric_system&geo_limit=" + zone + "&geo_ids=" + ZONES[zone];
+    return fetch(url).then(function (r) {
+      if (!r.ok) return []; // REE devuelve error cuando aún no hay datos (p. ej. mañana)
+      return r.json().then(function (j) { return parseRee(j, ymd); });
+    });
+  }
+  function parseRee(json, ymd) {
+    var items = (json && json.included) || [];
+    var pvpc = items.find(function (i) {
+      var t = ((i.attributes && i.attributes.title) || "") + " " + (i.type || "");
+      return i.id === "1001" || /pvpc/i.test(t);
+    });
+    if (!pvpc || !pvpc.attributes || !pvpc.attributes.values) return [];
+    // Agrupa por hora (por si vienen datos cuartohorarios) respetando el cambio de hora
+    var groups = [], byKey = {};
+    pvpc.attributes.values.forEach(function (v) {
+      var dt = v.datetime;
+      if (!dt || dt.slice(0, 10) !== ymd) return;
+      var key = dt.slice(0, 13) + dt.slice(-6);
+      if (!byKey[key]) { byKey[key] = { hour: parseInt(dt.slice(11, 13), 10), sum: 0, n: 0 }; groups.push(byKey[key]); }
+      byKey[key].sum += v.value;
+      byKey[key].n += 1;
+    });
+    return groups.map(function (g) { return { hour: g.hour, price: g.sum / g.n / 1000 }; });
+  }
+
+  function load() {
+    var now = madridNow(), today = now.date, tomorrow = addDays(today, 1);
+    state.loading = true;
+    state.error = false;
+    render();
+    Promise.all([
+      fetchDay(today, state.zone),
+      fetchDay(tomorrow, state.zone).catch(function () { return []; })
+    ]).then(function (res) {
+      state.data.today = { date: today, hours: res[0] };
+      state.data.tomorrow = { date: tomorrow, hours: res[1] };
+      state.error = res[0].length === 0;
+    }).catch(function () {
+      state.error = true;
+    }).then(function () {
+      state.loading = false;
+      if (state.day === "tomorrow" && !hasTomorrow()) state.day = "today";
+      render();
+    });
+  }
+  function hasTomorrow() { return !!(state.data.tomorrow && state.data.tomorrow.hours.length); }
+
+  // ---------- Cálculos ----------
+  function levels(hours) {
+    var sorted = hours.map(function (h) { return h.price; }).sort(function (a, b) { return a - b; });
+    var n = sorted.length;
+    return { low: sorted[Math.floor(n / 3)], high: sorted[Math.floor((2 * n) / 3)], min: sorted[0], max: sorted[n - 1] };
+  }
+  function levelOf(p, lv) { return p < lv.low ? "cheap" : (p >= lv.high ? "dear" : "mid"); }
+  var LEVEL_COLOR = { cheap: "var(--cheap)", mid: "var(--mid)", dear: "var(--dear)" };
+  var LEVEL_TEXT = { cheap: "Hora barata: buen momento para poner la lavadora", mid: "Precio intermedio", dear: "Hora cara: mejor esperar si puedes" };
+
+  // Horas disponibles para planificar: desde ahora (o todo mañana) y, si existe, el día siguiente
+  function timeline() {
+    var list = [], now = madridNow();
+    if (state.day === "today") {
+      state.data.today.hours.forEach(function (h) { if (h.hour >= now.hour) list.push({ label: "hoy " + pad(h.hour) + ":00", price: h.price }); });
+      if (hasTomorrow()) state.data.tomorrow.hours.forEach(function (h) { list.push({ label: "mañana " + pad(h.hour) + ":00", price: h.price }); });
+    } else {
+      state.data.tomorrow.hours.forEach(function (h) { list.push({ label: pad(h.hour) + ":00", price: h.price }); });
+    }
+    return list;
+  }
+  function windows(list, len) {
+    if (list.length < len) return null;
+    var best = null, worst = null;
+    for (var i = 0; i + len <= list.length; i++) {
+      var sum = 0;
+      for (var k = 0; k < len; k++) sum += list[i + k].price;
+      var avg = sum / len;
+      if (!best || avg < best.avg) best = { start: list[i].label, avg: avg };
+      if (!worst || avg > worst.avg) worst = { start: list[i].label, avg: avg };
+    }
+    return { best: best, worst: worst };
+  }
+
+  // ---------- Pintado ----------
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  function render() {
+    btnToday.setAttribute("aria-pressed", state.day === "today");
+    btnTomorrow.setAttribute("aria-pressed", state.day === "tomorrow");
+    btnTomorrow.disabled = !hasTomorrow();
+    btnTomorrow.title = hasTomorrow() ? "" : "Los precios de mañana se publican hacia las 20:30";
+    // Aviso visible (también en móvil) mientras no estén los precios de mañana
+    document.getElementById("tomorrow-note").textContent = (state.loading || hasTomorrow()) ? "" :
+      (madridNow().hour >= 20 ? "Los precios de mañana aún no están publicados. Se actualizará solo en cuanto lleguen." : "Los precios de mañana se publican hacia las 20:30.");
+
+    if (state.loading && !state.data.today) {
+      app.innerHTML = '<div class="pl-status"><p>Cargando los precios de Red Eléctrica…</p></div>';
+      return;
+    }
+    if (state.error) {
+      app.innerHTML = '<div class="pl-status"><p>No se han podido cargar los precios de Red Eléctrica. Suele ser algo puntual de su servidor.</p>' +
+        '<button class="btn" type="button" id="retry">Volver a cargar</button></div>';
+      document.getElementById("retry").onclick = load;
+      renderCalc();
+      return;
+    }
+
+    var day = state.day === "today" ? state.data.today : state.data.tomorrow;
+    var hours = day.hours, lv = levels(hours), now = madridNow(), isToday = state.day === "today";
+    document.getElementById("date-text").textContent = longDate(day.date);
+
+    var cheapest = hours.reduce(function (a, b) { return b.price < a.price ? b : a; });
+    var dearest = hours.reduce(function (a, b) { return b.price > a.price ? b : a; });
+    var avg = hours.reduce(function (s, h) { return s + h.price; }, 0) / hours.length;
+    var current = isToday ? hours.find(function (h) { return h.hour === now.hour; }) : null;
+    var unit = state.taxes ? "€/kWh con impuestos" : "€/kWh";
+    var html = "", main;
+
+    // Bloque principal
+    if (current) {
+      var lvl = levelOf(current.price, lv);
+      main = '<p class="pl-now-label">Ahora, de ' + hourRange(current.hour) + "</p>" +
+        '<p class="pl-now-price">' + fmtPrice(current.price) + "<small>" + unit + "</small></p>" +
+        '<p class="pl-verdict"><span class="pl-dot" style="background:' + LEVEL_COLOR[lvl] + '"></span>' + LEVEL_TEXT[lvl] + "</p>";
+    } else {
+      main = '<p class="pl-now-label">Precio medio de ' + (isToday ? "hoy" : "mañana") + "</p>" +
+        '<p class="pl-now-price">' + fmtPrice(avg) + "<small>" + unit + "</small></p>";
+    }
+    html += '<section class="pl-now"><div>' + main + '</div><div class="pl-side">' +
+      '<div class="pl-stat"><p class="k">Hora más barata</p><p class="v">' + hourRange(cheapest.hour) + ", " + fmtPrice(cheapest.price) + " €/kWh</p></div>" +
+      '<div class="pl-stat"><p class="k">Hora más cara</p><p class="v">' + hourRange(dearest.hour) + ", " + fmtPrice(dearest.price) + " €/kWh</p></div>" +
+      (current ? '<div class="pl-stat"><p class="k">Precio medio del día</p><p class="v">' + fmtPrice(avg) + " €/kWh</p></div>" : "") +
+      "</div></section>";
+
+    // Tira horaria
+    html += '<section><div class="pl-hours-head"><h2>Precio de la luz por horas</h2>' +
+      '<div class="pl-legend"><span><i style="background:var(--cheap)"></i>Barata</span><span><i style="background:var(--mid)"></i>Media</span><span><i style="background:var(--dear)"></i>Cara</span></div></div>' +
+      '<ol class="pl-hours">';
+    var span = (lv.max - lv.min) || 1;
+    hours.forEach(function (h) {
+      var l = levelOf(h.price, lv), w = 12 + 88 * ((h.price - lv.min) / span), cls = [];
+      if (isToday && h.hour < now.hour) cls.push("past");
+      if (current && h === current) cls.push("current");
+      html += '<li class="' + cls.join(" ") + '">' +
+        '<span class="pl-time">' + pad(h.hour) + "–" + pad((h.hour + 1) % 24) + " h" + (current && h === current ? '<span class="pl-tag">ahora</span>' : "") + "</span>" +
+        '<span class="pl-bar" aria-hidden="true"><span style="width:' + w.toFixed(1) + "%;background:" + LEVEL_COLOR[l] + '"></span></span>' +
+        '<span class="pl-price">' + fmtPrice(h.price) + "</span></li>";
+    });
+    html += "</ol></section>";
+
+    // Mejores horas por electrodoméstico
+    var list = timeline();
+    html += "<section><h2>Mejor hora para poner cada electrodoméstico</h2>" +
+      "<p>" + (isToday
+        ? "Calculado con las horas que quedan de hoy" + (hasTomorrow() ? " y las de mañana." : ". Los precios de mañana aparecerán hacia las 20:30.")
+        : "Calculado con los precios de mañana.") + "</p>" +
+      '<div class="table-wrap"><table class="data"><thead><tr><th>Aparato</th><th>Mejor hora para empezar</th><th>Coste</th><th>En la peor hora</th><th>Ahorro</th></tr></thead><tbody>';
+    APPLIANCES.forEach(function (a) {
+      var w = windows(list, a.hours);
+      if (!w) {
+        html += "<tr><td>" + esc(a.name) + '<span class="sub">' + esc(a.detail) + '</span></td><td colspan="4">No quedan suficientes horas hoy</td></tr>';
+        return;
+      }
+      var cBest = w.best.avg * a.kwh, cWorst = w.worst.avg * a.kwh;
+      html += "<tr><td>" + esc(a.name) + '<span class="sub">' + esc(a.detail) + "</span></td>" +
+        "<td><strong>" + w.best.start + "</strong></td><td>" + fmtCost(cBest) + "</td><td>" + fmtCost(cWorst) + "</td>" +
+        '<td class="pl-save">' + fmtCost(cWorst - cBest) + "</td></tr>";
+    });
+    html += "</tbody></table></div></section>";
+
+    app.innerHTML = html;
+    renderCalc();
+  }
+
+  // ---------- Calculadora ----------
+  var cPower = document.getElementById("c-power");
+  var cMin = document.getElementById("c-min");
+  var cHour = document.getElementById("c-hour");
+  var cOut = document.getElementById("c-out");
+
+  function renderCalc() {
+    var day = state.day === "today" ? state.data.today : state.data.tomorrow;
+    if (!day || !day.hours.length) {
+      cHour.innerHTML = "";
+      cOut.innerHTML = "<p>La calculadora estará disponible cuando se carguen los precios.</p>";
+      return;
+    }
+    var prev = cHour.value, now = madridNow();
+    cHour.innerHTML = day.hours.map(function (h, i) { return '<option value="' + i + '">' + hourRange(h.hour) + "</option>"; }).join("");
+    var def = state.day === "today" ? day.hours.findIndex(function (h) { return h.hour === now.hour; }) : 0;
+    cHour.value = prev && cHour.options[prev] && cHour.dataset.day === state.day ? prev : String(Math.max(def, 0));
+    cHour.dataset.day = state.day;
+    updateCalc();
+  }
+  function updateCalc() {
+    var day = state.day === "today" ? state.data.today : state.data.tomorrow;
+    if (!day || !day.hours.length) return;
+    var w = parseFloat(cPower.value), m = parseFloat(cMin.value);
+    if (!(w > 0) || !(m > 0)) { cOut.innerHTML = "<p>Introduce una potencia y un tiempo mayores que cero.</p>"; return; }
+    var kwh = (w / 1000) * (m / 60);
+    var h = day.hours[parseInt(cHour.value, 10)] || day.hours[0];
+    var cheapest = day.hours.reduce(function (a, b) { return b.price < a.price ? b : a; });
+    cOut.innerHTML = '<div class="big">' + fmtCost(kwh * h.price) + "</div>" +
+      "<p>Consume " + kwh.toLocaleString("es-ES", { maximumFractionDigits: 2 }) + " kWh de " + hourRange(h.hour) + ". " +
+      (h === cheapest ? "Es la hora más barata del día." : "En la hora más barata (" + hourRange(cheapest.hour) + ") costaría " + fmtCost(kwh * cheapest.price) + ".") + "</p>";
+  }
+  [cPower, cMin, cHour].forEach(function (el) { el.addEventListener("input", updateCalc); });
+
+  // ---------- Eventos ----------
+  btnToday.onclick = function () { state.day = "today"; render(); };
+  btnTomorrow.onclick = function () { if (hasTomorrow()) { state.day = "tomorrow"; render(); } };
+  document.getElementById("zone").onchange = function (e) { state.zone = e.target.value; load(); };
+  document.getElementById("taxes").onchange = function (e) { state.taxes = e.target.checked; render(); };
+
+  // Refresca al cambiar de hora y busca los precios de mañana por la tarde
+  var lastHour = madridNow().hour;
+  setInterval(function () {
+    var now = madridNow();
+    if (state.data.today && now.date !== state.data.today.date) { load(); return; }
+    if (now.hour !== lastHour) { lastHour = now.hour; render(); }
+    if (!hasTomorrow() && now.hour >= 20 && now.minute % 10 === 0) {
+      fetchDay(addDays(now.date, 1), state.zone).then(function (h) {
+        if (h.length) { state.data.tomorrow = { date: addDays(now.date, 1), hours: h }; render(); }
+      }).catch(function () {});
+    }
+  }, 60000);
+
+  load();
+})();
+</script>
+</body>
+</html>

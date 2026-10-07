@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de suelo laminado, tarima y azulejos: m² y cajas | Ahorrómetro</title>
+  <meta name="description" content="Calcula los metros cuadrados y las cajas de suelo laminado, tarima, vinílico o azulejo que necesitas, con merma según el tipo de colocación, y el rodapié.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/suelo-laminado">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Calculadora de suelo laminado, tarima y azulejos: m² y cajas">
+  <meta property="og:description" content="Calcula los metros cuadrados y las cajas de suelo laminado, tarima, vinílico o azulejo que necesitas, con merma según el tipo de colocación, y el rodapié.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/suelo-laminado">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de suelo laminado, tarima y azulejos","url":"https://ahorrometro.es/calculadoras/suelo-laminado","description":"Calcula los metros cuadrados y las cajas de suelo laminado, tarima, vinílico o azulejo que necesitas, con merma según el tipo de colocación, y el rodapié.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Calculadora de suelo laminado, tarima y azulejos","item":"https://ahorrometro.es/calculadoras/suelo-laminado"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Suelo y azulejos</nav>
+  <div class="layout">
+    <article>
+      <h1>Calculadora de suelo laminado, tarima y azulejos</h1>
+      <p class="lead">Calcula cuántos metros cuadrados y cuántas cajas de suelo tienes que comprar, incluida la merma por cortes, y cuántos metros de rodapié necesitas.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="largo">Largo de la estancia (m)</label>
+            <input id="largo" type="number" min="0" step="0.01" value="5" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="ancho">Ancho de la estancia (m)</label>
+            <input id="ancho" type="number" min="0" step="0.01" value="4" inputmode="decimal">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="coloc">Tipo de colocación</label>
+            <select id="coloc">
+              <option value="5">Recta (laminado, vinílico, tarima): +5 %</option>
+              <option value="8" selected>Recta con muchos recortes o azulejo: +8 %</option>
+              <option value="12">Diagonal: +12 %</option>
+              <option value="15">Espiga o patrones: +15 %</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="caja">m² por caja</label>
+            <input id="caja" type="number" min="0.1" step="0.01" value="2.22" inputmode="decimal">
+            <small>Viene en la etiqueta de la caja.</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="precio">Precio por m² (€, opcional)</label>
+            <input id="precio" type="number" min="0" step="0.01" placeholder="Ej.: 14,95" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="puertas">Puertas (para el rodapié)</label>
+            <input id="puertas" type="number" min="0" step="1" value="1" inputmode="numeric">
+            <small>Se descuentan 0,8 m de rodapié por puerta.</small>
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular suelo</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Complementos para instalar tu suelo</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=base%20aislante%20suelo%20laminado&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🧱</span><b>Base aislante para laminado</b><span class="aff-desc">Necesitas los mismos m² que de suelo; reduce ruido y humedad.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=kit%20instalacion%20suelo%20laminado&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔨</span><b>Kit de instalación de laminado</b><span class="aff-desc">Taco de golpeo, tiradera y cuñas de dilatación.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=medidor%20laser%20distancia&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">📐</span><b>Medidor láser de distancias</b><span class="aff-desc">Mide la habitación en segundos y sin errores.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo calcular los metros de suelo</h2>
+        <p>Multiplica el largo por el ancho de la estancia para obtener los metros cuadrados. Si la habitación tiene forma de L, divídela en rectángulos, calcula cada uno y súmalos.</p>
+        <p class="note"><strong>m² a comprar = largo × ancho × (1 + merma)</strong><br><strong>Cajas = m² a comprar ÷ m² por caja</strong>, redondeando siempre hacia arriba.</p>
+        <p><strong>Ejemplo:</strong> un salón de 5 × 4 m tiene 20 m². Con un 8 % de merma necesitas 21,6 m². Si cada caja trae 2,22 m², son 9,7 cajas, así que tendrás que comprar <strong>10 cajas</strong>.</p>
+
+        <h2>¿Qué es la merma y cuánta debo calcular?</h2>
+        <p>La merma son los trozos que se pierden al cortar las piezas en paredes, esquinas y puertas, más alguna pieza defectuosa o rota. Cuanto más complicado es el patrón, más material se desperdicia:</p>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Colocación</th><th>Merma recomendada</th></tr></thead>
+            <tbody>
+              <tr><td>Recta, estancia rectangular</td><td>5 %</td></tr>
+              <tr><td>Recta con pilares o recovecos, o azulejo</td><td>8–10 %</td></tr>
+              <tr><td>Diagonal</td><td>10–15 %</td></tr>
+              <tr><td>Espiga o espiga húngara</td><td>15–20 %</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Consejos antes de comprar</h2>
+        <ul>
+          <li><strong>Compra todo el material de una vez</strong>: cajas de lotes distintos pueden variar ligeramente de tono.</li>
+          <li><strong>Guarda una o dos piezas sobrantes</strong> por si en el futuro tienes que sustituir alguna dañada.</li>
+          <li><strong>No olvides la base aislante</strong> en suelos laminados flotantes: necesitas los mismos m² que de suelo.</li>
+          <li><strong>Deja el material 48 horas en la estancia</strong> antes de instalarlo para que se aclimate.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cuántos m² trae una caja de laminado?</summary>
+          <p>Normalmente entre 1,9 y 2,5 m². Depende del tamaño y del grosor de la lama; el dato exacto aparece siempre en la caja o en la ficha del producto.</p>
+        </details>
+        <details>
+          <summary>¿Cómo calculo el rodapié?</summary>
+          <p>Mide el perímetro de la habitación, 2 × (largo + ancho), y resta el ancho de las puertas. Añade un 10 % por los cortes en las esquinas.</p>
+        </details>
+        <details>
+          <summary>¿Puedo devolver las cajas que me sobren?</summary>
+          <p>Muchas tiendas aceptan la devolución de cajas completas y sin abrir. Consúltalo antes de comprar: así puedes llevarte una de más sin riesgo.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="pintura">🎨 Pintura necesaria</a></li>
+          <li><a href="aire-acondicionado">❄️ Frigorías del aire</a></li>
+          <li><a href="placas-solares">☀️ Ahorro con placas solares</a></li>
+          <li><a href="consumo-electrico">⚡ Consumo eléctrico</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('calcular').addEventListener('click', function () {
+  var l = num('largo'), a = num('ancho'), merma = num('coloc') / 100, caja = num('caja'), precio = num('precio'), puertas = num('puertas') || 0;
+  if (!(l > 0 && a > 0 && caja > 0)) { showResult('res', '<p>Introduce las medidas de la estancia y los m² por caja.</p>'); return; }
+  var m2 = l * a;
+  var m2Compra = m2 * (1 + merma);
+  var cajas = Math.ceil(m2Compra / caja - 1e-9);
+  var m2Reales = cajas * caja;
+  var rodapie = Math.max(0, 2 * (l + a) - puertas * 0.8) * 1.1;
+  showResult('res',
+    '<div>Tienes que comprar</div>' +
+    '<div class="big">' + cajas + (cajas === 1 ? ' caja' : ' cajas') + '</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + fmt(m2, 2) + ' m²</b><span>superficie real</span></div>' +
+      '<div class="stat"><b>' + fmt(m2Compra, 2) + ' m²</b><span>con merma</span></div>' +
+      '<div class="stat"><b>' + fmt(m2Reales, 2) + ' m²</b><span>que traen las cajas</span></div>' +
+      '<div class="stat"><b>' + fmt(rodapie, 1) + ' m</b><span>de rodapié</span></div>' +
+      (precio > 0 ? '<div class="stat"><b>' + eur(m2Reales * precio) + '</b><span>coste del suelo</span></div>' : '') +
+    '</div>');
+});
+</script>
+</body>
+</html>

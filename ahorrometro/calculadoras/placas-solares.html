@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de placas solares: ahorro y amortización | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuántas placas solares necesitas, cuánto ahorrarás al año en la factura de la luz y en cuántos años amortizas la instalación de autoconsumo.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/placas-solares">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Calculadora de placas solares: ahorro y amortización">
+  <meta property="og:description" content="Calcula cuántas placas solares necesitas, cuánto ahorrarás al año en la factura de la luz y en cuántos años amortizas la instalación de autoconsumo.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/placas-solares">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de ahorro con placas solares","url":"https://ahorrometro.es/calculadoras/placas-solares","description":"Calcula cuántas placas solares necesitas, cuánto ahorrarás al año en la factura de la luz y en cuántos años amortizas la instalación de autoconsumo.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Calculadora de ahorro con placas solares","item":"https://ahorrometro.es/calculadoras/placas-solares"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Placas solares</nav>
+  <div class="layout">
+    <article>
+      <h1>Calculadora de ahorro con placas solares</h1>
+      <p class="lead">Estima qué instalación de autoconsumo necesita tu vivienda, cuánto ahorrarás en la factura y en cuántos años recuperas la inversión.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="consumo">Consumo mensual (kWh)</label>
+            <input id="consumo" type="number" min="1" step="1" value="300" inputmode="decimal">
+            <small>Aparece en tu factura. Un hogar medio gasta 250–350 kWh/mes.</small>
+          </div>
+          <div class="field">
+            <label for="precio">Precio de la luz (€/kWh)</label>
+            <input id="precio" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="zona">Zona de España</label>
+            <select id="zona">
+              <option value="3.4">Norte (Galicia, Asturias, Cantabria, País Vasco)</option>
+              <option value="4.2">Nordeste (Cataluña, Aragón, Navarra, La Rioja)</option>
+              <option value="4.6" selected>Centro (Madrid, Castilla y León, Castilla-La Mancha, Extremadura)</option>
+              <option value="4.8">Levante y Baleares</option>
+              <option value="5.0">Sur (Andalucía, Murcia)</option>
+              <option value="5.3">Canarias</option>
+            </select>
+            <small>Determina las horas de sol útiles al año.</small>
+          </div>
+          <div class="field">
+            <label for="auto">Energía que consumes en el momento (%)</label>
+            <input id="auto" type="number" min="10" max="100" step="5" value="50" inputmode="numeric">
+            <small>Sin baterías suele estar entre un 35 % y un 60 %. Con baterías, 70–90 %.</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="kwp">Potencia instalada (kWp)</label>
+            <input id="kwp" type="number" min="0" step="0.1" placeholder="Automático" inputmode="decimal">
+            <small>Déjalo vacío y te sugerimos la adecuada.</small>
+          </div>
+          <div class="field">
+            <label for="coste">Coste instalado (€ por kWp)</label>
+            <input id="coste" type="number" min="0" step="10" value="1300" inputmode="decimal">
+            <small>En viviendas suele estar entre 1100 y 1600 €/kWp.</small>
+          </div>
+          <div class="field">
+            <label for="exc">Compensación de excedentes (€/kWh)</label>
+            <input id="exc" type="number" min="0" step="0.005" value="0.06" inputmode="decimal">
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular ahorro</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <!-- Prueba de interés «Pedir presupuesto»: aparece tras calcular, no recoge datos personales
+           y envía eventos a Google Analytics (presupuesto_placas_visto / _si / _no). -->
+      <section id="am-presupuesto" class="am-pres" hidden aria-live="polite">
+        <div class="am-pres-body">
+          <h2>¿Te gustaría pedir presupuesto a instaladores de tu zona?</h2>
+          <p>Estamos preparando un servicio para que puedas comparar presupuestos de placas solares gratis y sin compromiso. ¿Te interesaría usarlo?</p>
+          <div class="am-pres-actions">
+            <button type="button" class="btn" data-answer="si">Sí, me interesaría</button>
+            <button type="button" class="btn btn-ghost" data-answer="no">Ahora no</button>
+          </div>
+        </div>
+        <p class="am-pres-thanks" hidden></p>
+      </section>
+      <script>
+      (function () {
+        var box = document.getElementById("am-presupuesto");
+        var calcBtn = document.getElementById("calcular");
+        if (!box || !calcBtn) return;
+        var STORAGE_KEY = "am_presupuesto_placas";
+        var shown = false, answered = false;
+        try { answered = !!localStorage.getItem(STORAGE_KEY); } catch (e) {}
+
+        // Envía el evento a Google Analytics (gtag o Google Tag Manager)
+        function track(name) {
+          var params = { pagina: "placas-solares" };
+          if (typeof window.gtag === "function") {
+            window.gtag("event", name, params);
+          } else {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push(Object.assign({ event: name }, params));
+          }
+        }
+
+        // Aparece después de calcular, una sola vez y solo si hay resultado válido
+        calcBtn.addEventListener("click", function () {
+          setTimeout(function () {
+            if (shown || answered || !document.querySelector("#res .big")) return;
+            shown = true;
+            box.hidden = false;
+            track("presupuesto_placas_visto");
+          }, 300);
+        });
+
+        box.addEventListener("click", function (e) {
+          var btn = e.target.closest("[data-answer]");
+          if (!btn) return;
+          var answer = btn.getAttribute("data-answer");
+          track(answer === "si" ? "presupuesto_placas_si" : "presupuesto_placas_no");
+          try { localStorage.setItem(STORAGE_KEY, answer); } catch (err) {}
+          answered = true;
+          box.querySelector(".am-pres-body").hidden = true;
+          var thanks = box.querySelector(".am-pres-thanks");
+          thanks.textContent = answer === "si" ? "¡Gracias! Muy pronto podrás pedir presupuesto desde aquí." : "Gracias por responder.";
+          thanks.hidden = false;
+        });
+      })();
+      </script>
+
+      <section class="affiliate">
+        <h2>Empieza a producir tu propia energía</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=kit%20solar%20balcon%20enchufable&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">☀️</span><b>Kit solar de balcón</b><span class="aff-desc">Paneles enchufables que se instalan sin obras, ideales para pisos.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=enchufe%20medidor%20consumo%20electrico&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔌</span><b>Medidor de consumo por enchufe</b><span class="aff-desc">Descubre qué aparatos conviene usar en horas de sol.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=medidor%20consumo%20electrico%20cuadro%20wifi&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">📊</span><b>Monitor de consumo para el cuadro</b><span class="aff-desc">Mide el consumo de toda la casa desde el cuadro eléctrico.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo calculamos el ahorro</h2>
+        <ol>
+          <li><strong>Producción anual</strong> = potencia (kWp) × horas de sol pico de tu zona × 365 × 0,8. El 0,8 descuenta pérdidas por temperatura, cableado e inversor.</li>
+          <li><strong>Autoconsumo</strong>: la parte de esa energía que usas en el mismo momento en que se produce. Cada kWh autoconsumido te ahorra el precio completo de la luz.</li>
+          <li><strong>Excedentes</strong>: la energía que no usas se vierte a la red y la comercializadora te la descuenta a un precio menor, con el límite del coste de la energía de tu factura.</li>
+          <li><strong>Amortización</strong> = coste de la instalación ÷ ahorro anual.</li>
+        </ol>
+
+        <h2>¿Cuántas placas necesita una casa?</h2>
+        <p>Los paneles domésticos actuales tienen unos 450 W cada uno. Una vivienda que gasta 300 kWh al mes en el centro de España suele necesitar una instalación de unos 3 kWp, es decir, <strong>6 o 7 placas</strong>, que ocupan unos 13–15 m² de tejado.</p>
+
+        <h2>Cómo aprovechar más tus placas</h2>
+        <ul>
+          <li><strong>Desplaza consumos a las horas de sol</strong>: programa lavadora, lavavajillas, termo eléctrico y aire acondicionado entre las 11 y las 17 h.</li>
+          <li><strong>Considera una batería virtual</strong>: algunas comercializadoras acumulan en euros los excedentes no compensados para facturas futuras.</li>
+          <li><strong>Pregunta por ayudas</strong>: muchos ayuntamientos bonifican el IBI y el ICIO. Consulta en tu municipio las ayudas y deducciones vigentes.</li>
+        </ul>
+        <p class="note">Esta calculadora da una estimación orientativa. La producción real depende de la inclinación, la orientación y las sombras de tu tejado. Pide varios presupuestos a instaladores autorizados.</p>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿En cuántos años se amortizan las placas solares?</summary>
+          <p>En España, una instalación doméstica bien dimensionada suele amortizarse en 5–9 años. Los paneles duran más de 25 años, así que el resto es ahorro.</p>
+        </details>
+        <details>
+          <summary>¿Merece la pena poner baterías?</summary>
+          <p>Aumentan el autoconsumo, pero encarecen la instalación y alargan la amortización. Suelen compensar si pasas poco tiempo en casa de día y consumes mucho por la noche.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa en invierno o en días nublados?</summary>
+          <p>La producción baja, y la energía que falte la sigues tomando de la red como siempre. Nuestro cálculo usa medias anuales, que ya incluyen los meses con menos sol.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="consumo-electrico">⚡ Consumo eléctrico</a></li>
+          <li><a href="aire-acondicionado">❄️ Frigorías del aire</a></li>
+          <li><a href="gastos-piso-compartido">🏠 Gastos de piso compartido</a></li>
+          <li><a href="coste-viaje-coche">🚗 Coste de viaje en coche</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('calcular').addEventListener('click', function () {
+  var consumoAnual = num('consumo') * 12, precio = num('precio'), hsp = num('zona');
+  var auto = Math.min(100, Math.max(0, num('auto'))) / 100, costeKwp = num('coste'), pExc = num('exc') || 0;
+  if (!(consumoAnual > 0 && precio > 0 && costeKwp > 0)) { showResult('res', '<p>Revisa el consumo, el precio de la luz y el coste de la instalación.</p>'); return; }
+  var prodPorKwp = hsp * 365 * 0.8;
+  var kwp = num('kwp');
+  var sugerida = Math.max(1, Math.ceil(consumoAnual / prodPorKwp * 2) / 2);
+  var usada = kwp > 0 ? kwp : sugerida;
+  var produccion = usada * prodPorKwp;
+  var autoconsumo = Math.min(produccion * auto, consumoAnual);
+  var excedentes = produccion - autoconsumo;
+  var costeEnergiaRestante = (consumoAnual - autoconsumo) * precio;
+  var compensacion = Math.min(excedentes * pExc, costeEnergiaRestante);
+  var ahorro = autoconsumo * precio + compensacion;
+  var inversion = usada * costeKwp;
+  var anos = inversion / ahorro;
+  var paneles = Math.ceil(usada * 1000 / 450);
+  showResult('res',
+    '<div>Ahorro estimado al año</div>' +
+    '<div class="big">' + eur(ahorro) + '</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + fmt(usada, 1) + ' kWp</b><span>' + (kwp > 0 ? 'potencia indicada' : 'potencia sugerida') + '</span></div>' +
+      '<div class="stat"><b>' + paneles + ' placas</b><span>de 450 W aprox.</span></div>' +
+      '<div class="stat"><b>' + eur(inversion) + '</b><span>inversión aprox.</span></div>' +
+      '<div class="stat"><b>' + fmt(anos, 1) + ' años</b><span>amortización</span></div>' +
+      '<div class="stat"><b>' + fmt(produccion, 0) + ' kWh</b><span>producción anual</span></div>' +
+      '<div class="stat"><b>' + fmt(ahorro * 25 - inversion, 0) + ' €</b><span>beneficio en 25 años</span></div>' +
+    '</div>' +
+    '<p>Cubrirías aproximadamente el <strong>' + fmt(Math.min(100, ahorro / (consumoAnual * precio) * 100), 0) + ' %</strong> del coste de energía de tu factura.</p>');
+});
+</script>
+</body>
+</html>

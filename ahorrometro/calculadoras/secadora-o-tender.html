@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secadora o tender la ropa: ¿cuánto cuesta cada lavado? Calculadora | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuánto gastas con la secadora por carga, al mes y al año según su tipo (bomba de calor, condensación o evacuación) y cuánto ahorras tendiendo la ropa.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/secadora-o-tender">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Secadora o tender la ropa: ¿cuánto cuesta cada lavado? Calculadora">
+  <meta property="og:description" content="Calcula cuánto gastas con la secadora por carga, al mes y al año según su tipo (bomba de calor, condensación o evacuación) y cuánto ahorras tendiendo la ropa.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/secadora-o-tender">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Secadora o tender la ropa: ¿cuánto cuesta cada lavado?","url":"https://ahorrometro.es/calculadoras/secadora-o-tender","description":"Calcula cuánto gastas con la secadora por carga, al mes y al año según su tipo (bomba de calor, condensación o evacuación) y cuánto ahorras tendiendo la ropa.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-29"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Secadora o tender la ropa: ¿cuánto cuesta cada lavado?","item":"https://ahorrometro.es/calculadoras/secadora-o-tender"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Secadora o tender</nav>
+  <div class="layout">
+    <article>
+      <h1>Secadora o tender la ropa: ¿cuánto cuesta cada lavado?</h1>
+      <p class="lead">Calcula cuánto gastas en electricidad con la secadora por cada carga, al mes y al año, y cuánto te ahorrarías tendiendo la ropa.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="tipo">Tipo de secadora</label>
+            <select id="tipo">
+              <option value="1.9" selected>Bomba de calor (A++ / A+++)</option>
+              <option value="4.9">Condensación (clase B)</option>
+              <option value="4.6">Evacuación o salida de aire (clase C)</option>
+            </select>
+            <small>Viene en la etiqueta energética.</small>
+          </div>
+          <div class="field">
+            <label for="kg">Kilos de ropa por carga</label>
+            <input id="kg" type="number" min="1" max="12" step="0.5" value="6" inputmode="decimal">
+            <small>Una lavadora llena suele tener 6–8 kg.</small>
+          </div>
+          <div class="field">
+            <label for="cargas">Cargas por semana</label>
+            <input id="cargas" type="number" min="0" step="1" value="4" inputmode="numeric">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="p">Precio de la luz (€/kWh)</label>
+            <input id="p" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+          </div>
+          <div class="field" style="justify-content:flex-end">
+            <label class="check"><input type="checkbox" id="deshum"> Si tiendo dentro, uso un deshumidificador</label>
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular gasto</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Seca la ropa gastando menos</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=tendedero%20plegable%20varias%20alturas&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🧺</span><b>Tendedero de varias alturas</b><span class="aff-desc">Más metros de tender en poco espacio, dentro o en el balcón.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=deshumidificador%20modo%20secado%20ropa&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">💧</span><b>Deshumidificador con modo ropa</b><span class="aff-desc">Seca la ropa tendida dentro de casa mucho más rápido.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=bolas%20secado%20lana%20secadora&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🎾</span><b>Bolas de secado de lana</b><span class="aff-desc">Separan la ropa en la secadora y reducen el tiempo de secado.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>¿Cuánto gasta una secadora por carga?</h2>
+        <p>Depende sobre todo de la tecnología. Estos son los consumos aproximados de una carga completa de 8 kg de algodón:</p>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Tipo de secadora</th><th>Consumo por carga (8 kg)</th><th>Coste por carga*</th></tr></thead>
+            <tbody>
+              <tr><td>Bomba de calor</td><td>≈1,9 kWh</td><td>≈0,30 €</td></tr>
+              <tr><td>Evacuación</td><td>≈4,6 kWh</td><td>≈0,74 €</td></tr>
+              <tr><td>Condensación</td><td>≈4,9 kWh</td><td>≈0,78 €</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><small>*Con la luz a 0,16 €/kWh. Con cargas más pequeñas el consumo baja, pero no de forma proporcional.</small></p>
+        <p><strong>Ejemplo:</strong> con una secadora de condensación y 4 cargas de 6 kg a la semana gastas unos <strong>11 € al mes</strong>, más de 130 € al año. Con una de bomba de calor, unos 4 € al mes.</p>
+
+        <h2>¿Y si tiendo dentro de casa?</h2>
+        <p>Tender es gratis, pero una colada de 6 kg suelta varios litros de agua en el aire. Si tiendes dentro de casa en invierno, esa humedad puede producir condensación y moho. Un <strong>deshumidificador de compresor</strong> acelera el secado y evita la humedad gastando mucho menos que una secadora de resistencia: unos 1,5 kWh por colada. Calcula su gasto con nuestra <a href="deshumidificador">calculadora del deshumidificador</a>.</p>
+
+        <h2>Trucos para gastar menos con la secadora</h2>
+        <ul>
+          <li><strong>Centrifuga a tope</strong> en la lavadora (1200–1400 rpm): cuanta menos agua lleve la ropa, menos trabaja la secadora.</li>
+          <li><strong>Llénala, pero sin apretar</strong>: la ropa necesita espacio para moverse.</li>
+          <li><strong>Limpia el filtro de pelusa</strong> después de cada uso.</li>
+          <li><strong>Sécala en horas baratas</strong> si tienes tarifa por horas. Consulta el <a href="../precio-luz-hoy">precio de la luz de hoy</a>.</li>
+          <li><strong>Combina</strong>: tiende lo que puedas y usa la secadora solo para toallas o cuando haga mal tiempo.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Compensa cambiar a una secadora con bomba de calor?</summary>
+          <p>Gasta menos de la mitad que una de condensación. Si pones muchas cargas a la semana, la diferencia de precio se recupera en pocos años. Si la usas poco, el ahorro tarda más en compensar.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto gasta una secadora al mes?</summary>
+          <p>Con un uso de 3–4 cargas por semana, entre 3 y 5 € al mes con una de bomba de calor, y entre 8 y 13 € con una de condensación o evacuación, con la luz a 0,16 €/kWh.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="deshumidificador">💧 Gasto de un deshumidificador</a></li>
+          <li><a href="consumo-electrico">⚡ Consumo de cualquier aparato</a></li>
+          <li><a href="../precio-luz-hoy">💡 Precio de la luz hoy</a></li>
+          <li><a href="termo-electrico">🚿 Gasto del termo eléctrico</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('calcular').addEventListener('click', function () {
+  var base = num('tipo'), kg = num('kg'), cargas = num('cargas'), p = num('p');
+  if (!(kg > 0 && cargas >= 0 && p >= 0)) { showResult('res', '<p>Revisa los datos introducidos.</p>'); return; }
+  // Consumo por carga: 20 % fijo (calentar el aparato) + 80 % proporcional a los kilos, sobre una carga de 8 kg
+  var kwhCarga = base * (0.2 + 0.8 * Math.min(kg, 12) / 8);
+  var cargasMes = cargas * 52 / 12;
+  var mes = kwhCarga * p * cargasMes;
+  var usaDeshum = document.getElementById('deshum').checked;
+  var tender = usaDeshum ? 1.5 * p * cargasMes : 0;
+  showResult('res',
+    '<div>La secadora te cuesta al mes</div>' +
+    '<div class="big">' + eur(mes) + '</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + eur(kwhCarga * p) + '</b><span>por carga (' + fmt(kwhCarga, 1) + ' kWh)</span></div>' +
+      '<div class="stat"><b>' + eur(mes * 12) + '</b><span>al año</span></div>' +
+      '<div class="stat"><b>' + eur(tender) + '</b><span>tendiendo' + (usaDeshum ? ' con deshumidificador' : '') + ', al mes</span></div>' +
+      '<div class="stat"><b>' + eur((mes - tender) * 12) + '</b><span>ahorro al año tendiendo</span></div>' +
+    '</div>');
+});
+</script>
+</body>
+</html>

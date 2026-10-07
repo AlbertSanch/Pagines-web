@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de pintura: ¿cuántos litros necesito para una habitación? | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuánta pintura necesitas para pintar una habitación: metros cuadrados de pared y techo, litros y botes, descontando puertas y ventanas.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/pintura">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Calculadora de pintura: ¿cuántos litros necesito para una habitación?">
+  <meta property="og:description" content="Calcula cuánta pintura necesitas para pintar una habitación: metros cuadrados de pared y techo, litros y botes, descontando puertas y ventanas.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/pintura">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de pintura para una habitación","url":"https://ahorrometro.es/calculadoras/pintura","description":"Calcula cuánta pintura necesitas para pintar una habitación: metros cuadrados de pared y techo, litros y botes, descontando puertas y ventanas.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Calculadora de pintura para una habitación","item":"https://ahorrometro.es/calculadoras/pintura"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Pintura</nav>
+  <div class="layout">
+    <article>
+      <h1>Calculadora de pintura para una habitación</h1>
+      <p class="lead">Introduce las medidas de la habitación y te decimos cuántos litros de pintura necesitas y qué botes comprar para que no falte ni sobre.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="largo">Largo (m)</label>
+            <input id="largo" type="number" min="0" step="0.01" value="4" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="ancho">Ancho (m)</label>
+            <input id="ancho" type="number" min="0" step="0.01" value="3" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="alto">Altura (m)</label>
+            <input id="alto" type="number" min="0" step="0.01" value="2.5" inputmode="decimal">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="puertas">Número de puertas</label>
+            <input id="puertas" type="number" min="0" step="1" value="1" inputmode="numeric">
+            <small>Se descuentan 1,6 m² por puerta.</small>
+          </div>
+          <div class="field">
+            <label for="ventanas">Número de ventanas</label>
+            <input id="ventanas" type="number" min="0" step="1" value="1" inputmode="numeric">
+            <small>Se descuentan 1,5 m² por ventana.</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="manos">Manos de pintura</label>
+            <select id="manos">
+              <option value="1">1 mano (mismo color, repaso)</option>
+              <option value="2" selected>2 manos (lo recomendado)</option>
+              <option value="3">3 manos (cambio a color claro sobre oscuro)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="rend">Rendimiento (m² por litro)</label>
+            <input id="rend" type="number" min="1" step="0.5" value="10" inputmode="decimal">
+            <small>Viene en el bote. Plástica habitual: 8–12 m²/L.</small>
+          </div>
+        </div>
+        <label class="check"><input type="checkbox" id="techo"> Pintar también el techo</label>
+        <button class="btn" id="calcular">Calcular pintura</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Lo que necesitas para pintar</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=kit%20rodillo%20pintura%20paredes&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🖌️</span><b>Kit de rodillos y bandeja</b><span class="aff-desc">Rodillo, bandeja y brochas para pintar paredes y recortes.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=cinta%20de%20carrocero%20pintor&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">📏</span><b>Cinta de carrocero</b><span class="aff-desc">Bordes limpios en rodapiés, marcos y techos.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=plastico%20protector%20pintura&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🧻</span><b>Plástico protector para muebles y suelo</b><span class="aff-desc">Evita manchas en el suelo y los muebles.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo calcular la pintura que necesitas</h2>
+        <ol>
+          <li><strong>Superficie de paredes</strong> = perímetro × altura = 2 × (largo + ancho) × altura.</li>
+          <li><strong>Resta puertas y ventanas</strong> (una puerta normal ocupa unos 1,6 m² y una ventana entre 1 y 2 m²).</li>
+          <li><strong>Suma el techo</strong> si lo vas a pintar: largo × ancho.</li>
+          <li><strong>Multiplica por el número de manos</strong> y <strong>divide por el rendimiento</strong> de la pintura.</li>
+        </ol>
+        <p><strong>Ejemplo:</strong> una habitación de 4 × 3 m con 2,5 m de altura tiene 35 m² de pared. Restando una puerta y una ventana quedan 31,9 m². Con 2 manos son 63,8 m², que a 10 m²/L suponen 6,4 litros. Añadiendo un 10 % de margen para las pérdidas en rodillo y bandeja, necesitarás unos <strong>7 litros</strong>.</p>
+
+        <h2>¿Cuántas manos de pintura hay que dar?</h2>
+        <p>Casi siempre <strong>dos</strong>. La primera sella y unifica; la segunda da el color y el acabado definitivos. Una sola mano solo basta para repasar una pared del mismo color en buen estado. Si pasas de un color oscuro a uno claro, cuenta con tres, o aplica antes una imprimación.</p>
+
+        <h2>Consejos para ahorrar en pintura</h2>
+        <ul>
+          <li><strong>Compra el bote grande si te hace falta más de 10 litros</strong>: el litro sale mucho más barato en formato de 15 L que en botes de 4 L.</li>
+          <li><strong>Prepara bien la pared</strong>: masilla y lija evitan tener que dar manos extra.</li>
+          <li><strong>Fíjate en el rendimiento real</strong>: una pintura barata que cubre 6 m²/L puede salir más cara que otra de calidad que cubre 12.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cuánta pintura necesito para una habitación de 12 m²?</summary>
+          <p>Una habitación de 12 m² de suelo y 2,5 m de altura tiene unos 32 m² de pared descontando puerta y ventana. Con dos manos necesitarás entre 6 y 7 litros; un bote de 4 L no llegaría, así que conviene comprar dos o uno de 10 L.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto rinde un bote de 15 litros?</summary>
+          <p>Con un rendimiento de 10 m²/L, unos 150 m² a una mano o 75 m² a dos manos: suficiente para 2 o 3 dormitorios medianos.</p>
+        </details>
+        <details>
+          <summary>¿Hay que pintar el techo del mismo color?</summary>
+          <p>Lo habitual es pintar el techo de blanco, con una pintura específica antigoteo y más mate, que disimula mejor las imperfecciones.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="suelo-laminado">🪵 Suelo y azulejos</a></li>
+          <li><a href="aire-acondicionado">❄️ Frigorías del aire</a></li>
+          <li><a href="consumo-electrico">⚡ Consumo eléctrico</a></li>
+          <li><a href="placas-solares">☀️ Ahorro con placas solares</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('calcular').addEventListener('click', function () {
+  var l = num('largo'), a = num('ancho'), h = num('alto'), p = num('puertas') || 0, v = num('ventanas') || 0;
+  var manos = num('manos'), rend = num('rend');
+  if (!(l > 0 && a > 0 && h > 0 && rend > 0)) { showResult('res', '<p>Introduce las medidas de la habitación y el rendimiento de la pintura.</p>'); return; }
+  var paredes = Math.max(0, 2 * (l + a) * h - p * 1.6 - v * 1.5);
+  var techo = document.getElementById('techo').checked ? l * a : 0;
+  var superficie = paredes + techo;
+  var litros = superficie * manos / rend * 1.1; // 10 % de margen
+  // Combinación de botes: prioriza 15 L y completa con 4 L
+  var b15 = Math.floor(litros / 15), resto = litros - b15 * 15, b4 = Math.ceil(resto / 4);
+  if (b4 * 4 > 15 * 0.8 && b4 > 2) { b15 += 1; b4 = 0; }
+  var botes = [];
+  if (b15) botes.push(b15 + (b15 === 1 ? ' bote' : ' botes') + ' de 15 L');
+  if (b4) botes.push(b4 + (b4 === 1 ? ' bote' : ' botes') + ' de 4 L');
+  showResult('res',
+    '<div>Necesitas aproximadamente</div>' +
+    '<div class="big">' + fmt(litros, 1) + ' litros</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + fmt(paredes, 1) + ' m²</b><span>de paredes</span></div>' +
+      (techo ? '<div class="stat"><b>' + fmt(techo, 1) + ' m²</b><span>de techo</span></div>' : '') +
+      '<div class="stat"><b>' + fmt(superficie * manos, 1) + ' m²</b><span>a pintar (' + manos + ' manos)</span></div>' +
+    '</div>' +
+    '<p><strong>Qué comprar:</strong> ' + (botes.join(' + ') || '1 bote de 4 L') + '. Incluye un 10 % de margen.</p>');
+});
+</script>
+</body>
+</html>

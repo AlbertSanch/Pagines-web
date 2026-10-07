@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Qué potencia de luz contratar? Calculadora de potencia (kW) | Ahorrómetro</title>
+  <meta name="description" content="Calcula qué potencia eléctrica necesitas contratar según los aparatos que usas a la vez y cuánto puedes ahorrar al año si tienes más potencia de la necesaria.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/potencia-contratada">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="¿Qué potencia de luz contratar? Calculadora de potencia (kW)">
+  <meta property="og:description" content="Calcula qué potencia eléctrica necesitas contratar según los aparatos que usas a la vez y cuánto puedes ahorrar al año si tienes más potencia de la necesaria.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/potencia-contratada">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"¿Qué potencia de luz necesito contratar?","url":"https://ahorrometro.es/calculadoras/potencia-contratada","description":"Calcula qué potencia eléctrica necesitas contratar según los aparatos que usas a la vez y cuánto puedes ahorrar al año si tienes más potencia de la necesaria.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-29"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"¿Qué potencia de luz necesito contratar?","item":"https://ahorrometro.es/calculadoras/potencia-contratada"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Potencia contratada</nav>
+  <div class="layout">
+    <article>
+      <h1>¿Qué potencia de luz necesito contratar?</h1>
+      <p class="lead">Marca los aparatos que <strong>sueles tener encendidos a la vez</strong> en el peor momento del día (por ejemplo, a la hora de cenar) y te diremos qué potencia necesitas y cuánto podrías ahorrar.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="field">
+          <label>¿Qué puede estar funcionando a la vez?</label>
+          <div id="aparatos" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:4px 16px;margin-top:4px"></div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="actual">Potencia que tienes contratada ahora</label>
+            <select id="actual"></select>
+            <small>Aparece en tu factura como «potencia contratada».</small>
+          </div>
+          <div class="field">
+            <label for="precio">Precio de la potencia (€ por kW y año)</label>
+            <input id="precio" type="number" min="0" step="0.5" value="32" inputmode="decimal">
+            <small>Sumando los dos periodos, suele estar entre 30 y 45 €/kW al año.</small>
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular potencia</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Controla tu consumo</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=medidor%20consumo%20electrico%20cuadro%20wifi&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">📊</span><b>Monitor de consumo para el cuadro</b><span class="aff-desc">Mide en tiempo real la potencia de toda la casa: sabrás tu pico real.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=enchufe%20medidor%20consumo%20electrico&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔌</span><b>Enchufe medidor de consumo</b><span class="aff-desc">Comprueba cuántos vatios gasta cada aparato.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=enchufe%20programable%20temporizador&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">⏲️</span><b>Enchufe programable</b><span class="aff-desc">Retrasa la lavadora o el termo para que no coincidan con el horno.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>¿Qué es la potencia contratada?</h2>
+        <p>Es la cantidad máxima de electricidad que puedes usar <strong>al mismo tiempo</strong>. Si enciendes a la vez más aparatos de los que permite, salta el limitador (ICP o el propio contador) y te quedas sin luz. Se mide en kilovatios (kW) y se paga cada día en la factura, la uses o no, en el llamado <strong>término de potencia</strong>.</p>
+        <p>Por eso conviene contratar <strong>la justa</strong>: si tienes de más, pagas cada mes por una potencia que nunca usas; si tienes de menos, salta la luz a menudo.</p>
+
+        <h2>Potencias más habituales</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Potencia</th><th>Para qué tipo de vivienda</th></tr></thead>
+            <tbody>
+              <tr><td>2,3 kW</td><td>Estudio o piso pequeño, sin cocina ni calefacción eléctrica</td></tr>
+              <tr><td>3,45 kW</td><td>Piso medio con gas para cocina y calefacción</td></tr>
+              <tr><td>4,6 kW</td><td>Piso con vitrocerámica o inducción y horno eléctrico</td></tr>
+              <tr><td>5,75 kW</td><td>Vivienda con aire acondicionado o termo eléctrico</td></tr>
+              <tr><td>6,9 kW o más</td><td>Casa grande, calefacción eléctrica o cargador de coche eléctrico</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Cómo ahorrar en el término de potencia</h2>
+        <ul>
+          <li><strong>No enciendas a la vez</strong> los aparatos que más gastan: horno, placa, lavadora, secadora, termo y radiadores.</li>
+          <li><strong>Programa</strong> la lavadora, el lavavajillas o el termo para que funcionen de noche o cuando no cocinas.</li>
+          <li><strong>Aprovecha los dos periodos</strong>: con la tarifa 2.0TD puedes contratar una potencia distinta en el periodo valle (de 0 a 8 h y fines de semana), por ejemplo más alta si cargas el coche eléctrico de noche.</li>
+          <li><strong>Mira tu pico real</strong>: tu distribuidora te muestra en su web la potencia máxima que has usado cada mes gracias al contador digital.</li>
+        </ul>
+        <p class="note">Cambiar la potencia es sencillo: se pide a tu comercializadora. Bajarla puede tener un pequeño coste de gestión, y subirla por encima de lo que permite tu instalación puede requerir un boletín eléctrico. Consulta las condiciones con tu comercializadora antes de hacerlo.</p>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Por qué me salta la luz si tengo 4,6 kW?</summary>
+          <p>Porque estás usando a la vez más de 4,6 kW. Una placa de inducción (hasta 3–7 kW según los fuegos), un horno (2 kW) y una lavadora (2 kW) juntos superan esa potencia de sobra. Prueba a no encender a la vez los aparatos que calientan.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto ahorro bajando la potencia 1 kW?</summary>
+          <p>Aproximadamente entre 30 y 45 € al año, según tu comercializadora, más impuestos. Puede parecer poco, pero es un ahorro que se repite todos los años sin cambiar nada más.</p>
+        </details>
+        <details>
+          <summary>¿Qué potencia necesito para cargar un coche eléctrico?</summary>
+          <p>Un cargador doméstico suele funcionar a 3,7 o 7,4 kW. Si cargas de noche, lo habitual es subir solo la potencia del periodo valle. Calcula el coste de carga en nuestra <a href="cargar-coche-electrico">calculadora del coche eléctrico</a>.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="consumo-electrico">⚡ Consumo de cualquier aparato</a></li>
+          <li><a href="../precio-luz-hoy">💡 Precio de la luz hoy</a></li>
+          <li><a href="cargar-coche-electrico">🔋 Cargar un coche eléctrico</a></li>
+          <li><a href="radiador-electrico">🔥 Gasto de un radiador eléctrico</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+var APARATOS = [
+  ['Frigorífico, luces, TV y pequeños aparatos', 500, true],
+  ['Placa de inducción o vitro (2 fuegos)', 3000, true],
+  ['Horno', 2000, false],
+  ['Microondas', 1000, false],
+  ['Lavadora (calentando agua)', 2000, false],
+  ['Lavavajillas', 1800, false],
+  ['Secadora', 2500, false],
+  ['Termo eléctrico', 1500, false],
+  ['Aire acondicionado', 1200, false],
+  ['Radiador eléctrico', 2000, false],
+  ['Plancha', 2200, false],
+  ['Secador de pelo', 2000, false],
+  ['Cargador de coche eléctrico', 3700, false]
+];
+var NORMALIZADAS = [1.15, 1.725, 2.3, 3.45, 4.6, 5.75, 6.9, 8.05, 9.2, 10.35, 11.5, 14.49];
+function kwTxt(k) { return String(k).replace('.', ','); }
+var cont = document.getElementById('aparatos');
+APARATOS.forEach(function (a, i) {
+  cont.insertAdjacentHTML('beforeend', '<label class="check" style="margin:0;font-weight:400"><input type="checkbox" data-w="' + a[1] + '"' + (a[2] ? ' checked' : '') + '><span>' + a[0] + ' <span style="color:var(--muted);white-space:nowrap">(' + kwTxt(a[1] / 1000) + ' kW)</span></span></label>');
+});
+var sel = document.getElementById('actual');
+NORMALIZADAS.forEach(function (k) { sel.insertAdjacentHTML('beforeend', '<option value="' + k + '"' + (k === 4.6 ? ' selected' : '') + '>' + kwTxt(k) + ' kW</option>'); });
+
+document.getElementById('calcular').addEventListener('click', function () {
+  var total = 0;
+  cont.querySelectorAll('input:checked').forEach(function (c) { total += Number(c.getAttribute('data-w')); });
+  var pico = total / 1000;
+  var actual = num('actual'), precio = num('precio');
+  if (!(pico > 0)) { showResult('res', '<p>Marca al menos un aparato.</p>'); return; }
+  var rec = NORMALIZADAS.find(function (k) { return k >= pico; }) || NORMALIZADAS[NORMALIZADAS.length - 1];
+  var diff = actual - rec;
+  var mensaje;
+  if (diff > 0.01) mensaje = '<p>Tienes <strong>' + fmt(diff, 2) + ' kW de más</strong>. Bajando a ' + kwTxt(rec) + ' kW ahorrarías unos <strong>' + eur(diff * precio) + ' al año</strong> (sin impuestos).</p>';
+  else if (diff < -0.01) mensaje = '<p>Con tu potencia actual (' + kwTxt(actual) + ' kW) <strong>puede saltar la luz</strong> si enciendes todo eso a la vez. O subes a ' + kwTxt(rec) + ' kW (unos ' + eur(-diff * precio) + ' más al año) o evitas usar esos aparatos al mismo tiempo.</p>';
+  else mensaje = '<p>Tu potencia actual es la adecuada para ese uso. 👍</p>';
+  showResult('res',
+    '<div>Potencia recomendada</div>' +
+    '<div class="big">' + kwTxt(rec) + ' kW</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + fmt(pico, 2) + ' kW</b><span>tu pico si todo coincide</span></div>' +
+      '<div class="stat"><b>' + eur(rec * precio) + '</b><span>término de potencia al año con ' + kwTxt(rec) + ' kW</span></div>' +
+    '</div>' + mensaje);
+});
+</script>
+</body>
+</html>

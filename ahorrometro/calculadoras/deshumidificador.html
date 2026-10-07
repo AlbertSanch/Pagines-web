@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cuánto gasta un deshumidificador? Calculadora de consumo al mes | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuánto gasta un deshumidificador de compresor o desecante al día y al mes según su potencia, las horas de uso y el precio de la luz.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/deshumidificador">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="¿Cuánto gasta un deshumidificador? Calculadora de consumo al mes">
+  <meta property="og:description" content="Calcula cuánto gasta un deshumidificador de compresor o desecante al día y al mes según su potencia, las horas de uso y el precio de la luz.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/deshumidificador">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"¿Cuánto gasta un deshumidificador?","url":"https://ahorrometro.es/calculadoras/deshumidificador","description":"Calcula cuánto gasta un deshumidificador de compresor o desecante al día y al mes según su potencia, las horas de uso y el precio de la luz.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-29"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"¿Cuánto gasta un deshumidificador?","item":"https://ahorrometro.es/calculadoras/deshumidificador"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Deshumidificador</nav>
+  <div class="layout">
+    <article>
+      <h1>¿Cuánto gasta un deshumidificador?</h1>
+      <p class="lead">Calcula cuánto te cuesta al día y al mes tener encendido tu deshumidificador, según el tipo, la potencia y las horas que lo usas.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="field">
+          <label for="tipo">Tipo de deshumidificador</label>
+          <select id="tipo">
+            <option value="200">Compresor pequeño, 10–12 L/día (≈200 W)</option>
+            <option value="300" selected>Compresor mediano, 16–20 L/día (≈300 W)</option>
+            <option value="450">Compresor grande, 25–30 L/día (≈450 W)</option>
+            <option value="650">Desecante (≈650 W)</option>
+            <option value="60">Peltier o mini, habitaciones pequeñas (≈60 W)</option>
+          </select>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="w">Potencia (W)</label>
+            <input id="w" type="number" min="1" step="10" value="300" inputmode="numeric">
+            <small>Mira la etiqueta: se usa el consumo, no los litros que extrae.</small>
+          </div>
+          <div class="field">
+            <label for="h">Horas encendido al día</label>
+            <input id="h" type="number" min="0" max="24" step="0.5" value="8" inputmode="decimal">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="ciclo">¿Tiene higrostato?</label>
+            <select id="ciclo">
+              <option value="1">No: funciona todo el tiempo</option>
+              <option value="0.7" selected>Sí: se para al llegar a la humedad elegida (≈70 %)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="d">Días de uso al mes</label>
+            <input id="d" type="number" min="0" max="31" step="1" value="30" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="p">Precio de la luz (€/kWh)</label>
+            <input id="p" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular gasto</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Controla la humedad de casa</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=deshumidificador%20compresor%2012%20litros&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">💧</span><b>Deshumidificador de compresor</b><span class="aff-desc">El más eficiente por encima de 15 °C: ideal para pisos y ropa tendida.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=higrometro%20digital&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🌡️</span><b>Higrómetro digital</b><span class="aff-desc">Mide la humedad real para usar el deshumidificador solo cuando hace falta.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=absorbe%20humedad%20armario%20recargable&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🧂</span><b>Absorbe humedad para armarios</b><span class="aff-desc">Sin electricidad, para armarios, baños pequeños y trasteros.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>¿Cuánto consume un deshumidificador?</h2>
+        <p>Mucho menos de lo que parece. Un deshumidificador doméstico de compresor consume entre <strong>150 y 450 W</strong>, parecido a un ordenador de sobremesa, y bastante menos que un radiador eléctrico, que ronda los 2000 W.</p>
+        <p class="note"><strong>Consumo (kWh) = Potencia (kW) × Horas × % de tiempo funcionando</strong><br><strong>Coste = Consumo × Precio del kWh</strong></p>
+        <p><strong>Ejemplo:</strong> un deshumidificador de 300 W encendido 8 horas al día, con higrostato (funcionando un 70 % del tiempo), consume 0,3 × 8 × 0,7 = 1,68 kWh al día. A 0,16 €/kWh son 0,27 € al día, unos <strong>8 € al mes</strong>.</p>
+
+        <h2>Compresor o desecante: ¿cuál gasta menos?</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Tipo</th><th>Consumo</th><th>Funciona mejor</th></tr></thead>
+            <tbody>
+              <tr><td>Compresor</td><td>150–450 W</td><td>Por encima de 15 °C: pisos con calefacción, verano, ropa tendida</td></tr>
+              <tr><td>Desecante</td><td>500–700 W</td><td>En sitios fríos (garajes, trasteros, casas sin calefacción)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>El de <strong>compresor gasta menos</strong> y es el más recomendable para la mayoría de viviendas. El desecante consume más, pero sigue extrayendo agua con frío, cuando el de compresor rinde mucho peor. Además, el desecante desprende algo de calor, que en invierno se agradece.</p>
+
+        <h2>Trucos para que gaste menos</h2>
+        <ul>
+          <li><strong>Usa el higrostato</strong> y ponlo entre el 45 y el 55 % de humedad. Por debajo del 40 % el ambiente es demasiado seco y gastas de más.</li>
+          <li><strong>Cierra puertas y ventanas</strong> de la habitación donde lo uses.</li>
+          <li><strong>Úsalo en horas baratas</strong> si tienes tarifa por horas. Consulta el <a href="../precio-luz-hoy">precio de la luz de hoy</a>.</li>
+          <li><strong>Limpia el filtro</strong> cada pocas semanas: si está sucio, el aparato trabaja más.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Es mejor tender dentro con deshumidificador o usar la secadora?</summary>
+          <p>Casi siempre sale más barato tender dentro con un deshumidificador de compresor que usar una secadora de resistencia. Compáralo con nuestra <a href="secadora-o-tender">calculadora de secadora o tender</a>.</p>
+        </details>
+        <details>
+          <summary>¿Cuántas horas al día hay que tenerlo encendido?</summary>
+          <p>Las necesarias para mantener la humedad entre el 45 y el 55 %. Con higrostato, el aparato se para solo al llegar a ese nivel, así que puedes dejarlo programado sin preocuparte.</p>
+        </details>
+        <details>
+          <summary>¿Qué capacidad de deshumidificador necesito?</summary>
+          <p>Como referencia: 10–12 litros/día para una habitación o un piso pequeño, 16–20 litros para un piso mediano con humedad, y 25 litros o más para casas grandes, bajos o problemas serios de humedad.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="secadora-o-tender">👕 Secadora o tender la ropa</a></li>
+          <li><a href="consumo-electrico">⚡ Consumo de cualquier aparato</a></li>
+          <li><a href="calefaccion-mas-barata">🏠 Qué calefacción es más barata</a></li>
+          <li><a href="../precio-luz-hoy">💡 Precio de la luz hoy</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('tipo').addEventListener('change', function () { document.getElementById('w').value = this.value; });
+document.getElementById('calcular').addEventListener('click', function () {
+  var kw = num('w') / 1000, h = num('h'), ciclo = num('ciclo'), d = num('d'), p = num('p');
+  if (!(kw > 0 && h >= 0 && d >= 0 && p >= 0)) { showResult('res', '<p>Revisa los datos introducidos.</p>'); return; }
+  var kwhDia = kw * h * ciclo, dia = kwhDia * p, mes = dia * d;
+  showResult('res',
+    '<div>Tu deshumidificador te cuesta al mes aproximadamente</div>' +
+    '<div class="big">' + eur(mes) + '</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + eur(dia) + '</b><span>al día</span></div>' +
+      '<div class="stat"><b>' + eur(kw * p) + '</b><span>por hora funcionando</span></div>' +
+      '<div class="stat"><b>' + fmt(kwhDia, 2) + ' kWh</b><span>consumo diario</span></div>' +
+      '<div class="stat"><b>' + eur(mes * 12) + '</b><span>al año (uso todo el año)</span></div>' +
+    '</div>');
+});
+</script>
+</body>
+</html>

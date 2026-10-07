@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cuánto gasta un radiador eléctrico? Calculadora de consumo al mes | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuánto gasta un radiador eléctrico, emisor térmico o radiador de aceite al día y al mes según su potencia, las horas de uso y el precio de la luz.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/radiador-electrico">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="¿Cuánto gasta un radiador eléctrico? Calculadora de consumo al mes">
+  <meta property="og:description" content="Calcula cuánto gasta un radiador eléctrico, emisor térmico o radiador de aceite al día y al mes según su potencia, las horas de uso y el precio de la luz.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/radiador-electrico">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"¿Cuánto gasta un radiador eléctrico?","url":"https://ahorrometro.es/calculadoras/radiador-electrico","description":"Calcula cuánto gasta un radiador eléctrico, emisor térmico o radiador de aceite al día y al mes según su potencia, las horas de uso y el precio de la luz.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"¿Cuánto gasta un radiador eléctrico?","item":"https://ahorrometro.es/calculadoras/radiador-electrico"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Radiador eléctrico</nav>
+  <div class="layout">
+    <article>
+      <h1>¿Cuánto gasta un radiador eléctrico?</h1>
+      <p class="lead">Calcula cuánto te cuesta al día y al mes tener encendido un radiador eléctrico, un emisor térmico o un radiador de aceite. Solo necesitas su potencia y las horas que lo usas.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="w">Potencia del radiador (W)</label>
+            <select id="w">
+              <option value="500">500 W</option>
+              <option value="1000">1000 W</option>
+              <option value="1500" selected>1500 W</option>
+              <option value="2000">2000 W</option>
+              <option value="2500">2500 W</option>
+            </select>
+            <small>Aparece en la etiqueta o en la ficha del radiador.</small>
+          </div>
+          <div class="field">
+            <label for="h">Horas encendido al día</label>
+            <input id="h" type="number" min="0" max="24" step="0.5" value="6" inputmode="decimal">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="ciclo">¿Tiene termostato?</label>
+            <select id="ciclo">
+              <option value="1">No: funciona siempre a tope</option>
+              <option value="0.6" selected>Sí: se apaga y enciende solo (≈60 % del tiempo)</option>
+              <option value="0.4">Sí, y la habitación está bien aislada (≈40 %)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="d">Días de uso al mes</label>
+            <input id="d" type="number" min="0" max="31" step="1" value="30" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="p">Precio de la luz (€/kWh)</label>
+            <input id="p" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular gasto</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Para gastar menos con tus radiadores</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=enchufe%20programable%20temporizador&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">⏲️</span><b>Enchufe programable con temporizador</b><span class="aff-desc">Enciende el radiador solo a las horas que lo necesitas.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=enchufe%20medidor%20consumo%20electrico&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔌</span><b>Enchufe medidor de consumo</b><span class="aff-desc">Comprueba cuánto gasta de verdad tu radiador en euros.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=manta%20electrica%20sofa&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🛋️</span><b>Manta eléctrica para el sofá</b><span class="aff-desc">Consume menos de 150 W: mucho menos que calentar toda la habitación.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo se calcula el gasto de un radiador</h2>
+        <p class="note"><strong>Consumo (kWh) = Potencia (kW) × Horas × % de tiempo funcionando</strong><br><strong>Coste = Consumo × Precio del kWh</strong></p>
+        <p>Un radiador con termostato no está consumiendo todo el rato: cuando la habitación llega a la temperatura elegida, se apaga, y vuelve a encenderse cuando se enfría. Por eso gasta menos de lo que indica su potencia máxima multiplicada por las horas.</p>
+        <p><strong>Ejemplo:</strong> un radiador de 1500 W, 6 horas al día, con termostato (funcionando un 60 % del tiempo), consume 1,5 × 6 × 0,6 = 5,4 kWh al día. A 0,16 €/kWh son 0,86 € al día, unos <strong>26 € al mes</strong>.</p>
+
+        <h2>Gasto aproximado según la potencia</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Potencia</th><th>Por hora a tope</th><th>Al mes (5 h/día, con termostato)*</th></tr></thead>
+            <tbody>
+              <tr><td>500 W</td><td>0,08 €</td><td>7,20 €</td></tr>
+              <tr><td>1000 W</td><td>0,16 €</td><td>14,40 €</td></tr>
+              <tr><td>1500 W</td><td>0,24 €</td><td>21,60 €</td></tr>
+              <tr><td>2000 W</td><td>0,32 €</td><td>28,80 €</td></tr>
+              <tr><td>2500 W</td><td>0,40 €</td><td>36,00 €</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><small>*Con la luz a 0,16 €/kWh, 30 días al mes y el radiador funcionando el 60 % del tiempo.</small></p>
+
+        <h2>¿El emisor térmico o el radiador de aceite gastan menos?</h2>
+        <p>Es uno de los mitos más extendidos. <strong>Todos los radiadores eléctricos convierten la electricidad en calor con un rendimiento del 100 %</strong>: 1 kWh de luz da 1 kWh de calor, sea emisor térmico, radiador de aceite, convector o panel. Lo que cambia es <em>cómo</em> reparten el calor: los de aceite y los emisores con fluido o cerámica acumulan calor y lo sueltan poco a poco, así que la sensación es más agradable y el termostato los enciende menos veces. Pero ninguno hace «magia» con la factura.</p>
+        <p>Si quieres gastar de verdad menos, la diferencia la marca una <strong>bomba de calor</strong>, que produce 3 o 4 veces más calor por cada kWh. Compáralo en nuestra <a href="calefaccion-mas-barata">calculadora de calefacción más barata</a>.</p>
+
+        <h2>Trucos para que el radiador gaste menos</h2>
+        <ul>
+          <li><strong>Usa el termostato</strong> y ponlo entre 19 y 21 °C. Cada grado de más dispara el consumo.</li>
+          <li><strong>Programa horarios</strong>: enciéndelo un rato antes de llegar a casa en lugar de dejarlo todo el día.</li>
+          <li><strong>Cierra la puerta</strong> de la habitación y tapa las rendijas.</li>
+          <li><strong>Si tienes tarifa con horas valle</strong>, concentra el uso en las horas más baratas.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cuánto gasta un radiador de 2000 W en una hora?</summary>
+          <p>Funcionando a tope, 2 kWh. Con la luz a 0,16 €/kWh son 0,32 € por hora. Con termostato, el gasto real suele ser menor porque no está encendido todo el tiempo.</p>
+        </details>
+        <details>
+          <summary>¿Es mejor dejar el radiador encendido todo el día a baja temperatura?</summary>
+          <p>En general, no. Mantener la casa caliente cuando no hay nadie consume más energía que calentarla cuando la necesitas. Lo más eficiente es programar el encendido un rato antes de usar la habitación.</p>
+        </details>
+        <details>
+          <summary>¿Necesito subir la potencia contratada para usar radiadores?</summary>
+          <p>Depende. Un radiador de 2000 W junto con el horno o la lavadora puede hacer saltar el ICP con potencias de 3,3 o 3,45 kW. Antes de subir la potencia, prueba a no usar a la vez los aparatos que más consumen.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="calefaccion-mas-barata">🏠 Qué calefacción es más barata</a></li>
+          <li><a href="estufa-butano-o-electrica">🧯 Estufa de butano o eléctrica</a></li>
+          <li><a href="bajar-temperatura-calefaccion">🌡️ Ahorro bajando la calefacción</a></li>
+          <li><a href="consumo-electrico">⚡ Consumo de cualquier aparato</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('calcular').addEventListener('click', function () {
+  var kw = num('w') / 1000, h = num('h'), ciclo = num('ciclo'), d = num('d'), p = num('p');
+  if (!(h >= 0 && d >= 0 && p >= 0)) { showResult('res', '<p>Revisa los datos introducidos.</p>'); return; }
+  var kwhDia = kw * h * ciclo, dia = kwhDia * p, mes = dia * d;
+  showResult('res',
+    '<div>Tu radiador te cuesta al mes aproximadamente</div>' +
+    '<div class="big">' + eur(mes) + '</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + eur(dia) + '</b><span>al día</span></div>' +
+      '<div class="stat"><b>' + eur(kw * p) + '</b><span>por hora a máxima potencia</span></div>' +
+      '<div class="stat"><b>' + fmt(kwhDia, 1) + ' kWh</b><span>consumo diario</span></div>' +
+      '<div class="stat"><b>' + eur(mes * 5) + '</b><span>en un invierno (5 meses)</span></div>' +
+    '</div>' +
+    '<p>Con una bomba de calor, el mismo calor te costaría unos <strong>' + eur(mes / 3.5) + ' al mes</strong>.</p>');
+});
+</script>
+</body>
+</html>

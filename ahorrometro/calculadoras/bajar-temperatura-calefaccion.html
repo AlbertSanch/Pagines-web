@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cuánto ahorro bajando 1 grado la calefacción? Calculadora | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuánto dinero ahorras al año bajando uno o varios grados el termostato de la calefacción. Cada grado supone alrededor de un 7 % de consumo.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/bajar-temperatura-calefaccion">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="¿Cuánto ahorro bajando 1 grado la calefacción? Calculadora">
+  <meta property="og:description" content="Calcula cuánto dinero ahorras al año bajando uno o varios grados el termostato de la calefacción. Cada grado supone alrededor de un 7 % de consumo.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/bajar-temperatura-calefaccion">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"¿Cuánto ahorro bajando un grado la calefacción?","url":"https://ahorrometro.es/calculadoras/bajar-temperatura-calefaccion","description":"Calcula cuánto dinero ahorras al año bajando uno o varios grados el termostato de la calefacción. Cada grado supone alrededor de un 7 % de consumo.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"¿Cuánto ahorro bajando un grado la calefacción?","item":"https://ahorrometro.es/calculadoras/bajar-temperatura-calefaccion"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Ahorro bajando la calefacción</nav>
+  <div class="layout">
+    <article>
+      <h1>¿Cuánto ahorro bajando un grado la calefacción?</h1>
+      <p class="lead">Es el truco más sencillo para pagar menos en invierno. Introduce lo que gastas en calefacción y la temperatura que quieres poner, y te decimos cuánto ahorrarás al año.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="gasto">Gasto anual en calefacción (€)</label>
+            <input id="gasto" type="number" min="0" step="10" value="600" inputmode="decimal">
+            <small>Si no lo sabes, calcúlalo en nuestra <a href="calefaccion-mas-barata">calculadora de calefacción</a>.</small>
+          </div>
+          <div class="field">
+            <label for="actual">Temperatura actual del termostato (°C)</label>
+            <input id="actual" type="number" min="10" max="30" step="0.5" value="23" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="nueva">Nueva temperatura (°C)</label>
+            <input id="nueva" type="number" min="10" max="30" step="0.5" value="21" inputmode="decimal">
+          </div>
+        </div>
+        <label class="check"><input type="checkbox" id="noche"> Además, bajar a 17 °C por la noche</label>
+        <button class="btn" id="calcular">Calcular ahorro</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Controla la temperatura sin esfuerzo</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=termostato%20inteligente%20programable%20wifi&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🌡️</span><b>Termostato inteligente programable</b><span class="aff-desc">Baja la temperatura automáticamente por la noche y cuando no estás.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=valvula%20termostatica%20radiador&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔧</span><b>Válvulas termostáticas</b><span class="aff-desc">Cada habitación a su temperatura: menos calor donde no hace falta.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=termometro%20higrometro%20digital%20casa&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🌡️</span><b>Termómetro e higrómetro digital</b><span class="aff-desc">Comprueba la temperatura real de cada habitación.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>¿Cuánto se ahorra por cada grado?</h2>
+        <p>La referencia más utilizada en España es que <strong>cada grado de más en el termostato aumenta el consumo de calefacción alrededor de un 7 %</strong>. Es una cifra orientativa: el ahorro real depende del clima, del aislamiento y del sistema de calefacción, pero sirve muy bien para hacerse una idea.</p>
+        <p><strong>Ejemplo:</strong> si gastas 600 € al año en calefacción y bajas el termostato de 23 a 21 °C, ahorras 2 × 7 % = 14 %, es decir, unos <strong>84 € al año</strong>, sin hacer ninguna inversión.</p>
+
+        <h2>¿A qué temperatura poner la calefacción?</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Momento</th><th>Temperatura recomendada</th></tr></thead>
+            <tbody>
+              <tr><td>Durante el día, con gente en casa</td><td>19–21 °C</td></tr>
+              <tr><td>Por la noche</td><td>15–17 °C</td></tr>
+              <tr><td>Casa vacía varias horas</td><td>Apagada o en modo ausencia (≈15 °C)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A partir de 21 °C, la mayoría de personas no nota una mejora de confort, pero la factura sí lo nota. Si tienes frío a 20 °C, prueba antes con ropa de abrigo en casa, una manta en el sofá o tapar corrientes de aire.</p>
+
+        <h2>Otros trucos que suman</h2>
+        <ul>
+          <li><strong>Programa la calefacción</strong> para que se encienda un rato antes de llegar y se apague al acostarte.</li>
+          <li><strong>No cubras los radiadores</strong> con muebles, cortinas o ropa tendida: bloquean el calor.</li>
+          <li><strong>Ventila solo 10 minutos</strong> al día, con la calefacción apagada.</li>
+          <li><strong>Purga los radiadores</strong> de agua al inicio del invierno si hacen ruido o no calientan por arriba.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Bajar la calefacción por la noche ahorra, o luego gasta más en recalentar?</summary>
+          <p>Ahorra. Mantener la casa más fría durante horas reduce las pérdidas de calor, y ese ahorro es mayor que la energía extra necesaria para volver a calentarla por la mañana. La excepción es el suelo radiante, que reacciona muy despacio: en ese caso, conviene bajar solo 1–2 °C.</p>
+        </details>
+        <details>
+          <summary>¿Sirve igual para radiadores eléctricos, gas o aire acondicionado?</summary>
+          <p>Sí. El principio es el mismo para cualquier sistema: cuanto mayor es la diferencia entre la temperatura de dentro y la de fuera, más calor se escapa y más energía hay que aportar.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="calefaccion-mas-barata">🏠 Qué calefacción es más barata</a></li>
+          <li><a href="radiador-electrico">🔥 Gasto de un radiador eléctrico</a></li>
+          <li><a href="estufa-butano-o-electrica">🧯 Estufa de butano o eléctrica</a></li>
+          <li><a href="consumo-electrico">⚡ Consumo de cualquier aparato</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('calcular').addEventListener('click', function () {
+  var gasto = num('gasto'), actual = num('actual'), nueva = num('nueva');
+  if (!(gasto > 0 && actual > 0 && nueva > 0)) { showResult('res', '<p>Introduce tu gasto anual y las temperaturas.</p>'); return; }
+  var grados = actual - nueva;
+  var pct = Math.min(0.6, Math.max(-0.6, grados * 0.07));
+  // Bajar a 17 °C unas 8 horas por la noche: se aplica al tercio del día nocturno
+  var pctNoche = 0;
+  if (document.getElementById('noche').checked && nueva > 17) pctNoche = Math.min(0.6, (nueva - 17) * 0.07) / 3;
+  var total = Math.min(0.7, pct + pctNoche * (1 - pct));
+  var ahorro = gasto * total;
+  if (grados <= 0 && !pctNoche) {
+    showResult('res', '<p>Con esa temperatura no ahorrarías: ' + (grados < 0 ? 'subir ' + fmt(-grados, 1) + ' °C te costaría unos <strong>' + eur(-ahorro) + ' más al año</strong>.' : 'la temperatura es la misma.') + '</p>');
+    return;
+  }
+  showResult('res',
+    '<div>Ahorrarías aproximadamente</div>' +
+    '<div class="big">' + eur(ahorro) + ' al año</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + fmt(total * 100, 0) + ' %</b><span>menos de calefacción</span></div>' +
+      '<div class="stat"><b>' + eur(ahorro / 5) + '</b><span>al mes de invierno</span></div>' +
+      '<div class="stat"><b>' + eur(ahorro * 10) + '</b><span>en 10 años</span></div>' +
+    '</div>');
+});
+</script>
+</body>
+</html>

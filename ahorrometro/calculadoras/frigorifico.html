@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cuánto gasta un frigorífico? Calcula si compensa cambiarlo | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuánto gasta tu frigorífico al año según su antigüedad o su etiqueta energética, cuánto ahorrarías con uno nuevo y en cuántos años lo amortizas.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/frigorifico">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="¿Cuánto gasta un frigorífico? Calcula si compensa cambiarlo">
+  <meta property="og:description" content="Calcula cuánto gasta tu frigorífico al año según su antigüedad o su etiqueta energética, cuánto ahorrarías con uno nuevo y en cuántos años lo amortizas.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/frigorifico">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"¿Cuánto gasta un frigorífico? ¿Compensa cambiarlo?","url":"https://ahorrometro.es/calculadoras/frigorifico","description":"Calcula cuánto gasta tu frigorífico al año según su antigüedad o su etiqueta energética, cuánto ahorrarías con uno nuevo y en cuántos años lo amortizas.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-29"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"¿Cuánto gasta un frigorífico? ¿Compensa cambiarlo?","item":"https://ahorrometro.es/calculadoras/frigorifico"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Frigorífico</nav>
+  <div class="layout">
+    <article>
+      <h1>¿Cuánto gasta un frigorífico? ¿Compensa cambiarlo?</h1>
+      <p class="lead">El frigorífico es el único aparato que funciona las 24 horas del día, todo el año. Calcula cuánto te cuesta el tuyo, cuánto gastaría uno nuevo y en cuántos años recuperarías la inversión.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="actual">Tu frigorífico actual</label>
+            <select id="actual">
+              <option value="550">Más de 15 años (≈550 kWh/año)</option>
+              <option value="420" selected>Entre 10 y 15 años (≈420 kWh/año)</option>
+              <option value="330">Entre 5 y 10 años (≈330 kWh/año)</option>
+              <option value="250">Menos de 5 años (≈250 kWh/año)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="kwhActual">Consumo anual actual (kWh/año)</label>
+            <input id="kwhActual" type="number" min="1" step="1" value="420" inputmode="numeric">
+            <small>Si sabes el dato de su etiqueta o lo has medido, ponlo aquí.</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="nuevo">Frigorífico nuevo (combi de unos 300 L)</label>
+            <select id="nuevo">
+              <option value="120">Clase A (≈120 kWh/año)</option>
+              <option value="150">Clase B (≈150 kWh/año)</option>
+              <option value="190" selected>Clase C (≈190 kWh/año)</option>
+              <option value="235">Clase D (≈235 kWh/año)</option>
+              <option value="290">Clase E (≈290 kWh/año)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="kwhNuevo">Consumo del nuevo (kWh/año)</label>
+            <input id="kwhNuevo" type="number" min="1" step="1" value="190" inputmode="numeric">
+            <small>Aparece en la etiqueta energética.</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="precio">Precio del frigorífico nuevo (€)</label>
+            <input id="precio" type="number" min="0" step="10" value="600" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="p">Precio de la luz (€/kWh)</label>
+            <input id="p" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Mide y mejora tu frigorífico</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=enchufe%20medidor%20consumo%20electrico&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔌</span><b>Enchufe medidor de consumo</b><span class="aff-desc">Mide durante 24 horas cuánto gasta de verdad tu frigorífico.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=termometro%20frigorifico%20congelador&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🌡️</span><b>Termómetro para frigorífico</b><span class="aff-desc">Comprueba que está a 4–5 °C: más frío gasta más sin necesidad.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=frigorifico%20combi%20clase%20a&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🧊</span><b>Frigorífico combi de alta eficiencia</b><span class="aff-desc">Modelos de clase A, B o C para comparar consumo y precio.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>¿Cuánto gasta un frigorífico al año?</h2>
+        <p>Un frigorífico combi moderno gasta entre <strong>120 y 300 kWh al año</strong> según su clase energética, es decir, entre 20 y 50 € con la luz a 0,16 €/kWh. Los antiguos pueden gastar el doble o más, porque su aislamiento y sus gomas se deterioran con los años y el motor trabaja más.</p>
+        <p class="note">Los consumos por antigüedad son orientativos. Para saber el consumo real del tuyo, conéctalo a un <strong>enchufe medidor</strong> durante 24 horas y multiplica el resultado por 365.</p>
+
+        <h2>¿Compensa cambiar el frigorífico solo por ahorrar luz?</h2>
+        <p>Normalmente, <strong>no solo por el ahorro</strong>. Con un frigorífico de 10–15 años (unos 420 kWh/año) y uno nuevo de clase C (unos 190 kWh/año), ahorras unos 37 € al año. Si el nuevo cuesta 600 €, tardas unos 16 años en recuperarlo, casi lo que dura un frigorífico.</p>
+        <p>Sí compensa cuando:</p>
+        <ul>
+          <li><strong>El tuyo es muy antiguo</strong> (más de 15 años) o gasta mucho más de lo normal.</li>
+          <li><strong>Ya tienes que cambiarlo</strong> porque está averiado o se te ha quedado pequeño: en ese caso, pagar algo más por una clase mejor suele amortizarse.</li>
+          <li><strong>Hay ayudas o planes renove</strong> en tu comunidad autónoma que reducen el precio.</li>
+        </ul>
+
+        <h2>Trucos para que el frigorífico gaste menos</h2>
+        <ul>
+          <li><strong>Temperatura correcta</strong>: 4–5 °C en el frigorífico y −18 °C en el congelador. Cada grado de más frío aumenta el consumo.</li>
+          <li><strong>Revisa las gomas</strong>: si una hoja de papel cerrada en la puerta sale sin resistencia, la goma no sella bien.</li>
+          <li><strong>Deja espacio detrás</strong> para que la rejilla se ventile, y límpiala de polvo una vez al año.</li>
+          <li><strong>No metas comida caliente</strong> y descongela en el frigorífico lo que saques del congelador.</li>
+          <li><strong>Descongela el congelador</strong> si no es «no frost» y tiene más de medio centímetro de hielo.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cuánto gasta un frigorífico al mes?</summary>
+          <p>Un combi moderno de clase C, unos 16 kWh al mes: unos 2,50 €. Uno antiguo puede gastar el doble o más.</p>
+        </details>
+        <details>
+          <summary>¿Qué significa la nueva etiqueta energética?</summary>
+          <p>Desde 2021 la etiqueta va de la A a la G, y ya no existen las clases A+, A++ o A+++. Un frigorífico que antes era A+++ hoy suele ser C o D. Lo más útil para comparar es el consumo en kWh/año que aparece en la propia etiqueta.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="consumo-fantasma">🔌 Consumo fantasma</a></li>
+          <li><a href="consumo-electrico">⚡ Consumo de cualquier aparato</a></li>
+          <li><a href="potencia-contratada">🔌 Qué potencia contratar</a></li>
+          <li><a href="placas-solares">☀️ Ahorro con placas solares</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('actual').addEventListener('change', function () { document.getElementById('kwhActual').value = this.value; });
+document.getElementById('nuevo').addEventListener('change', function () { document.getElementById('kwhNuevo').value = this.value; });
+document.getElementById('calcular').addEventListener('click', function () {
+  var a = num('kwhActual'), n = num('kwhNuevo'), precio = num('precio'), p = num('p');
+  if (!(a > 0 && n > 0 && precio >= 0 && p > 0)) { showResult('res', '<p>Revisa los datos introducidos.</p>'); return; }
+  var cA = a * p, cN = n * p, ahorro = cA - cN;
+  var anos = ahorro > 0 ? precio / ahorro : Infinity;
+  var veredicto;
+  if (!(ahorro > 0)) veredicto = 'El nuevo no gastaría menos que el actual, así que <strong>no compensa cambiarlo por ahorro</strong>.';
+  else if (anos <= 8) veredicto = 'Lo recuperarías en <strong>' + fmt(anos, 1) + ' años</strong>: <strong>sí compensa</strong> cambiarlo.';
+  else if (anos <= 14) veredicto = 'Lo recuperarías en <strong>' + fmt(anos, 1) + ' años</strong>. Compensa si el tuyo ya da problemas o si encuentras alguna ayuda.';
+  else veredicto = 'Tardarías <strong>' + fmt(anos, 1) + ' años</strong> en recuperarlo: <strong>solo por ahorro no compensa</strong>. Espera a que el tuyo lo necesite.';
+  showResult('res',
+    '<div>Tu frigorífico te cuesta al año</div>' +
+    '<div class="big">' + eur(cA) + '</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + eur(cA / 12) + '</b><span>al mes</span></div>' +
+      '<div class="stat"><b>' + eur(cN) + '</b><span>al año con el nuevo</span></div>' +
+      '<div class="stat"><b>' + eur(ahorro) + '</b><span>de ahorro al año</span></div>' +
+      '<div class="stat"><b>' + eur(ahorro * 15) + '</b><span>de ahorro en 15 años</span></div>' +
+    '</div>' +
+    '<p>' + veredicto + '</p>');
+});
+</script>
+</body>
+</html>

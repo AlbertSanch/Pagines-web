@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de consumo eléctrico: ¿cuánto gasta un electrodoméstico? | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuánto gasta en euros al día, al mes y al año cualquier electrodoméstico: horno, secadora, aire acondicionado, radiador, lavadora… Gratis y al instante.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/consumo-electrico">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Calculadora de consumo eléctrico: ¿cuánto gasta un electrodoméstico?">
+  <meta property="og:description" content="Calcula cuánto gasta en euros al día, al mes y al año cualquier electrodoméstico: horno, secadora, aire acondicionado, radiador, lavadora… Gratis y al instante.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/consumo-electrico">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de consumo eléctrico","url":"https://ahorrometro.es/calculadoras/consumo-electrico","description":"Calcula cuánto gasta en euros al día, al mes y al año cualquier electrodoméstico: horno, secadora, aire acondicionado, radiador, lavadora… Gratis y al instante.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Calculadora de consumo eléctrico","item":"https://ahorrometro.es/calculadoras/consumo-electrico"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Consumo eléctrico</nav>
+  <div class="layout">
+    <article>
+      <h1>Calculadora de consumo eléctrico</h1>
+      <p class="lead">Descubre cuánto te cuesta tener encendido un electrodoméstico al día, al mes y al año. Elige el aparato o introduce su potencia en vatios.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="field">
+          <label for="aparato">Electrodoméstico</label>
+          <select id="aparato">
+            <option value="">— Elige uno o escribe la potencia abajo —</option>
+            <option value="2000|1">Horno eléctrico (2000 W)</option>
+            <option value="800|0.2">Microondas (800 W)</option>
+            <option value="2500|1">Secadora (2500 W)</option>
+            <option value="2000|1">Lavadora a 40 °C (2000 W)</option>
+            <option value="1800|1">Lavavajillas (1800 W)</option>
+            <option value="150|24">Frigorífico (150 W de media)</option>
+            <option value="1000|6">Aire acondicionado 3000 frigorías (1000 W)</option>
+            <option value="2000|5">Radiador eléctrico (2000 W)</option>
+            <option value="1500|4">Estufa de aceite (1500 W)</option>
+            <option value="2000|0.5">Vitrocerámica, un fuego (2000 W)</option>
+            <option value="100|5">Televisor LED 55" (100 W)</option>
+            <option value="300|4">Ordenador de sobremesa (300 W)</option>
+            <option value="60|8">Portátil (60 W)</option>
+            <option value="1500|0.3">Freidora de aire (1500 W)</option>
+            <option value="2000|0.15">Secador de pelo (2000 W)</option>
+            <option value="7400|3">Carga de coche eléctrico (7,4 kW)</option>
+          </select>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="w">Potencia (vatios, W)</label>
+            <input id="w" type="number" min="0" step="1" value="2000" inputmode="decimal">
+            <small>Aparece en la etiqueta del aparato o en su manual.</small>
+          </div>
+          <div class="field">
+            <label for="h">Horas de uso al día</label>
+            <input id="h" type="number" min="0" max="24" step="0.1" value="1" inputmode="decimal">
+            <small>Ej.: 30 minutos = 0,5</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="d">Días de uso al mes</label>
+            <input id="d" type="number" min="0" max="31" step="1" value="30" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="p">Precio de la luz (€/kWh)</label>
+            <input id="p" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+            <small>Mira tu factura. La media en España ronda 0,13–0,20 €/kWh.</small>
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular gasto</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Mide el consumo real de tus aparatos</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=enchufe%20medidor%20consumo%20electrico&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔌</span><b>Enchufe medidor de consumo</b><span class="aff-desc">Te dice en tiempo real cuántos vatios y euros gasta cualquier aparato.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=regleta%20con%20interruptor%20individual&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔋</span><b>Regleta con interruptor</b><span class="aff-desc">Corta el consumo fantasma de la tele, la consola y los cargadores.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=bombillas%20led%20e27%20pack&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">💡</span><b>Bombillas LED de bajo consumo</b><span class="aff-desc">Gastan hasta un 85 % menos que las halógenas.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo se calcula el consumo de un electrodoméstico</h2>
+        <p>La factura de la luz no cobra por vatios, sino por <strong>kilovatios hora (kWh)</strong>: la energía que consume un aparato de 1000 W funcionando durante una hora. La fórmula es muy sencilla:</p>
+        <p class="note"><strong>Consumo (kWh) = Potencia (W) × Horas de uso ÷ 1000</strong><br><strong>Coste (€) = Consumo (kWh) × Precio del kWh</strong></p>
+        <p>Por ejemplo, un radiador de 2000 W encendido 5 horas al día consume 2000 × 5 ÷ 1000 = 10 kWh diarios. A 0,16 €/kWh son 1,60 € al día, unos <strong>48 € al mes</strong> solo por ese aparato.</p>
+
+        <h2>Consumo aproximado de los electrodomésticos más comunes</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Aparato</th><th>Potencia típica</th><th>Uso habitual</th><th>Coste/mes aprox.*</th></tr></thead>
+            <tbody>
+              <tr><td>Frigorífico</td><td>100–200 W (media)</td><td>24 h</td><td>15–20 €</td></tr>
+              <tr><td>Horno</td><td>2000–3000 W</td><td>1 h, 8 días</td><td>2,5–4 €</td></tr>
+              <tr><td>Secadora</td><td>2000–3000 W</td><td>1 h, 12 días</td><td>4–6 €</td></tr>
+              <tr><td>Aire acondicionado</td><td>800–1500 W</td><td>6 h, 30 días</td><td>23–43 €</td></tr>
+              <tr><td>Radiador eléctrico</td><td>1500–2500 W</td><td>5 h, 30 días</td><td>36–60 €</td></tr>
+              <tr><td>Televisor</td><td>60–150 W</td><td>5 h, 30 días</td><td>1,5–3,5 €</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><small>*Calculado a 0,16 €/kWh. El consumo real depende de la eficiencia del aparato y de cómo lo uses.</small></p>
+
+        <h2>Consejos para gastar menos luz</h2>
+        <ul>
+          <li><strong>Pon lavadora, lavavajillas y secadora en horas valle</strong> si tienes tarifa con discriminación horaria (normalmente de 0 a 8 h y los fines de semana).</li>
+          <li><strong>Los aparatos que calientan son los que más gastan</strong>: radiadores, hornos, secadoras y termos. Ahí está el mayor margen de ahorro. Calcula en detalle <a href="radiador-electrico">cuánto gasta un radiador eléctrico</a>, <a href="freidora-de-aire">una freidora de aire</a>, <a href="frigorifico">tu frigorífico</a> o <a href="termo-electrico">cuánto gasta tu termo</a>.</li>
+          <li><strong>Revisa la etiqueta energética</strong> al comprar: un frigorífico eficiente puede ahorrar más de 50 € al año frente a uno antiguo.</li>
+          <li><strong>Evita el consumo fantasma</strong>: regletas con interruptor para la TV, consolas y cargadores. <a href="consumo-fantasma">Calcula cuánto te cuesta</a>.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Dónde veo la potencia de un electrodoméstico?</summary>
+          <p>En la placa de características (una pegatina en la parte trasera o inferior del aparato), en el manual o en la ficha del fabricante. Se indica en vatios (W) o kilovatios (kW); 1 kW = 1000 W.</p>
+        </details>
+        <details>
+          <summary>¿Un aparato consume siempre su potencia máxima?</summary>
+          <p>No. Frigoríficos, aires acondicionados o bombas de calor funcionan a ciclos: cuando alcanzan la temperatura bajan el consumo. Por eso, en esos casos, conviene usar una potencia media o unas horas de uso reales menores.</p>
+        </details>
+        <details>
+          <summary>¿Qué precio del kWh debo poner?</summary>
+          <p>El que aparece en tu factura como «término de energía». En tarifas con tramos horarios, usa el precio del tramo en el que usas el aparato. Si no lo sabes, 0,16 €/kWh es una media razonable en España.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="placas-solares">☀️ Ahorro con placas solares</a></li>
+          <li><a href="aire-acondicionado">❄️ Frigorías del aire</a></li>
+          <li><a href="coste-viaje-coche">🚗 Coste de viaje en coche</a></li>
+          <li><a href="gastos-piso-compartido">🏠 Gastos de piso compartido</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('aparato').addEventListener('change', function () {
+  if (!this.value) return;
+  var parts = this.value.split('|');
+  document.getElementById('w').value = parts[0];
+  document.getElementById('h').value = parts[1];
+});
+document.getElementById('calcular').addEventListener('click', function () {
+  var w = num('w'), h = num('h'), d = num('d'), p = num('p');
+  if (!(w >= 0 && h >= 0 && d >= 0 && p >= 0)) { showResult('res', '<p>Revisa los datos: todos los campos deben ser números positivos.</p>'); return; }
+  var kwhDia = w * h / 1000;
+  var costeDia = kwhDia * p;
+  var costeMes = costeDia * d;
+  var costeAno = costeMes * 12;
+  showResult('res',
+    '<div>Te cuesta al mes aproximadamente</div>' +
+    '<div class="big">' + eur(costeMes) + '</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + eur(costeDia) + '</b><span>por día de uso</span></div>' +
+      '<div class="stat"><b>' + eur(costeAno) + '</b><span>al año</span></div>' +
+      '<div class="stat"><b>' + fmt(kwhDia, 2) + ' kWh</b><span>consumo diario</span></div>' +
+      '<div class="stat"><b>' + fmt(kwhDia * d, 1) + ' kWh</b><span>consumo mensual</span></div>' +
+    '</div>');
+});
+</script>
+</body>
+</html>

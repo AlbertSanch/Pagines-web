@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cuánto dura una bombona de butano? Estufa, calentador y cocina | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuántas horas y días dura una bombona de butano en tu estufa, calentador o cocina, cuántas gastas al mes y cuánto te cuesta.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/duracion-bombona-butano">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="¿Cuánto dura una bombona de butano? Estufa, calentador y cocina">
+  <meta property="og:description" content="Calcula cuántas horas y días dura una bombona de butano en tu estufa, calentador o cocina, cuántas gastas al mes y cuánto te cuesta.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/duracion-bombona-butano">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"¿Cuánto dura una bombona de butano?","url":"https://ahorrometro.es/calculadoras/duracion-bombona-butano","description":"Calcula cuántas horas y días dura una bombona de butano en tu estufa, calentador o cocina, cuántas gastas al mes y cuánto te cuesta.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-29"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"¿Cuánto dura una bombona de butano?","item":"https://ahorrometro.es/calculadoras/duracion-bombona-butano"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Duración de la bombona de butano</nav>
+  <div class="layout">
+    <article>
+      <h1>¿Cuánto dura una bombona de butano?</h1>
+      <p class="lead">Calcula cuántas horas y cuántos días te dura una bombona según el aparato y la potencia a la que lo usas, y cuánto gastarás al mes.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="aparato">Aparato</label>
+            <select id="aparato">
+              <option value="1.4">Estufa a potencia baja (≈1,4 kW)</option>
+              <option value="2.8" selected>Estufa a potencia media (≈2,8 kW)</option>
+              <option value="4.2">Estufa a potencia máxima (≈4,2 kW)</option>
+              <option value="19">Calentador de agua de 11 litros (≈19 kW)</option>
+              <option value="1.8">Cocina: un fuego normal (≈1,8 kW)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="kw">Consumo del aparato (kW)</label>
+            <input id="kw" type="number" min="0.1" step="0.1" value="2.8" inputmode="decimal">
+            <small>Viene en la placa del aparato como «potencia» o «gasto calorífico».</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="h">Horas de uso al día</label>
+            <input id="h" type="number" min="0" max="24" step="0.25" value="4" inputmode="decimal">
+            <small>Para un calentador: 20 minutos = 0,33 h.</small>
+          </div>
+          <div class="field">
+            <label for="kg">Tipo de bombona</label>
+            <select id="kg">
+              <option value="12.5" selected>Butano 12,5 kg (la naranja)</option>
+              <option value="6">Butano pequeña 6 kg</option>
+              <option value="11">Propano 11 kg</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="precio">Precio de la bombona (€)</label>
+            <input id="precio" type="number" min="0" step="0.05" value="16.50" inputmode="decimal">
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular duración</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Usa el butano con seguridad</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=detector%20monoxido%20de%20carbono&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🚨</span><b>Detector de monóxido de carbono</b><span class="aff-desc">Imprescindible en cualquier habitación con estufa o calentador de gas.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=regulador%20butano&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔧</span><b>Regulador de butano</b><span class="aff-desc">Si la goma o el regulador tienen años, cámbialos: caducan.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=carro%20bombona%20butano&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🛒</span><b>Carro para bombona</b><span class="aff-desc">Mueve la bombona de habitación en habitación sin esfuerzo.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo se calcula lo que dura una bombona</h2>
+        <p>Una bombona de butano de 12,5 kg contiene unos <strong>160 kWh</strong> de energía (cada kilo de butano aporta unos 12,9 kWh). Dividiendo esa energía entre lo que consume el aparato cada hora, sabes cuántas horas dura:</p>
+        <p class="note"><strong>Horas que dura = Kilos × 12,9 ÷ Consumo del aparato (kW)</strong></p>
+        <p><strong>Ejemplo:</strong> una estufa a potencia media (2,8 kW) consume unos 220 gramos de butano por hora. Una bombona de 12,5 kg le dura unas <strong>57 horas</strong>. Encendida 4 horas al día, son unas 2 semanas.</p>
+
+        <h2>Duración orientativa de una bombona de 12,5 kg</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Aparato</th><th>Horas de uso</th><th>A 4 h/día (estufa) o 20 min/día (calentador)</th></tr></thead>
+            <tbody>
+              <tr><td>Estufa a potencia baja</td><td>≈115 h</td><td>≈29 días</td></tr>
+              <tr><td>Estufa a potencia media</td><td>≈57 h</td><td>≈14 días</td></tr>
+              <tr><td>Estufa a potencia máxima</td><td>≈38 h</td><td>≈10 días</td></tr>
+              <tr><td>Calentador de agua</td><td>≈8,5 h</td><td>≈25 días</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>La duración real puede variar: con frío intenso la bombona pierde presión antes de vaciarse del todo, y la estufa rara vez está siempre a la misma potencia.</p>
+
+        <h2>Seguridad con el butano</h2>
+        <p class="note"><strong>Ventila la habitación</strong> varias veces al día si usas una estufa de butano, <strong>no la uses en dormitorios mientras duermes</strong> ni en baños o espacios pequeños, y revisa la fecha de caducidad de la goma y el regulador. Un <strong>detector de monóxido de carbono</strong> es una inversión pequeña que puede salvar vidas.</p>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cómo sé cuánto butano le queda a la bombona?</summary>
+          <p>La forma más fiable es pesarla. El peso de la bombona vacía (la «tara») viene grabado en el propio envase: pésala con una báscula de baño y réstale ese número. Lo que quede son los kilos de butano que le quedan, de los 12,5 que tenía llena.</p>
+        </details>
+        <details>
+          <summary>¿Sale más barata una estufa de butano o una eléctrica?</summary>
+          <p>Normalmente el butano sale algo más barato que un radiador eléctrico, pero bastante más caro que un aire acondicionado con bomba de calor. Compáralo con tus precios en nuestra <a href="estufa-butano-o-electrica">calculadora de estufa de butano o eléctrica</a>.</p>
+        </details>
+        <details>
+          <summary>¿Por qué la bombona se «congela» y parece que se acaba antes?</summary>
+          <p>El butano necesita calor para pasar de líquido a gas. Con temperaturas bajas o consumos muy altos, la bombona se enfría y baja la presión aunque aún tenga gas. Mantenerla en un lugar que no esté frío ayuda.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="estufa-butano-o-electrica">🧯 Estufa de butano o eléctrica</a></li>
+          <li><a href="calefaccion-mas-barata">🏠 Qué calefacción es más barata</a></li>
+          <li><a href="cuanta-lena-necesito">🪵 Cuánta leña necesito</a></li>
+          <li><a href="sacos-pellets">🔥 Sacos de pellets</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('aparato').addEventListener('change', function () { document.getElementById('kw').value = this.value; });
+document.getElementById('calcular').addEventListener('click', function () {
+  var kw = num('kw'), h = num('h'), kg = num('kg'), precio = num('precio');
+  if (!(kw > 0 && h >= 0 && precio >= 0)) { showResult('res', '<p>Revisa los datos introducidos.</p>'); return; }
+  var horas = kg * 12.87 / kw;
+  var dias = h > 0 ? horas / h : Infinity;
+  var bombonasMes = h > 0 ? 30 / dias : 0;
+  showResult('res',
+    '<div>Una bombona te dura</div>' +
+    '<div class="big">' + fmt(horas, 0) + ' horas de uso</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + (isFinite(dias) ? fmt(dias, 0) + ' días' : '—') + '</b><span>usándolo ' + fmt(h, 2) + ' h al día</span></div>' +
+      '<div class="stat"><b>' + fmt(bombonasMes, 1) + '</b><span>bombonas al mes</span></div>' +
+      '<div class="stat"><b>' + eur(bombonasMes * precio) + '</b><span>al mes</span></div>' +
+      '<div class="stat"><b>' + fmt(kw / 12.87 * 1000, 0) + ' g</b><span>de gas por hora</span></div>' +
+    '</div>');
+});
+</script>
+</body>
+</html>

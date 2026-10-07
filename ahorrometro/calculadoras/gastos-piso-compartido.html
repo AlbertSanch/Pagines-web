@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de gastos de piso compartido: cómo repartir el alquiler | Ahorrómetro</title>
+  <meta name="description" content="Reparte el alquiler y las facturas de un piso compartido de forma justa: a partes iguales o según el tamaño de cada habitación. Gratis y sin registros.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/gastos-piso-compartido">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Calculadora de gastos de piso compartido: cómo repartir el alquiler">
+  <meta property="og:description" content="Reparte el alquiler y las facturas de un piso compartido de forma justa: a partes iguales o según el tamaño de cada habitación. Gratis y sin registros.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/gastos-piso-compartido">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de gastos de piso compartido","url":"https://ahorrometro.es/calculadoras/gastos-piso-compartido","description":"Reparte el alquiler y las facturas de un piso compartido de forma justa: a partes iguales o según el tamaño de cada habitación. Gratis y sin registros.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Calculadora de gastos de piso compartido","item":"https://ahorrometro.es/calculadoras/gastos-piso-compartido"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Gastos de piso compartido</nav>
+  <div class="layout">
+    <article>
+      <h1>Calculadora de gastos de piso compartido</h1>
+      <p class="lead">¿Es justo que pague lo mismo quien tiene la habitación grande que quien tiene la pequeña? Reparte el alquiler y las facturas de forma justa en un minuto.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="alquiler">Alquiler mensual (€)</label>
+            <input id="alquiler" type="number" min="0" step="1" value="1200" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="facturas">Facturas y gastos comunes al mes (€)</label>
+            <input id="facturas" type="number" min="0" step="1" value="180" inputmode="decimal">
+            <small>Luz, agua, gas, internet, comunidad…</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="modo">Cómo repartir el alquiler</label>
+            <select id="modo">
+              <option value="igual">A partes iguales</option>
+              <option value="m2" selected>Según el tamaño de cada habitación</option>
+            </select>
+          </div>
+          <div class="field" id="comunWrap">
+            <label for="comun">Parte del alquiler por zonas comunes (%)</label>
+            <input id="comun" type="number" min="0" max="100" step="5" value="50" inputmode="numeric">
+            <small>Esta parte (salón, cocina, baño) se reparte a partes iguales; el resto, según los m².</small>
+          </div>
+        </div>
+        <div class="field">
+          <label>Personas y m² de su habitación</label>
+          <div id="personas"></div>
+          <button class="btn btn-ghost btn-sm" id="add" type="button">+ Añadir persona</button>
+        </div>
+        <button class="btn" id="calcular">Repartir gastos</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>¿Cuál es la forma más justa de repartir el alquiler?</h2>
+        <p>Pagar a partes iguales es sencillo, pero genera roces cuando las habitaciones son muy distintas. El método más equilibrado combina dos criterios:</p>
+        <ol>
+          <li><strong>Las zonas comunes se pagan a partes iguales</strong>, porque todos usan el salón, la cocina y el baño por igual.</li>
+          <li><strong>Las habitaciones se pagan según su tamaño</strong>: quien tiene más metros privados paga más.</li>
+        </ol>
+        <p><strong>Ejemplo:</strong> un piso de 1200 € con tres habitaciones de 15, 10 y 8 m². Si el 50 % del alquiler (600 €) corresponde a zonas comunes, cada persona paga 200 € por esa parte. Los otros 600 € se reparten según los metros: 272,73 €, 181,82 € y 145,45 €. Total: <strong>472,73 €, 381,82 € y 345,45 €</strong>.</p>
+
+        <h2>Otros factores que podéis tener en cuenta</h2>
+        <ul>
+          <li><strong>Baño propio</strong>: suele sumar entre 30 y 60 € al mes.</li>
+          <li><strong>Balcón, terraza o ventana exterior</strong>: las habitaciones interiores suelen pagar algo menos.</li>
+          <li><strong>Parejas</strong>: si dos personas comparten habitación, lo habitual es que paguen más por las facturas, porque consumen más luz y agua.</li>
+        </ul>
+        <p>Podéis ajustarlo sumando o restando esa cantidad a mano al resultado de la calculadora.</p>
+
+        <h2>Consejos para evitar conflictos</h2>
+        <ul>
+          <li><strong>Poned el acuerdo por escrito</strong> antes de entrar a vivir: qué paga cada uno y cuándo.</li>
+          <li><strong>Usad una cuenta o una app común</strong> para las facturas y revisadla cada mes.</li>
+          <li><strong>Pactad una fianza para los gastos comunes</strong>: evita problemas si alguien se va a mitad de mes.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Las facturas también se reparten según los m²?</summary>
+          <p>Normalmente no. La luz, el agua o internet dependen del uso, no del tamaño de la habitación, así que lo habitual es dividirlas a partes iguales.</p>
+        </details>
+        <details>
+          <summary>¿Qué porcentaje del alquiler corresponde a las zonas comunes?</summary>
+          <p>No hay una norma fija. Entre un 40 % y un 60 % es lo más habitual; con un salón grande y habitaciones pequeñas, conviene subirlo.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="consumo-electrico">⚡ Consumo eléctrico</a></li>
+          <li><a href="coste-viaje-coche">🚗 Coste de viaje en coche</a></li>
+          <li><a href="conversor-cocina">🥣 Conversor de cocina</a></li>
+          <li><a href="pintura">🎨 Pintura necesaria</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+var cont = document.getElementById('personas');
+function addPersona(nombre, m2) {
+  var row = document.createElement('div');
+  row.className = 'person-row';
+  row.innerHTML =
+    '<input type="text" class="p-nombre" placeholder="Nombre" aria-label="Nombre">' +
+    '<input type="number" class="p-m2" min="0" step="0.5" placeholder="m²" aria-label="Metros cuadrados" inputmode="decimal">' +
+    '<button type="button" aria-label="Quitar persona">✕</button>';
+  row.querySelector('.p-nombre').value = nombre || '';
+  row.querySelector('.p-m2').value = m2 || '';
+  row.querySelector('button').addEventListener('click', function () {
+    if (cont.children.length > 2) row.remove();
+  });
+  cont.appendChild(row);
+}
+addPersona('Persona 1', 15); addPersona('Persona 2', 10); addPersona('Persona 3', 8);
+document.getElementById('add').addEventListener('click', function () { addPersona('Persona ' + (cont.children.length + 1), ''); });
+
+var modo = document.getElementById('modo');
+function toggleComun() { document.getElementById('comunWrap').style.display = modo.value === 'm2' ? '' : 'none'; }
+modo.addEventListener('change', toggleComun); toggleComun();
+
+document.getElementById('calcular').addEventListener('click', function () {
+  var alquiler = num('alquiler') || 0, facturas = num('facturas') || 0;
+  var comun = Math.min(100, Math.max(0, num('comun') || 0)) / 100;
+  var personas = Array.prototype.map.call(cont.children, function (row, i) {
+    return {
+      nombre: row.querySelector('.p-nombre').value.trim() || 'Persona ' + (i + 1),
+      m2: parseFloat(String(row.querySelector('.p-m2').value).replace(',', '.')) || 0
+    };
+  });
+  var n = personas.length;
+  var totalM2 = personas.reduce(function (s, p) { return s + p.m2; }, 0);
+  if (modo.value === 'm2' && !(totalM2 > 0)) { showResult('res', '<p>Introduce los m² de cada habitación, o elige repartir a partes iguales.</p>'); return; }
+  var filas = personas.map(function (p) {
+    var partAlq = modo.value === 'igual'
+      ? alquiler / n
+      : alquiler * comun / n + alquiler * (1 - comun) * p.m2 / totalM2;
+    var partFac = facturas / n;
+    var esc = function (s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    return '<tr><td>' + esc(p.nombre) + '</td><td>' + (modo.value === 'm2' ? fmt(p.m2, 1) + ' m²' : '—') + '</td><td>' + eur(partAlq) + '</td><td>' + eur(partFac) + '</td><td><strong>' + eur(partAlq + partFac) + '</strong></td></tr>';
+  });
+  showResult('res',
+    '<div>Total mensual del piso: <strong>' + eur(alquiler + facturas) + '</strong></div>' +
+    '<div class="table-wrap"><table class="data"><thead><tr><th>Persona</th><th>Habitación</th><th>Alquiler</th><th>Facturas</th><th>Total</th></tr></thead><tbody>' +
+    filas.join('') + '</tbody></table></div>');
+});
+</script>
+</body>
+</html>

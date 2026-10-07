@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conversor de medidas de cocina: tazas, cucharadas y gramos | Ahorrómetro</title>
+  <meta name="description" content="Convierte tazas, cucharadas, cucharaditas y onzas a gramos y mililitros para harina, azúcar, mantequilla, arroz, leche, aceite y más ingredientes.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/conversor-cocina">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Conversor de medidas de cocina: tazas, cucharadas y gramos">
+  <meta property="og:description" content="Convierte tazas, cucharadas, cucharaditas y onzas a gramos y mililitros para harina, azúcar, mantequilla, arroz, leche, aceite y más ingredientes.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/conversor-cocina">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Conversor de medidas de cocina","url":"https://ahorrometro.es/calculadoras/conversor-cocina","description":"Convierte tazas, cucharadas, cucharaditas y onzas a gramos y mililitros para harina, azúcar, mantequilla, arroz, leche, aceite y más ingredientes.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Conversor de medidas de cocina","item":"https://ahorrometro.es/calculadoras/conversor-cocina"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Conversor de cocina</nav>
+  <div class="layout">
+    <article>
+      <h1>Conversor de medidas de cocina</h1>
+      <p class="lead">¿La receta dice «1 taza de harina» y no tienes taza medidora? Convierte al instante entre tazas, cucharadas, gramos y mililitros según el ingrediente.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="field">
+          <label for="ing">Ingrediente</label>
+          <select id="ing">
+            <option value="125">Harina de trigo</option>
+            <option value="200">Azúcar blanco</option>
+            <option value="220">Azúcar moreno (compactado)</option>
+            <option value="120">Azúcar glas</option>
+            <option value="227">Mantequilla</option>
+            <option value="240">Agua</option>
+            <option value="245">Leche</option>
+            <option value="218">Aceite de oliva o girasol</option>
+            <option value="240">Nata líquida</option>
+            <option value="245">Yogur</option>
+            <option value="340">Miel</option>
+            <option value="185">Arroz crudo</option>
+            <option value="90">Copos de avena</option>
+            <option value="100">Cacao en polvo</option>
+            <option value="100">Almendra molida</option>
+            <option value="170">Pepitas de chocolate</option>
+            <option value="300">Sal fina</option>
+            <option value="115">Queso rallado</option>
+          </select>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="cant">Cantidad</label>
+            <input id="cant" type="number" min="0" step="0.25" value="1" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="unidad">Unidad</label>
+            <select id="unidad">
+              <option value="taza" selected>Taza (240 ml)</option>
+              <option value="cda">Cucharada (15 ml)</option>
+              <option value="cdta">Cucharadita (5 ml)</option>
+              <option value="ml">Mililitros (ml)</option>
+              <option value="g">Gramos (g)</option>
+              <option value="oz">Onzas (oz)</option>
+            </select>
+          </div>
+        </div>
+        <div class="result show" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Mide sin errores</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=bascula%20cocina%20digital&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">⚖️</span><b>Báscula de cocina digital</b><span class="aff-desc">Precisión de 1 g: la forma más fiable de seguir una receta.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=tazas%20medidoras%20cocina%20set&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🥄</span><b>Set de tazas y cucharas medidoras</b><span class="aff-desc">Tazas y cucharas estándar para recetas americanas.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=jarra%20medidora%20cristal&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🧁</span><b>Jarra medidora de cristal</b><span class="aff-desc">Con marcas en ml y tazas; apta para microondas.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>¿Por qué una taza de harina no pesa lo mismo que una de azúcar?</h2>
+        <p>Las tazas y cucharadas miden <strong>volumen</strong>, y los gramos miden <strong>peso</strong>. Cada ingrediente tiene una densidad distinta: una taza de harina, ligera y aireada, pesa unos 125 g, mientras que la misma taza llena de azúcar pesa unos 200 g y una de miel, unos 340 g. Por eso el conversor necesita saber el ingrediente.</p>
+
+        <h2>Tabla de equivalencias rápidas</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Ingrediente</th><th>1 taza</th><th>1 cucharada</th><th>1 cucharadita</th></tr></thead>
+            <tbody>
+              <tr><td>Harina de trigo</td><td>125 g</td><td>8 g</td><td>3 g</td></tr>
+              <tr><td>Azúcar blanco</td><td>200 g</td><td>12,5 g</td><td>4 g</td></tr>
+              <tr><td>Mantequilla</td><td>227 g</td><td>14 g</td><td>5 g</td></tr>
+              <tr><td>Leche</td><td>245 g (240 ml)</td><td>15 g</td><td>5 g</td></tr>
+              <tr><td>Aceite</td><td>218 g (240 ml)</td><td>13,5 g</td><td>4,5 g</td></tr>
+              <tr><td>Arroz crudo</td><td>185 g</td><td>11,5 g</td><td>4 g</td></tr>
+              <tr><td>Cacao en polvo</td><td>100 g</td><td>6 g</td><td>2 g</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Trucos para medir sin báscula</h2>
+        <ul>
+          <li><strong>La harina no se aprieta</strong>: échala con una cuchara en la taza y enrasa con un cuchillo. Si hundes la taza en el paquete, puedes meter hasta un 20 % más.</li>
+          <li><strong>El azúcar moreno sí se compacta</strong>: las recetas suelen referirse a él bien apretado.</li>
+          <li><strong>Para la miel</strong>, unta la cuchara con un poco de aceite y resbalará sin dejar restos.</li>
+          <li><strong>Una taza americana son 240 ml</strong>. Si usas una taza de desayuno normal, mide antes su capacidad con agua.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cuántos gramos son una taza de harina?</summary>
+          <p>Aproximadamente 125 gramos de harina de trigo tamizada y sin apretar.</p>
+        </details>
+        <details>
+          <summary>¿Cuántos gramos tiene una cucharada de azúcar?</summary>
+          <p>Una cucharada rasa de azúcar blanco son unos 12–13 gramos. Si está colmada, puede llegar a 20 g.</p>
+        </details>
+        <details>
+          <summary>¿Cuántos ml son una cucharada?</summary>
+          <p>Una cucharada sopera equivale a 15 ml y una cucharadita de postre o café, a 5 ml.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="consumo-electrico">⚡ Consumo eléctrico</a></li>
+          <li><a href="gastos-piso-compartido">🏠 Gastos de piso compartido</a></li>
+          <li><a href="coste-viaje-coche">🚗 Coste de viaje en coche</a></li>
+          <li><a href="pintura">🎨 Pintura necesaria</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+// Conversión en tiempo real. La densidad se deriva de los gramos por taza (240 ml).
+var ML = { taza: 240, cda: 15, cdta: 5, ml: 1 };
+function convertir() {
+  var gTaza = num('ing'), cant = num('cant'), unidad = document.getElementById('unidad').value;
+  var nombre = document.getElementById('ing').selectedOptions[0].text;
+  if (!(cant >= 0)) { document.getElementById('res').innerHTML = '<p>Introduce una cantidad válida.</p>'; return; }
+  var dens = gTaza / 240; // g por ml
+  var ml;
+  if (unidad === 'g') ml = cant / dens;
+  else if (unidad === 'oz') ml = cant * 28.35 / dens;
+  else ml = cant * ML[unidad];
+  var g = ml * dens;
+  document.getElementById('res').innerHTML =
+    '<div>' + fmt(cant, cant % 1 ? 2 : 0) + ' ' + document.getElementById('unidad').selectedOptions[0].text.split(' (')[0].toLowerCase() + ' de ' + nombre.toLowerCase() + ' son</div>' +
+    '<div class="big">' + fmt(g, g < 10 ? 1 : 0) + ' g</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + fmt(ml, ml < 10 ? 1 : 0) + ' ml</b><span>mililitros</span></div>' +
+      '<div class="stat"><b>' + fmt(ml / 240, 2) + '</b><span>tazas</span></div>' +
+      '<div class="stat"><b>' + fmt(ml / 15, 1) + '</b><span>cucharadas</span></div>' +
+      '<div class="stat"><b>' + fmt(ml / 5, 1) + '</b><span>cucharaditas</span></div>' +
+      '<div class="stat"><b>' + fmt(g / 28.35, 2) + ' oz</b><span>onzas</span></div>' +
+    '</div>';
+}
+['ing', 'cant', 'unidad'].forEach(function (id) {
+  document.getElementById(id).addEventListener('input', convertir);
+  document.getElementById(id).addEventListener('change', convertir);
+});
+convertir();
+</script>
+</body>
+</html>

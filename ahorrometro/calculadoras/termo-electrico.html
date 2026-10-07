@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cuánto gasta un termo eléctrico? Calculadora de consumo al mes | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuánto gasta tu termo eléctrico al mes según las personas de casa, la capacidad, la temperatura y el precio de la luz. Con trucos para ahorrar en agua caliente.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/termo-electrico">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="¿Cuánto gasta un termo eléctrico? Calculadora de consumo al mes">
+  <meta property="og:description" content="Calcula cuánto gasta tu termo eléctrico al mes según las personas de casa, la capacidad, la temperatura y el precio de la luz. Con trucos para ahorrar en agua caliente.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/termo-electrico">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"¿Cuánto gasta un termo eléctrico?","url":"https://ahorrometro.es/calculadoras/termo-electrico","description":"Calcula cuánto gasta tu termo eléctrico al mes según las personas de casa, la capacidad, la temperatura y el precio de la luz. Con trucos para ahorrar en agua caliente.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"¿Cuánto gasta un termo eléctrico?","item":"https://ahorrometro.es/calculadoras/termo-electrico"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Termo eléctrico</nav>
+  <div class="layout">
+    <article>
+      <h1>¿Cuánto gasta un termo eléctrico?</h1>
+      <p class="lead">El termo es uno de los aparatos que más encarecen la factura de la luz, sobre todo en casas con varias personas. Calcula cuánto te cuesta al mes y cuánto podrías ahorrar.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="pers">Personas en casa</label>
+            <input id="pers" type="number" min="1" step="1" value="3" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="litros">Agua caliente por persona y día</label>
+            <select id="litros">
+              <option value="20">Poca: duchas cortas (≈20 L)</option>
+              <option value="30" selected>Normal (≈30 L)</option>
+              <option value="45">Mucha: duchas largas o baños (≈45 L)</option>
+            </select>
+            <small>Litros de agua a 60 °C. Una ducha de 5 minutos gasta unos 20–30 L de agua caliente.</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="cap">Capacidad del termo</label>
+            <select id="cap">
+              <option value="0.6">50 litros</option>
+              <option value="0.8" selected>80 litros</option>
+              <option value="0.95">100 litros</option>
+              <option value="1.2">150 litros</option>
+            </select>
+            <small>Se usa para estimar las pérdidas de calor en reposo.</small>
+          </div>
+          <div class="field">
+            <label for="temp">Temperatura del termo (°C)</label>
+            <input id="temp" type="number" min="40" max="75" step="1" value="60" inputmode="numeric">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="p">Precio de la luz (€/kWh)</label>
+            <input id="p" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="pValle">Precio en horas valle (€/kWh)</label>
+            <input id="pValle" type="number" min="0" step="0.001" value="0.10" inputmode="decimal">
+            <small>Si tienes tarifa con discriminación horaria.</small>
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular gasto</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Gasta menos agua caliente</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=alcachofa%20ducha%20ahorro%20agua&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🚿</span><b>Alcachofa de ducha ahorradora</b><span class="aff-desc">Reduce el caudal hasta un 30–50 % sin perder presión: menos agua que calentar.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=temporizador%20termo%20electrico&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">⏲️</span><b>Temporizador para el termo</b><span class="aff-desc">Programa el termo para que caliente solo en las horas más baratas.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=enchufe%20medidor%20consumo%20electrico&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔌</span><b>Enchufe medidor de consumo</b><span class="aff-desc">Mide cuántos kWh gasta tu termo al día (para termos con enchufe).</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo se calcula el consumo de un termo</h2>
+        <p>Calentar agua cuesta una cantidad de energía muy concreta: <strong>1,163 Wh por cada litro y cada grado</strong> que subes su temperatura. A eso hay que sumar lo que el termo pierde en reposo, porque aunque no uses agua, se va enfriando poco a poco y vuelve a calentarse.</p>
+        <p class="note"><strong>Consumo diario (kWh) = Litros × (Temperatura del termo − 15 °C) × 0,001163 + Pérdidas en reposo</strong></p>
+        <p><strong>Ejemplo:</strong> 3 personas que usan 30 L de agua caliente cada una son 90 litros al día. Calentarlos de 15 a 60 °C cuesta 90 × 45 × 0,001163 = 4,7 kWh. Sumando unos 0,8 kWh de pérdidas de un termo de 80 L, son 5,5 kWh al día: <strong>unos 26 € al mes</strong> a 0,16 €/kWh.</p>
+
+        <h2>Cómo ahorrar con el termo eléctrico</h2>
+        <ul>
+          <li><strong>Caliéntalo en horas valle.</strong> Con un temporizador o el programador del propio termo, puedes calentar el agua de madrugada, cuando la luz es más barata, y usarla por la mañana.</li>
+          <li><strong>No lo pongas al máximo.</strong> Entre 55 y 60 °C es suficiente para el día a día. Temperaturas más altas aumentan las pérdidas y la cal.</li>
+          <li><strong>Duchas más cortas.</strong> Cada minuto menos de ducha son unos 5–8 litros de agua caliente menos.</li>
+          <li><strong>Revisa el ánodo y la cal</strong> cada uno o dos años: un termo con mucha cal tarda más en calentar y gasta más.</li>
+          <li><strong>Si te vas varios días</strong>, apágalo o déjalo en modo vacaciones.</li>
+        </ul>
+        <p class="note"><strong>Importante:</strong> no mantengas el agua acumulada siempre por debajo de 50–55 °C durante mucho tiempo. Temperaturas más bajas pueden favorecer la aparición de bacterias como la legionela. Sigue las indicaciones del fabricante.</p>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Es mejor dejar el termo siempre encendido o apagarlo?</summary>
+          <p>Depende del uso. Si en tu casa se usa agua caliente a horas concretas, lo más eficiente es programarlo para que caliente justo antes. Si se usa a todas horas, apagarlo y encenderlo no ahorra mucho, porque luego tiene que recalentar toda el agua. Lo que sí ahorra claramente es calentar en horas valle.</p>
+        </details>
+        <details>
+          <summary>¿Qué capacidad de termo necesito?</summary>
+          <p>Como referencia: 50 L para 1–2 personas, 80 L para 2–3 personas, 100 L para 3–4 personas y 150 L para familias de 5 o más. Un termo demasiado grande pierde más calor en reposo.</p>
+        </details>
+        <details>
+          <summary>¿Compensa cambiar el termo por uno de bomba de calor?</summary>
+          <p>Un termo con bomba de calor (aerotermia) puede consumir entre 2 y 3 veces menos, pero cuesta bastante más. Suele compensar en familias con mucho consumo de agua caliente, y mejor aún si se combina con <a href="placas-solares">placas solares</a>.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="consumo-electrico">⚡ Consumo de cualquier aparato</a></li>
+          <li><a href="calefaccion-mas-barata">🏠 Qué calefacción es más barata</a></li>
+          <li><a href="placas-solares">☀️ Ahorro con placas solares</a></li>
+          <li><a href="radiador-electrico">🔥 Gasto de un radiador eléctrico</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('calcular').addEventListener('click', function () {
+  var pers = Math.max(1, num('pers')), litros = num('litros'), perd = num('cap'), temp = num('temp'), p = num('p'), pv = num('pValle');
+  if (!(temp > 15 && p >= 0)) { showResult('res', '<p>Revisa la temperatura del termo y el precio de la luz.</p>'); return; }
+  var kwhAgua = pers * litros * (temp - 15) * 0.001163;
+  var kwhDia = kwhAgua + perd;
+  var mes = kwhDia * p * 30, mesValle = kwhDia * pv * 30;
+  showResult('res',
+    '<div>Tu termo te cuesta aproximadamente</div>' +
+    '<div class="big">' + eur(mes) + ' al mes</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + fmt(kwhDia, 1) + ' kWh</b><span>consumo diario</span></div>' +
+      '<div class="stat"><b>' + eur(mes * 12) + '</b><span>al año</span></div>' +
+      '<div class="stat"><b>' + fmt(pers * litros, 0) + ' L</b><span>agua caliente al día</span></div>' +
+      '<div class="stat"><b>' + eur(perd * p * 30) + '</b><span>al mes solo en pérdidas</span></div>' +
+    '</div>' +
+    (pv > 0 && pv < p ? '<p>Si lo calientas en <strong>horas valle</strong> te costaría ' + eur(mesValle) + ' al mes: un ahorro de <strong>' + eur((mes - mesValle) * 12) + ' al año</strong>.</p>' : ''));
+});
+</script>
+</body>
+</html>

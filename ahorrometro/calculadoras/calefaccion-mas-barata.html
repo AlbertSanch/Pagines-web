@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Qué calefacción es más barata? Calculadora: gas, bomba de calor, radiadores o pellets | Ahorrómetro</title>
+  <meta name="description" content="Compara cuánto cuesta al año calentar tu casa con radiadores eléctricos, bomba de calor, gas natural, pellets, gasóleo o butano. Calculadora gratuita con tus precios.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/calefaccion-mas-barata">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="¿Qué calefacción es más barata? Calculadora: gas, bomba de calor, radiadores o pellets">
+  <meta property="og:description" content="Compara cuánto cuesta al año calentar tu casa con radiadores eléctricos, bomba de calor, gas natural, pellets, gasóleo o butano. Calculadora gratuita con tus precios.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/calefaccion-mas-barata">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"¿Qué calefacción es más barata? Calculadora comparativa","url":"https://ahorrometro.es/calculadoras/calefaccion-mas-barata","description":"Compara cuánto cuesta al año calentar tu casa con radiadores eléctricos, bomba de calor, gas natural, pellets, gasóleo o butano. Calculadora gratuita con tus precios.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"¿Qué calefacción es más barata? Calculadora comparativa","item":"https://ahorrometro.es/calculadoras/calefaccion-mas-barata"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Calefacción más barata</nav>
+  <div class="layout">
+    <article>
+      <h1>¿Qué calefacción es más barata? Calculadora comparativa</h1>
+      <p class="lead">Compara cuánto te costaría al año calentar tu vivienda con cada sistema: radiadores eléctricos, bomba de calor, gas natural, pellets, gasóleo o butano. Ajusta los precios a los de tus facturas.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="m2">Superficie a calentar (m²)</label>
+            <input id="m2" type="number" min="1" step="1" value="80" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="zona">Clima de tu zona</label>
+            <select id="zona">
+              <option value="10">Muy suave (Canarias)</option>
+              <option value="45">Suave (costa mediterránea, Andalucía costera)</option>
+              <option value="75" selected>Medio (Madrid, interior, valle del Ebro)</option>
+              <option value="100">Frío (norte, meseta alta, montaña)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="aisl">Aislamiento de la vivienda</label>
+            <select id="aisl">
+              <option value="0.6">Bueno (vivienda nueva o reformada)</option>
+              <option value="1" selected>Normal</option>
+              <option value="1.4">Malo (edificio antiguo, ventanas simples)</option>
+            </select>
+          </div>
+        </div>
+        <details>
+          <summary>Precios de la energía (opcional, cámbialos por los de tus facturas)</summary>
+          <div class="row" style="margin-top:12px">
+            <div class="field">
+              <label for="pLuz">Electricidad (€/kWh)</label>
+              <input id="pLuz" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+            </div>
+            <div class="field">
+              <label for="scop">Rendimiento bomba de calor (SCOP)</label>
+              <input id="scop" type="number" min="1" step="0.1" value="3.5" inputmode="decimal">
+              <small>Aerotermia o split con bomba de calor: 3–4,5.</small>
+            </div>
+            <div class="field">
+              <label for="pGas">Gas natural (€/kWh)</label>
+              <input id="pGas" type="number" min="0" step="0.001" value="0.07" inputmode="decimal">
+            </div>
+            <div class="field">
+              <label for="pPellet">Pellets (€/kg)</label>
+              <input id="pPellet" type="number" min="0" step="0.01" value="0.32" inputmode="decimal">
+              <small>Un saco de 15 kg suele costar 4–6 €.</small>
+            </div>
+            <div class="field">
+              <label for="pGasoleo">Gasóleo C (€/litro)</label>
+              <input id="pGasoleo" type="number" min="0" step="0.01" value="1.05" inputmode="decimal">
+            </div>
+            <div class="field">
+              <label for="pButano">Bombona de butano 12,5 kg (€)</label>
+              <input id="pButano" type="number" min="0" step="0.05" value="16.50" inputmode="decimal">
+            </div>
+          </div>
+        </details>
+        <button class="btn" id="calcular" style="margin-top:14px">Comparar sistemas</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Gasta menos en calefacción</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=termostato%20inteligente%20wifi%20calefaccion&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🌡️</span><b>Termostato inteligente WiFi</b><span class="aff-desc">Programa horarios y temperaturas y controla la calefacción desde el móvil.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=burlete%20puertas%20ventanas%20aislante&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🚪</span><b>Burletes para puertas y ventanas</b><span class="aff-desc">Tapan las corrientes de aire: una de las mejoras más baratas y eficaces.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=valvula%20termostatica%20radiador&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔧</span><b>Válvulas termostáticas para radiadores</b><span class="aff-desc">Regulan cada radiador por separado para no calentar habitaciones vacías.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo se hace la comparación</h2>
+        <p>Primero estimamos el <strong>calor que necesita tu vivienda en un año</strong> (la «demanda de calefacción»), según los metros, el clima y el aislamiento. Por ejemplo, un piso de 80 m² en una zona de clima medio con aislamiento normal necesita unos 6.000 kWh de calor al año.</p>
+        <p>Después calculamos cuánta energía tiene que consumir cada sistema para producir ese calor y cuánto cuesta:</p>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Sistema</th><th>Rendimiento usado</th><th>Energía</th></tr></thead>
+            <tbody>
+              <tr><td>Radiadores y estufas eléctricas</td><td>100 %</td><td>Electricidad</td></tr>
+              <tr><td>Bomba de calor / aerotermia</td><td>SCOP 3,5 (350 %)</td><td>Electricidad</td></tr>
+              <tr><td>Caldera de gas natural</td><td>92 %</td><td>Gas natural</td></tr>
+              <tr><td>Estufa o caldera de pellets</td><td>90 % · 4,8 kWh/kg</td><td>Pellets</td></tr>
+              <tr><td>Caldera de gasóleo</td><td>90 % · 10 kWh/litro</td><td>Gasóleo C</td></tr>
+              <tr><td>Estufa de butano</td><td>95 % · 12,9 kWh/kg</td><td>Butano</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">La calculadora compara solo el <strong>coste de la energía</strong>. No incluye la instalación, el mantenimiento ni los términos fijos de las facturas (como el término fijo del gas o la potencia contratada de la luz), que también conviene tener en cuenta.</p>
+
+        <h2>¿Qué calefacción es más barata de usar?</h2>
+        <p>Con los precios habituales en España, la <strong>bomba de calor</strong> (aerotermia o un aire acondicionado con bomba de calor) suele ser la opción más barata de usar, porque por cada kWh de electricidad produce entre 3 y 4,5 kWh de calor. Le siguen normalmente el <strong>gas natural</strong> y los <strong>pellets</strong>.</p>
+        <p>Los <strong>radiadores eléctricos</strong> son los más baratos de comprar, pero los más caros de usar muchas horas: convierten 1 kWh de electricidad en 1 kWh de calor. Tienen sentido en viviendas pequeñas, climas suaves o para usos puntuales.</p>
+
+        <h2>Consejos para pagar menos calefacción</h2>
+        <ul>
+          <li><strong>Baja un grado el termostato</strong>: cada grado menos puede suponer alrededor de un 7 % de ahorro. Calcúlalo con nuestra <a href="bajar-temperatura-calefaccion">calculadora de ahorro por grado</a>.</li>
+          <li><strong>Tapa las corrientes de aire</strong> con burletes en puertas y ventanas.</li>
+          <li><strong>No calientes habitaciones vacías</strong>: cierra sus radiadores o usa válvulas termostáticas.</li>
+          <li><strong>Aprovecha el sol</strong>: sube las persianas de día y bájalas al anochecer.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Qué es mejor, gas natural o aerotermia?</summary>
+          <p>La aerotermia suele tener un coste de uso menor y no necesita contratar gas, pero la instalación es bastante más cara. Si ya tienes caldera de gas en buen estado, cambiarla solo por ahorro puede tardar muchos años en compensar. En obra nueva o reformas integrales, la aerotermia suele ser la opción más interesante.</p>
+        </details>
+        <details>
+          <summary>¿Un aire acondicionado con bomba de calor sirve para calentar?</summary>
+          <p>Sí. Un split con bomba de calor es una de las formas más baratas de calentar una estancia, porque su rendimiento es muy superior al de un radiador eléctrico. Su punto débil es que calienta el aire, no las paredes, y que en climas muy fríos rinde algo menos.</p>
+        </details>
+        <details>
+          <summary>¿De dónde salen los precios por defecto?</summary>
+          <p>Son valores medios orientativos en España. Los precios de la energía cambian a menudo, así que lo mejor es sustituirlos por los de tus propias facturas o los de tu proveedor.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="radiador-electrico">🔥 Gasto de un radiador eléctrico</a></li>
+          <li><a href="bajar-temperatura-calefaccion">🌡️ Ahorro bajando la calefacción</a></li>
+          <li><a href="estufa-butano-o-electrica">🧯 Estufa de butano o eléctrica</a></li>
+          <li><a href="termo-electrico">🚿 Gasto del termo eléctrico</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+var SISTEMAS = [
+  { n: 'Bomba de calor / aerotermia', c: '#1f7a55' },
+  { n: 'Gas natural', c: '#2f6fb3' },
+  { n: 'Pellets', c: '#8a6a3b' },
+  { n: 'Butano', c: '#d4862a' },
+  { n: 'Gasóleo', c: '#6b6b6b' },
+  { n: 'Radiadores eléctricos', c: '#c0392b' }
+];
+document.getElementById('calcular').addEventListener('click', function () {
+  var m2 = num('m2'), demanda = m2 * num('zona') * num('aisl');
+  if (!(m2 > 0)) { showResult('res', '<p>Introduce la superficie a calentar.</p>'); return; }
+  var luz = num('pLuz'), scop = num('scop') || 3.5;
+  var costes = {
+    'Bomba de calor / aerotermia': demanda / scop * luz,
+    'Gas natural': demanda / 0.92 * num('pGas'),
+    'Pellets': demanda / 0.9 / 4.8 * num('pPellet'),
+    'Butano': demanda / 0.95 / (12.5 * 12.87) * num('pButano'),
+    'Gasóleo': demanda / 0.9 / 10 * num('pGasoleo'),
+    'Radiadores eléctricos': demanda * luz
+  };
+  var lista = SISTEMAS.map(function (s) { return { n: s.n, c: s.c, v: costes[s.n] }; })
+    .filter(function (s) { return isFinite(s.v); })
+    .sort(function (a, b) { return a.v - b.v; });
+  var max = lista[lista.length - 1].v;
+  var filas = lista.map(function (s, i) {
+    return '<div style="margin:10px 0">' +
+      '<div style="display:flex;justify-content:space-between;gap:8px;font-size:.95rem"><span>' + (i === 0 ? '🏆 ' : '') + s.n + '</span><b>' + eur(s.v) + '/año</b></div>' +
+      '<div style="background:#fff;border-radius:6px;height:12px;margin-top:4px"><div style="width:' + Math.max(3, s.v / max * 100) + '%;background:' + s.c + ';height:12px;border-radius:6px"></div></div>' +
+    '</div>';
+  }).join('');
+  showResult('res',
+    '<div>Tu vivienda necesita unos <strong>' + fmt(demanda, 0) + ' kWh</strong> de calor al año. Coste de la energía con cada sistema:</div>' +
+    filas +
+    '<p>La opción más barata (<strong>' + lista[0].n + '</strong>) te ahorraría <strong>' + eur(max - lista[0].v) + ' al año</strong> frente a la más cara. Repartido en unos 5 meses de invierno, son ' + eur(lista[0].v / 5) + ' al mes frente a ' + eur(max / 5) + '.</p>');
+});
+</script>
+</body>
+</html>

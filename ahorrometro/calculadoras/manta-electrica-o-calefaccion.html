@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manta eléctrica o calefacción: ¿qué gasta menos? Calculadora | Ahorrómetro</title>
+  <meta name="description" content="Compara cuánto cuesta al mes usar una manta eléctrica frente a calentar la habitación con radiador eléctrico, bomba de calor o gas. Calculadora gratuita.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/manta-electrica-o-calefaccion">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Manta eléctrica o calefacción: ¿qué gasta menos? Calculadora">
+  <meta property="og:description" content="Compara cuánto cuesta al mes usar una manta eléctrica frente a calentar la habitación con radiador eléctrico, bomba de calor o gas. Calculadora gratuita.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/manta-electrica-o-calefaccion">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Manta eléctrica o calefacción: ¿qué gasta menos?","url":"https://ahorrometro.es/calculadoras/manta-electrica-o-calefaccion","description":"Compara cuánto cuesta al mes usar una manta eléctrica frente a calentar la habitación con radiador eléctrico, bomba de calor o gas. Calculadora gratuita.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-29"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Manta eléctrica o calefacción: ¿qué gasta menos?","item":"https://ahorrometro.es/calculadoras/manta-electrica-o-calefaccion"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Manta eléctrica o calefacción</nav>
+  <div class="layout">
+    <article>
+      <h1>Manta eléctrica o calefacción: ¿qué gasta menos?</h1>
+      <p class="lead">Una manta eléctrica calienta a la persona, no a toda la habitación, y por eso gasta muchísimo menos. Calcula cuánto te ahorrarías cada mes.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="manta">Tipo de manta</label>
+            <select id="manta">
+              <option value="60">Calientacamas (≈60 W)</option>
+              <option value="100" selected>Manta de sofá (≈100 W)</option>
+              <option value="150">Manta grande o doble (≈150 W)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="h">Horas de uso al día</label>
+            <input id="h" type="number" min="0" max="24" step="0.5" value="4" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="d">Días de uso al mes</label>
+            <input id="d" type="number" min="0" max="31" step="1" value="30" inputmode="numeric">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="m2">Tamaño de la habitación (m²)</label>
+            <input id="m2" type="number" min="1" step="1" value="20" inputmode="decimal">
+            <small>La que calentarías con la calefacción.</small>
+          </div>
+          <div class="field">
+            <label for="sis">Calefacción con la que comparar</label>
+            <select id="sis">
+              <option value="elec" selected>Radiador o calefactor eléctrico</option>
+              <option value="bomba">Aire acondicionado con bomba de calor</option>
+              <option value="gas">Calefacción de gas natural</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="pLuz">Precio de la luz (€/kWh)</label>
+            <input id="pLuz" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="pGas">Precio del gas (€/kWh)</label>
+            <input id="pGas" type="number" min="0" step="0.001" value="0.07" inputmode="decimal">
+          </div>
+        </div>
+        <button class="btn" id="calcular">Comparar</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Calor donde lo necesitas</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=manta%20electrica%20sofa%20apagado%20automatico&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🛋️</span><b>Manta eléctrica para el sofá</b><span class="aff-desc">Con varios niveles de calor y apagado automático.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=calienta%20camas%20electrico&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🛏️</span><b>Calientacamas eléctrico</b><span class="aff-desc">Calienta la cama antes de acostarte; apágalo al dormir.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=calientapies%20electrico&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🦶</span><b>Calientapiés eléctrico</b><span class="aff-desc">Para trabajar sentado con los pies calientes gastando muy poco.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>¿Por qué la manta eléctrica gasta tan poco?</h2>
+        <p>Porque no intenta calentar el aire de toda la habitación, sino solo a ti. Una manta eléctrica consume entre <strong>60 y 150 W</strong>, mientras que calentar una habitación de 20 m² necesita alrededor de <strong>2000 W</strong>. Es decir, unas 15–30 veces más.</p>
+        <p><strong>Ejemplo:</strong> una manta de sofá de 100 W, 4 horas al día durante un mes, consume 12 kWh: menos de <strong>2 €</strong> con la luz a 0,16 €/kWh. Calentar una habitación de 20 m² con un radiador eléctrico esas mismas horas cuesta unos <strong>27 €</strong>.</p>
+        <p class="note">La calculadora supone que la manta funciona a su potencia todo el rato, aunque muchas regulan el calor y gastan aún menos. Para la calefacción usamos unos 100 W por m², funcionando el 70 % del tiempo gracias al termostato.</p>
+
+        <h2>¿Puedo apagar la calefacción y usar solo la manta?</h2>
+        <p>No del todo. La manta te da calor a ti, pero la casa necesita una temperatura mínima para evitar humedades, condensación y moho. Lo más eficiente es <strong>combinar</strong> las dos cosas: bajar la calefacción 2 o 3 grados y usar la manta mientras estás en el sofá. Calcula cuánto ahorras así con nuestra <a href="bajar-temperatura-calefaccion">calculadora de ahorro por grado</a>.</p>
+
+        <h2>Uso seguro de la manta eléctrica</h2>
+        <ul>
+          <li><strong>No la dobles ni la arrugues</strong> mientras está encendida, y guárdala enrollada, no doblada.</li>
+          <li><strong>No la uses si está mojada</strong> o si el cable o el mando están dañados.</li>
+          <li><strong>No duermas con ella encendida</strong> salvo que el fabricante indique que es apta para toda la noche; mejor elige una con apagado automático.</li>
+          <li><strong>No la recomendamos</strong> para bebés, personas que no puedan apagarla por sí mismas ni para personas con problemas de sensibilidad en la piel sin consultar antes al médico.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cuánto gasta una manta eléctrica toda la noche?</summary>
+          <p>Un calientacamas de 60 W encendido 8 horas consume 0,48 kWh: unos 8 céntimos por noche con la luz a 0,16 €/kWh. Aun así, lo más seguro es calentar la cama antes de acostarte y apagarla.</p>
+        </details>
+        <details>
+          <summary>¿Qué gasta menos, una manta eléctrica o una estufa?</summary>
+          <p>La manta, con mucha diferencia. Cualquier estufa o radiador eléctrico gasta entre 1000 y 2500 W, frente a los 60–150 W de una manta.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="calefaccion-mas-barata">🏠 Qué calefacción es más barata</a></li>
+          <li><a href="radiador-electrico">🔥 Gasto de un radiador eléctrico</a></li>
+          <li><a href="bajar-temperatura-calefaccion">🌡️ Ahorro bajando la calefacción</a></li>
+          <li><a href="estufa-butano-o-electrica">🧯 Estufa de butano o eléctrica</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('calcular').addEventListener('click', function () {
+  var wManta = num('manta'), h = num('h'), d = num('d'), m2 = num('m2'), luz = num('pLuz'), gas = num('pGas');
+  var sis = document.getElementById('sis').value;
+  if (!(h >= 0 && d >= 0 && m2 > 0 && luz >= 0)) { showResult('res', '<p>Revisa los datos introducidos.</p>'); return; }
+  var kwhManta = wManta / 1000 * h * d;
+  var costeManta = kwhManta * luz;
+  var calor = m2 * 0.1 * h * 0.7 * d; // kWh de calor al mes para la habitación
+  var nombres = { elec: 'radiador eléctrico', bomba: 'bomba de calor', gas: 'gas natural' };
+  var costeCal = sis === 'elec' ? calor * luz : (sis === 'bomba' ? calor / 3.5 * luz : calor / 0.92 * gas);
+  var ahorro = costeCal - costeManta;
+  showResult('res',
+    '<div>Con la manta eléctrica gastarías</div>' +
+    '<div class="big">' + eur(costeManta) + ' al mes</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + eur(costeCal) + '</b><span>calentando la habitación con ' + nombres[sis] + '</span></div>' +
+      '<div class="stat"><b>' + eur(ahorro) + '</b><span>de ahorro al mes</span></div>' +
+      '<div class="stat"><b>' + eur(ahorro * 5) + '</b><span>de ahorro en un invierno (5 meses)</span></div>' +
+      '<div class="stat"><b>' + fmt(kwhManta, 1) + ' kWh</b><span>consume la manta al mes</span></div>' +
+    '</div>' +
+    '<p>La manta gasta <strong>' + fmt(costeCal / Math.max(costeManta, 0.01), 0) + ' veces menos</strong> que calentar la habitación con ' + nombres[sis] + '.</p>');
+});
+</script>
+</body>
+</html>

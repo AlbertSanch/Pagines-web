@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de frigorías: ¿qué aire acondicionado necesito? | Ahorrómetro</title>
+  <meta name="description" content="Calcula las frigorías, BTU y kW de aire acondicionado que necesitas según los metros cuadrados, la orientación, el aislamiento y las personas de la habitación.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/aire-acondicionado">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Calculadora de frigorías: ¿qué aire acondicionado necesito?">
+  <meta property="og:description" content="Calcula las frigorías, BTU y kW de aire acondicionado que necesitas según los metros cuadrados, la orientación, el aislamiento y las personas de la habitación.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/aire-acondicionado">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de frigorías: ¿qué aire acondicionado necesito?","url":"https://ahorrometro.es/calculadoras/aire-acondicionado","description":"Calcula las frigorías, BTU y kW de aire acondicionado que necesitas según los metros cuadrados, la orientación, el aislamiento y las personas de la habitación.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Calculadora de frigorías: ¿qué aire acondicionado necesito?","item":"https://ahorrometro.es/calculadoras/aire-acondicionado"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Frigorías del aire acondicionado</nav>
+  <div class="layout">
+    <article>
+      <h1>Calculadora de frigorías: ¿qué aire acondicionado necesito?</h1>
+      <p class="lead">Un aire demasiado pequeño no enfría y uno demasiado grande gasta de más. Calcula la potencia justa para tu habitación en frigorías, BTU y kW.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="m2">Superficie (m²)</label>
+            <input id="m2" type="number" min="1" step="0.5" value="20" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="alto">Altura del techo (m)</label>
+            <input id="alto" type="number" min="2" step="0.05" value="2.5" inputmode="decimal">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="orient">Orientación / sol</label>
+            <select id="orient">
+              <option value="1">Norte o poco sol</option>
+              <option value="1.05">Este (sol de mañana)</option>
+              <option value="1.15" selected>Sur u oeste (sol de tarde)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="aisl">Aislamiento</label>
+            <select id="aisl">
+              <option value="0.9">Bueno (vivienda nueva, doble ventana)</option>
+              <option value="1" selected>Normal</option>
+              <option value="1.15">Malo (edificio antiguo, mucho cristal)</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="pers">Personas habitualmente</label>
+            <input id="pers" type="number" min="1" step="1" value="2" inputmode="numeric">
+          </div>
+          <div class="field" style="justify-content:flex-end">
+            <label class="check"><input type="checkbox" id="atico"> Último piso o ático</label>
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular potencia</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Equipos según tu cálculo</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=aire%20acondicionado%20split%203000%20frigorias%20inverter&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">❄️</span><b>Aire acondicionado split 3000 frigorías</b><span class="aff-desc">La potencia más habitual para salones y dormitorios de 15 a 25 m².</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=aire%20acondicionado%20portatil&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🧊</span><b>Aire acondicionado portátil</b><span class="aff-desc">Sin obra ni instalador; útil si vives de alquiler.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=ventilador%20de%20techo%20con%20luz&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🌀</span><b>Ventilador de techo con luz</b><span class="aff-desc">Mucho más barato de usar: combinado con el aire te permite subir 2–3 °C el termostato.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>¿Cuántas frigorías necesito por metro cuadrado?</h2>
+        <p>La regla más usada en España es <strong>100 frigorías por cada m²</strong> en una estancia con techos de unos 2,5 m. A partir de ahí se ajusta según el sol que entra, el aislamiento y el número de personas (cada persona desprende calor).</p>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Superficie</th><th>Frigorías aprox.</th><th>Equipo recomendado</th></tr></thead>
+            <tbody>
+              <tr><td>Hasta 15 m²</td><td>1500–1800</td><td>2150 frig (2,5 kW)</td></tr>
+              <tr><td>15–25 m²</td><td>1800–2800</td><td>3000 frig (3,5 kW)</td></tr>
+              <tr><td>25–35 m²</td><td>2800–3800</td><td>4300 frig (5 kW)</td></tr>
+              <tr><td>35–45 m²</td><td>3800–4800</td><td>5100 frig (6 kW)</td></tr>
+              <tr><td>45–55 m²</td><td>4800–5800</td><td>6000 frig (7 kW)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Frigorías, BTU y kW: equivalencias</h2>
+        <p>Cada fabricante usa una unidad distinta, pero todas miden lo mismo:</p>
+        <ul>
+          <li><strong>1 kW = 860 frigorías</strong></li>
+          <li><strong>1 frigoría = 3,97 BTU</strong></li>
+          <li>Un aire de «12 000 BTU» equivale a unas 3000 frigorías, o 3,5 kW.</li>
+        </ul>
+        <p class="note">Ojo: la potencia frigorífica (lo que enfría) no es lo que consume. Un aire de 3,5 kW de potencia con un SEER de 6 consume unos 0,6 kW. Puedes calcular su gasto con nuestra <a href="consumo-electrico">calculadora de consumo eléctrico</a>.</p>
+
+        <h2>¿Qué pasa si el aire es demasiado grande o pequeño?</h2>
+        <p>Si es <strong>pequeño</strong>, funciona al máximo todo el tiempo sin llegar a enfriar y se desgasta antes. Si es <strong>demasiado grande</strong>, enfría de golpe y se apaga a ciclos cortos, deshumidifica peor y cuesta más dinero comprarlo. Lo ideal es quedarse en el tamaño comercial inmediatamente superior al cálculo.</p>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cuántas frigorías para 20 m²?</summary>
+          <p>Unas 2000 en condiciones normales. Si la habitación da al sur o al oeste, unas 2300, por lo que conviene un equipo de 3000 frigorías (3,5 kW).</p>
+        </details>
+        <details>
+          <summary>¿Un solo aire puede enfriar toda la casa?</summary>
+          <p>Un split enfría bien la estancia donde está y, como mucho, la contigua si la puerta queda abierta. Para varias habitaciones es mejor un multisplit o un sistema por conductos.</p>
+        </details>
+        <details>
+          <summary>¿Qué es el SEER?</summary>
+          <p>Es la eficiencia estacional en modo frío: cuánto frío produce por cada kWh que consume. Cuanto más alto, mejor. Un equipo A+++ suele superar un SEER de 8,5.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="consumo-electrico">⚡ Consumo eléctrico</a></li>
+          <li><a href="placas-solares">☀️ Ahorro con placas solares</a></li>
+          <li><a href="pintura">🎨 Pintura necesaria</a></li>
+          <li><a href="suelo-laminado">🪵 Suelo y azulejos</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+var EQUIPOS = [
+  { frig: 2150, kw: 2.5 }, { frig: 3000, kw: 3.5 }, { frig: 4300, kw: 5 },
+  { frig: 5100, kw: 6 }, { frig: 6000, kw: 7 }, { frig: 6900, kw: 8 }
+];
+document.getElementById('calcular').addEventListener('click', function () {
+  var m2 = num('m2'), alto = num('alto'), pers = Math.max(1, Math.round(num('pers')));
+  if (!(m2 > 0 && alto > 0)) { showResult('res', '<p>Introduce la superficie y la altura de la habitación.</p>'); return; }
+  var frig = m2 * 100;
+  if (alto > 2.7) frig *= alto / 2.5;
+  frig *= num('orient') * num('aisl');
+  if (document.getElementById('atico').checked) frig *= 1.1;
+  if (pers > 2) frig += (pers - 2) * 150;
+  var equipo = EQUIPOS.find(function (e) { return e.frig >= frig; });
+  var txtEquipo = equipo
+    ? 'un equipo de <strong>' + fmt(equipo.frig) + ' frigorías (' + fmt(equipo.kw, 1) + ' kW)</strong>'
+    : 'más de un equipo o un sistema por conductos (la potencia supera la de un split doméstico)';
+  showResult('res',
+    '<div>Potencia necesaria</div>' +
+    '<div class="big">' + fmt(Math.round(frig / 10) * 10) + ' frigorías</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + fmt(frig / 860, 2) + ' kW</b><span>potencia frigorífica</span></div>' +
+      '<div class="stat"><b>' + fmt(Math.round(frig * 3.968 / 100) * 100) + ' BTU</b><span>equivalencia</span></div>' +
+    '</div>' +
+    '<p>Te recomendamos ' + txtEquipo + '.</p>');
+});
+</script>
+</body>
+</html>

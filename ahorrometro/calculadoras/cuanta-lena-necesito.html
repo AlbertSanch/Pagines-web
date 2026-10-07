@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cuánta leña necesito para el invierno? Calculadora de kilos y coste | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuántos kilos o toneladas de leña necesitas para todo el invierno según tu chimenea o estufa, las horas de uso y la humedad de la madera.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/cuanta-lena-necesito">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="¿Cuánta leña necesito para el invierno? Calculadora de kilos y coste">
+  <meta property="og:description" content="Calcula cuántos kilos o toneladas de leña necesitas para todo el invierno según tu chimenea o estufa, las horas de uso y la humedad de la madera.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/cuanta-lena-necesito">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"¿Cuánta leña necesito para el invierno?","url":"https://ahorrometro.es/calculadoras/cuanta-lena-necesito","description":"Calcula cuántos kilos o toneladas de leña necesitas para todo el invierno según tu chimenea o estufa, las horas de uso y la humedad de la madera.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-29"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"¿Cuánta leña necesito para el invierno?","item":"https://ahorrometro.es/calculadoras/cuanta-lena-necesito"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Cuánta leña necesito</nav>
+  <div class="layout">
+    <article>
+      <h1>¿Cuánta leña necesito para el invierno?</h1>
+      <p class="lead">Calcula cuántos kilos de leña gastarás al día y en toda la temporada, y cuánto te costará. El tipo de chimenea y lo seca que esté la leña cambian muchísimo el resultado.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="aparato">¿Dónde quemas la leña?</label>
+            <select id="aparato">
+              <option value="0.15">Chimenea abierta (≈15 % de rendimiento)</option>
+              <option value="0.7">Chimenea con insert o cassette (≈70 %)</option>
+              <option value="0.75" selected>Estufa de leña moderna (≈75 %)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="m2">Superficie que calientas (m²)</label>
+            <input id="m2" type="number" min="1" step="1" value="60" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="humedad">Leña</label>
+            <select id="humedad">
+              <option value="4.0" selected>Seca: menos del 20 % de humedad</option>
+              <option value="3.4">Semiseca: 20–30 %</option>
+              <option value="2.8">Verde o húmeda: más del 30 %</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="h">Horas encendida al día</label>
+            <input id="h" type="number" min="0" max="24" step="0.5" value="6" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="dias">Días de uso en el invierno</label>
+            <input id="dias" type="number" min="1" max="365" step="1" value="150" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="precio">Precio de la leña (€ por tonelada)</label>
+            <input id="precio" type="number" min="0" step="5" value="200" inputmode="decimal">
+            <small>Leña de encina o roble seca: suele estar entre 150 y 250 €/t.</small>
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular leña</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Para tu chimenea o estufa de leña</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=medidor%20humedad%20le%C3%B1a&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">📏</span><b>Medidor de humedad de leña</b><span class="aff-desc">Comprueba si la leña está seca (menos del 20 %) antes de quemarla.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=le%C3%B1ero%20interior%20metal&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🪵</span><b>Leñero de interior</b><span class="aff-desc">Guarda la leña de varios días ordenada junto a la estufa.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=detector%20monoxido%20de%20carbono&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🚨</span><b>Detector de monóxido de carbono</b><span class="aff-desc">Recomendable con cualquier chimenea o estufa de combustión.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo se calcula la leña que necesitas</h2>
+        <p>Estimamos el calor que necesita la zona que calientas (unos 100 W por m², con el fuego aportando calor el 70 % del tiempo) y lo dividimos entre la energía útil de cada kilo de leña:</p>
+        <p class="note"><strong>Kilos al día = Calor necesario (kWh) ÷ (Energía por kilo × Rendimiento del aparato)</strong></p>
+        <p>Un kilo de leña bien seca aporta unos <strong>4 kWh</strong>. Si está húmeda, gran parte de esa energía se pierde evaporando el agua que contiene.</p>
+        <p><strong>Ejemplo:</strong> calentar 60 m² durante 6 horas al día necesita unos 25 kWh de calor. Con una estufa moderna y leña seca son unos <strong>8,4 kg al día</strong>, y en un invierno de 150 días, unas <strong>1,3 toneladas</strong> (unos 250 €). Con una chimenea abierta harían falta ¡más de 6 toneladas!</p>
+
+        <h2>La chimenea abierta: bonita, pero muy poco eficiente</h2>
+        <p>Una chimenea abierta aprovecha solo un 10–20 % del calor: la mayor parte se va por el tiro, junto con aire caliente de la propia casa. Instalar un <strong>insert o cassette</strong> (una caja cerrada con puerta de cristal) puede multiplicar por cuatro o cinco el calor que obtienes con la misma leña.</p>
+
+        <h2>Consejos para gastar menos leña</h2>
+        <ul>
+          <li><strong>Quema solo leña seca.</strong> Lo ideal es que lleve cortada y apilada al menos un año. Con un medidor de humedad sales de dudas en segundos.</li>
+          <li><strong>Compra antes del invierno</strong>: suele ser más barata y tendrá tiempo de secarse más.</li>
+          <li><strong>Prefiere maderas duras</strong> (encina, roble, olivo, haya): duran más en el fuego que las blandas como el pino.</li>
+          <li><strong>Guárdala bien</strong>: bajo techo, separada del suelo y con aire circulando por los lados.</li>
+          <li><strong>Limpia la chimenea</strong> y deshollina cada temporada: además de gastar más, el hollín acumulado puede provocar incendios.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cuánto pesa un metro cúbico de leña?</summary>
+          <p>Un metro cúbico de leña apilada (lo que se llama un «estéreo») pesa entre 350 y 550 kg según la madera y lo seca que esté. Por eso es más fiable comprar por kilos que por volumen.</p>
+        </details>
+        <details>
+          <summary>¿Qué sale más barato, leña o pellets?</summary>
+          <p>Por kilo, la leña suele ser más barata, pero los pellets son más cómodos, más secos y las estufas de pellets suelen ser más eficientes. Calcula tu caso con nuestra <a href="sacos-pellets">calculadora de sacos de pellets</a>.</p>
+        </details>
+        <details>
+          <summary>¿Cómo sé si la leña está seca?</summary>
+          <p>La leña seca pesa menos, tiene grietas en los extremos, suena hueca al chocar dos trozos y arde sin silbar ni echar mucho humo. La forma más fiable es un medidor de humedad: por debajo del 20 % está lista.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="sacos-pellets">🔥 Sacos de pellets</a></li>
+          <li><a href="calefaccion-mas-barata">🏠 Qué calefacción es más barata</a></li>
+          <li><a href="duracion-bombona-butano">🧯 Duración de la bombona de butano</a></li>
+          <li><a href="bajar-temperatura-calefaccion">🌡️ Ahorro bajando la calefacción</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('calcular').addEventListener('click', function () {
+  var rend = num('aparato'), m2 = num('m2'), pci = num('humedad'), h = num('h'), dias = num('dias'), precio = num('precio');
+  if (!(m2 > 0 && h >= 0 && dias > 0 && precio >= 0)) { showResult('res', '<p>Revisa los datos introducidos.</p>'); return; }
+  var calorDia = m2 * 0.1 * h * 0.7;
+  var kgDia = calorDia / (pci * rend);
+  var kgTemp = kgDia * dias;
+  var estereos = kgTemp / 450;
+  showResult('res',
+    '<div>Para todo el invierno necesitas aproximadamente</div>' +
+    '<div class="big">' + (kgTemp >= 1000 ? fmt(kgTemp / 1000, 1) + ' toneladas' : fmt(kgTemp, 0) + ' kg') + '</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + eur(kgTemp / 1000 * precio) + '</b><span>coste de la temporada</span></div>' +
+      '<div class="stat"><b>' + fmt(kgDia, 1) + ' kg</b><span>al día</span></div>' +
+      '<div class="stat"><b>' + fmt(kgDia * 7, 0) + ' kg</b><span>a la semana</span></div>' +
+      '<div class="stat"><b>' + fmt(estereos, 1) + ' m³</b><span>de leña apilada (aprox.)</span></div>' +
+    '</div>' +
+    (rend < 0.5 ? '<p>Con una estufa o un insert necesitarías unos <strong>' + fmt(calorDia / (pci * 0.75) * dias / 1000, 1) + ' toneladas</strong>: ahorrarías unos ' + eur((kgTemp - calorDia / (pci * 0.75) * dias) / 1000 * precio) + ' cada invierno.</p>' : ''));
+});
+</script>
+</body>
+</html>

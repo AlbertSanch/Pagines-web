@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estufa de butano, eléctrica o bomba de calor: ¿qué gasta menos? | Ahorrómetro</title>
+  <meta name="description" content="Compara cuánto cuesta calentar una habitación con una estufa de butano, un calefactor o radiador eléctrico y un aire acondicionado con bomba de calor.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/estufa-butano-o-electrica">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Estufa de butano, eléctrica o bomba de calor: ¿qué gasta menos?">
+  <meta property="og:description" content="Compara cuánto cuesta calentar una habitación con una estufa de butano, un calefactor o radiador eléctrico y un aire acondicionado con bomba de calor.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/estufa-butano-o-electrica">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Estufa de butano, eléctrica o bomba de calor: ¿qué gasta menos?","url":"https://ahorrometro.es/calculadoras/estufa-butano-o-electrica","description":"Compara cuánto cuesta calentar una habitación con una estufa de butano, un calefactor o radiador eléctrico y un aire acondicionado con bomba de calor.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Estufa de butano, eléctrica o bomba de calor: ¿qué gasta menos?","item":"https://ahorrometro.es/calculadoras/estufa-butano-o-electrica"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Estufa de butano o eléctrica</nav>
+  <div class="layout">
+    <article>
+      <h1>Estufa de butano, eléctrica o bomba de calor: ¿qué gasta menos?</h1>
+      <p class="lead">Si solo necesitas calentar una habitación, esta calculadora compara lo que te costaría cada mes con una estufa de butano, un radiador o calefactor eléctrico y un aire acondicionado con bomba de calor.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="m2">Tamaño de la habitación (m²)</label>
+            <input id="m2" type="number" min="1" step="1" value="20" inputmode="decimal">
+            <small>Estimamos unos 100 W de potencia por m².</small>
+          </div>
+          <div class="field">
+            <label for="h">Horas de uso al día</label>
+            <input id="h" type="number" min="0" max="24" step="0.5" value="4" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="d">Días de uso al mes</label>
+            <input id="d" type="number" min="0" max="31" step="1" value="30" inputmode="numeric">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="pLuz">Precio de la luz (€/kWh)</label>
+            <input id="pLuz" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="pButano">Bombona de butano 12,5 kg (€)</label>
+            <input id="pButano" type="number" min="0" step="0.05" value="16.50" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="scop">Rendimiento de la bomba de calor (SCOP)</label>
+            <input id="scop" type="number" min="1" step="0.1" value="3.5" inputmode="decimal">
+          </div>
+        </div>
+        <button class="btn" id="calcular">Comparar</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Calienta tu habitación de forma segura y eficiente</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=detector%20monoxido%20de%20carbono&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🚨</span><b>Detector de monóxido de carbono</b><span class="aff-desc">Imprescindible si usas estufa de butano, gas o una chimenea.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=aire%20acondicionado%20split%20bomba%20de%20calor%20inverter&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">❄️</span><b>Aire acondicionado con bomba de calor</b><span class="aff-desc">La forma más barata de calentar una estancia con electricidad.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=calefactor%20ceramico%20termostato&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔥</span><b>Calefactor cerámico con termostato</b><span class="aff-desc">Calor rápido para ratos cortos y baños; con termostato gasta menos.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo hacemos la comparación</h2>
+        <p>Calculamos el calor que necesita la habitación (unos 100 W por m² y, de media, funcionando el 70 % del tiempo gracias al termostato) y cuánto cuesta producirlo con cada aparato:</p>
+        <ul>
+          <li><strong>Radiador o calefactor eléctrico:</strong> 1 kWh de electricidad = 1 kWh de calor.</li>
+          <li><strong>Estufa de butano:</strong> una bombona de 12,5 kg contiene unos 160 kWh de energía, y la estufa aprovecha casi toda porque no tiene chimenea.</li>
+          <li><strong>Aire acondicionado con bomba de calor:</strong> por cada kWh de electricidad produce entre 3 y 4,5 kWh de calor (SCOP).</li>
+        </ul>
+        <p><strong>Ejemplo:</strong> una habitación de 20 m², 4 horas al día durante un mes, necesita unos 168 kWh de calor. Con un radiador eléctrico cuesta unos 27 €; con butano, algo más de una bombona (unos 18 €); y con bomba de calor, <strong>menos de 8 €</strong>.</p>
+
+        <h2>Ventajas e inconvenientes de cada opción</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Aparato</th><th>A favor</th><th>En contra</th></tr></thead>
+            <tbody>
+              <tr><td>Estufa de butano</td><td>No necesita enchufe, calienta rápido, más barata que la eléctrica</td><td>Genera humedad y CO₂, hay que ventilar y cargar bombonas</td></tr>
+              <tr><td>Radiador o calefactor eléctrico</td><td>Barato de comprar, fácil de mover, sin humos</td><td>El más caro de usar muchas horas</td></tr>
+              <tr><td>Bomba de calor (split)</td><td>La más barata de usar, también da frío en verano</td><td>Más cara de comprar e instalar</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Seguridad con las estufas de butano</h2>
+        <p class="note">Las estufas de butano queman gas dentro de la habitación. <strong>Nunca las uses en dormitorios mientras duermes ni en baños o espacios pequeños sin ventilación.</strong> Ventila la estancia varias veces al día, revisa la goma y el regulador, y valora instalar un <strong>detector de monóxido de carbono</strong>. Si notas dolor de cabeza, mareo o somnolencia, apaga la estufa y ventila inmediatamente.</p>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cuánto dura una bombona de butano en una estufa?</summary>
+          <p>Depende de la potencia a la que la uses. A potencia media, una bombona de 12,5 kg suele durar entre 30 y 50 horas de uso. Si la estufa está al máximo todo el rato, bastante menos. Calcúlalo con exactitud en nuestra <a href="duracion-bombona-butano">calculadora de duración de la bombona</a>.</p>
+        </details>
+        <details>
+          <summary>¿Qué estufa eléctrica gasta menos?</summary>
+          <p>Todas las estufas y radiadores eléctricos convierten la electricidad en calor con el mismo rendimiento. La que «gasta menos» es la que tiene un buen termostato y se usa el tiempo justo. Si quieres gastar de verdad menos con electricidad, la opción es una bomba de calor.</p>
+        </details>
+        <details>
+          <summary>¿Merece la pena poner un aire acondicionado solo para calentar?</summary>
+          <p>Si vas a calentar la misma habitación muchas horas cada invierno, sí suele compensar: el ahorro frente a un radiador eléctrico puede pagar el aparato en pocos inviernos, y además tendrás frío en verano. Calcula la potencia que necesitas con nuestra <a href="aire-acondicionado">calculadora de frigorías</a>.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="calefaccion-mas-barata">🏠 Qué calefacción es más barata</a></li>
+          <li><a href="radiador-electrico">🔥 Gasto de un radiador eléctrico</a></li>
+          <li><a href="aire-acondicionado">❄️ Frigorías del aire acondicionado</a></li>
+          <li><a href="bajar-temperatura-calefaccion">🌡️ Ahorro bajando la calefacción</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('calcular').addEventListener('click', function () {
+  var m2 = num('m2'), h = num('h'), d = num('d'), luz = num('pLuz'), bomb = num('pButano'), scop = num('scop') || 3.5;
+  if (!(m2 > 0 && h >= 0 && d >= 0)) { showResult('res', '<p>Revisa los datos introducidos.</p>'); return; }
+  var calor = m2 * 0.1 * h * 0.7 * d; // kWh de calor al mes
+  var kwhBombona = 12.5 * 12.87 * 0.95;
+  var bombonas = calor / kwhBombona;
+  var op = [
+    { n: 'Bomba de calor (split)', v: calor / scop * luz, c: '#1f7a55' },
+    { n: 'Estufa de butano', v: bombonas * bomb, c: '#d4862a' },
+    { n: 'Radiador o calefactor eléctrico', v: calor * luz, c: '#c0392b' }
+  ].sort(function (a, b) { return a.v - b.v; });
+  var max = op[op.length - 1].v || 1;
+  var filas = op.map(function (s, i) {
+    return '<div style="margin:10px 0"><div style="display:flex;justify-content:space-between;gap:8px;font-size:.95rem"><span>' + (i === 0 ? '🏆 ' : '') + s.n + '</span><b>' + eur(s.v) + '/mes</b></div>' +
+      '<div style="background:#fff;border-radius:6px;height:12px;margin-top:4px"><div style="width:' + Math.max(3, s.v / max * 100) + '%;background:' + s.c + ';height:12px;border-radius:6px"></div></div></div>';
+  }).join('');
+  showResult('res',
+    '<div>Para calentar <strong>' + fmt(m2, 0) + ' m²</strong> durante ' + fmt(h, 1) + ' h al día necesitas unos <strong>' + fmt(calor, 0) + ' kWh</strong> de calor al mes:</div>' +
+    filas +
+    '<p>Con butano gastarías unas <strong>' + fmt(bombonas, 1) + ' bombonas al mes</strong>. En un invierno de 5 meses, la opción más barata te ahorra <strong>' + eur((max - op[0].v) * 5) + '</strong> frente a la más cara.</p>');
+});
+</script>
+</body>
+</html>

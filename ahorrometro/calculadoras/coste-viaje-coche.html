@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de coste de viaje en coche: gasolina, peajes y por persona | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuánto cuesta un viaje en coche: litros de gasolina o diésel, peajes, ida y vuelta y cuánto paga cada pasajero. Gratis y al instante.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/coste-viaje-coche">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Calculadora de coste de viaje en coche: gasolina, peajes y por persona">
+  <meta property="og:description" content="Calcula cuánto cuesta un viaje en coche: litros de gasolina o diésel, peajes, ida y vuelta y cuánto paga cada pasajero. Gratis y al instante.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/coste-viaje-coche">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora del coste de un viaje en coche","url":"https://ahorrometro.es/calculadoras/coste-viaje-coche","description":"Calcula cuánto cuesta un viaje en coche: litros de gasolina o diésel, peajes, ida y vuelta y cuánto paga cada pasajero. Gratis y al instante.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Calculadora del coste de un viaje en coche","item":"https://ahorrometro.es/calculadoras/coste-viaje-coche"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Coste de viaje en coche</nav>
+  <div class="layout">
+    <article>
+      <h1>Calculadora del coste de un viaje en coche</h1>
+      <p class="lead">Calcula cuánto gastarás en combustible y peajes en tu próximo viaje, y cuánto le toca pagar a cada persona.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="km">Distancia (km, solo ida)</label>
+            <input id="km" type="number" min="0" step="1" value="350" inputmode="decimal">
+            <small>Madrid–Valencia son unos 355 km.</small>
+          </div>
+          <div class="field">
+            <label for="cons">Consumo del coche (L/100 km)</label>
+            <input id="cons" type="number" min="0" step="0.1" value="6.5" inputmode="decimal">
+            <small>Un turismo medio: 5–7 L/100 km.</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="precio">Precio del combustible (€/litro)</label>
+            <input id="precio" type="number" min="0" step="0.01" value="1.55" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="peajes">Peajes y aparcamiento (€, solo ida)</label>
+            <input id="peajes" type="number" min="0" step="0.01" value="0" inputmode="decimal">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="pax">Número de personas</label>
+            <input id="pax" type="number" min="1" step="1" value="2" inputmode="numeric">
+          </div>
+          <div class="field" style="justify-content:flex-end">
+            <label class="check"><input type="checkbox" id="vuelta" checked> Ida y vuelta</label>
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular coste</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Ahorra combustible en carretera</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=compresor%20portatil%20neumaticos%20coche&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🛞</span><b>Compresor portátil para neumáticos</b><span class="aff-desc">Unas ruedas con poca presión pueden disparar el consumo.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=soporte%20movil%20coche&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">📱</span><b>Soporte de móvil para el coche</b><span class="aff-desc">Navega con el GPS con seguridad y evita desvíos innecesarios.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=organizador%20maletero%20coche&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🧳</span><b>Organizador de maletero</b><span class="aff-desc">Viaja sin baca ni cofre: mejor aerodinámica y menos consumo.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo calcular el gasto de gasolina de un viaje</h2>
+        <p>Solo necesitas tres datos: los kilómetros, lo que consume tu coche cada 100 km y el precio del litro.</p>
+        <p class="note"><strong>Litros = Kilómetros × Consumo ÷ 100</strong><br><strong>Coste = Litros × Precio del litro + Peajes</strong></p>
+        <p><strong>Ejemplo:</strong> un viaje de ida y vuelta de 350 km (700 km en total) con un coche que gasta 6,5 L/100 km necesita 45,5 litros. A 1,55 €/L son <strong>70,53 €</strong>. Entre dos personas, 35,26 € cada una.</p>
+
+        <h2>¿Cuánto consume realmente mi coche?</h2>
+        <p>El consumo homologado del fabricante suele ser optimista. Para conocer el real, llena el depósito, pon el cuentakilómetros parcial a cero y, en el siguiente repostaje, divide los litros que echas entre los kilómetros recorridos y multiplica por 100.</p>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Tipo de vehículo</th><th>Consumo real en carretera</th></tr></thead>
+            <tbody>
+              <tr><td>Utilitario gasolina</td><td>5–6,5 L/100 km</td></tr>
+              <tr><td>Compacto diésel</td><td>4,5–5,5 L/100 km</td></tr>
+              <tr><td>SUV gasolina</td><td>6,5–8,5 L/100 km</td></tr>
+              <tr><td>Híbrido</td><td>4–5,5 L/100 km</td></tr>
+              <tr><td>Furgoneta</td><td>7–9 L/100 km</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Trucos para gastar menos combustible en carretera</h2>
+        <ul>
+          <li><strong>Baja de 120 a 110 km/h</strong>: puedes ahorrar entre un 10 % y un 15 % de combustible.</li>
+          <li><strong>Revisa la presión de los neumáticos</strong>: si van bajos, el consumo sube.</li>
+          <li><strong>Quita la baca o el cofre</strong> si no lo necesitas: empeora mucho la aerodinámica.</li>
+          <li><strong>Reposta en gasolineras de bajo coste</strong> o fuera de las autopistas: la diferencia puede superar los 10 céntimos por litro.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cómo reparto el coste de un viaje compartido?</summary>
+          <p>Lo más habitual es dividir combustible y peajes a partes iguales entre todos los ocupantes, conductor incluido. Si el coche es de uno de ellos, algunos grupos añaden unos céntimos por kilómetro para compensar el desgaste.</p>
+        </details>
+        <details>
+          <summary>¿Sale más barato ir en coche que en tren o autobús?</summary>
+          <p>Viajando solo, el tren o el autobús suelen salir más baratos. A partir de dos o tres personas, el coche normalmente gana en precio, sobre todo si no hay peajes.</p>
+        </details>
+        <details>
+          <summary>¿Dónde veo el precio de la gasolina hoy?</summary>
+          <p>El Ministerio para la Transición Ecológica publica los precios de todas las gasolineras de España en su geoportal oficial, actualizado a diario.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="consumo-electrico">⚡ Consumo eléctrico</a></li>
+          <li><a href="gastos-piso-compartido">🏠 Gastos de piso compartido</a></li>
+          <li><a href="placas-solares">☀️ Ahorro con placas solares</a></li>
+          <li><a href="conversor-cocina">🥣 Conversor de cocina</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('calcular').addEventListener('click', function () {
+  var km = num('km'), cons = num('cons'), precio = num('precio'), peajes = num('peajes') || 0, pax = Math.max(1, Math.round(num('pax')));
+  if (!(km > 0 && cons > 0 && precio > 0)) { showResult('res', '<p>Introduce la distancia, el consumo y el precio del combustible.</p>'); return; }
+  var factor = document.getElementById('vuelta').checked ? 2 : 1;
+  var kmTotal = km * factor;
+  var litros = kmTotal * cons / 100;
+  var combustible = litros * precio;
+  var total = combustible + peajes * factor;
+  showResult('res',
+    '<div>Coste total del viaje</div>' +
+    '<div class="big">' + eur(total) + '</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + eur(total / pax) + '</b><span>por persona (' + pax + ')</span></div>' +
+      '<div class="stat"><b>' + fmt(litros, 1) + ' L</b><span>de combustible</span></div>' +
+      '<div class="stat"><b>' + eur(combustible) + '</b><span>en combustible</span></div>' +
+      '<div class="stat"><b>' + fmt(kmTotal, 0) + ' km</b><span>recorridos</span></div>' +
+    '</div>' +
+    '<p>Coste por kilómetro: ' + eur(total / kmTotal) + '.</p>');
+});
+</script>
+</body>
+</html>

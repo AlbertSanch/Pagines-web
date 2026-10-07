@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consumo fantasma: ¿cuánto te cuestan los aparatos en espera? Calculadora | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuánto pagas al año por los aparatos que se quedan en modo espera (stand-by): televisión, consola, decodificador, microondas, cargadores y más.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/consumo-fantasma">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Consumo fantasma: ¿cuánto te cuestan los aparatos en espera? Calculadora">
+  <meta property="og:description" content="Calcula cuánto pagas al año por los aparatos que se quedan en modo espera (stand-by): televisión, consola, decodificador, microondas, cargadores y más.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/consumo-fantasma">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Consumo fantasma: ¿cuánto te cuestan los aparatos en espera?","url":"https://ahorrometro.es/calculadoras/consumo-fantasma","description":"Calcula cuánto pagas al año por los aparatos que se quedan en modo espera (stand-by): televisión, consola, decodificador, microondas, cargadores y más.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-29"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Consumo fantasma: ¿cuánto te cuestan los aparatos en espera?","item":"https://ahorrometro.es/calculadoras/consumo-fantasma"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Consumo fantasma</nav>
+  <div class="layout">
+    <article>
+      <h1>Consumo fantasma: ¿cuánto te cuestan los aparatos en espera?</h1>
+      <p class="lead">Muchos aparatos siguen gastando luz cuando los «apagas» con el mando o se quedan enchufados. Marca los que tienes en casa y descubre cuánto pagas al año por nada.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="field">
+          <label>Aparatos que se quedan en espera (indica cuántos tienes)</label>
+          <div id="aparatos" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:6px 18px;margin-top:6px"></div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="horas">Horas al día en espera (de media)</label>
+            <input id="horas" type="number" min="0" max="24" step="1" value="20" inputmode="numeric">
+            <small>Las horas en que no los usas: casi todo el día.</small>
+          </div>
+          <div class="field">
+            <label for="p">Precio de la luz (€/kWh)</label>
+            <input id="p" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular consumo fantasma</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Acaba con el consumo fantasma</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=regleta%20interruptor%20individual&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🔌</span><b>Regleta con interruptores individuales</b><span class="aff-desc">Apaga del todo la tele, la consola y el decodificador con un solo gesto.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=enchufe%20inteligente%20wifi%20medidor%20consumo&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">📱</span><b>Enchufe inteligente</b><span class="aff-desc">Corta la corriente por horario o desde el móvil, y muestra el consumo.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=enchufe%20medidor%20consumo%20electrico&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">📊</span><b>Enchufe medidor de consumo</b><span class="aff-desc">Descubre cuántos vatios gasta cada aparato cuando está «apagado».</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>¿Qué es el consumo fantasma?</h2>
+        <p>Es la electricidad que gastan los aparatos cuando no los estás usando pero siguen enchufados: la tele con el piloto rojo, la consola en «reposo», el decodificador, el microondas con su reloj o el cargador del móvil sin el móvil. Cada uno gasta poco, pero están así casi las 24 horas del día, los 365 días del año.</p>
+        <p class="note"><strong>Coste al año = Vatios en espera × Horas al día × 365 ÷ 1000 × Precio del kWh</strong></p>
+        <p><strong>Ejemplo:</strong> 30 W en espera durante 20 horas al día son unos 219 kWh al año: unos <strong>35 €</strong> con la luz a 0,16 €/kWh, sin encender nada.</p>
+
+        <h2>Los aparatos que más gastan en espera</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Aparato</th><th>Consumo en espera aproximado</th></tr></thead>
+            <tbody>
+              <tr><td>Consola en modo reposo o «encendido rápido»</td><td>8–15 W</td></tr>
+              <tr><td>Decodificador o receptor de TV</td><td>5–15 W</td></tr>
+              <tr><td>Ordenador de sobremesa en suspensión</td><td>2–5 W</td></tr>
+              <tr><td>Equipo de música o barra de sonido</td><td>2–6 W</td></tr>
+              <tr><td>Microondas u horno con reloj</td><td>1–3 W</td></tr>
+              <tr><td>Televisión moderna</td><td>0,5–1 W</td></tr>
+              <tr><td>Cargador enchufado sin móvil</td><td>0,1–0,5 W</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Los valores son orientativos: los aparatos modernos suelen gastar menos de 1 W en espera, pero los más antiguos y los que tienen funciones de «encendido rápido» pueden gastar mucho más. Con un enchufe medidor puedes comprobar el consumo real de los tuyos.</p>
+
+        <h2>Cómo eliminar el consumo fantasma</h2>
+        <ul>
+          <li><strong>Regletas con interruptor</strong>: agrupa la tele, la consola, el decodificador y la barra de sonido y apágalo todo de golpe.</li>
+          <li><strong>Desactiva el «encendido rápido»</strong> de consolas y televisores en su menú de ajustes.</li>
+          <li><strong>Desenchufa los cargadores</strong> cuando no los uses.</li>
+          <li><strong>No lo apagues todo</strong>: el frigorífico, el router o la alarma deben seguir encendidos. Y algunos decodificadores necesitan estar enchufados para actualizarse.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Merece la pena desenchufar los aparatos?</summary>
+          <p>En una casa con varios aparatos antiguos o consolas en modo reposo, el ahorro puede superar los 30–50 € al año sin ningún esfuerzo. Con aparatos modernos es menor, pero una regleta con interruptor se paga en pocos meses.</p>
+        </details>
+        <details>
+          <summary>¿El router cuenta como consumo fantasma?</summary>
+          <p>No exactamente: el router está funcionando siempre (gasta unos 6–12 W). Puedes programarlo para que se apague por la noche, pero ten en cuenta que dejarías sin conexión a los aparatos que la necesiten, como alarmas o teléfonos fijos por internet.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="consumo-electrico">⚡ Consumo de cualquier aparato</a></li>
+          <li><a href="potencia-contratada">🔌 Qué potencia contratar</a></li>
+          <li><a href="frigorifico">🧊 Gasto del frigorífico</a></li>
+          <li><a href="../precio-luz-hoy">💡 Precio de la luz hoy</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+var APARATOS = [
+  ['Televisión', 1, 1],
+  ['Decodificador o receptor de TV', 8, 1],
+  ['Consola en modo reposo', 10, 0],
+  ['Barra de sonido o equipo de música', 4, 0],
+  ['Ordenador en suspensión', 3, 0],
+  ['Impresora', 3, 0],
+  ['Microondas u horno con reloj', 2, 1],
+  ['Altavoz inteligente', 2, 0],
+  ['Cafetera de cápsulas o con reloj', 1, 1],
+  ['Cargadores enchufados sin móvil', 0.3, 2],
+  ['Aire acondicionado en espera', 3, 0],
+  ['Lavadora o lavavajillas en espera', 1, 1]
+];
+var cont = document.getElementById('aparatos');
+APARATOS.forEach(function (a, i) {
+  cont.insertAdjacentHTML('beforeend',
+    '<div style="display:flex;align-items:center;gap:10px;justify-content:space-between;border-bottom:1px solid var(--border);padding:4px 0">' +
+      '<label for="ap' + i + '" style="font-weight:400;font-size:.95rem">' + a[0] + ' <span style="color:var(--muted);white-space:nowrap">(≈' + String(a[1]).replace('.', ',') + ' W)</span></label>' +
+      '<input id="ap' + i + '" type="number" min="0" max="20" step="1" value="' + a[2] + '" data-w="' + a[1] + '" inputmode="numeric" style="width:64px;padding:6px 8px;border:1px solid var(--border);border-radius:8px">' +
+    '</div>');
+});
+document.getElementById('calcular').addEventListener('click', function () {
+  var w = 0, n = 0;
+  cont.querySelectorAll('input').forEach(function (inp) { var c = Math.max(0, parseFloat(inp.value) || 0); w += c * Number(inp.getAttribute('data-w')); n += c; });
+  var horas = num('horas'), p = num('p');
+  if (!(w > 0)) { showResult('res', '<p>Indica al menos un aparato.</p>'); return; }
+  if (!(horas >= 0 && p >= 0)) { showResult('res', '<p>Revisa las horas y el precio de la luz.</p>'); return; }
+  var kwhAno = w * horas * 365 / 1000;
+  showResult('res',
+    '<div>Tu consumo fantasma te cuesta</div>' +
+    '<div class="big">' + eur(kwhAno * p) + ' al año</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + fmt(w, 1) + ' W</b><span>siempre en espera (' + fmt(n, 0) + ' aparatos)</span></div>' +
+      '<div class="stat"><b>' + fmt(kwhAno, 0) + ' kWh</b><span>al año</span></div>' +
+      '<div class="stat"><b>' + eur(kwhAno * p / 12) + '</b><span>al mes</span></div>' +
+      '<div class="stat"><b>' + eur(kwhAno * p * 10) + '</b><span>en 10 años</span></div>' +
+    '</div>' +
+    '<p>Con una regleta con interruptor para los aparatos de la tele y el ordenador, podrías eliminar la mayor parte de este gasto.</p>');
+});
+</script>
+</body>
+</html>

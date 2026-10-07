@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cuántos sacos de pellets necesito? Calculadora para el invierno | Ahorrómetro</title>
+  <meta name="description" content="Calcula cuántos kilos y sacos de pellets gasta tu estufa al día, a la semana y en todo el invierno, y cuánto te costará. Con consejos para comprar más barato.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/sacos-pellets">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="¿Cuántos sacos de pellets necesito? Calculadora para el invierno">
+  <meta property="og:description" content="Calcula cuántos kilos y sacos de pellets gasta tu estufa al día, a la semana y en todo el invierno, y cuánto te costará. Con consejos para comprar más barato.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/sacos-pellets">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"¿Cuántos sacos de pellets necesito?","url":"https://ahorrometro.es/calculadoras/sacos-pellets","description":"Calcula cuántos kilos y sacos de pellets gasta tu estufa al día, a la semana y en todo el invierno, y cuánto te costará. Con consejos para comprar más barato.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-29"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"¿Cuántos sacos de pellets necesito?","item":"https://ahorrometro.es/calculadoras/sacos-pellets"}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- ADSENSE: pega aquí el script de AdSense -->
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a> › Sacos de pellets</nav>
+  <div class="layout">
+    <article>
+      <h1>¿Cuántos sacos de pellets necesito?</h1>
+      <p class="lead">Calcula cuántos pellets gasta tu estufa al día, a la semana y en todo el invierno, y cuánto dinero tienes que reservar.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="kw">Potencia de la estufa (kW)</label>
+            <input id="kw" type="number" min="1" max="40" step="0.5" value="9" inputmode="decimal">
+            <small>Aparece en la ficha: estufas domésticas, 6–12 kW.</small>
+          </div>
+          <div class="field">
+            <label for="uso">¿A qué potencia la usas normalmente?</label>
+            <select id="uso">
+              <option value="0.4">Baja (mantener la temperatura)</option>
+              <option value="0.6" selected>Media</option>
+              <option value="0.85">Alta (casa fría o mal aislada)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="h">Horas encendida al día</label>
+            <input id="h" type="number" min="0" max="24" step="0.5" value="6" inputmode="decimal">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="dias">Días de uso en el invierno</label>
+            <input id="dias" type="number" min="1" max="365" step="1" value="150" inputmode="numeric">
+            <small>De noviembre a marzo son unos 150 días.</small>
+          </div>
+          <div class="field">
+            <label for="saco">Kilos por saco</label>
+            <input id="saco" type="number" min="1" step="1" value="15" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="precio">Precio por saco (€)</label>
+            <input id="precio" type="number" min="0" step="0.05" value="5.50" inputmode="decimal">
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular sacos</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Para tu estufa de pellets</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=aspirador%20cenizas%20estufa%20pellets&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🧹</span><b>Aspirador de cenizas</b><span class="aff-desc">Limpia el brasero y la cámara de combustión sin ensuciar.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=detector%20monoxido%20de%20carbono&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🚨</span><b>Detector de monóxido de carbono</b><span class="aff-desc">Recomendable con cualquier estufa de combustión.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=guantes%20resistentes%20calor%20chimenea&tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🧤</span><b>Guantes resistentes al calor</b><span class="aff-desc">Para manipular el brasero y la puerta de la estufa con seguridad.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo se calcula el consumo de pellets</h2>
+        <p>Un kilo de pellet de calidad (certificado ENplus A1) aporta unos <strong>4,8 kWh</strong> de energía, y una buena estufa aprovecha alrededor del <strong>90 %</strong>. Con eso se calcula cuántos kilos quema cada hora:</p>
+        <p class="note"><strong>Kilos por hora = Potencia (kW) × % de uso ÷ (4,8 × 0,9)</strong></p>
+        <p><strong>Ejemplo:</strong> una estufa de 9 kW a potencia media (60 %) quema unos 1,25 kg por hora. Encendida 6 horas al día son 7,5 kg diarios: medio saco de 15 kg. En un invierno de 150 días necesitas unos <strong>75 sacos</strong>, unos 410 € a 5,50 € el saco.</p>
+
+        <h2>Consumo orientativo según la potencia</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Potencia</th><th>Kg por hora (a potencia media)</th><th>Sacos de 15 kg a la semana (6 h/día)</th></tr></thead>
+            <tbody>
+              <tr><td>6 kW</td><td>≈0,8 kg</td><td>≈2,3 sacos</td></tr>
+              <tr><td>9 kW</td><td>≈1,25 kg</td><td>≈3,5 sacos</td></tr>
+              <tr><td>12 kW</td><td>≈1,7 kg</td><td>≈4,7 sacos</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Consejos para gastar menos en pellets</h2>
+        <ul>
+          <li><strong>Compra por palés</strong> (normalmente 65–70 sacos): el saco sale bastante más barato que suelto, sobre todo si compras antes del invierno, cuando los precios suelen estar más bajos.</li>
+          <li><strong>¿Tienes chimenea o estufa de leña?</strong> Calcula <a href="cuanta-lena-necesito">cuánta leña necesitas para el invierno</a>.</li>: da más calor, deja menos ceniza y ensucia menos la estufa.</li>
+          <li><strong>Guárdalos en un lugar seco</strong>: el pellet húmedo se deshace y quema peor.</li>
+          <li><strong>Usa el termostato y la programación</strong> de la estufa en lugar de tenerla siempre a tope.</li>
+          <li><strong>Limpia el brasero</strong> a menudo y haz la revisión anual: una estufa sucia consume más.</li>
+        </ul>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cuánto dura un saco de pellets de 15 kg?</summary>
+          <p>Depende de la potencia y de cómo la uses. En una estufa de 9 kW a potencia media, un saco dura unas 12 horas de funcionamiento. A potencia baja puede durar un día entero.</p>
+        </details>
+        <details>
+          <summary>¿Cuántos sacos hay en un palé?</summary>
+          <p>Lo habitual son entre 65 y 70 sacos de 15 kg, es decir, alrededor de una tonelada. Ocupa aproximadamente 1 m² de superficie.</p>
+        </details>
+        <details>
+          <summary>¿Es más barato calentar con pellets que con gas o electricidad?</summary>
+          <p>Normalmente los pellets salen más baratos que los radiadores eléctricos y el gasóleo, y parecidos al gas natural. La bomba de calor suele ser la opción más barata de usar. Compara todas en nuestra <a href="calefaccion-mas-barata">calculadora de calefacción más barata</a>.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="calefaccion-mas-barata">🏠 Qué calefacción es más barata</a></li>
+          <li><a href="bajar-temperatura-calefaccion">🌡️ Ahorro bajando la calefacción</a></li>
+          <li><a href="estufa-butano-o-electrica">🧯 Estufa de butano o eléctrica</a></li>
+          <li><a href="radiador-electrico">🔥 Gasto de un radiador eléctrico</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros (como Google) para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en nuestra <a href="../politica-cookies">política de cookies</a>.</p>
+  <div class="actions">
+    <button class="btn btn-sm" data-consent="accepted">Aceptar</button>
+    <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
+  </div>
+</div>
+<script src="../assets/main.js"></script>
+<script>
+document.getElementById('calcular').addEventListener('click', function () {
+  var kw = num('kw'), uso = num('uso'), h = num('h'), dias = num('dias'), saco = num('saco'), precio = num('precio');
+  if (!(kw > 0 && h >= 0 && dias > 0 && saco > 0 && precio >= 0)) { showResult('res', '<p>Revisa los datos introducidos.</p>'); return; }
+  var kgHora = kw * uso / (4.8 * 0.9);
+  var kgDia = kgHora * h;
+  var kgTemp = kgDia * dias;
+  var sacosTemp = Math.ceil(kgTemp / saco);
+  var palets = kgTemp / (saco * 70);
+  showResult('res',
+    '<div>Para todo el invierno necesitas unos</div>' +
+    '<div class="big">' + fmt(sacosTemp, 0) + ' sacos</div>' +
+    '<div class="stats">' +
+      '<div class="stat"><b>' + eur(sacosTemp * precio) + '</b><span>coste del invierno</span></div>' +
+      '<div class="stat"><b>' + fmt(kgDia, 1) + ' kg</b><span>al día (' + fmt(kgDia / saco, 1) + ' sacos)</span></div>' +
+      '<div class="stat"><b>' + fmt(kgDia * 7 / saco, 1) + ' sacos</b><span>a la semana</span></div>' +
+      '<div class="stat"><b>' + fmt(kgHora, 2) + ' kg</b><span>por hora</span></div>' +
+    '</div>' +
+    '<p>Son unos ' + fmt(kgTemp, 0) + ' kg de pellets, aproximadamente <strong>' + fmt(palets, 1) + ' palés</strong> de 70 sacos. Comprando por palés suele salir más barato.</p>');
+});
+</script>
+</body>
+</html>
