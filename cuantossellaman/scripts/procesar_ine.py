@@ -5,9 +5,11 @@ Entrada (cuantossellaman/datos-ine/, la llena descargar_ine.py):
   - nombres_mas_frecuentes.xlsx  → top 100 de España y top 50 por provincia de residencia
   - nombres_por_fecha.xlsx       → top 50 por década de nacimiento en España (y top por provincia)
   - nomnacAA.xlsx                → nombres de los recién nacidos de cada año (top 100 España, top 10 por comunidad)
+  - apellidos_frecuencia.xls     → todos los apellidos con 20 o más personas como primer apellido
+  - apellidos_mas_frecuentes.xls → top 100 de España y top 50 por provincia de residencia y de nacimiento
 
 Salida (cuantossellaman/data/):
-  - nombres.json, provincias.json, decadas.json, bebes.json
+  - nombres.json, provincias.json, decadas.json, bebes.json, apellidos.json
 
 No inventa ni estima nada: los nombres que no están en los ficheros (menos de 20 personas en
 España) simplemente no aparecen. Falla con un error claro si el formato del INE cambia.
@@ -20,6 +22,7 @@ from datetime import datetime
 from pathlib import Path
 
 import openpyxl
+import xlrd
 
 from tildes import normalizar
 
@@ -200,12 +203,65 @@ def leer_bebes():
     return anios
 
 
+# ------------------------------------------------------------------------------------- Apellidos
+def filas_xls(ruta, hoja):
+    wb = xlrd.open_workbook(ruta)
+    comprobar(hoja in wb.sheet_names(), f"{ruta.name}: falta la hoja «{hoja}» (hojas: {wb.sheet_names()})")
+    s = wb.sheet_by_name(hoja)
+    return [[None if c == "" else c for c in s.row_values(i)] for i in range(s.nrows)]
+
+
+def cifra_o_nada(x):
+    """El INE pone «..» cuando no publica la cifra (por privacidad): se guarda como None."""
+    return None if x in (None, "..") else entero(x)
+
+
+def leer_apellidos():
+    ruta = ENTRADA / "apellidos_frecuencia.xls"
+    lista, referencia = [], None
+    for hoja in ("Apellidos >=100", "Apellidos >=20 y <=99"):
+        rows = filas_xls(ruta, hoja)
+        referencia = referencia or fecha_referencia(rows, ruta.name)
+        cab = next((i for i, r in enumerate(rows[:10]) if r[:2] == ["Orden", "Apellido"]), None)
+        comprobar(cab is not None, f"{ruta.name}/{hoja}: no encuentro la cabecera «Orden, Apellido»")
+        titulos = [str(x or "") for x in rows[cab - 1]]
+        comprobar("1º" in titulos[2] and "2º" in titulos[3] and "Ambos" in titulos[4],
+                  f"{ruta.name}/{hoja}: las columnas ya no son 1.er apellido, 2.º apellido y ambos ({titulos[:5]})")
+        for r in rows[cab + 1:]:
+            if r[1] is None:
+                continue
+            p1 = entero(r[2])
+            comprobar(p1 is not None and p1 >= 20, f"{ruta.name}/{hoja}: primer apellido no válido en {r[:5]}")
+            lista.append({"n": limpiar(r[1]), "r": entero(r[0]), "p1": p1, "p2": cifra_o_nada(r[3]), "ambos": cifra_o_nada(r[4])})
+    comprobar(len(lista) > 50000, f"{ruta.name}: solo {len(lista)} apellidos; esperaba más de 50.000")
+
+    ruta = ENTRADA / "apellidos_mas_frecuentes.xls"
+    rows = filas_xls(ruta, "ESPAÑA_100")
+    fila = next(i for i, r in enumerate(rows[:10]) if "PRIMER APELLIDO" in [str(x).strip() for x in r if x])
+    top100 = [[limpiar(r[1]), entero(r[2])] for r in rows[fila + 1:] if r[1] and entero(r[2])]
+    comprobar(len(top100) >= 90, f"{ruta.name}/ESPAÑA_100: solo {len(top100)} apellidos")
+    provincias = {}
+    for hoja, clave in (("PROVINCIAS_RESIDENCIA", "res"), ("PROVINCIAS_NACIMIENTO", "nac")):
+        rows = filas_xls(ruta, hoja)
+        fila = next(i for i, r in enumerate(rows[:10]) if "PRIMER APELLIDO" in [str(x).strip() for x in r if x])
+        rows[fila] = ["NOMBRE" if str(x or "").strip() == "PRIMER APELLIDO" else x for x in rows[fila]]
+        # La hoja de nacimiento trae además «66 - NACIDOS EN EL EXTRANJERO»: solo usamos las 52 provincias
+        bloques = {k: v for k, v in bloques_ancho(rows, fila - 1, fila).items() if re.match(r"(0[1-9]|[1-4]\d|5[0-2])\s*-", k)}
+        comprobar(len(bloques) == 52, f"{ruta.name}/{hoja}: hay {len(bloques)} provincias, esperaba 52")
+        for etiqueta, l in bloques.items():
+            m = re.match(r"(\d{2})\s*-\s*(.+)", etiqueta)
+            comprobar(m and len(l) >= 20, f"{ruta.name}/{hoja}: provincia inesperada «{etiqueta}» o con pocos apellidos")
+            provincias.setdefault(m[1], {})[clave] = l
+    return referencia, lista, top100, provincias
+
+
 def main():
     try:
         ref_todos, todos = leer_todos()
         ref_prov, provincias, nacional = leer_provincias()
         ref_dec, decadas = leer_decadas()
         bebes = leer_bebes()
+        ref_ape, apellidos, top_ape, prov_ape = leer_apellidos()
     except FormatoINE as e:
         sys.exit(f"ERROR: el formato de los ficheros del INE ha cambiado: {e}")
 
@@ -215,9 +271,11 @@ def main():
     escribir("nombres.json", {**meta, "referencia": ref_todos, "H": todos["H"], "M": todos["M"], "top100": nacional})
     escribir("provincias.json", {**meta, "referencia": ref_prov, "provincias": provincias})
     escribir("decadas.json", {**meta, "referencia": ref_dec, "decadas": decadas})
+    escribir("apellidos.json", {**meta, "referencia": ref_ape, "lista": apellidos, "top100": top_ape, "provincias": prov_ape})
     escribir("bebes.json", {**meta, "fuente": "INE, Estadística de nacimientos (nombres de los recién nacidos)", "anios": bebes})
     print(f"Nombres: {len(todos['H'])} de hombre y {len(todos['M'])} de mujer (datos a {ref_todos}); "
-          f"{len(provincias)} provincias; {len(decadas)} décadas; bebés {min(bebes)}–{max(bebes)}")
+          f"{len(provincias)} provincias; {len(decadas)} décadas; bebés {min(bebes)}–{max(bebes)}; "
+          f"{len(apellidos)} apellidos (datos a {ref_ape})")
 
 
 def escribir(nombre, datos):

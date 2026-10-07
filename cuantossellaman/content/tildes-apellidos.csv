@@ -1,0 +1,3 @@
+# Correcciones de tildes de apellidos (el INE los publica en mayúsculas y sin tildes).
+# Una línea por palabra: PALABRA_SIN_TILDE,Forma correcta
+# MIGALLON,Migallón

@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /indice/
+Disallow: /indice-apellidos/
 
 Sitemap: https://cuantossellaman.es/sitemap.xml

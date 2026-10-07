@@ -19,16 +19,18 @@ from html import escape
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from tildes import mostrar, normalizar  # noqa: E402
+from tildes import mostrar, mostrar_apellido, normalizar  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
 DATOS = RAIZ / "data"
 WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 SIGNIFICADOS = RAIZ / "content" / "significados"
+ORIGENES_APELLIDOS = RAIZ / "content" / "significados-apellidos"
 DOMINIO = "https://cuantossellaman.es"
 SITIO = "¿Cuántos se llaman?"
 UMBRAL_POR_DEFECTO = 1000
+UMBRAL_APELLIDOS_POR_DEFECTO = 2000  # personas con ese PRIMER apellido para tener página propia
 MIN_PAGINAS = 500  # si salen menos, algo ha ido mal: el script falla para no publicar una web rota
 
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
@@ -81,7 +83,7 @@ def titulo_decada(clave, d):
 # ------------------------------------------------------------------------------------- Carga
 def cargar():
     leer = lambda f: json.loads((DATOS / f).read_text(encoding="utf-8"))  # noqa: E731
-    return leer("nombres.json"), leer("provincias.json"), leer("decadas.json"), leer("bebes.json")
+    return leer("nombres.json"), leer("provincias.json"), leer("decadas.json"), leer("bebes.json"), leer("apellidos.json")
 
 
 def construir_indice(nombres, provincias, decadas, bebes, umbral):
@@ -168,6 +170,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
   <div class="container">
     <a href="/" class="logo"><span class="logo-mark">?</span><span>¿Cuántos se <span class="hl">llaman</span>?</span></a>
     <nav class="nav">
+      <a href="/apellidos/">Apellidos</a>
       <a href="/provincias/">Por provincia</a>
       <a href="/decadas/">Por década</a>
       <a href="/bebes/">Bebés</a>
@@ -181,8 +184,8 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 </main>
 <footer class="site-footer">
   <div class="container">
-    <p><strong>{SITIO}</strong> responde cuántas personas se llaman de cada forma en España con los datos oficiales del Instituto Nacional de Estadística (INE).</p>
-    <div class="links"><a href="/">Buscar un nombre</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a></div>
+    <p><strong>{SITIO}</strong> responde cuántas personas se llaman o se apellidan de cada forma en España con los datos oficiales del Instituto Nacional de Estadística (INE).</p>
+    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a></div>
     <p>Fuente: INE. Datos reutilizados conforme a sus condiciones de uso; esta web no está vinculada al INE.</p>
   </div>
 </footer>
@@ -247,7 +250,8 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
     else:
         s = sexos[0]
         respuesta = (f"En España hay <strong>{n(e[s]['f'])} {SEXO[s][1]}</strong> que se llaman {escape(X)}. "
-                     f"Es el nombre de {SEXO[s][0]} número {n(e[s]['r'])} más frecuente.")
+                     + (f"Es el nombre de {SEXO[s][0]} más frecuente de España." if e[s]["r"] == 1 else
+                        f"Es el nombre de {SEXO[s][0]} número {n(e[s]['r'])} más frecuente."))
         cifra = n(e[s]["f"])
     edades = [f"{dec(e[s]['e'])} años ({SEXO[s][1]})" if len(sexos) == 2 else f"{dec(e[s]['e'])} años"
               for s in sexos if e[s]["e"] is not None]
@@ -444,15 +448,11 @@ def portada(idx, nombres, bebes, referencia, n_paginas):
     cuerpo = f"""
 <section class="hero">
   <h1>¿Cuántas personas se llaman como tú?</h1>
-  <p>Escribe un nombre y descubre cuántas personas se llaman así en España, su edad media y dónde es más común. Datos oficiales del INE.</p>
-  <form class="buscador" id="buscar" role="search" data-referencia="{fecha_larga(referencia)}" action="/" method="get">
-    <input id="q" name="q" type="search" placeholder="Escribe un nombre, por ejemplo Lucía" autocomplete="off" aria-label="Nombre" required>
-    <button class="btn" type="submit">Buscar</button>
-  </form>
-  <ul class="sugerencias" id="sugerencias" aria-live="polite"></ul>
-  <div class="resultado" id="resultado" aria-live="polite"></div>
+  <p>Escribe un nombre o un apellido y descubre cuántas personas lo llevan en España, su edad media y dónde es más común. Datos oficiales del INE.</p>
+  {formulario("nombre", referencia)}
 </section>
 <div class="grid">
+  <a class="card" href="/apellidos/"><h3>Apellidos</h3><p>Cuántos se apellidan como tú y los apellidos más comunes de cada provincia.</p></a>
   <a class="card" href="/provincias/"><h3>Por provincia</h3><p>Los 50 nombres más comunes de cada provincia.</p></a>
   <a class="card" href="/decadas/"><h3>Por década</h3><p>De José y María a Hugo y Lucía: cómo han cambiado los nombres.</p></a>
   <a class="card" href="/bebes/"><h3>Nombres de bebé</h3><p>Los más puestos cada año desde {min(bebes)}. En {ultimo}: {escape(mostrar(esp['H']['top'][0][0]))} y {escape(mostrar(esp['M']['top'][0][0]))}.</p></a>
@@ -469,8 +469,8 @@ def portada(idx, nombres, bebes, referencia, n_paginas):
     ld = [{"@context": "https://schema.org", "@type": "WebSite", "name": SITIO, "url": DOMINIO + "/",
            "potentialAction": {"@type": "SearchAction", "target": DOMINIO + "/?q={search_term_string}",
                                "query-input": "required name=search_term_string"}}]
-    return pagina("/", "¿Cuántas personas se llaman como tú? Nombres en España (INE)",
-                  "Descubre cuántas personas se llaman como tú en España, su edad media y en qué provincias es más común tu nombre. Datos oficiales del INE.",
+    return pagina("/", "¿Cuántas personas se llaman como tú? Nombres y apellidos",
+                  "Descubre cuántas personas se llaman o se apellidan como tú en España, su edad media y en qué provincias es más común. Datos oficiales del INE.",
                   cuerpo, None, ld)
 
 
@@ -482,15 +482,16 @@ def paginas_legales(referencia, umbral):
 <p>Todos los datos proceden del <strong>Instituto Nacional de Estadística (INE)</strong>:</p>
 <ul>
 <li><strong>Nombres de la población:</strong> estadística de nombres y apellidos más frecuentes, elaborada a partir de los Censos de población anuales. Los datos actuales son a {fecha_larga(referencia)}. Incluye todos los nombres que llevan al menos 20 personas en España, con su edad media, los 50 más frecuentes de cada provincia de residencia y los 50 más frecuentes de cada década de nacimiento.</li>
+<li><strong>Apellidos:</strong> todos los apellidos que llevan al menos 20 personas como primer apellido, con cuántas lo tienen como primero, como segundo y en ambos, y los 50 más frecuentes de cada provincia de residencia y de nacimiento.</li>
 <li><strong>Nombres de los bebés:</strong> estadística de nacimientos, con los 100 nombres más puestos cada año en España y los 10 más puestos en cada comunidad autónoma.</li>
 </ul>
 <p>El INE actualiza estos datos una vez al año, normalmente en mayo. Esta web los descarga y regenera sus páginas automáticamente.</p>
 <h2>El límite de 20 personas</h2>
-<p>Para proteger la privacidad, el INE no publica los nombres que llevan menos de 20 personas en toda España, ni los que llevan menos de 5 en una provincia. Por eso, si buscas un nombre muy poco común, verás el mensaje «menos de 20 personas»: el número exacto no se conoce y aquí nunca lo estimamos ni lo inventamos.</p>
+<p>Para proteger la privacidad, el INE no publica los nombres que llevan menos de 20 personas en toda España, ni los que llevan menos de 5 en una provincia. Con los apellidos ocurre lo mismo: solo se publican los que llevan al menos 20 personas como primer apellido, y algunas cifras (como el segundo apellido de los apellidos poco frecuentes) aparecen como no publicadas. Por eso, si buscas un nombre muy poco común, verás el mensaje «menos de 20 personas»: el número exacto no se conoce y aquí nunca lo estimamos ni lo inventamos.</p>
 <h2>Cómo se cuenta un nombre</h2>
 <p>El INE cuenta el nombre completo tal y como figura en el padrón. «María José» y «María» son nombres distintos: una persona que se llama María José no cuenta como María. Los nombres se publican en mayúsculas y sin tildes; las tildes que ves en esta web las hemos añadido para facilitar la lectura y pueden no coincidir con cómo escribe su nombre cada persona.</p>
 <h2>Qué nombres tienen página propia</h2>
-<p>Tienen página propia los nombres que llevan al menos {n(umbral)} personas en España y los que aparecen en alguna tabla de ranking (por provincia, por década o de bebés). Cualquier otro nombre con datos se puede consultar en el buscador de la portada.</p>
+<p>Tienen página propia los nombres que llevan al menos {n(umbral)} personas en España (y los apellidos que llevan al menos {n(UMBRAL_APELLIDOS_POR_DEFECTO)} personas como primer apellido) y los que aparecen en alguna tabla de ranking (por provincia, por década o de bebés). Cualquier otro nombre con datos se puede consultar en el buscador de la portada.</p>
 <h2>Condiciones de uso de los datos</h2>
 <p>Los datos del INE se reutilizan conforme a su aviso legal, citando la fuente. {SITIO} no está vinculada ni avalada por el INE.</p>
 </div>"""
@@ -540,16 +541,186 @@ def indices_busqueda(idx):
     return grupos
 
 
-VERSION = "1"
+# ------------------------------------------------------------------------------------- Apellidos
+def construir_indice_apellidos(apellidos, umbral):
+    idx = {}
+    for x in apellidos["lista"]:
+        k = normalizar(x["n"])
+        if k in idx:  # por si el INE repitiera una forma: nos quedamos con la primera (más frecuente)
+            continue
+        idx[k] = {"k": k, "mostrar": mostrar_apellido(x["n"]), "slug": slug(k), "r": x["r"],
+                  "p1": x["p1"], "p2": x["p2"], "ambos": x["ambos"], "res": [], "nac": []}
+    en_listas = {normalizar(a) for a, _ in apellidos["top100"]}
+    for cod, p in apellidos["provincias"].items():
+        for clave in ("res", "nac"):
+            for pos, (a, f) in enumerate(p[clave], 1):
+                k = normalizar(a)
+                en_listas.add(k)
+                if k in idx:
+                    idx[k][clave].append({"cod": cod, "pos": pos, "f": f})
+    for e in idx.values():
+        e["pagina"] = e["p1"] >= umbral or e["k"] in en_listas
+        e["total"] = (e["p1"] + e["p2"] - e["ambos"]) if e["p2"] is not None and e["ambos"] is not None else None
+    return idx
+
+
+def enlace_apellido(idx, ine, texto=None):
+    e = idx.get(normalizar(ine))
+    t = escape(texto or (e["mostrar"] if e else mostrar_apellido(ine)))
+    return f'<a href="/apellido/{e["slug"]}/">{t}</a>' if e and e["pagina"] else t
+
+
+def tabla_apellidos(idx, lista):
+    filas = "".join(f'<tr><td class="num">{i}</td><td>{enlace_apellido(idx, a)}</td><td class="num">{n(f)}</td></tr>'
+                    for i, (a, f) in enumerate(lista, 1))
+    return ('<div class="table-wrap"><table class="data"><thead><tr><th class="num">#</th><th>Primer apellido</th>'
+            f'<th class="num">Personas</th></tr></thead><tbody>{filas}</tbody></table></div>')
+
+
+def formulario(tipo, referencia):
+    marcado = lambda t: " checked" if t == tipo else ""  # noqa: E731
+    texto = "Escribe un apellido, por ejemplo García" if tipo == "apellido" else "Escribe un nombre, por ejemplo Lucía"
+    return f"""<form class="buscador" id="buscar" role="search" data-referencia="{fecha_larga(referencia)}" action="/" method="get">
+    <input id="q" name="q" type="search" placeholder="{texto}" autocomplete="off" aria-label="Nombre o apellido" required>
+    <button class="btn" type="submit">Buscar</button>
+  </form>
+  <div class="tipo-busqueda" role="radiogroup" aria-label="Qué quieres buscar">
+    <label><input type="radio" name="tipo" value="nombre"{marcado("nombre")}> Nombre</label>
+    <label><input type="radio" name="tipo" value="apellido"{marcado("apellido")}> Apellido</label>
+  </div>
+  <ul class="sugerencias" id="sugerencias" aria-live="polite"></ul>
+  <div class="resultado" id="resultado" aria-live="polite"></div>"""
+
+
+def pagina_apellido(e, idx, por_p1, referencia):
+    X = e["mostrar"]
+    ref = fecha_larga(referencia)
+    p2 = f"{n(e['p2'])}" if e["p2"] is not None else None
+    respuesta = (f"En España hay <strong>{n(e['p1'])} personas</strong> que tienen {escape(X)} como primer apellido"
+                 + (f" y <strong>{p2}</strong> que lo tienen como segundo." if p2 else ". El INE no publica la cifra del segundo apellido.")
+                 + (" Es el apellido más frecuente de España." if e["r"] == 1 else f" Es el apellido número {n(e['r'])} más frecuente."))
+    stats = f'<div class="stat"><b>{n(e["p1"])}</b><span>como primer apellido · puesto {n(e["r"])}</span></div>'
+    if p2:
+        stats += f'<div class="stat"><b>{p2}</b><span>como segundo apellido</span></div>'
+    if e["ambos"] is not None:
+        stats += f'<div class="stat"><b>{n(e["ambos"])}</b><span>se apellidan {escape(X)} {escape(X)}</span></div>'
+    if e["total"] is not None:
+        stats += f'<div class="stat"><b>{n(e["total"])}</b><span>personas con el apellido (primero, segundo o ambos)</span></div>'
+    cuerpo = [f"<h1>¿Cuántas personas se apellidan {escape(X)} en España?</h1>",
+              f'<div class="respuesta"><p>Según el INE, como primer apellido</p><p class="cifra">{n(e["p1"])}</p><p>{respuesta}</p></div>',
+              f'<div class="stats">{stats}</div>',
+              f'<p class="updated">Datos del INE a {ref}. El INE publica los apellidos sin tildes; aquí las añadimos para facilitar la lectura.</p>']
+    md = ORIGENES_APELLIDOS / f"{e['slug']}.md"
+    if md.exists():
+        parrafos = [p.strip() for p in md.read_text(encoding="utf-8").split("\n\n") if p.strip() and not p.startswith("#")]
+        cuerpo.append(f"<h2>Origen del apellido {escape(X)}</h2>" + "".join(f"<p>{escape(p)}</p>" for p in parrafos))
+
+    faq = [(f"¿Cuántas personas se apellidan {X} en España?", re.sub("<[^>]+>", "", respuesta) + f" Datos del INE a {ref}.")]
+    if e["ambos"] is not None:
+        faq.append((f"¿Cuántas personas se apellidan {X} {X}?",
+                    f"{n(e['ambos'])} personas tienen {X} como primer y como segundo apellido en España."))
+    for clave, titulo, verbo in (("res", "viven", "residencia"), ("nac", "nacieron", "nacimiento")):
+        if not e[clave]:
+            continue
+        filas = sorted(e[clave], key=lambda p: (p["pos"], -p["f"]))
+        tabla = "".join(f'<tr><td><a href="/apellidos/provincia/{slug(PROVINCIAS[p["cod"]])}/">{PROVINCIAS[p["cod"]]}</a></td>'
+                        f'<td class="num">{p["pos"]}.º</td><td class="num">{n(p["f"])}</td></tr>' for p in filas)
+        cuerpo.append(f"<h2>Provincias donde {escape(X)} está entre los 50 apellidos más comunes (por provincia de {verbo})</h2>"
+                      f'<div class="table-wrap"><table class="data"><thead><tr><th>Provincia</th><th class="num">Puesto</th>'
+                      f'<th class="num">Personas</th></tr></thead><tbody>{tabla}</tbody></table></div>')
+        if clave == "res":
+            mejores = ", ".join(f"{PROVINCIAS[p['cod']]} (puesto {p['pos']})" for p in filas[:3])
+            faq.append((f"¿Dónde es más común el apellido {X}?",
+                        f"{X} está entre los 50 primeros apellidos más frecuentes en {len(filas)} provincias. Donde ocupa los primeros puestos es en {mejores}."))
+    if not e["res"] and not e["nac"]:
+        cuerpo.append(f'<h2>¿Dónde es más común?</h2><p>{escape(X)} no está entre los 50 apellidos más frecuentes de ninguna provincia, '
+                      f'que es el detalle que publica el INE por provincia. Consulta los <a href="/apellidos/">apellidos más comunes de cada provincia</a>.</p>')
+
+    raiz = e["k"].split()[0][:4]
+    variantes = [x for x in por_p1 if x is not e and x["pagina"] and x["k"].split()[0][:4] == raiz][:8]
+    pos = por_p1.index(e)
+    cerca = [x for x in por_p1[max(0, pos - 6):pos + 7] if x is not e and x["pagina"] and x not in variantes][:8]
+    if variantes:
+        cuerpo.append(f"<h2>Apellidos parecidos a {escape(X)}</h2><ul class=\"chips\">" + "".join(
+            f'<li><a href="/apellido/{v["slug"]}/">{escape(v["mostrar"])} <small>{n(v["p1"])}</small></a></li>' for v in variantes) + "</ul>")
+    if cerca:
+        cuerpo.append('<h2>Apellidos con una frecuencia parecida</h2><ul class="chips">' + "".join(
+            f'<li><a href="/apellido/{v["slug"]}/">{escape(v["mostrar"])} <small>{n(v["p1"])}</small></a></li>' for v in cerca) + "</ul>")
+    cuerpo.append('<div class="content"><h2>Preguntas frecuentes</h2>' + "".join(
+        f"<details><summary>{escape(q)}</summary><p>{escape(r)}</p></details>" for q, r in faq) + "</div>")
+    cuerpo.append(f'<p class="fuente">Fuente: Instituto Nacional de Estadística (INE), estadística de apellidos a partir de los Censos de población anuales, '
+                  f'datos a {ref}. <a href="/sobre-los-datos/">Cómo se calculan estos datos</a>.</p>')
+    titulo = f"¿Cuántas personas se apellidan {X} en España?"
+    desc = (f"{n(e['p1'])} personas tienen {X} como primer apellido en España" + (f" y {p2} como segundo" if p2 else "")
+            + ", según el INE. Puesto, provincias donde es más común y cuántos se apellidan " + f"{X} {X}.")
+    ld = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in faq]}]
+    return pagina(f"/apellido/{e['slug']}/", titulo, desc, "\n".join(cuerpo), [("Apellidos", "/apellidos/"), (X, None)], ld)
+
+
+def paginas_apellidos(idx, apellidos):
+    ref = apellidos["referencia"]
+    provincias = apellidos["provincias"]
+    orden = sorted(provincias, key=lambda c: slug(PROVINCIAS[c]))
+    rutas = []
+    for cod in orden:
+        nombre, p = PROVINCIAS[cod], provincias[cod]
+        ruta = f"/apellidos/provincia/{slug(nombre)}/"
+        cuerpo = (f"<h1>Apellidos más comunes en {escape(nombre)}</h1>"
+                  f'<p class="lead">Los 50 primeros apellidos más frecuentes entre las personas que viven en {escape(nombre)} y entre las nacidas allí. '
+                  f"El más común es {enlace_apellido(idx, p['res'][0][0])}, con {n(p['res'][0][1])} personas.</p>"
+                  f'<p class="updated">Datos del INE a {fecha_larga(ref)}.</p>'
+                  f'<div class="dos-col"><div><h2>Por provincia de residencia</h2>{tabla_apellidos(idx, p["res"])}</div>'
+                  f'<div><h2>Por provincia de nacimiento</h2>{tabla_apellidos(idx, p["nac"])}</div></div>'
+                  f'<p>Consulta también los <a href="/provincia/{slug(nombre)}/">nombres más comunes en {escape(nombre)}</a>.</p>'
+                  '<h2>Otras provincias</h2><ul class="columnas">' + "".join(
+                      f'<li><a href="/apellidos/provincia/{slug(PROVINCIAS[c])}/">{PROVINCIAS[c]}</a></li>' for c in orden if c != cod) + "</ul>")
+        guardar(ruta, pagina(ruta, f"Apellidos más comunes en {nombre}: los 50 más frecuentes",
+                             f"Los 50 apellidos más frecuentes en {nombre} según el INE, por provincia de residencia y de nacimiento. El más común: {mostrar_apellido(p['res'][0][0])}.",
+                             cuerpo, [("Apellidos", "/apellidos/"), (nombre, None)]))
+        rutas.append(ruta)
+    cuerpo = ("<h1>¿Cuántas personas se apellidan como tú?</h1>"
+              '<p class="lead">Busca un apellido y descubre cuántas personas lo llevan en España como primer y como segundo apellido, y dónde es más común.</p>'
+              f'<section class="hero" style="padding-top:8px">{formulario("apellido", ref)}</section>'
+              f'<script src="/assets/app.js?v={VERSION}" defer></script>'
+              f'<div class="dos-col"><div><h2>Los 100 apellidos más comunes de España</h2>{tabla_apellidos(idx, apellidos["top100"])}</div>'
+              '<div><h2>El apellido más común de cada provincia</h2><div class="table-wrap"><table class="data"><thead><tr><th>Provincia</th><th>Apellido</th></tr></thead><tbody>'
+              + "".join(f'<tr><td><a href="/apellidos/provincia/{slug(PROVINCIAS[c])}/">{PROVINCIAS[c]}</a></td>'
+                        f'<td>{enlace_apellido(idx, provincias[c]["res"][0][0])}</td></tr>' for c in orden)
+              + f'</tbody></table></div></div></div><p class="fuente">Fuente: INE, estadística de apellidos a partir de los Censos de población anuales, datos a {fecha_larga(ref)}. '
+              'Solo se publican los apellidos que llevan al menos 20 personas como primer apellido.</p>')
+    guardar("/apellidos/", pagina("/apellidos/", "Apellidos en España: cuántas personas se apellidan como tú",
+                                  "Busca un apellido y descubre cuántas personas lo llevan en España, los 100 más comunes y el apellido más frecuente de cada provincia. Datos del INE.",
+                                  cuerpo, [("Apellidos", None)]))
+    rutas.append("/apellidos/")
+    return rutas
+
+
+def indices_apellidos(idx):
+    grupos = {}
+    for e in sorted(idx.values(), key=lambda x: -x["p1"]):
+        c = e["k"][:1]
+        g = c if "a" <= c <= "z" else "otros"
+        grupos.setdefault(g, []).append([e["k"], e["mostrar"], e["p1"], e["p2"] or 0, e["ambos"] or 0, e["r"],
+                                         e["slug"] if e["pagina"] else ""])
+    (WEB / "indice-apellidos").mkdir(parents=True, exist_ok=True)
+    for g, lista in grupos.items():
+        (WEB / "indice-apellidos" / f"{g}.json").write_text(json.dumps(lista, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    return grupos
+
+
+VERSION = "2"
 
 
 def main():
     parser = argparse.ArgumentParser(description="Genera la web de cuantossellaman.es")
+    parser.add_argument("--umbral-apellidos", type=int, default=UMBRAL_APELLIDOS_POR_DEFECTO,
+                        help=f"personas con ese primer apellido para que tenga página propia (por defecto {UMBRAL_APELLIDOS_POR_DEFECTO})")
     parser.add_argument("--umbral", type=int, default=UMBRAL_POR_DEFECTO,
                         help=f"personas mínimas para que un nombre tenga página propia (por defecto {UMBRAL_POR_DEFECTO})")
     args = parser.parse_args()
 
-    nombres, prov, dec, beb = cargar()
+    nombres, prov, dec, beb, ape = cargar()
     idx = construir_indice(nombres, prov["provincias"], dec["decadas"], beb["anios"], args.umbral)
     con_pagina = [e for e in idx.values() if e["pagina"]]
     if len(con_pagina) < MIN_PAGINAS:
@@ -568,16 +739,27 @@ def main():
     rutas = paginas_ranking(idx, nombres, prov["provincias"], dec["decadas"], beb["anios"],
                             nombres["referencia"], prov["referencia"], dec["referencia"])
     rutas += paginas_legales(nombres["referencia"], args.umbral)
+    idx_ape = construir_indice_apellidos(ape, args.umbral_apellidos)
+    ape_pagina = [e for e in idx_ape.values() if e["pagina"]]
+    if len(ape_pagina) < MIN_PAGINAS:
+        sys.exit(f"ERROR: solo {len(ape_pagina)} apellidos tienen página (mínimo {MIN_PAGINAS}). No se publica.")
+    por_p1 = sorted(idx_ape.values(), key=lambda x: -x["p1"])
+    for e in ape_pagina:
+        guardar(f"/apellido/{e['slug']}/", pagina_apellido(e, idx_ape, por_p1, ape["referencia"]))
+    rutas += paginas_apellidos(idx_ape, ape)
+    indices_apellidos(idx_ape)
     guardar("/", portada(idx, nombres, beb["anios"], nombres["referencia"], len(con_pagina)))
     grupos = indices_busqueda(idx)
 
     hoy = date.today().isoformat()
-    urls = ["/"] + rutas + [f"/nombre/{e['slug']}/" for e in sorted(con_pagina, key=lambda x: x["slug"])]
+    urls = (["/"] + rutas + [f"/nombre/{e['slug']}/" for e in sorted(con_pagina, key=lambda x: x["slug"])]
+            + [f"/apellido/{e['slug']}/" for e in sorted(ape_pagina, key=lambda x: x["slug"])])
     (WEB / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                      + "".join(f"  <url><loc>{DOMINIO}{u}</loc><lastmod>{hoy}</lastmod></url>\n" for u in urls) + "</urlset>\n",
                                      encoding="utf-8")
-    (WEB / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /indice/\n\nSitemap: {DOMINIO}/sitemap.xml\n", encoding="utf-8")
-    print(f"Web generada: {len(con_pagina)} páginas de nombre (umbral {args.umbral}), {len(rutas)} páginas más, "
+    (WEB / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /indice/\nDisallow: /indice-apellidos/\n\nSitemap: {DOMINIO}/sitemap.xml\n", encoding="utf-8")
+    print(f"Web generada: {len(con_pagina)} páginas de nombre (umbral {args.umbral}), "
+          f"{len(ape_pagina)} de apellido (umbral {args.umbral_apellidos}), {len(rutas)} páginas más, "
           f"{len(idx)} nombres en el buscador ({len(grupos)} ficheros de índice). Datos a {nombres['referencia']}.")
 
 
