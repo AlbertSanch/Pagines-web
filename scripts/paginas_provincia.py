@@ -254,7 +254,7 @@ PLANTILLA = """<!DOCTYPE html>
   [{{"@context":"https://schema.org","@type":"WebPage","name":"{og_titulo}","url":"{url}","inLanguage":"es-ES","dateModified":"{iso}","author":{{"@type":"Person","name":"Albert Sanchez Guiu"}}}},
    {{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"}},{{"@type":"ListItem","position":2,"name":"Precio de la gasolina hoy","item":"https://ahorrometro.es/precio-gasolina-hoy"}},{{"@type":"ListItem","position":3,"name":"{breadcrumb}","item":"{url}"}}]}}]
   </script>
-  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/style.css?v=2">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -342,7 +342,7 @@ PLANTILLA = """<!DOCTYPE html>
     <button class="btn btn-sm btn-ghost" data-consent="rejected">Rechazar</button>
   </div>
 </div>
-<script src="../assets/main.js"></script>
+<script src="../assets/main.js?v=2"></script>
 </body>
 </html>
 """
