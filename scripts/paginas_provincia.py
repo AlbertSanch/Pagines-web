@@ -185,7 +185,7 @@ def pagina(codigo, resumen, gasolineras):
     diesel = prov.get("diesel")
     media_die = litro(diesel["media"]) if diesel else "—"
     descripcion = (f"Gasolina 95 a {media95} €/L y diésel a {media_die} €/L de media hoy en {nombre}. "
-                   f"Las gasolineras más baratas de la provincia, con datos oficiales del Ministerio.")
+                   f"Las gasolineras más baratas, con datos oficiales del Ministerio.")
     titulo_pagina = f"Gasolina hoy en {nombre}: precio y gasolineras más baratas"
     if len(titulo_pagina) > 60:
         titulo_pagina = f"Gasolina hoy en {nombre}: gasolineras más baratas"
