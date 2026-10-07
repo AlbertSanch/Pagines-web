@@ -1,0 +1,70 @@
+# Descarga los datos de nombres del INE y regenera cuantossellaman.es (carpeta cuantossellaman/web).
+# El INE publica los nombres de la población en mayo y los de los recién nacidos en noviembre;
+# por eso se ejecuta el 1 de junio, el 1 de julio y el 1 de diciembre, y también a mano.
+# Si la descarga falla o el formato del INE cambia, el workflow falla y NO publica nada:
+# la web sigue con los últimos datos buenos.
+name: Datos de nombres (INE)
+
+on:
+  schedule:
+    - cron: "23 7 1 6,7,12 *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - cuantossellaman/scripts/**
+      - cuantossellaman/plantilla/**
+      - cuantossellaman/content/**
+      - .github/workflows/datos-nombres.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: datos-nombres
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install openpyxl
+
+      - name: Descargar ficheros del INE
+        run: python cuantossellaman/scripts/descargar_ine.py
+
+      - name: Procesar datos
+        run: python cuantossellaman/scripts/procesar_ine.py
+
+      - name: Generar la web
+        run: python cuantossellaman/scripts/generar_web.py
+
+      - name: Comprobar la web antes de publicar
+        run: |
+          test -f cuantossellaman/web/index.html
+          test -f cuantossellaman/web/sitemap.xml
+          test -f cuantossellaman/web/indice/m.json
+          paginas=$(find cuantossellaman/web/nombre -name index.html | wc -l)
+          echo "Páginas de nombre: $paginas"
+          test "$paginas" -ge 500
+
+      - name: Publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cuantossellaman/data cuantossellaman/web
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los datos."
+            exit 0
+          fi
+          git commit -m "Actualizar datos de nombres del INE"
+          git pull --rebase origin main
+          git push origin HEAD:main

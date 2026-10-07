@@ -1,0 +1,4 @@
+# Correcciones de tildes para mostrar los nombres (el INE los publica en mayúsculas y sin tildes).
+# Una línea por palabra: PALABRA_SIN_TILDE,Forma correcta
+# Ejemplo (quita la almohadilla para activarlo):
+# ESTIBALIZ,Estíbaliz

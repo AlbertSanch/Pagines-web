@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /indice/
+
+Sitemap: https://cuantossellaman.es/sitemap.xml
