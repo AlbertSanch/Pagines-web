@@ -162,11 +162,6 @@ body.ads-live .ad-slot { border: 0; }
 .site-footer li { margin: 6px 0; }
 .footer-bottom { border-top: 1px solid #2c3833; margin-top: 28px; padding-top: 16px; font-size: .82rem; color: #8d9a94; }
 
-/* Banner de cookies */
-.cookie-banner { position: fixed; left: 16px; right: 16px; bottom: 16px; max-width: 720px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 8px 32px rgba(0,0,0,.15); padding: 18px 20px; z-index: 100; display: none; }
-.cookie-banner.show { display: block; }
-.cookie-banner p { margin: 0 0 12px; font-size: .92rem; }
-.cookie-banner .actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
 /* Formulario de contacto y filas dinámicas */
 .person-row { display: grid; grid-template-columns: 1fr 120px 40px; gap: 8px; margin-bottom: 8px; align-items: center; }
