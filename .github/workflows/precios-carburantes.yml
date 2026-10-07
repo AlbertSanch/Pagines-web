@@ -32,6 +32,10 @@ jobs:
           python-version: "3.12"
 
       - name: Descargar y resumir precios
+        env:
+          # Worker de Cloudflare (cloudflare/proxy-carburantes.js): el Ministerio corta
+          # las conexiones que llegan directamente desde GitHub Actions.
+          CARBURANTES_PROXY: https://proxy-carburantes.albertsanchezguiu.workers.dev
         run: python scripts/actualizar_carburantes.py
 
       - name: Guardar cambios
