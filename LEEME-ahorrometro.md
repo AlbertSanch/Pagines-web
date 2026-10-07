@@ -18,7 +18,10 @@ Busca y reemplaza en todos los archivos:
 2. Envía `https://ahorrometro.es/sitemap.xml` en el apartado «Sitemaps».
 3. Cada vez que añadas una página nueva, añádela también al `sitemap.xml`.
 
-## 4. Pedir AdSense (cuando tengas unas 20–30 páginas)
+## 4. AdSense
+> Hecho el 7 de octubre de 2026: el script de AdSense (ID `ca-pub-8810566450749484`) está en todas las
+> páginas y `ads.txt` en la raíz. Pendiente: aprobación, mensaje de consentimiento y bloques de anuncio (pasos 4 y 5).
+
 1. Regístrate en https://adsense.google.com con tu dominio.
 2. AdSense te dará un script `<script async src="...adsbygoogle.js?client=ca-pub-...">`.
    Pégalo en cada página, donde está el comentario `<!-- ADSENSE: pega aquí el script de AdSense -->`.
