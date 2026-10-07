@@ -21,7 +21,7 @@
   [{"@context":"https://schema.org","@type":"WebApplication","name":"Secadora o tender la ropa: ¿cuánto cuesta cada lavado?","url":"https://ahorrometro.es/calculadoras/secadora-o-tender","description":"Calcula cuánto gastas con la secadora por carga, al mes y al año según su tipo (bomba de calor, condensación o evacuación) y cuánto ahorras tendiendo la ropa.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-29"},
    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Secadora o tender la ropa: ¿cuánto cuesta cada lavado?","item":"https://ahorrometro.es/calculadoras/secadora-o-tender"}]}]
   </script>
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=5">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -78,7 +78,7 @@
         <div class="row">
           <div class="field">
             <label for="p">Precio de la luz (€/kWh)</label>
-            <input id="p" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+            <input id="p" data-precio="luz" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
           </div>
           <div class="field" style="justify-content:flex-end">
             <label class="check"><input type="checkbox" id="deshum"> Si tiendo dentro, uso un deshumidificador</label>
@@ -178,7 +178,7 @@
   </div>
 </footer>
 
-<script src="../assets/main.js?v=4"></script>
+<script src="../assets/main.js?v=5"></script>
 <script>
 document.getElementById('calcular').addEventListener('click', function () {
   var base = num('tipo'), kg = num('kg'), cargas = num('cargas'), p = num('p');

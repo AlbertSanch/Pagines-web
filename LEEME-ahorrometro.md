@@ -75,3 +75,14 @@ Cloudflare deja que los navegadores guarden estos archivos varias horas. Cuando 
 sube el número de versión en todas las páginas (`style.css?v=2` → `style.css?v=3`, y lo mismo con
 `main.js`), incluida la plantilla de `scripts/paginas_provincia.py`, para que los visitantes vean
 el cambio al momento.
+
+## 9. Precios que se actualizan solos en las calculadoras
+- El mismo proceso automático guarda en `datos/luz.json` el precio medio de la luz (PVPC de Red Eléctrica)
+  de las últimas 4 semanas, con impuestos, y el de las horas valle (`scripts/actualizar_luz.py`).
+- Las casillas con `data-precio="luz"`, `"luz-valle"` o `"gasolina95"` toman ese valor al abrir la página
+  (código en `assets/main.js`). Para que una casilla nueva se rellene sola, añádele ese atributo.
+- Si la descarga de Red Eléctrica falla, el proceso sigue con la gasolina y las calculadoras usan el
+  valor escrito en la página.
+- Butano, gas natural, gasóleo C, pellets y leña no tienen una fuente oficial automática: sus precios
+  siguen escritos a mano en cada calculadora. El butano cambia el tercer martes de enero, marzo, mayo,
+  julio, septiembre y noviembre.

@@ -45,6 +45,39 @@ function showCookieSettings() {
   window.googlefc.callbackQueue.push(function () { window.googlefc.showRevocationMessage(); });
 }
 
+// Precios que se actualizan solos: las casillas con data-precio="luz", "luz-valle" o
+// "gasolina95" toman el valor de /datos/luz.json (Red Eléctrica) o /datos/carburantes.json
+// (Ministerio), que actualiza cada día un proceso automático de GitHub. Si el visitante ya
+// ha cambiado la casilla, o los datos no cargan, se queda el valor escrito en la página.
+(function () {
+  var campos = document.querySelectorAll('input[data-precio]');
+  if (!campos.length) return;
+  var NOTAS = {
+    luz: 'Precio medio de la luz (PVPC) de las últimas 4 semanas, con impuestos. <a href="/precio-luz-hoy">Ver el de hoy</a>.',
+    'luz-valle': 'Precio medio de la luz en horas valle (0–8 h y fines de semana) de las últimas 4 semanas, con impuestos.',
+    gasolina95: 'Precio medio de hoy de la gasolina 95 en España. <a href="/precio-gasolina-hoy">Ver por provincias</a>.'
+  };
+  function leer(url) {
+    return fetch(url, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+  }
+  Promise.all([leer('/datos/luz.json'), leer('/datos/carburantes.json')]).then(function (d) {
+    var valores = {};
+    if (d[0] && d[0].conImpuestos) { valores.luz = d[0].conImpuestos.media; valores['luz-valle'] = d[0].conImpuestos.valle; }
+    if (d[1] && d[1].espana && d[1].espana.gasolina95) valores.gasolina95 = d[1].espana.gasolina95.media;
+    campos.forEach(function (el) {
+      var tipo = el.getAttribute('data-precio'), v = valores[tipo];
+      if (v == null || el.value !== el.defaultValue) return;
+      el.value = v;
+      var nota = document.createElement('small');
+      nota.className = 'precio-auto';
+      nota.innerHTML = NOTAS[tipo];
+      el.insertAdjacentElement('afterend', nota);
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+      el.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+  });
+})();
+
 // Menú móvil
 document.addEventListener('DOMContentLoaded', function () {
   var toggle = document.querySelector('.nav-toggle');

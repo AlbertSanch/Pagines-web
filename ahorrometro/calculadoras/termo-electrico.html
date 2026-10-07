@@ -21,7 +21,7 @@
   [{"@context":"https://schema.org","@type":"WebApplication","name":"¿Cuánto gasta un termo eléctrico?","url":"https://ahorrometro.es/calculadoras/termo-electrico","description":"Calcula cuánto gasta tu termo eléctrico al mes según las personas de casa, la capacidad, la temperatura y el precio de la luz. Con trucos para ahorrar en agua caliente.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"¿Cuánto gasta un termo eléctrico?","item":"https://ahorrometro.es/calculadoras/termo-electrico"}]}]
   </script>
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=5">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -89,11 +89,11 @@
         <div class="row">
           <div class="field">
             <label for="p">Precio de la luz (€/kWh)</label>
-            <input id="p" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+            <input id="p" data-precio="luz" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
           </div>
           <div class="field">
             <label for="pValle">Precio en horas valle (€/kWh)</label>
-            <input id="pValle" type="number" min="0" step="0.001" value="0.10" inputmode="decimal">
+            <input id="pValle" data-precio="luz-valle" type="number" min="0" step="0.001" value="0.10" inputmode="decimal">
             <small>Si tienes tarifa con discriminación horaria.</small>
           </div>
         </div>
@@ -183,7 +183,7 @@
   </div>
 </footer>
 
-<script src="../assets/main.js?v=4"></script>
+<script src="../assets/main.js?v=5"></script>
 <script>
 document.getElementById('calcular').addEventListener('click', function () {
   var pers = Math.max(1, num('pers')), litros = num('litros'), perd = num('cap'), temp = num('temp'), p = num('p'), pv = num('pValle');

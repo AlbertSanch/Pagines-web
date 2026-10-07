@@ -21,7 +21,7 @@
   [{"@context":"https://schema.org","@type":"WebApplication","name":"¿Cuánto gasta un deshumidificador?","url":"https://ahorrometro.es/calculadoras/deshumidificador","description":"Calcula cuánto gasta un deshumidificador de compresor o desecante al día y al mes según su potencia, las horas de uso y el precio de la luz.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-29"},
    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"¿Cuánto gasta un deshumidificador?","item":"https://ahorrometro.es/calculadoras/deshumidificador"}]}]
   </script>
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=5">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -90,7 +90,7 @@
           </div>
           <div class="field">
             <label for="p">Precio de la luz (€/kWh)</label>
-            <input id="p" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
+            <input id="p" data-precio="luz" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
           </div>
         </div>
         <button class="btn" id="calcular">Calcular gasto</button>
@@ -189,7 +189,7 @@
   </div>
 </footer>
 
-<script src="../assets/main.js?v=4"></script>
+<script src="../assets/main.js?v=5"></script>
 <script>
 document.getElementById('tipo').addEventListener('change', function () { document.getElementById('w').value = this.value; });
 document.getElementById('calcular').addEventListener('click', function () {
