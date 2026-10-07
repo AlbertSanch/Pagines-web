@@ -56,16 +56,45 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Buscador de la portada
+  // Portada: buscador y filtro por temas (se combinan)
   var search = document.getElementById('search');
-  if (search) {
-    search.addEventListener('input', function () {
-      var q = search.value.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-      document.querySelectorAll('.grid .card-link').forEach(function (card) {
-        var t = card.textContent.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-        card.style.display = t.indexOf(q) > -1 ? '' : 'none';
+  var chips = document.querySelectorAll('[data-tema]');
+  if (search || chips.length) {
+    var tema = '';
+    try { tema = new URLSearchParams(location.search).get('tema') || ''; } catch (e) {}
+    var norm = function (t) { return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); };
+    var apply = function () {
+      var q = search ? norm(search.value.trim()) : '';
+      var total = 0;
+      document.querySelectorAll('.grid').forEach(function (grid) {
+        var visibles = 0;
+        grid.querySelectorAll('.card-link').forEach(function (card) {
+          var cats = (card.getAttribute('data-cat') || '').split(' ');
+          var ok = (!tema || cats.indexOf(tema) > -1) && (!q || norm(card.textContent).indexOf(q) > -1);
+          card.style.display = ok ? '' : 'none';
+          if (ok) visibles++;
+        });
+        var h = grid.previousElementSibling;
+        if (h && h.tagName === 'H2') h.style.display = visibles ? '' : 'none';
+        total += visibles;
+      });
+      chips.forEach(function (b) { if (!b.classList.contains('link-btn')) b.setAttribute('aria-pressed', b.getAttribute('data-tema') === tema); });
+      var empty = document.getElementById('no-results');
+      if (empty) empty.hidden = total > 0;
+    };
+    chips.forEach(function (b) {
+      b.addEventListener('click', function () {
+        tema = b.getAttribute('data-tema');
+        try {
+          var url = new URL(location.href);
+          if (tema) url.searchParams.set('tema', tema); else url.searchParams.delete('tema');
+          history.replaceState(null, '', url);
+        } catch (e) {}
+        apply();
       });
     });
+    if (search) search.addEventListener('input', apply);
+    apply();
   }
 
   document.querySelectorAll('[data-cookie-settings]').forEach(function (a) {
