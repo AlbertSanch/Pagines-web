@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de descuentos: precio final y % de rebaja</title>
+  <meta name="description" content="Calcula el precio final con un descuento, el porcentaje real de una rebaja, descuentos acumulados y ofertas como 3x2 o la 2.ª unidad al 50 %.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/descuentos">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Calculadora de descuentos: precio final y % de rebaja">
+  <meta property="og:description" content="Calcula el precio final con un descuento, el porcentaje real de una rebaja, descuentos acumulados y ofertas como 3x2 o la 2.ª unidad al 50 %.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/descuentos">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de descuentos", "url": "https://ahorrometro.es/calculadoras/descuentos", "description": "Calcula el precio final con un descuento, el porcentaje real de una rebaja, descuentos acumulados y ofertas como 3x2 o la 2.ª unidad al 50 %.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Cualquiera (navegador web)", "inLanguage": "es-ES", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Albert Sanchez Guiu"}, "dateModified": "2026-10-07"}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://ahorrometro.es/"}, {"@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://ahorrometro.es/#calculadoras"}, {"@type": "ListItem", "position": 3, "name": "Calculadora de descuentos", "item": "https://ahorrometro.es/calculadoras/descuentos"}]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo se calcula el porcentaje de descuento?", "acceptedAnswer": {"@type": "Answer", "text": "Resta el precio rebajado al original, divide el resultado entre el precio original y multiplica por 100. De 80 € a 60 € hay (80 − 60) ÷ 80 × 100 = 25 % de descuento."}}, {"@type": "Question", "name": "¿Un 20 % más un 20 % es un 40 %?", "acceptedAnswer": {"@type": "Answer", "text": "No. Es un 36 %: el segundo 20 % se aplica sobre el precio ya rebajado (100 × 0,8 × 0,8 = 64)."}}, {"@type": "Question", "name": "¿Qué es mejor, un 3x2 o la segunda unidad al 50 %?", "acceptedAnswer": {"@type": "Answer", "text": "El 3x2 es un 33 % de descuento por unidad y la segunda unidad al 50 % es un 25 %. El 3x2 es mejor, pero solo si necesitas tres unidades."}}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css?v=5">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",wait_for_update:500,region:["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO","GB","CH"]});gtag("consent","default",{ad_storage:"granted",ad_user_data:"granted",ad_personalization:"granted",analytics_storage:"granted"});</script>
+  <meta name="google-adsense-account" content="ca-pub-8810566450749484">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8810566450749484" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../precio-gasolina-hoy">Precio de la gasolina</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a> › Calculadora de descuentos</nav>
+  <div class="layout">
+    <article>
+      <h1>Calculadora de descuentos</h1>
+      <p class="lead">Calcula cuánto pagarás con un descuento, qué porcentaje de rebaja tiene de verdad una oferta o cuánto ahorras con promociones como el 3x2 o la segunda unidad a mitad de precio.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en octubre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="modo">¿Qué quieres calcular?</label>
+            <select id="modo">
+              <option value="aplicar" selected>Precio final con un descuento</option>
+              <option value="porcentaje">Qué % de descuento es una rebaja</option>
+              <option value="promo">Cuánto ahorro con una promoción</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="precio">Precio original (€)</label>
+            <input id="precio" type="number" min="0" step="0.01" value="80" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="desc1">Descuento (%)</label>
+            <input id="desc1" type="number" min="0" step="1" value="30" inputmode="decimal">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="desc2">Segundo descuento (%)</label>
+            <input id="desc2" type="number" min="0" step="1" value="0" inputmode="decimal">
+            <small>Por ejemplo, un 10 % extra en caja sobre el precio ya rebajado.</small>
+          </div>
+          <div class="field">
+            <label for="final">Precio rebajado (€)</label>
+            <input id="final" type="number" min="0" step="0.01" value="59.99" inputmode="decimal">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="promo">Promoción</label>
+            <select id="promo">
+              <option value="2x1">2x1</option>
+              <option value="3x2" selected>3x2</option>
+              <option value="2a50">2.ª unidad al 50 %</option>
+              <option value="2a70">2.ª unidad al 70 %</option>
+              <option value="4x3">4x3</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Para comprar más barato</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=ofertas%20del%20dia&amp;tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🛒</span><b>Ofertas del día en Amazon</b><span class="aff-desc">Las rebajas diarias con descuento real.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=mas%20vendidos&amp;tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">📦</span><b>Productos más vendidos</b><span class="aff-desc">Lo que más se compra ahora, para comparar precios.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=regalos%20originales%20baratos&amp;tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🎁</span><b>Ideas de regalo baratas</b><span class="aff-desc">Regalos por menos de 20 euros.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Cómo calcular un descuento</h2>
+        <p class="note"><strong>Precio final = precio original × (1 − descuento ÷ 100)</strong></p>
+        <p><strong>Ejemplo:</strong> unas zapatillas de 80 € con un 30 % de descuento cuestan 80 × 0,70 = <strong>56 €</strong>. Te ahorras 24 €.</p>
+
+        <h2>Los descuentos acumulados no se suman</h2>
+        <p>Un 30 % de descuento y después un 10 % extra en caja no es un 40 %: el segundo descuento se aplica sobre el precio ya rebajado. 80 € × 0,70 × 0,90 = 50,40 €, es decir, un <strong>37 %</strong> de descuento real.</p>
+
+        <h2>Cuánto descuento son de verdad las promociones</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Promoción</th><th>Descuento real por unidad</th></tr></thead>
+            <tbody>
+              <tr><td>2x1</td><td>50 %</td></tr>
+              <tr><td>3x2</td><td>33 %</td></tr>
+              <tr><td>4x3</td><td>25 %</td></tr>
+              <tr><td>2.ª unidad al 70 %</td><td>35 %</td></tr>
+              <tr><td>2.ª unidad al 50 %</td><td>25 %</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Solo compensan si ibas a comprar varias unidades de todas formas. Si compras de más para aprovechar la oferta, gastas más.</p>
+
+        <h2>Trucos para no caer en falsas rebajas</h2>
+        <ul>
+          <li>Comprueba el precio de los últimos 30 días: por ley, el precio de referencia de una rebaja debe ser el más bajo de ese periodo.</li>
+          <li>Compara el precio por kilo o por litro en el supermercado, no el precio del envase.</li>
+          <li>En Black Friday y rebajas, apunta los precios unas semanas antes.</li>
+        </ul>
+        <p class="note">Si necesitas el precio sin IVA, usa la <a href="calculadora-iva">calculadora de IVA</a>.</p>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cómo se calcula el porcentaje de descuento?</summary>
+          <p>Resta el precio rebajado al original, divide el resultado entre el precio original y multiplica por 100. De 80 € a 60 € hay (80 − 60) ÷ 80 × 100 = 25 % de descuento.</p>
+        </details>
+        <details>
+          <summary>¿Un 20 % más un 20 % es un 40 %?</summary>
+          <p>No. Es un 36 %: el segundo 20 % se aplica sobre el precio ya rebajado (100 × 0,8 × 0,8 = 64).</p>
+        </details>
+        <details>
+          <summary>¿Qué es mejor, un 3x2 o la segunda unidad al 50 %?</summary>
+          <p>El 3x2 es un 33 % de descuento por unidad y la segunda unidad al 50 % es un 25 %. El 3x2 es mejor, pero solo si necesitas tres unidades.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="calculadora-iva">🧾 Calculadora de IVA</a></li>
+          <li><a href="gastos-piso-compartido">🏠 Gastos de piso compartido</a></li>
+          <li><a href="../consumo-electrodomesticos">📋 Consumo de electrodomésticos</a></li>
+          <li><a href="coste-viaje-coche">🚗 Coste de un viaje en coche</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+        <li><a href="#" data-cookie-settings>Configurar cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<script src="../assets/main.js?v=5"></script>
+<script>
+(function () {
+  var PROMOS = { '2x1': [2, 1], '3x2': [3, 2], '4x3': [4, 3], '2a50': [2, 1.5], '2a70': [2, 1.3] };
+  document.getElementById('modo').addEventListener('change', visibles);
+  function visibles() {
+    var m = document.getElementById('modo').value;
+    var ver = { desc1: m === 'aplicar', desc2: m === 'aplicar', final: m === 'porcentaje', promo: m === 'promo' };
+    Object.keys(ver).forEach(function (id) { document.getElementById(id).closest('.field').style.display = ver[id] ? '' : 'none'; });
+  }
+  visibles();
+  function calcular(scroll) {
+    var m = document.getElementById('modo').value, precio = num('precio');
+    if (!(precio > 0)) { mostrar('<p>Introduce el precio original.</p>', scroll); return; }
+    if (m === 'aplicar') {
+      var d1 = num('desc1') || 0, d2 = num('desc2') || 0;
+      var final = precio * (1 - d1 / 100) * (1 - d2 / 100), real = (1 - final / precio) * 100;
+      mostrar('<div>Precio final</div><div class="big">' + eur(final) + '</div><div class="stats">' +
+        '<div class="stat"><b>' + eur(precio - final) + '</b><span>te ahorras</span></div>' +
+        '<div class="stat"><b>' + fmt(real, 1) + ' %</b><span>de descuento real</span></div></div>' +
+        (d2 > 0 ? '<p>Un ' + fmt(d1, 0) + ' % y después un ' + fmt(d2, 0) + ' % no es un ' + fmt(d1 + d2, 0) + ' %: es un ' + fmt(real, 1) + ' %.</p>' : ''), scroll);
+    } else if (m === 'porcentaje') {
+      var f = num('final');
+      if (!(f >= 0)) { mostrar('<p>Introduce el precio rebajado.</p>', scroll); return; }
+      var pct = (precio - f) / precio * 100;
+      mostrar('<div>' + (pct >= 0 ? 'Descuento' : 'Subida de precio') + '</div><div class="big">' + fmt(Math.abs(pct), 1) + ' %</div><div class="stats">' +
+        '<div class="stat"><b>' + eur(Math.abs(precio - f)) + '</b><span>' + (pct >= 0 ? 'te ahorras' : 'de más') + '</span></div></div>', scroll);
+    } else {
+      var pr = PROMOS[document.getElementById('promo').value], llevas = pr[0], pagas = pr[1];
+      var total = precio * pagas, unidad = total / llevas;
+      mostrar('<div>Pagas por cada unidad</div><div class="big">' + eur(unidad) + '</div><div class="stats">' +
+        '<div class="stat"><b>' + eur(total) + '</b><span>por ' + llevas + ' unidades</span></div>' +
+        '<div class="stat"><b>' + fmt((1 - pagas / llevas) * 100, 0) + ' %</b><span>de descuento por unidad</span></div>' +
+        '<div class="stat"><b>' + eur(precio * llevas - total) + '</b><span>te ahorras</span></div></div>', scroll);
+    }
+  }
+  document.getElementById('calcular').addEventListener('click', function () { calcular(true); });
+  document.querySelectorAll('.calc input, .calc select').forEach(function (el) {
+    el.addEventListener('input', function () { calcular(false); });
+    el.addEventListener('change', function () { calcular(false); });
+  });
+  function mostrar(html, scroll) {
+    var res = document.getElementById('res');
+    if (scroll) showResult('res', html); else { res.innerHTML = html; res.classList.add('show'); }
+  }
+  calcular(false);
+})();
+</script>
+</body>
+</html>

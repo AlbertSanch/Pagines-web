@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de IVA: añadir o quitar el IVA de un precio</title>
+  <meta name="description" content="Añade o quita el IVA de cualquier precio al 21, 10 o 4 %, y también el IGIC de Canarias. Te dice la base imponible, la cuota y el total al instante.">
+  <link rel="canonical" href="https://ahorrometro.es/calculadoras/calculadora-iva">
+  <meta name="theme-color" content="#1f7a55">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahorrómetro">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Calculadora de IVA: añadir o quitar el IVA de un precio">
+  <meta property="og:description" content="Añade o quita el IVA de cualquier precio al 21, 10 o 4 %, y también el IGIC de Canarias. Te dice la base imponible, la cuota y el total al instante.">
+  <meta property="og:url" content="https://ahorrometro.es/calculadoras/calculadora-iva">
+  <meta property="og:image" content="https://ahorrometro.es/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  [{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de IVA", "url": "https://ahorrometro.es/calculadoras/calculadora-iva", "description": "Añade o quita el IVA de cualquier precio al 21, 10 o 4 %, y también el IGIC de Canarias. Te dice la base imponible, la cuota y el total al instante.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Cualquiera (navegador web)", "inLanguage": "es-ES", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Albert Sanchez Guiu"}, "dateModified": "2026-10-07"}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://ahorrometro.es/"}, {"@type": "ListItem", "position": 2, "name": "Calculadoras", "item": "https://ahorrometro.es/#calculadoras"}, {"@type": "ListItem", "position": 3, "name": "Calculadora de IVA", "item": "https://ahorrometro.es/calculadoras/calculadora-iva"}]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo se calcula el 21 % de IVA?", "acceptedAnswer": {"@type": "Answer", "text": "Multiplica el precio sin IVA por 0,21 para obtener la cuota, o por 1,21 para obtener directamente el precio con IVA."}}, {"@type": "Question", "name": "¿Cómo quito el IVA de una factura?", "acceptedAnswer": {"@type": "Answer", "text": "Divide el total entre 1,21 si el IVA es del 21 %, entre 1,10 si es del 10 % o entre 1,04 si es del 4 %. El resultado es la base imponible."}}, {"@type": "Question", "name": "¿Los precios de las tiendas incluyen el IVA?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. En España, los precios que se muestran a los consumidores deben incluir siempre todos los impuestos. Los precios sin IVA solo se usan entre empresas y autónomos."}}, {"@type": "Question", "name": "¿Qué IVA tiene la luz?", "acceptedAnswer": {"@type": "Answer", "text": "La electricidad tributa al 21 % de IVA, además del impuesto especial sobre la electricidad."}}]}]
+  </script>
+  <link rel="stylesheet" href="../assets/style.css?v=5">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",wait_for_update:500,region:["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO","GB","CH"]});gtag("consent","default",{ad_storage:"granted",ad_user_data:"granted",ad_personalization:"granted",analytics_storage:"granted"});</script>
+  <meta name="google-adsense-account" content="ca-pub-8810566450749484">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8810566450749484" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><span class="logo-mark">€</span><span>Ahorró<span class="hl">metro</span></span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="../">Inicio</a>
+      <a href="../#calculadoras">Calculadoras</a>
+      <a href="../precio-luz-hoy">Precio de la luz</a>
+      <a href="../precio-gasolina-hoy">Precio de la gasolina</a>
+      <a href="../sobre-nosotros">Sobre nosotros</a>
+      <a href="../contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../#calculadoras">Calculadoras</a> › Calculadora de IVA</nav>
+  <div class="layout">
+    <article>
+      <h1>Calculadora de IVA</h1>
+      <p class="lead">Añade el IVA a un precio sin impuestos o quítaselo a un precio final. Elige el tipo y te damos la base imponible, la cuota de IVA y el total.</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en octubre de 2026</p>
+
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="modo">¿Qué quieres hacer?</label>
+            <select id="modo">
+              <option value="sumar" selected>Añadir el IVA (tengo el precio sin IVA)</option>
+              <option value="quitar">Quitar el IVA (tengo el precio con IVA)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="importe">Importe (€)</label>
+            <input id="importe" type="number" min="0" step="0.01" value="100" inputmode="decimal">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="tipo">Tipo de impuesto</label>
+            <select id="tipo">
+              <option value="21" selected>IVA general (21 %)</option>
+              <option value="10">IVA reducido (10 %)</option>
+              <option value="4">IVA superreducido (4 %)</option>
+              <option value="7">IGIC general de Canarias (7 %)</option>
+              <option value="3">IGIC reducido de Canarias (3 %)</option>
+              <option value="otro">Otro porcentaje</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="otro">Otro porcentaje (%)</label>
+            <input id="otro" type="number" min="0" step="0.1" value="15" inputmode="decimal">
+          </div>
+        </div>
+        <button class="btn" id="calcular">Calcular</button>
+        <div class="result" id="res" aria-live="polite"></div>
+      </div>
+
+      <section class="affiliate">
+        <h2>Para llevar las cuentas</h2>
+        <div class="aff-grid">
+          <a class="aff-item" href="https://www.amazon.es/s?k=calculadora%20oficina%20tecla%20impuestos&amp;tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🧮</span><b>Calculadora de oficina</b><span class="aff-desc">Con tecla de impuestos para sumar o quitar el IVA en un clic.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=libro%20de%20cuentas%20contabilidad&amp;tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">📒</span><b>Libro de cuentas</b><span class="aff-desc">Para apuntar ingresos, gastos y facturas a mano.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+          <a class="aff-item" href="https://www.amazon.es/s?k=archivador%20acordeon%20facturas&amp;tag=albert671-21" rel="sponsored nofollow noopener" target="_blank"><span class="aff-icon">🗂️</span><b>Archivador de facturas</b><span class="aff-desc">Guarda los tickets y facturas que tienes que conservar.</span><span class="aff-cta">Ver precio en Amazon →</span></a>
+        </div>
+        <p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti.</p>
+      </section>
+      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
+
+      <div class="content">
+        <h2>Tipos de IVA en España</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Tipo</th><th>Se aplica, entre otros, a</th></tr></thead>
+            <tbody>
+              <tr><td><strong>21 % (general)</strong></td><td>La mayoría de productos y servicios: ropa, electrónica, electricidad, gasolina, reparaciones, servicios profesionales.</td></tr>
+              <tr><td><strong>10 % (reducido)</strong></td><td>Hostelería y restaurantes, transporte de viajeros, vivienda nueva, gafas y algunos productos sanitarios, la mayoría de alimentos que no son de primera necesidad.</td></tr>
+              <tr><td><strong>4 % (superreducido)</strong></td><td>Alimentos básicos como pan, leche, huevos, queso, frutas y verduras; libros y periódicos; medicamentos; vivienda de protección oficial.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>En Canarias no hay IVA: se aplica el IGIC, con un tipo general del 7 %. En Ceuta y Melilla se aplica el IPSI. Para casos concretos, consulta la web de la <a href="https://sede.agenciatributaria.gob.es/" rel="nofollow noopener" target="_blank">Agencia Tributaria</a>.</p>
+
+        <h2>Cómo añadir el IVA a un precio</h2>
+        <p class="note"><strong>Precio con IVA = precio sin IVA × (1 + tipo ÷ 100)</strong></p>
+        <p><strong>Ejemplo:</strong> 100 € sin IVA al 21 % son 100 × 1,21 = <strong>121 €</strong>. La cuota de IVA es de 21 €.</p>
+
+        <h2>Cómo quitar el IVA de un precio (el error más común)</h2>
+        <p>Para quitar el IVA <strong>no</strong> se resta el 21 % del precio final: hay que dividir.</p>
+        <p class="note"><strong>Precio sin IVA = precio con IVA ÷ (1 + tipo ÷ 100)</strong></p>
+        <p><strong>Ejemplo:</strong> un producto de 121 € con IVA al 21 % cuesta 121 ÷ 1,21 = <strong>100 €</strong> sin IVA. Si restaras el 21 % (121 − 25,41) te saldrían 95,59 €, que es incorrecto.</p>
+        <p class="note">Si estás comparando precios de rebajas, usa la <a href="descuentos">calculadora de descuentos</a>.</p>
+
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cómo se calcula el 21 % de IVA?</summary>
+          <p>Multiplica el precio sin IVA por 0,21 para obtener la cuota, o por 1,21 para obtener directamente el precio con IVA.</p>
+        </details>
+        <details>
+          <summary>¿Cómo quito el IVA de una factura?</summary>
+          <p>Divide el total entre 1,21 si el IVA es del 21 %, entre 1,10 si es del 10 % o entre 1,04 si es del 4 %. El resultado es la base imponible.</p>
+        </details>
+        <details>
+          <summary>¿Los precios de las tiendas incluyen el IVA?</summary>
+          <p>Sí. En España, los precios que se muestran a los consumidores deben incluir siempre todos los impuestos. Los precios sin IVA solo se usan entre empresas y autónomos.</p>
+        </details>
+        <details>
+          <summary>¿Qué IVA tiene la luz?</summary>
+          <p>La electricidad tributa al 21 % de IVA, además del impuesto especial sobre la electricidad.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>Otras calculadoras</h3>
+        <ul>
+          <li><a href="descuentos">🏷️ Calculadora de descuentos</a></li>
+          <li><a href="gastos-piso-compartido">🏠 Gastos de piso compartido</a></li>
+          <li><a href="coste-mantener-coche">🔧 Coste de mantener un coche</a></li>
+          <li><a href="consumo-electrico">⚡ Consumo eléctrico</a></li>
+        </ul>
+      </div>
+      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>Ahorrómetro</h4><p>Calculadoras gratuitas para tomar mejores decisiones en casa y ahorrar dinero cada mes.</p></div>
+      <div><h4>Calculadoras</h4><ul>
+        <li><a href="consumo-electrico">Consumo eléctrico</a></li>
+        <li><a href="placas-solares">Placas solares</a></li>
+        <li><a href="coste-viaje-coche">Viaje en coche</a></li>
+        <li><a href="pintura">Pintura</a></li>
+      </ul></div>
+      <div><h4>Información</h4><ul>
+        <li><a href="../sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="../contacto">Contacto</a></li>
+        <li><a href="../aviso-legal">Aviso legal</a></li>
+        <li><a href="../politica-privacidad">Política de privacidad</a></li>
+        <li><a href="../politica-cookies">Política de cookies</a></li>
+        <li><a href="#" data-cookie-settings>Configurar cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 Ahorrómetro. Los resultados son orientativos y no constituyen asesoramiento profesional. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
+  </div>
+</footer>
+
+<script src="../assets/main.js?v=5"></script>
+<script>
+(function () {
+  document.getElementById('tipo').addEventListener('change', visibles);
+  function visibles() { document.getElementById('otro').closest('.field').style.display = document.getElementById('tipo').value === 'otro' ? '' : 'none'; }
+  visibles();
+  function calcular(scroll) {
+    var importe = num('importe'), t = document.getElementById('tipo').value;
+    var tipo = t === 'otro' ? num('otro') : parseFloat(t);
+    if (!(importe >= 0 && tipo >= 0)) { mostrar('<p>Introduce un importe y un porcentaje válidos.</p>', scroll); return; }
+    var sumar = document.getElementById('modo').value === 'sumar';
+    var base = sumar ? importe : importe / (1 + tipo / 100);
+    var total = sumar ? importe * (1 + tipo / 100) : importe;
+    var nombre = (t === '7' || t === '3') ? 'IGIC' : 'IVA';
+    mostrar('<div>' + (sumar ? 'Precio con ' + nombre : 'Precio sin ' + nombre) + '</div>' +
+      '<div class="big">' + eur(sumar ? total : base) + '</div>' +
+      '<div class="stats">' +
+        '<div class="stat"><b>' + eur(base) + '</b><span>base imponible</span></div>' +
+        '<div class="stat"><b>' + eur(total - base) + '</b><span>cuota de ' + nombre + ' (' + fmt(tipo, tipo % 1 ? 1 : 0) + ' %)</span></div>' +
+        '<div class="stat"><b>' + eur(total) + '</b><span>total</span></div>' +
+      '</div>', scroll);
+  }
+  document.getElementById('calcular').addEventListener('click', function () { calcular(true); });
+  document.querySelectorAll('.calc input, .calc select').forEach(function (el) {
+    el.addEventListener('input', function () { calcular(false); });
+    el.addEventListener('change', function () { calcular(false); });
+  });
+  function mostrar(html, scroll) {
+    var res = document.getElementById('res');
+    if (scroll) showResult('res', html); else { res.innerHTML = html; res.classList.add('show'); }
+  }
+  calcular(false);
+})();
+</script>
+</body>
+</html>
