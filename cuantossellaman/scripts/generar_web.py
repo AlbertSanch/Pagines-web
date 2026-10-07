@@ -225,6 +225,34 @@ def barras(filas_datos):
     return f'<ul class="barras">{li}</ul>'
 
 
+def top3(idx, lista, k=3):
+    """Lista ordenada corta: 1. Lucía 3.325 · 2. Sofía 2.830 · 3. Martina 2.364"""
+    return '<ol class="top3">' + "".join(f"<li>{enlace(idx, x)} <small>{n(f)}</small></li>" for x, f in lista[:k]) + "</ol>"
+
+
+def movimientos(lista, anterior):
+    """Compara dos tops del INE: nombres nuevos, los que más suben y los que más bajan (dentro del top)."""
+    antes = {x: i for i, (x, _) in enumerate(anterior, 1)}
+    ahora = {x: i for i, (x, _) in enumerate(lista, 1)}
+    nuevos = [(x, ahora[x]) for x, _ in lista if x not in antes]
+    cambios = [(x, antes[x] - ahora[x], ahora[x]) for x, _ in lista if x in antes]
+    suben = sorted([c for c in cambios if c[1] > 0], key=lambda c: -c[1])[:5]
+    bajan = sorted([c for c in cambios if c[1] < 0], key=lambda c: c[1])[:5]
+    return nuevos, suben, bajan
+
+
+def bloque_movimientos(idx, lista, anterior, etiqueta, anio_ant):
+    nuevos, suben, bajan = movimientos(lista, anterior)
+    partes = []
+    if nuevos:
+        partes.append(f"<p><strong>Nuevos en el top 100:</strong> " + ", ".join(f"{enlace(idx, x)} ({p}.º)" for x, p in nuevos) + ".</p>")
+    if suben:
+        partes.append("<p><strong>Los que más suben:</strong> " + ", ".join(f"{enlace(idx, x)} (+{d}, ahora {p}.º)" for x, d, p in suben) + ".</p>")
+    if bajan:
+        partes.append("<p><strong>Los que más bajan:</strong> " + ", ".join(f"{enlace(idx, x)} ({d}, ahora {p}.º)" for x, d, p in bajan) + ".</p>")
+    return f"<h3>{etiqueta} respecto a {anio_ant}</h3>" + "".join(partes) if partes else ""
+
+
 # ---------------------------------------------------------------------------------- Página nombre
 def similares(e, idx, por_total):
     primera = e["k"].split()[0]
@@ -371,13 +399,13 @@ def paginas_ranking(idx, nombres, provincias, decadas, bebes, ref_nombres, ref_p
                              f"Los 50 nombres de hombre y de mujer más frecuentes en {nombre} según el INE. El más común: {mostrar(p['H'][0][0])} y {mostrar(p['M'][0][0])}.",
                              cuerpo, [("Provincias", "/provincias/"), (nombre, None)]))
         rutas.append(ruta)
-    cuerpo = ('<h1>Nombres más comunes por provincia</h1><p class="lead">Elige una provincia para ver sus 50 nombres de hombre y de mujer más frecuentes.</p>'
-              '<div class="table-wrap"><table class="data"><thead><tr><th>Provincia</th><th>Hombre más común</th><th>Mujer más común</th></tr></thead><tbody>'
-              + "".join(f'<tr><td><a href="/provincia/{slug(PROVINCIAS[c])}/">{PROVINCIAS[c]}</a></td><td>{enlace(idx, provincias[c]["H"][0][0])}</td>'
-                        f'<td>{enlace(idx, provincias[c]["M"][0][0])}</td></tr>' for c in orden) +
+    cuerpo = ('<h1>Nombres más comunes por provincia</h1><p class="lead">Los tres nombres de hombre y de mujer más frecuentes de cada provincia. Elige una para ver sus 50 primeros.</p>'
+              '<div class="table-wrap"><table class="data"><thead><tr><th>Provincia</th><th>Hombres</th><th>Mujeres</th></tr></thead><tbody>'
+              + "".join(f'<tr><td><a href="/provincia/{slug(PROVINCIAS[c])}/">{PROVINCIAS[c]}</a></td><td>{top3(idx, provincias[c]["H"])}</td>'
+                        f'<td>{top3(idx, provincias[c]["M"])}</td></tr>' for c in orden) +
               f'</tbody></table></div><p class="updated">Datos del INE a {fecha_larga(ref_prov)}.</p>')
     guardar("/provincias/", pagina("/provincias/", "Nombres más comunes en cada provincia de España",
-                                   "El nombre más común de cada provincia y los 50 más frecuentes de hombre y de mujer, con datos del INE.",
+                                   "Los tres nombres más comunes de cada provincia y los 50 más frecuentes de hombre y de mujer, con datos del INE.",
                                    cuerpo, [("Provincias", None)]))
     rutas.append("/provincias/")
 
@@ -399,10 +427,17 @@ def paginas_ranking(idx, nombres, provincias, decadas, bebes, ref_nombres, ref_p
                                            f"Encabezan {mostrar(d['H'][0][0])} y {mostrar(d['M'][0][0])}.",
                              cuerpo, [("Décadas", "/decadas/"), (etiqueta_decada(clave, d).capitalize(), None)]))
         rutas.append(ruta)
-    cuerpo = ('<h1>Nombres más comunes por década de nacimiento</h1><p class="lead">Cómo han cambiado los nombres en España: los más frecuentes según la década en que nacieron las personas.</p>'
-              '<div class="table-wrap"><table class="data"><thead><tr><th>Década</th><th>Hombre más común</th><th>Mujer más común</th></tr></thead><tbody>'
-              + "".join(f'<tr><td><a href="/decada/{c}/">{etiqueta_decada(c, decadas[c]).capitalize()}</a></td><td>{enlace(idx, decadas[c]["H"][0][0])}</td>'
-                        f'<td>{enlace(idx, decadas[c]["M"][0][0])}</td></tr>' for c in claves) + "</tbody></table></div>")
+    # Nombres que encabezan alguna década, para contar el relevo generacional
+    lideres = {s: [(c, decadas[c][s][0][0]) for c in claves] for s in "HM"}
+    relevo = ""
+    for s in "HM":
+        cambios = [f"{enlace(idx, nom)} ({etiqueta_decada(c, decadas[c])})" for i, (c, nom) in enumerate(lideres[s]) if i == 0 or nom != lideres[s][i - 1][1]]
+        relevo += f"<p><strong>{SEXO[s][1].capitalize()}:</strong> " + " → ".join(cambios) + ".</p>"
+    cuerpo = ('<h1>Nombres más comunes por década de nacimiento</h1><p class="lead">Cómo han cambiado los nombres en España: los tres más frecuentes según la década en que nacieron las personas.</p>'
+              '<div class="table-wrap"><table class="data"><thead><tr><th>Década</th><th>Hombres</th><th>Mujeres</th></tr></thead><tbody>'
+              + "".join(f'<tr><td><a href="/decada/{c}/">{etiqueta_decada(c, decadas[c]).capitalize()}</a></td><td>{top3(idx, decadas[c]["H"])}</td>'
+                        f'<td>{top3(idx, decadas[c]["M"])}</td></tr>' for c in claves) + "</tbody></table></div>"
+              + f'<div class="content"><h2>El relevo de los nombres más comunes</h2><p>Qué nombre ha encabezado la lista en cada época, entre las personas que viven hoy en España:</p>{relevo}</div>')
     guardar("/decadas/", pagina("/decadas/", "Nombres más comunes por década en España",
                                 "Los nombres más frecuentes de cada década de nacimiento, desde antes de 1930 hasta los años 2020, con datos del INE.",
                                 cuerpo, [("Décadas", None)]))
@@ -422,19 +457,42 @@ def paginas_ranking(idx, nombres, provincias, decadas, bebes, ref_nombres, ref_p
                   f"Los nombres más puestos fueron {enlace(idx, esp['H']['top'][0][0])} ({n(esp['H']['top'][0][1])} niños) y "
                   f"{enlace(idx, esp['M']['top'][0][0])} ({n(esp['M']['top'][0][1])} niñas).</p>"
                   f'<div class="dos-col"><div><h2>Niños</h2>{tabla_ranking(idx, esp["H"]["top"], "H")}</div><div><h2>Niñas</h2>{tabla_ranking(idx, esp["M"]["top"], "M")}</div></div>'
-                  f'<h2>Los más puestos en cada comunidad autónoma</h2><div class="table-wrap"><table class="data"><thead><tr><th>Comunidad</th><th>Niños</th><th>Niñas</th></tr></thead><tbody>{comunidades}</tbody></table></div>'
+                  + (f'<div class="content"><h2>Novedades respecto a {int(anio) - 1}</h2>'
+                     + bloque_movimientos(idx, esp["H"]["top"], bebes[str(int(anio) - 1)]["espana"]["H"]["top"], "Niños", int(anio) - 1)
+                     + bloque_movimientos(idx, esp["M"]["top"], bebes[str(int(anio) - 1)]["espana"]["M"]["top"], "Niñas", int(anio) - 1)
+                     + "</div>" if str(int(anio) - 1) in bebes else "")
+                  + f'<h2>Los más puestos en cada comunidad autónoma</h2><div class="table-wrap"><table class="data"><thead><tr><th>Comunidad</th><th>Niños</th><th>Niñas</th></tr></thead><tbody>{comunidades}</tbody></table></div>'
                   '<h2>Otros años</h2><ul class="chips">' + "".join(f'<li><a href="/bebes/{a}/">{a}</a></li>' for a in anios if a != anio) + "</ul>"
                   '<p class="fuente">Fuente: INE, estadística de nacimientos (nombres de los recién nacidos). El INE publica los 100 nombres más puestos de España y los 10 más puestos de cada comunidad.</p>')
         guardar(ruta, pagina(ruta, f"Nombres de bebé más puestos en {anio} en España",
                              f"Los 100 nombres de niño y de niña más puestos en España en {anio} según el INE: {mostrar(esp['H']['top'][0][0])} y {mostrar(esp['M']['top'][0][0])}, los primeros.",
                              cuerpo, [("Bebés", "/bebes/"), (anio, None)]))
         rutas.append(ruta)
-    cuerpo = ('<h1>Nombres de bebé más puestos en España por año</h1><p class="lead">Los nombres más puestos a los recién nacidos cada año desde '
-              f'{anios[-1]}, según el INE.</p><div class="table-wrap"><table class="data"><thead><tr><th>Año</th><th>Niño</th><th>Niña</th></tr></thead><tbody>'
-              + "".join(f'<tr><td><a href="/bebes/{a}/">{a}</a></td><td>{enlace(idx, bebes[a]["espana"]["H"]["top"][0][0])}</td>'
-                        f'<td>{enlace(idx, bebes[a]["espana"]["M"]["top"][0][0])}</td></tr>' for a in anios) + "</tbody></table></div>")
+    ultimo, anterior = anios[0], anios[1] if len(anios) > 1 else None
+    numero1 = ""
+    for s, txt in (("H", "niños"), ("M", "niñas")):
+        veces = {}
+        for a in anios:
+            veces.setdefault(bebes[a]["espana"][s]["top"][0][0], []).append(int(a))
+        orden1 = sorted(veces.items(), key=lambda kv: (-len(kv[1]), -max(kv[1])))
+        numero1 += f"<p><strong>{txt.capitalize()}:</strong> " + ", ".join(
+            (f"{enlace(idx, nom)} ({len(a)} años seguidos, de {min(a)} a {max(a)})" if max(a) - min(a) + 1 == len(a)
+             else f"{enlace(idx, nom)} ({len(a)} años entre {min(a)} y {max(a)})") if len(a) > 1 else f"{enlace(idx, nom)} (en {a[0]})"
+            for nom, a in orden1) + ".</p>"
+    novedades = ""
+    if anterior:
+        novedades = (f'<div class="content"><h2>Qué ha cambiado en {ultimo}</h2>'
+                     + bloque_movimientos(idx, bebes[ultimo]["espana"]["H"]["top"], bebes[anterior]["espana"]["H"]["top"], "Niños", anterior)
+                     + bloque_movimientos(idx, bebes[ultimo]["espana"]["M"]["top"], bebes[anterior]["espana"]["M"]["top"], "Niñas", anterior)
+                     + f'<p><a href="/bebes/{ultimo}/">Ver los 100 nombres más puestos en {ultimo} →</a></p></div>')
+    cuerpo = ('<h1>Nombres de bebé más puestos en España por año</h1><p class="lead">Los tres nombres de niño y de niña más puestos a los recién nacidos cada año desde '
+              f'{anios[-1]}, según el INE.</p>{novedades}'
+              '<div class="table-wrap"><table class="data"><thead><tr><th>Año</th><th>Niños</th><th>Niñas</th></tr></thead><tbody>'
+              + "".join(f'<tr><td><a href="/bebes/{a}/">{a}</a></td><td>{top3(idx, bebes[a]["espana"]["H"]["top"])}</td>'
+                        f'<td>{top3(idx, bebes[a]["espana"]["M"]["top"])}</td></tr>' for a in anios) + "</tbody></table></div>"
+              + f'<div class="content"><h2>Los nombres que han sido número 1</h2><p>Cuántos años ha sido cada nombre el más puesto de España desde {anios[-1]}:</p>{numero1}</div>')
     guardar("/bebes/", pagina("/bebes/", "Nombres de bebé más puestos en España por año",
-                              f"Los nombres más puestos a los recién nacidos en España cada año desde {anios[-1]} hasta {anios[0]}, con datos del INE.",
+                              f"Los tres nombres más puestos a los bebés en España cada año desde {anios[-1]} hasta {anios[0]}, los que más suben y los que han sido número 1. Datos del INE.",
                               cuerpo, [("Bebés", None)]))
     rutas.append("/bebes/")
     return rutas
@@ -709,7 +767,7 @@ def indices_apellidos(idx):
     return grupos
 
 
-VERSION = "2"
+VERSION = "3"
 
 
 def main():
