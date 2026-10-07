@@ -292,7 +292,7 @@
           '<div class="table-wrap"><table class="data"><thead><tr><th>Gasolinera</th><th class="num">Precio</th><th>Mapa</th></tr></thead><tbody>';
         s.baratas.forEach(function (b) {
           var map = (b.lat != null && b.lon != null) ? '<a href="https://www.google.com/maps/search/?api=1&amp;query=' + b.lat + "," + b.lon + '" target="_blank" rel="noopener">Cómo llegar</a>' : "";
-          html += "<tr><td><strong>" + esc(b.rotulo || "Gasolinera") + '</strong><span class="sub">' + esc(b.direccion) + " · " + esc(b.municipio) + "</span></td>" +
+          html += "<tr><td><strong>" + esc(b.rotulo || "Gasolinera") + '</strong><br><span class="sub">' + esc(b.direccion) + " · " + esc(b.municipio) + "</span></td>" +
             '<td class="num gp-cheap">' + litro(b.precio) + " €</td><td>" + map + "</td></tr>";
         });
         html += "</tbody></table></div>";
