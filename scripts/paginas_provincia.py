@@ -151,7 +151,7 @@ def pagina(codigo, resumen, gasolineras):
         if not lista:
             continue
         filas = "".join(
-            f'<tr><td class="gp-rank">{i}</td><td><strong>{e(g["rotulo"] or "Gasolinera")}</strong>'
+            f'<tr><td class="gp-rank">{i}</td><td><strong>{e(g["rotulo"] or "Gasolinera")}</strong><br>'
             f'<span class="sub">{e(g["direccion"])} · {e(g["municipio"])}</span></td>'
             f'<td class="num gp-cheap">{litro(g["precios"][clave])} €</td><td>{mapa(g)}</td></tr>'
             for i, g in enumerate(lista[:MAS_BARATAS[clave]], 1))
