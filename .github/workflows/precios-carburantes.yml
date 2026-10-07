@@ -1,5 +1,6 @@
 # Actualiza ahorrometro/datos/carburantes.json y las páginas por provincia
-# (ahorrometro/gasolina/) con los precios del Ministerio.
+# (ahorrometro/gasolina/) con los precios del Ministerio, y ahorrometro/datos/luz.json
+# con el precio medio de la luz de Red Eléctrica.
 # Cada commit en main lo publica Cloudflare Pages automáticamente.
 name: Precios de carburantes
 
@@ -13,6 +14,7 @@ on:
     paths:
       - scripts/actualizar_carburantes.py
       - scripts/paginas_provincia.py
+      - scripts/actualizar_luz.py
       - .github/workflows/precios-carburantes.yml
 
 permissions:
@@ -40,15 +42,19 @@ jobs:
           CARBURANTES_PROXY: https://proxy-carburantes.albertsanchezguiu.workers.dev
         run: python scripts/actualizar_carburantes.py
 
+      - name: Precio medio de la luz (Red Eléctrica)
+        continue-on-error: true
+        run: python scripts/actualizar_luz.py
+
       - name: Guardar cambios
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ahorrometro/datos/carburantes.json ahorrometro/gasolina ahorrometro/precio-gasolina-hoy.html ahorrometro/sitemap.xml
+          git add ahorrometro/datos/carburantes.json ahorrometro/datos/luz.json ahorrometro/gasolina ahorrometro/precio-gasolina-hoy.html ahorrometro/sitemap.xml
           if git diff --cached --quiet; then
             echo "Sin cambios en los precios."
             exit 0
           fi
-          git commit -m "Actualizar precios de carburantes"
+          git commit -m "Actualizar precios de carburantes y luz"
           git pull --rebase origin main
           git push origin HEAD:main
