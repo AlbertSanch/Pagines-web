@@ -1,0 +1,20 @@
+FOTOS DE PRODUCTO - CuencoListo
+================================
+
+Pon aqui una foto de cada producto con EXACTAMENTE estos nombres (formato .jpg, cuadradas, unos 600x600 px, fondo blanco):
+
+COMEDEROS
+  petlibro-5l-programable.jpg       -> PETLIBRO comedero automatico 5 L (sin WiFi)
+  xiaomi-smart-pet-food-feeder.jpg  -> Xiaomi Smart Pet Food Feeder
+  petlibro-air-wifi-bateria.jpg     -> PETLIBRO Air (WiFi y bateria)
+  petlibro-rfid.jpg                 -> PETLIBRO comedero con RFID
+  petlibro-camara-doble.jpg         -> PETLIBRO con camara y doble cuenco
+
+FUENTES
+  catit-flower-3l.jpg               -> Catit Flower Fountain 3 L
+  xiaomi-smart-pet-fountain.jpg     -> Xiaomi Smart Pet Fountain
+  petlibro-dockstream.jpg           -> PETLIBRO Dockstream
+
+Si una foto no esta, la ficha se muestra sin foto (no sale ninguna imagen rota).
+NO descargues las fotos de Amazon: las normas de Amazon Afiliados lo prohiben.
+Despues de anadirlas, vuelve a subir la carpeta completa a Netlify.

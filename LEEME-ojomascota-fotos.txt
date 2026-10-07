@@ -1,0 +1,19 @@
+FOTOS DE PRODUCTO - OjoMascota
+==============================
+
+Pon aqui una foto de cada producto con EXACTAMENTE estos nombres:
+
+  tapo-c21a.jpg   -> TP-Link Tapo C21A
+  tapo-c220.jpg   -> TP-Link Tapo C220
+  furbo.jpg       -> Furbo 360 (camara para perros)
+
+- Formato .jpg (si tienes .png o .webp, conviertelo o avisa para cambiar el nombre en index.html).
+- Tamano recomendado: unos 600x600 px, fondo blanco, menos de 200 KB cada una.
+- Si una foto no esta en esta carpeta, la web muestra la ficha sin foto (no sale ninguna imagen rota).
+
+De donde sacar las fotos (legalmente):
+- Fotos tuyas del producto.
+- Fotos oficiales del fabricante (TP-Link / Furbo) SOLO con su permiso o si su zona de prensa lo permite.
+- NO descargues las fotos de Amazon: las normas de Amazon Afiliados lo prohiben.
+
+Despues de anadirlas, vuelve a subir la carpeta completa a Netlify.
