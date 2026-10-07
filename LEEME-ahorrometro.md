@@ -53,8 +53,6 @@ Busca y reemplaza en todos los archivos:
 - Comparador de precio por kilo o por litro en el supermercado
 - Calculadora de lavadoras al mes (agua + luz)
 - Calefacción: gas frente a bomba de calor frente a pellets
-- Metros cúbicos de hormigón, sacos de cemento o mortero
-- Papel pintado: rollos necesarios
 - Ahorro por bajar 1 °C la calefacción
 - Gasto de agua de la ducha frente al baño
 - Cuánto ahorro cambiando a bombillas LED
