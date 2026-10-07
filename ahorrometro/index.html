@@ -21,7 +21,7 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebSite","name":"Ahorrómetro","url":"https://ahorrometro.es/","inLanguage":"es-ES","description":"Calculadoras gratuitas para el hogar: consumo eléctrico, coste de un viaje en coche, pintura, aire acondicionado, placas solares y mucho más. Calcula y ahorra.","publisher":{"@type":"Person","name":"Albert Sanchez Guiu"}}
   </script>
-  <link rel="stylesheet" href="assets/style.css?v=3">
+  <link rel="stylesheet" href="assets/style.css?v=4">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -74,45 +74,54 @@
   </a>
 
   <section id="calculadoras">
+    <div class="chips" role="group" aria-label="Filtrar calculadoras por tema">
+      <button type="button" data-tema="" aria-pressed="true">Todas</button>
+      <button type="button" data-tema="calefaccion" aria-pressed="false">Calefacción y aire</button>
+      <button type="button" data-tema="electricidad" aria-pressed="false">Electricidad</button>
+      <button type="button" data-tema="coche" aria-pressed="false">Coche</button>
+      <button type="button" data-tema="reformas" aria-pressed="false">Reformas</button>
+      <button type="button" data-tema="hogar" aria-pressed="false">Hogar y cocina</button>
+    </div>
+    <p class="no-results" id="no-results" hidden>No hay ninguna calculadora con esa búsqueda en este tema. <button type="button" class="link-btn" data-tema="">Ver todas</button></p>
     <h2>🔥 Especial invierno: calefacción</h2>
     <div class="grid">
-      <a class="card-link" href="calculadoras/calefaccion-mas-barata">
-        <div class="icon">🏠</div><span class="tag">Calefacción</span>
+      <a class="card-link" href="calculadoras/calefaccion-mas-barata" data-cat="calefaccion">
+        <div class="icon">🏠</div><span class="tag">Calefacción y aire</span>
         <h3>¿Qué calefacción es más barata?</h3>
         <p>Compara bomba de calor, gas, pellets, gasóleo, butano y radiadores eléctricos.</p>
       </a>
-      <a class="card-link" href="calculadoras/radiador-electrico">
-        <div class="icon">🔥</div><span class="tag">Calefacción</span>
+      <a class="card-link" href="calculadoras/radiador-electrico" data-cat="calefaccion electricidad">
+        <div class="icon">🔥</div><span class="tag">Calefacción y aire</span>
         <h3>¿Cuánto gasta un radiador eléctrico?</h3>
         <p>Gasto al día y al mes según la potencia, las horas y el termostato.</p>
       </a>
-      <a class="card-link" href="calculadoras/estufa-butano-o-electrica">
-        <div class="icon">🧯</div><span class="tag">Calefacción</span>
+      <a class="card-link" href="calculadoras/estufa-butano-o-electrica" data-cat="calefaccion">
+        <div class="icon">🧯</div><span class="tag">Calefacción y aire</span>
         <h3>Estufa de butano, eléctrica o bomba de calor</h3>
         <p>Qué sale más barato para calentar una habitación.</p>
       </a>
-      <a class="card-link" href="calculadoras/bajar-temperatura-calefaccion">
-        <div class="icon">🌡️</div><span class="tag">Calefacción</span>
+      <a class="card-link" href="calculadoras/bajar-temperatura-calefaccion" data-cat="calefaccion">
+        <div class="icon">🌡️</div><span class="tag">Calefacción y aire</span>
         <h3>Ahorro bajando la calefacción</h3>
         <p>Cuánto ahorras al año por cada grado que bajas el termostato.</p>
       </a>
-      <a class="card-link" href="calculadoras/manta-electrica-o-calefaccion">
-        <div class="icon">🛋️</div><span class="tag">Calefacción</span>
+      <a class="card-link" href="calculadoras/manta-electrica-o-calefaccion" data-cat="calefaccion electricidad">
+        <div class="icon">🛋️</div><span class="tag">Calefacción y aire</span>
         <h3>Manta eléctrica o calefacción</h3>
         <p>Cuánto ahorras calentándote con una manta en lugar de toda la habitación.</p>
       </a>
-      <a class="card-link" href="calculadoras/sacos-pellets">
-        <div class="icon">🪵</div><span class="tag">Calefacción</span>
+      <a class="card-link" href="calculadoras/sacos-pellets" data-cat="calefaccion">
+        <div class="icon">🪵</div><span class="tag">Calefacción y aire</span>
         <h3>¿Cuántos sacos de pellets necesito?</h3>
         <p>Kilos y sacos al día, a la semana y en todo el invierno, y su coste.</p>
       </a>
-      <a class="card-link" href="calculadoras/cuanta-lena-necesito">
-        <div class="icon">🪓</div><span class="tag">Calefacción</span>
+      <a class="card-link" href="calculadoras/cuanta-lena-necesito" data-cat="calefaccion">
+        <div class="icon">🪓</div><span class="tag">Calefacción y aire</span>
         <h3>¿Cuánta leña necesito?</h3>
         <p>Kilos y toneladas para todo el invierno según tu chimenea o estufa.</p>
       </a>
-      <a class="card-link" href="calculadoras/duracion-bombona-butano">
-        <div class="icon">🟠</div><span class="tag">Calefacción</span>
+      <a class="card-link" href="calculadoras/duracion-bombona-butano" data-cat="calefaccion">
+        <div class="icon">🟠</div><span class="tag">Calefacción y aire</span>
         <h3>¿Cuánto dura una bombona de butano?</h3>
         <p>Horas y días en tu estufa, calentador o cocina, y bombonas al mes.</p>
       </a>
@@ -120,83 +129,83 @@
 
     <h2>Todas las calculadoras</h2>
     <div class="grid">
-      <a class="card-link" href="calculadoras/freidora-de-aire">
-        <div class="icon">🍟</div><span class="tag">Cocina</span>
+      <a class="card-link" href="calculadoras/freidora-de-aire" data-cat="electricidad hogar">
+        <div class="icon">🍟</div><span class="tag">Electricidad</span>
         <h3>¿Cuánto gasta una freidora de aire?</h3>
         <p>Coste por uso y al mes, y cuánto ahorras frente al horno.</p>
       </a>
-      <a class="card-link" href="calculadoras/consumo-fantasma">
-        <div class="icon">👻</div><span class="tag">Energía</span>
+      <a class="card-link" href="calculadoras/consumo-fantasma" data-cat="electricidad">
+        <div class="icon">👻</div><span class="tag">Electricidad</span>
         <h3>Consumo fantasma</h3>
         <p>Cuánto pagas al año por los aparatos que se quedan en espera.</p>
       </a>
-      <a class="card-link" href="calculadoras/frigorifico">
-        <div class="icon">🧊</div><span class="tag">Energía</span>
+      <a class="card-link" href="calculadoras/frigorifico" data-cat="electricidad">
+        <div class="icon">🧊</div><span class="tag">Electricidad</span>
         <h3>¿Cuánto gasta un frigorífico?</h3>
         <p>Su gasto al año y si compensa cambiarlo por uno nuevo.</p>
       </a>
-      <a class="card-link" href="calculadoras/potencia-contratada">
-        <div class="icon">🔌</div><span class="tag">Energía</span>
+      <a class="card-link" href="calculadoras/potencia-contratada" data-cat="electricidad">
+        <div class="icon">🔌</div><span class="tag">Electricidad</span>
         <h3>¿Qué potencia de luz contratar?</h3>
         <p>La potencia justa según los aparatos que usas a la vez, y cuánto ahorras.</p>
       </a>
-      <a class="card-link" href="calculadoras/secadora-o-tender">
-        <div class="icon">👕</div><span class="tag">Energía</span>
+      <a class="card-link" href="calculadoras/secadora-o-tender" data-cat="electricidad hogar">
+        <div class="icon">👕</div><span class="tag">Electricidad</span>
         <h3>Secadora o tender la ropa</h3>
         <p>Cuánto cuesta cada carga de secadora y cuánto ahorras tendiendo.</p>
       </a>
-      <a class="card-link" href="calculadoras/deshumidificador">
-        <div class="icon">💧</div><span class="tag">Energía</span>
+      <a class="card-link" href="calculadoras/deshumidificador" data-cat="electricidad">
+        <div class="icon">💧</div><span class="tag">Electricidad</span>
         <h3>¿Cuánto gasta un deshumidificador?</h3>
         <p>Gasto al día y al mes de un deshumidificador de compresor o desecante.</p>
       </a>
-      <a class="card-link" href="calculadoras/termo-electrico">
-        <div class="icon">🚿</div><span class="tag">Energía</span>
+      <a class="card-link" href="calculadoras/termo-electrico" data-cat="electricidad">
+        <div class="icon">🚿</div><span class="tag">Electricidad</span>
         <h3>Gasto del termo eléctrico</h3>
         <p>Cuánto cuesta el agua caliente al mes y cuánto ahorras en horas valle.</p>
       </a>
-      <a class="card-link" href="calculadoras/cargar-coche-electrico">
-        <div class="icon">🔋</div><span class="tag">Transporte</span>
+      <a class="card-link" href="calculadoras/cargar-coche-electrico" data-cat="coche electricidad">
+        <div class="icon">🔋</div><span class="tag">Coche</span>
         <h3>Cargar un coche eléctrico</h3>
         <p>Coste en casa y en electrolinera, cada 100 km y frente a la gasolina.</p>
       </a>
-      <a class="card-link" href="calculadoras/consumo-electrico">
-        <div class="icon">⚡</div><span class="tag">Energía</span>
+      <a class="card-link" href="calculadoras/consumo-electrico" data-cat="electricidad">
+        <div class="icon">⚡</div><span class="tag">Electricidad</span>
         <h3>Consumo eléctrico</h3>
         <p>Cuánto gasta al mes cualquier electrodoméstico: horno, secadora, aire, radiador…</p>
       </a>
-      <a class="card-link" href="calculadoras/placas-solares">
-        <div class="icon">☀️</div><span class="tag">Energía</span>
+      <a class="card-link" href="calculadoras/placas-solares" data-cat="electricidad">
+        <div class="icon">☀️</div><span class="tag">Electricidad</span>
         <h3>Ahorro con placas solares</h3>
         <p>Qué potencia necesitas, cuánto ahorrarás y en cuántos años se amortizan.</p>
       </a>
-      <a class="card-link" href="calculadoras/aire-acondicionado">
-        <div class="icon">❄️</div><span class="tag">Climatización</span>
+      <a class="card-link" href="calculadoras/aire-acondicionado" data-cat="calefaccion">
+        <div class="icon">❄️</div><span class="tag">Calefacción y aire</span>
         <h3>Frigorías del aire acondicionado</h3>
         <p>Qué potencia de aire necesitas según los metros y la orientación de tu habitación.</p>
       </a>
-      <a class="card-link" href="calculadoras/coste-viaje-coche">
-        <div class="icon">🚗</div><span class="tag">Transporte</span>
+      <a class="card-link" href="calculadoras/coste-viaje-coche" data-cat="coche">
+        <div class="icon">🚗</div><span class="tag">Coche</span>
         <h3>Coste de un viaje en coche</h3>
         <p>Gasolina o diésel, peajes y lo que paga cada pasajero.</p>
       </a>
-      <a class="card-link" href="calculadoras/pintura">
+      <a class="card-link" href="calculadoras/pintura" data-cat="reformas">
         <div class="icon">🎨</div><span class="tag">Reformas</span>
         <h3>Pintura necesaria</h3>
         <p>Litros y botes de pintura para pintar una habitación, descontando puertas y ventanas.</p>
       </a>
-      <a class="card-link" href="calculadoras/suelo-laminado">
+      <a class="card-link" href="calculadoras/suelo-laminado" data-cat="reformas">
         <div class="icon">🪵</div><span class="tag">Reformas</span>
         <h3>Suelo y azulejos</h3>
         <p>Metros cuadrados y cajas de suelo laminado, tarima o azulejo, con merma incluida.</p>
       </a>
-      <a class="card-link" href="calculadoras/conversor-cocina">
-        <div class="icon">🥣</div><span class="tag">Cocina</span>
+      <a class="card-link" href="calculadoras/conversor-cocina" data-cat="hogar">
+        <div class="icon">🥣</div><span class="tag">Hogar y cocina</span>
         <h3>Conversor de medidas de cocina</h3>
         <p>Tazas, cucharadas y gramos de harina, azúcar, mantequilla, arroz y más.</p>
       </a>
-      <a class="card-link" href="calculadoras/gastos-piso-compartido">
-        <div class="icon">🏠</div><span class="tag">Economía doméstica</span>
+      <a class="card-link" href="calculadoras/gastos-piso-compartido" data-cat="hogar">
+        <div class="icon">🏠</div><span class="tag">Hogar y cocina</span>
         <h3>Gastos de piso compartido</h3>
         <p>Reparte alquiler y facturas a partes iguales o según el tamaño de cada habitación.</p>
       </a>
@@ -251,6 +260,6 @@
   </div>
 </footer>
 
-<script src="assets/main.js?v=3"></script>
+<script src="assets/main.js?v=4"></script>
 </body>
 </html>

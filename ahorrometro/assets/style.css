@@ -70,6 +70,14 @@ h3 { font-size: 1.15rem; }
 .card-link p { margin: 0; color: var(--muted); font-size: .92rem; line-height: 1.5; }
 .tag { display: inline-block; font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--primary); background: var(--primary-soft); padding: 2px 8px; border-radius: 999px; }
 
+/* Filtro por temas de la portada */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 4px; }
+.chips button { font: inherit; font-size: .92rem; font-weight: 600; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 7px 16px; cursor: pointer; }
+.chips button:hover { border-color: var(--primary); color: var(--primary); }
+.chips button[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); color: #fff; }
+.no-results { color: var(--muted); margin: 20px 0; }
+.link-btn { font: inherit; background: none; border: 0; padding: 0; color: var(--primary); text-decoration: underline; cursor: pointer; }
+
 /* Diseño de calculadora */
 .layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 32px; margin: 12px 0 48px; }
 @media (max-width: 900px) { .layout { grid-template-columns: minmax(0, 1fr); } }

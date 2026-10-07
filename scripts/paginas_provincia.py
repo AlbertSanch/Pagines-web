@@ -254,7 +254,7 @@ PLANTILLA = """<!DOCTYPE html>
   [{{"@context":"https://schema.org","@type":"WebPage","name":"{og_titulo}","url":"{url}","inLanguage":"es-ES","dateModified":"{iso}","author":{{"@type":"Person","name":"Albert Sanchez Guiu"}}}},
    {{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"}},{{"@type":"ListItem","position":2,"name":"Precio de la gasolina hoy","item":"https://ahorrometro.es/precio-gasolina-hoy"}},{{"@type":"ListItem","position":3,"name":"{breadcrumb}","item":"{url}"}}]}}]
   </script>
-  <link rel="stylesheet" href="../assets/style.css?v=3">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -338,7 +338,7 @@ PLANTILLA = """<!DOCTYPE html>
   </div>
 </footer>
 
-<script src="../assets/main.js?v=3"></script>
+<script src="../assets/main.js?v=4"></script>
 </body>
 </html>
 """
