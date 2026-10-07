@@ -62,3 +62,7 @@ Busca y reemplaza en todos los archivos:
 - Para forzar una actualización: en GitHub, pestaña **Actions → Precios de carburantes → Run workflow**.
 - Si el proceso falla, GitHub te avisará por correo. La web seguirá mostrando los últimos precios guardados.
 - La calculadora de viaje usa también este archivo para proponer el precio medio de España.
+- El mismo proceso genera también una página por provincia en `gasolina/` (por ejemplo `gasolina/madrid.html`),
+  la lista de provincias de `precio-gasolina-hoy.html` y sus entradas del `sitemap.xml`
+  (entre los comentarios `PROVINCIAS:INICIO` y `PROVINCIAS:FIN`). No edites esas partes a mano:
+  se sobrescriben en cada actualización. El diseño de esas páginas está en `scripts/paginas_provincia.py`.

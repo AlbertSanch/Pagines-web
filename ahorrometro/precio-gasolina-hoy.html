@@ -32,42 +32,6 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <!-- ADSENSE: pega aquí el script de AdSense -->
-  <style>
-    /* Estilos propios de esta página (el resto viene de assets/style.css) */
-    .gp-controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin: 8px 0 20px; }
-    .gp-controls label { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: .95rem; }
-    .gp-controls select { font: inherit; padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px; background: #fff; max-width: 100%; }
-
-    .gp-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-    .gp-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; display: flex; flex-direction: column; gap: 4px; box-shadow: var(--shadow); }
-    .gp-card.main { background: var(--primary); color: #fff; border-color: var(--primary); }
-    .gp-card p { margin: 0; }
-    .gp-name { font-weight: 700; }
-    .gp-price { font-weight: 800; font-size: clamp(1.8rem, 5vw, 2.3rem); line-height: 1.1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-    .gp-price small { font-size: .45em; font-weight: 600; letter-spacing: 0; opacity: .8; margin-left: 3px; }
-    .gp-sub { font-size: .86rem; color: var(--muted); font-variant-numeric: tabular-nums; }
-    .gp-card.main .gp-sub { color: #fff; opacity: .85; }
-    .gp-card a { margin-top: auto; padding-top: 8px; font-size: .9rem; font-weight: 600; }
-    .gp-card.main a { color: #fff; }
-
-    .gp-switch { display: inline-flex; flex-wrap: wrap; background: var(--primary-soft); border-radius: 999px; padding: 4px; gap: 2px; }
-    .gp-switch button { border: 0; background: transparent; font: inherit; font-weight: 700; font-size: .92rem; color: var(--muted); padding: 7px 14px; border-radius: 999px; cursor: pointer; }
-    .gp-switch button[aria-pressed="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.15); }
-
-    table.data td.num, table.data th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-    table.data tr.sel td { background: var(--primary-soft); font-weight: 700; }
-    table.data td .sub { display: block; font-size: .83rem; color: var(--muted); font-weight: 400; }
-    .gp-cheap { color: #2f9e63; font-weight: 700; }
-    .gp-dear { color: #d2553c; font-weight: 700; }
-    .gp-rank { color: var(--muted); width: 2.5rem; }
-    .gp-link { font: inherit; background: none; border: 0; padding: 0; color: var(--primary); text-decoration: underline; cursor: pointer; text-align: left; }
-    .gp-status { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; text-align: center; }
-    .gp-status p { margin: 0; }
-    .gp-updated { font-size: .88rem; color: var(--muted); margin: 10px 0 0; }
-
-    @media (max-width: 860px) { .gp-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 420px) { .gp-cards { gap: 10px; } .gp-card { padding: 14px; } }
-  </style>
 </head>
 <body>
 <header class="site-header">
@@ -139,6 +103,9 @@
       <summary>¿Los precios incluyen impuestos?</summary>
       <p>Sí. Son los precios por litro que ves en el surtidor, con todos los impuestos incluidos.</p>
     </details>
+
+    <h2>Precio de la gasolina por provincias</h2>
+    <ul class="gp-provincias"><!-- PROVINCIAS:INICIO --><!-- PROVINCIAS:FIN --></ul>
 
     <h3>Calcula cuánto gastas</h3>
     <ul>
@@ -277,6 +244,7 @@
         });
         html += "</tbody></table></div>";
       }
+      if (zona().slug) html += '<p><a href="gasolina/' + zona().slug + '">Ver todos los precios de ' + esc(zonaNombre()) + " →</a></p>";
       html += "</section>";
     }
 
@@ -285,12 +253,12 @@
       .sort(function (a, b) { return d.provincias[a][key].media - d.provincias[b][key].media; });
     var media = d.espana[key] ? d.espana[key].media : null;
     html += "<section><h2>Precio medio de " + esc(name) + " por provincias</h2>" +
-      "<p>De la más barata a la más cara. Pulsa una provincia para ver sus gasolineras más baratas.</p>" +
+      "<p>De la más barata a la más cara. Pulsa una provincia para ver todas sus gasolineras baratas y los municipios más económicos.</p>" +
       '<div class="table-wrap"><table class="data"><thead><tr><th class="gp-rank">#</th><th>Provincia</th><th class="num">Precio medio</th><th class="num">Más barata</th><th class="num">Frente a la media</th></tr></thead><tbody>';
     rows.forEach(function (c, i) {
       var p = d.provincias[c][key], diff = media != null ? p.media - media : 0;
       html += '<tr class="' + (c === state.prov ? "sel" : "") + '"><td class="gp-rank">' + (i + 1) + "</td>" +
-        '<td><button type="button" class="gp-link" data-prov="' + c + '">' + esc(d.provincias[c].nombre) + "</button></td>" +
+        '<td>' + (d.provincias[c].slug ? '<a href="gasolina/' + d.provincias[c].slug + '">' + esc(d.provincias[c].nombre) + "</a>" : esc(d.provincias[c].nombre)) + "</td>" +
         '<td class="num">' + litro(p.media) + ' €</td><td class="num">' + litro(p.min) + " €</td>" +
         '<td class="num ' + (diff < -0.0005 ? "gp-cheap" : diff > 0.0005 ? "gp-dear" : "") + '">' + (diff > 0 ? "+" : "") + litro(diff) + " €</td></tr>";
     });
