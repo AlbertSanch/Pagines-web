@@ -241,16 +241,31 @@ def movimientos(lista, anterior):
     return nuevos, suben, bajan
 
 
-def bloque_movimientos(idx, lista, anterior, etiqueta, anio_ant):
+def bloque_movimientos(idx, lista, anterior, etiqueta):
+    """Columna «Niños» o «Niñas» del panel de cambios: suben, bajan y nuevos en el top."""
     nuevos, suben, bajan = movimientos(lista, anterior)
-    partes = []
-    if nuevos:
-        partes.append(f"<p><strong>Nuevos en el top 100:</strong> " + ", ".join(f"{enlace(idx, x)} ({p}.º)" for x, p in nuevos) + ".</p>")
+    fila = lambda x, insignia, p: (f'<li><span class="mov-nombre">{enlace(idx, x)}</span>{insignia}'  # noqa: E731
+                                   f'<span class="mov-pos">{p}.º</span></li>')
+    html = f'<section class="mov"><h3>{etiqueta}</h3>'
     if suben:
-        partes.append("<p><strong>Los que más suben:</strong> " + ", ".join(f"{enlace(idx, x)} (+{d}, ahora {p}.º)" for x, d, p in suben) + ".</p>")
+        html += '<h4>Los que más suben</h4><ul class="mov-lista">' + "".join(
+            fila(x, f'<span class="mov-badge sube" title="Sube {d} puestos">▲ {d}</span>', p) for x, d, p in suben) + "</ul>"
     if bajan:
-        partes.append("<p><strong>Los que más bajan:</strong> " + ", ".join(f"{enlace(idx, x)} ({d}, ahora {p}.º)" for x, d, p in bajan) + ".</p>")
-    return f"<h3>{etiqueta} respecto a {anio_ant}</h3>" + "".join(partes) if partes else ""
+        html += '<h4>Los que más bajan</h4><ul class="mov-lista">' + "".join(
+            fila(x, f'<span class="mov-badge baja" title="Baja {-d} puestos">▼ {-d}</span>', p) for x, d, p in bajan) + "</ul>"
+    if nuevos:
+        html += '<h4>Nuevos en el top 100</h4><ul class="mov-lista">' + "".join(
+            fila(x, '<span class="mov-badge nuevo" title="No estaba entre los 100 primeros el año anterior">nuevo</span>', p) for x, p in nuevos) + "</ul>"
+    return html + "</section>"
+
+
+def panel_movimientos(idx, bebes, anio, anterior, titulo, extra=""):
+    a, b = bebes[anio]["espana"], bebes[anterior]["espana"]
+    return (f'<div class="content"><h2>{titulo}</h2><p class="updated">Cambios de puesto entre los 100 nombres más puestos de {anterior} y de {anio}.</p>'
+            '<div class="mov-grid">'
+            + bloque_movimientos(idx, a["H"]["top"], b["H"]["top"], "Niños")
+            + bloque_movimientos(idx, a["M"]["top"], b["M"]["top"], "Niñas")
+            + f"</div>{extra}</div>")
 
 
 # ---------------------------------------------------------------------------------- Página nombre
@@ -457,10 +472,8 @@ def paginas_ranking(idx, nombres, provincias, decadas, bebes, ref_nombres, ref_p
                   f"Los nombres más puestos fueron {enlace(idx, esp['H']['top'][0][0])} ({n(esp['H']['top'][0][1])} niños) y "
                   f"{enlace(idx, esp['M']['top'][0][0])} ({n(esp['M']['top'][0][1])} niñas).</p>"
                   f'<div class="dos-col"><div><h2>Niños</h2>{tabla_ranking(idx, esp["H"]["top"], "H")}</div><div><h2>Niñas</h2>{tabla_ranking(idx, esp["M"]["top"], "M")}</div></div>'
-                  + (f'<div class="content"><h2>Novedades respecto a {int(anio) - 1}</h2>'
-                     + bloque_movimientos(idx, esp["H"]["top"], bebes[str(int(anio) - 1)]["espana"]["H"]["top"], "Niños", int(anio) - 1)
-                     + bloque_movimientos(idx, esp["M"]["top"], bebes[str(int(anio) - 1)]["espana"]["M"]["top"], "Niñas", int(anio) - 1)
-                     + "</div>" if str(int(anio) - 1) in bebes else "")
+                  + (panel_movimientos(idx, bebes, anio, str(int(anio) - 1), f"Novedades respecto a {int(anio) - 1}")
+                     if str(int(anio) - 1) in bebes else "")
                   + f'<h2>Los más puestos en cada comunidad autónoma</h2><div class="table-wrap"><table class="data"><thead><tr><th>Comunidad</th><th>Niños</th><th>Niñas</th></tr></thead><tbody>{comunidades}</tbody></table></div>'
                   '<h2>Otros años</h2><ul class="chips">' + "".join(f'<li><a href="/bebes/{a}/">{a}</a></li>' for a in anios if a != anio) + "</ul>"
                   '<p class="fuente">Fuente: INE, estadística de nacimientos (nombres de los recién nacidos). El INE publica los 100 nombres más puestos de España y los 10 más puestos de cada comunidad.</p>')
@@ -481,10 +494,8 @@ def paginas_ranking(idx, nombres, provincias, decadas, bebes, ref_nombres, ref_p
             for nom, a in orden1) + ".</p>"
     novedades = ""
     if anterior:
-        novedades = (f'<div class="content"><h2>Qué ha cambiado en {ultimo}</h2>'
-                     + bloque_movimientos(idx, bebes[ultimo]["espana"]["H"]["top"], bebes[anterior]["espana"]["H"]["top"], "Niños", anterior)
-                     + bloque_movimientos(idx, bebes[ultimo]["espana"]["M"]["top"], bebes[anterior]["espana"]["M"]["top"], "Niñas", anterior)
-                     + f'<p><a href="/bebes/{ultimo}/">Ver los 100 nombres más puestos en {ultimo} →</a></p></div>')
+        novedades = panel_movimientos(idx, bebes, ultimo, anterior, f"Qué ha cambiado en {ultimo}",
+                                      f'<p><a href="/bebes/{ultimo}/">Ver los 100 nombres más puestos en {ultimo} →</a></p>')
     cuerpo = ('<h1>Nombres de bebé más puestos en España por año</h1><p class="lead">Los tres nombres de niño y de niña más puestos a los recién nacidos cada año desde '
               f'{anios[-1]}, según el INE.</p>{novedades}'
               '<div class="table-wrap"><table class="data"><thead><tr><th>Año</th><th>Niños</th><th>Niñas</th></tr></thead><tbody>'
@@ -767,7 +778,7 @@ def indices_apellidos(idx):
     return grupos
 
 
-VERSION = "3"
+VERSION = "4"
 
 
 def main():
