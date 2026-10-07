@@ -21,26 +21,29 @@ function showResult(id, html) {
   if (window.innerWidth < 900) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// Google Analytics: solo se carga si el visitante ha aceptado las cookies
+// Google Analytics con el modo de consentimiento de Google.
+// El consentimiento lo gestiona el mensaje de Google (AdSense → Privacidad y mensajes):
+// cada página fija por defecto «denegado» para el EEE, Reino Unido y Suiza en el <head>,
+// y el mensaje de Google lo actualiza cuando el visitante elige. Sin consentimiento,
+// Analytics no guarda cookies.
 var GA_ID = 'G-C1GLQEHDV2';
-var CONSENT_KEY = 'ahorrometro-cookies';
-function loadAnalytics() {
-  if (window.__gaLoaded) return;
-  window.__gaLoaded = true;
+(function () {
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function () { window.dataLayer.push(arguments); };
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
   window.gtag('js', new Date());
   window.gtag('config', GA_ID);
   var s = document.createElement('script');
   s.async = true;
   s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
   document.head.appendChild(s);
-}
-(function () {
-  var consent = null;
-  try { consent = localStorage.getItem(CONSENT_KEY); } catch (e) {}
-  if (consent === 'accepted') loadAnalytics();
 })();
+
+// Volver a mostrar el mensaje de consentimiento de Google (enlace «Configurar cookies»)
+function showCookieSettings() {
+  window.googlefc = window.googlefc || {};
+  window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+  window.googlefc.callbackQueue.push(function () { window.googlefc.showRevocationMessage(); });
+}
 
 // Menú móvil
 document.addEventListener('DOMContentLoaded', function () {
@@ -65,21 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Banner de cookies
-  // IMPORTANTE: cuando AdSense te apruebe, activa el mensaje de consentimiento (CMP)
-  // de Google en AdSense > Privacidad y mensajes, y elimina este banner.
-  var saved = null;
-  try { saved = localStorage.getItem(CONSENT_KEY); } catch (e) {}
-  var banner = document.getElementById('cookie-banner');
-  if (banner && !saved) {
-    banner.classList.add('show');
-    banner.querySelectorAll('[data-consent]').forEach(function (b) {
-      b.addEventListener('click', function () {
-        var choice = b.getAttribute('data-consent');
-        try { localStorage.setItem(CONSENT_KEY, choice); } catch (e) {}
-        banner.classList.remove('show');
-        if (choice === 'accepted') loadAnalytics();
-      });
-    });
-  }
+  document.querySelectorAll('[data-cookie-settings]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); showCookieSettings(); });
+  });
 });

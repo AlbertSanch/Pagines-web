@@ -20,7 +20,9 @@ Busca y reemplaza en todos los archivos:
 
 ## 4. AdSense
 > Hecho el 7 de octubre de 2026: el script de AdSense (ID `ca-pub-8810566450749484`) está en todas las
-> páginas y `ads.txt` en la raíz. Pendiente: aprobación, mensaje de consentimiento y bloques de anuncio (pasos 4 y 5).
+> páginas y `ads.txt` en la raíz. El mensaje de consentimiento de Google (3 opciones) está activo y ha sustituido
+> al banner propio: cada página fija en el `<head>` el modo de consentimiento («denegado» por defecto en el EEE,
+> Reino Unido y Suiza) y el pie tiene el enlace «Configurar cookies». Pendiente: aprobación y bloques de anuncio (paso 5).
 
 1. Regístrate en https://adsense.google.com con tu dominio.
 2. AdSense te dará un script `<script async src="...adsbygoogle.js?client=ca-pub-...">`.
