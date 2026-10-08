@@ -17,6 +17,7 @@ import sys
 from datetime import date
 from html import escape
 from pathlib import Path
+from urllib.parse import quote
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from tildes import mostrar, mostrar_apellido, normalizar  # noqa: E402
@@ -51,8 +52,46 @@ SEXO = {"H": ("hombre", "hombres", "niños"), "M": ("mujer", "mujeres", "niñas"
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
 
-def slug(texto):
-    return re.sub(r"[^a-z0-9]+", "-", normalizar(texto)).strip("-")
+def slug(texto, ene="n", ce="c"):
+    t = normalizar(texto).replace("ñ", ene).replace("ç", ce)
+    return re.sub(r"[^a-z0-9]+", "-", t).strip("-")
+
+
+def asignar_slugs(entradas, peso):
+    """Da a cada entrada un slug único. Si dos formas coinciden sin la ñ o la ç (Marina y Mariña,
+    Muñoz y Munoz), la más frecuente se queda el slug corto y la otra usa «ny» o «ss» (marinya)
+    o, si tampoco basta, un número (Pena -> pena-2, porque Peña ya es pena)."""
+    usados = set()
+    for e in sorted(entradas, key=lambda x: (-peso(x), x["k"])):
+        for propuesta in (slug(e["k"]), slug(e["k"], "ny", "ss")):
+            if propuesta not in usados:
+                break
+        base, i = propuesta, 2
+        while propuesta in usados:
+            propuesta, i = f"{base}-{i}", i + 1
+        usados.add(propuesta)
+        e["slug"] = propuesta
+
+
+def nota_variantes(e, ruta, buscar, cifra):
+    """«No confundir con Mariña (948 personas)»: el INE cuenta por separado las formas con y sin ñ, ç o ·."""
+    if not e["var"]:
+        return ""
+    enlaces = []
+    for v in sorted(e["var"], key=cifra, reverse=True):
+        destino = f"{ruta}{v['slug']}/" if v["pagina"] else f"/?{buscar}q={quote(v['mostrar'])}"
+        enlaces.append(f'<a href="{destino}">{escape(v["mostrar"])}</a> ({n(cifra(v))} personas)')
+    return (f'<p class="note">No confundir con {" ni con ".join(enlaces)}: el INE cuenta por separado '
+            f'cada forma de escribirlo.</p>')
+
+
+def variantes(idx):
+    """Agrupa las formas que solo se distinguen por la ñ o la ç, para enlazarlas entre sí."""
+    grupos = {}
+    for e in idx.values():
+        grupos.setdefault(e["k"].replace("ñ", "n").replace("ç", "c"), []).append(e)
+    for e in idx.values():
+        e["var"] = [x for x in grupos[e["k"].replace("ñ", "n").replace("ç", "c")] if x is not e]
 
 
 def n(x):
@@ -93,11 +132,14 @@ def construir_indice(nombres, provincias, decadas, bebes, umbral):
         for x in nombres[s]:
             k = normalizar(x["n"])
             e = idx.setdefault(k, {"k": k, "ine": x["n"], "mostrar": mostrar(x["n"]), "H": None, "M": None})
+            if e[s]:  # dos filas del INE con la misma forma: no pisar una con otra sin avisar
+                raise SystemExit(f"Nombre repetido en los datos del INE: {x['n']} y {e['ine']}")
             e[s] = {"f": x["f"], "r": x["r"], "e": x["e"]}
     for e in idx.values():
         e["total"] = sum(e[s]["f"] for s in "HM" if e[s])
-        e["slug"] = slug(e["k"])
         e["prov"], e["dec"], e["beb"] = [], {}, {}
+    asignar_slugs(idx.values(), lambda x: x["total"])
+    variantes(idx)
 
     en_listas = set()
     for cod, p in provincias.items():
@@ -310,7 +352,8 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
     cuerpo = [f'<h1>¿Cuántas personas se llaman {escape(X)} en España?</h1>',
               f'<div class="respuesta"><p>Según el INE</p><p class="cifra">{cifra}</p><p>{respuesta}</p></div>',
               f'<div class="stats">{stats}</div>',
-              f'<p class="updated">Datos del INE a {referencia}. Solo cuenta a las personas cuyo nombre completo es «{escape(X)}» (no incluye nombres compuestos que lo contienen).</p>']
+              f'<p class="updated">Datos del INE a {referencia}. Solo cuenta a las personas cuyo nombre completo es «{escape(X)}» (no incluye nombres compuestos que lo contienen).</p>',
+              nota_variantes(e, "/nombre/", "", lambda v: v["total"])]
 
     # Significado opcional, escrito a mano
     md = SIGNIFICADOS / f"{e['slug']}.md"
@@ -619,10 +662,12 @@ def construir_indice_apellidos(apellidos, umbral):
     idx = {}
     for x in apellidos["lista"]:
         k = normalizar(x["n"])
-        if k in idx:  # por si el INE repitiera una forma: nos quedamos con la primera (más frecuente)
-            continue
-        idx[k] = {"k": k, "mostrar": mostrar_apellido(x["n"]), "slug": slug(k), "r": x["r"],
+        if k in idx:  # dos filas del INE con la misma forma: no pisar una con otra sin avisar
+            raise SystemExit(f"Apellido repetido en los datos del INE: {x['n']}")
+        idx[k] = {"k": k, "mostrar": mostrar_apellido(x["n"]), "r": x["r"],
                   "p1": x["p1"], "p2": x["p2"], "ambos": x["ambos"], "res": [], "nac": []}
+    asignar_slugs(idx.values(), lambda x: x["p1"])
+    variantes(idx)
     en_listas = {normalizar(a) for a, _ in apellidos["top100"]}
     for cod, p in apellidos["provincias"].items():
         for clave in ("res", "nac"):
@@ -682,7 +727,8 @@ def pagina_apellido(e, idx, por_p1, referencia):
     cuerpo = [f"<h1>¿Cuántas personas se apellidan {escape(X)} en España?</h1>",
               f'<div class="respuesta"><p>Según el INE, como primer apellido</p><p class="cifra">{n(e["p1"])}</p><p>{respuesta}</p></div>',
               f'<div class="stats">{stats}</div>',
-              f'<p class="updated">Datos del INE a {ref}. El INE publica los apellidos sin tildes; aquí las añadimos para facilitar la lectura.</p>']
+              f'<p class="updated">Datos del INE a {ref}. El INE publica los apellidos sin tildes; aquí las añadimos para facilitar la lectura.</p>',
+              nota_variantes(e, "/apellido/", "tipo=apellido&amp;", lambda v: v["p1"])]
     md = ORIGENES_APELLIDOS / f"{e['slug']}.md"
     if md.exists():
         parrafos = [p.strip() for p in md.read_text(encoding="utf-8").split("\n\n") if p.strip() and not p.startswith("#")]
@@ -782,7 +828,7 @@ def indices_apellidos(idx):
     return grupos
 
 
-VERSION = "4"
+VERSION = "5"
 
 
 def main():
