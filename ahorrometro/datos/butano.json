@@ -1,0 +1,8 @@
+{
+  "_leeme": "Precio máximo oficial de la bombona de butano de 12,5 kg (Península y Baleares, con impuestos). Se actualiza a mano cuando el BOE publica la revisión (tercer martes de enero, marzo, mayo, julio, septiembre y noviembre): añade una línea al principio de «historial» y ejecuta python scripts/pagina_butano.py.",
+  "kg": 12.5,
+  "historial": [
+    {"desde": "2026-09-15", "precio": 18.84, "cent_kg_sin_impuestos": 123.4447, "boe": "2026-09-14"},
+    {"desde": "2026-07-21", "precio": 17.95, "cent_kg_sin_impuestos": 117.5664, "boe": "2026-07-20"}
+  ]
+}
