@@ -292,7 +292,6 @@ PLANTILLA = """<!DOCTYPE html>
 
   <div class="content gp-resumen">{parrafos}</div>
 
-  <div class="ad-slot"><!-- ADSENSE: anuncio bajo los precios -->Publicidad</div>
 
   {tablas}
   {municipios}
