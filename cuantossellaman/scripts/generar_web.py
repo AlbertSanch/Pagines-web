@@ -30,6 +30,20 @@ SIGNIFICADOS = RAIZ / "content" / "significados"
 ORIGENES_APELLIDOS = RAIZ / "content" / "significados-apellidos"
 DOMINIO = "https://cuantossellaman.es"
 SITIO = "¿Cuántos se llaman?"
+ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que Ahorrómetro
+# Modo de consentimiento de Google: en el EEE, Reino Unido y Suiza no hay cookies de publicidad hasta
+# que el visitante acepta en el mensaje de Google (AdSense → Privacidad y mensajes); fuera, sí.
+REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
+                           "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"]
+CABECERA_ANUNCIOS = (
+    '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}'
+    'gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",'
+    f'wait_for_update:500,region:{json.dumps(REGIONES_CONSENTIMIENTO, separators=(",", ":"))}}});'
+    'gtag("consent","default",{ad_storage:"granted",ad_user_data:"granted",ad_personalization:"granted",analytics_storage:"granted"});</script>\n'
+    f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE}" crossorigin="anonymous"></script>')
+# Vuelve a abrir el mensaje de consentimiento de Google
+CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};googlefc.callbackQueue=googlefc.callbackQueue||[];'
+                      'googlefc.callbackQueue.push(function(){googlefc.showRevocationMessage()});return false">Configurar cookies</a>')
 UMBRAL_POR_DEFECTO = 1000
 UMBRAL_APELLIDOS_POR_DEFECTO = 2000  # personas con ese PRIMER apellido para tener página propia
 MIN_PAGINAS = 500  # si salen menos, algo ha ido mal: el script falla para no publicar una web rota
@@ -210,6 +224,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+{CABECERA_ANUNCIOS}
 </head>
 <body>
 <header class="site-header">
@@ -231,7 +246,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="site-footer">
   <div class="container">
     <p><strong>{SITIO}</strong> responde cuántas personas se llaman o se apellidan de cada forma en España con los datos oficiales del Instituto Nacional de Estadística (INE).</p>
-    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a></div>
+    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Fuente: INE. Datos reutilizados conforme a sus condiciones de uso; esta web no está vinculada al INE.</p>
   </div>
 </footer>
@@ -626,16 +641,22 @@ def paginas_legales(referencia, umbral):
     privacidad = f"""<h1>Política de privacidad</h1><div class="content">
 <h2>Responsable</h2><p>{t['nombre']} ({t['email']}).</p>
 <h2>Qué datos tratamos</h2>
-<p>Esta web no tiene formularios ni registro, no instala cookies y no usa herramientas de analítica ni de publicidad. Los nombres que escribes en el buscador se buscan en tu propio navegador y no se envían ni se guardan en ningún servidor.</p>
+<p>Esta web no tiene formularios ni registro. Los nombres y apellidos que escribes en el buscador se buscan en tu propio navegador y no se envían ni se guardan en ningún servidor.</p>
 <p>El proveedor de alojamiento (Cloudflare) puede registrar datos técnicos de la conexión, como la dirección IP, por motivos de seguridad y funcionamiento del servicio.</p>
+<h2>Publicidad y cookies</h2>
+<p>Esta web se financia con publicidad de Google AdSense, un servicio de Google Ireland Limited. Google, como proveedor externo, utiliza cookies para mostrar anuncios, medir su rendimiento y, si lo aceptas, personalizarlos según tus visitas a esta y otras webs.</p>
+<p>La primera vez que entras se muestra el mensaje de consentimiento de Google, donde puedes aceptar, rechazar o elegir qué finalidades permites. Base legal: tu consentimiento. Mientras no lo des, no se usan cookies de publicidad y los anuncios que veas no serán personalizados. Puedes cambiar tu elección cuando quieras con el enlace «Configurar cookies» del pie de página.</p>
+<p>Más información: <a href="https://policies.google.com/technologies/ads?hl=es" rel="noopener">cómo usa Google las cookies en la publicidad</a>. Puedes desactivar la publicidad personalizada en la <a href="https://adssettings.google.com/" rel="noopener">configuración de anuncios de Google</a>.</p>
+<p>Esta web no tiene cookies propias ni herramientas de analítica.</p>
+<h2>Destinatarios</h2>
+<p>No cedemos datos a terceros salvo obligación legal. Google y Cloudflare pueden tratar datos como proveedores del servicio; algunos pueden estar fuera del Espacio Económico Europeo, con las garantías previstas en el RGPD.</p>
 <h2>Tus derechos</h2>
-<p>Puedes ejercer tus derechos de acceso, rectificación, supresión y demás escribiendo a {t['email']}. También puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).</p>
-<h2>Cambios</h2><p>Si en el futuro se añade publicidad o analítica, esta política se actualizará y se pedirá tu consentimiento cuando sea necesario.</p></div>"""
+<p>Puedes ejercer tus derechos de acceso, rectificación, supresión y demás escribiendo a {t['email']}. También puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).</p></div>"""
     guardar("/sobre-los-datos/", pagina("/sobre-los-datos/", "Sobre los datos: de dónde salen y el límite de 20 personas",
                                         "De dónde salen los datos de nombres (INE), cada cuánto se actualizan y por qué no se publican los nombres con menos de 20 personas.",
                                         sobre, [("Sobre los datos", None)]))
     guardar("/aviso-legal/", pagina("/aviso-legal/", f"Aviso legal | {SITIO}", "Aviso legal y datos del titular de cuantossellaman.es.", aviso, [("Aviso legal", None)]))
-    guardar("/privacidad/", pagina("/privacidad/", f"Política de privacidad | {SITIO}", "Política de privacidad de cuantossellaman.es: sin cookies ni analítica.", privacidad, [("Privacidad", None)]))
+    guardar("/privacidad/", pagina("/privacidad/", f"Política de privacidad | {SITIO}", "Política de privacidad y cookies de cuantossellaman.es.", privacidad, [("Privacidad", None)]))
     guardar("/404.html", pagina("/404.html", "Página no encontrada", "Esta página no existe.",
                                 '<h1>Página no encontrada</h1><p>Prueba a buscar el nombre desde la <a href="/">portada</a>.</p>', indexable=False))
     return ["/sobre-los-datos/", "/aviso-legal/", "/privacidad/"]
@@ -828,7 +849,7 @@ def indices_apellidos(idx):
     return grupos
 
 
-VERSION = "5"
+VERSION = "6"
 
 
 def main():
@@ -877,6 +898,7 @@ def main():
     (WEB / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                      + "".join(f"  <url><loc>{DOMINIO}{u}</loc><lastmod>{hoy}</lastmod></url>\n" for u in urls) + "</urlset>\n",
                                      encoding="utf-8")
+    (WEB / "ads.txt").write_text(f"google.com, {ADSENSE.replace('ca-', '')}, DIRECT, f08c47fec0942fa0\n", encoding="utf-8")
     (WEB / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /indice/\nDisallow: /indice-apellidos/\n\nSitemap: {DOMINIO}/sitemap.xml\n", encoding="utf-8")
     print(f"Web generada: {len(con_pagina)} páginas de nombre (umbral {args.umbral}), "
           f"{len(ape_pagina)} de apellido (umbral {args.umbral_apellidos}), {len(rutas)} páginas más, "

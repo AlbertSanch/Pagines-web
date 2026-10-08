@@ -105,6 +105,12 @@ Se mostrará en la página del nombre. Ver `content/significados/LEEME.md`.
   `content/significados-apellidos/`).
 - **Afiliados**: regalos personalizados en las páginas de nombre y genealogía (MyHeritage) en las de
   apellido, cuando haya tráfico y cuentas en esos programas.
-- **Publicidad y analítica**: la web no tiene AdSense ni Google Analytics, así que no necesita
-  aviso de cookies. Si se añaden, hay que actualizar `/privacidad/` y poner el mensaje de
-  consentimiento.
+- **Analítica**: no hay. Si se añade Google Analytics, hay que mencionarlo en `/privacidad/`.
+
+## Publicidad
+
+Google AdSense (`ca-pub-8810566450749484`, la misma cuenta que Ahorrómetro) con anuncios automáticos:
+el script va en el `<head>` de todas las páginas (`CABECERA_ANUNCIOS` en `generar_web.py`), junto
+con el modo de consentimiento de Google, que no usa cookies de publicidad en Europa hasta que el
+visitante acepta. El mensaje de consentimiento se configura en AdSense → Privacidad y mensajes, y el
+enlace «Configurar cookies» del pie lo vuelve a abrir. `generar_web.py` también genera `web/ads.txt`.
