@@ -12,8 +12,17 @@ import csv
 import unicodedata
 from pathlib import Path
 
+# La ñ y la ç no son tildes: MARIÑA y MARINA son nombres distintos en el INE (y también IÑAKI e INAKI,
+# o MUÑOZ y MUNOZ). Se quitan las tildes y diéresis, pero se conservan esas dos letras.
+_LETRAS = {"\u0303": "nN", "\u0327": "cC"}  # virgulilla de la ñ y cedilla de la ç
+
+
 def _sin_tilde(texto):
-    return "".join(c for c in unicodedata.normalize("NFD", texto) if unicodedata.category(c) != "Mn").upper()
+    salida = []
+    for c in unicodedata.normalize("NFD", texto):
+        if unicodedata.category(c) != "Mn" or (salida and salida[-1] in _LETRAS.get(c, "")):
+            salida.append(c)
+    return unicodedata.normalize("NFC", "".join(salida)).upper()
 
 
 # Solo palabras que se escriben con tilde. Lo que no esté aquí se muestra sin tilde.
@@ -62,8 +71,8 @@ def mostrar(nombre_ine):
 
 
 def normalizar(texto):
-    """Forma para buscar: minúsculas, sin tildes, espacios simples ('  María  José' -> 'maria jose')."""
-    return " ".join(_sin_tilde(texto).lower().replace("·", "").split())
+    """Forma para buscar: minúsculas, sin tildes (pero con ñ, ç y ·: Mariña no es Marina ni Nel·lo es Nello), espacios simples ('  María  José' -> 'maria jose')."""
+    return " ".join(_sin_tilde(texto).lower().split())
 
 
 # ------------------------------------------------------------------------------------- Apellidos

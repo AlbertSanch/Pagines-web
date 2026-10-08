@@ -60,7 +60,7 @@ Un nombre tiene página propia (`/nombre/<slug>/`, indexable y en el sitemap) si
 Un apellido tiene página propia (`/apellido/<slug>/`) si lo llevan al menos **2.000 personas como
 primer apellido** o si está entre los 100 más frecuentes de España o los 50 de alguna provincia.
 
-Con los datos a 1 de enero de 2025 salen **2.911 páginas de nombre y 2.471 de apellido**. Para
+Con los datos a 1 de enero de 2025 salen **2.916 páginas de nombre y 2.478 de apellido**. Para
 cambiar los umbrales:
 
 ```bash
@@ -86,6 +86,13 @@ El INE publica nombres y apellidos en mayúsculas y sin tildes. `tildes.py` las 
 Lo que no está en las tablas se muestra sin tilde. Para corregir una palabra, añade una línea a
 `content/tildes.csv` o `content/tildes-apellidos.csv` (`PALABRA_SIN_TILDE,Forma correcta`) y
 regenera la web.
+
+La ñ, la ç y el punto volado (·) sí vienen en los datos y no se quitan nunca: para el INE Marina y
+Mariña, Iñaki e Inaki o Muñoz y Munoz son nombres distintos, cada uno con su cifra. En la URL la ñ
+pasa a n (`/apellido/munoz/` es Muñoz); si dos formas chocan, la menos frecuente lleva otra
+(`/apellido/pena-2/` es Pena, porque `/apellido/pena/` es Peña) y cada página enlaza a la otra.
+El buscador encuentra las dos aunque se escriba sin ñ. Si el INE repitiera una misma forma, el
+generador se para con un error en vez de mezclar las cifras.
 
 ## Añadir significados a mano
 

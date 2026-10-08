@@ -22,10 +22,23 @@
     return r && TIPOS[r.value] ? r.value : 'nombre';
   }
 
+  // Quita tildes y diéresis pero conserva ñ, ç y · (el INE distingue Marina de Mariña).
   function norm(t) {
-    return t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/·/g, '').replace(/\s+/g, ' ').trim();
+    return t.normalize('NFD').replace(/([nNcC]?)([\u0300-\u036f])/g, function (m, l, d) {
+      return l && ((d === '\u0303' && /n/i.test(l)) || (d === '\u0327' && /c/i.test(l))) ? m : l;
+    }).normalize('NFC').toLowerCase().replace(/\s+/g, ' ').trim();
   }
+  // Para comparar sin la ñ, la ç ni el ·: quien escribe «inaki» también encuentra «Iñaki».
+  function suelto(q) { return q.replace(/ñ/g, 'n').replace(/ç/g, 'c').replace(/·/g, ''); }
   function grupo(q) { var c = q.charAt(0); return /[a-z]/.test(c) ? c : 'otros'; }
+  function cargarTodo(q) {  // ñ y ç al principio van en «otros»: hay que mirar las dos listas
+    var a = suelto(q), b = cargar(q);
+    if (grupo(a) === grupo(q)) return b;
+    return Promise.all([b, cargar(a)]).then(function (r) {
+      return r[0].concat(r[1]).sort(function (x, y) { return peso(y) - peso(x); });
+    });
+  }
+  function peso(e) { return tipo() === 'apellido' ? e[2] : e[2] + e[3]; }
   function cargar(q) {
     var g = grupo(q), t = tipo(), clave = t + g;
     if (!cache[clave]) {
@@ -58,12 +71,26 @@
   function buscar(texto) {
     var q = norm(texto), t = tipo(), cfg = TIPOS[t];
     if (!q) return;
-    cargar(q).then(function (datos) {
-      var e = null;
-      for (var i = 0; i < datos.length; i++) { if (datos[i][0] === q) { e = datos[i]; break; } }
+    cargarTodo(q).then(function (datos) {
+      var e = null, otras = [];
+      for (var i = 0; i < datos.length; i++) {
+        if (datos[i][0] === q) e = datos[i];
+        else if (suelto(datos[i][0]) === suelto(q)) otras.push(datos[i]);
+      }
+      // Sin ñ, ç ni · en lo escrito («munoz», «inaki») gana la forma más frecuente; si las escribe, la suya.
+      if (otras.length && (!e || (q === suelto(q) && peso(otras[0]) > peso(e)))) {
+        if (e) otras.push(e);
+        e = otras.shift();
+      }
       if (e && e[cfg.slug]) { location.href = cfg.ruta + e[cfg.slug] + '/'; return; }
       if (e) {
-        mostrar('<p>' + (t === 'apellido' ? fraseApellido(e) : frase(e)) + '</p><p class="updated">Datos del INE a ' + esc(referencia) + '.</p>');
+        var extra = otras.map(function (o) {
+          var href = o[cfg.slug] ? cfg.ruta + o[cfg.slug] + '/' : '/?' + (t === 'apellido' ? 'tipo=apellido&amp;' : '') + 'q=' + encodeURIComponent(o[1]);
+          return '<a href="' + href + '">' + esc(o[1]) + '</a>';
+        });
+        mostrar('<p>' + (t === 'apellido' ? fraseApellido(e) : frase(e)) + '</p>' +
+          (extra.length ? '<p>No confundir con ' + extra.join(' ni con ') + ': el INE cuenta por separado cada forma de escribirlo.</p>' : '') +
+          '<p class="updated">Datos del INE a ' + esc(referencia) + '.</p>');
         return;
       }
       if (t === 'apellido') {
@@ -90,10 +117,11 @@
       var q = norm(input.value);
       lista.innerHTML = '';
       if (q.length < 2) return;
-      cargar(q).then(function (datos) {
+      var qs = suelto(q);
+      cargarTodo(q).then(function (datos) {
         var html = '', k = 0;
         for (var i = 0; i < datos.length && k < 8; i++) {
-          if (datos[i][0].indexOf(q) === 0) {
+          if (suelto(datos[i][0]).indexOf(qs) === 0) {
             var e = datos[i];
             var cfg = TIPOS[tipo()];
             html += '<li><a href="' + (e[cfg.slug] ? cfg.ruta + e[cfg.slug] + '/' : '#') + '" data-n="' + esc(e[1]) + '">' + esc(e[1]) + '</a></li>';
