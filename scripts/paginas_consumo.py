@@ -97,7 +97,7 @@ APARATOS = [
          trucos=["Desactiva el modo reposo con funciones si no descargas juegos: ahorras unos 2–3 € al año.", "Para ver series, la app del televisor gasta menos que la consola."],
          faq=[("¿Cuánto gasta una PS5 en una hora?", "Unos 0,2 kWh jugando, entre 4 y 5 céntimos con el precio medio de la luz."),
               ("¿Gasta más una PS5 o una Xbox Series X?", "Gastan casi lo mismo: unos 200 W jugando. La Xbox Series S gasta alrededor de la mitad.")]),
-    dict(slug="calefactor-electrico", nombre="Calefactor eléctrico", art="un calefactor eléctrico", icono="♨️",
+    dict(slug="calefactor-electrico", meses=5, nombre="Calefactor eléctrico", art="un calefactor eléctrico", icono="♨️",
          modo="potencia", w=2000, horas=3, dias=30, factor=0.8,
          uso="3 horas al día en invierno",
          modelos=[("Calefactor pequeño (posición baja)", 1000), ("Calefactor de 2000 W", 2000), ("Calefactor cerámico de baño", 1500)],
@@ -105,7 +105,7 @@ APARATOS = [
          trucos=["Úsalo solo para calentar rápido un baño o una habitación pequeña.", "Usa el termostato en lugar de dejarlo a máxima potencia.", "Para muchas horas al día, una bomba de calor gasta 3 o 4 veces menos."],
          faq=[("¿Cuánto cuesta tener un calefactor encendido una hora?", "Un calefactor de 2000 W a plena potencia gasta 2 kWh por hora, unos 45–50 céntimos con el precio medio de la luz."),
               ("¿Gasta menos un calefactor cerámico?", "No: todos los calefactores eléctricos dan el mismo calor por kWh. Los cerámicos solo reparten el calor de otra forma.")]),
-    dict(slug="aire-acondicionado", nombre="Aire acondicionado", art="un aire acondicionado", icono="❄️",
+    dict(slug="aire-acondicionado", meses=4, nombre="Aire acondicionado", art="un aire acondicionado", icono="❄️",
          modo="potencia", w=900, horas=6, dias=30, factor=0.6,
          uso="6 horas al día en verano, equipo de 3.000 frigorías",
          modelos=[("Split de 2.250 frigorías", 700), ("Split de 3.000 frigorías", 900), ("Split de 4.500 frigorías", 1400), ("Aire portátil", 1100)],
@@ -137,6 +137,55 @@ APARATOS = [
          trucos=["Activa el apagado automático.", "No dejes la jarra en la placa caliente: mejor un termo.", "Descalcifica la cafetera: la cal hace que gaste más en calentar."],
          faq=[("¿Cuánto cuesta un café de cápsula en luz?", "Menos de un céntimo: unos 0,03 kWh por café."),
               ("¿Gasta mucho una cafetera en espera?", "Las cafeteras modernas se apagan solas; las que no, pueden gastar unos 1–2 W en espera.")]),
+    # Invierno
+    dict(slug="radiador-de-aceite", meses=5, nombre="Radiador de aceite", art="un radiador de aceite", icono="🛢️",
+         modo="potencia", w=2000, horas=4, dias=30, factor=0.6,
+         uso="4 horas al día en invierno, con el termostato a media potencia",
+         modelos=[("Radiador de 7 elementos (1500 W)", 1500), ("Radiador de 9 elementos (2000 W)", 2000), ("Radiador de 11 elementos (2500 W)", 2500)],
+         texto="Un radiador de aceite calienta el aceite de su interior con una resistencia, y el aceite va soltando el calor poco a poco. Tarda más en calentar que un calefactor, pero sigue dando calor un rato después de apagarse. En consumo es igual que cualquier aparato de resistencia: 1 kWh de luz da 1 kWh de calor, ni más ni menos.",
+         trucos=["Usa el termostato: a 20–21 °C la resistencia se apaga buena parte del tiempo.", "Apágalo un rato antes de irte de la habitación: el aceite sigue calentando.", "Cierra puertas y ventanas: calienta bien una habitación, no la casa entera.", "Para muchas horas al día, una bomba de calor gasta 3 o 4 veces menos."],
+         faq=[("¿Cuánto gasta un radiador de aceite por hora?", "Un radiador de 2000 W a media potencia gasta alrededor de 1,2 kWh por hora, unos 25–30 céntimos con el precio medio actual de la luz. A máxima potencia, el doble."),
+              ("¿Gasta menos un radiador de aceite que un calefactor?", "Para dar el mismo calor gastan lo mismo, porque los dos usan una resistencia. La diferencia es que el de aceite reparte el calor de forma más suave y lo mantiene un rato al apagarlo.")]),
+    dict(slug="bomba-de-calor", meses=5, nombre="Bomba de calor", art="una bomba de calor", icono="🌡️",
+         modo="potencia", w=850, horas=6, dias=30, factor=0.6,
+         uso="6 horas al día en invierno, split de 3.000 frigorías en modo calor",
+         modelos=[("Split de 2.250 frigorías", 650), ("Split de 3.000 frigorías", 850), ("Split de 4.500 frigorías", 1300), ("Aerotermia para toda la casa", 2500)],
+         texto="Una bomba de calor (el aire acondicionado en modo calor) no fabrica el calor con una resistencia: lo saca del aire de fuera y lo mete en casa. Por eso, por cada kWh de luz que gasta, da entre 3 y 4 kWh de calor. Es el sistema de calefacción eléctrica más barato, sobre todo si el equipo es inverter.",
+         trucos=["Ponla a 20–21 °C: cada grado más sube el consumo alrededor de un 7 %.", "No la apagues y enciendas a cada rato: el arranque es lo que más gasta.", "Limpia los filtros al empezar el invierno.", "En los días muy fríos rinde algo menos, pero sigue siendo más barata que un radiador."],
+         faq=[("¿Cuánto gasta el aire acondicionado en modo calor?", "Un split de 3.000 frigorías usado 6 horas al día gasta unos 90 kWh al mes en invierno, alrededor de 20 euros con el precio medio de la luz."),
+              ("¿Es más barata la bomba de calor que un radiador eléctrico?", "Sí: para dar el mismo calor gasta entre 3 y 4 veces menos, porque aprovecha el calor del aire exterior en lugar de producirlo con una resistencia.")]),
+    dict(slug="secador-de-pelo", nombre="Secador de pelo", art="un secador de pelo", icono="💨",
+         modo="potencia", w=2000, horas=0.15, dias=30, factor=1,
+         uso="unos 9 minutos al día a máxima potencia",
+         modelos=[("Secador de viaje", 1200), ("Secador normal", 2000), ("Secador profesional", 2400)],
+         texto="El secador de pelo es de los aparatos con más potencia de casa, pero se usa muy poco rato. Casi toda la electricidad se va en la resistencia que calienta el aire, así que la posición de aire templado o frío gasta bastante menos que la de máximo calor.",
+         trucos=["Quita el exceso de agua con la toalla antes de usar el secador.", "Usa la posición de calor medio: seca casi igual y gasta menos.", "Limpia el filtro de la parte de atrás: si se tapa, tarda más en secar."],
+         faq=[("¿Cuánto cuesta secarse el pelo?", "Un secador de 2000 W usado 9 minutos gasta 0,3 kWh, unos 7 céntimos. Al mes, unos 2 euros si lo usas cada día."),
+              ("¿Puede saltar la luz con el secador?", "Sí, si a la vez están encendidos el horno, la lavadora o un radiador: el secador suma 2 kW de golpe. Si te pasa a menudo, revisa tu potencia contratada.")]),
+    dict(slug="manta-electrica", meses=5, nombre="Manta eléctrica", art="una manta eléctrica", icono="🛏️",
+         modo="potencia", w=100, horas=3, dias=30, factor=0.7,
+         uso="3 horas al día en el sofá o para calentar la cama",
+         modelos=[("Calientacamas bajo el colchón", 60), ("Manta para el sofá", 100), ("Manta grande de matrimonio", 160)],
+         texto="Una manta eléctrica gasta muy poco porque calienta tu cuerpo directamente, no el aire de toda la habitación. Su potencia suele estar entre 60 y 160 W, menos que una bombilla antigua, y el termostato baja la potencia cuando ya está caliente.",
+         trucos=["Úsala para calentar la cama antes de acostarte y apágala al dormir.", "En el sofá, combínala con la calefacción más baja: cada grado menos de termostato ahorra mucho más.", "Revisa que el cable y el mando estén en buen estado y no la dobles mientras está encendida."],
+         faq=[("¿Cuánto cuesta tener una manta eléctrica encendida toda la noche?", "Una manta de 100 W a media potencia gasta unos 0,5 kWh en 8 horas, alrededor de 12 céntimos con el precio medio de la luz."),
+              ("¿Gasta menos una manta eléctrica que la calefacción?", "Muchísimo menos: una manta gasta unos 0,07 kWh por hora y un radiador, 1–2 kWh. Compara tu caso en la calculadora de manta eléctrica o calefacción.")]),
+    dict(slug="toallero-electrico", meses=6, nombre="Toallero eléctrico", art="un toallero eléctrico", icono="🧻",
+         modo="potencia", w=500, horas=2, dias=30, factor=0.8,
+         uso="2 horas al día, por la mañana y por la noche",
+         modelos=[("Toallero pequeño", 300), ("Toallero mediano", 500), ("Toallero grande", 800)],
+         texto="Un toallero eléctrico es un pequeño radiador de resistencia: seca las toallas y calienta un poco el baño. Gasta poco si lo usas un par de horas al día, pero si se queda encendido todo el día puede costar más que una nevera.",
+         trucos=["Prográmalo para que se encienda solo antes de la ducha.", "No lo dejes encendido todo el día: con 1–2 horas basta para secar las toallas.", "Si tiene termostato, ponlo a media potencia."],
+         faq=[("¿Cuánto gasta un toallero eléctrico encendido todo el día?", "Un toallero de 500 W encendido 24 horas a media potencia gasta unos 9–10 kWh al día, más de 2 euros diarios. Por eso conviene programarlo."),
+              ("¿Merece la pena un toallero eléctrico?", "Si lo usas 1–2 horas al día cuesta unos 5 euros al mes, y seca las toallas y templa el baño. Encendido todo el día deja de compensar.")]),
+    dict(slug="estufa-halogena", meses=5, nombre="Estufa halógena o de cuarzo", art="una estufa halógena", icono="🔆",
+         modo="potencia", w=1200, horas=3, dias=30, factor=1,
+         uso="3 horas al día con todos los tubos encendidos",
+         modelos=[("Un tubo", 400), ("Dos tubos", 800), ("Tres tubos", 1200)],
+         texto="Las estufas halógenas y de cuarzo calientan por radiación: dan calor a las personas y objetos que tienen delante, no al aire de la habitación. Por eso notas el calor al momento, pero en cuanto te alejas o la apagas se va. No tienen termostato: gastan toda su potencia mientras están encendidas.",
+         trucos=["Úsala para ratos cortos y cerca de ti, por ejemplo en la mesa de trabajo.", "Enciende solo los tubos que necesites.", "Para calentar una habitación varias horas, una bomba de calor gasta mucho menos."],
+         faq=[("¿Cuánto gasta una estufa halógena por hora?", "Con tres tubos (1200 W) gasta 1,2 kWh por hora, unos 28 céntimos con el precio medio de la luz. Con un tubo, la tercera parte."),
+              ("¿Gasta menos una estufa halógena que un calefactor?", "Por hora gasta lo que marque su potencia, igual que un calefactor. Puede salir más barata si la usas poco rato y cerca, porque calienta a la persona y no toda la habitación.")]),
 ]
 
 
@@ -156,6 +205,15 @@ def num(x, dec):
 
 def eur(x):
     return num(x, 2) + " €"
+
+
+def meses(a):
+    """Meses de uso al año: los aparatos de calefacción o aire solo se usan en su temporada."""
+    return a.get("meses", 12)
+
+
+def al_anio(a):
+    return "al año" if meses(a) == 12 else f"al año ({meses(a)} meses de uso)"
 
 
 def kwh_mes(a):
@@ -281,7 +339,7 @@ def pagina(a, p, otros, base):
   <div class="layout">
     <article>
       <h1>¿Cuánto gasta {e(a['art'])}?</h1>
-      <p class="lead">Con un uso normal ({e(a['uso'])}), {e(a['art'])} gasta unos <strong>{num(mes, 0)} kWh al mes</strong>, es decir, <strong>{eur(mes * p)} al mes</strong> y {eur(mes * p * 12)} al año con el precio medio actual de la luz ({num(p, 3)} €/kWh con impuestos).</p>
+      <p class="lead">Con un uso normal ({e(a['uso'])}), {e(a['art'])} gasta unos <strong>{num(mes, 0)} kWh al mes</strong>, es decir, <strong>{eur(mes * p)} al mes</strong> y {eur(mes * p * meses(a))} {al_anio(a)} con el precio medio actual de la luz ({num(p, 3)} €/kWh con impuestos).</p>
       <p class="updated">Por Albert Sanchez · Precio de la luz actualizado automáticamente con datos de Red Eléctrica</p>
 
       <div class="calc">
@@ -337,7 +395,7 @@ def pagina(a, p, otros, base):
     if (!(kwhMes >= 0 && p >= 0)) {{ showResult('res', '<p>Revisa los datos: todos deben ser números positivos.</p>'); return; }}
     var html = '<div>Te cuesta al mes</div><div class="big">' + eur(kwhMes * p) + '</div>' +
       '<div class="stats">' +
-        '<div class="stat"><b>' + eur(kwhMes * p * 12) + '</b><span>al año</span></div>' +
+        '<div class="stat"><b>' + eur(kwhMes * p * {meses(a)}) + '</b><span>{al_anio(a)}</span></div>' +
         '<div class="stat"><b>' + fmt(kwhMes, 1) + ' kWh</b><span>al mes</span></div>' +
       '</div>';
     if (scroll) showResult('res', html);
@@ -362,7 +420,7 @@ def indice(p, desde, hasta, base):
     orden = sorted(APARATOS, key=lambda a: -kwh_mes(a))
     filas = "".join(
         f'<tr><td><a href="{CARPETA}/{a["slug"]}">{a["icono"]} {escape(a["nombre"])}</a><span class="sub">{escape(a["uso"])}</span></td>'
-        f'<td class="num">{num(kwh_mes(a), 1)} kWh</td><td class="num">{eur(kwh_mes(a) * p)}</td><td class="num">{eur(kwh_mes(a) * p * 12)}</td></tr>'
+        f'<td class="num">{num(kwh_mes(a), 1)} kWh</td><td class="num">{eur(kwh_mes(a) * p)}</td><td class="num">{eur(kwh_mes(a) * p * meses(a))}{"*" if meses(a) != 12 else ""}</td></tr>'
         for a in orden)
     periodo = f" entre el {desde} y el {hasta}" if desde and hasta else ""
     titulo = "Consumo de electrodomésticos: cuánto gasta cada uno al mes"
@@ -398,6 +456,7 @@ def indice(p, desde, hasta, base):
   <p class="lead">Consumo y coste al mes de los electrodomésticos más habituales con un uso normal y el precio medio actual de la luz: <strong>{num(p, 3)} €/kWh</strong> con impuestos (PVPC de Red Eléctrica{periodo}).</p>
   <p class="updated">Se actualiza automáticamente cuando cambia el precio de la luz.</p>
   <div class="table-wrap"><table class="data"><thead><tr><th>Electrodoméstico y uso</th><th class="num">Consumo al mes</th><th class="num">Coste al mes</th><th class="num">Al año</th></tr></thead><tbody>{filas}</tbody></table></div>
+  <p>* Aparatos de temporada: el coste al año cuenta solo los meses de invierno o de verano en que se usan.</p>
   <p>Pulsa en cada aparato para calcular su gasto con tu modelo y tus horas de uso. Si no está en la lista, usa la <a href="calculadoras/consumo-electrico">calculadora de consumo eléctrico</a> con la potencia de tu aparato.</p>
 
 

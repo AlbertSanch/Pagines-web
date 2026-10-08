@@ -51,7 +51,7 @@
   <div class="layout">
     <article>
       <h1>¿Cuánto gasta un calefactor eléctrico?</h1>
-      <p class="lead">Con un uso normal (3 horas al día en invierno), un calefactor eléctrico gasta unos <strong>144 kWh al mes</strong>, es decir, <strong>33,98 € al mes</strong> y 407,81 € al año con el precio medio actual de la luz (0,236 €/kWh con impuestos).</p>
+      <p class="lead">Con un uso normal (3 horas al día en invierno), un calefactor eléctrico gasta unos <strong>144 kWh al mes</strong>, es decir, <strong>33,98 € al mes</strong> y 169,92 € al año (5 meses de uso) con el precio medio actual de la luz (0,236 €/kWh con impuestos).</p>
       <p class="updated">Por Albert Sanchez · Precio de la luz actualizado automáticamente con datos de Red Eléctrica</p>
 
       <div class="calc">
@@ -123,7 +123,7 @@
           <li><a href="plancha">👔 Plancha</a></li>
           <li><a href="bombilla-led">💡 Bombilla LED</a></li>
           <li><a href="cafetera">☕ Cafetera</a></li>
-          <li><a href="placa-de-induccion">🍳 Placa de inducción</a></li>
+          <li><a href="radiador-de-aceite">🛢️ Radiador de aceite</a></li>
           <li><a href="../consumo-electrodomesticos">📋 Todos los electrodomésticos</a></li>
         </ul>
       </div>
@@ -163,7 +163,7 @@
     if (!(kwhMes >= 0 && p >= 0)) { showResult('res', '<p>Revisa los datos: todos deben ser números positivos.</p>'); return; }
     var html = '<div>Te cuesta al mes</div><div class="big">' + eur(kwhMes * p) + '</div>' +
       '<div class="stats">' +
-        '<div class="stat"><b>' + eur(kwhMes * p * 12) + '</b><span>al año</span></div>' +
+        '<div class="stat"><b>' + eur(kwhMes * p * 5) + '</b><span>al año (5 meses de uso)</span></div>' +
         '<div class="stat"><b>' + fmt(kwhMes, 1) + ' kWh</b><span>al mes</span></div>' +
       '</div>';
     if (scroll) showResult('res', html);
