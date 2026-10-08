@@ -87,6 +87,19 @@ def asignar_slugs(entradas, peso):
         e["slug"] = propuesta
 
 
+def bloque_compartir(texto, ruta):
+    """Botones para compartir la cifra: WhatsApp y X funcionan sin JavaScript; «Más» y «Copiar» los activa compartir.js."""
+    url = DOMINIO + ruta
+    wa = quote(f"{texto} {url}")
+    x = f"text={quote(texto)}&amp;url={quote(url)}"
+    return (f'<div class="compartir"><span>Compártelo:</span>'
+            f'<a class="btn-c wa" href="https://wa.me/?text={wa}" target="_blank" rel="noopener">WhatsApp</a>'
+            f'<a class="btn-c" href="https://twitter.com/intent/tweet?{x}" target="_blank" rel="noopener">X</a>'
+            f'<button type="button" class="btn-c" data-compartir hidden data-texto="{escape(texto)}" data-url="{url}">Más…</button>'
+            f'<button type="button" class="btn-c" data-copiar="{url}" hidden>Copiar enlace</button></div>'
+            f'<script src="/assets/compartir.js?v={VERSION}" defer></script>')
+
+
 def nota_variantes(e, ruta, buscar, cifra):
     """«No confundir con Mariña (948 personas)»: el INE cuenta por separado las formas con y sin ñ, ç o ·."""
     if not e["var"]:
@@ -216,7 +229,10 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <meta property="og:title" content="{escape(titulo)}">
 <meta property="og:description" content="{escape(descripcion)}">
 <meta property="og:url" content="{url}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{DOMINIO}/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 {f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>' if ld else ''}
 <link rel="stylesheet" href="/assets/style.css?v={VERSION}">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -247,7 +263,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="site-footer">
   <div class="container">
     <p><strong>{SITIO}</strong> responde cuántas personas se llaman o se apellidan de cada forma en España con los datos oficiales del Instituto Nacional de Estadística (INE).</p>
-    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/ideas/">Ideas para bebé</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/ideas/">Ideas para bebé</a><a href="/tu-nombre-el-ano-que-naciste/">Tu nombre el año que naciste</a><a href="/nombres-en-peligro-de-extincion/">Nombres en peligro de extinción</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Fuente: INE. Datos reutilizados conforme a sus condiciones de uso; esta web no está vinculada al INE.</p>
   </div>
 </footer>
@@ -398,10 +414,15 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
     stats += "".join(f'<div class="stat"><b>{dec(e[s]["e"])} años</b><span>edad media ({SEXO[s][1]})</span></div>'
                      for s in sexos if e[s]["e"] is not None)
 
+    if len(sexos) == 2:
+        texto_compartir = f"En España hay {n(e['total'])} personas que se llaman {X}. ¿Cuántas se llaman como tú?"
+    else:
+        texto_compartir = f"En España hay {n(e[sexos[0]]['f'])} {SEXO[sexos[0]][1]} que se llaman {X}. ¿Cuántas personas se llaman como tú?"
     cuerpo = [f'<h1>¿Cuántas personas se llaman {escape(X)} en España?</h1>',
               f'<div class="respuesta"><p>Según el INE</p><p class="cifra">{cifra}</p><p>{respuesta}</p></div>',
               f'<div class="stats">{stats}</div>',
               f'<p class="updated">Datos del INE a {referencia}. Solo cuenta a las personas cuyo nombre completo es «{escape(X)}» (no incluye nombres compuestos que lo contienen).</p>',
+              bloque_compartir(texto_compartir, f"/nombre/{e['slug']}/"),
               nota_variantes(e, "/nombre/", "", lambda v: v["total"])]
 
     # Significado opcional, escrito a mano
@@ -622,6 +643,8 @@ def portada(idx, nombres, bebes, referencia, n_paginas):
   <a class="card" href="/apellidos/"><h3>Apellidos</h3><p>Cuántos se apellidan como tú y los apellidos más comunes de cada provincia.</p></a>
   <a class="card" href="/provincias/"><h3>Por provincia</h3><p>Los 50 nombres más comunes de cada provincia.</p></a>
   <a class="card" href="/decadas/"><h3>Por década</h3><p>De José y María a Hugo y Lucía: cómo han cambiado los nombres.</p></a>
+  <a class="card" href="/tu-nombre-el-ano-que-naciste/"><h3>Tu nombre el año que naciste</h3><p>¿Estaba de moda tu nombre cuando naciste? ¿Y ahora?</p></a>
+  <a class="card" href="/nombres-en-peligro-de-extincion/"><h3>Nombres en peligro de extinción</h3><p>Josefa, Dolores, Saturnino… los que ya casi no se ponen.</p></a>
   <a class="card" href="/ideas/"><h3>Ideas para bebé</h3><p>Nombres de moda, poco comunes, cortos, por letra y clásicos que vuelven.</p></a>
   <a class="card" href="/bebes/"><h3>Nombres de bebé</h3><p>Los más puestos cada año desde {min(bebes)}. En {ultimo}: {escape(mostrar(esp['H']['top'][0][0]))} y {escape(mostrar(esp['M']['top'][0][0]))}.</p></a>
 </div>
@@ -796,6 +819,74 @@ def paginas_ideas(idx, decadas, bebes, referencia):
     return rutas
 
 
+# ------------------------------------------------------------------------------------ Curiosidades
+EDAD_EXTINCION = {"M": 70, "H": 65}  # los hombres viven menos: con 70 casi no saldría ninguno
+
+
+def paginas_curiosidades(idx, decadas, bebes, referencia):
+    rutas = []
+    anios = sorted(bebes)
+    ultimo = anios[-1]
+    ref = fecha_larga(referencia)
+    en_bebes = {normalizar(nom) for a in anios for s in "HM" for nom, _ in bebes[a]["espana"][s]["top"]}
+
+    # Nombres en peligro de extinción
+    secciones, ejemplos = "", []
+    for s in "MH":
+        lista = sorted((e for e in idx.values() if e[s] and e[s]["e"] is not None and e[s]["e"] >= EDAD_EXTINCION[s]
+                        and e[s]["f"] >= 3000 and " " not in e["k"] and e["k"] not in en_bebes), key=lambda e: -e[s]["f"])[:50]
+        ejemplos += [e["mostrar"] for e in lista[:3]]
+        filas = "".join(f'<tr><td>{enlace_idea(e)}</td><td class="num">{n(e[s]["f"])}</td><td class="num">{dec(e[s]["e"])}</td></tr>' for e in lista)
+        secciones += (f'<h2>{SEXO[s][1].capitalize()}: edad media de {EDAD_EXTINCION[s]} años o más</h2>'
+                      f'<div class="table-wrap"><table class="data"><thead><tr><th>Nombre</th><th class="num">{SEXO[s][1].capitalize()}</th>'
+                      f'<th class="num">Edad media</th></tr></thead><tbody>{filas}</tbody></table></div>')
+    ruta = "/nombres-en-peligro-de-extincion/"
+    cuerpo = (f'<h1>Nombres en peligro de extinción</h1>'
+              f'<p class="lead">Nombres que todavía llevan miles de personas en España, pero casi todas mayores: {", ".join(escape(x) for x in ejemplos)}… '
+              f'Su edad media pasa de los {EDAD_EXTINCION["M"]} años en las mujeres o de los {EDAD_EXTINCION["H"]} en los hombres, y ninguno ha estado entre los 100 '
+              f'nombres más puestos a los bebés desde {anios[0]}.</p>'
+              f'<p class="updated">Datos del INE a {ref} (personas que viven en España) y nombres de los recién nacidos de {anios[0]} a {ultimo}. '
+              'Solo nombres que llevan al menos 3.000 personas.</p>'
+              + bloque_compartir(f"Josefa, Dolores, Consuelo… los nombres que están desapareciendo en España. ¿Conoces a alguien que se llame así?", ruta)
+              + secciones
+              + '<div class="content"><h2>¿Por qué desaparecen?</h2><p>Los nombres siguen modas. Hasta los años 60 se ponían sobre todo nombres de santos y de familiares, '
+              'y muchos se repetían de abuelos a nietos. Desde los 80 se buscan nombres más cortos y distintos, y los de toda la vida dejaron de ponerse. '
+              'Algunos vuelven: mira los <a href="/ideas/nombres-clasicos-que-vuelven/">nombres clásicos que vuelven</a>.</p></div>')
+    guardar(ruta, pagina(ruta, "Nombres en peligro de extinción en España (datos del INE)",
+                         f"Nombres que llevan miles de personas pero casi todas mayores y que ya no se ponen a los bebés: {', '.join(ejemplos[:4])}… Con datos del INE.",
+                         cuerpo, [("Nombres en peligro de extinción", None)]))
+    rutas.append(ruta)
+
+    # Tu nombre el año que naciste: datos para la herramienta
+    datos = {"anios": {a: {s: [normalizar(nom) for nom, _ in bebes[a]["espana"][s]["top"]] for s in "HM"} for a in anios},
+             "decadas": {c: {"etiqueta": etiqueta_decada(c, d), "desde": d.get("desde"), "hasta": d.get("hasta"),
+                             **{s: [normalizar(nom) for nom, _ in d[s]] for s in "HM"}} for c, d in decadas.items()}}
+    (WEB / "datos").mkdir(parents=True, exist_ok=True)
+    (WEB / "datos" / "rankings.json").write_text(json.dumps(datos, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    ruta = "/tu-nombre-el-ano-que-naciste/"
+    cuerpo = (f'<h1>¿Qué puesto tenía tu nombre el año que naciste?</h1>'
+              f'<p class="lead">Escribe tu nombre y tu año de nacimiento y descubre si tu nombre estaba de moda entonces, y si se sigue poniendo hoy.</p>'
+              '<form id="ano" class="card ano-form">'
+              '<div class="ano-campos"><label>Nombre<input id="ano-nombre" required autocomplete="off" placeholder="Por ejemplo, Laura"></label>'
+              f'<label>Año de nacimiento<input id="ano-anio" type="number" inputmode="numeric" min="1900" max="{ultimo}" required placeholder="1990"></label></div>'
+              '<div class="tipo-busqueda" role="radiogroup" aria-label="Sexo"><label><input type="radio" name="ano-sexo" value="M" checked> Mujer</label>'
+              '<label><input type="radio" name="ano-sexo" value="H"> Hombre</label></div>'
+              '<button class="btn" type="submit">Ver mi nombre</button></form>'
+              '<div id="ano-resultado" class="resultado" aria-live="polite"></div>'
+              f'<p class="updated">Desde {anios[0]}, puesto entre los 100 nombres más puestos a los recién nacidos de cada año. Antes de {anios[0]}, puesto entre los 50 '
+              f'nombres más comunes de las personas que viven hoy en España y nacieron en esa década (datos del INE a {ref}).</p>'
+              + bloque_compartir("¿Qué puesto tenía tu nombre el año que naciste? Yo lo he mirado aquí:", ruta)
+              + f'<div class="content"><h2>Cómo funciona</h2><p>Para los nacidos desde {anios[0]} usamos los nombres de los recién nacidos de cada año que publica el INE. '
+              'Para los anteriores, el INE publica los nombres más comunes según la década de nacimiento de las personas que viven hoy en España: no es exactamente '
+              'lo que se puso aquel año, pero se le parece mucho. Si tu nombre no aparece, es que no estaba entre los más puestos, no que no existiera.</p></div>'
+              f'<script>window.REFERENCIA={json.dumps(ref)};</script><script src="/assets/ano.js?v={VERSION}" defer></script>')
+    guardar(ruta, pagina(ruta, "¿Qué puesto tenía tu nombre el año que naciste?",
+                         "Escribe tu nombre y tu año de nacimiento y descubre si estaba de moda y si se sigue poniendo hoy. Con datos del INE.",
+                         cuerpo, [("Tu nombre el año que naciste", None)]))
+    rutas.append(ruta)
+    return rutas
+
+
 def paginas_legales(referencia, umbral):
     t = TITULAR
     sobre = f"""<h1>Sobre los datos</h1>
@@ -942,6 +1033,7 @@ def pagina_apellido(e, idx, por_p1, referencia):
               f'<div class="respuesta"><p>Según el INE, como primer apellido</p><p class="cifra">{n(e["p1"])}</p><p>{respuesta}</p></div>',
               f'<div class="stats">{stats}</div>',
               f'<p class="updated">Datos del INE a {ref}. El INE publica los apellidos sin tildes; aquí las añadimos para facilitar la lectura.</p>',
+              bloque_compartir(f"En España hay {n(e['p1'])} personas que tienen {X} como primer apellido. ¿Y el tuyo?", f"/apellido/{e['slug']}/"),
               nota_variantes(e, "/apellido/", "tipo=apellido&amp;", lambda v: v["p1"])]
     md = ORIGENES_APELLIDOS / f"{e['slug']}.md"
     if md.exists():
@@ -1042,7 +1134,7 @@ def indices_apellidos(idx):
     return grupos
 
 
-VERSION = "8"
+VERSION = "9"
 
 
 def main():
@@ -1064,6 +1156,9 @@ def main():
     (WEB / "assets").mkdir(parents=True)
     shutil.copy(PLANTILLA / "style.css", WEB / "assets" / "style.css")
     shutil.copy(PLANTILLA / "app.js", WEB / "assets" / "app.js")
+    shutil.copy(PLANTILLA / "compartir.js", WEB / "assets" / "compartir.js")
+    shutil.copy(PLANTILLA / "ano.js", WEB / "assets" / "ano.js")
+    shutil.copy(PLANTILLA / "og.png", WEB / "og.png")
     for icono in ("favicon.svg", "favicon.ico", "favicon-48.png", "favicon-96.png", "favicon-192.png", "apple-touch-icon.png"):
         shutil.copy(PLANTILLA / icono, WEB / icono)
 
@@ -1074,6 +1169,7 @@ def main():
                             nombres["referencia"], prov["referencia"], dec["referencia"])
     rutas += paginas_legales(nombres["referencia"], args.umbral)
     rutas += paginas_ideas(idx, dec["decadas"], beb["anios"], nombres["referencia"])
+    rutas += paginas_curiosidades(idx, dec["decadas"], beb["anios"], nombres["referencia"])
     idx_ape = construir_indice_apellidos(ape, args.umbral_apellidos)
     ape_pagina = [e for e in idx_ape.values() if e["pagina"]]
     if len(ape_pagina) < MIN_PAGINAS:

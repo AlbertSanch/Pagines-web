@@ -122,6 +122,15 @@ de moda (los que más puestos ganan entre los bebés en 5 años y los nuevos en 
 menos de 25 años; solo las letras con 15 nombres o más) y clásicos que vuelven. Los nombres sin página propia
 enlazan al buscador.
 
+## Curiosidades y compartir
+
+- `/nombres-en-peligro-de-extincion/`: nombres con al menos 3.000 personas, edad media de 70 años o más (mujeres) o de 65
+  o más (hombres) y que nunca han estado entre los 100 más puestos a los bebés.
+- `/tu-nombre-el-ano-que-naciste/`: herramienta (`plantilla/ano.js`) que lee `web/datos/rankings.json` (puestos de los bebés
+  por año y de cada década) y el índice del buscador.
+- Las páginas de nombre y apellido tienen botones para compartir (WhatsApp, X, menú del móvil y copiar enlace;
+  `plantilla/compartir.js`), y todas las páginas usan `plantilla/og.png` como imagen al compartir.
+
 ## Afiliados
 
 Cada página de nombre tiene un bloque «Regalos personalizados con el nombre X» (`bloque_regalos` en
