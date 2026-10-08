@@ -117,7 +117,7 @@ enlace «Configurar cookies» del pie lo vuelve a abrir. `generar_web.py` tambi�
 ## Afiliados
 
 Cada página de nombre tiene un bloque «Regalos personalizados con el nombre X» (`bloque_regalos` en
-`generar_web.py`) con búsquedas de Amazon.es con la etiqueta `albert671-21` (la misma cuenta que
-Ahorrómetro). Si la edad media del nombre es menor de 15 años salen regalos de bebé (manta, body,
+`generar_web.py`) con búsquedas de Amazon.es con el ID de seguimiento `cuantossellaman-21` (misma cuenta
+que Ahorrómetro, que usa `albert671-21`). Si la edad media del nombre es menor de 15 años salen regalos de bebé (manta, body,
 cuadro de nacimiento, mochila); si no, taza, collar o pulsera, lámina y llavero. Son búsquedas, no
 productos concretos: no caducan. El aviso obligatorio de Amazon está en el bloque y en `/privacidad/`.

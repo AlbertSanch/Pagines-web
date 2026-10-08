@@ -341,9 +341,9 @@ def similares(e, idx, por_total):
     return variantes, cerca
 
 
-# Amazon Afiliados (la misma cuenta que Ahorrómetro). Son búsquedas en Amazon con el nombre, no
+# Amazon Afiliados (misma cuenta que Ahorrómetro, con su propio ID de seguimiento). Son búsquedas en Amazon con el nombre, no
 # productos concretos: no caducan ni hay que mantener precios.
-AMAZON_TAG = "albert671-21"
+AMAZON_TAG = "cuantossellaman-21"
 AVISO_AMAZON = "Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables."
 REGALOS_BEBE = [("🧸", "Manta con su nombre", "manta bebe personalizada nombre", "Bordada o estampada: un regalo de nacimiento que se guarda años."),
                 ("👶", "Body o babero con nombre", "body bebe personalizado nombre", "Para las primeras fotos y para regalar en la visita al recién nacido."),
