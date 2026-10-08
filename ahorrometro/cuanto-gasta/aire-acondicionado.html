@@ -51,7 +51,7 @@
   <div class="layout">
     <article>
       <h1>¿Cuánto gasta un aire acondicionado?</h1>
-      <p class="lead">Con un uso normal (6 horas al día en verano, equipo de 3.000 frigorías), un aire acondicionado gasta unos <strong>97 kWh al mes</strong>, es decir, <strong>22,94 € al mes</strong> y 275,27 € al año con el precio medio actual de la luz (0,236 €/kWh con impuestos).</p>
+      <p class="lead">Con un uso normal (6 horas al día en verano, equipo de 3.000 frigorías), un aire acondicionado gasta unos <strong>97 kWh al mes</strong>, es decir, <strong>22,94 € al mes</strong> y 91,76 € al año (4 meses de uso) con el precio medio actual de la luz (0,236 €/kWh con impuestos).</p>
       <p class="updated">Por Albert Sanchez · Precio de la luz actualizado automáticamente con datos de Red Eléctrica</p>
 
       <div class="calc">
@@ -122,8 +122,8 @@
           <li><a href="plancha">👔 Plancha</a></li>
           <li><a href="bombilla-led">💡 Bombilla LED</a></li>
           <li><a href="cafetera">☕ Cafetera</a></li>
-          <li><a href="placa-de-induccion">🍳 Placa de inducción</a></li>
-          <li><a href="vitroceramica">🔥 Vitrocerámica</a></li>
+          <li><a href="radiador-de-aceite">🛢️ Radiador de aceite</a></li>
+          <li><a href="bomba-de-calor">🌡️ Bomba de calor</a></li>
           <li><a href="../consumo-electrodomesticos">📋 Todos los electrodomésticos</a></li>
         </ul>
       </div>
@@ -163,7 +163,7 @@
     if (!(kwhMes >= 0 && p >= 0)) { showResult('res', '<p>Revisa los datos: todos deben ser números positivos.</p>'); return; }
     var html = '<div>Te cuesta al mes</div><div class="big">' + eur(kwhMes * p) + '</div>' +
       '<div class="stats">' +
-        '<div class="stat"><b>' + eur(kwhMes * p * 12) + '</b><span>al año</span></div>' +
+        '<div class="stat"><b>' + eur(kwhMes * p * 4) + '</b><span>al año (4 meses de uso)</span></div>' +
         '<div class="stat"><b>' + fmt(kwhMes, 1) + ' kWh</b><span>al mes</span></div>' +
       '</div>';
     if (scroll) showResult('res', html);
