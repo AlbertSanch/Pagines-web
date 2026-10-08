@@ -235,6 +235,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
       <a href="/provincias/">Por provincia</a>
       <a href="/decadas/">Por década</a>
       <a href="/bebes/">Bebés</a>
+      <a href="/ideas/">Ideas</a>
       <a href="/sobre-los-datos/">Sobre los datos</a>
     </nav>
   </div>
@@ -246,7 +247,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="site-footer">
   <div class="container">
     <p><strong>{SITIO}</strong> responde cuántas personas se llaman o se apellidan de cada forma en España con los datos oficiales del Instituto Nacional de Estadística (INE).</p>
-    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/ideas/">Ideas para bebé</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Fuente: INE. Datos reutilizados conforme a sus condiciones de uso; esta web no está vinculada al INE.</p>
   </div>
 </footer>
@@ -621,6 +622,7 @@ def portada(idx, nombres, bebes, referencia, n_paginas):
   <a class="card" href="/apellidos/"><h3>Apellidos</h3><p>Cuántos se apellidan como tú y los apellidos más comunes de cada provincia.</p></a>
   <a class="card" href="/provincias/"><h3>Por provincia</h3><p>Los 50 nombres más comunes de cada provincia.</p></a>
   <a class="card" href="/decadas/"><h3>Por década</h3><p>De José y María a Hugo y Lucía: cómo han cambiado los nombres.</p></a>
+  <a class="card" href="/ideas/"><h3>Ideas para bebé</h3><p>Nombres de moda, poco comunes, cortos, por letra y clásicos que vuelven.</p></a>
   <a class="card" href="/bebes/"><h3>Nombres de bebé</h3><p>Los más puestos cada año desde {min(bebes)}. En {ultimo}: {escape(mostrar(esp['H']['top'][0][0]))} y {escape(mostrar(esp['M']['top'][0][0]))}.</p></a>
 </div>
 <div class="dos-col">
@@ -638,6 +640,160 @@ def portada(idx, nombres, bebes, referencia, n_paginas):
     return pagina("/", "¿Cuántas personas se llaman como tú? Nombres y apellidos",
                   "Descubre cuántas personas se llaman o se apellidan como tú en España, su edad media y en qué provincias es más común. Datos oficiales del INE.",
                   cuerpo, None, ld)
+
+
+# ---------------------------------------------------------------------------------- Ideas de nombres
+# Listas de ideas para bebés sacadas solo de los datos del INE: nada de significados ni opiniones.
+NINO = {"H": ("niño", "niños", "nino"), "M": ("niña", "niñas", "nina")}
+LETRAS_MIN = 15      # nombres mínimos para que una letra tenga su página
+POR_LETRA = 50       # nombres como máximo por letra
+
+
+def enlace_idea(e):
+    """Enlace a la página del nombre o, si no tiene, al buscador (que muestra su cifra)."""
+    if e["pagina"]:
+        return f'<a href="/nombre/{e["slug"]}/">{escape(e["mostrar"])}</a>'
+    return f'<a href="/?q={quote(e["mostrar"])}">{escape(e["mostrar"])}</a>'
+
+
+def tabla_ideas(filas, s, puestos, ultimo):
+    """filas: entradas del índice. Columnas: nombre, personas, edad media, puesto entre los bebés del último año."""
+    cuerpo = "".join(
+        f'<tr><td>{enlace_idea(e)}</td><td class="num">{n(e[s]["f"])}</td>'
+        f'<td class="num">{dec(e[s]["e"]) if e[s]["e"] is not None else "—"}</td>'
+        f'<td class="num">{str(puestos[e["k"]]) + ".º" if e["k"] in puestos else "—"}</td></tr>' for e in filas)
+    return (f'<div class="table-wrap"><table class="data"><thead><tr><th>Nombre</th><th class="num">Personas</th>'
+            f'<th class="num">Edad media</th><th class="num">Bebés {ultimo}</th></tr></thead><tbody>{cuerpo}</tbody></table></div>')
+
+
+def paginas_ideas(idx, decadas, bebes, referencia):
+    rutas, tarjetas = [], []
+    anios = sorted(bebes)
+    ultimo = anios[-1]
+    antes = str(int(ultimo) - 5) if str(int(ultimo) - 5) in bebes else anios[0]
+    ref = fecha_larga(referencia)
+    nota = (f'<p class="updated">Datos del INE: personas que viven en España a {ref} y nombres puestos a los recién nacidos en {ultimo}. '
+            'La edad media es la de todas las personas que llevan el nombre: cuanto más baja, más reciente es la moda.</p>')
+    explica = ('<p>«Personas» es cuántas mujeres u hombres se llaman así en España. «Edad media», la de todas ellas, en años. '
+               f'«Bebés {ultimo}» es su puesto entre los 100 nombres más puestos a los recién nacidos ese año; si sale «—», no está entre ellos.</p>')
+    migas = [("Ideas para bebé", "/ideas/")]
+
+    def puestos(anio, s):
+        return {normalizar(nom): i for i, (nom, _) in enumerate(bebes[anio]["espana"][s]["top"], 1)}
+
+    def simple(e):
+        return " " not in e["k"] and "-" not in e["k"]
+
+    def guardar_idea(ruta, titulo, desc, h1, lead, cuerpo, tarjeta):
+        guardar(ruta, pagina(ruta, titulo, desc, f'<h1>{h1}</h1><p class="lead">{lead}</p>{nota}{cuerpo}'
+                             f'<p><a href="/ideas/">← Más ideas de nombres para bebé</a></p>', migas + [(h1, None)]))
+        rutas.append(ruta)
+        if tarjeta:
+            tarjetas.append((ruta, *tarjeta))
+
+    for s in "MH":
+        nino, ninos, url = NINO[s]
+        p_ult, p_ant = puestos(ultimo, s), puestos(antes, s)
+        top_ult = bebes[ultimo]["espana"][s]["top"]
+
+        # De moda: los que más suben y los nuevos en el top 100
+        suben = sorted(((p_ant[k] - p, k) for k, p in p_ult.items() if k in p_ant and p_ant[k] - p >= 10), reverse=True)[:20]
+        nuevos = [k for k, _ in sorted(p_ult.items(), key=lambda x: x[1]) if k not in p_ant]
+        def fila_moda(k):
+            e = idx.get(k)
+            nombre = enlace_idea(e) if e else escape(mostrar(k.upper()))
+            f = top_ult[p_ult[k] - 1][1]
+            return (f'<tr><td>{nombre}</td><td class="num">{str(p_ant[k]) + ".º" if k in p_ant else "—"}</td>'
+                    f'<td class="num">{p_ult[k]}.º</td><td class="num">{n(f)}</td></tr>')
+        cab = (f'<div class="table-wrap"><table class="data"><thead><tr><th>Nombre</th><th class="num">Puesto en {antes}</th>'
+               f'<th class="num">Puesto en {ultimo}</th><th class="num">{ninos.capitalize()} en {ultimo}</th></tr></thead><tbody>')
+        ejemplos = ", ".join(escape(idx[k]["mostrar"]) for _, k in suben[:3] if k in idx)
+        cuerpo = (f'<h2>Los que más suben desde {antes}</h2><p>Nombres de {nino} que estaban entre los 100 más puestos en {antes} y han ganado más puestos hasta {ultimo}.</p>'
+                  + cab + "".join(fila_moda(k) for _, k in suben) + "</tbody></table></div>"
+                  + f'<h2>Nuevos entre los 100 más puestos</h2><p>Nombres de {nino} que en {antes} no estaban entre los 100 más puestos y en {ultimo} sí.</p>'
+                  + cab + "".join(fila_moda(k) for k in nuevos) + "</tbody></table></div>"
+                  + f'<h2>Los más puestos en {ultimo}</h2>{top3(idx, top_ult, 10)}'
+                  + f'<p><a href="/bebes/{ultimo}/">Ver los 100 nombres más puestos en {ultimo} →</a></p>')
+        guardar_idea(f"/ideas/nombres-de-{url}-de-moda/", f"Nombres de {nino} de moda: los que más suben ({ultimo})",
+                     f"Los nombres de {nino} que más puestos han ganado entre los bebés de {antes} a {ultimo} y los nuevos en el top 100, con datos del INE.",
+                     f"Nombres de {nino} de moda", f"Los nombres de {nino} que más están subiendo entre los recién nacidos en España: {ejemplos}…",
+                     cuerpo, (f"Nombres de {nino} de moda", f"Los que más suben entre los bebés desde {antes}."))
+
+        # Poco comunes: entre 300 y 3.000 personas y edad media joven
+        poco = sorted((e for e in idx.values() if e[s] and simple(e) and 300 <= e[s]["f"] <= 3000
+                       and e[s]["e"] is not None and e[s]["e"] < 12), key=lambda e: -e[s]["f"])[:60]
+        guardar_idea(f"/ideas/nombres-de-{url}-poco-comunes/", f"Nombres de {nino} poco comunes (pero reales): {len(poco)} ideas",
+                     f"{len(poco)} nombres de {nino} poco comunes que se están poniendo ahora: los llevan entre 300 y 3.000 personas en España y su edad media es de menos de 12 años.",
+                     f"Nombres de {nino} poco comunes", f"Nombres de {nino} que se están poniendo ahora pero que todavía son poco frecuentes: los llevan entre 300 y 3.000 {SEXO[s][1]} en España "
+                     "y su edad media es de menos de 12 años. Ni raros ni repetidos.",
+                     explica + tabla_ideas(poco, s, p_ult, ultimo),
+                     (f"Nombres de {nino} poco comunes", "Entre 300 y 3.000 personas y de moda ahora."))
+
+        # Cortos: hasta 4 letras, de personas jóvenes
+        cortos = sorted((e for e in idx.values() if e[s] and simple(e) and len(e["k"]) <= 4 and e[s]["f"] >= 300
+                         and e[s]["e"] is not None and e[s]["e"] < 20), key=lambda e: -e[s]["f"])[:60]
+        guardar_idea(f"/ideas/nombres-cortos-de-{url}/", f"Nombres cortos de {nino}: {len(cortos)} ideas de 2, 3 y 4 letras",
+                     f"Los nombres cortos de {nino} (hasta 4 letras) más puestos en los últimos años en España, con cuántas personas se llaman así.",
+                     f"Nombres cortos de {nino}", f"Nombres de {nino} de hasta 4 letras que llevan sobre todo personas jóvenes (edad media de menos de 20 años), "
+                     "ordenados de más a menos frecuentes.",
+                     explica + tabla_ideas(cortos, s, p_ult, ultimo),
+                     (f"Nombres cortos de {nino}", "De 2, 3 y 4 letras."))
+
+        # Por letra
+        letras = {}
+        for e in sorted(idx.values(), key=lambda e: -(e[s]["f"] if e[s] else 0)):
+            if e[s] and simple(e) and e[s]["f"] >= 200 and e[s]["e"] is not None and e[s]["e"] < 25 and "a" <= e["k"][0] <= "z":
+                letras.setdefault(e["k"][0], []).append(e)
+        letras = {l: v[:POR_LETRA] for l, v in sorted(letras.items()) if len(v) >= LETRAS_MIN}
+        enlaces_letras = "".join(f'<li><a href="/ideas/nombres-de-{url}-con-{l}/">{l.upper()}</a></li>' for l in letras)
+        for l, lista in letras.items():
+            ruta = f"/ideas/nombres-de-{url}-con-{l}/"
+            guardar_idea(ruta, f"Nombres de {nino} que empiezan por {l.upper()}: {len(lista)} ideas",
+                         f"{len(lista)} nombres de {nino} que empiezan por {l.upper()} y se ponen ahora, con cuántas personas se llaman así en España. El más frecuente: {lista[0]['mostrar']}.",
+                         f"Nombres de {nino} con {l.upper()}", f"Nombres de {nino} que empiezan por {l.upper()} y llevan sobre todo personas jóvenes (edad media de menos de 25 años), "
+                         f"de más a menos frecuentes. El más común es {enlace_idea(lista[0])}.",
+                         explica + tabla_ideas(lista, s, p_ult, ultimo)
+                         + f'<h2>Nombres de {nino} con otras letras</h2><ul class="chips">{enlaces_letras}</ul>', None)
+        tarjetas.append((f"/ideas/nombres-de-{url}-con-{next(iter(letras))}/", f"Nombres de {nino} por letra",
+                         "De la " + " · ".join(l.upper() for l in letras) + "."))
+
+    # Clásicos que vuelven: estaban entre los 50 más comunes antes de 1960, cayeron en los 90 y hoy están mejor entre los bebés
+    filas = ""
+    for s in "MH":
+        p_ult = puestos(ultimo, s)
+        def puesto_dec(k, c):
+            return {normalizar(nom): i for i, (nom, _) in enumerate(decadas[c][s], 1)}.get(k) if c in decadas else None
+        lista = []
+        for k, p in p_ult.items():
+            viejos = [x for x in (puesto_dec(k, c) for c in ("antes-1930", "1930", "1940", "1950")) if x]
+            if not viejos:
+                continue
+            p90 = puesto_dec(k, "1990")
+            if p90 is None or (p90 > min(viejos) + 15 and p < p90):
+                lista.append((p, k, min(viejos), p90))
+        for p, k, viejo, p90 in sorted(lista):
+            e = idx[k]
+            filas += (f'<tr><td>{enlace_idea(e)}</td><td>{NINO[s][0].capitalize()}</td><td class="num">{viejo}.º</td>'
+                      f'<td class="num">{str(p90) + ".º" if p90 else "fuera del top 50"}</td><td class="num">{p}.º</td></tr>')
+    guardar_idea("/ideas/nombres-clasicos-que-vuelven/", f"Nombres clásicos que vuelven: de los abuelos a los bebés de {ultimo}",
+                 f"Nombres que eran de los más comunes antes de 1960, perdieron fuerza en los años 90 y hoy vuelven a estar entre los más puestos a los bebés.",
+                 "Nombres clásicos que vuelven", "Nombres que estaban entre los 50 más comunes de quienes nacieron antes de 1960, que en los años 90 habían perdido fuerza "
+                 f"y que en {ultimo} están mejor situados entre los bebés que entonces.",
+                 '<div class="table-wrap"><table class="data"><thead><tr><th>Nombre</th><th>Sexo</th><th class="num">Mejor puesto antes de 1960</th>'
+                 f'<th class="num">Puesto en los 90</th><th class="num">Puesto bebés {ultimo}</th></tr></thead><tbody>{filas}</tbody></table></div>'
+                 '<p>Los puestos de cada década son entre las personas que viven hoy en España según su década de nacimiento. '
+                 '<a href="/decadas/">Ver los nombres más comunes de cada década</a>.</p>',
+                 ("Nombres clásicos que vuelven", "De los abuelos a los bebés de hoy."))
+
+    cuerpo = ('<h1>Ideas de nombres para bebé</h1><p class="lead">Listas de nombres para tu bebé hechas con los datos oficiales del INE: '
+              'cuántas personas se llaman así en España, su edad media y si se están poniendo ahora. Sin inventos: solo cifras reales.</p>'
+              '<div class="grid">' + "".join(f'<a class="card" href="{r}"><h3>{escape(t)}</h3><p>{escape(d)}</p></a>' for r, t, d in tarjetas) + "</div>"
+              f'<p>¿Ya tienes un nombre en mente? <a href="/">Búscalo</a> para ver cuántas personas se llaman así, o mira los <a href="/bebes/">nombres más puestos cada año</a>.</p>')
+    guardar("/ideas/", pagina("/ideas/", "Ideas de nombres para bebé con datos reales del INE",
+                              "Nombres de niña y de niño de moda, poco comunes, cortos, por letra y clásicos que vuelven, con cuántas personas se llaman así en España.",
+                              cuerpo, [("Ideas para bebé", None)]))
+    rutas.append("/ideas/")
+    return rutas
 
 
 def paginas_legales(referencia, umbral):
@@ -886,7 +1042,7 @@ def indices_apellidos(idx):
     return grupos
 
 
-VERSION = "7"
+VERSION = "8"
 
 
 def main():
@@ -917,6 +1073,7 @@ def main():
     rutas = paginas_ranking(idx, nombres, prov["provincias"], dec["decadas"], beb["anios"],
                             nombres["referencia"], prov["referencia"], dec["referencia"])
     rutas += paginas_legales(nombres["referencia"], args.umbral)
+    rutas += paginas_ideas(idx, dec["decadas"], beb["anios"], nombres["referencia"])
     idx_ape = construir_indice_apellidos(ape, args.umbral_apellidos)
     ape_pagina = [e for e in idx_ape.values() if e["pagina"]]
     if len(ape_pagina) < MIN_PAGINAS:

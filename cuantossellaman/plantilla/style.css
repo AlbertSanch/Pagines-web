@@ -131,3 +131,10 @@ summary { font-weight: 600; cursor: pointer; }
 .aff-desc { font-size: .86rem; color: var(--muted); line-height: 1.45; flex: 1; }
 .aff-cta { margin-top: 6px; font-size: .88rem; font-weight: 600; color: #b36b00; }
 .aff-note { font-size: .78rem; color: var(--muted); margin: 8px 0 0; }
+
+/* Tablas más compactas en el móvil para que quepan 4 columnas */
+@media (max-width: 480px) {
+  table.data { font-size: .88rem; }
+  table.data th, table.data td { padding: 6px 7px; }
+  table.data th.num { white-space: normal; }
+}

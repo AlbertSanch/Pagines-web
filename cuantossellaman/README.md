@@ -114,6 +114,14 @@ con el modo de consentimiento de Google, que no usa cookies de publicidad en Eur
 visitante acepta. El mensaje de consentimiento se configura en AdSense → Privacidad y mensajes, y el
 enlace «Configurar cookies» del pie lo vuelve a abrir. `generar_web.py` también genera `web/ads.txt`.
 
+## Ideas de nombres para bebé
+
+`/ideas/` (`paginas_ideas` en `generar_web.py`) tiene listas hechas solo con los datos del INE, sin significados:
+de moda (los que más puestos ganan entre los bebés en 5 años y los nuevos en el top 100), poco comunes
+(300–3.000 personas y edad media de menos de 12 años), cortos (hasta 4 letras), por letra (edad media de
+menos de 25 años; solo las letras con 15 nombres o más) y clásicos que vuelven. Los nombres sin página propia
+enlazan al buscador.
+
 ## Afiliados
 
 Cada página de nombre tiene un bloque «Regalos personalizados con el nombre X» (`bloque_regalos` en
