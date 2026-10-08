@@ -1,0 +1,34 @@
+# Recordatorio para actualizar el precio de la bombona de butano.
+# El precio es regulado y cambia el tercer martes de enero, marzo, mayo, julio, septiembre y
+# noviembre (el BOE lo publica el lunes anterior). Ese martes este workflow abre una incidencia
+# en GitHub (te llega por correo) con el enlace al BOE y los pasos para actualizarlo.
+name: Recordatorio precio del butano
+
+on:
+  schedule:
+    - cron: "41 7 15-21 1,3,5,7,9,11 *"  # cada día del 15 al 21 de los meses impares; abajo se filtra el martes
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  recordar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Abrir incidencia si hoy es el tercer martes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          if [ "$(date -u +%u)" != "2" ] && [ "$MANUAL" != "true" ]; then
+            echo "Hoy no es martes."; exit 0
+          fi
+          AYER=$(date -u -d yesterday +%Y/%m/%d)
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "Actualizar el precio del butano ($(date -u +%d/%m/%Y))" \
+            --body "Hoy entra en vigor el nuevo precio de la bombona de butano.
+
+          1. Busca la resolución de precios máximos de los gases licuados del petróleo envasados en el BOE de ayer: https://www.boe.es/boe/dias/$AYER/ (o una noticia con el precio de la bombona de 12,5 kg).
+          2. Añade una línea al principio de \`historial\` en \`ahorrometro/datos/butano.json\` con la fecha de hoy, el precio con impuestos y los céntimos por kilo sin impuestos. O pídeselo a Claude con el precio.
+          3. Al subir el cambio a main, la página https://ahorrometro.es/precio-bombona-butano y las calculadoras se actualizan solas."

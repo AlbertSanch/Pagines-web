@@ -1,6 +1,7 @@
 # Actualiza ahorrometro/datos/carburantes.json y las páginas por provincia
 # (ahorrometro/gasolina/) con los precios del Ministerio, y ahorrometro/datos/luz.json
-# con el precio medio de la luz de Red Eléctrica.
+# con el precio medio de la luz de Red Eléctrica. También regenera la página del butano
+# (ahorrometro/datos/butano.json se actualiza a mano: ver recordatorio-butano.yml).
 # Cada commit en main lo publica Cloudflare Pages automáticamente.
 name: Precios de carburantes
 
@@ -16,6 +17,8 @@ on:
       - scripts/paginas_provincia.py
       - scripts/actualizar_luz.py
       - scripts/paginas_consumo.py
+      - scripts/pagina_butano.py
+      - ahorrometro/datos/butano.json
       - .github/workflows/precios-carburantes.yml
 
 permissions:
@@ -50,11 +53,14 @@ jobs:
       - name: Páginas de consumo de electrodomésticos
         run: python scripts/paginas_consumo.py
 
+      - name: Página del precio del butano
+        run: python scripts/pagina_butano.py
+
       - name: Guardar cambios
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ahorrometro/datos/carburantes.json ahorrometro/datos/luz.json ahorrometro/cuanto-gasta ahorrometro/consumo-electrodomesticos.html ahorrometro/gasolina ahorrometro/precio-gasolina-hoy.html ahorrometro/sitemap.xml
+          git add ahorrometro/datos/carburantes.json ahorrometro/datos/luz.json ahorrometro/cuanto-gasta ahorrometro/consumo-electrodomesticos.html ahorrometro/gasolina ahorrometro/precio-gasolina-hoy.html ahorrometro/precio-bombona-butano.html ahorrometro/calculadoras ahorrometro/sitemap.xml
           if git diff --cached --quiet; then
             echo "Sin cambios en los precios."
             exit 0
