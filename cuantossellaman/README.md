@@ -103,8 +103,7 @@ Se mostrará en la página del nombre. Ver `content/significados/LEEME.md`.
 
 - **Significados y orígenes**: ninguno escrito todavía (`content/significados/` y
   `content/significados-apellidos/`).
-- **Afiliados**: regalos personalizados en las páginas de nombre y genealogía (MyHeritage) en las de
-  apellido, cuando haya tráfico y cuentas en esos programas.
+- **Afiliados de apellidos**: genealogía (MyHeritage) en las páginas de apellido, cuando haya tráfico.
 - **Analítica**: no hay. Si se añade Google Analytics, hay que mencionarlo en `/privacidad/`.
 
 ## Publicidad
@@ -114,3 +113,11 @@ el script va en el `<head>` de todas las páginas (`CABECERA_ANUNCIOS` en `gener
 con el modo de consentimiento de Google, que no usa cookies de publicidad en Europa hasta que el
 visitante acepta. El mensaje de consentimiento se configura en AdSense → Privacidad y mensajes, y el
 enlace «Configurar cookies» del pie lo vuelve a abrir. `generar_web.py` también genera `web/ads.txt`.
+
+## Afiliados
+
+Cada página de nombre tiene un bloque «Regalos personalizados con el nombre X» (`bloque_regalos` en
+`generar_web.py`) con búsquedas de Amazon.es con la etiqueta `albert671-21` (la misma cuenta que
+Ahorrómetro). Si la edad media del nombre es menor de 15 años salen regalos de bebé (manta, body,
+cuadro de nacimiento, mochila); si no, taza, collar o pulsera, lámina y llavero. Son búsquedas, no
+productos concretos: no caducan. El aviso obligatorio de Amazon está en el bloque y en `/privacidad/`.

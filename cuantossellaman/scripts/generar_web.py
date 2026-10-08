@@ -341,6 +341,39 @@ def similares(e, idx, por_total):
     return variantes, cerca
 
 
+# Amazon Afiliados (la misma cuenta que Ahorrómetro). Son búsquedas en Amazon con el nombre, no
+# productos concretos: no caducan ni hay que mantener precios.
+AMAZON_TAG = "albert671-21"
+AVISO_AMAZON = "Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables."
+REGALOS_BEBE = [("🧸", "Manta con su nombre", "manta bebe personalizada nombre", "Bordada o estampada: un regalo de nacimiento que se guarda años."),
+                ("👶", "Body o babero con nombre", "body bebe personalizado nombre", "Para las primeras fotos y para regalar en la visita al recién nacido."),
+                ("🖼️", "Cuadro de nacimiento", "cuadro nacimiento personalizado nombre", "Con el nombre, la fecha, el peso y la hora en que nació."),
+                ("🎒", "Mochila infantil con nombre", "mochila infantil personalizada nombre", "Para la guardería o el cole, sin confusiones.")]
+REGALOS = [("☕", "Taza con su nombre", "taza personalizada nombre", "El clásico que siempre acierta: para el desayuno o la oficina."),
+           ("📿", "{joya} con su nombre", "{joya_busqueda} personalizado nombre", "{joya_texto}"),
+           ("🖼️", "Lámina con su nombre", "lamina personalizada nombre", "Para enmarcar: con el nombre en letras grandes o con una dedicatoria."),
+           ("🔑", "Llavero grabado", "llavero grabado nombre", "Pequeño y barato, perfecto como detalle.")]
+
+
+def bloque_regalos(e):
+    """Regalos personalizados con el nombre (enlaces de afiliado a búsquedas de Amazon)."""
+    X = e["mostrar"]
+    s = max((s for s in "HM" if e[s]), key=lambda s: e[s]["f"])
+    bebe = e[s]["e"] is not None and e[s]["e"] < 15  # nombre de moda entre los niños: regalos de bebé
+    if bebe:
+        lista = REGALOS_BEBE
+    else:
+        joya = ("Pulsera", "pulsera hombre", "Pulsera grabada de acero o cuero, un detalle que se lleva a diario.") if s == "H" else \
+               ("Collar", "collar", "Con el nombre en plata o acero: uno de los regalos más buscados.")
+        lista = [(i, t.format(joya=joya[0]), b.format(joya_busqueda=joya[1]), d.format(joya_texto=joya[2])) for i, t, b, d in REGALOS]
+    items = "".join(
+        f'<a class="aff-item" href="https://www.amazon.es/s?k={quote(busqueda + " " + X)}&amp;tag={AMAZON_TAG}" rel="sponsored nofollow noopener" target="_blank">'
+        f'<span class="aff-icon">{icono}</span><b>{escape(titulo)}</b><span class="aff-desc">{escape(texto)}</span><span class="aff-cta">Ver ideas en Amazon →</span></a>'
+        for icono, titulo, busqueda, texto in lista)
+    return (f'<section class="affiliate"><h2>Regalos personalizados con el nombre {escape(X)}</h2><div class="aff-grid">{items}</div>'
+            f'<p class="aff-note">Enlaces de afiliado: si compras a través de ellos, recibimos una pequeña comisión sin coste extra para ti. {AVISO_AMAZON}</p></section>')
+
+
 def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
     X = e["mostrar"]
     sexos = [s for s in "HM" if e[s]]
@@ -398,6 +431,8 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
     else:
         cuerpo.append(f'<h2>¿En qué provincias es más común?</h2><p>{escape(X)} no está entre los 50 nombres más frecuentes de ninguna provincia, '
                       f'que es el detalle que publica el INE por provincia. Consulta los <a href="/provincias/">nombres más comunes de cada provincia</a>.</p>')
+
+    cuerpo.append(bloque_regalos(e))
 
     # Décadas
     if e["dec"]:
@@ -648,6 +683,8 @@ def paginas_legales(referencia, umbral):
 <p>La primera vez que entras se muestra el mensaje de consentimiento de Google, donde puedes aceptar, rechazar o elegir qué finalidades permites. Base legal: tu consentimiento. Mientras no lo des, no se usan cookies de publicidad y los anuncios que veas no serán personalizados. Puedes cambiar tu elección cuando quieras con el enlace «Configurar cookies» del pie de página.</p>
 <p>Más información: <a href="https://policies.google.com/technologies/ads?hl=es" rel="noopener">cómo usa Google las cookies en la publicidad</a>. Puedes desactivar la publicidad personalizada en la <a href="https://adssettings.google.com/" rel="noopener">configuración de anuncios de Google</a>.</p>
 <p>Esta web no tiene cookies propias ni herramientas de analítica.</p>
+<h2>Enlaces de afiliado</h2>
+<p>Las páginas de los nombres incluyen enlaces a búsquedas de regalos personalizados en Amazon.es. {SITIO} participa en el Programa de Afiliados de Amazon EU, un programa de publicidad para afiliados diseñado para ofrecer a sitios web un modo de obtener comisiones por publicidad, publicitando e incluyendo enlaces a Amazon.es. {AVISO_AMAZON} Al hacer clic en uno de estos enlaces, Amazon puede instalar cookies en tu navegador para atribuir la compra; su tratamiento se rige por la política de privacidad de Amazon. Comprar a través de estos enlaces no te supone ningún coste adicional.</p>
 <h2>Destinatarios</h2>
 <p>No cedemos datos a terceros salvo obligación legal. Google y Cloudflare pueden tratar datos como proveedores del servicio; algunos pueden estar fuera del Espacio Económico Europeo, con las garantías previstas en el RGPD.</p>
 <h2>Tus derechos</h2>
@@ -849,7 +886,7 @@ def indices_apellidos(idx):
     return grupos
 
 
-VERSION = "6"
+VERSION = "7"
 
 
 def main():
