@@ -117,10 +117,24 @@ def sintetizar(texto, modelo, velocidad):
         subprocess.run([sys.executable, "-m", "piper", "-m", modelo, "-f", tmp.name, "--length-scale", str(velocidad)],
                        input=texto.encode("utf-8"), check=True, capture_output=True)
         with wave.open(tmp.name) as w:
-            return np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16), w.getframerate()
+            audio, frecuencia = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16), w.getframerate()
+    return acortar_pausas(audio, frecuencia), frecuencia
 
 
-def pista_de_voz(nombre, escenas, modelo, velocidad=0.8):
+def acortar_pausas(audio, frecuencia, maximo=0.18, umbral=600):
+    """Las voces de Piper hacen pausas largas en cada coma: las deja en `maximo` segundos como mucho."""
+    ventana = frecuencia // 100  # trozos de 10 ms
+    trozos = [audio[i:i + ventana] for i in range(0, len(audio), ventana)]
+    salida, seguidos = [], 0
+    for t in trozos:
+        silencio = np.abs(t.astype(np.int32)).max(initial=0) < umbral
+        seguidos = seguidos + 1 if silencio else 0
+        if seguidos * 0.01 <= maximo:
+            salida.append(t)
+    return np.concatenate(salida) if salida else audio
+
+
+def pista_de_voz(nombre, escenas, modelo, velocidad=1.0):
     """Sintetiza la frase de cada escena, alarga las escenas que se quedan cortas y monta la pista de audio."""
     lineas = VOCES[nombre]
     assert len(lineas) == len(escenas), f"{nombre}: {len(lineas)} frases para {len(escenas)} escenas"
