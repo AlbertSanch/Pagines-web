@@ -163,7 +163,11 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <meta name="twitter:card" content="summary">
 {f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>' if ld else ''}
 <link rel="stylesheet" href="/assets/style.css?v={VERSION}">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 <header class="site-header">
@@ -800,7 +804,8 @@ def main():
     (WEB / "assets").mkdir(parents=True)
     shutil.copy(PLANTILLA / "style.css", WEB / "assets" / "style.css")
     shutil.copy(PLANTILLA / "app.js", WEB / "assets" / "app.js")
-    shutil.copy(PLANTILLA / "favicon.svg", WEB / "favicon.svg")
+    for icono in ("favicon.svg", "favicon.ico", "favicon-48.png", "favicon-96.png", "favicon-192.png", "apple-touch-icon.png"):
+        shutil.copy(PLANTILLA / icono, WEB / icono)
 
     por_total = sorted(idx.values(), key=lambda x: -x["total"])
     for e in con_pagina:
