@@ -99,6 +99,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var apply = function () {
       var q = search ? norm(search.value.trim()) : '';
       var total = 0;
+      // Mientras se busca, los precios de hoy se esconden para que los resultados queden justo debajo
+      document.body.classList.toggle('buscando', !!q);
       document.querySelectorAll('.grid').forEach(function (grid) {
         var visibles = 0;
         grid.querySelectorAll('.card-link').forEach(function (card) {
@@ -126,7 +128,15 @@ document.addEventListener('DOMContentLoaded', function () {
         apply();
       });
     });
-    if (search) search.addEventListener('input', apply);
+    if (search) {
+      search.addEventListener('input', apply);
+      search.addEventListener('keydown', function (e) {
+        if (e.key !== 'Enter') return;
+        e.preventDefault();
+        var primera = Array.prototype.find.call(document.querySelectorAll('#calculadoras .card-link'), function (c) { return c.style.display !== 'none'; });
+        if (primera) primera.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
     apply();
   }
 
@@ -134,3 +144,23 @@ document.addEventListener('DOMContentLoaded', function () {
     a.addEventListener('click', function (e) { e.preventDefault(); showCookieSettings(); });
   });
 });
+
+// Portada: precios de hoy con los datos que actualizan los procesos automáticos
+(function () {
+  var campos = document.querySelectorAll('[data-ph]');
+  if (!campos.length) return;
+  function leer(url) { return fetch(url, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
+  function f(x, dec) { return x.toLocaleString('es-ES', { minimumFractionDigits: dec, maximumFractionDigits: dec }); }
+  Promise.all([leer('/datos/luz.json'), leer('/datos/carburantes.json'), leer('/datos/butano.json')]).then(function (d) {
+    var v = {};
+    if (d[0] && d[0].conImpuestos) v.luz = [f(d[0].conImpuestos.media, 3) + ' €/kWh', 'Media del último mes'];
+    if (d[1] && d[1].espana && d[1].espana.gasolina95) v.gasolina = [f(d[1].espana.gasolina95.media, 3) + ' €/l', null];
+    if (d[2] && d[2].historial && d[2].historial.length) v.butano = [f(d[2].historial[0].precio, 2) + ' €', null];
+    campos.forEach(function (el) {
+      var x = v[el.getAttribute('data-ph')];
+      if (!x) return;
+      el.textContent = x[0];
+      if (x[1] && el.nextElementSibling) el.nextElementSibling.textContent = x[1];
+    });
+  });
+})();

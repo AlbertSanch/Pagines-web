@@ -21,7 +21,7 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebSite","name":"Ahorrómetro","url":"https://ahorrometro.es/","inLanguage":"es-ES","description":"Calculadoras gratuitas para el hogar: consumo eléctrico, coste de un viaje en coche, pintura, aire acondicionado, placas solares y mucho más. Calcula y ahorra.","publisher":{"@type":"Person","name":"Albert Sanchez Guiu"}}
   </script>
-  <link rel="stylesheet" href="assets/style.css?v=5">
+  <link rel="stylesheet" href="assets/style.css?v=6">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -55,41 +55,28 @@
     </div>
   </section>
 
-  <a class="card-link" href="precio-luz-hoy" style="display:flex;gap:16px;align-items:center;border-color:var(--primary);background:var(--primary-soft);margin-bottom:8px">
-    <div class="icon">💡</div>
-    <div>
-      <span class="tag">Actualizado cada día</span>
-      <h3>Precio de la luz hoy, hora a hora</h3>
-      <p>La hora más barata y más cara de hoy y mañana, y cuándo poner la lavadora. Datos oficiales de Red Eléctrica.</p>
-    </div>
-  </a>
-
-  <a class="card-link" href="precio-gasolina-hoy" style="display:flex;gap:16px;align-items:center;border-color:var(--primary);background:var(--primary-soft);margin-bottom:8px">
-    <div class="icon">⛽</div>
-    <div>
-      <span class="tag">Actualizado cada día</span>
-      <h3>Precio de la gasolina y el diésel hoy</h3>
-      <p>Precio medio en tu provincia y las gasolineras más baratas. Datos oficiales del Ministerio.</p>
-    </div>
-  </a>
-
-  <a class="card-link" href="precio-bombona-butano" style="display:flex;gap:16px;align-items:center;border-color:var(--primary);background:var(--primary-soft);margin-bottom:8px">
-    <div class="icon">🔥</div>
-    <div>
-      <span class="tag">Precio oficial</span>
-      <h3>Precio de la bombona de butano hoy</h3>
-      <p>Lo que cuesta la bombona de 12,5 kg, cuándo cambia y cuánto te dura. Datos del BOE.</p>
-    </div>
-  </a>
-
-  <a class="card-link" href="consumo-electrodomesticos" style="display:flex;gap:16px;align-items:center;border-color:var(--primary);background:var(--primary-soft);margin-bottom:8px">
-    <div class="icon">🔌</div>
-    <div>
-      <span class="tag">Con el precio de la luz actual</span>
-      <h3>¿Cuánto gasta cada electrodoméstico?</h3>
-      <p>Horno, lavadora, inducción, aire acondicionado, televisor… Lo que te cuesta cada uno al mes.</p>
-    </div>
-  </a>
+  <section class="precios-hoy" aria-label="Precios de hoy">
+    <a class="ph" href="precio-luz-hoy">
+      <span class="ph-top"><span aria-hidden="true">💡</span> Luz</span>
+      <b data-ph="luz">Hora a hora</b>
+      <small>Precio de hoy por horas</small>
+    </a>
+    <a class="ph" href="precio-gasolina-hoy">
+      <span class="ph-top"><span aria-hidden="true">⛽</span> Gasolina 95</span>
+      <b data-ph="gasolina">Por provincias</b>
+      <small>Media en España hoy</small>
+    </a>
+    <a class="ph" href="precio-bombona-butano">
+      <span class="ph-top"><span aria-hidden="true">🔥</span> Bombona de butano</span>
+      <b data-ph="butano">Precio oficial</b>
+      <small>12,5 kg · precio del BOE</small>
+    </a>
+    <a class="ph" href="consumo-electrodomesticos">
+      <span class="ph-top"><span aria-hidden="true">🔌</span> Electrodomésticos</span>
+      <b>¿Cuánto gastan?</b>
+      <small>Lo que cuesta cada uno al mes</small>
+    </a>
+  </section>
 
   <section id="calculadoras">
     <div class="chips" role="group" aria-label="Filtrar calculadoras por tema">
@@ -309,6 +296,6 @@
   </div>
 </footer>
 
-<script src="assets/main.js?v=5"></script>
+<script src="assets/main.js?v=6"></script>
 </body>
 </html>
