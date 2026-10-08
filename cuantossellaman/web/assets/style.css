@@ -138,3 +138,22 @@ summary { font-weight: 600; cursor: pointer; }
   table.data th, table.data td { padding: 6px 7px; }
   table.data th.num { white-space: normal; }
 }
+
+/* Compartir */
+.compartir { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 4px 0 18px; }
+.compartir span { font-weight: 600; font-size: .95rem; margin-right: 2px; }
+.btn-c { display: inline-flex; align-items: center; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; font: inherit; font-size: .9rem; font-weight: 600; text-decoration: none; cursor: pointer; }
+.btn-c:hover { border-color: var(--primary); color: var(--primary); }
+.btn-c.wa { background: #25d366; border-color: #25d366; color: #fff; }
+.btn-c.wa:hover { background: #1ebe5b; color: #fff; }
+.btn-c[hidden] { display: none; }
+
+/* Tu nombre el año que naciste */
+.ano-form { display: flex; flex-direction: column; gap: 14px; max-width: 560px; }
+.ano-campos { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; }
+.ano-campos label { display: flex; flex-direction: column; gap: 4px; font-weight: 600; font-size: .92rem; }
+.ano-campos input { padding: 11px 14px; font: inherit; border: 1px solid var(--border); border-radius: 10px; }
+.ano-form .tipo-busqueda { justify-content: flex-start; margin: 0; }
+.ano-form .btn { align-self: flex-start; }
+#ano-resultado { max-width: 560px; margin: 16px 0 0; }
+@media (max-width: 480px) { .ano-campos { grid-template-columns: 1fr; } }
