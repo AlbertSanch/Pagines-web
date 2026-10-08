@@ -226,7 +226,6 @@ def pagina(datos, base, hoy, luz):
       </div>
       <p class="updated">Fuente: {fuente}.{sin_imp}</p>
 
-      <div class="ad-slot"><!-- ADSENSE: anuncio bajo el precio -->Publicidad</div>
 
       <div class="content">
         <h2>Cuánto dura una bombona y cuánto cuesta por hora</h2>
@@ -264,7 +263,6 @@ def pagina(datos, base, hoy, luz):
           <li><a href="precio-luz-hoy">💡 Precio de la luz hoy</a></li>
         </ul>
       </div>
-      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
     </aside>
   </div>
 </main>

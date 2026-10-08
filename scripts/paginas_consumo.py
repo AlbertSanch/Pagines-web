@@ -296,7 +296,6 @@ def pagina(a, p, otros, base):
         <div class="result" id="res" aria-live="polite"></div>
       </div>
 
-      <div class="ad-slot"><!-- ADSENSE: anuncio bajo la calculadora -->Publicidad</div>
 
       <div class="content">
         <h2>Consumo de {e(a['art'])} según el modelo</h2>
@@ -326,7 +325,6 @@ def pagina(a, p, otros, base):
           <li><a href="../consumo-electrodomesticos">📋 Todos los electrodomésticos</a></li>
         </ul>
       </div>
-      <div class="sticky"><div class="ad-slot tall"><!-- ADSENSE: anuncio lateral -->Publicidad</div></div>
     </aside>
   </div>
 </main>
@@ -402,7 +400,6 @@ def indice(p, desde, hasta, base):
   <div class="table-wrap"><table class="data"><thead><tr><th>Electrodoméstico y uso</th><th class="num">Consumo al mes</th><th class="num">Coste al mes</th><th class="num">Al año</th></tr></thead><tbody>{filas}</tbody></table></div>
   <p>Pulsa en cada aparato para calcular su gasto con tu modelo y tus horas de uso. Si no está en la lista, usa la <a href="calculadoras/consumo-electrico">calculadora de consumo eléctrico</a> con la potencia de tu aparato.</p>
 
-  <div class="ad-slot"><!-- ADSENSE: anuncio bajo la tabla -->Publicidad</div>
 
   <div class="content">
     <h2>Otros aparatos que gastan mucho</h2>
