@@ -85,6 +85,25 @@ Joaquín Jesús Ángel María Sáez Díez Sáenz Laínez Castañón Arévalo Áv
 Córdoba Málaga Gómara Bolívar Galván Bernabé Cebrián Lucía Montalbán Morán Quintín Sebastián
 Tristán Valentín Zurbarán Álvaro Ávalos Herrán Lázaro Ríos Gascón Garcés Solís Alcántara Bárcena
 Cámara Cárdenas Fábregas Mármol Úbeda Ágreda Ábalos Belén Ibáñez Ordóñez Núñez Rubén Cristián
+Abadía Abadías Abellán Adrián Agüera Agüero Águila Aguiló Agulló Agustí Albarracín Albarrán Alcalá Alcázar
+Alcón Alegría Alemán Allué Almazán Almodóvar Alós Alquézar Amorós Andújar Antolín Antón Aragonés Argüelles
+Argüello Armendáriz Arnáiz Arqués Avilés Ayllón Azorín Añón Báez Bailón Ballarín Barberá Barberán Barceló
+Baró Barón Barquín Bartolomé Bauzá Bayón Bazán Bañón Béjar Belinchón Bellés Bellón Bescós Buendía Buján
+Buzón Callejón Cantón Capitán Capó Carbó Cárceles Caparrós Castán Castejón Castelló Castellón Castrillón
+Catalán Celdrán Cerdán Cerón Céspedes Chavarría Clavería Colás Concepción Corbalán Córcoles Cordón Córdova
+Cózar Crespí Cuéllar Dávila Echevarría Echeverría Elías Encarnación Escartín Escrivá Espí Espín Espínola
+Estupiñán Expósito Fabián Fábrega Falcó Falcón Farré Farías Félix Ferrándiz Ferré Frías Fontán Forés
+Fornés Francés Gabaldón Gaitán Galdón Gambín Gámiz Gándara Gandía Gárate Garrigós Gascó Gavilán Germán
+Gijón Girón Gironés Góngora Górriz Güell Guillamón Hervás Holguín Illán Íñigo Jaén Jódar Jordán José Jové
+Lavín Lebrón Liébana Limón Liñán Llabrés Llácer Lladó Lledó Luján Machín Maciá Macías Magán Malagón
+Manchón Manjón Marañón Marí Marqués Martí Marugán Mascaró Matías Mazón Megías Mejía Mejías Melián
+Merchán Mérida Micó Milán Miró Mirón Mollá Moltó Mondéjar Mondragón Montañés Monzó Monzón Morejón Morón
+Múgica Nájera Navalón Negrín Nogués Obregón Oliván Olivé Ollé Ortí Ortín Pachón Padín Padrón Páez Pagán
+Pagés País Palacín Palazón Pallarés París Párraga Patón Pavón Payá Payán Peiró Pelegrín Perelló Pernía
+Picón Quirós Rabadán Rendón Río Ródenas Rondón Roselló Rosselló Sabaté Sacristán Salmerón Salvá
+Sanmartín Santamaría Santín Sarrión Sebastiá Seguí Sellés Sepúlveda Simó Solé Solórzano Tárraga Tarín
+Tébar Teixidó Terán Terrón Tomé Torrejón Uría Valcárcel Verdú Vergés Villalón Villén Vizcaíno Yagüe
+Zárate Zúñiga
 """.split()
 _APELLIDOS = {_sin_tilde(w): w for w in APELLIDOS_CON_TILDE}
 # Apellidos en -EZ que se pronuncian agudos y no llevan tilde
