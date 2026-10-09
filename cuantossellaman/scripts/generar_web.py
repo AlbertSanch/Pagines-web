@@ -30,6 +30,9 @@ SIGNIFICADOS = RAIZ / "content" / "significados"
 ORIGENES_APELLIDOS = RAIZ / "content" / "significados-apellidos"
 DOMINIO = "https://cuantossellaman.es"
 SITIO = "¿Cuántos se llaman?"
+RUTA_COMO_TU = "/cuantos-se-llaman-como-tu/"
+ENLACE_COMO_TU = (f'<p class="ct-enlace">¿Y con tus apellidos? <a href="{RUTA_COMO_TU}">Calcula cuántas personas se llaman '
+                  'exactamente como tú</a>.</p>')
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que Ahorrómetro
 # Modo de consentimiento de Google: en el EEE, Reino Unido y Suiza no hay cookies de publicidad hasta
 # que el visitante acepta en el mensaje de Google (AdSense → Privacidad y mensajes); fuera, sí.
@@ -263,7 +266,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="site-footer">
   <div class="container">
     <p><strong>{SITIO}</strong> responde cuántas personas se llaman o se apellidan de cada forma en España con los datos oficiales del Instituto Nacional de Estadística (INE).</p>
-    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/ideas/">Ideas para bebé</a><a href="/tu-nombre-el-ano-que-naciste/">Tu nombre el año que naciste</a><a href="/nombres-en-peligro-de-extincion/">Nombres en peligro de extinción</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/ideas/">Ideas para bebé</a><a href="/cuantos-se-llaman-como-tu/">Nombre y apellidos como tú</a><a href="/tu-nombre-el-ano-que-naciste/">Tu nombre el año que naciste</a><a href="/nombres-en-peligro-de-extincion/">Nombres en peligro de extinción</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Fuente: INE. Datos reutilizados conforme a sus condiciones de uso; esta web no está vinculada al INE.</p>
   </div>
 </footer>
@@ -423,6 +426,7 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
               f'<div class="stats">{stats}</div>',
               f'<p class="updated">Datos del INE a {referencia}. Solo cuenta a las personas cuyo nombre completo es «{escape(X)}» (no incluye nombres compuestos que lo contienen).</p>',
               bloque_compartir(texto_compartir, f"/nombre/{e['slug']}/"),
+              ENLACE_COMO_TU,
               nota_variantes(e, "/nombre/", "", lambda v: v["total"])]
 
     # Significado opcional, escrito a mano
@@ -652,6 +656,7 @@ def portada(idx, nombres, bebes, referencia, n_paginas):
   <a class="card" href="/apellidos/"><h3>Apellidos</h3><p>Cuántos se apellidan como tú y los apellidos más comunes de cada provincia.</p></a>
   <a class="card" href="/provincias/"><h3>Por provincia</h3><p>Los 50 nombres más comunes de cada provincia.</p></a>
   <a class="card" href="/decadas/"><h3>Por década</h3><p>De José y María a Hugo y Lucía: cómo han cambiado los nombres.</p></a>
+  <a class="card destacada" href="/cuantos-se-llaman-como-tu/"><h3>¿Cuántos se llaman exactamente como tú?</h3><p>Con nombre y dos apellidos: calcula cuántas personas se llaman igual que tú.</p></a>
   <a class="card" href="/tu-nombre-el-ano-que-naciste/"><h3>Tu nombre el año que naciste</h3><p>¿Estaba de moda tu nombre cuando naciste? ¿Y ahora?</p></a>
   <a class="card" href="/nombres-en-peligro-de-extincion/"><h3>Nombres en peligro de extinción</h3><p>Josefa, Dolores, Saturnino… los que ya casi no se ponen.</p></a>
   <a class="card" href="/ideas/"><h3>Ideas para bebé</h3><p>Nombres de moda, poco comunes, cortos, por letra y clásicos que vuelven.</p></a>
@@ -896,6 +901,51 @@ def paginas_curiosidades(idx, decadas, bebes, referencia):
     return rutas
 
 
+def pagina_como_tu(apellidos):
+    """Calculadora «¿cuántas personas se llaman exactamente como tú?» (estimación, explicada como tal)."""
+    totales = {"primer": sum(x["p1"] for x in apellidos["lista"]), "segundo": sum(x["p2"] or 0 for x in apellidos["lista"])}
+    (WEB / "datos").mkdir(parents=True, exist_ok=True)
+    (WEB / "datos" / "totales.json").write_text(json.dumps(totales), encoding="utf-8")
+    ruta = RUTA_COMO_TU
+    faq = [("¿Cuántas personas se llaman igual que yo, con nombre y apellidos?",
+            "El INE no publica cuántas personas tienen a la vez un nombre y unos apellidos concretos, así que nadie tiene la cifra exacta. "
+            "Esta calculadora la estima a partir de cuántas personas llevan tu nombre y cuántas llevan cada uno de tus apellidos."),
+           ("¿Cómo se calcula la estimación?",
+            "Multiplicamos las personas que se llaman como tú por la proporción de personas con tu primer apellido y por la de personas con tu segundo apellido. "
+            "Por ejemplo, si un 3 % de la gente tiene García como primer apellido, calculamos que un 3 % de las Lucías se apellidan García."),
+           ("¿Es exacta?",
+            "No: es una aproximación. Supone que nombres y apellidos se combinan al azar, y no siempre es así. Cuando el nombre y los apellidos son típicos "
+            "de la misma zona (Jordi Puig, Iker Etxeberria, Xoán Varela), la cifra real suele ser más alta que la estimada."),
+           ("¿Por qué dice que soy la única persona con mi nombre?",
+            "Porque la estimación sale por debajo de una persona, o porque tu nombre o alguno de tus apellidos lo llevan menos de 20 personas en España. "
+            "Es muy probable, aunque no seguro, que no haya nadie más con tu nombre completo.")]
+    cuerpo = ('<h1>¿Cuántas personas se llaman exactamente como tú?</h1>'
+              '<p class="lead">Escribe tu nombre y tus dos apellidos y calcula cuántas personas en España se llaman igual que tú. '
+              'Es una estimación hecha con los datos oficiales del INE de nombres y apellidos.</p>'
+              '<form id="como-tu" class="card ano-form" autocomplete="off">'
+              '<div class="ano-campos ct-campos"><label>Nombre<input id="ct-nombre" required placeholder="Por ejemplo, Lucía"></label>'
+              '<label>Primer apellido<input id="ct-ap1" required placeholder="García"></label>'
+              '<label>Segundo apellido<input id="ct-ap2" placeholder="López (opcional)"></label></div>'
+              '<button class="btn" type="submit">Calcular</button></form>'
+              '<div id="como-tu-resultado" class="resultado ct-resultado" aria-live="polite"></div>'
+              + bloque_compartir("¿Cuántas personas se llaman exactamente como tú, con nombre y apellidos? Yo lo he mirado aquí:", ruta)
+              + '<div class="content"><h2>Cómo se calcula</h2>'
+              '<p>El INE publica cuántas personas llevan cada nombre y cada apellido, pero no las combinaciones de nombre y apellidos: '
+              'por eso nadie puede dar la cifra exacta. Lo que hacemos es estimarla: si un 3 % de la gente tiene García como primer apellido '
+              'y un 2 % tiene López como segundo, calculamos que más o menos un 3 % de las Lucías se apellidan García, y de ellas un 2 % además López.</p>'
+              '<p>Es una aproximación: supone que nombres y apellidos se combinan al azar. Cuando son de la misma zona (Jordi Puig, Iker Etxeberria) '
+              'la cifra real suele ser más alta. Las cifras de cada <a href="/">nombre</a> y de cada <a href="/apellidos/">apellido</a> que ves en el resto de la web '
+              'sí son exactas: son las que publica el INE.</p>'
+              '<h2>Preguntas frecuentes</h2>' + "".join(f"<details><summary>{escape(q)}</summary><p>{escape(r)}</p></details>" for q, r in faq) + '</div>'
+              f'<script src="/assets/como-tu.js?v={VERSION}" defer></script>')
+    ld = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in faq]}]
+    guardar(ruta, pagina(ruta, "¿Cuántas personas se llaman exactamente como tú? Nombre y apellidos",
+                         "Calcula cuántas personas en España tienen tu mismo nombre y tus mismos apellidos. Estimación con los datos oficiales del INE.",
+                         cuerpo, [("¿Cuántos se llaman como tú?", None)], ld))
+    return [ruta]
+
+
 def paginas_legales(referencia, umbral):
     t = TITULAR
     sobre = f"""<h1>Sobre los datos</h1>
@@ -1043,6 +1093,7 @@ def pagina_apellido(e, idx, por_p1, referencia):
               f'<div class="stats">{stats}</div>',
               f'<p class="updated">Datos del INE a {ref}. El INE publica los apellidos sin tildes; aquí las añadimos para facilitar la lectura.</p>',
               bloque_compartir(f"En España hay {n(e['p1'])} personas que tienen {X} como primer apellido. ¿Y el tuyo?", f"/apellido/{e['slug']}/"),
+              ENLACE_COMO_TU,
               nota_variantes(e, "/apellido/", "tipo=apellido&amp;", lambda v: v["p1"])]
     md = ORIGENES_APELLIDOS / f"{e['slug']}.md"
     if md.exists():
@@ -1151,7 +1202,7 @@ def indices_apellidos(idx):
     return grupos
 
 
-VERSION = "9"
+VERSION = "10"
 
 
 def main():
@@ -1175,6 +1226,7 @@ def main():
     shutil.copy(PLANTILLA / "app.js", WEB / "assets" / "app.js")
     shutil.copy(PLANTILLA / "compartir.js", WEB / "assets" / "compartir.js")
     shutil.copy(PLANTILLA / "ano.js", WEB / "assets" / "ano.js")
+    shutil.copy(PLANTILLA / "como-tu.js", WEB / "assets" / "como-tu.js")
     shutil.copy(PLANTILLA / "og.png", WEB / "og.png")
     for icono in ("favicon.svg", "favicon.ico", "favicon-48.png", "favicon-96.png", "favicon-192.png", "apple-touch-icon.png"):
         shutil.copy(PLANTILLA / icono, WEB / icono)
@@ -1187,6 +1239,7 @@ def main():
     rutas += paginas_legales(nombres["referencia"], args.umbral)
     rutas += paginas_ideas(idx, dec["decadas"], beb["anios"], nombres["referencia"])
     rutas += paginas_curiosidades(idx, dec["decadas"], beb["anios"], nombres["referencia"])
+    rutas += pagina_como_tu(ape)
     idx_ape = construir_indice_apellidos(ape, args.umbral_apellidos)
     ape_pagina = [e for e in idx_ape.values() if e["pagina"]]
     if len(ape_pagina) < MIN_PAGINAS:

@@ -128,6 +128,10 @@ enlazan al buscador.
   o más (hombres) y que nunca han estado entre los 100 más puestos a los bebés.
 - `/tu-nombre-el-ano-que-naciste/`: herramienta (`plantilla/ano.js`) que lee `web/datos/rankings.json` (puestos de los bebés
   por año y de cada década) y el índice del buscador.
+- `/cuantos-se-llaman-como-tu/`: calculadora de nombre y dos apellidos (`plantilla/como-tu.js`). Es una **estimación**
+  y lo dice: personas con el nombre × proporción con el primer apellido × proporción con el segundo (totales en
+  `web/datos/totales.json`); si los dos apellidos son iguales usa el dato real de «ambos». No se mezcla con las cifras
+  oficiales de cada página.
 - Las páginas de nombre y apellido tienen botones para compartir (WhatsApp, X, menú del móvil y copiar enlace;
   `plantilla/compartir.js`), y todas las páginas usan `plantilla/og.png` como imagen al compartir.
 
