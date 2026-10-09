@@ -4,11 +4,16 @@ Cada vídeo es una lista de escenas; cada escena, una lista de elementos que apa
 (con un pequeño deslizamiento hacia arriba). Sin voz ni música: el sonido se elige en TikTok.
 El texto se mantiene en la zona central, lejos de los botones de TikTok (derecha y abajo).
 
-Uso: python cuantossellaman/marketing/videos.py CARPETA_DE_SALIDA [nombre_del_video ...]
-Necesita Pillow, numpy, ffmpeg y la fuente Inter (/usr/share/fonts/opentype/inter/).
+Con --voz MODELO.onnx añade una voz en off (Piper, https://github.com/rhasspy/piper) con las frases de VOCES:
+cada escena dura lo que haga falta para que la voz termine su frase.
+
+Uso: python cuantossellaman/marketing/videos.py CARPETA_DE_SALIDA [--voz MODELO.onnx] [nombre_del_video ...]
+Necesita Pillow, numpy, ffmpeg y la fuente Inter (/usr/share/fonts/opentype/inter/); para la voz, pip install piper-tts.
 """
 import subprocess
 import sys
+import tempfile
+import wave
 from pathlib import Path
 
 import numpy as np
@@ -106,13 +111,65 @@ def suave(x):
     return 1 - (1 - x) ** 3
 
 
-def render(nombre, escenas, salida):
+def sintetizar(texto, modelo, velocidad):
+    """Devuelve (muestras int16, frecuencia) de la frase dicha por la voz de Piper."""
+    with tempfile.NamedTemporaryFile(suffix=".wav") as tmp:
+        subprocess.run([sys.executable, "-m", "piper", "-m", modelo, "-f", tmp.name, "--length-scale", str(velocidad)],
+                       input=texto.encode("utf-8"), check=True, capture_output=True)
+        with wave.open(tmp.name) as w:
+            audio, frecuencia = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16), w.getframerate()
+    return acortar_pausas(audio, frecuencia), frecuencia
+
+
+def acortar_pausas(audio, frecuencia, maximo=0.18, umbral=600):
+    """Las voces de Piper hacen pausas largas en cada coma: las deja en `maximo` segundos como mucho."""
+    ventana = frecuencia // 100  # trozos de 10 ms
+    trozos = [audio[i:i + ventana] for i in range(0, len(audio), ventana)]
+    salida, seguidos = [], 0
+    for t in trozos:
+        silencio = np.abs(t.astype(np.int32)).max(initial=0) < umbral
+        seguidos = seguidos + 1 if silencio else 0
+        if seguidos * 0.01 <= maximo:
+            salida.append(t)
+    return np.concatenate(salida) if salida else audio
+
+
+def pista_de_voz(nombre, escenas, modelo, velocidad=1.0):
+    """Sintetiza la frase de cada escena, alarga las escenas que se quedan cortas y monta la pista de audio."""
+    lineas = VOCES[nombre]
+    assert len(lineas) == len(escenas), f"{nombre}: {len(lineas)} frases para {len(escenas)} escenas"
+    nuevas, trozos, frecuencia = [], [], 16000
+    for (dur, sep, elems), linea in zip(escenas, lineas):
+        audio = np.zeros(0, dtype=np.int16)
+        if linea:
+            audio, frecuencia = sintetizar(linea, modelo, velocidad)
+        dur = max(dur, 0.25 + len(audio) / frecuencia + 0.5)
+        dur = round(dur * FPS) / FPS
+        hueco = np.zeros(int(0.25 * frecuencia), dtype=np.int16)
+        trozo = np.concatenate([hueco, audio])
+        trozo = np.concatenate([trozo, np.zeros(max(0, int(dur * frecuencia) - len(trozo)), dtype=np.int16)])
+        trozos.append(trozo[:int(dur * frecuencia)])
+        nuevas.append((dur, sep, elems))
+    tmp = tempfile.NamedTemporaryFile(suffix=".wav", delete=False)
+    with wave.open(tmp.name, "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(frecuencia)
+        w.writeframes(np.concatenate(trozos).tobytes())
+    return nuevas, tmp.name
+
+
+def render(nombre, escenas, salida, voz=None):
     """escenas: [(duración, separación entre elementos, [elementos])]"""
     base = fondo()
     ruta = Path(salida) / f"{nombre}.mp4"
+    audio = ["-f", "lavfi", "-t", str(sum(d for d, _, _ in escenas)), "-i", "anullsrc=r=44100:cl=stereo"]
+    if voz:
+        escenas, wav = pista_de_voz(nombre, escenas, voz)
+        audio = ["-i", wav]
     total = sum(d for d, _, _ in escenas)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
-           "-f", "lavfi", "-t", str(total), "-i", "anullsrc=r=44100:cl=stereo",
+           *audio, "-ar", "44100", "-ac", "2",
            "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "aac", "-shortest",
            "-movflags", "+faststart", str(ruta)]
     ff = subprocess.Popen(cmd, stdin=subprocess.PIPE)
@@ -204,9 +261,73 @@ VIDEOS = {
 }
 
 
+
+# Voz en off: una frase por escena (None = sin voz). Escritas para que la voz las lea bien:
+# cifras sin puntos de miles y algunos nombres escritos como suenan (Kalisi, Guipuzkoa).
+WEB_DICHA = "cuántos se llaman punto es"
+VOCES = {
+    "1-lucia-destronada": [
+        "Lucía ha perdido el trono.",
+        "Fue el nombre más puesto a las niñas en España durante veintiún años seguidos.",
+        "Pero en 2024, Sofía le ha quitado el número uno. Lucía queda segunda, y detrás vienen Martina, María y Vega.",
+        f"¿Conoces a alguna Sofía de menos de cinco años? Busca tu nombre en {WEB_DICHA}.",
+    ],
+    "2-nombres-en-extincion": [
+        "Estos nombres van a desaparecer.",
+        "Los llevan miles de personas en España, pero casi todas mayores.",
+        "Josefa, Dolores, Consuelo, Vicenta, Saturnino. La edad media de quienes se llaman así pasa de los setenta años.",
+        "Hay 225853 mujeres que se llaman Josefa, y desde 2002 nunca ha estado entre los cien nombres más puestos a las niñas.",
+        f"¿Tu abuela se llama así? Busca el tuyo en {WEB_DICHA}.",
+    ],
+    "3-daenerys": [
+        "En España hay 305 niñas que se llaman Daeneris.",
+        "Juego de Tronos ha llegado al registro civil: 305 Daeneris, 49 Kalisi, y más de dos mil Aryas.",
+        "Y la edad media de las Aryas es de solo cinco años.",
+        f"¿Le pondrías a tu hija el nombre de un personaje? Busca el tuyo en {WEB_DICHA}.",
+    ],
+    "4-provincias": [
+        "En estas provincias, el nombre de hombre más común no es Antonio.",
+        "En Girona y Lleida es Jordi. En Guipuzkoa, Mikel. En Bizkaia, Jon. En Zaragoza y Toledo, Jesús. "
+        "En Asturias, José Manuel. Y en Ceuta y Melilla, Mohamed.",
+        "En casi todas las demás gana Antonio o Manuel.",
+        f"¿Cuál es el de tu provincia? Míralo en {WEB_DICHA}.",
+    ],
+    "5-garcia-garcia": [
+        "Hay 74765 personas que se llaman García García.",
+        "García es el apellido más común de España: casi un millón y medio de personas lo tienen como primer apellido. "
+        "Le siguen Rodríguez, González, Fernández y López.",
+        None,
+        f"¿Tu apellido está en el top? Búscalo en {WEB_DICHA}.",
+    ],
+    "6-hugo-mujeres": [
+        "En España hay 54 mujeres que se llaman Hugo.",
+        "Y no son las únicas: también hay 96 mujeres que se llaman Leo.",
+        "Y eso que Hugo es el segundo nombre más puesto a los niños: en 2024 se lo pusieron a 2734 bebés.",
+        "¿Conoces algún nombre así? Cuéntamelo en los comentarios.",
+    ],
+    "7-anos-80-vs-ahora": [
+        "Nombres de los ochenta contra nombres de ahora.",
+        "Si naciste en los ochenta, en tu clase había Davides, Javieres y Danieles. Y Lauras, Cristinas y Marías.",
+        "Hoy, a los bebés se les pone Mateo, Hugo y Martín. Y Sofía, Lucía y Martina.",
+        f"¿Cuántos se llamaban como tú en tu clase? Búscalo en {WEB_DICHA}.",
+    ],
+    "10-nombres-que-suben": [
+        "Estos son los nombres de niña que están arrasando.",
+        "Hace cinco años no estaban entre los cien más puestos, y ahora sí: Alaia, Catalina, Violeta, Aurora y Cataleya.",
+        "Y el que más sube es Gala: del puesto 53 al 16 en solo cinco años.",
+        f"¿Cuál le pondrías a tu hija? Más ideas en {WEB_DICHA}.",
+    ],
+}
+
+
 if __name__ == "__main__":
-    carpeta = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
+    args = sys.argv[1:]
+    voz = None
+    if "--voz" in args:
+        i = args.index("--voz")
+        voz = args[i + 1]
+        del args[i:i + 2]
+    carpeta = Path(args[0] if args else ".")
     carpeta.mkdir(parents=True, exist_ok=True)
-    elegidos = sys.argv[2:] or list(VIDEOS)
-    for nombre in elegidos:
-        render(nombre, VIDEOS[nombre], carpeta)
+    for nombre in args[1:] or list(VIDEOS):
+        render(nombre, VIDEOS[nombre], carpeta, voz)
