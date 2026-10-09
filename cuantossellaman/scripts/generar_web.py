@@ -508,7 +508,16 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
 
     total_txt = (f"{n(e['H']['f'])} hombres y {n(e['M']['f'])} mujeres" if len(sexos) == 2 else f"{n(e[sexos[0]]['f'])} {SEXO[sexos[0]][1]}")
     titulo = f"¿Cuántas personas se llaman {X} en España?"
-    desc = f"En España hay {total_txt} que se llaman {X}, según el INE. Edad media, provincias, décadas y bebés con ese nombre."
+    # Descripción para Google: la cifra, la edad media y, si lo hay, el dato de bebés más reciente
+    principal = max(sexos, key=lambda x: e[x]["f"])
+    edad = f" (edad media {dec(e[principal]['e'])} años)" if len(sexos) == 1 and e[principal]["e"] is not None else ""
+    desc = f"En España hay {total_txt} que se llaman {X}{edad}, según el INE."
+    ultimo_anio = max(bebes)
+    bebe = e["beb"].get(ultimo_anio, {}).get(principal)
+    if bebe:
+        desc += f" En {ultimo_anio} se lo pusieron a {n(bebe['f'])} {SEXO[principal][2]} (puesto {bebe['pos']})."
+    else:
+        desc += " Dónde es más común y en qué décadas se puso más."
     ld = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in faq]}]
     return pagina(f"/nombre/{e['slug']}/", titulo, desc, "\n".join(cuerpo), [(X, None)], ld)
