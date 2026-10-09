@@ -37,9 +37,13 @@ Marián Martín Matías Máximo Melquíades Mía Moisés Mónica Néstor Nicolá
 Presentación Purificación Purísima Ramón Raúl Resurrección Rocío Román Rómulo Rosalía Rubén
 Salomé Saúl Sebastián Simón Sofía Teófilo Tobías Tomás Tristán Úrsula Valentín Verónica Víctor
 Visitación Zoé África Íñigo Ítalo Ícaro Estíbaliz Begoña
+Abrahán Adán Adoración Ágata Alegría América Anahí Angélica Antolín Antón Asís Áurea Beltrán Bernabé
+Brígida César Cesárea Cesáreo Dámaso Delfín Efrén Emérita Felícita Guzmán Jerónima León Leónides
+Mencía Millán Nélida Penélope Plácida Plácido René Senén Serafín Tránsito Zacarías
 """.split()
 # Nombres que solo existen en catalán y llevan acento
-SOLO_CATALAN = ["Adrià", "Àngels", "Martí", "Agnès", "Mercè", "Pere-Joan"]
+SOLO_CATALAN = ["Adrià", "Àngels", "Martí", "Agnès", "Mercè", "Pere-Joan", "Agustí", "Concepció", "Damià", "Dídac",
+                "Encarnació", "Genís", "Lluís", "Lluïsa", "Narcís", "Sebastià"]
 
 TILDES = {_sin_tilde(w): w for w in CON_TILDE + SOLO_CATALAN}
 
