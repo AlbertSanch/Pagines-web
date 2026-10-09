@@ -1085,8 +1085,16 @@ def pagina_apellido(e, idx, por_p1, referencia):
     cuerpo.append(f'<p class="fuente">Fuente: Instituto Nacional de Estadística (INE), estadística de apellidos a partir de los Censos de población anuales, '
                   f'datos a {ref}. <a href="/sobre-los-datos/">Cómo se calculan estos datos</a>.</p>')
     titulo = f"¿Cuántas personas se apellidan {X} en España?"
-    desc = (f"{n(e['p1'])} personas tienen {X} como primer apellido en España" + (f" y {p2} como segundo" if p2 else "")
-            + ", según el INE. Puesto, provincias donde es más común y cuántos se apellidan " + f"{X} {X}.")
+    # Descripción para Google: cifra y puesto, cuántos lo llevan dos veces y dónde abunda más
+    desc = f"En España hay {n(e['p1'])} personas con {X} como primer apellido (puesto {n(e['r'])}), según el INE."
+    if e["ambos"]:
+        desc += f" {n(e['ambos'])} se apellidan {X} {X}."
+    primeros = sorted({PROVINCIAS[p["cod"]] for p in e["res"] if p["pos"] == 1})
+    if primeros:
+        desc += (f" Es el más común en {primeros[0]}." if len(primeros) == 1 else f" Es el más común en {len(primeros)} provincias.")
+    elif e["res"]:
+        mejor = min(e["res"], key=lambda p: (p["pos"], -p["f"]))
+        desc += f" Donde más abunda: {PROVINCIAS[mejor['cod']]} (puesto {mejor['pos']})."
     ld = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in faq]}]
     return pagina(f"/apellido/{e['slug']}/", titulo, desc, "\n".join(cuerpo), [("Apellidos", "/apellidos/"), (X, None)], ld)
