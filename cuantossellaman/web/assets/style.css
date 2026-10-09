@@ -166,3 +166,5 @@ summary { font-weight: 600; cursor: pointer; }
 .ct-frase { font-size: 1.15rem; }
 .ct-enlace { font-weight: 600; margin: 0 0 18px; }
 .grid a.card.destacada { border: 2px solid var(--primary); background: var(--primary-soft); }
+#como-tu { max-width: 760px; }
+.ano-campos input { width: 100%; min-width: 0; }
