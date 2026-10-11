@@ -57,10 +57,10 @@ Un nombre tiene página propia (`/nombre/<slug>/`, indexable y en el sitemap) si
 - aparece en alguna tabla de ranking del INE: los 50 más frecuentes de una provincia, los 50 más
   frecuentes de una década o los 100 más puestos a los bebés en algún año (o los 10 de una comunidad).
 
-Un apellido tiene página propia (`/apellido/<slug>/`) si lo llevan al menos **2.000 personas como
+Un apellido tiene página propia (`/apellido/<slug>/`) si lo llevan al menos **1.000 personas como
 primer apellido** o si está entre los 100 más frecuentes de España o los 50 de alguna provincia.
 
-Con los datos a 1 de enero de 2025 salen **2.916 páginas de nombre y 2.478 de apellido**. Para
+Con los datos a 1 de enero de 2025 salen **2.916 páginas de nombre y 4.436 de apellido**. Para
 cambiar los umbrales:
 
 ```bash

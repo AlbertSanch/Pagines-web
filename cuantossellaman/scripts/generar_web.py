@@ -48,7 +48,7 @@ CABECERA_ANUNCIOS = (
 CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};googlefc.callbackQueue=googlefc.callbackQueue||[];'
                       'googlefc.callbackQueue.push(function(){googlefc.showRevocationMessage()});return false">Configurar cookies</a>')
 UMBRAL_POR_DEFECTO = 1000
-UMBRAL_APELLIDOS_POR_DEFECTO = 2000  # personas con ese PRIMER apellido para tener página propia
+UMBRAL_APELLIDOS_POR_DEFECTO = 1000  # personas con ese PRIMER apellido para tener página propia
 MIN_PAGINAS = 500  # si salen menos, algo ha ido mal: el script falla para no publicar una web rota
 
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
@@ -436,6 +436,11 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
         cuerpo.append(f'<h2>Significado y origen de {escape(X)}</h2>' + "".join(f"<p>{escape(p)}</p>" for p in parrafos))
 
     faq = [(f"¿Cuántas personas se llaman {X} en España?", re.sub("<[^>]+>", "", respuesta) + f" Datos del INE a {referencia}.")]
+    # Mucha gente lo busca en plural («cuántas Manuelas hay en España»): solo cuando el plural es claro
+    if " " not in X and "-" not in X and X[-1] in "aeiou":
+        s_pl = max(sexos, key=lambda x: e[x]["f"])
+        faq.insert(1, (f"¿{'Cuántos' if s_pl == 'H' else 'Cuántas'} {X}s hay en España?",
+                       f"En España hay {n(e[s_pl]['f'])} {SEXO[s_pl][1]} que se llaman {X}, según el INE (datos a {referencia})."))
     if edades:
         faq.append((f"¿Qué edad media tienen las personas que se llaman {X}?",
                     f"La edad media de las personas que se llaman {X} en España es de {' y '.join(edades)}."))
@@ -1172,7 +1177,7 @@ def paginas_apellidos(idx, apellidos):
                              f"Los 50 apellidos más frecuentes en {nombre} según el INE, por provincia de residencia y de nacimiento. El más común: {mostrar_apellido(p['res'][0][0])}.",
                              cuerpo, [("Apellidos", "/apellidos/"), (nombre, None)]))
         rutas.append(ruta)
-    cuerpo = ("<h1>¿Cuántas personas se apellidan como tú?</h1>"
+    cuerpo = ("<h1>¿Cuánta gente se apellida como tú?</h1>"
               '<p class="lead">Busca un apellido y descubre cuántas personas lo llevan en España como primer y como segundo apellido, y dónde es más común.</p>'
               f'<section class="hero" style="padding-top:8px">{formulario("apellido", ref)}</section>'
               f'<script src="/assets/app.js?v={VERSION}" defer></script>'
@@ -1182,8 +1187,8 @@ def paginas_apellidos(idx, apellidos):
                         f'<td>{enlace_apellido(idx, provincias[c]["res"][0][0])}</td></tr>' for c in orden)
               + f'</tbody></table></div></div></div><p class="fuente">Fuente: INE, estadística de apellidos a partir de los Censos de población anuales, datos a {fecha_larga(ref)}. '
               'Solo se publican los apellidos que llevan al menos 20 personas como primer apellido.</p>')
-    guardar("/apellidos/", pagina("/apellidos/", "Apellidos en España: cuántas personas se apellidan como tú",
-                                  "Busca un apellido y descubre cuántas personas lo llevan en España, los 100 más comunes y el apellido más frecuente de cada provincia. Datos del INE.",
+    guardar("/apellidos/", pagina("/apellidos/", "¿Cuánta gente se apellida como tú? Apellidos en España",
+                                  "Busca tu apellido y descubre cuántas personas se apellidan como tú en España, los 100 apellidos más comunes y el más frecuente de cada provincia. Datos del INE.",
                                   cuerpo, [("Apellidos", None)]))
     rutas.append("/apellidos/")
     return rutas
