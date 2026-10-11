@@ -103,6 +103,25 @@ def bloque_compartir(texto, ruta):
             f'<script src="/assets/compartir.js?v={VERSION}" defer></script>')
 
 
+# Índices cruzados para avisar cuando un nombre es también apellido (Alberto, Miguel…); los rellena main()
+CRUCE = {"nombres": {}, "apellidos": {}}
+
+
+def nota_cruce(k, tipo):
+    """En la página del apellido Alberto: «¿Buscabas el nombre Alberto?» (y al revés)."""
+    if tipo == "apellido":
+        x = CRUCE["nombres"].get(k)
+        if x and x["pagina"]:
+            return (f'<p class="note">¿Buscabas el nombre? En España hay {n(x["total"])} personas que se llaman {escape(x["mostrar"])}: '
+                    f'<a href="/nombre/{x["slug"]}/">ver el nombre {escape(x["mostrar"])}</a>.</p>')
+    else:
+        x = CRUCE["apellidos"].get(k)
+        if x and x["pagina"]:
+            return (f'<p class="note">{escape(x["mostrar"])} también es apellido: {n(x["p1"])} personas lo tienen como primer apellido. '
+                    f'<a href="/apellido/{x["slug"]}/">Ver el apellido {escape(x["mostrar"])}</a>.</p>')
+    return ""
+
+
 def nota_variantes(e, ruta, buscar, cifra):
     """«No confundir con Mariña (948 personas)»: el INE cuenta por separado las formas con y sin ñ, ç o ·."""
     if not e["var"]:
@@ -427,7 +446,8 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
               f'<p class="updated">Datos del INE a {referencia}. Solo cuenta a las personas cuyo nombre completo es «{escape(X)}» (no incluye nombres compuestos que lo contienen).</p>',
               bloque_compartir(texto_compartir, f"/nombre/{e['slug']}/"),
               ENLACE_COMO_TU,
-              nota_variantes(e, "/nombre/", "", lambda v: v["total"])]
+              nota_variantes(e, "/nombre/", "", lambda v: v["total"]),
+              nota_cruce(e["k"], "nombre")]
 
     # Significado opcional, escrito a mano
     md = SIGNIFICADOS / f"{e['slug']}.md"
@@ -1099,7 +1119,8 @@ def pagina_apellido(e, idx, por_p1, referencia):
               f'<p class="updated">Datos del INE a {ref}. El INE publica los apellidos sin tildes; aquí las añadimos para facilitar la lectura.</p>',
               bloque_compartir(f"En España hay {n(e['p1'])} personas que tienen {X} como primer apellido. ¿Y el tuyo?", f"/apellido/{e['slug']}/"),
               ENLACE_COMO_TU,
-              nota_variantes(e, "/apellido/", "tipo=apellido&amp;", lambda v: v["p1"])]
+              nota_variantes(e, "/apellido/", "tipo=apellido&amp;", lambda v: v["p1"]),
+              nota_cruce(e["k"], "apellido")]
     md = ORIGENES_APELLIDOS / f"{e['slug']}.md"
     if md.exists():
         parrafos = [p.strip() for p in md.read_text(encoding="utf-8").split("\n\n") if p.strip() and not p.startswith("#")]
@@ -1237,6 +1258,8 @@ def main():
         shutil.copy(PLANTILLA / icono, WEB / icono)
 
     por_total = sorted(idx.values(), key=lambda x: -x["total"])
+    idx_ape = construir_indice_apellidos(ape, args.umbral_apellidos)
+    CRUCE["nombres"], CRUCE["apellidos"] = idx, idx_ape
     for e in con_pagina:
         guardar(f"/nombre/{e['slug']}/", pagina_nombre(e, idx, por_total, nombres["referencia"], prov["provincias"], dec["decadas"], beb["anios"]))
     rutas = paginas_ranking(idx, nombres, prov["provincias"], dec["decadas"], beb["anios"],
@@ -1245,7 +1268,6 @@ def main():
     rutas += paginas_ideas(idx, dec["decadas"], beb["anios"], nombres["referencia"])
     rutas += paginas_curiosidades(idx, dec["decadas"], beb["anios"], nombres["referencia"])
     rutas += pagina_como_tu(ape)
-    idx_ape = construir_indice_apellidos(ape, args.umbral_apellidos)
     ape_pagina = [e for e in idx_ape.values() if e["pagina"]]
     if len(ape_pagina) < MIN_PAGINAS:
         sys.exit(f"ERROR: solo {len(ape_pagina)} apellidos tienen página (mínimo {MIN_PAGINAS}). No se publica.")
