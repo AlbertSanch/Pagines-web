@@ -674,7 +674,7 @@ def portada(idx, nombres, bebes, referencia, n_paginas):
     cuerpo = f"""
 <section class="hero">
   <h1>¿Cuántas personas se llaman como tú?</h1>
-  <p>Escribe un nombre o un apellido y descubre cuántas personas lo llevan en España, su edad media y dónde es más común. Datos oficiales del INE.</p>
+  <p>Escribe tu nombre, tu apellido o tu nombre completo y descubre cuánta gente se llama como tú en España, su edad media y dónde es más común. Datos oficiales del INE.</p>
   {formulario("nombre", referencia)}
 </section>
 <div class="grid">
@@ -699,8 +699,8 @@ def portada(idx, nombres, bebes, referencia, n_paginas):
     ld = [{"@context": "https://schema.org", "@type": "WebSite", "name": SITIO, "url": DOMINIO + "/",
            "potentialAction": {"@type": "SearchAction", "target": DOMINIO + "/?q={search_term_string}",
                                "query-input": "required name=search_term_string"}}]
-    return pagina("/", "¿Cuántas personas se llaman como tú? Nombres y apellidos",
-                  "Descubre cuántas personas se llaman o se apellidan como tú en España, su edad media y en qué provincias es más común. Datos oficiales del INE.",
+    return pagina("/", "¿Cuántas personas se llaman como tú? Nombre y apellidos en España",
+                  "Descubre cuánta gente se llama y se apellida como tú en España, con los datos oficiales del INE. Busca tu nombre, tu apellido o tu nombre completo.",
                   cuerpo, None, ld)
 
 
@@ -1094,6 +1094,7 @@ def formulario(tipo, referencia):
   <div class="tipo-busqueda" role="radiogroup" aria-label="Qué quieres buscar">
     <label><input type="radio" name="tipo" value="nombre"{marcado("nombre")}> Nombre</label>
     <label><input type="radio" name="tipo" value="apellido"{marcado("apellido")}> Apellido</label>
+    <label><input type="radio" name="tipo" value="completo"{marcado("completo")}> Nombre y apellidos</label>
   </div>
   <ul class="sugerencias" id="sugerencias" aria-live="polite"></ul>
   <div class="resultado" id="resultado" aria-live="polite"></div>"""
@@ -1228,7 +1229,7 @@ def indices_apellidos(idx):
     return grupos
 
 
-VERSION = "10"
+VERSION = "11"
 
 
 def main():

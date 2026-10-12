@@ -46,6 +46,16 @@
   }
   function enlace(ruta, e, i) { return e[i] ? '<a href="' + ruta + e[i] + '/">' + esc(e[1]) + '</a>' : esc(e[1]); }
 
+  function desdeDireccion() {
+    var u = new URLSearchParams(location.search);
+    if (!u.get('n')) return;
+    document.getElementById('ct-nombre').value = u.get('n');
+    document.getElementById('ct-ap1').value = u.get('a1') || '';
+    document.getElementById('ct-ap2').value = u.get('a2') || '';
+    if (u.get('a1')) form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event('submit', { cancelable: true }));
+    else document.getElementById('ct-ap1').focus();
+  }
+
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var tn = document.getElementById('ct-nombre').value.trim();
@@ -91,4 +101,5 @@
       salida.innerHTML = '<div class="card"><p>No se han podido cargar los datos. Comprueba tu conexión y vuelve a intentarlo.</p></div>';
     });
   });
+  desdeDireccion();
 })();

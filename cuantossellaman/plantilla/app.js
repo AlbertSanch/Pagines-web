@@ -15,7 +15,8 @@
   var cache = {};
   var TIPOS = {
     nombre: { indice: '/indice/', ruta: '/nombre/', slug: 8, texto: 'Escribe un nombre, por ejemplo Lucía' },
-    apellido: { indice: '/indice-apellidos/', ruta: '/apellido/', slug: 6, texto: 'Escribe un apellido, por ejemplo García' }
+    apellido: { indice: '/indice-apellidos/', ruta: '/apellido/', slug: 6, texto: 'Escribe un apellido, por ejemplo García' },
+    completo: { texto: 'Nombre y dos apellidos, por ejemplo Lucía García López' }
   };
   function tipo() {
     var r = form.parentNode.querySelector('input[name="tipo"]:checked');
@@ -68,7 +69,18 @@
 
   function mostrar(html) { salida.innerHTML = '<div class="card">' + html + '</div>'; }
 
+  // «Nombre y apellidos»: las dos últimas palabras son los apellidos y el resto el nombre
+  // (María José García López). En la calculadora se pueden corregir si no es así.
+  function irACalculadora(texto) {
+    var p = texto.trim().split(/\s+/);
+    if (!p[0]) return;
+    var a2 = p.length > 2 ? p.pop() : '', a1 = p.length > 1 ? p.pop() : '';
+    location.href = '/cuantos-se-llaman-como-tu/?n=' + encodeURIComponent(p.join(' ')) +
+      '&a1=' + encodeURIComponent(a1) + '&a2=' + encodeURIComponent(a2);
+  }
+
   function buscar(texto) {
+    if (tipo() === 'completo') { irACalculadora(texto); return; }
     var q = norm(texto), t = tipo(), cfg = TIPOS[t];
     if (!q) return;
     cargarTodo(q).then(function (datos) {
@@ -116,7 +128,7 @@
     temporizador = setTimeout(function () {
       var q = norm(input.value);
       lista.innerHTML = '';
-      if (q.length < 2) return;
+      if (q.length < 2 || tipo() === 'completo') return;
       var qs = suelto(q);
       cargarTodo(q).then(function (datos) {
         var html = '', k = 0;
