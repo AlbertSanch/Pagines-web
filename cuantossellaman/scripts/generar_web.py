@@ -1060,11 +1060,11 @@ def construir_indice_apellidos(apellidos, umbral):
     en_listas = {normalizar(a) for a, _ in apellidos["top100"]}
     for cod, p in apellidos["provincias"].items():
         for clave in ("res", "nac"):
-            for pos, (a, f) in enumerate(p[clave], 1):
+            for pos, (a, f, *pm) in enumerate(p[clave], 1):
                 k = normalizar(a)
                 en_listas.add(k)
                 if k in idx:
-                    idx[k][clave].append({"cod": cod, "pos": pos, "f": f})
+                    idx[k][clave].append({"cod": cod, "pos": pos, "f": f, "pm": pm[0] if pm else None})
     for e in idx.values():
         e["pagina"] = e["p1"] >= umbral or e["k"] in en_listas
         e["total"] = (e["p1"] + e["p2"] - e["ambos"]) if e["p2"] is not None and e["ambos"] is not None else None
@@ -1077,11 +1077,59 @@ def enlace_apellido(idx, ine, texto=None):
     return f'<a href="/apellido/{e["slug"]}/">{t}</a>' if e and e["pagina"] else t
 
 
+# Mapa de casillas de España: (columna, fila) de cada provincia y abreviatura de matrícula
+MAPA = {"15": (1, 0, "C"), "27": (2, 0, "LU"), "33": (3, 0, "O"), "39": (4, 0, "S"), "48": (5, 0, "BI"), "20": (6, 0, "SS"),
+        "31": (7, 0, "NA"), "22": (8, 0, "HU"), "17": (10, 0, "GI"), "36": (1, 1, "PO"), "32": (2, 1, "OU"), "24": (3, 1, "LE"),
+        "34": (4, 1, "P"), "09": (5, 1, "BU"), "01": (6, 1, "VI"), "26": (7, 1, "LO"), "25": (9, 1, "L"), "08": (10, 1, "B"),
+        "49": (2, 2, "ZA"), "47": (3, 2, "VA"), "40": (4, 2, "SG"), "42": (5, 2, "SO"), "50": (7, 2, "Z"), "43": (9, 2, "T"),
+        "37": (2, 3, "SA"), "05": (3, 3, "AV"), "28": (4, 3, "M"), "19": (5, 3, "GU"), "44": (7, 3, "TE"), "12": (8, 3, "CS"),
+        "07": (10, 3, "PM"), "10": (2, 4, "CC"), "45": (3, 4, "TO"), "16": (5, 4, "CU"), "46": (7, 4, "V"), "06": (2, 5, "BA"),
+        "13": (4, 5, "CR"), "02": (6, 5, "AB"), "03": (7, 5, "A"), "21": (1, 6, "H"), "41": (2, 6, "SE"), "14": (3, 6, "CO"),
+        "23": (4, 6, "J"), "30": (6, 6, "MU"), "11": (2, 7, "CA"), "29": (3, 7, "MA"), "18": (4, 7, "GR"), "04": (5, 7, "AL"),
+        "51": (3, 8, "CE"), "52": (5, 8, "ML"), "38": (0, 8, "TF"), "35": (1, 8, "GC")}
+
+
+def mapa_apellido(e, X):
+    """Mapa de casillas: cada provincia coloreada según cuántos habitantes de cada 1.000 llevan el apellido."""
+    datos = {p["cod"]: p for p in e["res"] if p.get("pm") is not None}
+    if not datos:
+        return ""
+    maximo = max(p["pm"] for p in datos.values())
+    T, G = 40, 4  # tamaño de casilla y separación
+    casillas = []
+    for cod, (c, f, abr) in MAPA.items():
+        x, y = c * (T + G), f * (T + G) + (8 if f == 8 else 0)
+        p = datos.get(cod)
+        if p:
+            alfa = 0.18 + 0.82 * p["pm"] / maximo
+            titulo = f"{PROVINCIAS[cod]}: {dec(p['pm'])} de cada 1.000 habitantes ({n(p['f'])} personas, puesto {p['pos']})"
+            relleno, texto = f'fill="#3f51c4" fill-opacity="{alfa:.2f}"', "#fff" if alfa > 0.5 else "#1d2233"
+        else:
+            titulo = f"{PROVINCIAS[cod]}: no está entre sus 50 apellidos más comunes"
+            relleno, texto = 'fill="#e3e6f0"', "#8a90a6"
+        casillas.append(f'<g><title>{escape(titulo)}</title><rect x="{x}" y="{y}" width="{T}" height="{T}" rx="6" {relleno}/>'
+                        f'<text x="{x + T / 2}" y="{y + T / 2 + 5}" text-anchor="middle" font-size="13" font-weight="700" fill="{texto}">{abr}</text></g>')
+    ancho, alto = 11 * (T + G), 9 * (T + G) + 8
+    mejor = max(datos.values(), key=lambda p: p["pm"])
+    uno_de = round(1000 / mejor["pm"]) if mejor["pm"] else 0
+    frase = (f"Donde más abunda en proporción es en <strong>{PROVINCIAS[mejor['cod']]}</strong>: {dec(mejor['pm'])} de cada 1.000 habitantes"
+             + (f", más o menos <strong>1 de cada {n(uno_de)}</strong> personas," if uno_de >= 2 else ",")
+             + f" tiene {escape(X)} como primer apellido.")
+    return (f'<h2>Mapa del apellido {escape(X)}</h2><p>{frase}</p>'
+            f'<figure class="mapa"><svg viewBox="0 0 {ancho} {alto}" role="img" aria-label="Mapa de España con la proporción del apellido {escape(X)} en cada provincia">'
+            + "".join(casillas) + '</svg>'
+            '<figcaption>Cada casilla es una provincia (con su abreviatura de matrícula). Cuanto más oscura, más habitantes de cada 1.000 tienen '
+            f'{escape(X)} como primer apellido. En gris, las provincias donde no está entre los 50 más comunes (el INE solo publica esos).</figcaption></figure>')
+
+
 def tabla_apellidos(idx, lista):
-    filas = "".join(f'<tr><td class="num">{i}</td><td>{enlace_apellido(idx, a)}</td><td class="num">{n(f)}</td></tr>'
-                    for i, (a, f) in enumerate(lista, 1))
+    con_pm = all(len(x) > 2 for x in lista)
+    filas = "".join(f'<tr><td class="num">{i}</td><td>{enlace_apellido(idx, x[0])}</td><td class="num">{n(x[1])}</td>'
+                    + (f'<td class="num">{dec(x[2])}</td>' if con_pm else "") + "</tr>"
+                    for i, x in enumerate(lista, 1))
     return ('<div class="table-wrap"><table class="data"><thead><tr><th class="num">#</th><th>Primer apellido</th>'
-            f'<th class="num">Personas</th></tr></thead><tbody>{filas}</tbody></table></div>')
+            '<th class="num">Personas</th>' + ('<th class="num">Por 1.000 hab.</th>' if con_pm else "")
+            + f'</tr></thead><tbody>{filas}</tbody></table></div>')
 
 
 def formulario(tipo, referencia):
@@ -1136,10 +1184,13 @@ def pagina_apellido(e, idx, por_p1, referencia):
             continue
         filas = sorted(e[clave], key=lambda p: (p["pos"], -p["f"]))
         tabla = "".join(f'<tr><td><a href="/apellidos/provincia/{slug(PROVINCIAS[p["cod"]])}/">{PROVINCIAS[p["cod"]]}</a></td>'
-                        f'<td class="num">{p["pos"]}.º</td><td class="num">{n(p["f"])}</td></tr>' for p in filas)
+                        f'<td class="num">{p["pos"]}.º</td><td class="num">{n(p["f"])}</td>'
+                        f'<td class="num">{dec(p["pm"]) if p.get("pm") is not None else "—"}</td></tr>' for p in filas)
+        if clave == "res":
+            cuerpo.append(mapa_apellido(e, X))
         cuerpo.append(f"<h2>Provincias donde {escape(X)} está entre los 50 apellidos más comunes (por provincia de {verbo})</h2>"
                       f'<div class="table-wrap"><table class="data"><thead><tr><th>Provincia</th><th class="num">Puesto</th>'
-                      f'<th class="num">Personas</th></tr></thead><tbody>{tabla}</tbody></table></div>')
+                      f'<th class="num">Personas</th><th class="num">Por 1.000 hab.</th></tr></thead><tbody>{tabla}</tbody></table></div>')
         if clave == "res":
             mejores = ", ".join(f"{PROVINCIAS[p['cod']]} (puesto {p['pos']})" for p in filas[:3])
             faq.append((f"¿Dónde es más común el apellido {X}?",

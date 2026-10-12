@@ -92,11 +92,12 @@ def leer_todos():
 
 
 # --------------------------------------------------------------------------- Tablas «ancha» del INE
-def bloques_ancho(rows, fila_cab, fila_col, fin=None):
+def bloques_ancho(rows, fila_cab, fila_col, fin=None, por_mil=False):
     """Lee una tabla con un bloque NOMBRE/FRECUENCIA/Por 1.000 por cada provincia o década.
 
     fila_cab: fila con la etiqueta de cada bloque (provincia o década) en la columna NOMBRE.
     fila_col: fila con los títulos NOMBRE / FRECUENCIA / Por 1.000.
+    por_mil: añade a cada fila la columna «Por 1.000» (personas por cada 1.000 habitantes), redondeada.
     """
     bloques = {}
     for c, titulo in enumerate(rows[fila_col]):
@@ -113,7 +114,11 @@ def bloques_ancho(rows, fila_cab, fila_col, fin=None):
             f = entero(r[c + 1])
             if f is None:
                 break
-            lista.append([limpiar(r[c]), f])
+            fila = [limpiar(r[c]), f]
+            if por_mil:
+                comprobar(c + 2 < len(r) and "1.000" in str(rows[fila_col][c + 2] or ""), f"no hay columna «Por 1.000» junto a la columna {c}")
+                fila.append(round(float(r[c + 2]), 2))
+            lista.append(fila)
         bloques[str(etiqueta).strip()] = lista
     return bloques
 
@@ -246,7 +251,7 @@ def leer_apellidos():
         fila = next(i for i, r in enumerate(rows[:10]) if "PRIMER APELLIDO" in [str(x).strip() for x in r if x])
         rows[fila] = ["NOMBRE" if str(x or "").strip() == "PRIMER APELLIDO" else x for x in rows[fila]]
         # La hoja de nacimiento trae además «66 - NACIDOS EN EL EXTRANJERO»: solo usamos las 52 provincias
-        bloques = {k: v for k, v in bloques_ancho(rows, fila - 1, fila).items() if re.match(r"(0[1-9]|[1-4]\d|5[0-2])\s*-", k)}
+        bloques = {k: v for k, v in bloques_ancho(rows, fila - 1, fila, por_mil=True).items() if re.match(r"(0[1-9]|[1-4]\d|5[0-2])\s*-", k)}
         comprobar(len(bloques) == 52, f"{ruta.name}/{hoja}: hay {len(bloques)} provincias, esperaba 52")
         for etiqueta, l in bloques.items():
             m = re.match(r"(\d{2})\s*-\s*(.+)", etiqueta)
