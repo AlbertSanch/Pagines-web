@@ -4,7 +4,8 @@ Lee el precio medio de la luz de ahorrometro/datos/luz.json (lo genera actualiza
   - ahorrometro/cuanto-gasta/<aparato>.html: una página por aparato con su calculadora,
     una tabla de consumo según el modelo, trucos y preguntas frecuentes;
   - ahorrometro/consumo-electrodomesticos.html: la tabla de todos los aparatos;
-  - las entradas del sitemap.xml entre <!-- CONSUMO:INICIO --> y <!-- CONSUMO:FIN -->.
+  - las entradas del sitemap.xml entre <!-- CONSUMO:INICIO --> y <!-- CONSUMO:FIN -->;
+  - el ejemplo y las tablas de calculadoras/consumo-electrico.html entre <!-- CONSUMO-CALC:INICIO --> y <!-- CONSUMO-CALC:FIN -->.
 Los costes van escritos en el HTML para que Google los lea, y se recalculan cada vez que
 cambia el precio de la luz. La cabecera y el pie se copian de calculadoras/coste-viaje-coche.html.
 
@@ -510,14 +511,40 @@ def indice(p, desde, hasta, base):
 """
 
 
-def reemplazar_bloque(ruta, contenido):
+def reemplazar_bloque(ruta, contenido, marca="CONSUMO"):
     texto = ruta.read_text(encoding="utf-8")
-    nuevo, n = re.subn(r"(<!-- CONSUMO:INICIO -->).*?(<!-- CONSUMO:FIN -->)",
+    nuevo, n = re.subn(rf"(<!-- {marca}:INICIO -->).*?(<!-- {marca}:FIN -->)",
                        lambda m: m[1] + contenido + m[2], texto, flags=re.S)
     if n != 1:
-        raise SystemExit(f"No encuentro los marcadores CONSUMO en {ruta}")
+        raise SystemExit(f"No encuentro los marcadores {marca} en {ruta}")
     if nuevo != texto:
         ruta.write_text(nuevo, encoding="utf-8")
+
+
+# Aparatos de la tabla de la calculadora de consumo eléctrico
+EN_CALCULADORA = ["aire-acondicionado", "calefactor-electrico", "radiador-de-aceite", "placa-de-induccion",
+                  "horno-electrico", "lavadora", "lavavajillas", "ordenador", "televisor"]
+
+
+def bloque_calculadora(p):
+    """Ejemplo y tablas de calculadoras/consumo-electrico.html con el precio actual de la luz."""
+    filas_w = "".join(f"<tr><td>{num(w, 0)} W</td><td class=\"num\">{num(w / 1000, 2)} kWh</td><td class=\"num\">{eur(w / 1000 * p)}</td>"
+                      f"<td class=\"num\">{eur(w / 1000 * 30 * p)}</td></tr>" for w in (100, 500, 1000, 1500, 2000, 3000))
+    por_slug = {a["slug"]: a for a in APARATOS}
+    filas_a = "".join(f'<tr><td><a href="../{CARPETA}/{a["slug"]}">{escape(a["nombre"])}</a><span class="sub">{escape(a["uso"])}</span></td>'
+                      f'<td class="num">{num(kwh_mes(a), 1)} kWh</td><td class="num">{eur(kwh_mes(a) * p)}</td></tr>'
+                      for a in sorted((por_slug[s] for s in EN_CALCULADORA), key=lambda a: -kwh_mes(a)))
+    return f"""
+        <p>Por ejemplo, un radiador de 2000 W encendido 5 horas al día consume 2000 × 5 ÷ 1000 = 10 kWh diarios. A {num(p, 3)} €/kWh son {eur(10 * p)} al día, unos <strong>{eur(300 * p)} al mes</strong> solo por ese aparato.</p>
+
+        <h2>De vatios a euros: cuánto cuesta cada potencia</h2>
+        <div class="table-wrap"><table class="data"><thead><tr><th>Potencia</th><th class="num">Consumo por hora</th><th class="num">Coste por hora</th><th class="num">1 h al día durante un mes</th></tr></thead><tbody>{filas_w}</tbody></table></div>
+        <p>A toda potencia. Si el aparato tiene termostato (radiadores, aire acondicionado, frigorífico), gasta menos porque se apaga y se enciende.</p>
+
+        <h2>Consumo de los electrodomésticos más comunes</h2>
+        <div class="table-wrap"><table class="data"><thead><tr><th>Aparato y uso</th><th class="num">Al mes</th><th class="num">Coste al mes</th></tr></thead><tbody>{filas_a}</tbody></table></div>
+        <p>Precio de la luz: {num(p, 3)} €/kWh, media del PVPC de las últimas 4 semanas con impuestos. Lo actualizamos cada día. Mira <a href="../consumo-electrodomesticos">todos los electrodomésticos</a>.</p>
+        """
 
 
 def main():
@@ -533,6 +560,12 @@ def main():
     urls = [f"  <url><loc>{DOMINIO}/consumo-electrodomesticos</loc><lastmod>{hoy}</lastmod><priority>0.9</priority></url>"]
     urls += [f"  <url><loc>{DOMINIO}/{CARPETA}/{a['slug']}</loc><lastmod>{hoy}</lastmod><priority>0.8</priority></url>" for a in APARATOS]
     reemplazar_bloque(WEB / "sitemap.xml", "\n" + "\n".join(urls) + "\n  ")
+    calc = WEB / "calculadoras" / "consumo-electrico.html"
+    reemplazar_bloque(calc, bloque_calculadora(p), "CONSUMO-CALC")
+    texto = calc.read_text(encoding="utf-8")
+    nuevo = re.sub(r'(<input id="p" data-precio="luz"[^>]*? value=")[^"]*"', rf'\g<1>{p}"', texto)
+    if nuevo != texto:
+        calc.write_text(nuevo, encoding="utf-8")
     print(f"{len(APARATOS)} páginas de consumo con la luz a {p} €/kWh")
 
 

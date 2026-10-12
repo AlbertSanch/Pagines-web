@@ -18,10 +18,11 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
-  [{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de gastos de piso compartido","url":"https://ahorrometro.es/calculadoras/gastos-piso-compartido","description":"Reparte el alquiler y las facturas de un piso compartido de forma justa: a partes iguales o según el tamaño de cada habitación. Gratis y sin registros.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
-   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Calculadora de gastos de piso compartido","item":"https://ahorrometro.es/calculadoras/gastos-piso-compartido"}]}]
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de gastos de piso compartido","url":"https://ahorrometro.es/calculadoras/gastos-piso-compartido","description":"Reparte el alquiler y las facturas de un piso compartido de forma justa: a partes iguales o según el tamaño de cada habitación. Gratis y sin registros.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-10-12"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Calculadora de gastos de piso compartido","item":"https://ahorrometro.es/calculadoras/gastos-piso-compartido"}]},
+   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo se reparte el alquiler si las habitaciones son de distinto tamaño?", "acceptedAnswer": {"@type": "Answer", "text": "Lo más justo es dividir el alquiler en dos partes: la de las zonas comunes (salón, cocina, baño), que se paga a partes iguales, y la de las habitaciones, que se reparte según los metros de cada una. La calculadora de arriba lo hace por ti."}}, {"@type": "Question", "name": "¿Cuánto más paga una pareja en un piso compartido?", "acceptedAnswer": {"@type": "Answer", "text": "Lo habitual es que pague su habitación como cualquier otra, según su tamaño, y las facturas como dos personas, porque gasta el doble de luz y agua. En algunos pisos se añade además un pequeño suplemento al alquiler por usar más las zonas comunes."}}, {"@type": "Question", "name": "¿Cómo se reparte la fianza en un piso compartido?", "acceptedAnswer": {"@type": "Answer", "text": "Normalmente en la misma proporción que el alquiler. Cuando alguien se va, lo más sencillo es que la persona que entra le pague su parte de la fianza, y así el contrato no se toca."}}, {"@type": "Question", "name": "¿Las facturas también se reparten según los m²?", "acceptedAnswer": {"@type": "Answer", "text": "Normalmente no. La luz, el agua o internet dependen del uso, no del tamaño de la habitación, así que lo habitual es dividirlas a partes iguales."}}, {"@type": "Question", "name": "¿Qué porcentaje del alquiler corresponde a las zonas comunes?", "acceptedAnswer": {"@type": "Answer", "text": "No hay una norma fija. Entre un 40 % y un 60 % es lo más habitual; con un salón grande y habitaciones pequeñas, conviene subirlo."}}]}]
   </script>
-  <link rel="stylesheet" href="../assets/style.css?v=5">
+  <link rel="stylesheet" href="../assets/style.css?v=7">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -52,7 +53,7 @@
     <article>
       <h1>Calculadora de gastos de piso compartido</h1>
       <p class="lead">¿Es justo que pague lo mismo quien tiene la habitación grande que quien tiene la pequeña? Reparte el alquiler y las facturas de forma justa en un minuto.</p>
-      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en octubre de 2026</p>
 
       <div class="calc">
         <div class="row">
@@ -81,10 +82,11 @@
           </div>
         </div>
         <div class="field">
-          <label>Personas y m² de su habitación</label>
+          <label>Habitaciones: quién vive, m² y si es una pareja</label>
           <div id="personas"></div>
           <button class="btn btn-ghost btn-sm" id="add" type="button">+ Añadir persona</button>
         </div>
+        <small class="nota-parejas">Una pareja paga su habitación como una, pero las facturas como dos personas.</small>
         <button class="btn" id="calcular">Repartir gastos</button>
         <div class="result" id="res" aria-live="polite"></div>
       </div>
@@ -99,6 +101,13 @@
         </ol>
         <p><strong>Ejemplo:</strong> un piso de 1200 € con tres habitaciones de 15, 10 y 8 m². Si el 50 % del alquiler (600 €) corresponde a zonas comunes, cada persona paga 200 € por esa parte. Los otros 600 € se reparten según los metros: 272,73 €, 181,82 € y 145,45 €. Total: <strong>472,73 €, 381,82 € y 345,45 €</strong>.</p>
 
+        <h2>Cómo repartir la luz, el agua e internet</h2>
+        <p>Las facturas dependen de cuánta gente vive en el piso, no del tamaño de las habitaciones, así que lo normal es dividirlas <strong>a partes iguales entre las personas</strong>. Una pareja cuenta como dos. Hay dos casos en los que conviene ajustar:</p>
+        <ul>
+          <li><strong>Alguien gasta mucho más</strong>: si una persona teletrabaja todo el día o tiene un radiador o un aire acondicionado en su habitación, se puede medir con un enchufe medidor de consumo y que pague esa parte aparte. Calcula <a href="consumo-electrico">cuánto gasta cada aparato</a>.</li>
+          <li><strong>Alguien pasa fuera mucho tiempo</strong>: si una persona se va un mes entero, podéis repartir las facturas de ese mes por días en el piso. Para ausencias cortas no compensa complicarse.</li>
+        </ul>
+
         <h2>Otros factores que podéis tener en cuenta</h2>
         <ul>
           <li><strong>Baño propio</strong>: suele sumar entre 30 y 60 € al mes.</li>
@@ -112,9 +121,22 @@
           <li><strong>Poned el acuerdo por escrito</strong> antes de entrar a vivir: qué paga cada uno y cuándo.</li>
           <li><strong>Usad una cuenta o una app común</strong> para las facturas y revisadla cada mes.</li>
           <li><strong>Pactad una fianza para los gastos comunes</strong>: evita problemas si alguien se va a mitad de mes.</li>
+          <li><strong>Apuntad los gastos en una app para compartir gastos</strong>, como Splitwise o Tricount: dicen quién debe cuánto a quién sin hacer cuentas.</li>
         </ul>
 
         <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cómo se reparte el alquiler si las habitaciones son de distinto tamaño?</summary>
+          <p>Lo más justo es dividir el alquiler en dos partes: la de las zonas comunes (salón, cocina, baño), que se paga a partes iguales, y la de las habitaciones, que se reparte según los metros de cada una. La calculadora de arriba lo hace por ti.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto más paga una pareja en un piso compartido?</summary>
+          <p>Lo habitual es que pague su habitación como cualquier otra, según su tamaño, y las facturas como dos personas, porque gasta el doble de luz y agua. En algunos pisos se añade además un pequeño suplemento al alquiler por usar más las zonas comunes.</p>
+        </details>
+        <details>
+          <summary>¿Cómo se reparte la fianza en un piso compartido?</summary>
+          <p>Normalmente en la misma proporción que el alquiler. Cuando alguien se va, lo más sencillo es que la persona que entra le pague su parte de la fianza, y así el contrato no se toca.</p>
+        </details>
         <details>
           <summary>¿Las facturas también se reparten según los m²?</summary>
           <p>Normalmente no. La luz, el agua o internet dependen del uso, no del tamaño de la habitación, así que lo habitual es dividirlas a partes iguales.</p>
@@ -172,6 +194,7 @@ function addPersona(nombre, m2) {
   row.innerHTML =
     '<input type="text" class="p-nombre" placeholder="Nombre" aria-label="Nombre">' +
     '<input type="number" class="p-m2" min="0" step="0.5" placeholder="m²" aria-label="Metros cuadrados" inputmode="decimal">' +
+    '<select class="p-n" aria-label="Personas en la habitación"><option value="1">1 pers.</option><option value="2">Pareja</option></select>' +
     '<button type="button" aria-label="Quitar persona">✕</button>';
   row.querySelector('.p-nombre').value = nombre || '';
   row.querySelector('.p-m2').value = m2 || '';
@@ -193,19 +216,21 @@ document.getElementById('calcular').addEventListener('click', function () {
   var personas = Array.prototype.map.call(cont.children, function (row, i) {
     return {
       nombre: row.querySelector('.p-nombre').value.trim() || 'Persona ' + (i + 1),
-      m2: parseFloat(String(row.querySelector('.p-m2').value).replace(',', '.')) || 0
+      m2: parseFloat(String(row.querySelector('.p-m2').value).replace(',', '.')) || 0,
+      n: parseInt(row.querySelector('.p-n').value, 10) || 1
     };
   });
   var n = personas.length;
   var totalM2 = personas.reduce(function (s, p) { return s + p.m2; }, 0);
+  var totalPersonas = personas.reduce(function (s, p) { return s + p.n; }, 0);
   if (modo.value === 'm2' && !(totalM2 > 0)) { showResult('res', '<p>Introduce los m² de cada habitación, o elige repartir a partes iguales.</p>'); return; }
   var filas = personas.map(function (p) {
     var partAlq = modo.value === 'igual'
       ? alquiler / n
       : alquiler * comun / n + alquiler * (1 - comun) * p.m2 / totalM2;
-    var partFac = facturas / n;
+    var partFac = facturas * p.n / totalPersonas;
     var esc = function (s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
-    return '<tr><td>' + esc(p.nombre) + '</td><td>' + (modo.value === 'm2' ? fmt(p.m2, 1) + ' m²' : '—') + '</td><td>' + eur(partAlq) + '</td><td>' + eur(partFac) + '</td><td><strong>' + eur(partAlq + partFac) + '</strong></td></tr>';
+    return '<tr><td>' + esc(p.nombre) + '</td><td>' + (modo.value === 'm2' ? fmt(p.m2, 1) + ' m²' : '—') + (p.n > 1 ? ' (pareja)' : '') + '</td><td>' + eur(partAlq) + '</td><td>' + eur(partFac) + '</td><td><strong>' + eur(partAlq + partFac) + '</strong></td></tr>';
   });
   showResult('res',
     '<div>Total mensual del piso: <strong>' + eur(alquiler + facturas) + '</strong></div>' +

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Calculadora de consumo eléctrico de electrodomésticos</title>
+  <title>Calculadora de consumo eléctrico: kWh y euros al día y al mes</title>
   <meta name="description" content="Calcula cuánto gasta en euros al día, al mes y al año cualquier electrodoméstico: horno, secadora, aire acondicionado, radiador, lavadora… Gratis y al instante.">
   <link rel="canonical" href="https://ahorrometro.es/calculadoras/consumo-electrico">
   <meta name="theme-color" content="#1f7a55">
@@ -18,8 +18,9 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
-  [{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de consumo eléctrico","url":"https://ahorrometro.es/calculadoras/consumo-electrico","description":"Calcula cuánto gasta en euros al día, al mes y al año cualquier electrodoméstico: horno, secadora, aire acondicionado, radiador, lavadora… Gratis y al instante.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-09-28"},
-   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Calculadora de consumo eléctrico","item":"https://ahorrometro.es/calculadoras/consumo-electrico"}]}]
+  [{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de consumo eléctrico","url":"https://ahorrometro.es/calculadoras/consumo-electrico","description":"Calcula cuánto gasta en euros al día, al mes y al año cualquier electrodoméstico: horno, secadora, aire acondicionado, radiador, lavadora… Gratis y al instante.","applicationCategory":"UtilitiesApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Albert Sanchez Guiu"},"dateModified":"2026-10-12"},
+   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://ahorrometro.es/#calculadoras"},{"@type":"ListItem","position":3,"name":"Calculadora de consumo eléctrico","item":"https://ahorrometro.es/calculadoras/consumo-electrico"}]},
+   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo se pasan los vatios a kWh?", "acceptedAnswer": {"@type": "Answer", "text": "Multiplica los vatios por las horas de uso y divide entre 1.000. Un aparato de 1.500 W encendido 2 horas gasta 1.500 × 2 ÷ 1.000 = 3 kWh."}}, {"@type": "Question", "name": "¿Cuánto gasta un aparato de 1.000 W en una hora?", "acceptedAnswer": {"@type": "Answer", "text": "Exactamente 1 kWh, si funciona a toda potencia toda la hora. Lo que cuesta depende de tu precio de la luz: mira la tabla de arriba con el precio medio actual."}}, {"@type": "Question", "name": "¿Cuánta luz gasta una casa al mes?", "acceptedAnswer": {"@type": "Answer", "text": "Una vivienda media en España gasta entre 250 y 300 kWh al mes. Con calefacción, termo o cocina eléctricos puede pasar de 400 kWh, sobre todo en invierno."}}, {"@type": "Question", "name": "¿Qué electrodomésticos gastan más luz?", "acceptedAnswer": {"@type": "Answer", "text": "Los que producen calor o frío: radiadores y calefactores, termo eléctrico, secadora, horno, aire acondicionado y, por estar siempre encendido, el frigorífico. Los aparatos electrónicos (televisor, ordenador, router, cargadores) gastan mucho menos."}}, {"@type": "Question", "name": "¿Dónde veo la potencia de un electrodoméstico?", "acceptedAnswer": {"@type": "Answer", "text": "En la placa de características (una pegatina en la parte trasera o inferior del aparato), en el manual o en la ficha del fabricante. Se indica en vatios (W) o kilovatios (kW); 1 kW = 1000 W."}}, {"@type": "Question", "name": "¿Un aparato consume siempre su potencia máxima?", "acceptedAnswer": {"@type": "Answer", "text": "No. Frigoríficos, aires acondicionados o bombas de calor funcionan a ciclos: cuando alcanzan la temperatura bajan el consumo. Por eso, en esos casos, conviene usar una potencia media o unas horas de uso reales menores."}}, {"@type": "Question", "name": "¿Qué precio del kWh debo poner?", "acceptedAnswer": {"@type": "Answer", "text": "El que aparece en tu factura como «término de energía». En tarifas con tramos horarios, usa el precio del tramo en el que usas el aparato. Si no lo sabes, deja el que viene puesto: es la media del PVPC de las últimas 4 semanas con impuestos y se actualiza cada día."}}]}]
   </script>
   <link rel="stylesheet" href="../assets/style.css?v=5">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -53,7 +54,7 @@
       <h1>Calculadora de consumo eléctrico</h1>
       <p class="note">¿Buscas un aparato concreto? Mira la <a href="../consumo-electrodomesticos">tabla de lo que gasta cada electrodoméstico</a> con el precio de la luz actual.</p>
       <p class="lead">Descubre cuánto te cuesta tener encendido un electrodoméstico al día, al mes y al año. Elige el aparato o introduce su potencia en vatios.</p>
-      <p class="updated">Por Albert Sanchez · Actualizado en septiembre de 2026</p>
+      <p class="updated">Por Albert Sanchez · Actualizado en octubre de 2026</p>
 
       <div class="calc">
         <div class="field">
@@ -97,8 +98,8 @@
           </div>
           <div class="field">
             <label for="p">Precio de la luz (€/kWh)</label>
-            <input id="p" data-precio="luz" type="number" min="0" step="0.001" value="0.16" inputmode="decimal">
-            <small>Mira tu factura. La media en España ronda 0,13–0,20 €/kWh.</small>
+            <input id="p" data-precio="luz" type="number" min="0" step="0.001" value="0.235" inputmode="decimal">
+            <small>Es el «término de energía» de tu factura.</small>
           </div>
         </div>
         <button class="btn" id="calcular">Calcular gasto</button>
@@ -119,23 +120,17 @@
         <h2>Cómo se calcula el consumo de un electrodoméstico</h2>
         <p>La factura de la luz no cobra por vatios, sino por <strong>kilovatios hora (kWh)</strong>: la energía que consume un aparato de 1000 W funcionando durante una hora. La fórmula es muy sencilla:</p>
         <p class="note"><strong>Consumo (kWh) = Potencia (W) × Horas de uso ÷ 1000</strong><br><strong>Coste (€) = Consumo (kWh) × Precio del kWh</strong></p>
-        <p>Por ejemplo, un radiador de 2000 W encendido 5 horas al día consume 2000 × 5 ÷ 1000 = 10 kWh diarios. A 0,16 €/kWh son 1,60 € al día, unos <strong>48 € al mes</strong> solo por ese aparato.</p>
+<!-- CONSUMO-CALC:INICIO -->
+        <p>Por ejemplo, un radiador de 2000 W encendido 5 horas al día consume 2000 × 5 ÷ 1000 = 10 kWh diarios. A 0,235 €/kWh son 2,35 € al día, unos <strong>70,50 € al mes</strong> solo por ese aparato.</p>
 
-        <h2>Consumo aproximado de los electrodomésticos más comunes</h2>
-        <div class="table-wrap">
-          <table class="data">
-            <thead><tr><th>Aparato</th><th>Potencia típica</th><th>Uso habitual</th><th>Coste/mes aprox.*</th></tr></thead>
-            <tbody>
-              <tr><td>Frigorífico</td><td>100–200 W (media)</td><td>24 h</td><td>15–20 €</td></tr>
-              <tr><td>Horno</td><td>2000–3000 W</td><td>1 h, 8 días</td><td>2,5–4 €</td></tr>
-              <tr><td>Secadora</td><td>2000–3000 W</td><td>1 h, 12 días</td><td>4–6 €</td></tr>
-              <tr><td>Aire acondicionado</td><td>800–1500 W</td><td>6 h, 30 días</td><td>23–43 €</td></tr>
-              <tr><td>Radiador eléctrico</td><td>1500–2500 W</td><td>5 h, 30 días</td><td>36–60 €</td></tr>
-              <tr><td>Televisor</td><td>60–150 W</td><td>5 h, 30 días</td><td>1,5–3,5 €</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p><small>*Calculado a 0,16 €/kWh. El consumo real depende de la eficiencia del aparato y de cómo lo uses.</small></p>
+        <h2>De vatios a euros: cuánto cuesta cada potencia</h2>
+        <div class="table-wrap"><table class="data"><thead><tr><th>Potencia</th><th class="num">Consumo por hora</th><th class="num">Coste por hora</th><th class="num">1 h al día durante un mes</th></tr></thead><tbody><tr><td>100 W</td><td class="num">0,10 kWh</td><td class="num">0,02 €</td><td class="num">0,70 €</td></tr><tr><td>500 W</td><td class="num">0,50 kWh</td><td class="num">0,12 €</td><td class="num">3,52 €</td></tr><tr><td>1.000 W</td><td class="num">1,00 kWh</td><td class="num">0,23 €</td><td class="num">7,05 €</td></tr><tr><td>1.500 W</td><td class="num">1,50 kWh</td><td class="num">0,35 €</td><td class="num">10,57 €</td></tr><tr><td>2.000 W</td><td class="num">2,00 kWh</td><td class="num">0,47 €</td><td class="num">14,10 €</td></tr><tr><td>3.000 W</td><td class="num">3,00 kWh</td><td class="num">0,70 €</td><td class="num">21,15 €</td></tr></tbody></table></div>
+        <p>A toda potencia. Si el aparato tiene termostato (radiadores, aire acondicionado, frigorífico), gasta menos porque se apaga y se enciende.</p>
+
+        <h2>Consumo de los electrodomésticos más comunes</h2>
+        <div class="table-wrap"><table class="data"><thead><tr><th>Aparato y uso</th><th class="num">Al mes</th><th class="num">Coste al mes</th></tr></thead><tbody><tr><td><a href="../cuanto-gasta/calefactor-electrico">Calefactor eléctrico</a><span class="sub">3 horas al día en invierno</span></td><td class="num">144,0 kWh</td><td class="num">33,84 €</td></tr><tr><td><a href="../cuanto-gasta/radiador-de-aceite">Radiador de aceite</a><span class="sub">4 horas al día en invierno, con el termostato a media potencia</span></td><td class="num">144,0 kWh</td><td class="num">33,84 €</td></tr><tr><td><a href="../cuanto-gasta/aire-acondicionado">Aire acondicionado</a><span class="sub">6 horas al día en verano, equipo de 3.000 frigorías</span></td><td class="num">97,2 kWh</td><td class="num">22,84 €</td></tr><tr><td><a href="../cuanto-gasta/placa-de-induccion">Placa de inducción</a><span class="sub">1 hora al día, con un fuego a potencia media</span></td><td class="num">36,0 kWh</td><td class="num">8,46 €</td></tr><tr><td><a href="../cuanto-gasta/ordenador">Ordenador</a><span class="sub">6 horas al día, uso de oficina</span></td><td class="num">27,0 kWh</td><td class="num">6,34 €</td></tr><tr><td><a href="../cuanto-gasta/lavavajillas">Lavavajillas</a><span class="sub">5 lavados a la semana en programa normal</span></td><td class="num">21,7 kWh</td><td class="num">5,09 €</td></tr><tr><td><a href="../cuanto-gasta/lavadora">Lavadora</a><span class="sub">4 lavados a la semana a 40 °C</span></td><td class="num">15,6 kWh</td><td class="num">3,67 €</td></tr><tr><td><a href="../cuanto-gasta/televisor">Televisor</a><span class="sub">4 horas al día</span></td><td class="num">12,0 kWh</td><td class="num">2,82 €</td></tr><tr><td><a href="../cuanto-gasta/horno-electrico">Horno eléctrico</a><span class="sub">1 hora, unas 2 veces a la semana</span></td><td class="num">8,8 kWh</td><td class="num">2,07 €</td></tr></tbody></table></div>
+        <p>Precio de la luz: 0,235 €/kWh, media del PVPC de las últimas 4 semanas con impuestos. Lo actualizamos cada día. Mira <a href="../consumo-electrodomesticos">todos los electrodomésticos</a>.</p>
+        <!-- CONSUMO-CALC:FIN -->
 
         <h2>Consejos para gastar menos luz</h2>
         <ul>
@@ -147,6 +142,22 @@
 
         <h2>Preguntas frecuentes</h2>
         <details>
+          <summary>¿Cómo se pasan los vatios a kWh?</summary>
+          <p>Multiplica los vatios por las horas de uso y divide entre 1.000. Un aparato de 1.500 W encendido 2 horas gasta 1.500 × 2 ÷ 1.000 = 3 kWh.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto gasta un aparato de 1.000 W en una hora?</summary>
+          <p>Exactamente 1 kWh, si funciona a toda potencia toda la hora. Lo que cuesta depende de tu precio de la luz: mira la tabla de arriba con el precio medio actual.</p>
+        </details>
+        <details>
+          <summary>¿Cuánta luz gasta una casa al mes?</summary>
+          <p>Una vivienda media en España gasta entre 250 y 300 kWh al mes. Con calefacción, termo o cocina eléctricos puede pasar de 400 kWh, sobre todo en invierno.</p>
+        </details>
+        <details>
+          <summary>¿Qué electrodomésticos gastan más luz?</summary>
+          <p>Los que producen calor o frío: radiadores y calefactores, termo eléctrico, secadora, horno, aire acondicionado y, por estar siempre encendido, el frigorífico. Los aparatos electrónicos (televisor, ordenador, router, cargadores) gastan mucho menos.</p>
+        </details>
+        <details>
           <summary>¿Dónde veo la potencia de un electrodoméstico?</summary>
           <p>En la placa de características (una pegatina en la parte trasera o inferior del aparato), en el manual o en la ficha del fabricante. Se indica en vatios (W) o kilovatios (kW); 1 kW = 1000 W.</p>
         </details>
@@ -156,7 +167,7 @@
         </details>
         <details>
           <summary>¿Qué precio del kWh debo poner?</summary>
-          <p>El que aparece en tu factura como «término de energía». En tarifas con tramos horarios, usa el precio del tramo en el que usas el aparato. Si no lo sabes, 0,16 €/kWh es una media razonable en España.</p>
+          <p>El que aparece en tu factura como «término de energía». En tarifas con tramos horarios, usa el precio del tramo en el que usas el aparato. Si no lo sabes, deja el que viene puesto: es la media del PVPC de las últimas 4 semanas con impuestos y se actualiza cada día.</p>
         </details>
       </div>
     </article>
