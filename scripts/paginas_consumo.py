@@ -184,7 +184,15 @@ APARATOS = [
          modelos=[("Un tubo", 400), ("Dos tubos", 800), ("Tres tubos", 1200)],
          texto="Las estufas halógenas y de cuarzo calientan por radiación: dan calor a las personas y objetos que tienen delante, no al aire de la habitación. Por eso notas el calor al momento, pero en cuanto te alejas o la apagas se va. No tienen termostato: gastan toda su potencia mientras están encendidas.",
          trucos=["Úsala para ratos cortos y cerca de ti, por ejemplo en la mesa de trabajo.", "Enciende solo los tubos que necesites.", "Para calentar una habitación varias horas, una bomba de calor gasta mucho menos."],
+         titulo="¿Cuánto gasta una estufa halógena? Por hora, al día y al mes",
+         horas_tabla=[1, 2, 4, 8],
+         comparar=["manta-electrica", "bomba-de-calor", "radiador-de-aceite", "calefactor-electrico"],
+         comparar_texto="Por hora, la halógena gasta como un radiador de aceite y más del doble que una bomba de calor. Como no calienta el aire, sale cara para caldear una habitación durante horas; para un rato corto y cerca de ti sí sale a cuenta, porque da calor al momento.",
          faq=[("¿Cuánto gasta una estufa halógena por hora?", "Con tres tubos (1200 W) gasta 1,2 kWh por hora, unos 28 céntimos con el precio medio de la luz. Con un tubo, la tercera parte."),
+              ("¿Cuánto gasta una estufa halógena de 1200 W en 8 horas?", "Unos 9,6 kWh: algo más de 2 euros al día con el precio medio de la luz. Si la usas así todo el mes, más de 60 euros."),
+              ("¿Se puede dejar una estufa halógena encendida toda la noche?", "No es recomendable. No tiene termostato, así que gasta toda su potencia las 8 horas, y si queda cerca de la cama, la ropa o las cortinas hay riesgo de incendio. Para la noche gasta mucho menos una manta eléctrica."),
+              ("¿Qué gasta menos, una estufa halógena o un radiador de aceite?", "Por hora gastan parecido (un radiador de 2000 W con termostato, unos 1,2 kWh de media). Para un rato corto y cerca de ti, mejor la halógena; para calentar la habitación varias horas, el radiador, que guarda el calor."),
+              ("¿Gasta menos una estufa de cuarzo, de carbono o halógena?", "Con la misma potencia gastan exactamente lo mismo: 1 kWh por cada hora a 1.000 W. Cambia la forma de dar calor, no el consumo. Fíjate en los vatios de la etiqueta."),
               ("¿Gasta menos una estufa halógena que un calefactor?", "Por hora gasta lo que marque su potencia, igual que un calefactor. Puede salir más barata si la usas poco rato y cerca, porque calienta a la persona y no toda la habitación.")]),
 ]
 
@@ -238,7 +246,7 @@ def pagina(a, p, otros, base):
     e = escape
     url = f"{DOMINIO}/{CARPETA}/{a['slug']}"
     mes = kwh_mes(a)
-    titulo = f"¿Cuánto gasta {a['art']}? Consumo y coste al mes"
+    titulo = a.get("titulo") or f"¿Cuánto gasta {a['art']}? Consumo y coste al mes"
     if len(titulo) > 60:
         titulo = f"¿Cuánto gasta {a['art']} al mes?"
     desc = (f"{a['nombre']}: unos {num(mes, 0)} kWh y {eur(mes * p)} al mes con un uso normal y el precio actual "
@@ -307,6 +315,27 @@ def pagina(a, p, otros, base):
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in a["faq"]]},
     ]
+    extra = ""
+    if a.get("horas_tabla"):
+        cab_h = "".join(f"<th class=\"num\">{e(m)}</th>" for m, _ in a["modelos"])
+        filas_h = "".join(f"<tr><td>{h} {'hora' if h == 1 else 'horas'}</td>"
+                          + "".join(f"<td class=\"num\">{eur(w / 1000 * a['factor'] * h * p)}</td>" for _, w in a["modelos"])
+                          + "</tr>" for h in a["horas_tabla"])
+        extra += (f"\n        <h2>Cuánto gasta {e(a['art'])} al día</h2>\n"
+                  f"        <div class=\"table-wrap\"><table class=\"data\"><thead><tr><th>Encendida al día</th>{cab_h}</tr></thead><tbody>{filas_h}</tbody></table></div>\n"
+                  f"        <p>Coste de un día de uso con el precio medio de la luz ({num(p, 3)} €/kWh). Para saber el gasto del mes, multiplica por los días que la enciendas.</p>\n")
+    if a.get("comparar"):
+        por_slug = {o["slug"]: o for o in APARATOS}
+        comp = [a] + [por_slug[s] for s in a["comparar"]]
+        comp.sort(key=lambda o: o["w"] * o["factor"])
+        def celda(o):
+            return e(o["nombre"]) if o is a else f'<a href="{o["slug"]}">{e(o["nombre"])}</a>'
+        filas_c = "".join(f"<tr><td>{celda(o)}</td><td class=\"num\">{num(o['w'] * o['factor'] / 1000, 2)} kWh</td>"
+                          f"<td class=\"num\">{eur(o['w'] / 1000 * o['factor'] * p)}</td></tr>" for o in comp)
+        extra += (f"\n        <h2>Comparada con otras calefacciones</h2>\n"
+                  f"        <div class=\"table-wrap\"><table class=\"data\"><thead><tr><th>Aparato</th><th class=\"num\">Consumo por hora</th><th class=\"num\">Coste por hora</th></tr></thead><tbody>{filas_c}</tbody></table></div>\n"
+                  f"        <p>Con la potencia y el uso normal de cada aparato. {e(a['comparar_texto'])} "
+                  f"Si dudas entre gas y electricidad, compara con la <a href=\"../calculadoras/estufa-butano-o-electrica\">calculadora de estufa de butano o eléctrica</a>.</p>\n")
     faq = "\n".join(f"        <details>\n          <summary>{e(q)}</summary>\n          <p>{e(r)}</p>\n        </details>" for q, r in a["faq"])
     trucos = "".join(f"<li>{e(t)}</li>" for t in a["trucos"])
     rel = "\n".join(f'          <li><a href="{o["slug"]}">{o["icono"]} {e(o["nombre"])}</a></li>' for o in otros)
@@ -362,7 +391,7 @@ def pagina(a, p, otros, base):
 
         <h2>Por qué gasta lo que gasta</h2>
         <p>{e(a['texto'])}</p>
-
+{extra}
         <h2>Cómo calcular el consumo</h2>
         {formula}
 
