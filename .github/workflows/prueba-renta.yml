@@ -1,0 +1,36 @@
+# Prueba temporal: comprueba qué datos de renta se pueden descargar del INE y de la Agencia Tributaria
+# y guarda muestras pequeñas en renta/prueba/. No publica ninguna web.
+name: Prueba de datos de renta
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/trusting-bell-woc5fv]
+    paths:
+      - renta/scripts/**
+      - .github/workflows/prueba-renta.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Descargar muestras
+        run: python renta/scripts/prueba_descarga.py
+
+      - name: Guardar las muestras en la rama
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add renta/prueba
+          git commit -m "Prueba de datos de renta: muestras descargadas" || echo "Sin cambios"
+          git push
