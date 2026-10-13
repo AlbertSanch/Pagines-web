@@ -54,31 +54,30 @@ def enlace(url_pagina, pagina, texto):
 
 
 def portada(publicacion, anio):
-    """Devuelve (url, html) de la portada real de la publicación de ese año, o None si no existe."""
+    """Páginas de entrada de la publicación de ese año: home.html y, si enlaza a ella, la portada con nombre
+    aleatorio (home<hash>.html). Los enlaces del índice pueden estar en cualquiera de las dos. None si no existe."""
     url = f"{RAIZ}/{publicacion}/{anio}/home.html"
     try:
-        pagina = bajar(url)
+        paginas = [(url, bajar(url))]
     except urllib.error.HTTPError:
         return None
-    # home.html a veces solo enlaza a la portada con nombre aleatorio (home<hash>.html)
-    real = re.search(r'href="(home[0-9a-f]{20,}\.html)"', pagina)
+    real = re.search(r'href="(home[0-9a-f]{20,}\.html)"', paginas[0][1])
     if real:
-        url = urllib.parse.urljoin(url, real.group(1))
-        pagina = bajar(url)
-    return url, pagina
+        otra = urllib.parse.urljoin(url, real.group(1))
+        paginas.append((otra, bajar(otra)))
+    return paginas
 
 
 def seguir(publicacion, anio, pasos):
-    p = portada(publicacion, anio)
-    if not p:
+    candidatas = portada(publicacion, anio)
+    if not candidatas:
         return None
-    url, pagina = p
     for texto in pasos:
-        siguiente = enlace(url, pagina, texto)
+        siguiente = next((e for u, p in candidatas if (e := enlace(u, p, texto))), None)
         if not siguiente:
-            sys.exit(f"ERROR: {publicacion} {anio}: no encuentro el enlace «{texto}» en {url}")
-        url, pagina = siguiente, bajar(siguiente)
-    return pagina
+            sys.exit(f"ERROR: {publicacion} {anio}: no encuentro el enlace «{texto}» en {[u for u, _ in candidatas]}")
+        candidatas = [(siguiente, bajar(siguiente))]
+    return candidatas[0][1]
 
 
 def filas(pagina):
