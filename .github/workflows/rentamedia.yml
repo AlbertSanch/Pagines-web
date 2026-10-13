@@ -1,0 +1,45 @@
+# Descarga los datos de renta del INE (Atlas de Distribución de Renta de los Hogares) y los guarda
+# procesados en rentamedia/data/. El INE publica el atlas una vez al año, en otoño.
+# Si la descarga falla o el formato del INE cambia, el workflow falla y no guarda nada.
+name: Datos de renta (INE)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/trusting-bell-woc5fv]
+    paths:
+      - rentamedia/scripts/**
+      - .github/workflows/rentamedia.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rentamedia
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Descargar tablas del INE
+        run: python rentamedia/scripts/descargar_ine.py
+
+      - name: Procesar datos
+        run: python rentamedia/scripts/procesar_ine.py
+
+      - name: Guardar los datos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add rentamedia/data
+          git commit -m "rentamedia: datos del INE actualizados" || echo "Sin cambios"
+          git pull --rebase
+          git push
