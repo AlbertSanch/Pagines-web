@@ -87,6 +87,8 @@ def main():
                     cm, nm = codigo_nombre(fila["Municipios"])
                     cd, nd = codigo_nombre(fila.get("Distritos"))
                     cs, _ = codigo_nombre(fila.get("Secciones"))
+                    if not cm or len(cm) != 5:
+                        continue  # alguna fila del INE trae una sección en la columna de municipio
                     if cs:
                         if tema not in SOLO_SECCIONES or indicador not in SOLO_SECCIONES[tema]:
                             continue
