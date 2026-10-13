@@ -175,3 +175,12 @@ details p { margin: 8px 0 2px; }
 details.anual { border: 1px solid var(--linea); background: var(--hoja); padding: 10px 14px; margin: 10px 0; }
 details.anual summary { color: var(--verde-2); }
 @media (max-width: 480px) { table.codigos th:nth-child(4), table.codigos td:nth-child(4) { display: none; } }
+
+/* Mapas coloreados */
+.mapa { margin: 12px 0 8px; background: var(--hoja); border: 1px solid var(--linea); padding: 10px; }
+.mapa svg { width: 100%; height: auto; display: block; }
+.mapa svg a path:hover, .mapa svg path:hover { stroke: var(--tinta); stroke-width: 1.5; }
+.mapa figcaption { font-size: .82rem; color: var(--gris); padding-top: 8px; }
+.leyenda { list-style: none; padding: 0; margin: 0 0 6px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.leyenda li { display: inline-flex; align-items: center; gap: 6px; }
+.leyenda i { width: 14px; height: 14px; display: inline-block; border: 1px solid var(--linea); }

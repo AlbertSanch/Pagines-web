@@ -345,12 +345,98 @@ def barras_fuentes(valores, referencia, nombre_ref):
     return f'<ul class="barras fuentes">{"".join(filas)}</ul>' if filas else ""
 
 
+# ---------------------------------------------------------------- mapas
+
+COLORES_MAPA = ["#f3e7c9", "#dcd39b", "#9cc3a4", "#4f9677", "#0e4d3a"]
+SIN_DATO = "#e6e1d6"
+GEO = {}  # contornos del INE (data/geo_*.json); vacío si no hay
+
+
+def simplificar(puntos, tol):
+    """Douglas-Peucker sobre una lista de (x, y), sin recursión (los contornos de costa son muy largos)."""
+    n_p = len(puntos)
+    if n_p < 3:
+        return puntos
+    conservar = [False] * n_p
+    conservar[0] = conservar[-1] = True
+    pila = [(0, n_p - 1)]
+    while pila:
+        a, b = pila.pop()
+        (x1, y1), (x2, y2) = puntos[a], puntos[b]
+        dx, dy = x2 - x1, y2 - y1
+        largo = (dx * dx + dy * dy) ** 0.5
+        peor, indice = -1.0, a
+        for i in range(a + 1, b):
+            x, y = puntos[i]
+            d = (abs(dy * x - dx * y + x2 * y1 - y2 * x1) / largo) if largo else ((x - x1) ** 2 + (y - y1) ** 2) ** 0.5
+            if d > peor:
+                peor, indice = d, i
+        if peor > tol:
+            conservar[indice] = True
+            pila += [(a, indice), (indice, b)]
+    return [p for p, k in zip(puntos, conservar) if k]
+
+
+def clases(valores):
+    """Cortes por quintiles para colorear el mapa."""
+    v = sorted(x for x in valores if x)
+    if not v:
+        return []
+    return [v[min(len(v) - 1, int(len(v) * k / 5))] for k in range(1, 5)]
+
+
+def color(valor, cortes):
+    if not valor:
+        return SIN_DATO
+    return COLORES_MAPA[sum(valor >= c for c in cortes)]
+
+
+def mapa_svg(formas, etiqueta, ancho=640):
+    """formas: [(anillos, valor, título, enlace o None)], anillos como listas planas x, y en metros (UTM).
+    Dibuja un mapa coloreado por quintiles con su leyenda. Las formas se simplifican a la resolución de la pantalla."""
+    xs = [r[i] for a, *_ in formas for r in a for i in range(0, len(r), 2)]
+    ys = [r[i] for a, *_ in formas for r in a for i in range(1, len(r), 2)]
+    if not xs:
+        return ""
+    x0, x1, y0, y1 = min(xs), max(xs), min(ys), max(ys)
+    escala = ancho / max(x1 - x0, 1)
+    alto = max(1, round((y1 - y0) * escala))
+    if alto > ancho * 1.4:  # territorios muy alargados: limitar la altura
+        escala = ancho * 1.4 / max(y1 - y0, 1)
+        alto = round((y1 - y0) * escala)
+    cortes = clases([v for _, v, *_ in formas])
+    partes = []
+    for anillos, valor, titulo, enlace in formas:
+        d = []
+        for r in anillos:
+            pts = [((r[i] - x0) * escala, (y1 - r[i + 1]) * escala) for i in range(0, len(r) - 1, 2)]
+            pts = simplificar(pts, 0.6)
+            if len(pts) < 3:
+                continue
+            d.append("M" + " ".join(f"{x:.0f},{y:.0f}" for x, y in pts) + "Z")
+        if not d:
+            continue
+        forma = f'<path d="{"".join(d)}" fill="{color(valor, cortes)}"><title>{escape(titulo)}</title></path>'
+        partes.append(f'<a href="{enlace}">{forma}</a>' if enlace else forma)
+    limites = [0] + cortes
+    leyenda = "".join(f'<li><i style="background:{c}"></i>{"menos de " + euros(cortes[0]) if k == 0 else ("más de " + euros(limites[k]) if k == 4 else euros(limites[k]) + " – " + euros(cortes[k]))}</li>'
+                      for k, c in enumerate(COLORES_MAPA[:len(cortes) + 1]))
+    if any(not v for _, v, *_ in formas):
+        leyenda += f'<li><i style="background:{SIN_DATO}"></i>sin dato publicado</li>'
+    return (f'<figure class="mapa"><svg viewBox="0 0 {ancho} {alto}" role="img" aria-label="{escape(etiqueta)}" stroke="#faf8f3" stroke-width="0.6">{"".join(partes)}</svg>'
+            f'<figcaption><ul class="leyenda">{leyenda}</ul>{escape(etiqueta)}.</figcaption></figure>')
+
+
 # ---------------------------------------------------------------- datos
 
 HACIENDA = {}  # datos de Hacienda (data/hacienda.json); vacío si no hay
 
 
 def cargar():
+    for nombre in ("geo_municipios", "geo_secciones"):
+        ruta = DATOS / f"{nombre}.json"
+        if ruta.exists():
+            GEO[nombre] = json.loads(ruta.read_text(encoding="utf-8"))
     ruta_h = DATOS / "hacienda.json"
     if ruta_h.exists():
         HACIENDA.update(json.loads(ruta_h.read_text(encoding="utf-8")))
@@ -604,6 +690,17 @@ def pagina_municipio(m, T, por_prov, total_es, anios, t):
                           f'<p><a href="{ruta_barrios(m)}">Ver los {len(cps)} barrios de {escape(nombre)} →</a></p>')
     S = T["sec_renta"]
     secciones = [v for c, fila in S.datos.items() if c.startswith(m["cod"]) and (v := fila[S.ind[PERSONA]][-1])]
+    geo_sec = GEO.get("geo_secciones", {}).get(m["cod"])
+    if geo_sec and len(secciones) >= 4:
+        formas = []
+        for cs, anillos in geo_sec.items():
+            fila = S.datos.get(cs)
+            v = fila[S.ind[PERSONA]][-1] if fila else None
+            formas.append((anillos, v, f"Sección {cs[5:7]}-{cs[7:]}: " + (euros(v) if v else "sin dato"), None))
+        cuerpo.append(f"<h2>Mapa de la renta en {escape(nombre)}</h2>"
+                      "<p>Cada zona es una sección censal del INE, coloreada según su renta neta media por persona. "
+                      "Pasa el dedo o el ratón por encima para ver la cifra.</p>"
+                      + mapa_svg(formas, f"Renta neta media por persona en las secciones censales de {nombre}, {ultimo}"))
     if len(secciones) >= 4:
         cuerpo.append(f"<h2>Diferencias dentro de {escape(nombre)}</h2>"
                       f"<p>El INE también publica la renta de cada sección censal, zonas de unos 1.000 a 2.500 habitantes. "
@@ -667,7 +764,19 @@ def pagina_municipio(m, T, por_prov, total_es, anios, t):
 
 # ---------------------------------------------------------------- rankings
 
-def paginas_ranking(con_dato, por_prov, T, anios):
+def mapa_provincia(p, por_prov, municipios_prov):
+    geo = GEO.get("geo_municipios", {})
+    formas = [(geo[m["cod"]], m["renta"], f'{m["nombre"]}: ' + (euros(m["renta"]) if m["renta"] else "sin dato"), ruta_mun(m))
+              for m in municipios_prov.get(p, []) if m["cod"] in geo]
+    if len(formas) < 3:
+        return ""
+    nombre = PROVINCIAS[p][1]
+    return (f"<h2>Mapa de la renta en la provincia de {escape(nombre)}</h2>"
+            "<p>Cada pueblo, coloreado según su renta neta media por persona. Toca uno para ver sus datos.</p>"
+            + mapa_svg(formas, f"Renta neta media por persona en los municipios de {nombre}"))
+
+
+def paginas_ranking(con_dato, por_prov, T, anios, todos_municipios=()):
     ultimo = anios[-1]
     grandes = [m for m in con_dato if (m["poblacion"] or 0) >= MIN_HAB_RANKING]
     for i, m in enumerate(grandes):
@@ -744,6 +853,9 @@ def paginas_ranking(con_dato, por_prov, T, anios):
 
     # Provincias
     filas_prov = []
+    municipios_prov = {}
+    for m in todos_municipios:
+        municipios_prov.setdefault(m["prov"], []).append(m)
     for p, (ine, nombre, ccaa) in sorted(PROVINCIAS.items(), key=lambda x: -(agregado(T, clave_prov(x[0]))[-1] or 0)):
         v = agregado(T, clave_prov(p))[-1]
         lista = por_prov.get(p, [])
@@ -754,6 +866,7 @@ def paginas_ranking(con_dato, por_prov, T, anios):
 <div class="respuesta"><p class="etiqueta">Renta neta media por persona · provincia de {escape(nombre)} · {ultimo}</p><p class="cifra">{euros(v)} <small>al año</small></p>
 {indicador(v, es)}<p class="sub">Media de España: {euros(es)}.</p></div>
 {grafico_evolucion(anios, agregado(T, clave_prov(p)), f"Renta neta media por persona en la provincia de {nombre}", agregado(T, "es"))}
+{mapa_provincia(p, por_prov, municipios_prov)}
 <h2>Todos los pueblos de {escape(nombre)}, de más a menos renta</h2>
 {tabla_ranking(lista, puesto="puesto_prov", con_prov=False)}
 <p class="fuente">Fuente: INE, Atlas de Distribución de Renta de los Hogares, {ultimo}. Los municipios sin cifra publicada (secreto estadístico) no aparecen.</p>"""
@@ -1069,7 +1182,7 @@ def main():
         if (PLANTILLA / f).exists():
             shutil.copy(PLANTILLA / f, WEB / f)
 
-    rutas, grandes = paginas_ranking(con_dato, por_prov, T, anios)
+    rutas, grandes = paginas_ranking(con_dato, por_prov, T, anios, list(municipios.values()))
     for m in municipios.values():
         guardar(ruta_mun(m), pagina_municipio(m, T, por_prov, len(con_dato), anios, t))
     rutas += paginas_barrios(municipios, t, T, anios)
