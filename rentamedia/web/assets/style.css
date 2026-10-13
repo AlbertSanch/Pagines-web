@@ -170,3 +170,8 @@ details p { margin: 8px 0 2px; }
 .site-footer a { color: #e6eee9; }
 .site-footer strong { font-family: var(--serif); color: #fff; }
 .site-footer .links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 10px 0; }
+
+/* Tabla año a año, plegada */
+details.anual { border: 1px solid var(--linea); background: var(--hoja); padding: 10px 14px; margin: 10px 0; }
+details.anual summary { color: var(--verde-2); }
+@media (max-width: 480px) { table.codigos th:nth-child(4), table.codigos td:nth-child(4) { display: none; } }
