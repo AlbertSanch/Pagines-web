@@ -1,0 +1,41 @@
+URL: https://sede.agenciatributaria.gob.es/Sede/datosabiertos/catalogo/hacienda/Estadistica_de_los_declarantes_del_IRPF_por_municipios.shtml
+
+ENLACES:
+#
+#acc-main
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2013/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2014/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2015/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2016/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2017/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2018/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2019/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2020/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2021/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2022/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2023/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2024/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios_ccaa/2013/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios_ccaa/2014/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios_ccaa/2015/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios_ccaa/2016/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios_ccaa/2017/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios_ccaa/2018/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios_ccaa/2019/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios_ccaa/2020/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios_ccaa/2021/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios_ccaa/2022/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios_ccaa/2023/home.html
+/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios_ccaa/2024/home.html
+/Sede/estadisticas/estadisticas-impuesto/estadistica-declarantes-irpf-municipios/metodologia.html
+/Sede/inicio.html
+/static_files/Sede/Tema/Estadisticas/Estadisticas_impuesto/Irpf_patrimonio/Irpfmunicipios/Documentacion/Infografia.pdf
+/static_files/Sede/Tema/Estadisticas/Estadisticas_impuesto/Irpf_patrimonio/Irpfmunicipios/Documentacion/Nota_nueva RBy_RD_municipal.pdf
+/static_files/Sede/Tema/Estadisticas/Estadisticas_impuesto/Irpf_patrimonio/Irpfmunicipios/Documentacion/Nota_presentacion_IRPFM_2013.pdf
+/static_files/common/css/aeat.07.css
+/static_files/common/css/aeat.07.print.css
+/static_files/common/script/aeat.07.js
+https://sede.agenciatributaria.gob.es/Sede/condiciones-uso-sede-electronica/accesibilidad/declaracion-accesibilidad.html
+
+TEXTO:
+ : Estadística de los declarantes del IRPF por municipios Saltar al contenido principal Logotipo del Gobierno de España Logotipo Organismo Menú móvil Menu Inicio Estadísticas Estadísticas por impuesto Estadística de los declarantes del IRPF por municipios Se presenta la Estad&iacute;stica de los declarantes de IRPF por municipios (EDM) que ofrece una perspectiva integral (tanto rentas sujetas al impuesto como exentas) de la renta personal bruta (antes de reducciones, m&iacute;nimos y gastos deducibles) de las personas declarantes; as&iacute; como una estimaci&oacute;n de la renta disponible , descontando a la renta bruta la cuota l&iacute;quida resultante del impuesto y las cotizaciones sociales y derechos pasivos a cargo de la persona&nbsp;trabajadora consignados en su declaraci&oacute;n. Las fuentes informativas utilizadas en la EDM son el modelo 100 de declaraci&oacute;n anual del IRPF y el resumen anual 190 de retenciones e ingresos a cuenta para las rentas exentas. La estad&iacute;stica desglosa los distintos componentes de la renta personal bruta (trabajo, capital mobiliario, capital inmobiliario, rentas de actividades econ&oacute;micas, otras rentas, ganancias patrimoniales netas y rentas exentas) y tambi&eacute;n presenta los importes de las principales partidas agrupadas de las partidas de la declaraci&oacute;n, tanto a nivel nacional y Comunidad Aut&oacute;noma como (y esta es la novedad) por provincia o municipio de m&aacute;s de 1.000 habitantes. Adem&aacute;s, permite obtener resultados agrupando todos los municipios de territorio fiscal com&uacute;n, de una Comunidad Aut&oacute;noma o de una provincia seg&uacute;n el tama&ntilde;o de su poblaci&oacute;n (a partir de los datos oficiales del Padr&oacute;n de Poblaci&oacute;n del Instituto Nacional de Estad&iacute;stica). Hay que destacar que la informaci&oacute;n declarada en el IRPF se refiere a la totalidad de rentas percibidas en el a&ntilde;o de devengo por todos los miembros que integran una unidad familiar. Por tanto, no puede interpretarse la renta media por declaraci&oacute;n ni como renta individual ni como renta por hogar o familia en sentido estricto, ya que depender&aacute; de la modalidad de declaraci&oacute;n (individual o conjunta) escogida. No obstante, la estad&iacute;stica incorpora como informaci&oacute;n adicional el n&uacute;mero total de titulares declarantes (uno en individual y conjunta monoparental, dos en conjunta de casados) para aproximar el total de personas adultas contribuyentes del impuesto. Pr&oacute;xima publicaci&oacute;n: septiembre de 2027 (Datos de 2025) Última publicación Estadística del año 2024 Datos estadísticos base del año 2024 Documentación Metodología Infografia (265 KB - pdf ) Nota de presentación (85 KB - pdf ) Nota explicativa: Renta Bruta y Renta Disponible (29 KB - pdf ) Publicaciones anteriores Estadística del año 2023 Datos estadísticos base del año 2023 Estadística del año 2022 Datos estadísticos base del año 2022 Estadística del año 2021 Datos estadísticos base del año 2021 Estadística del año 2020 Datos estadísticos base del año 2020 Estadística del año 2019 Datos estadísticos base del año 2019 Estadística del año 2018 Datos estadísticos base del año 2018 Estadística del año 2017 Datos estadísticos base del año 2017 Estadística del año 2016 Datos estadísticos base del año 2016 Estadística del año 2015 Datos estadísticos base del año 2015 Estadística del año 2014 Datos estadísticos base del año 2014 Estadística del año 2013 Datos estadísticos base del año 2013 Accesibilidad Página actualizada: 01/octubre/2026 

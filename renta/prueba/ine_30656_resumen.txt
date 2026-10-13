@@ -1,0 +1,24 @@
+Tabla 30656: 27810 filas
+Columnas: Municipios | Distritos | Secciones | Indicadores de renta media y mediana | Periodo | Total
+
+[Municipios] 87 valores, ejemplos: 02001 Abengibre | 02002 Alatoz | 02003 Albacete | 02004 Albatana | 02005 Alborea | 02006 Alcadozo | 02007 Alcalá del Júcar | 02008 Alcaraz | 02009 Almansa | 02010 Alpera | 02011 Ayna | 02012 Balazote | 02013 Balsa de Ves | 02014 Ballestero, El | 02015 Barrax
+
+[Distritos] 125 valores, ejemplos:  | 0200101 Abengibre distrito 01 | 0200201 Alatoz distrito 01 | 0200301 Albacete distrito 01 | 0200302 Albacete distrito 02 | 0200303 Albacete distrito 03 | 0200304 Albacete distrito 04 | 0200305 Albacete distrito 05 | 0200306 Albacete distrito 06 | 0200307 Albacete distrito 07 | 0200308 Albacete distrito 08 | 0200401 Albatana distrito 01 | 0200501 Alborea distrito 01 | 0200601 Alcadozo distrito 01 | 0200701 Alcalá del Júcar distrito 01
+
+[Secciones] 305 valores, ejemplos:  | 0200101001 Abengibre sección 01001 | 0200201001 Alatoz sección 01001 | 0200301001 Albacete sección 01001 | 0200301002 Albacete sección 01002 | 0200301003 Albacete sección 01003 | 0200301004 Albacete sección 01004 | 0200301005 Albacete sección 01005 | 0200301006 Albacete sección 01006 | 0200301007 Albacete sección 01007 | 0200301008 Albacete sección 01008 | 0200301009 Albacete sección 01009 | 0200301010 Albacete sección 01010 | 0200301011 Albacete sección 01011 | 0200301012 Albacete sección 01012
+
+[Indicadores de renta media y mediana] 6 valores: Media de la renta por unidad de consumo | Mediana de la renta por unidad de consumo | Renta bruta media por hogar | Renta bruta media por persona | Renta neta media por hogar | Renta neta media por persona
+
+[Periodo] 9 valores: 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023
+
+[Total] 12046 valores, ejemplos:  | . | 10.000 | 10.001 | 10.002 | 10.003 | 10.004 | 10.005 | 10.008 | 10.009 | 10.014 | 10.015 | 10.016 | 10.017 | 10.019
+
+Longitud de los códigos en [Municipios]: {5: 27810}
+
+Longitud de los códigos en [Distritos]: {7: 23112}
+
+Longitud de los códigos en [Secciones]: {10: 16416}
+
+Longitud de los códigos en [Periodo]: {4: 27810}
+
+Longitud de los códigos en [Total]: {2: 23413, 1: 3605}

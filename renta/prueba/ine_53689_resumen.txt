@@ -1,0 +1,20 @@
+Tabla 53689: 4428 filas
+Columnas: Total Nacional | Comunidades y Ciudades Autónomas | Provincias | Islas | Indicadores de renta media | Periodo | Total
+
+[Total Nacional] 1 valores: Total Nacional
+
+[Comunidades y Ciudades Autónomas] 20 valores:  | Andalucía | Aragón | Asturias, Principado de | Balears, Illes | Canarias | Cantabria | Castilla - La Mancha | Castilla y León | Cataluña | Ceuta | Comunitat Valenciana | Extremadura | Galicia | Madrid, Comunidad de | Melilla | Murcia, Región de | Navarra, Comunidad Foral de | País Vasco | Rioja, La
+
+[Provincias] 53 valores, ejemplos:  | Albacete | Alicante/Alacant | Almería | Araba/Álava | Asturias | Badajoz | Balears, Illes | Barcelona | Bizkaia | Burgos | Cantabria | Castellón/Castelló | Ceuta | Ciudad Real
+
+[Islas] 11 valores:  | Fuerteventura | Gomera, La | Gran Canaria | Hierro, El | Ibiza y Formentera | Lanzarote | Mallorca | Menorca | Palma, La | Tenerife
+
+[Indicadores de renta media] 6 valores: Media de la renta por unidad de consumo | Mediana de la renta por unidad de consumo | Renta bruta media por hogar | Renta bruta media por persona | Renta neta media por hogar | Renta neta media por persona
+
+[Periodo] 9 valores: 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023
+
+[Total] 3018 valores, ejemplos:  | .. | 10.001 | 10.009 | 10.014 | 10.020 | 10.047 | 10.055 | 10.058 | 10.083 | 10.088 | 10.102 | 10.103 | 10.112 | 10.113
+
+Longitud de los códigos en [Periodo]: {4: 4428}
+
+Longitud de los códigos en [Total]: {2: 4127, 1: 127}
