@@ -40,13 +40,26 @@ def codigo_nombre(texto):
     return (m.group(1), m.group(2).strip()) if m else (None, (texto or "").strip())
 
 
+CABECERAS_VISTAS = set()
+
+
 def leer(ruta):
+    """Devuelve las filas con las claves normalizadas: «Periodo» para el año y «Total» para el valor."""
     with open(ruta, encoding="utf-8-sig", newline="") as f:
         filas = csv.reader(f, delimiter=";")
-        cab = next(filas)
+        cab = [c.strip().strip('"') for c in next(filas)]
+        if tuple(cab) not in CABECERAS_VISTAS:
+            CABECERAS_VISTAS.add(tuple(cab))
+            print(f"Cabecera de {ruta.name}: {cab}")
+        periodo = next((c for c in cab if c.lower().startswith("periodo")), None)
+        if periodo is None or cab[-1] != "Total":
+            print(f"AVISO: {ruta.name} no tiene columna de periodo o de total; se ignora")
+            return
         for fila in filas:
             if len(fila) == len(cab):
-                yield dict(zip(cab, fila))
+                d = dict(zip(cab, fila))
+                d["Periodo"] = d.pop(periodo) if periodo != "Periodo" else d["Periodo"]
+                yield d
 
 
 def main():
@@ -64,7 +77,10 @@ def main():
             for fila in leer(ruta):
                 otras = [c for c in fila if c not in COLS_TERRITORIO and c not in ("Periodo", "Total")]
                 indicador = " | ".join(fila[c].strip() for c in otras if fila[c].strip())
-                anio = int(fila["Periodo"])
+                try:
+                    anio = int(fila["Periodo"][:4])
+                except ValueError:
+                    continue
                 anios.add(anio)
                 v = valor(fila["Total"])
                 if "Municipios" in fila:
