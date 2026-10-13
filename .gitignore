@@ -2,3 +2,5 @@ __pycache__/
 .claude/settings.local.json
 cuantossellaman/datos-ine/
 rentamedia/datos-ine/
+# Web de rentamedia generada en local: todavía no se publica (la generará el workflow)
+rentamedia/web/
