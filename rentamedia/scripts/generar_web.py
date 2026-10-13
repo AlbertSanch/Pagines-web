@@ -31,7 +31,7 @@ WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://rentamedia.es"
 SITIO = "Renta Media"
-VERSION = "1"
+VERSION = "2"
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que Ahorrómetro y ¿Cuántos se llaman?
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
                            "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"]
@@ -154,6 +154,18 @@ def pct(x, d=1):
     return f"{dec(x, d)} %"
 
 
+def indicador(valor, referencia, texto_ref="la media de España"):
+    """Etiqueta de color: ▲ por encima / ▼ por debajo de la referencia."""
+    if not valor or not referencia:
+        return ""
+    d = (valor - referencia) / referencia * 100
+    if abs(d) < 1:
+        return f'<span class="indicador igual">≈ En {texto_ref}</span>'
+    if d > 0:
+        return f'<span class="indicador arriba">▲ {dec(d)} % sobre {texto_ref}</span>'
+    return f'<span class="indicador abajo">▼ {dec(-d)} % bajo {texto_ref}</span>'
+
+
 def variacion(a, b):
     """Texto con la variación en % de a hasta b, con color."""
     if not a or b is None:
@@ -202,7 +214,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <meta name="description" content="{escape(descripcion)}">
 <link rel="canonical" href="{url}">
 {'' if indexable else '<meta name="robots" content="noindex">'}
-<meta name="theme-color" content="#0f766e">
+<meta name="theme-color" content="#0e4d3a">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{SITIO}">
 <meta property="og:locale" content="es_ES">
@@ -295,10 +307,10 @@ def grafico_evolucion(anios, valores, etiqueta):
         x = i * paso + (paso - barra) / 2
         y = alto - margen_inf - h
         ultimo = i == len(puntos) - 1
-        color = "#0f766e" if ultimo else "#9fd3cd"
+        color = "#0e4d3a" if ultimo else "#c9dcd1"
         partes.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{barra:.1f}" height="{h:.1f}" rx="4" fill="{color}"><title>{a}: {euros(v)}</title></rect>'
-                      f'<text x="{x + barra / 2:.1f}" y="{y - 6:.1f}" text-anchor="middle" font-size="13" font-weight="{700 if ultimo else 500}" fill="#17211f">{dec(v / 1000)}k</text>'
-                      f'<text x="{x + barra / 2:.1f}" y="{alto - 8}" text-anchor="middle" font-size="13" fill="#56635f">{a}</text>')
+                      f'<text x="{x + barra / 2:.1f}" y="{y - 6:.1f}" text-anchor="middle" font-size="13" font-weight="{700 if ultimo else 500}" fill="#10231d">{dec(v / 1000)}k</text>'
+                      f'<text x="{x + barra / 2:.1f}" y="{alto - 8}" text-anchor="middle" font-size="13" fill="#5b6660">{a}</text>')
     return (f'<figure class="grafico"><svg viewBox="0 0 {ancho} {alto}" role="img" aria-label="{escape(etiqueta)}">{"".join(partes)}</svg>'
             f'<figcaption>{escape(etiqueta)}, en miles de euros al año.</figcaption></figure>')
 
@@ -394,6 +406,7 @@ def nombre_distrito(cod_dis):
 # ---------------------------------------------------------------- página de municipio
 
 def tabla_ranking(lista, actual=None, puesto="puesto_es", con_prov=True, desde=1):
+    maximo = max((m["renta"] for m in lista if m["renta"]), default=1)
     filas = []
     for i, m in enumerate(lista):
         p = m.get(puesto) or (desde + i)
@@ -402,7 +415,7 @@ def tabla_ranking(lista, actual=None, puesto="puesto_es", con_prov=True, desde=1
         clase = ' class="actual"' if actual is m else ""
         filas.append(f'<tr{clase}><td>{p}</td>'
                      f'<td><a href="{ruta_mun(m)}">{escape(m["nombre"])}</a>{prov}</td>'
-                     f'<td class="num">{euros(m["renta"])}</td>{hab}</tr>')
+                     f'<td class="num">{euros(m["renta"])}<span class="mini"><i style="width:{m["renta"] / maximo * 100:.0f}%"></i></span></td>{hab}</tr>')
     return ('<div class="table-wrap"><table class="data ranking"><thead><tr><th>#</th><th>Municipio</th>'
             '<th class="num">Renta por persona</th><th class="num">Habitantes</th></tr></thead>'
             f'<tbody>{"".join(filas)}</tbody></table></div>')
@@ -423,9 +436,10 @@ def pagina_municipio(m, T, por_prov, total_es, anios, t):
         dif_es = (m["renta"] - es) / es * 100
         comp = (f"un {dec(abs(dif_es))} % {'más' if dif_es >= 0 else 'menos'} que la media de España ({euros(es)})")
         cuerpo.append(f"""<div class="respuesta">
-<p>En {escape(nombre)} ({escape(prov_nombre)}) la renta neta media por persona es de</p>
-<p class="cifra">{euros(m['renta'])} al año</p>
-<p class="sub">Datos de {ultimo} del INE. Es {comp}.</p>
+<p class="etiqueta">Renta neta media por persona · {ultimo}</p>
+<p class="cifra">{euros(m['renta'])} <small>al año</small></p>
+{indicador(m['renta'], es)}
+<p class="sub">Es lo que ingresa de media cada vecino de {escape(nombre)} ({escape(prov_nombre)}), después de impuestos. Media de España: {euros(es)}.</p>
 </div>""")
         stats = [f'<div class="stat"><b class="grande">{euros(m["hogar"])}</b><span>renta neta media por hogar</span></div>' if m["hogar"] else "",
                  f'<div class="stat"><b class="grande">{n(m["puesto_es"])}.º</b><span>de {n(total_es)} municipios de España</span></div>',
@@ -585,7 +599,7 @@ def paginas_ranking(con_dato, por_prov, T, anios):
     top = ricos[0]
     cuerpo = f"""<h1>Los municipios más ricos de España</h1>
 <p class="lead">Ranking de los {len(ricos)} municipios de más de {n(MIN_HAB_RANKING)} habitantes con la renta neta media por persona más alta en {ultimo}, según el INE. La media de España es de {euros(es)}.</p>
-<div class="respuesta"><p>El municipio más rico de España es</p><p class="cifra">{escape(top['nombre'])}</p>
+<div class="respuesta"><p class="etiqueta">El municipio más rico de España · {ultimo}</p><p class="nombre">{escape(top['nombre'])}</p>
 <p class="sub">{escape(PROVINCIAS[top['prov']][1])}: {euros(top['renta'])} por persona al año, {dec(top['renta'] / es)} veces la media de España.</p></div>
 {bloque_compartir(f"Los municipios más ricos de España: {top['nombre']} encabeza el ranking con {euros(top['renta'])} por persona.", "/municipios-mas-ricos-de-espana/")}
 {tabla_ranking(ricos, puesto="puesto_grandes")}
@@ -611,7 +625,7 @@ def paginas_ranking(con_dato, por_prov, T, anios):
     ult = pobres[0]
     cuerpo = f"""<h1>Los municipios más pobres de España</h1>
 <p class="lead">Los {len(pobres)} municipios de más de {n(MIN_HAB_RANKING)} habitantes con la renta neta media por persona más baja en {ultimo}, según el INE. La media de España es de {euros(es)}.</p>
-<div class="respuesta"><p>El municipio con menos renta de España es</p><p class="cifra">{escape(ult['nombre'])}</p>
+<div class="respuesta"><p class="etiqueta">El municipio con menos renta de España · {ultimo}</p><p class="nombre">{escape(ult['nombre'])}</p>
 <p class="sub">{escape(PROVINCIAS[ult['prov']][1])}: {euros(ult['renta'])} por persona al año.</p></div>
 {tabla_ranking(pobres, puesto="puesto_pobres")}
 <p class="fuente">Fuente: INE, Atlas de Distribución de Renta de los Hogares, {ultimo}. Municipios con al menos {n(MIN_HAB_RANKING)} habitantes.</p>"""
@@ -630,8 +644,8 @@ def paginas_ranking(con_dato, por_prov, T, anios):
             continue
         filas_prov.append((p, nombre, v))
         cuerpo = f"""<h1>Renta media en la provincia de {escape(nombre)}</h1>
-<div class="respuesta"><p>La renta neta media por persona en la provincia de {escape(nombre)} es de</p><p class="cifra">{euros(v)} al año</p>
-<p class="sub">Datos de {ultimo} del INE. Media de España: {euros(es)}.</p></div>
+<div class="respuesta"><p class="etiqueta">Renta neta media por persona · provincia de {escape(nombre)} · {ultimo}</p><p class="cifra">{euros(v)} <small>al año</small></p>
+{indicador(v, es)}<p class="sub">Media de España: {euros(es)}.</p></div>
 {grafico_evolucion(anios, agregado(T, clave_prov(p)), f"Renta neta media por persona en la provincia de {nombre}")}
 <h2>Todos los municipios de {escape(nombre)}, de más a menos renta</h2>
 {tabla_ranking(lista, puesto="puesto_prov", con_prov=False)}
@@ -652,8 +666,8 @@ def paginas_ranking(con_dato, por_prov, T, anios):
             m["_p"] = i + 1
         enlaces = "".join(f'<li><a href="{ruta_prov(p)}">{escape(PROVINCIAS[p][1])}</a> <small>{euros(agregado(T, clave_prov(p))[-1])}</small></li>' for p in provs)
         cuerpo = f"""<h1>Renta media en {escape(nombre)}</h1>
-<div class="respuesta"><p>La renta neta media por persona en {escape(nombre)} es de</p><p class="cifra">{euros(v)} al año</p>
-<p class="sub">Datos de {ultimo} del INE. Media de España: {euros(es)}.</p></div>
+<div class="respuesta"><p class="etiqueta">Renta neta media por persona · {escape(nombre)} · {ultimo}</p><p class="cifra">{euros(v)} <small>al año</small></p>
+{indicador(v, es)}<p class="sub">Media de España: {euros(es)}.</p></div>
 {grafico_evolucion(anios, agregado(T, "ccaa:" + ine), f"Renta neta media por persona en {nombre}")}
 {f'<h2>Provincias</h2><ul class="chips">{enlaces}</ul>' if len(provs) > 1 else ''}
 <h2>Los municipios más ricos de {escape(nombre)}</h2>
@@ -699,7 +713,7 @@ def paginas_barrios(municipios, t, T, anios):
         ruta = f"/barrios-mas-ricos-de-{nombre_url}/"
         cuerpo = f"""<h1>Los barrios más ricos de {escape(m['nombre'])}</h1>
 <p class="lead">Renta neta media por persona en cada distrito de {escape(m['nombre'])} en {ultimo}, según el INE. La media de la ciudad es de {euros(m['renta'])}.</p>
-<div class="respuesta"><p>El distrito más rico de {escape(m['nombre'])} es</p><p class="cifra">{escape(nombre_distrito(top[0]))}</p>
+<div class="respuesta"><p class="etiqueta">El distrito más rico de {escape(m['nombre'])} · {ultimo}</p><p class="nombre">{escape(nombre_distrito(top[0]))}</p>
 <p class="sub">{euros(top[1])} por persona al año: {dec(top[1] / ult[1])} veces más que {escape(nombre_distrito(ult[0]))} ({euros(ult[1])}), el que menos.</p></div>
 {bloque_compartir(f"El barrio más rico de {m['nombre']} es {nombre_distrito(top[0])}: {euros(top[1])} por persona al año.", ruta)}
 <div class="table-wrap"><table class="data ranking"><thead><tr><th>#</th><th>Distrito</th><th class="num">Por persona</th><th class="num">Por hogar</th><th class="num">Desde {anios[0]}</th></tr></thead><tbody>{tabla}</tbody></table></div>
