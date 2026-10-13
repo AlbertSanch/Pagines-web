@@ -1,7 +1,7 @@
 """Descarga de la Agencia Tributaria la renta por municipio y por código postal y la guarda en rentamedia/data/.
 
 Hacienda no publica ficheros: publica páginas web con tablas («jrubik»), cuyas direcciones cambian cada año.
-Este script entra por la portada de cada publicación y sigue los enlaces por su título:
+Este script entra por la portada de cada publicación y sigue los enlaces por las palabras de su título:
   - Estadística de los declarantes del IRPF por municipios → Detalle municipios con más de 1.000 hab.
     → Posicionamiento → «Posicionamiento de los municipios mayores de 1.000 habitantes por Renta bruta media»
     (una tabla con todos los municipios: habitantes, declaraciones, renta bruta y disponible, media y mediana).
@@ -19,6 +19,7 @@ import sys
 import time
 import urllib.error
 import urllib.parse
+import unicodedata
 import urllib.request
 from datetime import date
 from pathlib import Path
@@ -45,11 +46,21 @@ def bajar(url):
     sys.exit(f"ERROR: no se ha podido descargar {url}")
 
 
-def enlace(url_pagina, pagina, texto):
-    """URL absoluta del enlace cuyo texto empieza por `texto` (sin distinguir mayúsculas)."""
-    for href, t in re.findall(r'<a\b[^>]*href="([^"#]+)"[^>]*>(.*?)</a>', pagina, re.S):
-        if re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", t))).strip().lower().startswith(texto.lower()):
-            return urllib.parse.urljoin(url_pagina, href)
+def normal(t):
+    t = unicodedata.normalize("NFD", html.unescape(re.sub(r"<[^>]+>", " ", t)).lower())
+    return " ".join(re.sub(r"[^a-z0-9]+", " ", "".join(c for c in t if unicodedata.category(c) != "Mn")).split())
+
+
+def enlaces(url_pagina, pagina):
+    return [(urllib.parse.urljoin(url_pagina, href), normal(t))
+            for href, t in re.findall(r'<a\b[^>]*href="([^"#]+)"[^>]*>(.*?)</a>', pagina, re.S)]
+
+
+def enlace(url_pagina, pagina, palabras):
+    """URL del primer enlace cuyo texto contiene todas las palabras (sin tildes ni mayúsculas)."""
+    for url, texto in enlaces(url_pagina, pagina):
+        if all(p in texto.split() for p in palabras):
+            return url
     return None
 
 
@@ -75,7 +86,8 @@ def seguir(publicacion, anio, pasos):
     for texto in pasos:
         siguiente = next((e for u, p in candidatas if (e := enlace(u, p, texto))), None)
         if not siguiente:
-            sys.exit(f"ERROR: {publicacion} {anio}: no encuentro el enlace «{texto}» en {[u for u, _ in candidatas]}")
+            vistos = [t for u, p in candidatas for _, t in enlaces(u, p) if t]
+            sys.exit(f"ERROR: {publicacion} {anio}: no encuentro el enlace {texto} en {[u for u, _ in candidatas]}.\nEnlaces: {vistos}")
         candidatas = [(siguiente, bajar(siguiente))]
     return candidatas[0][1]
 
@@ -100,9 +112,7 @@ def numero(t):
 
 
 def municipios(anio):
-    pagina = seguir("irpfmunicipios", anio, ["Detalle municipios con más de 1.000",
-                                             "Posicionamiento municipios con más de 1.000",
-                                             "Posicionamiento de los municipios mayores de 1.000 habitantes por Renta bruta media"])
+    pagina = seguir("irpfmunicipios", anio, [["detalle", "municipios"], ["posicionamiento"], ["posicionamiento", "situacion"]])
     if pagina is None:
         return None
     cab, datos = None, {}
@@ -125,7 +135,7 @@ def municipios(anio):
 
 
 def codigos_postales(anio):
-    pagina = seguir("irpfCodPostal", anio, ["Renta bruta y Renta disponible inframunicipal"])
+    pagina = seguir("irpfCodPostal", anio, [["inframunicipal"]])
     if pagina is None:
         return None
     ciudades, actual = {}, None
