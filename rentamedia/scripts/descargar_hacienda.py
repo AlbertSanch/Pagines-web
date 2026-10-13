@@ -121,13 +121,14 @@ def municipios(anio):
             cab = [x.upper() for x in c]
             continue
         m = re.match(r"^(.*)-(\d{5})$", c[0])
-        if not m or len(c) != len(cab):
+        es_total = c[0].strip().lower() == "total" and "es" not in datos
+        if (not m and not es_total) or len(c) != len(cab):
             continue
         fila = dict(zip(cab, c))
 
         def v(nombre):
             return numero(next((fila[k] for k in fila if k.startswith(nombre)), None))
-        datos[m.group(2)] = {"nombre": m.group(1).strip(), "habitantes": v("NUMERO HABITANTES"), "declaraciones": v("NUMERO DECLARACIONES"),
+        datos["es" if es_total else m.group(2)] = {"nombre": "España" if es_total else m.group(1).strip(), "habitantes": v("NUMERO HABITANTES"), "declaraciones": v("NUMERO DECLARACIONES"),
                              "bruta_media": v("RENTA BRUTA MEDIA"), "bruta_mediana": v("RENTA BRUTA MEDIANA"),
                              "disponible_media": v("RENTA DISPONIBLE MEDIA"), "disponible_mediana": v("RENTA DISPONIBLE MEDIANA"),
                              "puesto": v("POSICIONAMIENTO RENTA BRUTA MEDIA NIVEL NACIONAL")}
@@ -166,7 +167,7 @@ def ultimo_anio(publicacion):
 def main():
     am = ultimo_anio("irpfmunicipios")
     mun, mun_ant = municipios(am), municipios(am - 1) or {}
-    if not mun or len(mun) < MIN_MUNICIPIOS:
+    if not mun or len(mun) < MIN_MUNICIPIOS or "es" not in mun:
         sys.exit(f"ERROR: solo {len(mun or {})} municipios de Hacienda en {am}")
     acp = ultimo_anio("irpfCodPostal")
     cp, cp_ant = codigos_postales(acp), codigos_postales(acp - 1) or {}
@@ -179,7 +180,8 @@ def main():
         ant = cp_ant.get(cod, {}).get("codigos", {})
         for c, d in ciudad["codigos"].items():
             d["bruta_media_ant"] = (ant.get(c) or {}).get("bruta_media")
-    SALIDA.write_text(json.dumps({"anio_municipios": am, "anio_codigos": acp, "municipios": mun, "ciudades": cp},
+    espana = mun.pop("es")
+    SALIDA.write_text(json.dumps({"anio_municipios": am, "espana": espana, "anio_codigos": acp, "municipios": mun, "ciudades": cp},
                                  ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8")
     print(f"Hacienda: {len(mun)} municipios ({am}), {len(cp)} ciudades y {n_cp} códigos postales ({acp}).")
 
