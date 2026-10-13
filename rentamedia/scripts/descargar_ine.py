@@ -15,6 +15,7 @@ import json
 import sys
 import time
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 OPERACION = 353
@@ -25,6 +26,7 @@ TEMAS = {
     "demografia": "Indicadores demográficos",
 }
 MINIMO_TABLAS = 52  # una por provincia (más Ceuta y Melilla) y la nacional
+EN_PARALELO = 6  # descargas a la vez: cada tabla tarda bastante en generarse en el INE
 SALIDA = Path(__file__).resolve().parent.parent / "datos-ine"
 CABECERAS = {"User-Agent": "Mozilla/5.0 (rentamedia.es; datos abiertos del INE)"}
 
@@ -43,19 +45,26 @@ def bajar(url):
 def main():
     SALIDA.mkdir(exist_ok=True)
     tablas = json.loads(bajar(f"https://servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/{OPERACION}"))
-    indice = {}
+    indice, trabajos = {}, []
     for tema, nombre in TEMAS.items():
         ids = sorted(t["Id"] for t in tablas if t["Nombre"].strip() == nombre)
         if len(ids) < MINIMO_TABLAS:
             sys.exit(f"ERROR: solo hay {len(ids)} tablas de «{nombre}» (¿ha cambiado el INE la publicación?)")
-        for i in ids:
-            destino = SALIDA / f"{tema}_{i}.csv"
-            datos = bajar(f"https://www.ine.es/jaxiT3/files/t/es/csv_bdsc/{i}.csv")
-            if datos[:200].lower().lstrip().startswith((b"<!doc", b"<html")) or b";" not in datos[:500]:
-                sys.exit(f"ERROR: la tabla {i} no es un CSV")
-            destino.write_bytes(datos)
-            print(f"OK {destino.name} ({len(datos) // 1024} KB)")
         indice[tema] = ids
+        trabajos += [(tema, i) for i in ids]
+
+    def una(trabajo):
+        tema, i = trabajo
+        destino = SALIDA / f"{tema}_{i}.csv"
+        inicio = time.time()
+        datos = bajar(f"https://www.ine.es/jaxiT3/files/t/es/csv_bdsc/{i}.csv")
+        if datos[:200].lower().lstrip().startswith((b"<!doc", b"<html")) or b";" not in datos[:500]:
+            sys.exit(f"ERROR: la tabla {i} no es un CSV")
+        destino.write_bytes(datos)
+        print(f"OK {destino.name} ({len(datos) // 1024} KB, {time.time() - inicio:.0f} s)", flush=True)
+
+    with ThreadPoolExecutor(EN_PARALELO) as ejecutor:
+        list(ejecutor.map(una, trabajos))
     (SALIDA / "tablas.json").write_text(json.dumps(indice), encoding="utf-8")
 
 
