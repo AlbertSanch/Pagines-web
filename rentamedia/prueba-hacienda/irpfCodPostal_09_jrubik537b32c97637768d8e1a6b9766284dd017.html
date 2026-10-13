@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Estadística de los declarantes del IRPF de los mayores municipios por código postal: 2024:
+Renta bruta y Renta disponible municipal por tramos de Base imponible
+Municipio: Total
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="date" content="10/9/26 10:40" />
+<meta name="format-detection" content="telephone=no"/>
+<link rel="stylesheet" href="Temas/comun/css/estudios_internet.css" />
+<link rel="stylesheet" media="print" href="Temas/comun/css/print/estudios_internet_print.css" />
+<link rel="stylesheet" media="screen" href="Temas/comun/css/chord/chord.css" />
+<link rel="stylesheet" media="screen" href="Temas/irpf/css/hoja.css" />
+<link rel="stylesheet" media="screen" href="Temas/irpf/css/tabla.css" />
+<link rel="stylesheet" media="print" href="Temas/irpf/css/print.css" />
+<script src="Temas/js/varios/tabla.js" type="text/javascript"></script>
+<script type="text/javascript" src="./Temas/js/d3/d3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./Temas/js/d3/jrubik_d3.js" charset="utf-8"></script>
+<script src="Temas/js/estudios.js" type="text/javascript"></script>
+<script type="text/javascript" src="./Temas/js/chartjs/chart.umd.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./Temas/js/chartjs/barCharts.js" charset="utf-8"></script>
+<script src="Temas/js/varios/responsive-imageFreechart.js" type="text/javascript"></script>
+<link rel="stylesheet" media="screen" href="Temas/comun/css/menu/menubarLinks.css" />
+<script src="Temas/js/menu/MenubarLinks.js" type="text/javascript"></script>
+<script src="Temas/js/menu/MenubarItemLinks.js" type="text/javascript"></script>
+<script src="Temas/js/menu/PopupMenuLinks.js" type="text/javascript"></script>
+<script src="Temas/js/menu/PopupMenuItemLinks.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="cuerpo">
+<div class="cab">
+<div class="lat_izquierda">
+<a title="Ir a la página de inicio de la Agencia Tributaria" href="/" style="text-decoration:none; border:0">
+<img src="Temas/comun/img/escudo_gobierno.gif" width="117" height="43" alt="Logo del Gobierno de España" />
+<img src="Temas/comun/img/logomenw.gif" height="43" alt="Logo de la Agencia Tributaria" />
+</a>
+</div>
+<div id="cabecera_derecha">
+<a href="home1461e561ec8432c9c3f92c02aca7c67dcbb638ee.html" title="Página principal"><img width="16" height="16" src="Temas/comun/img/toolbar2/icoHome.png" alt="Página principal" class="border_none"/></a>
+<a href="javascript:void(0);" onclick ="CopyVisibleRows();" title="Copiar tablas en el portapapeles"><img id="copyTables"  width="16" height="16" src="Temas/comun/img/toolbar2/icoCopy.png" alt="Copiar tablas en el portapapeles" class="border_none"/></a>
+<a href="docs_mapa5422244ec73decab819efa34ca6aeaf711c18421.html" title="Metodología"><img width="16" height="16" src="Temas/comun/img/toolbar2/icoMetod.png" class="border_none" alt="Metodología"/></a>
+<a href="mapaf6aac2adebcd6357f8f69a1e4d60db492bb37cf6e.html" title="Mapa web"><img width="16" height="16" src="Temas/comun/img/toolbar2/icoMap.png" class="border_none" alt="Mapa de la estadística"/></a>
+<a href="metadatos.html" title="Metadatos de la estadística"><img width="16" height="16" src="Temas/comun/img/toolbar2/icoMetadata.png" class="border_none" alt="Metadatos de la estadística"/></a>
+<a href="javascript:print()" title="Imprimir hoja"><img width="16" height="16" src="Temas/comun/img/toolbar2/icoPrint.png" alt="Imprimir hoja" class="border_none"/></a>
+</div>
+</div>
+<!-- CABECERA -->
+<div class='cabecera'>
+<div id="cabecera_izquierda">
+</div>
+</div>
+<!-- SUBCABECERA -->
+<!--
+<div class="subcabecera">
+</div>
+-->
+<nav class="subcabecera" aria-label="Camino de hormigas">
+<ul id="menubar0" role="menubar" aria-label="Camino de hormigas"><li role="none"><a role="menuitem" aria-haspopup="false" aria-expanded="false" tabindex="0" class="header_item" href="home1461e561ec8432c9c3f92c02aca7c67dcbb638ee.html" title="Ir a home">2024</a></li><li role="none"><a role="menuitem" tabindex="-1" class="header_item" href="#">Estadística de los declarantes del IRPF de los mayores municipios por código postal</a><ul class="m_scroll" role="menu"><li role="none"><a role="menuitem" tabindex="-1" href="jrubik3704b8a6c6ff2bca7707ad6b556cc8f8594ebce3.html">Representatividad</a></li><li role="none"><a role="menuitem" tabindex="-1" href="jrubikf48e4a88f800d8b9e3b3d89d0ed5ad926844a7727.html">Comparativa mayores municipios respecto total nacional</a></li><li role="none"><a role="menuitem" tabindex="-1" href="jrubik240167108bc1f4c2ae7d67122ed45b2639a50d7b.html">RB y RD inframunicipal</a></li><li role="none"><a role="menuitem" tabindex="-1" href="jrubik2316ec38d49d646b8ec4d9864ad498474e6bf30f.html">Composición RB</a></li><li role="none"><a role="menuitem" tabindex="-1" href="jrubik537b32c97637768d8e1a6b9766284dd0179d155f.html">RB y RD por tramos de Base imponible </a></li><li role="none"><a role="menuitem" tabindex="-1" href="jrubik77cde81c8b1a0a90301ca7d12a473a8c340f65ed.html">Datos económicos y tributarios</a></li><li role="none"><a role="menuitem" tabindex="-1" href="jrubikf6999a0253ecba683ef2ef070aa4537f509512709.html">Situación familiar</a></li><li role="none"><a role="menuitem" tabindex="-1" href="jrubik136538cea999f8203ace95d86aab1259140b7bbf.html">Tramos de base imponible y ámbito territorial </a></li><li role="none"><a role="menuitem" tabindex="-1" href="jrubikf4f548f53ce61f391620583e2ecbb94f0a134360d.html">Visualizar RBM</a></li><li role="none"><a role="menuitem" tabindex="-1" href="jrubik46c11bbdfc2f301061036d029f3d21b4579ff00a.html">Visualizar % participación Rentas Trabajo en RB</a></li></ul></li><li role="none">RB y RD por tramos de Base imponible </li></ul>
+</nav>
+<script type="text/javascript">
+var menubar = new Menubar(document.getElementById('menubar0'));
+menubar.init();
+</script>
+<div class="jrubikweb_subtitulo" id="titulo_noprint"><h1 class="titulo">
+Renta bruta y Renta disponible municipal por tramos de Base imponible</h1>
+<h2 class="titulo">
+Municipio: Total
+</h2>
+</div>
+<div class="jrubikweb_subtitulo" id="titulo_print">
+<div class="oculto">
+<p>Renta bruta y Renta disponible municipal por tramos de Base imponible</p>
+<p class="ancestor_2">
+Municipio: Total
+</p>
+<p class="ancestor_2">
+Código Postal: Total
+</p>
+Ejercicio 2024
+</div>
+</div>
+<div id="horizontal-menu">
+<nav aria-label="Filtros" class="nav">
+<ul id="menubar1" role="menubar" aria-label="Filtros">
+<li role="none">
+<a aria-expanded="false" aria-haspopup="true" href="#" role="menuitem">Municipio</a>
+<ul aria-label="Municipio" class="m_scroll" role="menu">
+<li role="none">
+<a href="jrubikf6feca264b14140c473816cf0563c6bb91b8f0b32.html" role="menuitem">Almería-04013</a>
+</li>
+<li role="none">
+<a href="jrubikf4a3f674b2bf2de8082ae49ba2ac76783eafc4a55.html" role="menuitem">Roquetas de Mar-04079</a>
+</li>
+<li role="none">
+<a href="jrubikf5da833d012457924086a94db7634f7d77ee5e0b0.html" role="menuitem">Algeciras-11004</a>
+</li>
+<li role="none">
+<a href="jrubik37095ac922f261646aee6d323351752ceb300eb3.html" role="menuitem">Cádiz-11012</a>
+</li>
+<li role="none">
+<a href="jrubik516120306bef2119450d6408051a0c2f05fd97bb.html" role="menuitem">Jerez de la Frontera-11020</a>
+</li>
+<li role="none">
+<a href="jrubikf653152a21e4be87aab84abea8cbe25559f45bd1e.html" role="menuitem">Córdoba-14021</a>
+</li>
+<li role="none">
+<a href="jrubikf5c7bdcb17f3f6f69701350348eef14d0337e9f51.html" role="menuitem">Granada-18087</a>
+</li>
+<li role="none">
+<a href="jrubikf564ae0defc67dd07f6b84bf8f7ff14b12b2d29ea.html" role="menuitem">Huelva-21041</a>
+</li>
+<li role="none">
+<a href="jrubikf61c13af6e521bf59666254920b5b76fb9a7417dd.html" role="menuitem">Jaén-23050</a>
+</li>
+<li role="none">
+<a href="jrubik7860a177a3b8cb36863164f33332de302e17ae06.html" role="menuitem">Málaga-29067</a>
+</li>
+<li role="none">
+<a href="jrubikf4c6b9b498d459b7e0185a754e6f0f5e572ba2ace.html" role="menuitem">Marbella-29069</a>
+</li>
+<li role="none">
+<a href="jrubikf6c107604db034e3268aceec4b73b3cf0addf36f1.html" role="menuitem">Dos Hermanas-41038</a>
+</li>
+<li role="none">
+<a href="jrubikf71f04d5d8095ee130672c125678f3f19c670ec17.html" role="menuitem">Sevilla-41091</a>
+</li>
+<li role="none">
+<a href="jrubikf1bf3fc4da3b73c89b21153a28d2684e5a0bb9557.html" role="menuitem">Zaragoza-50297</a>
+</li>
+<li role="none">
+<a href="jrubikf338b524dcb95718df80d203c12a501150b9b369c.html" role="menuitem">Gijón-33024</a>
+</li>
+<li role="none">
+<a href="jrubik81d52b9499791fa88bad494b7f08d1a4c193227.html" role="menuitem">Oviedo-33044</a>
+</li>
+<li role="none">
+<a href="jrubik3f5e84b51b22872b89d46f08885d863867918aa0.html" role="menuitem">Palma de Mallorca-07040</a>
+</li>
+<li role="none">
+<a href="jrubik78b43962ee5775a2f4cdeda32b48d0575558ee4e.html" role="menuitem">Palmas de Gran Canaria Las-35016</a>
+</li>
+<li role="none">
+<a href="jrubik6ea2da467f4e619c4d74199dcee67d022b89e1e6.html" role="menuitem">Telde-35026</a>
+</li>
+<li role="none">
+<a href="jrubik2a1d90efa23dfee38432869f7d117de637fb7bfd.html" role="menuitem">San Cristóbal de la Laguna-38023</a>
+</li>
+<li role="none">
+<a href="jrubikf28097778fda0fb9238c07149a57513e786a63b47.html" role="menuitem">Santa Cruz de Tenerife-38038</a>
+</li>
+<li role="none">
+<a href="jrubikf499d51f290c8a60da3d4d3cca1991e2d6711712e.html" role="menuitem">Santander-39075</a>
+</li>
+<li role="none">
+<a href="jrubik40e78fe95a356cc04853411040c028885e39766f.html" role="menuitem">Burgos-09059</a>
+</li>
+<li role="none">
+<a href="jrubik5f373fec4c48fc976bc1dc86a589e8bc9fd814c3.html" role="menuitem">León-24089</a>
+</li>
+<li role="none">
+<a href="jrubikf19e73e251f52ff48b24d989ee057f398aab87629.html" role="menuitem">Salamanca-37274</a>
+</li>
+<li role="none">
+<a href="jrubikf2c61a2972b20941966d2d0cb9079638eaeb5c1df.html" role="menuitem">Valladolid-47186</a>
+</li>
+<li role="none">
+<a href="jrubik34b7eb3fa460fa281ce4a75233564b9d514eb8f9.html" role="menuitem">Albacete-02003</a>
+</li>
+<li role="none">
+<a href="jrubikf772eabc9aec146b94b27d9c48bf201bdd4a6e20d.html" role="menuitem">Badalona-08015</a>
+</li>
+<li role="none">
+<a href="jrubikf54739ef69b577eb41d4cb66cd1caaed511d3df35.html" role="menuitem">Barcelona-08019</a>
+</li>
+<li role="none">
+<a href="jrubikf3292de5812bf6228048fb288023e131250155e45.html" role="menuitem">Hospitalet de Llobregat-08101</a>
+</li>
+<li role="none">
+<a href="jrubik3bb911699c56a3f53a28005a0375670dcf667e6d.html" role="menuitem">Mataró-08121</a>
+</li>
+<li role="none">
+<a href="jrubikf73d90e8a8816946ad1a2e6e29b63c4b1e7272c9.html" role="menuitem">Sabadell-08187</a>
+</li>
+<li role="none">
+<a href="jrubikf5d87f71047451e83c93b7a02e464fbd24bae15c9.html" role="menuitem">Sant Cugat del Vall&egrave;s-08205</a>
+</li>
+<li role="none">
+<a href="jrubikf2aa47e4f43e6211d5ccef74fd424841036212e17.html" role="menuitem">Santa Coloma de Gramenet-08245</a>
+</li>
+<li role="none">
+<a href="jrubikf5b462bd5cf7b75965ae921467bf7917070730c4d.html" role="menuitem">Terrassa-08279</a>
+</li>
+<li role="none">
+<a href="jrubik3598652c41a084cd4b015eaf004f3441a8eb2015.html" role="menuitem">Girona-17079</a>
+</li>
+<li role="none">
+<a href="jrubikf438615a352b404383b1eec3e458fedabb40c1c31.html" role="menuitem">Lleida-25120</a>
+</li>
+<li role="none">
+<a href="jrubik3a54e1207840ab35b46c899a847aa462906049c8.html" role="menuitem">Reus-43123</a>
+</li>
+<li role="none">
+<a href="jrubikf7fb4d4392793df0aad78d989659a95daaf1723c1.html" role="menuitem">Tarragona-43148</a>
+</li>
+<li role="none">
+<a href="jrubikf661eea34ed901994a5c74e1d7ef518808f2c2321.html" role="menuitem">Alicante/Alacant-03014</a>
+</li>
+<li role="none">
+<a href="jrubik204a2d21463ac581a9baca901289a7b33da4c1ce.html" role="menuitem">Elche/Elx-03065</a>
+</li>
+<li role="none">
+<a href="jrubikf34cd7b3e1bb841592e10c0b1b3521b58d25ac726.html" role="menuitem">Castellón de la Plana/Castelló de la Plana-12040</a>
+</li>
+<li role="none">
+<a href="jrubika2a9f1596fa4b6d78bbe29272412e8da0ef47cb.html" role="menuitem">Valencia-46250</a>
+</li>
+<li role="none">
+<a href="jrubikf41e97d191fc98481b425e013c16cda3351ceb380.html" role="menuitem">Badajoz-06015</a>
+</li>
+<li role="none">
+<a href="jrubikf5ab55598a625d98aa4463c735941438a4e9c06c0.html" role="menuitem">Coruña A-15030</a>
+</li>
+<li role="none">
+<a href="jrubik1149a45406fba398bb06485b9ca4e2724f8d2007.html" role="menuitem">Santiago de Compostela-15078</a>
+</li>
+<li role="none">
+<a href="jrubikf26cc9f2f5a9db7a294c0ccbca755e46371df4079.html" role="menuitem">Lugo-27028</a>
+</li>
+<li role="none">
+<a href="jrubikf33885d960e45a3eb6c268472d2c07e3427a0d4fa.html" role="menuitem">Ourense-32054</a>
+</li>
+<li role="none">
+<a href="jrubikf284087568cf4c9e6648f61321126be2d8eb71d12.html" role="menuitem">Vigo-36057</a>
+</li>
+<li role="none">
+<a href="jrubik564adc8fb2193efaf9ac739949b54d238a6ec781.html" role="menuitem">Alcalá de Henares-28005</a>
+</li>
+<li role="none">
+<a href="jrubik52004dbe1fcdaceb5045510b81e244e5b6156e1f.html" role="menuitem">Alcobendas-28006</a>
+</li>
+<li role="none">
+<a href="jrubik653dbf48371d7752fc111f142805215ad6893a64.html" role="menuitem">Alcorcón-28007</a>
+</li>
+<li role="none">
+<a href="jrubikf2ef224fb399fbf07c40671e86fe494fd6fb7f4ee.html" role="menuitem">Boadilla del Monte-28022</a>
+</li>
+<li role="none">
+<a href="jrubik2c81e5441d4e0e44b8b46982985a917a6493367c.html" role="menuitem">Fuenlabrada-28058</a>
+</li>
+<li role="none">
+<a href="jrubik7f1558574668f981be8034e94781e6ed51e53707.html" role="menuitem">Getafe-28065</a>
+</li>
+<li role="none">
+<a href="jrubikf5ca4ca9a6e3e11a81e04ebd16dfd75cb911b63fe.html" role="menuitem">Leganés-28074</a>
+</li>
+<li role="none">
+<a href="jrubik5d745e1e8554b1f74e7fed4c282f596159ddf013.html" role="menuitem">Madrid-28079</a>
+</li>
+<li role="none">
+<a href="jrubik3b5ba092371dcce2d0faacbbdc31f998e1ac0b30.html" role="menuitem">Majadahonda-28080</a>
+</li>
+<li role="none">
+<a href="jrubikf575d8096dfe4ed04c6a0ecb89ddb9df9fae1610d.html" role="menuitem">Móstoles-28092</a>
+</li>
+<li role="none">
+<a href="jrubikf69c81d28ee681244f905c3e929dd6ab29f50c4a8.html" role="menuitem">Parla-28106</a>
+</li>
+<li role="none">
+<a href="jrubik7fe29ed7b51bb0e5034769d870510f8148ecf18d.html" role="menuitem">Pozuelo de Alarcón-28115</a>
+</li>
+<li role="none">
+<a href="jrubik73d3bf6c20e5e231c10f9764736c047413fa26a9.html" role="menuitem">Rivas-Vaciamadrid-28123</a>
+</li>
+<li role="none">
+<a href="jrubikf64bd58cf72d23319d6d974b49eb69af1048f4a7c.html" role="menuitem">Las Rozas-28127</a>
+</li>
+<li role="none">
+<a href="jrubik65cf4c631faab62d032005b51fcb9612f6bcf75a.html" role="menuitem">San Sebastián de los Reyes-28134</a>
+</li>
+<li role="none">
+<a href="jrubik6e4ed8f11f1d081f7cd692a99448dcc9627f36c1.html" role="menuitem">Torrejón de Ardoz-28148</a>
+</li>
+<li role="none">
+<a href="jrubikf23e1caffc4caff9a1292b99cb0be7142914f8005.html" role="menuitem">Cartagena-30016</a>
+</li>
+<li role="none">
+<a href="jrubik794d29185c4ea9f9da2481e920f37d5033df30b7.html" role="menuitem">Murcia-30030</a>
+</li>
+<li role="none">
+<a href="jrubikf237e222e4d89e8374c3b1e75031b9eadd44a709b.html" role="menuitem">Logroño-26089</a>
+</li>
+</ul>
+</li>
+<li role="none">
+<a aria-expanded="false" aria-haspopup="true" href="#" role="menuitem">Código Postal</a>
+<ul aria-label="Código Postal" class="m_scroll" role="menu">
+<li role="none">
+<a href="jrubik2dffcc754cf3a86d56b7c30c0d00833f33d2bb25.html" role="menuitem">Total</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<script type="text/javascript">
+var menubar = new Menubar(document.getElementById('menubar1'));
+menubar.init();
+</script>
+</div>
+<div id="tabla" class="contenido_cuadro contenido_cuadro_tabla">
+<table id="table01"><thead><tr>
+<th class="heading-heading" colspan="1" id="table01_cornerR0C0" rowspan="1" style="text-align:left;"><a href="javascript:void(0);" onclick="showHideTableRecursive();return false;"><img alt="se expande la fila" height="13" id="imgID" src="Temas/comun/img/table/expand.gif" width="13"/></a> </th>
+<th class="heading-heading" id="table01_c1">Total</th>
+<th class="heading-heading" id="table01_c2">(0 - 6.010,12]</th>
+<th class="heading-heading" id="table01_c3">(6.010,12 - 12.020,24]</th>
+<th class="heading-heading" id="table01_c4">(12.020,24 - 21.035,42]</th>
+<th class="heading-heading" id="table01_c5">(21.035,42 - 30.050,61]</th>
+<th class="heading-heading" id="table01_c6">(30.050,61 - 60.101,21]</th>
+<th class="heading-heading" id="table01_c7">Mayor de 60.101,21</th>
+</tr></thead><tr class="depth_0" id="table01_tr_1"><th class="row-heading-even" colspan="1" id="table01_f1" rowspan="1">NÚMERO DE DECLARACIONES</th><td class="cell-even" headers="table01_c1 table01_f1 " >10.754.059</td><td class="cell-even" headers="table01_c2 table01_f1 " >2.425.772</td><td class="cell-even" headers="table01_c3 table01_f1 " >835.340</td><td class="cell-even" headers="table01_c4 table01_f1 " >1.602.159</td><td class="cell-even" headers="table01_c5 table01_f1 " >2.017.582</td><td class="cell-even" headers="table01_c6 table01_f1 " >2.932.364</td><td class="cell-even" headers="table01_c7 table01_f1 " >940.842</td></tr><tr class="depth_0" id="table01_tr_2"><th class="row-heading-odd" colspan="1" id="table01_f2" rowspan="1">NÚMERO DE TITULARES</th><td class="cell-odd" headers="table01_c1 table01_f2 " >11.642.516</td><td class="cell-odd" headers="table01_c2 table01_f2 " >2.544.414</td><td class="cell-odd" headers="table01_c3 table01_f2 " >899.193</td><td class="cell-odd" headers="table01_c4 table01_f2 " >1.747.859</td><td class="cell-odd" headers="table01_c5 table01_f2 " >2.215.395</td><td class="cell-odd" headers="table01_c6 table01_f2 " >3.220.529</td><td class="cell-odd" headers="table01_c7 table01_f2 " >1.015.126</td></tr><tr class="depth_0" id="table01_tr_3"><th class="row-heading-even" colspan="1" id="table01_f3" rowspan="1">RENTAS DEL TRABAJO</th><td class="cell-even" headers="table01_c1 table01_f3 " >312.336.595.388</td><td class="cell-even" headers="table01_c2 table01_f3 " >19.875.444.902</td><td class="cell-even" headers="table01_c3 table01_f3 " >11.428.459.875</td><td class="cell-even" headers="table01_c4 table01_f3 " >29.879.822.781</td><td class="cell-even" headers="table01_c5 table01_f3 " >53.091.648.100</td><td class="cell-even" headers="table01_c6 table01_f3 " >118.486.041.814</td><td class="cell-even" headers="table01_c7 table01_f3 " >79.575.177.915</td></tr><tr class="depth_0" id="table01_tr_4"><th class="row-heading-odd" colspan="1" id="table01_f4" rowspan="1">RENTAS DEL CAPITAL MOBILIARIO</th><td class="cell-odd" headers="table01_c1 table01_f4 " >19.192.663.279</td><td class="cell-odd" headers="table01_c2 table01_f4 " >292.655.330</td><td class="cell-odd" headers="table01_c3 table01_f4 " >267.589.820</td><td class="cell-odd" headers="table01_c4 table01_f4 " >446.293.015</td><td class="cell-odd" headers="table01_c5 table01_f4 " >724.789.312</td><td class="cell-odd" headers="table01_c6 table01_f4 " >2.856.054.874</td><td class="cell-odd" headers="table01_c7 table01_f4 " >14.605.280.927</td></tr><tr class="depth_0" id="table01_tr_5"><th class="row-heading-even" colspan="1" id="table01_f5" rowspan="1">RENTAS DE BIENES INMUEBLES NO AFECTOS A ACTIV. ECONÓMICAS</th><td class="cell-even" headers="table01_c1 table01_f5 " >18.181.663.259</td><td class="cell-even" headers="table01_c2 table01_f5 " >880.067.433</td><td class="cell-even" headers="table01_c3 table01_f5 " >958.590.616</td><td class="cell-even" headers="table01_c4 table01_f5 " >1.733.263.932</td><td class="cell-even" headers="table01_c5 table01_f5 " >2.176.539.292</td><td class="cell-even" headers="table01_c6 table01_f5 " >6.016.161.399</td><td class="cell-even" headers="table01_c7 table01_f5 " >6.417.040.588</td></tr><tr class="depth_0" id="table01_tr_6"><th class="row-heading-odd" colspan="1" id="table01_f6" rowspan="1">RENTAS DE ACTIVIDADES ECONÓMICAS</th><td class="cell-odd" headers="table01_c1 table01_f6 " >26.458.813.215</td><td class="cell-odd" headers="table01_c2 table01_f6 " >540.239.206</td><td class="cell-odd" headers="table01_c3 table01_f6 " >934.329.549</td><td class="cell-odd" headers="table01_c4 table01_f6 " >2.171.293.178</td><td class="cell-odd" headers="table01_c5 table01_f6 " >2.096.817.742</td><td class="cell-odd" headers="table01_c6 table01_f6 " >5.409.890.275</td><td class="cell-odd" headers="table01_c7 table01_f6 " >15.306.243.264</td></tr><tr class="depth_0" id="table01_tr_7"><th class="row-heading-even" colspan="1" id="table01_f7" rowspan="1">OTRAS RENTAS</th><td class="cell-even" headers="table01_c1 table01_f7 " >435.322.071</td><td class="cell-even" headers="table01_c2 table01_f7 " >103.368.085</td><td class="cell-even" headers="table01_c3 table01_f7 " >54.505.442</td><td class="cell-even" headers="table01_c4 table01_f7 " >67.599.042</td><td class="cell-even" headers="table01_c5 table01_f7 " >73.023.660</td><td class="cell-even" headers="table01_c6 table01_f7 " >76.507.397</td><td class="cell-even" headers="table01_c7 table01_f7 " >60.318.446</td></tr><tr class="depth_0" id="table01_tr_8"><th class="row-heading-odd" colspan="1" id="table01_f8" rowspan="1">GANANCIAS PATRIMONIALES NETAS</th><td class="cell-odd" headers="table01_c1 table01_f8 " >19.068.609.963</td><td class="cell-odd" headers="table01_c2 table01_f8 " >139.562.565</td><td class="cell-odd" headers="table01_c3 table01_f8 " >172.259.512</td><td class="cell-odd" headers="table01_c4 table01_f8 " >346.837.376</td><td class="cell-odd" headers="table01_c5 table01_f8 " >553.707.474</td><td class="cell-odd" headers="table01_c6 table01_f8 " >2.363.277.099</td><td class="cell-odd" headers="table01_c7 table01_f8 " >15.492.965.938</td></tr><tr class="depth_0" id="table01_tr_9"><th class="row-heading-even" colspan="1" id="table01_f9" rowspan="1"><a href="javascript:void(0);" onclick="showHideTableLevel('table01_tr_9','imgtable01_tr_9');return false;"> <img alt="expande-contrae la tabla." class="border_none" height="13" id="imgtable01_tr_9" src="Temas/comun/img/table/collapse.gif" width="13"/></a> RENTAS EXENTAS</th><td class="cell-even" headers="table01_c1 table01_f9 " >14.850.222.923</td><td class="cell-even" headers="table01_c2 table01_f9 " >4.796.777.871</td><td class="cell-even" headers="table01_c3 table01_f9 " >993.502.147</td><td class="cell-even" headers="table01_c4 table01_f9 " >1.645.121.173</td><td class="cell-even" headers="table01_c5 table01_f9 " >1.924.668.411</td><td class="cell-even" headers="table01_c6 table01_f9 " >3.237.860.145</td><td class="cell-even" headers="table01_c7 table01_f9 " >2.252.293.177</td></tr><tr class="depth_1" id="table01_tr_9_1"><th class="row-heading-odd" colspan="1" id="table01_f10" rowspan="1"><div style="margin-left: 10px"><a href="javascript:void(0);" onclick="showHideTableLevel('table01_tr_9_1','imgtable01_tr_9_1');return false;"> <img alt="expande-contrae la tabla." class="border_none" height="13" id="imgtable01_tr_9_1" src="Temas/comun/img/table/collapse.gif" width="13"/></a>  Trabajo personal</div> </th><td class="cell-odd" headers="table01_c1 table01_f10 " >11.590.499.955</td><td class="cell-odd" headers="table01_c2 table01_f10 " >3.200.230.949</td><td class="cell-odd" headers="table01_c3 table01_f10 " >825.315.545</td><td class="cell-odd" headers="table01_c4 table01_f10 " >1.345.044.017</td><td class="cell-odd" headers="table01_c5 table01_f10 " >1.588.348.314</td><td class="cell-odd" headers="table01_c6 table01_f10 " >2.688.805.185</td><td class="cell-odd" headers="table01_c7 table01_f10 " >1.942.755.944</td></tr><tr class="depth_2" id="table01_tr_9_1_1"><th class="row-heading-even" colspan="1" id="table01_f11" rowspan="1"><div class="depth_2" style="margin-left: 20px"><img alt="" class="border_none" height="1" src="Temas/comun/img/table/vacio.gif" width="1"/>   Indemnizaciones por despido</div> </th><td class="cell-even" headers="table01_c1 table01_f11 " >2.586.708.975</td><td class="cell-even" headers="table01_c2 table01_f11 " >319.213.982</td><td class="cell-even" headers="table01_c3 table01_f11 " >174.080.830</td><td class="cell-even" headers="table01_c4 table01_f11 " >351.994.897</td><td class="cell-even" headers="table01_c5 table01_f11 " >396.144.792</td><td class="cell-even" headers="table01_c6 table01_f11 " >658.837.123</td><td class="cell-even" headers="table01_c7 table01_f11 " >686.437.351</td></tr><tr class="depth_2" id="table01_tr_9_1_2"><th class="row-heading-odd" colspan="1" id="table01_f12" rowspan="1"><div class="depth_2" style="margin-left: 20px"><img alt="" class="border_none" height="1" src="Temas/comun/img/table/vacio.gif" width="1"/>   Rentas del trabajo exentas</div> </th><td class="cell-odd" headers="table01_c1 table01_f12 " >7.696.833.053</td><td class="cell-odd" headers="table01_c2 table01_f12 " >2.303.373.907</td><td class="cell-odd" headers="table01_c3 table01_f12 " >535.870.432</td><td class="cell-odd" headers="table01_c4 table01_f12 " >813.063.643</td><td class="cell-odd" headers="table01_c5 table01_f12 " >1.009.104.625</td><td class="cell-odd" headers="table01_c6 table01_f12 " >1.825.280.905</td><td class="cell-odd" headers="table01_c7 table01_f12 " >1.210.139.541</td></tr><tr class="depth_2" id="table01_tr_9_1_3"><th class="row-heading-even" colspan="1" id="table01_f13" rowspan="1"><div class="depth_2" style="margin-left: 20px"><img alt="" class="border_none" height="1" src="Temas/comun/img/table/vacio.gif" width="1"/>   Otras prestaciones exentas</div> </th><td class="cell-even" headers="table01_c1 table01_f13 " >1.306.957.927</td><td class="cell-even" headers="table01_c2 table01_f13 " >577.643.060</td><td class="cell-even" headers="table01_c3 table01_f13 " >115.364.283</td><td class="cell-even" headers="table01_c4 table01_f13 " >179.985.477</td><td class="cell-even" headers="table01_c5 table01_f13 " >183.098.898</td><td class="cell-even" headers="table01_c6 table01_f13 " >204.687.157</td><td class="cell-even" headers="table01_c7 table01_f13 " >46.179.052</td></tr><tr class="depth_1" id="table01_tr_9_2"><th class="row-heading-odd" colspan="1" id="table01_f14" rowspan="1"><div class="depth_1" style="margin-left: 10px"><img alt="" class="border_none" height="1" src="Temas/comun/img/table/vacio.gif" width="1"/>  Rentas de inserción, recursos de subsistencia y mínimo vital</div> </th><td class="cell-odd" headers="table01_c1 table01_f14 " >1.273.596.726</td><td class="cell-odd" headers="table01_c2 table01_f14 " >1.170.539.586</td><td class="cell-odd" headers="table01_c3 table01_f14 " >34.793.859</td><td class="cell-odd" headers="table01_c4 table01_f14 " >39.738.007</td><td class="cell-odd" headers="table01_c5 table01_f14 " >19.855.859</td><td class="cell-odd" headers="table01_c6 table01_f14 " >7.464.313</td><td class="cell-odd" headers="table01_c7 table01_f14 " >1.205.102</td></tr><tr class="depth_1" id="table01_tr_9_3"><th class="row-heading-even" colspan="1" id="table01_f15" rowspan="1"><div class="depth_1" style="margin-left: 10px"><img alt="" class="border_none" height="1" src="Temas/comun/img/table/vacio.gif" width="1"/>  Otras rentas</div> </th><td class="cell-even" headers="table01_c1 table01_f15 " >705.265.548</td><td class="cell-even" headers="table01_c2 table01_f15 " >125.918.812</td><td class="cell-even" headers="table01_c3 table01_f15 " >31.247.541</td><td class="cell-even" headers="table01_c4 table01_f15 " >57.322.693</td><td class="cell-even" headers="table01_c5 table01_f15 " >91.713.966</td><td class="cell-even" headers="table01_c6 table01_f15 " >227.583.843</td><td class="cell-even" headers="table01_c7 table01_f15 " >171.478.693</td></tr><tr class="depth_1" id="table01_tr_9_4"><th class="row-heading-odd" colspan="1" id="table01_f16" rowspan="1"><div class="depth_1" style="margin-left: 10px"><img alt="" class="border_none" height="1" src="Temas/comun/img/table/vacio.gif" width="1"/>  Maternidad, familias numerosas, dependencia en IRPF</div> </th><td class="cell-odd" headers="table01_c1 table01_f16 " >1.280.860.694</td><td class="cell-odd" headers="table01_c2 table01_f16 " >300.088.524</td><td class="cell-odd" headers="table01_c3 table01_f16 " >102.145.203</td><td class="cell-odd" headers="table01_c4 table01_f16 " >203.016.455</td><td class="cell-odd" headers="table01_c5 table01_f16 " >224.750.271</td><td class="cell-odd" headers="table01_c6 table01_f16 " >314.006.803</td><td class="cell-odd" headers="table01_c7 table01_f16 " >136.853.438</td></tr><tr class="depth_0" id="table01_tr_10"><th class="row-heading-even" colspan="1" id="table01_f17" rowspan="1"><a href="javascript:void(0);" onclick="showHideTableLevel('table01_tr_10','imgtable01_tr_10');return false;"> <img alt="expande-contrae la tabla." class="border_none" height="13" id="imgtable01_tr_10" src="Temas/comun/img/table/collapse.gif" width="13"/></a> RENTA BRUTA</th><td class="cell-even" headers="table01_c1 table01_f17 " >410.523.890.096</td><td class="cell-even" headers="table01_c2 table01_f17 " >26.628.115.392</td><td class="cell-even" headers="table01_c3 table01_f17 " >14.809.236.960</td><td class="cell-even" headers="table01_c4 table01_f17 " >36.290.230.497</td><td class="cell-even" headers="table01_c5 table01_f17 " >60.641.193.990</td><td class="cell-even" headers="table01_c6 table01_f17 " >138.445.793.003</td><td class="cell-even" headers="table01_c7 table01_f17 " >133.709.320.255</td></tr><tr class="depth_1" id="table01_tr_10_1"><th class="row-heading-odd" colspan="1" id="table01_f18" rowspan="1"><div class="depth_1" style="margin-left: 10px"><img alt="" class="border_none" height="1" src="Temas/comun/img/table/vacio.gif" width="1"/>  Renta bruta sujeta</div> </th><td class="cell-odd" headers="table01_c1 table01_f18 " >395.673.667.174</td><td class="cell-odd" headers="table01_c2 table01_f18 " >21.831.337.521</td><td class="cell-odd" headers="table01_c3 table01_f18 " >13.815.734.814</td><td class="cell-odd" headers="table01_c4 table01_f18 " >34.645.109.324</td><td class="cell-odd" headers="table01_c5 table01_f18 " >58.716.525.579</td><td class="cell-odd" headers="table01_c6 table01_f18 " >135.207.932.858</td><td class="cell-odd" headers="table01_c7 table01_f18 " >131.457.027.078</td></tr><tr class="depth_1" id="table01_tr_10_2"><th class="row-heading-even" colspan="1" id="table01_f19" rowspan="1"><div class="depth_1" style="margin-left: 10px"><img alt="" class="border_none" height="1" src="Temas/comun/img/table/vacio.gif" width="1"/>  Renta bruta exenta</div> </th><td class="cell-even" headers="table01_c1 table01_f19 " >14.850.222.923</td><td class="cell-even" headers="table01_c2 table01_f19 " >4.796.777.871</td><td class="cell-even" headers="table01_c3 table01_f19 " >993.502.147</td><td class="cell-even" headers="table01_c4 table01_f19 " >1.645.121.173</td><td class="cell-even" headers="table01_c5 table01_f19 " >1.924.668.411</td><td class="cell-even" headers="table01_c6 table01_f19 " >3.237.860.145</td><td class="cell-even" headers="table01_c7 table01_f19 " >2.252.293.177</td></tr><tr class="depth_0" id="table01_tr_11"><th class="row-heading-odd" colspan="1" id="table01_f20" rowspan="1">COTIZACIONES SOCIALES DE LA SEGURIDAD SOCIAL</th><td class="cell-odd" headers="table01_c1 table01_f20 " >14.135.393.321</td><td class="cell-odd" headers="table01_c2 table01_f20 " >1.143.680.508</td><td class="cell-odd" headers="table01_c3 table01_f20 " >655.739.254</td><td class="cell-odd" headers="table01_c4 table01_f20 " >1.686.361.649</td><td class="cell-odd" headers="table01_c5 table01_f20 " >2.666.872.375</td><td class="cell-odd" headers="table01_c6 table01_f20 " >5.366.030.246</td><td class="cell-odd" headers="table01_c7 table01_f20 " >2.616.709.289</td></tr><tr class="depth_0" id="table01_tr_12"><th class="row-heading-even" colspan="1" id="table01_f21" rowspan="1">CUOTA RESULTANTE DE LA AUTOLIQUIDACIÓN (impuesto devengado)</th><td class="cell-even" headers="table01_c1 table01_f21 " >73.504.460.976</td><td class="cell-even" headers="table01_c2 table01_f21 " >1.241.996</td><td class="cell-even" headers="table01_c3 table01_f21 " >227.691.051</td><td class="cell-even" headers="table01_c4 table01_f21 " >2.762.027.086</td><td class="cell-even" headers="table01_c5 table01_f21 " >7.563.830.033</td><td class="cell-even" headers="table01_c6 table01_f21 " >25.190.349.703</td><td class="cell-even" headers="table01_c7 table01_f21 " >37.759.321.107</td></tr><tr class="depth_0" id="table01_tr_13"><th class="row-heading-odd" colspan="1" id="table01_f22" rowspan="1"><a href="javascript:void(0);" onclick="showHideTableLevel('table01_tr_13','imgtable01_tr_13');return false;"> <img alt="expande-contrae la tabla." class="border_none" height="13" id="imgtable01_tr_13" src="Temas/comun/img/table/collapse.gif" width="13"/></a> RENTA DISPONIBLE</th><td class="cell-odd" headers="table01_c1 table01_f22 " >322.891.930.147</td><td class="cell-odd" headers="table01_c2 table01_f22 " >25.490.776.363</td><td class="cell-odd" headers="table01_c3 table01_f22 " >13.925.946.063</td><td class="cell-odd" headers="table01_c4 table01_f22 " >31.841.901.899</td><td class="cell-odd" headers="table01_c5 table01_f22 " >50.410.512.493</td><td class="cell-odd" headers="table01_c6 table01_f22 " >107.889.449.584</td><td class="cell-odd" headers="table01_c7 table01_f22 " >93.333.343.745</td></tr><tr class="depth_1" id="table01_tr_13_1"><th class="row-heading-even" colspan="1" id="table01_f23" rowspan="1"><div class="depth_1" style="margin-left: 10px"><img alt="" class="border_none" height="1" src="Temas/comun/img/table/vacio.gif" width="1"/>  Renta disponible sujeta</div> </th><td class="cell-even" headers="table01_c1 table01_f23 " >308.041.707.224</td><td class="cell-even" headers="table01_c2 table01_f23 " >20.693.998.492</td><td class="cell-even" headers="table01_c3 table01_f23 " >12.932.443.917</td><td class="cell-even" headers="table01_c4 table01_f23 " >30.196.780.726</td><td class="cell-even" headers="table01_c5 table01_f23 " >48.485.844.082</td><td class="cell-even" headers="table01_c6 table01_f23 " >104.651.589.439</td><td class="cell-even" headers="table01_c7 table01_f23 " >91.081.050.568</td></tr><tr class="depth_1" id="table01_tr_13_2"><th class="row-heading-odd" colspan="1" id="table01_f24" rowspan="1"><div class="depth_1" style="margin-left: 10px"><img alt="" class="border_none" height="1" src="Temas/comun/img/table/vacio.gif" width="1"/>  Renta disponible exenta</div> </th><td class="cell-odd" headers="table01_c1 table01_f24 " >14.850.222.923</td><td class="cell-odd" headers="table01_c2 table01_f24 " >4.796.777.871</td><td class="cell-odd" headers="table01_c3 table01_f24 " >993.502.147</td><td class="cell-odd" headers="table01_c4 table01_f24 " >1.645.121.173</td><td class="cell-odd" headers="table01_c5 table01_f24 " >1.924.668.411</td><td class="cell-odd" headers="table01_c6 table01_f24 " >3.237.860.145</td><td class="cell-odd" headers="table01_c7 table01_f24 " >2.252.293.177</td></tr><tr class="depth_0" id="table01_tr_14"><th class="row-heading-even" colspan="1" id="table01_f25" rowspan="1">RENTA BRUTA MEDIA</th><td class="cell-even" headers="table01_c1 table01_f25 " >38.174</td><td class="cell-even" headers="table01_c2 table01_f25 " >10.977</td><td class="cell-even" headers="table01_c3 table01_f25 " >17.728</td><td class="cell-even" headers="table01_c4 table01_f25 " >22.651</td><td class="cell-even" headers="table01_c5 table01_f25 " >30.056</td><td class="cell-even" headers="table01_c6 table01_f25 " >47.213</td><td class="cell-even" headers="table01_c7 table01_f25 " >142.117</td></tr><tr class="depth_0" id="table01_tr_15"><th class="row-heading-odd" colspan="1" id="table01_f26" rowspan="1">RENTA DISPONIBLE MEDIA</th><td class="cell-odd" headers="table01_c1 table01_f26 " >30.025</td><td class="cell-odd" headers="table01_c2 table01_f26 " >10.508</td><td class="cell-odd" headers="table01_c3 table01_f26 " >16.671</td><td class="cell-odd" headers="table01_c4 table01_f26 " >19.874</td><td class="cell-odd" headers="table01_c5 table01_f26 " >24.986</td><td class="cell-odd" headers="table01_c6 table01_f26 " >36.793</td><td class="cell-odd" headers="table01_c7 table01_f26 " >99.202</td></tr></table><script type="text/javascript">MostrarTablaLevelID('table01',1);</script>
+</div>
+<div class="notas"><div class="etiqueta_nota">Notas</div><div class="contenido_nota"><p class="pnotas">Unidad: Euros</p><p class="pnotas">Junto al nombre del municipio se muestra su código INE</p></div></div>
+<div class="pie">
+<div id="texto"><a href="Temas/comun/accesibilidad.html" onclick="target='_blank'" title="Nuestro compromiso con la accesibilidad : Abre nueva ventana">Accesibilidad</a></div>
+<div id="icono"><a href="https://www.w3.org/WAI/WCAG2AA-Conformance" onclick="target='_blank'" title="Conformidad con el nivel doble A de las normas WCAG 2.0"><img height="32" width="88" src="Temas/comun/img/wcag2AA.png" alt="Conformidad con el nivel doble A de las normas WCAG 2.0  : Abre nueva ventana"/></a></div>
+</div>
+</div><!-- cuerpo -->
+</body>
+</html>

@@ -1,0 +1,16 @@
+URL: https://sede.agenciatributaria.gob.es/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2024/Temas/comun/accesibilidad.html
+Tamaño: 21968
+
+ENLACES (6):
+  Temas/comun/css/estudios_internet.css
+  https://sede.agenciatributaria.gob.es/Sede/inicio.html
+  https://sede.agenciatributaria.gob.es/Sede/condiciones-uso-sede-electronica/accesibilidad/declaracion-accesibilidad.html
+  Temas/comun/accesibilidad.html
+  ../../mapa.html
+  https://www.w3.org/WAI/WCAG2AA-Conformance
+
+SCRIPTS: []
+
+SCRIPTS EN LÍNEA (inicio):
+
+TABLAS: 0
