@@ -113,8 +113,41 @@ def aeat():
         intento(nombre, una)
 
 
+def ronda2():
+    # Tablas de renta media: la primera (¿nacional?) y una de provincia
+    for t in (30656, 30833, 53689):
+        intento(f"Tabla INE {t}", lambda t=t: muestra_tabla(t, f"ine_{t}"))
+    # Capa de municipios del servicio de mapas y años disponibles
+    def capas():
+        base = "https://www.ine.es/servergis/rest/services/Hosted/ADRH_2023_Renta_media_por_persona/FeatureServer/1/query"
+        n = bajar(f"{base}?where=1%3D1&returnCountOnly=true&f=json").decode()
+        m = bajar(f"{base}?where=cumun%3D%2728065%27&outFields=*&returnGeometry=false&f=json").decode("utf-8", "replace")
+        guardar("arcgis_municipios.txt", f"Total municipios: {n}\n\nGetafe:\n{m[:6000]}\n")
+        anios = []
+        for a in range(2015, 2026):
+            try:
+                bajar(f"https://www.ine.es/servergis/rest/services/Hosted/ADRH_{a}_Renta_media_por_persona/FeatureServer?f=json", 2000)
+                anios.append(f"{a}: sí")
+            except Exception as e:
+                anios.append(f"{a}: no ({e})")
+        guardar("arcgis_anios.txt", "\n".join(anios) + "\n")
+    intento("ArcGIS municipios y años", capas)
+    # Portadas de Hacienda de 2024 y 2025: qué tablas y descargas ofrecen
+    raiz = "https://sede.agenciatributaria.gob.es/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites"
+    for nombre, url in {
+        "aeat_mun_2024_home": f"{raiz}/irpfmunicipios/2024/home.html",
+        "aeat_mun_2023_home": f"{raiz}/irpfmunicipios/2023/home.html",
+        "aeat_cp_2024_home": f"{raiz}/irpfCodPostal/2024/home.html",
+        "aeat_mun_portada": "https://sede.agenciatributaria.gob.es/Sede/datosabiertos/catalogo/hacienda/Estadistica_de_los_declarantes_del_IRPF_por_municipios.shtml",
+    }.items():
+        def una(nombre=nombre, url=url):
+            html = bajar(url).decode("utf-8", "replace")
+            enlaces = sorted(set(re.findall(r'(?:href|src|action)="([^"]+)"', html)))
+            texto = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", re.sub(r"<(script|style)\b.*?</\1>", " ", html, flags=re.S)))
+            guardar(f"{nombre}.txt", f"URL: {url}\n\nENLACES:\n" + "\n".join(enlaces[:300]) + f"\n\nTEXTO:\n{texto[:5000]}\n")
+        intento(nombre, una)
+
+
 if __name__ == "__main__":
     SALIDA.mkdir(parents=True, exist_ok=True)
-    intento("INE tablas ADRH", ine)
-    intento("INE ArcGIS secciones", arcgis)
-    intento("Agencia Tributaria", aeat)
+    ronda2()
