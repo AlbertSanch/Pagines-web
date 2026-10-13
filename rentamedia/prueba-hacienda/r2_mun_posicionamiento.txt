@@ -1,4 +1,0 @@
-URL: https://sede.agenciatributaria.gob.es/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2024/home_parcial22122dc22b05995f268ba8575ff446255e939aa2.html
-Título: Posicionamiento municipios con más de 1.000 hab. Renta Bruta Media
-Tamaño: 6856
-Enlaces a tablas/carpetas: [('jrubikf4678d91c10541fed5415701102c9daf4001a134e.html', 'Posicionamiento de los municipios mayores de 1.000 habitantes por Renta bruta media. Situación 2024'), ('jrubik167a6fbce7b6566d391f8a2d68bfeb2c7f60d8d8.html', 'Evolución del posicionamiento de los municipios mayores de 1.000 habitantes 2024-2023')]

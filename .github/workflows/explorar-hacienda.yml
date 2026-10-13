@@ -1,31 +1,31 @@
-# Temporal: explora las publicaciones del IRPF de Hacienda y guarda muestras en rentamedia/prueba-hacienda/.
-name: Explorar datos de Hacienda (temporal)
+# Temporal: descarga los datos de Hacienda en la rama de trabajo para preparar la web.
+name: Datos de Hacienda (temporal)
 
 on:
   workflow_dispatch:
   push:
     branches: [claude/trusting-bell-woc5fv]
     paths:
-      - rentamedia/scripts/explorar_hacienda.py
+      - rentamedia/scripts/descargar_hacienda.py
       - .github/workflows/explorar-hacienda.yml
 
 permissions:
   contents: write
 
 jobs:
-  explorar:
+  descargar:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python rentamedia/scripts/explorar_hacienda.py
-      - name: Guardar las muestras en la rama
+      - run: python rentamedia/scripts/descargar_hacienda.py
+      - name: Guardar los datos en la rama
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add rentamedia/prueba-hacienda
-          git commit -m "Exploración de Hacienda: muestras" || echo "Sin cambios"
+          git add rentamedia/data/hacienda.json
+          git commit -m "Datos de Hacienda descargados" || echo "Sin cambios"
           git push
