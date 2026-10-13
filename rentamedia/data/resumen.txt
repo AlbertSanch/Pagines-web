@@ -1,0 +1,75 @@
+mun_renta.json: 8139 territorios, 6 indicadores, 2665 KB
+    - Media de la renta por unidad de consumo
+    - Mediana de la renta por unidad de consumo
+    - Renta bruta media por hogar
+    - Renta bruta media por persona
+    - Renta neta media por hogar
+    - Renta neta media por persona
+mun_fuentes.json: 8139 territorios, 5 indicadores, 1763 KB
+    - Fuente de ingreso: otras prestaciones
+    - Fuente de ingreso: otros ingresos
+    - Fuente de ingreso: pensiones
+    - Fuente de ingreso: prestaciones por desempleo
+    - Fuente de ingreso: salario
+mun_gini.json: 8139 territorios, 2 indicadores, 747 KB
+    - Distribución de la renta P80/P20
+    - Índice de Gini
+mun_demografia.json: 8139 territorios, 7 indicadores, 2489 KB
+    - Edad media de la población
+    - Población
+    - Porcentaje de hogares unipersonales
+    - Porcentaje de población de 65 y más años
+    - Porcentaje de población española
+    - Porcentaje de población menor de 18 años
+    - Tamaño medio del hogar
+dis_renta.json: 3491 territorios, 6 indicadores, 1163 KB
+    - Media de la renta por unidad de consumo
+    - Mediana de la renta por unidad de consumo
+    - Renta bruta media por hogar
+    - Renta bruta media por persona
+    - Renta neta media por hogar
+    - Renta neta media por persona
+dis_fuentes.json: 3491 territorios, 5 indicadores, 743 KB
+    - Fuente de ingreso: otras prestaciones
+    - Fuente de ingreso: otros ingresos
+    - Fuente de ingreso: pensiones
+    - Fuente de ingreso: prestaciones por desempleo
+    - Fuente de ingreso: salario
+dis_gini.json: 3491 territorios, 2 indicadores, 320 KB
+    - Distribución de la renta P80/P20
+    - Índice de Gini
+dis_demografia.json: 3491 territorios, 7 indicadores, 1102 KB
+    - Edad media de la población
+    - Población
+    - Porcentaje de hogares unipersonales
+    - Porcentaje de población de 65 y más años
+    - Porcentaje de población española
+    - Porcentaje de población menor de 18 años
+    - Tamaño medio del hogar
+sec_renta.json: 37072 territorios, 1 indicadores, 2468 KB
+    - Renta neta media por persona
+agr_renta.json: 82 territorios, 6 indicadores, 28 KB
+    - Media de la renta por unidad de consumo
+    - Mediana de la renta por unidad de consumo
+    - Renta bruta media por hogar
+    - Renta bruta media por persona
+    - Renta neta media por hogar
+    - Renta neta media por persona
+agr_fuentes.json: 82 territorios, 5 indicadores, 18 KB
+    - Fuente de ingreso: otras prestaciones
+    - Fuente de ingreso: otros ingresos
+    - Fuente de ingreso: pensiones
+    - Fuente de ingreso: prestaciones por desempleo
+    - Fuente de ingreso: salario
+agr_gini.json: 82 territorios, 2 indicadores, 8 KB
+    - Distribución de la renta P80/P20
+    - Índice de Gini
+agr_demografia.json: 82 territorios, 7 indicadores, 28 KB
+    - Edad media de la población
+    - Población
+    - Porcentaje de hogares unipersonales
+    - Porcentaje de población de 65 y más años
+    - Porcentaje de población española
+    - Porcentaje de población menor de 18 años
+    - Tamaño medio del hogar
+Municipios: 8139, distritos (de municipios con varios): 3491, agregados: 82, años: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]

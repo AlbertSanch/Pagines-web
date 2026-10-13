@@ -1,0 +1,69 @@
+# Renta Media (rentamedia.es): descarga los datos de renta del INE (Atlas de Distribución de Renta de los Hogares),
+# los procesa y regenera la web en rentamedia/web, que publica Cloudflare Pages.
+# El INE publica el atlas una vez al año, en otoño: de octubre a diciembre se comprueba cada lunes y el resto del año,
+# el día 1 de cada mes. Al cambiar los scripts o la plantilla solo se regenera la web, sin volver a descargar.
+# Si la descarga falla o el formato del INE cambia, el workflow falla y NO publica nada: la web sigue como estaba.
+name: Renta Media (INE)
+
+on:
+  schedule:
+    - cron: "41 6 * 10-12 1"
+    - cron: "41 6 1 1-9 *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - rentamedia/scripts/**
+      - rentamedia/plantilla/**
+      - .github/workflows/rentamedia.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rentamedia
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Descargar tablas del INE
+        if: github.event_name != 'push'
+        run: python rentamedia/scripts/descargar_ine.py
+
+      - name: Procesar datos
+        if: github.event_name != 'push'
+        run: python rentamedia/scripts/procesar_ine.py
+
+      - name: Generar la web
+        run: python rentamedia/scripts/generar_web.py
+
+      - name: Comprobar la web antes de publicar
+        run: |
+          test -f rentamedia/web/index.html
+          test -f rentamedia/web/sitemap.xml
+          test -f rentamedia/web/municipios-mas-ricos-de-espana/index.html
+          paginas=$(find rentamedia/web/municipio -name index.html | wc -l)
+          echo "Páginas de municipio: $paginas"
+          test "$paginas" -ge 7000
+
+      - name: Publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add rentamedia/data rentamedia/web
+          if git diff --cached --quiet; then
+            echo "Sin cambios."
+            exit 0
+          fi
+          git commit -m "Renta Media: actualizar datos y web"
+          git pull --rebase origin main
+          git push origin HEAD:main
