@@ -47,6 +47,10 @@ jobs:
         if: github.event_name != 'push'
         run: python rentamedia/scripts/descargar_hacienda.py
 
+      - name: Descargar contornos para los mapas
+        if: github.event_name != 'push'
+        run: python rentamedia/scripts/descargar_mapas.py
+
       - name: Generar la web
         run: python rentamedia/scripts/generar_web.py
 

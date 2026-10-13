@@ -13,6 +13,8 @@ scripts/
   descargar_ine.py   descarga del INE las tablas de renta, fuentes de ingreso, Gini y demografía de cada provincia
   procesar_ine.py    las convierte en JSON compactos en data/ (los datos no publicados quedan como null)
   descargar_hacienda.py  lee las tablas web de Hacienda (municipios y códigos postales) y escribe data/hacienda.json
+  descargar_mapas.py     descarga del servicio de mapas del INE los contornos de municipios y de las secciones censales
+                         de las ciudades de más de 100.000 habitantes (data/geo_*.json) para los mapas coloreados
   generar_web.py     genera web/ a partir de data/ y plantilla/
 plantilla/           estilos, JavaScript (buscador, comparador, compartir), iconos e imagen para redes
 data/                datos procesados (se suben a GitHub)
