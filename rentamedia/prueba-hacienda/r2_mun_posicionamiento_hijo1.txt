@@ -1,0 +1,25 @@
+URL: https://sede.agenciatributaria.gob.es/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2024/jrubik167a6fbce7b6566d391f8a2d68bfeb2c7f60d8d8.html
+Título: Evolución del posicionamiento de los municipios mayores de 1.000 habitantes 2024-2023
+Tamaño: 1990597
+Enlaces a tablas/carpetas: []
+
+TABLA: 3036 filas, clases {'': 2, 'depth_0': 1, 'depth_1': 17, 'depth_2': 48, 'depth_3': 2968}
+   | POSICIONAMIENTO RENTA BRUTA MEDIA NIVEL NACIONAL | RENTA BRUTA MEDIA | RENTA BRUTA MEDIANA
+  2024 | 2023 | 2024 | 2023 | 2024 | 2023
+  Total |  |  | 33.239 | 31.333 | 24.935 | 23.757
+  Andalucía |  |  | 27.497 | 26.065 | 21.101 | 20.051
+  Almería |  |  | 24.490 | 23.520 | 18.121 | 17.528
+  Almería-04013 | 881 | 884 | 29.688 | 28.175 | 23.175 | 21.967
+  Mojácar-04064 | 1.057 | 1.136 | 28.467 | 26.487 | 19.198 | 18.523
+  Huércal de Almería-04052 | 1.308 | 1.284 | 27.031 | 25.732 | 22.749 | 21.472
+  Carboneras-04032 | 1.321 | 1.214 | 26.976 | 26.102 | 20.781 | 20.152
+  Macael-04062 | 1.451 | 1.400 | 26.233 | 25.131 | 21.925 | 20.939
+  Vera-04100 | 1.580 | 1.563 | 25.525 | 24.220 | 18.832 | 17.969
+  Tíjola-04092 | 1.626 | 1.700 | 25.293 | 23.604 | 20.171 | 19.722
+  Olula del Río-04069 | 1.651 | 1.544 | 25.177 | 24.301 | 21.763 | 20.381
+  Roquetas de Mar-04079 | 1.666 | 1.495 | 25.106 | 24.592 | 18.025 | 17.470
+  ...
+  Ceuta-51001 | 396 | 380 | 33.976 | 32.478 | 27.540 | 26.541
+  Melilla |  |  | 32.622 | 31.599 | 26.327 | 25.199
+  Melilla |  |  | 32.622 | 31.599 | 26.327 | 25.199
+  Melilla-52001 | 519 | 459 | 32.622 | 31.599 | 26.327 | 25.199

@@ -1,0 +1,46 @@
+URL: https://sede.agenciatributaria.gob.es/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2024/jrubikf33b43cbb020952b18117bae61c3cf587ba2d823d.html
+Título: Datos municipales por orden alfabético
+Tamaño: 56406
+Enlaces a tablas/carpetas: []
+
+TABLA: 64 filas, clases {'': 1, 'depth_0': 39, 'depth_1': 11, 'depth_2': 7, 'depth_3': 6}
+  Esquina | Total
+  COMUNIDAD AUTÓNOMA | Total
+  PROVINCIA | Total
+  NÚMERO DE HABITANTES | 46.188.612
+  POSICIONAMIENTO DE LA RENTA BRUTA MEDIA A NIVEL NACIONAL | 1.587
+  POSICIONAMIENTO DE LA RENTA BRUTA MEDIA A NIVEL AUTONÓMICO | 311
+  NÚMERO DE DECLARACIONES | 24.628.279
+  NÚMERO DE TITULARES DE LA DECLARACIÓN | 26.932.445
+  RENTA BRUTA MEDIA | 33.239
+  RENTA DISPONIBLE MEDIA | 26.616
+  RENTA BRUTA Y RENTA DISPONIBLE | 
+  RENTAS DEL TRABAJO | 633.132.569.280
+  RENTAS DEL CAPITAL MOBILIARIO | 30.625.350.592
+  RENTAS DE BIENES INMUEBLES NO AFECTOS A ACTIV. ECONÓMICAS | 34.119.379.560
+  ...
+  Deducción media por descendientes, ascendientes o cónyuge con discapacidad a cargo | 1.097
+  Deducción media por familia numerosa o asimilada | 1.003
+  Deducción media por familia numerosa de categoría general | 869
+  Deducción media por familia numerosa de categoría especial | 2.028
+
+TABLA: 62 filas, clases {'': 1, 'depth_0': 16, 'depth_2': 40, 'depth_3': 5}
+   | Número | Importe | Media
+  RENDIMIENTOS DEL TRABAJO (neto reducido) | 19.465.888 | 502.796.746.908 | 25.830
+  Ingresos íntegros | 21.822.161 | 619.942.582.078 | 28.409
+  Contribuciones empresariales a planes de pensiones y a mutualidades de previsión social y seguros colectivos | 1.031.702 | 1.262.395.358 | 1.224
+  Gastos deducibles | 16.267.451 | 30.268.051.144 | 1.861
+  Cotizaciones a la Seguridad Social u otras | 16.141.660 | 29.724.503.461 | 1.841
+  Cuotas satisfechas a sindicatos y colegios profesionales | 2.756.411 | 523.405.190 | 190
+  Rendimiento neto previo | 21.836.084 | 589.747.790.115 | 27.008
+  Rendimiento neto | 21.375.446 | 544.930.996.602 | 25.493
+  Reducciones del trabajo | 21.811.698 | 88.143.821.112 | 4.041
+  Reducciones del trabajo: general | 21.811.539 | 85.228.039.132 | 3.907
+  Reducción adicional para trabajadores activos con discapacidad | 410.107 | 1.614.559.143 | 3.937
+  Resto de reducciones del trabajo | 269.560 | 1.301.222.836 | 4.827
+  RENDIMIENTOS DEL CAPITAL MOBILIARIO | 10.474.792 | 29.519.716.107 | 2.818
+  ...
+  Retenciones por actividades económicas y pagos fraccionados | 2.617.615 | 9.284.088.237 | 3.547
+  Otras retenciones y pagos a cuenta | 2.151.075 | 1.170.492.083 | 544
+  RESULTADO DE LA DECLARACIÓN A INGRESAR | 6.730.126 | 20.258.869.775 | 3.010
+  RESULTADO DE LA DECLARACIÓN A DEVOLVER | 15.611.719 | 13.434.412.203 | 861
