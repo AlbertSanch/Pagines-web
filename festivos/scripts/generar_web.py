@@ -299,13 +299,9 @@ def pagina_municipio(datos, cod, m, vecinos):
     if len(titulo) > 65:
         titulo = f"Festivos en {corto(m['nombre_ine'])} {min(ANIOS)} y {anio_tit}"
     con_locales = [a for a in ANIOS if tiene_locales(datos, a, cod)]
-    if con_locales:
-        a = con_locales[-1]
-        loc = [x for x in festivos_de(datos, a, cod) if x["t"] == "local"]
-        desc = (f"Fiestas locales de {N} en {a}: " + " y ".join(fecha_larga(x["f"], False) for x in loc)
-                + f". Todos los festivos de {N} en {' y '.join(map(str, ANIOS))}, con puentes y calendario para el móvil.")
-    else:
-        desc = f"Festivos de {N} ({prov_nombre}) en {' y '.join(map(str, ANIOS))}: fiestas nacionales y de {ccaa_nombre}, puentes y calendario para el móvil."
+    # Descripción para Google: qué hay en la página, sin dar las fechas (si las da, nadie entra)
+    desc = (f"Cuáles son las fiestas locales de {N} en {' y '.join(map(str, ANIOS))}, el próximo festivo, "
+            f"los puentes y todos los festivos de {ccaa_nombre}, con el boletín oficial. Añádelos a tu calendario.")
     migas = [(ccaa_nombre, f"/comunidad/{ccaa}/"), (prov_nombre, RUTAS_PROV[cod[:2]]), (N, None)]
     if ccaa_nombre == prov_nombre:
         migas = migas[1:]
