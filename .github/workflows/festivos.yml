@@ -1,0 +1,57 @@
+# festivosde.es: descarga los boletines oficiales (BOE y comunidades), extrae los festivos
+# de cada municipio y regenera la web. Cloudflare Pages publica cada commit en main.
+#   - Cada lunes: comprueba si han cambiado las fuentes (correcciones, nuevas resoluciones).
+#   - Al cambiar los scripts, la plantilla o la lista de fuentes en main: regenera.
+name: Festivos
+
+on:
+  schedule:
+    - cron: "37 5 * * 1"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - festivos/scripts/**
+      - festivos/plantilla/**
+      - festivos/fuentes.json
+      - .github/workflows/festivos.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: festivos
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar pdftotext
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - name: Descargar fuentes oficiales
+        if: github.event_name != 'push'
+        run: python -u festivos/scripts/descargar_fuentes.py
+      - name: Extraer festivos
+        run: cd festivos/scripts && python -u procesar.py | grep -v "^BOE" | tail -60
+      - name: Generar la web
+        run: python -u festivos/scripts/generar_web.py
+      - name: Comprobar
+        run: |
+          n=$(grep -c "<loc>" festivos/web/sitemap.xml)
+          echo "Páginas en el sitemap: $n"
+          test "$n" -gt 5000
+      - name: Publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add festivos/fuentes festivos/data festivos/web
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Festivos: actualizar datos y web"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep 5; done
+          exit 1
