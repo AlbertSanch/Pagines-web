@@ -181,11 +181,9 @@ def pagina(codigo, resumen, gasolineras):
         f'<li><a href="{resumen["provincias"][c]["slug"]}">{e(resumen["provincias"][c]["nombre"])}</a></li>'
         for c in orden if c != codigo)
 
-    media95 = litro(g95["media"]) if g95 else "—"
-    diesel = prov.get("diesel")
-    media_die = litro(diesel["media"]) if diesel else "—"
-    descripcion = (f"Gasolina 95 a {media95} €/L y diésel a {media_die} €/L de media hoy en {nombre}. "
-                   f"Las gasolineras más baratas, con datos oficiales del Ministerio.")
+    # Descripción para Google: qué hay en la página, sin dar la cifra (si la da, nadie entra)
+    descripcion = (f"¿Dónde está la gasolina más barata hoy en {nombre}? Mira el precio medio de la gasolina 95 y el diésel "
+                   f"y las gasolineras más baratas, actualizado cada día con datos oficiales del Ministerio.")
     titulo_pagina = f"Gasolina hoy en {nombre}: precio y gasolineras más baratas"
     if len(titulo_pagina) > 60:
         titulo_pagina = f"Gasolina hoy en {nombre}: gasolineras más baratas"

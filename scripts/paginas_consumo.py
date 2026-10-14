@@ -286,8 +286,10 @@ def pagina(a, p, otros, base):
     titulo = a.get("titulo") or f"¿Cuánto {verbo(a)} {a['art']}? Consumo y coste al mes"
     if len(titulo) > 60:
         titulo = f"¿Cuánto {verbo(a)} {a['art']} al mes?"
-    desc = (f"{a['nombre']}: unos {num(mes, 0)} kWh y {eur(mes * p)} al mes con un uso normal y el precio actual "
-            f"de la luz. Calcula tu gasto según el modelo y las horas de uso.")
+    # Descripción para Google: qué hay en la página, sin dar la cifra (si la da, nadie entra)
+    unidad = "por uso" if a["modo"] == "ciclo" else "por hora"
+    desc = (f"¿Cuánto {verbo(a)} {a['art']}? Mira el consumo en kWh y lo que cuesta {unidad}, al día y al mes "
+            f"con el precio de la luz de hoy, y calcula tu gasto según tu modelo y las horas de uso.")
     if a["modo"] == "ciclo":
         filas = "".join(f"<tr><td>{e(m)}</td><td class=\"num\">{num(k, 2)} kWh</td><td class=\"num\">{eur(k * p)}</td>"
                         f"<td class=\"num\">{eur(k * a['usos'] * 52 / 12 * p)}</td></tr>" for m, k in a["modelos"])
