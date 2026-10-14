@@ -41,6 +41,12 @@
   "sha1": "49636918c7ce27768f83ea59b3a6b27aa043de0e",
   "url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1421874360606"
  },
+ "asturias_2026": {
+  "descargado": "2026-10-14",
+  "descargado_de": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-asturias-2026.pdf",
+  "sha1": "2554da42c55de9cdec9635552a5b0be0f3026b30",
+  "url": "https://miprincipado.asturias.es/documents/d/guest/2025-04744"
+ },
  "asturias_2027": {
   "descargado": "2026-10-14",
   "descargado_de": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-asturias-2027.pdf",
@@ -149,10 +155,28 @@
   "sha1": "9f9e5d8994b465ff2130226251eddb505b6ff609",
   "url": "https://www.diputacionavila.es/bops/2026/04-02-2026/04-02-2026_021326.pdf"
  },
+ "cyl_avila_2027": {
+  "descargado": "2026-10-14",
+  "descargado_de": "https://www.diputacionavila.es/bops/2026/08-07-2026/08-07-2026_144826.pdf",
+  "sha1": "edde04feeafcd961b939cd1e2846e7081473f4aa",
+  "url": "https://www.diputacionavila.es/bops/2026/08-07-2026/08-07-2026_144826.pdf"
+ },
+ "cyl_burgos_2026": {
+  "descargado": "2026-10-14",
+  "descargado_de": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-burgos-2026.pdf",
+  "sha1": "b7df510a7295cdaeeb3e86682fd42da7a846a44a",
+  "url": "http://bopbur.diputaciondeburgos.es/bopbur-2025-165"
+ },
+ "cyl_burgos_2026_c1": {
+  "descargado": "2026-10-14",
+  "descargado_de": "https://www.iberley.es/legislacion/resolucion-complementaria-calendario-laboral-fiestas-locales-provincia-burgos-retribuidas-no-recuperables-ano-2026-27285651",
+  "sha1": "605e826bd70775536bd17feab33ec3bdff798c6f",
+  "url": "https://www.iberley.es/legislacion/resolucion-complementaria-calendario-laboral-fiestas-locales-provincia-burgos-retribuidas-no-recuperables-ano-2026-27285651"
+ },
  "cyl_leon_2026": {
   "descargado": "2026-10-14",
-  "descargado_de": "https://bop.dipuleon.es/publica/buscador-anuncios/anuncio/Festivos-locales-para-2026-00078/",
-  "sha1": "74c7f0dc545706e95fd75559a711536af986a05d",
+  "descargado_de": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-leon-2026.pdf",
+  "sha1": "f0b1ae46709713dfac9d0bbc47d7c5556e0aed95",
   "url": "https://bop.dipuleon.es/publica/buscador-anuncios/anuncio/Festivos-locales-para-2026-00078/"
  },
  "cyl_leon_2026_c1": {
@@ -163,9 +187,15 @@
  },
  "cyl_leon_2027": {
   "descargado": "2026-10-14",
-  "descargado_de": "https://bop.dipuleon.es/publica/buscador-anuncios/anuncio/Festivos-locales-de-los-Municipios-de-la-Provincia-de-Leon-para-2027/",
-  "sha1": "523a39a4b33fd6778b17e4822978c57065e23de9",
+  "descargado_de": "https://bop.dipuleon.es/export/sites/bop/.galleries/Documentos-BOPs-en-PDF/bop-31_07_2026-2d9196df-8c0f-11f1-a9e8-dd38f9a6a5be-1785473207980.pdf",
+  "sha1": "2a2f63eeb011dec8dc6e23e65558e2f47427d688",
   "url": "https://bop.dipuleon.es/publica/buscador-anuncios/anuncio/Festivos-locales-de-los-Municipios-de-la-Provincia-de-Leon-para-2027/"
+ },
+ "cyl_palencia_2026": {
+  "descargado": "2026-10-14",
+  "descargado_de": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-palencia-2026.pdf",
+  "sha1": "9bf9f28295c12abbb2d6515bcc0eb1097644436d",
+  "url": "https://www.diputaciondepalencia.es/system/files/bop/2025/20250917-bop-112-Ordinario.pdf"
  },
  "cyl_palencia_2027": {
   "descargado": "2026-10-14",
@@ -173,11 +203,41 @@
   "sha1": "27bc4cbb9a972b8b22206f0e8b7bd598bd014ea7",
   "url": "https://www.diputaciondepalencia.es/system/files/bop/2026/20260713-bop-83-Ordinario.pdf"
  },
+ "cyl_salamanca_2026": {
+  "descargado": "2026-10-14",
+  "descargado_de": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-salamanca-2026.pdf",
+  "sha1": "27e9cd50b8dac19ec8c717caadaba0cbca39ea81",
+  "url": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-salamanca-2026.pdf"
+ },
+ "cyl_salamanca_2026_c1": {
+  "descargado": "2026-10-14",
+  "descargado_de": "https://www.iberley.es/legislacion/acuerdo-determinacion-fiestas-locales-ano-2026-municipios-provincia-salamanca-relacion-complementaria-27285248",
+  "sha1": "3b38257fb680b072985dafb222d3213f3baf8835",
+  "url": "https://www.iberley.es/legislacion/acuerdo-determinacion-fiestas-locales-ano-2026-municipios-provincia-salamanca-relacion-complementaria-27285248"
+ },
+ "cyl_segovia_2026": {
+  "descargado": "2026-10-14",
+  "descargado_de": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-segovia-2026.pdf",
+  "sha1": "0dd79589ec1f38682f2e09e50004512dbeca4fdd",
+  "url": "https://www.dipsegovia.es/documents/39512/01582b77-49da-7674-975e-ffa4d2debaa2"
+ },
  "cyl_soria_2026": {
   "descargado": "2026-10-14",
   "descargado_de": "https://www.dipsoria.es/sites/dipsoria/files/public/paginas/archivos/calendario_fiestas_ayuntamientos_2026.pdf",
   "sha1": "74bed8a66447994a87e6860fe644497bdaf22e69",
   "url": "https://www.dipsoria.es/sites/dipsoria/files/public/paginas/archivos/calendario_fiestas_ayuntamientos_2026.pdf"
+ },
+ "cyl_soria_2027": {
+  "descargado": "2026-10-14",
+  "descargado_de": "https://bop.dipsoria.es/index.php/mod.boloficial/mem.detalle/id.55073/relcategoria.210/relmenu.149",
+  "sha1": "aa505989f4cba3823cfd039e9841d459f5b25cd7",
+  "url": "https://bop.dipsoria.es/index.php/mod.boloficial/mem.detalle/id.55073/relcategoria.210/relmenu.149"
+ },
+ "cyl_valladolid_2026": {
+  "descargado": "2026-10-14",
+  "descargado_de": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-valladolid-2026.pdf",
+  "sha1": "620652089ba83eed215a5f0e16db9fa043f9184e",
+  "url": "https://bop.sede.diputaciondevalladolid.es/boletines/2025/septiembre/19/BOPVA-A-2025-03050.pdf"
  },
  "cyl_zamora_2026": {
   "descargado": "2026-10-14",
@@ -218,7 +278,7 @@
  "gipuzkoa_2026": {
   "descargado": "2026-10-14",
   "descargado_de": "https://www.iberley.es/legislacion/resolucion-1-septiembre-2025-delegado-territorial-trabajo-seguridad-social-gipuzkoa-aprueba-calendario-fiestas-locales-gipuzkoa-ano-2026-27284448",
-  "sha1": "e1f516bab49d65195fb82eca4d33027f52fd2fbc",
+  "sha1": "d3ae105479af73bd568db9f37123aa55d11ae268",
   "url": "https://www.iberley.es/legislacion/resolucion-1-septiembre-2025-delegado-territorial-trabajo-seguridad-social-gipuzkoa-aprueba-calendario-fiestas-locales-gipuzkoa-ano-2026-27284448"
  },
  "madrid_2026": {
@@ -266,7 +326,7 @@
  "navarra_2026_mod": {
   "descargado": "2026-10-14",
   "descargado_de": "https://www.iberley.es/legislacion/resolucion-765-2025-22-diciembre-director-general-economia-social-trabajo-modifican-fiestas-locales-ano-2026-caracter-retribuido-no-recuperable-ambito-comunicad-foral-navarra-27285650",
-  "sha1": "35d8ee13b070f9af0829fde217b7d5a7a3930d97",
+  "sha1": "3ce3280862ae483b28b1d3f3dbc5aab4179ae42a",
   "url": "https://www.iberley.es/legislacion/resolucion-765-2025-22-diciembre-director-general-economia-social-trabajo-modifican-fiestas-locales-ano-2026-caracter-retribuido-no-recuperable-ambito-comunicad-foral-navarra-27285650"
  },
  "rioja_2026": {
