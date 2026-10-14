@@ -251,6 +251,10 @@ def pagina_municipio(datos, cod, m, vecinos):
         lista = festivos_de(datos, anio, cod)
         embebido[anio] = [[x["f"], x["n"], x["t"][0]] for x in lista]
         locales = [x for x in lista if x["t"] == "local"]
+        aviso_varias = ""
+        if len(datos[anio]["locales"].get(cod, [])) > 2:
+            aviso_varias = (f'<p class="nota">En {escape(N)} algunas fiestas locales solo se celebran en determinadas parroquias, '
+                            'pedanías o núcleos. Comprueba en el boletín oficial enlazado abajo cuáles se aplican en tu localidad.</p>')
         if tiene_locales(datos, anio, cod):
             loc_txt = " y ".join(f"el {fecha_larga(x['f'])}" + (f" ({escape(x['n'])})" if x["n"] != "Fiesta local" else "") for x in locales)
             resumen = f"<p>Las <strong>fiestas locales de {escape(N)} en {anio}</strong> son {loc_txt}. En total, {len(lista)} días festivos en el año.</p>"
@@ -269,6 +273,7 @@ def pagina_municipio(datos, cod, m, vecinos):
         secciones.append(f"""<section class="anio" id="festivos-{anio}">
 <h2>Festivos de {escape(N)} en {anio}</h2>
 {resumen}
+{aviso_varias}
 {tabla_festivos(lista)}
 <div class="calendario" data-anio="{anio}"></div>
 {bloque_puentes(lista, anio)}

@@ -87,7 +87,7 @@ def fechas_en(texto, anio):
     """«3 de mayo (San X) y 22 y 23 de julio (Y)» o «2 de abril, Jueves Santo; 13 de abril, San Vicente» -> [(fecha, nombre)]."""
     res = []
     patron = (r"(\d{1,2})((?:\s*(?:,|y|e|i)\s*\d{1,2})*)\s+(?:de\s+|del\s+)?" + RE_MES +
-              r"\b(?:\s+de\s+\d{4})?\s*(?:\(([^)]*)\)?|,\s*(?!\d)([^;]*?)(?=;|\.\s|\.$|\s+y\s+\d|$))?")
+              r"\b(?:\s+de\s+\d{4})?\s*(?:\(([^)\n]*)\)?|,\s*(?!\d)([^;\n]*?)(?=;|\.\s|\.$|\s+y\s+\d|\n|$))?")
     for m in re.finditer(patron, texto, re.I):
         anio_escrito = re.search(r"de\s+(\d{4})", m.group(0)[:40])
         if anio_escrito and int(anio_escrito.group(1)) != anio:
@@ -246,6 +246,89 @@ def fiestas_comunes(txt, anio):
     return []
 
 
+def leer_ceuta(txt, anio, ccaa):
+    """«-20 de marzo: Fiesta de …» entre «a continuación» y «Segundo»."""
+    t = trozo(txt, "a continuación", "Segundo")
+    t = re.sub(r"(\d{1,2} de \w+):", r"\1,", t)
+    return [("Ceuta", None, fechas_en(t, anio))]
+
+
+def leer_melilla(txt, anio, ccaa):
+    """«tienen la consideración de locales son los días 8 de septiembre (…) y el 17 de septiembre (…)»."""
+    plano = re.sub(r"\s+", " ", txt)
+    m = re.search(r"consideraci[oó]n de locales son los d[ií]as (.*?\))\s*\.", plano)
+    return [("Melilla", None, fechas_en(m.group(1), anio))] if m else []
+
+
+def leer_proximidad(txt, anio, ccaa):
+    """Tablas con celdas centradas en vertical (Cantabria): el nombre del municipio va en la primera
+    columna y cada fecha (día y mes, a veces en líneas distintas) se asigna al municipio más cercano.
+    Cada municipio tiene dos fiestas locales."""
+    nombres, fechas, dia_pend = [], [], None
+    for i, linea in enumerate(txt.replace("\ufffd", " ").splitlines()):
+        if re.match(r"^[A-ZÁÉÍÓÚÑÜ][A-ZÁÉÍÓÚÑÜ ,.'()/-]{2,}", linea):
+            nombre = re.split(r"\s{2,}", linea.strip())[0]
+            if not re.search(r"\d", nombre) and len(nombre) > 2:
+                nombres.append([i, nombre, []])
+        dia = re.search(r"\s(\d{1,2})(?:\s|$)", linea)
+        mes = re.search(r"\b(" + "|".join(MESES) + r")\b", linea, re.I)
+        if dia and mes:
+            fechas.append((i, dia.group(1), mes.group(1)))
+            dia_pend = None
+        elif dia:
+            dia_pend = (i, dia.group(1))
+        elif mes and dia_pend:
+            fechas.append((dia_pend[0], dia_pend[1], mes.group(1)))
+            dia_pend = None
+    for linea_f, d, mes in fechas:  # cada fecha es del último municipio que empieza en su línea o antes
+        previos = [x for x in nombres if x[0] <= linea_f]
+        if previos and len(previos[-1][2]) < 2:
+            previos[-1][2].append((fecha(anio, d, mes), ""))
+        elif previos:
+            aviso(f"{ccaa} {anio}: fecha {d} {mes} sin municipio libre (línea {linea_f})")
+    return [(n, None, f) for _, n, f in nombres if f]
+
+
+def leer_centrado(txt, anio, ccaa):
+    """Tablas con el nombre del municipio centrado en su bloque (Asturias): cada fecha va al municipio
+    cuya línea está más cerca. Se guarda el texto de la fiesta (que a veces dice a qué parroquia afecta)."""
+    lineas = txt.replace("\ufffd", " ").splitlines()
+    nombres, fechas, pend = [], [], None
+    for i, linea in enumerate(lineas):
+        m = re.match(r"^([A-ZÁÉÍÓÚÑÜ][A-ZÁÉÍÓÚÑÜ ,.'()/-]{2,})(?=\s{2,}|$)", linea)
+        if m and not re.search(r"\d", m.group(1)):
+            nombre = m.group(1).strip()
+            # nombres partidos en dos líneas («BELMONTE DE» / «MIRANDA»)
+            if nombre.endswith((" DE", " DEL", " DE LA", " Y")) and i + 1 < len(lineas):
+                sig = re.match(r"^([A-ZÁÉÍÓÚÑÜ][A-ZÁÉÍÓÚÑÜ ,.'()/-]{2,})(?=\s{2,}|$)", lineas[i + 1])
+                if sig:
+                    nombre += " " + sig.group(1).strip()
+            elif nombres and nombres[-1][0] == i - 1 and nombres[-1][1].endswith((" DE", " DEL", " DE LA", " Y")):
+                continue
+            nombres.append([i, nombre, []])
+        resto = linea[m.end():] if m else linea
+        dm = re.search(r"(\d{1,2}) de\s*(?:(" + "|".join(MESES) + r")\b)?\s*(.*)$", resto, re.I)
+        mes_solo = re.match(r"^\s+(" + "|".join(MESES) + r")\b\s*(.*)$", resto, re.I)
+        if dm and dm.group(2):
+            fechas.append([i, dm.group(1), dm.group(2), dm.group(3).strip()])
+        elif dm:
+            pend = [i, dm.group(1), dm.group(3).strip()]
+        elif mes_solo and pend:
+            fechas.append([pend[0], pend[1], mes_solo.group(1), (pend[2] + " " + mes_solo.group(2)).strip()])
+            pend = None
+        elif pend and resto.strip() and not re.search(r"\d", resto):
+            pend[2] = (pend[2] + " " + resto.strip()).strip()
+        elif fechas and resto.strip() and not re.search(r"\d", resto) and fechas[-1][0] == i - 1:
+            fechas[-1][3] = (fechas[-1][3] + " " + resto.strip()).strip()
+    for linea_f, d, mes, texto in fechas:
+        if not nombres:
+            break
+        n = min(nombres, key=lambda x: (abs(x[0] - linea_f), -x[0] if x[0] <= linea_f else x[0]))
+        if abs(n[0] - linea_f) <= 4:
+            n[2].append((fecha(anio, d, mes), re.sub(r"\s+", " ", texto)[:120]))
+    return [(n, None, f) for _, n, f in nombres if f]
+
+
 def preparar_correccion(txt):
     """En las correcciones «donde dice … debe decir …» solo cuenta lo que «debe decir»."""
     # «la festividad local del Municipio de Bilbao para el año 2026 será el 28 de agosto (…)» -> «Bilbao: 28 de agosto (…)»
@@ -275,6 +358,10 @@ LECTORES = {
     "murcia": lambda t, a, c: leer_murcia(t, a),
     "la-rioja": lambda t, a, c: leer_entradas_dos_puntos(trozo(t, "Ábalos", "Restantes municipios"), a) or leer_entradas_dos_puntos(t, a),
     "canarias": lambda t, a, c: leer_canarias(t, a),
+    "ceuta": leer_ceuta,
+    "melilla": leer_melilla,
+    "cantabria": leer_proximidad,
+    "asturias": leer_centrado,
 }
 
 
