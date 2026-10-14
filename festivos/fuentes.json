@@ -55,7 +55,8 @@
    "id": "asturias_2026",
    "ccaa": "asturias",
    "anio": 2026,
-   "descarga": "https://miprincipado.asturias.es/documents/d/guest/2025-04744"
+   "descarga": "https://miprincipado.asturias.es/documents/d/guest/2025-04744",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-asturias-2026.pdf"
   },
   {
    "id": "cantabria_2026",
@@ -98,15 +99,17 @@
    "id": "cyl_burgos_2026",
    "ccaa": "castilla-y-leon",
    "anio": 2026,
-   "descarga": "http://bopbur.diputaciondeburgos.es/bopbur-2025-165",
-   "provincia": "09"
+   "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-burgos-2026.pdf",
+   "provincia": "09",
+   "oficial": "http://bopbur.diputaciondeburgos.es/bopbur-2025-165"
   },
   {
    "id": "cyl_leon_2026",
    "ccaa": "castilla-y-leon",
    "anio": 2026,
-   "descarga": "https://bop.dipuleon.es/publica/buscador-anuncios/anuncio/Festivos-locales-para-2026-00078/",
-   "provincia": "24"
+   "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-leon-2026.pdf",
+   "provincia": "24",
+   "oficial": "https://bop.dipuleon.es/publica/buscador-anuncios/anuncio/Festivos-locales-para-2026-00078/"
   },
   {
    "id": "cyl_leon_2026_c1",
@@ -120,8 +123,9 @@
    "id": "cyl_segovia_2026",
    "ccaa": "castilla-y-leon",
    "anio": 2026,
-   "descarga": "https://www.dipsegovia.es/documents/39512/01582b77-49da-7674-975e-ffa4d2debaa2",
-   "provincia": "40"
+   "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-segovia-2026.pdf",
+   "provincia": "40",
+   "oficial": "https://www.dipsegovia.es/documents/39512/01582b77-49da-7674-975e-ffa4d2debaa2"
   },
   {
    "id": "cyl_soria_2026",
@@ -134,8 +138,9 @@
    "id": "cyl_valladolid_2026",
    "ccaa": "castilla-y-leon",
    "anio": 2026,
-   "descarga": "https://bop.sede.diputaciondevalladolid.es/boletines/2025/septiembre/19/BOPVA-A-2025-03050.pdf",
-   "provincia": "47"
+   "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-valladolid-2026.pdf",
+   "provincia": "47",
+   "oficial": "https://bop.sede.diputaciondevalladolid.es/boletines/2025/septiembre/19/BOPVA-A-2025-03050.pdf"
   },
   {
    "id": "cyl_zamora_2026",
@@ -343,8 +348,9 @@
    "id": "cyl_leon_2027",
    "ccaa": "castilla-y-leon",
    "anio": 2027,
-   "descarga": "https://bop.dipuleon.es/publica/buscador-anuncios/anuncio/Festivos-locales-de-los-Municipios-de-la-Provincia-de-Leon-para-2027/",
-   "provincia": "24"
+   "descarga": "https://bop.dipuleon.es/export/sites/bop/.galleries/Documentos-BOPs-en-PDF/bop-31_07_2026-2d9196df-8c0f-11f1-a9e8-dd38f9a6a5be-1785473207980.pdf",
+   "provincia": "24",
+   "oficial": "https://bop.dipuleon.es/publica/buscador-anuncios/anuncio/Festivos-locales-de-los-Municipios-de-la-Provincia-de-Leon-para-2027/"
   },
   {
    "id": "cyl_palencia_2027",
@@ -374,6 +380,51 @@
    "anio": 2027,
    "descarga": "https://noticias.juridicas.com/base_datos/CCAA/1012195-r-trabajo-y-seguridad-social-12-sep-2026-bizkaia-calendario-de-fiestas-locales.html",
    "provincia": "48"
+  },
+  {
+   "id": "cyl_burgos_2026_c1",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "provincia": "09",
+   "tipo": "complementaria",
+   "descarga": "https://www.iberley.es/legislacion/resolucion-complementaria-calendario-laboral-fiestas-locales-provincia-burgos-retribuidas-no-recuperables-ano-2026-27285651"
+  },
+  {
+   "id": "cyl_palencia_2026",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "provincia": "34",
+   "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-palencia-2026.pdf",
+   "oficial": "https://www.diputaciondepalencia.es/system/files/bop/2025/20250917-bop-112-Ordinario.pdf"
+  },
+  {
+   "id": "cyl_salamanca_2026",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "provincia": "37",
+   "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-salamanca-2026.pdf"
+  },
+  {
+   "id": "cyl_salamanca_2026_c1",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "provincia": "37",
+   "tipo": "complementaria",
+   "descarga": "https://www.iberley.es/legislacion/acuerdo-determinacion-fiestas-locales-ano-2026-municipios-provincia-salamanca-relacion-complementaria-27285248"
+  },
+  {
+   "id": "cyl_avila_2027",
+   "ccaa": "castilla-y-leon",
+   "anio": 2027,
+   "provincia": "05",
+   "descarga": "https://www.diputacionavila.es/bops/2026/08-07-2026/08-07-2026_144826.pdf"
+  },
+  {
+   "id": "cyl_soria_2027",
+   "ccaa": "castilla-y-leon",
+   "anio": 2027,
+   "provincia": "42",
+   "descarga": "https://bop.dipsoria.es/index.php/mod.boloficial/mem.detalle/id.55073/relcategoria.210/relmenu.149"
   }
  ]
 }
