@@ -175,3 +175,29 @@ table.festivos { width: 100%; border-collapse: collapse; font-size: .97rem; }
 @media (max-width: 760px) {
   .portada { grid-template-columns: 1fr; padding: 24px 16px; border-radius: 0 0 20px 20px; }
 }
+
+/* Página de municipio */
+.cabecera-muni { display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; align-items: center; margin: 14px -16px 0; padding: 28px 24px;
+  border-radius: 0 0 26px 26px; background: radial-gradient(circle at 10% 15%, #fff4ec 0, transparent 55%), linear-gradient(135deg, #fde3d3 0%, #fbf0e4 60%, #f5ead8 100%); }
+.cabecera-muni h1 { margin-top: 0; }
+.cabecera-muni .hoy { flex-direction: column; margin: 0; }
+.cabecera-muni .tarjeta { flex: none; border-left: 0; border-top: 6px solid var(--verde); border-radius: 16px; box-shadow: 0 8px 24px rgba(154,52,18,.13); }
+.cabecera-muni .tarjeta.si { border-top-color: var(--rojo); }
+.pestanas { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin: 26px 0 0; border-bottom: 2px solid var(--linea); padding-bottom: 8px; }
+.pestanas a { padding: 8px 18px; border-radius: 999px; text-decoration: none; font-weight: 800; color: var(--suave); background: var(--papel); border: 1px solid var(--linea); }
+.pestanas a.activa { background: var(--tinta); color: #fff; border-color: var(--tinta); }
+.pestanas .boton-ics { margin-left: auto; padding: 8px 14px; border-radius: 999px; }
+.cifras { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 6px 0 18px; }
+.cifras li { background: var(--papel); border-radius: 14px; box-shadow: var(--sombra); padding: 12px 14px; display: flex; flex-direction: column; }
+.cifras b { font-size: 1.9rem; line-height: 1.1; color: var(--rojo-osc); }
+.cifras span { font-size: .85rem; color: var(--suave); }
+.hojas.locales .hoja-mes, .hoja.local .hoja-mes { background: var(--rojo-osc); }
+.hojas.locales .hoja { border: 2px solid var(--rojo); }
+.hojas.locales { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+@media (max-width: 760px) {
+  .cabecera-muni { grid-template-columns: 1fr; padding: 22px 16px; border-radius: 0 0 20px 20px; }
+  .cifras b { font-size: 1.5rem; }
+  .pestanas .boton-ics { margin-left: 0; }
+  .hojas { grid-template-columns: repeat(2, 1fr); }
+}
+@media print { .cabecera-muni, .pestanas, #proximos, .cifras, .hojas { display: none !important; } section.anio[hidden].imprimir { display: block !important; } }
