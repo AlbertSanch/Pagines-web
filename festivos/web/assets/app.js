@@ -27,13 +27,29 @@
     q.addEventListener('keydown', function (e) { if (e.key === 'Enter') { var a = lista.querySelector('a'); if (a) location.href = a.href; } });
   }
 
-  // ---------- página de municipio
+  // ---------- logo: la hoja del calendario muestra el día de hoy
+  var ld = document.getElementById('logo-dia'), lm = document.getElementById('logo-mes'), ahora = new Date();
+  if (ld && lm) { ld.textContent = ahora.getDate(); lm.textContent = MESES[ahora.getMonth()].slice(0, 3); }
+
+  // ---------- página de municipio (y calendario de la portada)
   var bloque = document.getElementById('datos-festivos');
   if (!bloque) return;
   var datos = JSON.parse(bloque.textContent), todos = [];
   Object.keys(datos.festivos).forEach(function (a) { datos.festivos[a].forEach(function (x) { todos.push(x); }); });
   todos.sort(function (a, b) { return a[0] < b[0] ? -1 : 1; });
   var hoy = iso(new Date());
+
+  // Portada: hoy y cuenta atrás hasta el próximo festivo nacional
+  if (datos.proximos && document.getElementById('hoy-portada')) {
+    document.getElementById('hoy-fecha').textContent = bonita(hoy);
+    var px = datos.proximos.filter(function (x) { return x[0] >= hoy; })[0];
+    if (px) {
+      var faltan = Math.round((deIso(px[0]) - deIso(hoy)) / 864e5);
+      document.getElementById('prox-fecha').textContent = bonita(px[0]);
+      document.getElementById('prox-nombre').textContent = px[1];
+      document.getElementById('prox-cuenta').textContent = faltan === 0 ? '¡Es hoy!' : faltan === 1 ? 'Es mañana' : 'Faltan ' + faltan + ' días';
+    }
+  }
 
   // ¿Es festivo hoy? y próximo festivo
   var caja = document.getElementById('hoy');
