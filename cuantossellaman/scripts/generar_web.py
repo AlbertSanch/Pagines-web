@@ -536,17 +536,22 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
                   f'datos a {referencia}; y estadística de nacimientos. <a href="/sobre-los-datos/">Cómo se calculan estos datos</a>.</p>')
 
     total_txt = (f"{n(e['H']['f'])} hombres y {n(e['M']['f'])} mujeres" if len(sexos) == 2 else f"{n(e[sexos[0]]['f'])} {SEXO[sexos[0]][1]}")
-    titulo = f"¿Cuántas personas se llaman {X} en España?"
-    # Descripción para Google: la cifra, la edad media y, si lo hay, el dato de bebés más reciente
-    principal = max(sexos, key=lambda x: e[x]["f"])
-    edad = f" (edad media {dec(e[principal]['e'])} años)" if len(sexos) == 1 and e[principal]["e"] is not None else ""
-    desc = f"En España hay {total_txt} que se llaman {X}{edad}, según el INE."
-    ultimo_anio = max(bebes)
-    bebe = e["beb"].get(ultimo_anio, {}).get(principal)
-    if bebe:
-        desc += f" En {ultimo_anio} se lo pusieron a {n(bebe['f'])} {SEXO[principal][2]} (puesto {bebe['pos']})."
-    else:
-        desc += " Dónde es más común y en qué décadas se puso más."
+    anio_ref = ref[:4]
+    titulo = f"¿Cuántas personas se llaman {X} en España? (INE {anio_ref})"
+    # Descripción para Google: qué se encuentra en la página, sin dar la cifra (si la da, nadie entra)
+    extras = []
+    if e["prov"]:
+        extras.append("en qué provincias es más común")
+    if edades:
+        extras.append("su edad media")
+    if e["dec"]:
+        extras.append("en qué década se puso más")
+    if e["beb"]:
+        principal = max(sexos, key=lambda x: e[x]["f"])
+        extras.append(f"{'cuántas' if principal == 'M' else 'cuántos'} {SEXO[principal][2]} lo reciben cada año")
+    extras = extras or ["nombres parecidos"]
+    lista = ", ".join(extras[:-1]) + " y " + extras[-1] if len(extras) > 1 else extras[0]
+    desc = f"Mira cuántas personas se llaman {X} en España con el último dato oficial del INE: {lista}."
     ld = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in faq]}]
     return pagina(f"/nombre/{e['slug']}/", titulo, desc, "\n".join(cuerpo), [(X, None)], ld)
@@ -1214,17 +1219,18 @@ def pagina_apellido(e, idx, por_p1, referencia):
         f"<details><summary>{escape(q)}</summary><p>{escape(r)}</p></details>" for q, r in faq) + "</div>")
     cuerpo.append(f'<p class="fuente">Fuente: Instituto Nacional de Estadística (INE), estadística de apellidos a partir de los Censos de población anuales, '
                   f'datos a {ref}. <a href="/sobre-los-datos/">Cómo se calculan estos datos</a>.</p>')
-    titulo = f"¿Cuántas personas se apellidan {X} en España?"
-    # Descripción para Google: cifra y puesto, cuántos lo llevan dos veces y dónde abunda más
-    desc = f"En España hay {n(e['p1'])} personas con {X} como primer apellido (puesto {n(e['r'])}), según el INE."
+    titulo = f"¿Cuántas personas se apellidan {X} en España? (INE {referencia[:4]})"
+    # Descripción para Google: qué se encuentra en la página, sin dar la cifra (si la da, nadie entra)
+    extras = []
+    if any(p.get("pm") is not None for p in e["res"]):
+        extras.append("el mapa por provincias")
     if e["ambos"]:
-        desc += f" {n(e['ambos'])} se apellidan {X} {X}."
-    primeros = sorted({PROVINCIAS[p["cod"]] for p in e["res"] if p["pos"] == 1})
-    if primeros:
-        desc += (f" Es el más común en {primeros[0]}." if len(primeros) == 1 else f" Es el más común en {len(primeros)} provincias.")
-    elif e["res"]:
-        mejor = min(e["res"], key=lambda p: (p["pos"], -p["f"]))
-        desc += f" Donde más abunda: {PROVINCIAS[mejor['cod']]} (puesto {mejor['pos']})."
+        extras.append(f"cuántos se apellidan {X} {X}")
+    if e["res"] or e["nac"]:
+        extras.append("dónde es más común")
+    extras.append("apellidos parecidos")
+    lista = ", ".join(extras[:-1]) + " y " + extras[-1]
+    desc = f"Mira cuántas personas se apellidan {X} en España con el último dato oficial del INE: {lista}."
     ld = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in faq]}]
     return pagina(f"/apellido/{e['slug']}/", titulo, desc, "\n".join(cuerpo), [("Apellidos", "/apellidos/"), (X, None)], ld)
