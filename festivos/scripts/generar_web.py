@@ -29,7 +29,7 @@ WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 SITIO = "Festivos de"
-VERSION = "1"
+VERSION = "2"
 HOY = dt.date.today()
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -44,7 +44,8 @@ CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};
                       'googlefc.callbackQueue.push(function(){googlefc.showRevocationMessage()});return false">Configurar cookies</a>')
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
            "email": "contacto.ahorrometro@gmail.com"}
-RESERVADOS = {"comunidad", "provincia", "assets", "sobre-los-datos", "aviso-legal", "privacidad", "indice"}
+RESERVADOS = {"comunidad", "provincia", "assets", "sobre-los-datos", "aviso-legal", "privacidad", "indice", "datos",
+              "calculadora-dias-laborables"}
 TIPOS = {"nacional": "Nacional", "autonomico": "Autonómica", "local": "Local"}
 # Val d'Aran: el BOE recoge una sustitución solo para este territorio
 ARAN = {"Arres", "Bausen", "Bossòst", "Canejan", "Bòrdes, Es", "Les", "Naut Aran", "Vielha e Mijaran", "Vilamòs"}
@@ -112,18 +113,70 @@ def tiene_locales(datos, anio, cod):
     return cod in datos[anio]["locales"]
 
 
-def puentes(lista):
-    """Festivos que caen en martes o jueves (puente) y en lunes o viernes (fin de semana largo)."""
-    res = []
+def calcular_puentes(lista):
+    """Para cada festivo entre semana: el bloque de días libres seguidos (fines de semana y festivos)
+    y la mejor forma de alargarlo cogiendo 1 o 2 días de vacaciones."""
+    libres = {dt.date.fromisoformat(x["f"]) for x in lista}
+    nombres = {}
     for x in lista:
-        d = dt.date.fromisoformat(x["f"])
-        if d.weekday() == 1:
-            res.append((x, "puente", "si coges libre el lunes anterior"))
-        elif d.weekday() == 3:
-            res.append((x, "puente", "si coges libre el viernes siguiente"))
-        elif d.weekday() in (0, 4):
-            res.append((x, "largo", "fin de semana de tres días"))
+        nombres.setdefault(dt.date.fromisoformat(x["f"]), []).append(x["n"])
+    un_dia = dt.timedelta(days=1)
+
+    def libre(d):
+        return d.weekday() >= 5 or d in libres
+
+    def bloque(d):
+        ini, fin = d, d
+        while libre(ini - un_dia):
+            ini -= un_dia
+        while libre(fin + un_dia):
+            fin += un_dia
+        return ini, fin
+
+    vistos, res = set(), []
+    for d in sorted(libres):
+        if d.weekday() >= 5:
+            continue
+        ini, fin = bloque(d)
+        if (ini, fin) in vistos:
+            continue
+        vistos.add((ini, fin))
+        opciones = []
+        for lado in (-1, 1):  # alargar hacia atrás o hacia delante
+            vac, x = [], (ini - un_dia if lado < 0 else fin + un_dia)
+            while not libre(x) and len(vac) < 2:
+                vac.append(x)
+                x += un_dia * lado
+            if vac and libre(x):
+                i2, f2 = bloque(x)
+                nuevo_ini, nuevo_fin = (i2, fin) if lado < 0 else (ini, f2)
+                opciones.append(((nuevo_fin - nuevo_ini).days + 1, sorted(vac), nuevo_ini, nuevo_fin))
+        opciones.sort(key=lambda o: (len(o[1]), -o[0]))
+        mejor = next((o for o in opciones if o[0] - ((fin - ini).days + 1) >= 2), None)
+        fiestas = [n for f in sorted(libres) if ini <= f <= fin for n in nombres[f]]
+        res.append({"ini": ini, "fin": fin, "dias": (fin - ini).days + 1, "fiestas": fiestas, "mejor": mejor})
     return res
+
+
+def rango(ini, fin):
+    if ini.month == fin.month:
+        return f"del {DIAS[ini.weekday()]} {ini.day} al {DIAS[fin.weekday()]} {fin.day} de {MESES[fin.month - 1]}"
+    return f"del {DIAS[ini.weekday()]} {ini.day} de {MESES[ini.month - 1]} al {DIAS[fin.weekday()]} {fin.day} de {MESES[fin.month - 1]}"
+
+
+def texto_puente(p):
+    """Frase de un puente: sin coger vacaciones o cogiendo 1-2 días."""
+    fiesta = escape(" y ".join(dict.fromkeys(p["fiestas"])))
+    partes = []
+    if p["dias"] >= 3:
+        partes.append(f'<span class="largo">{p["dias"]} días libres sin coger vacaciones</span>, {rango(p["ini"], p["fin"])}')
+    if p["mejor"]:
+        total, vac, i2, f2 = p["mejor"]
+        dias_vac = " y ".join(f"{DIAS[v.weekday()]} {v.day}" for v in vac)
+        partes.append(f'<span class="puente">coge el {dias_vac} y tendrás {total} días libres</span>, {rango(i2, f2)}')
+    if not partes:
+        return ""
+    return f"<li><b>{fiesta}</b>: " + "; o ".join(partes) + ".</li>"
 
 
 # ---------------------------------------------------------------- plantilla de página
@@ -172,8 +225,8 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
     <a href="/" class="logo"><span class="logo-hoja"><b>{HOY.day}</b><i>{MESES[HOY.month - 1][:3]}</i></span><span>festivos<span class="de">de</span>.es</span></a>
     <nav class="menu">
       <a href="/calendario-laboral-{max(ANIOS)}/">Calendario {max(ANIOS)}</a>
-      <a href="/calendario-laboral-{min(ANIOS)}/">Calendario {min(ANIOS)}</a>
-      <a href="/#comunidades">Comunidades</a>
+      <a href="/puentes-{max(ANIOS)}/">Puentes {max(ANIOS)}</a>
+      <a href="/calculadora-dias-laborables/">Días laborables</a>
     </nav>
   </div>
 </header>
@@ -184,7 +237,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="pie">
   <div class="contenedor">
     <p><strong>festivosde.es</strong> reúne los días festivos de cada municipio de España a partir del Boletín Oficial del Estado y de los boletines oficiales de cada comunidad autónoma.</p>
-    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a>' for a in ANIOS)}<a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Las fechas se toman de las publicaciones oficiales. Si ves un error, escríbenos a {TITULAR['email']}.</p>
   </div>
 </footer>
@@ -219,13 +272,11 @@ def tabla_festivos(lista):
             f'<th>Ámbito</th></tr></thead><tbody>{filas}</tbody></table></div>')
 
 
-def bloque_puentes(lista, anio):
-    p = puentes(lista)
-    if not p:
+def bloque_puentes(lista, anio, titulo=None):
+    items = "".join(texto_puente(p) for p in calcular_puentes(lista))
+    if not items:
         return ""
-    items = "".join(f'<li><b>{fecha_larga(x["f"])}</b> · {escape(x["n"])}: <span class="{tipo}">{texto}</span></li>'
-                    for x, tipo, texto in p)
-    return f'<h3>Puentes y fines de semana largos de {anio}</h3><ul class="puentes">{items}</ul>'
+    return f'<h3>{titulo or f"Puentes de {anio}"}</h3><ul class="puentes">{items}</ul>'
 
 
 def fuentes_html(datos, anio, ccaa, con_locales):
@@ -285,6 +336,8 @@ def pagina_municipio(datos, cod, m, vecinos):
 {aviso_varias}
 {tabla_festivos(lista)}
 <div class="calendario" data-anio="{anio}"></div>
+<p class="acciones"><button class="boton-imprimir" type="button" data-anio="{anio}">🖨️ Imprimir calendario {anio}</button>
+<a class="boton-sec" href="/calculadora-dias-laborables/?m={cod}">🧮 Calcular días laborables en {escape(N)}</a></p>
 {bloque_puentes(lista, anio)}
 {notas_html(datos, anio, cod)}
 {fuentes_html(datos, anio, ccaa, tiene_locales(datos, anio, cod))}
@@ -388,6 +441,76 @@ def pagina_espana(datos, anio):
                   cuerpo, [(f"Calendario laboral {anio}", None)])
 
 
+def pagina_puentes(datos, anio):
+    d = datos[anio]["nacionales_autonomicos"]
+    fechas_comunes = set.intersection(*[{x["f"] for x in lista} for lista in d.values()])
+    comunes = [x for x in d["madrid"] if x["f"] in fechas_comunes]
+    secciones = []
+    for ccaa, (nombre, _) in sorted(COMUNIDADES.items(), key=lambda x: x[1][0]):
+        items = "".join(texto_puente(p) for p in calcular_puentes(d[ccaa]))
+        if items:
+            secciones.append(f'<h3 id="{ccaa}"><a href="/comunidad/{ccaa}/">{escape(nombre)}</a></h3><ul class="puentes">{items}</ul>')
+    resumen = calcular_puentes(comunes)
+    largos = sum(1 for p in resumen if p["dias"] >= 3)
+    cuerpo = f"""<h1>Puentes {anio}</h1>
+<p class="lead">Todos los puentes de {anio} en España y en cada comunidad autónoma, según el calendario laboral publicado en el BOE: cuándo tienes fines de semana largos y qué días te conviene pedir de vacaciones para encadenar más días libres.</p>
+<p>Las fiestas locales de cada municipio pueden añadir más puentes: <a href="/">busca tu municipio</a> para verlos todos.</p>
+<h2>Puentes en toda España</h2>
+<p>Con las fiestas que se celebran en todas las comunidades hay {largos} fines de semana largos sin coger vacaciones.</p>
+<ul class="puentes">{''.join(texto_puente(p) for p in resumen)}</ul>
+<h2>Puentes de {anio} por comunidad autónoma</h2>
+{''.join(secciones)}
+<p class="fuente">Fuente: <a href="{datos[anio]['boe']['url']}" rel="nofollow noopener">{escape(datos[anio]['boe']['titulo'])}</a>.</p>"""
+    return pagina(f"/puentes-{anio}/", f"Puentes {anio}: todos los puentes y festivos de España",
+                  f"Cuándo hay puente en {anio} en España y en cada comunidad, qué días pedir de vacaciones para tener más días libres y los fines de semana largos.",
+                  cuerpo, [(f"Puentes {anio}", None)])
+
+
+def pagina_calculadora(datos):
+    anios = " y ".join(map(str, ANIOS))
+    preguntas = [
+        ("¿Qué son los días laborables?", "Los días en los que se trabaja: de lunes a viernes, sin contar los festivos nacionales, autonómicos y locales. Si trabajas los sábados, marca la casilla para contarlos."),
+        ("¿Qué son los días hábiles?", "En los plazos administrativos (Ley 39/2015) son hábiles todos los días menos los sábados, los domingos y los festivos. Para un plazo de un trámite, cuenta de lunes a viernes y elige el municipio de la administración donde lo presentas."),
+        ("¿Cuántos días laborables tiene un año?", "Depende del municipio, porque las fiestas locales cambian. Con 52 o 53 fines de semana y 14 festivos, suelen salir entre 248 y 252 días laborables de lunes a viernes."),
+    ]
+    cuerpo = f"""<h1>Calculadora de días laborables y días hábiles</h1>
+<p class="lead">Cuenta los días laborables entre dos fechas, o suma días hábiles a una fecha, descontando los fines de semana y los festivos nacionales, autonómicos y locales de tu municipio ({anios}).</p>
+<form class="calc" id="calc" onsubmit="return false">
+  <div class="campo"><label for="municipio">Municipio</label>
+    <input id="municipio" type="search" autocomplete="off" placeholder="Escribe tu municipio"><ul id="sug-municipio" class="sugerencias"></ul></div>
+  <div class="campo"><label for="modo">¿Qué quieres calcular?</label>
+    <select id="modo"><option value="entre">Días laborables entre dos fechas</option><option value="sumar">Sumar días hábiles a una fecha</option></select></div>
+  <div class="fila">
+    <div class="campo"><label for="desde">Desde</label><input id="desde" type="date"></div>
+    <div class="campo" id="campo-hasta"><label for="hasta">Hasta (incluido)</label><input id="hasta" type="date"></div>
+    <div class="campo" id="campo-n" hidden><label for="n">Días hábiles a sumar</label><input id="n" type="number" min="1" max="400" value="10"></div>
+  </div>
+  <label class="check"><input id="sabados" type="checkbox"> Contar los sábados como laborables</label>
+  <div class="resultado" id="resultado" aria-live="polite"></div>
+</form>
+<section class="contenido"><h2>Cómo se calcula</h2>
+<p>Se recorren todos los días del periodo y se descuentan los domingos (y los sábados, salvo que marques la casilla) y los festivos de tu municipio: los nacionales y autonómicos del BOE y las dos fiestas locales del boletín oficial de tu comunidad. Si las fiestas locales de un año aún no están publicadas, te lo avisamos.</p>
+<p>Al sumar días hábiles a una fecha, el primer día que cuenta es el siguiente a la fecha de inicio, como en los plazos administrativos.</p></section>
+<section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
+    return pagina("/calculadora-dias-laborables/", f"Calculadora de días laborables y hábiles {anios} por municipio",
+                  "Calcula cuántos días laborables o hábiles hay entre dos fechas, o suma días hábiles a una fecha, con los festivos de tu municipio.",
+                  cuerpo, [("Calculadora de días laborables", None)], [faq_ld(preguntas)],
+                  scripts=f'<script src="/assets/calculadora.js?v={VERSION}" defer></script>')
+
+
+def datos_provincias(datos, info):
+    """Un JSON por provincia para la calculadora: festivos de cada municipio y año."""
+    (WEB / "datos").mkdir(exist_ok=True)
+    for codp, (_, ccaa) in PROVINCIAS.items():
+        salida = {"anios": ANIOS, "comunidad": {}, "comunes": {}, "locales": {}}
+        for anio in ANIOS:
+            d = datos[anio]
+            salida["comunidad"][anio] = [[x["f"], x["n"], x["t"][0]] for x in d["nacionales_autonomicos"][ccaa]]
+            salida["comunes"][anio] = [[x["f"], x["n"] or "Fiesta local"] for x in d.get("comunes", {}).get(codp, [])]
+            salida["locales"][anio] = {c: [[x["f"], x["n"] or "Fiesta local"] for x in v] for c, v in d["locales"].items() if c[:2] == codp}
+        (WEB / "datos" / f"{codp}.json").write_text(json.dumps(salida, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
 def lista_comunidades():
     return '<ul class="lista-municipios">' + "".join(f'<li><a href="/comunidad/{c}/">{escape(n)}</a></li>' for c, (n, _) in
                                                        sorted(COMUNIDADES.items(), key=lambda x: x[1][0])) + "</ul>"
@@ -406,7 +529,8 @@ def portada(datos):
 <input id="q" type="search" placeholder="Escribe tu municipio: Getafe, Elche, Reus…" autocomplete="off"><ul id="sugerencias" class="sugerencias"></ul></form>
 </section>
 <section><h2>Próximos festivos nacionales</h2><ul class="puentes">{prox}</ul>
-<p>{' · '.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a} completo →</a>' for a in ANIOS)}</p></section>
+<p>{' · '.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a} completo →</a>' for a in ANIOS)}</p>
+<p class="acciones">{''.join(f'<a class="boton-sec" href="/puentes-{a}/">🌉 Puentes {a}</a>' for a in reversed(ANIOS))}<a class="boton-sec" href="/calculadora-dias-laborables/">🧮 Calculadora de días laborables</a></p></section>
 <section id="comunidades"><h2>Festivos por comunidad autónoma</h2>{lista_comunidades()}</section>
 <section class="contenido"><h2>¿Cuántos festivos hay al año?</h2>
 <p>En España hay como máximo 14 fiestas laborales al año: 12 las fija el Estado y cada comunidad autónoma, que puede cambiar algunas fiestas nacionales por otras propias, y 2 son locales, elegidas por cada ayuntamiento. Por eso los festivos cambian de un municipio a otro aunque estén en la misma provincia.</p>
@@ -477,7 +601,7 @@ def main():
     info = {}
     for cod, nom in muni.items():
         s = slug(corto(nom))
-        if cuenta[s] > 1 or s in RESERVADOS or s.startswith("calendario-laboral"):
+        if cuenta[s] > 1 or s in RESERVADOS or s.startswith(("calendario-laboral", "puentes-")):
             s = f"{s}-{slug(PROVINCIAS[cod[:2]][0])}"
         info[cod] = {"nombre": bonito(nom), "nombre_ine": nom, "url": f"/{s}/"}
     assert len({m["url"] for m in info.values()}) == len(info), "rutas repetidas"
@@ -485,7 +609,7 @@ def main():
     if WEB.exists():
         shutil.rmtree(WEB)
     (WEB / "assets").mkdir(parents=True)
-    for f in ("style.css", "app.js"):
+    for f in ("style.css", "app.js", "calculadora.js"):
         shutil.copy(PLANTILLA / f, WEB / "assets" / f)
     for f in ("og.png", "favicon.svg", "favicon.ico", "apple-touch-icon.png"):
         if (PLANTILLA / f).exists():
@@ -514,12 +638,16 @@ def main():
         rutas_sitemap.append(f"/comunidad/{ccaa}/")
     for anio in ANIOS:
         guardar(f"/calendario-laboral-{anio}/", pagina_espana(datos, anio))
-        rutas_sitemap.append(f"/calendario-laboral-{anio}/")
+        guardar(f"/puentes-{anio}/", pagina_puentes(datos, anio))
+        rutas_sitemap += [f"/calendario-laboral-{anio}/", f"/puentes-{anio}/"]
+    guardar("/calculadora-dias-laborables/", pagina_calculadora(datos))
+    rutas_sitemap.append("/calculadora-dias-laborables/")
+    datos_provincias(datos, info)
     guardar("/", portada(datos))
     rutas_sitemap += legales()
 
     # Índice del buscador: [nombre para buscar, nombre visible, ruta, provincia]
-    indice = [[re.sub(r"[^a-z0-9ñ/ ]", " ", m["nombre"].lower()), m["nombre"], m["url"], PROVINCIAS[c[:2]][0]] for c, m in info.items()]
+    indice = [[re.sub(r"[^a-z0-9ñ/ ]", " ", m["nombre"].lower()), m["nombre"], m["url"], PROVINCIAS[c[:2]][0], c] for c, m in info.items()]
     (WEB / "indice.json").write_text(json.dumps(indice, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     hoy = HOY.isoformat()
