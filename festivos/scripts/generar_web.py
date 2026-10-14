@@ -92,6 +92,8 @@ def festivos_de(datos, anio, cod):
     d = datos[anio]
     ccaa = PROVINCIAS[cod[:2]][1]
     lista = [dict(x) for x in d["nacionales_autonomicos"].get(ccaa, [])]
+    for x in d.get("comunes", {}).get(cod[:2], []):  # p. ej. San Prudencio en Álava, Día de Navarra
+        lista.append({"f": x["f"], "n": x["n"] or "Fiesta local", "t": "local"})
     for x in d["locales"].get(cod, []):
         lista.append({"f": x["f"], "n": x["n"] or "Fiesta local", "t": "local"})
     return sorted(lista, key=lambda x: x["f"])

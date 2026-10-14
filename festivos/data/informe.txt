@@ -1,6 +1,137 @@
 BOE 2026: canarias tiene solo 11 fiestas
-canarias 2026: 88 de 88 municipios con festivos locales (canarias_2026)
+andalucia 2026 andalucia_2026: 10 nombres sin municipio del INE (pedanías o variantes): ALANÍS DE LA SIERRA, BEJÍJAR, CORTELAZOR LA REAL, DOMINGO PÉREZ, GRANADA DE RIOTINTO, LA, HORNOS DE SEGURA, HUÉTOR SANTILLÁN, POLOPOS-LA MAMOLA, VIÑUELA, LA, ZAHARA DE LA SIERRA
+andalucia_2026_c1: corrige o añade 18 municipios: Alpujarra de la Sierra, Baños de la Encina, Cambil, Carolina, La, Castril, Cogollos de Guadix, Coín, Cádiar, Cóbdar, Garrucha, Moclín, Oria, Porcuna, Puebla de Don Fadrique, Pujerra, Rus, Sayalonga, Villanueva de las Torres
+andalucia_2026_c2: corrige o añade 1 municipios: Guarromán
+andalucia_2026_c3: corrige o añade 1 municipios: Loja
+andalucia_2026_mod: corrige o añade 4 municipios: Almogía, Escacena del Campo, Guaro, Villaverde del Río
+aragon 2026: Ilche aparece dos veces en aragon_2026; se queda la primera
+aragon 2026 aragon_2026: 102 nombres sin municipio del INE (pedanías o variantes): Algayón, Anciles, Aneto, Arascués, Arbaniés, Artasona, Asque, Asín de Broto, Bacamorta, Belsué, Binaced - Valcarca, Blecua-Torres, Buera, Buera y Huerta de Vero, Buesa, Calasanz, Callén, Campillo, Cartuja de Monegros, Castejón de Arbaniés, Cerler, Cofita, Coscujuela de Fantova, Costean, Cuatrocorz, Curbe, El Tormillo, Ena, Enate, Eresué, Eriste, Escarrilla, Espluga, Estiche de Cinca, Fraella, Gabasa, Hoz y Costean (Hoz de Barbastro), Huerta de Vero, Isabena (La Puebla de Roda), La Masadera, Lacort, Laguarres, Las Colladas, Lascasas, Lascorz, Lastanosa, Liesa, Linas de Marcuello, Lupiñén-Ortilla (Lupiñen), Marcén, Monesma de San Juan, Monesma y Cajigar (Noguero), Monflorite-Lascasas (Monflorite), Montesa, Montesusin, Montmesa, Morilla, Morillo de Liena, Navarri, Nocito
+asturias_2026: no descargado
+cantabria 2026 cantabria_2026: 151 nombres sin municipio del INE (pedanías o variantes): ANIEVAS                               FESTIVIDAD DE LAS NIEVES, APOSTOL SANTIAGO                             JULIO, ARNUERO                                      SAN ROQUIN, BARCENA DE CICERO                           SAN ESTEBAN, BATALLA DE FLORES, CAMALEÑO                                LA FIESTA DE LA CRUZ, CAMPOO DE YUSO                        FESTIVIDAD DE LAS NIEVES, CARTES                                      SAN CIPRIANO, CASTRO URDIALES                              SAN ANDRES, CILLORIGO DE LIÉBANA                          SAN ISIDRO, CORPUS CHRISTI, CORRALES DE BUELNA, LOS                 SAN ROQUE (SOMAHOZ), EL REMEDIO, ESCALANTE                           EXALTACIÓN DE LA SANTA CRUZ, FESTIVIDAD DEL CRISTO BALAGUER, HDAD. CAMPOO DE SUSO                       SAN ROQUE, Jueves, LA ASCENSION, LA ASCENSIÓN, LA MAGDALENA, LA SANTA CRUZ, LA SANTUCA, LA VIRGEN DE GRACIA, LA VIRGEN DE LA SALUD, LA VIRGEN DEL CARMEN, LAREDO                        EL ÚLTIMO DESEMBARCO DE CARLOS V, LAS CANDELAS, LIÉRGANES                                 SAN LORENZO, LOS REMEDIOS, LUENA                                     SAN ANDRES, LUNES DE PASCUA, Lunes, MAZCUERRAS                              SAN PANTALEON, MERUELO                                    SAN MIGUEL, MIENGO                                    SAN NICOLAS, MOLLEDO                               VIRGEN DEL CAMINO, Martes, NATIVIDAD DE NTRA SRA VIRGEN NIÑA DE AMPUERO, NITRA SRA. DEL CARMEN, NOJA                     SANTOS MÁRTIRES SAN EMETERIO Y SAN CELEDONIO, NTRA SRA DE FÁTIMA, NTRA SRA DE LATAS                       SEPTIEMBRE, NTRA SRA DEL CARMEN, NTRA. SRA. DE LA VIRGEN DEL PUERTO, NTRA. SRA. DE LAS NIEVES, NTRASRA. LA VIRGEN DEL CAMPO, OCTAVA DEL CORPUS CHRISTI, PESQUERA                                   SAN MIGUEL, POLACIONES                               SAN ANTOLIN, RASINES                                   SAN ANDRES, REOCÍN                               SAN MIGUEL ARCÁNGEL, ROZAS DE VALDEARROYO                  LUNES DE PASCUA, RUENTE                          SAN SEBASTIAN (BARCENILLAS), RUILOBA                                   EL MOZUCU, SAN ANTONIO, SAN BARTOLO, SAN BARTOLOMÉ, SAN BLAS, SAN CIPRIANO, SAN ESTEBAN
+castilla-la-mancha 2026: Fuentes aparece dos veces en clm_2026; se queda la primera
+castilla-la-mancha 2026 clm_2026: 134 nombres sin municipio del INE (pedanías o variantes): Aguas Nuevas, Alares (Los), Alberche del Caudillo, Alcoba de los Montes, Aldeanueva de Atienza, Almadanejos, Amayas, Anchuela del Campo, Anchuela del Pedregal, Aragosa, Arcos de la Cantera, Arisgotas, Balbacil, Barbalimpia, Bercial (El), Bernuy, Bolliga, Bormate, Buenasbodas, Bujarrabal, Canales del Ducado, Carrascosa de Henares, Carrascosa del Campo, Casar de Talavera (El), Casas de Roldan, Casas de Santa Cruz, Casasana, Castillejo del Romeral (Eatim), Cañadajuncosa, Cendejas del Padrastro, Cereceda, Chera, Chinchilla, Clares, Codes, Collados, Colliga, Colliguilla, Concha, Corchuela, Cubillejo de la Sierra, Cubillejo del Sitio, Cuevas de Velasco, Culebras, Cívica, Córcoles, El Salobral, El cubillo, Fresneda de la Jara (La), Fuentes claras Chillaron, Fuentesbuenas, Gamonal, Garcinarro, Gargantilla, Gualda, Gualdalmez, Gárgoles de Abajo, Gárgoles de Arriba, Hinojosa, Horcajada de la Torre
+castilla-y-leon 2026: AREVALILLO tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: AVEINTE tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: CANALES tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: CASASOLA tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: CASILLAS tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: COLILLA (LA) tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: DIEGO DEL CARPIO tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: FLORES DE ÁVILA tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: FRESNO (EL) tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: GALLEGOS DE ALTAMIROS tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: GUISANDO tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: MESEGAR DE CORNEJA tiene 3 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: MUÑICO tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: NARRILLOS DEL ÁLAMO - aparece dos veces en cyl_avila_2026; se queda la primera
+castilla-y-leon 2026: NAVALPERAL DE TORMES aparece dos veces en cyl_avila_2026; se queda la primera
+castilla-y-leon 2026: PAJARES DE ADAJA tiene 3 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: PEDRO-RODRÍGUEZ tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: SANTIAGO DEL TORMES - aparece dos veces en cyl_avila_2026; se queda la primera
+castilla-y-leon 2026: SANTIAGO DEL TORMES - aparece dos veces en cyl_avila_2026; se queda la primera
+castilla-y-leon 2026: VILLAR DE CORNEJA tiene 4 festivos locales en cyl_avila_2026
+castilla-y-leon 2026: ZAPARDIEL DE LA RIBERA - aparece dos veces en cyl_avila_2026; se queda la primera
+castilla-y-leon 2026 cyl_avila_2026: 30 nombres sin municipio del INE (pedanías o variantes): ASUNCIÓN y SAN MIGUEL, Anuncio, CARMEN, CONSTANZANA - JARAICES, CRISTO DE SANTA TERESA, CRISTOBAL, DE JESÚS, DE LA CRUZ, DE LA SANGRE, HUMILDAD, LA NATIVIDAD, LUNES DE VELA, MADRIGAL DE LAS ALTAS, MAROTO, NAVA DE ARÉVALO - MAGAZOS, NAVA DE ARÉVALO - NOHARRE, NAVA DE ARÉVALO - PALACIOS, NAVA DE ARÉVALO - VINADERO, NAVALMORAL DE LA SIERRA, PADIERNOS - MUÑOCHAS, PADUA, SAN JUAN DE GREDOS - LA, SAN JUAN DE GREDOS - SAN, SAN MARTÍN DE LA VEGA DEL, SAN MIGUEL ARCANGEL, SANTIAGO DEL TORMES - LA, SANTOS y VIRGEN DE LAS ANGUSTIAS, SOLOSANCHO - Baterna (Anejo), SOLOSANCHO - Villaviciosa, SRA. DEL CASTILLO
+castilla-y-leon 2026 cyl_avila_2026_c1: 1 nombres sin municipio del INE (pedanías o variantes): Localidad                                     Fiestas
+cyl_avila_2026_c1: corrige o añade 9 municipios: Barraco, El, Blascomillán, Hernansancho, Horcajada, La, Oso, El, Papatrigo, Riocabado, San García de Ingelmos, San Juan de la Encinilla
+cyl_avila_2026_c2: corrige o añade 5 municipios: Adrada, La, Bercial de Zapardiel, Mamblas, San Esteban de los Patos, Ávila
+cyl_burgos_2026: no descargado
+castilla-y-leon 2026: Matallana de Torío aparece dos veces en cyl_leon_2026_c1; se queda la primera
+castilla-y-leon 2026 cyl_leon_2026_c1: 38 nombres sin municipio del INE (pedanías o variantes): Barrio de La Estación, Barrio de San Lorenzo, Barrio de la Estación, Beberino, Buiza, Cabornera, Calzadilla de los Hermanillos, Carbajal de Fuentes, Celadilla, Ciñera, Espinosa de la Ribera, Fojedo, Folledo, Geras, Huergas de Gordón, La Valcueva y Palazuelo, La Vid, Las Grañeras, Llombera, Los Barrios de Gordón, Naredo de Fenar, Nocedo de Gordón, OFICIAL DE LA PROVINCIA., Orzonaga, Para todo el municipio, Paradilla de Gordón, Pardavé, Peredilla, Robledo de Fenar, Robles de la Valcueva, Santa Lucía, Serrilla, Tapia de la Ribera, Vega de Gordón, Villalfeide, Villamuñío, Villasimpliz, Villavidel
+cyl_leon_2026_c1: corrige o añade 12 municipios: Burgo Ranero, El, Campo de Villavidel, Cubillas de los Oteros, Fuentes de Carbajal, Matallana de Torío, Pola de Gordón, La, Quintana del Marco, Rioseco de Tapia, Sahagún, San Esteban de Nogales, Toral de los Vados, Villadangos del Páramo
+cyl_segovia_2026: no descargado
+castilla-y-leon 2026 cyl_soria_2026: 190 nombres sin municipio del INE (pedanías o variantes): Abioncillo de Calatañazor, Aguaviva de la Vega, Aguilera, Alcoba de la Torre, Alcozar, Alcubilla del Marqués, Aldea de San Esteban, Aldehuela de Calatañazor, Aldehuela del Rincón, Almarail, Almántiga, Alparrache, Atauta, Aylagas, Aylloncillo, Añavieja, BURGO DE OSMA (EL), Balluncar, Barcebal, Barcebalejo, Barriomartín, Berzosa, Bocigas de Perales, Boos, Borchicayada, Bordecorex, Bordejé, Boñices, Bretún, Cabanillas, Canredondo de la Sierra, Cantalucia, Carazuelo, Cardejón, Cascajosa, Casillas de Berlanga, Castejón del Campo, Castil de Tierra, Cenegro, Centenera del Campo, Chavaler, Chércoles, Ciadueña, Cobertelada, Covarrubias, Cubo de Hogueras, Cubo de la Sierra, Cuellar de la Sierra, Derroñadas, Dombellas, Duañez, El Collado, El Espino, Espejo de Tera, Esteras de Lubia, Fuencaliente del Burgo, Fuensaúco, Fuentecantales, Fuentegelmes, Fuentelcarro
+cyl_valladolid_2026: no descargado
+castilla-y-leon 2026 cyl_zamora_2026: 26 nombres sin municipio del INE (pedanías o variantes): BOLETÍN OFICIAL DE LA PROVINCIA DE ZAMORA, Cód., Fiestas tRadicionales de ÁmBito local,, GranUcillo de VidrialeS, Verificación: https://diputaciondezamora.sedelectronica.es/
+cataluna 2026: Cantallops aparece dos veces en cataluna_2026; se queda la primera
+cataluna 2026: Cantallops aparece dos veces en cataluna_2026; se queda la primera
+cataluna 2026: Fígols aparece dos veces en cataluna_2026; se queda la primera
+cataluna 2026: Biure aparece dos veces en cataluna_2026; se queda la primera
+cataluna 2026: Corçà aparece dos veces en cataluna_2026; se queda la primera
+cataluna 2026: Siurana aparece dos veces en cataluna_2026; se queda la primera
+cataluna 2026: Tordera aparece dos veces en cataluna_2026; se queda la primera
+cataluna 2026: Bellveí aparece dos veces en cataluna_2026; se queda la primera
+cataluna 2026: Santa Susanna aparece dos veces en cataluna_2026; se queda la primera
+cataluna 2026: Montclar aparece dos veces en cataluna_2026; se queda la primera
+cataluna 2026: Granollers aparece dos veces en cataluna_2026; se queda la primera
+cataluna 2026 cataluna_2026: 332 nombres sin municipio del INE (pedanías o variantes): Adrall, Adraén, Age, Aguilar, Aguiló, Agulló, Ainet de Besan, Ainet de Cardós, Aineto, Albarca, Alberola, Albió, Alinyà, All, Almenara Alta, Alta-riba, Altet, Altès, Alàs, Alòs d'Isil, Anserall, Ansovell, Anàs, Aramunt, Araós, Arcavell, Ardèvol, Arenys d'Empordà, Arfa, Argolell, Arròs, Arró, Ars, Artedó, Arties, Asnurri, Aubèrt, Avinyó Nou, Bagergue, Baixos de Calbinyà, Baqueira, Barruera, Basturs, Begós, Bellavista, Bellmunt, Benavent, Benós, Bescaran, Betlan, Betren, Bigues, Biscarri, Boada, Boldís Jussà, Boldís Sobirà, Bonestarre, Borén, Boí, Brunyola
+cataluna_2026_mod: corrige o añade 10 municipios: Balenyà, Cardona, Castelldefels, Polinyà, Sant Joan Despí, Sitges, Tavèrnoles, Tordera, Torà, Viladecans
+valenciana 2026: «GÁTOVA» corresponde a varios municipios ['12066', '46902']; se omite
+valenciana 2026 valenciana_2026: 4 nombres sin municipio del INE (pedanías o variantes): LA POBLA DE TORNESA, MONCADA/ MONTCADA, RAFÓL DE ALMÚNIA, VALL DE GALLINERA
+valenciana_2026_c1: no descargado
+valenciana_2026_c2: corrige o añade 1 municipios: Orba
+extremadura 2026 extremadura_2026: 59 nombres sin municipio del INE (pedanías o variantes): ALMORCHÓN, ALONSO DE OJEDA, ARROYO SAN SERVÁN, AZABAL, BARBAÑO, BARQUILLA DE PINARES, BATÁN (EL), BAZANA (LA), BRONCO (EL), BROVALES, CASAR DE MIAJADAS, CORTEGANA, ENTRERRÍOS, ENTRÍN ALTO, GARGÁLIGAS, GARVÍN DE LA JARA, GUADAJIRA, GUADALPERALES (LOS), HELECHAL, HERNÁN CORTÉS, MAJADAS .DE TIETAR, MOHEDA DE GATA (LA), NAVA (LA), NAVATRASIERRA, OBANDO, PALAZUELO, PALLARES, PIZARRO, PRADOCHANO, PUEBLA DE ALCOLLARÍN, PUERTO HURRACO, RETAMAR, RETAMOSA DE CABAÑAS, ROTURA DE CABAÑAS, RUECAS, SAN BENITO DE LA CONTIENDA, SAN FRANCISCO DE OLIVENZA, SAN GIL, SAN JORGE DE ALOR, SAN RAFAEL DE OLIVENZA, SANTA MARÍA, SANTA MARÍA DE LAS LOMAS, SANTO DOMINGO DE GUZMÁN, SOLANA DE CABAÑAS, TORREFRESNEDA, TORVISCAL (EL), TREVEJO, VALDEHORNILLOS, VALDENCÍN, VALDESALOR, VALDEÍÑIGOS, VALDIVIA, VALRÍO, VALUENGO, VEGAS ALTAS, VILLARREAL, VIVARES, YELBES, ZURBARÁN
+galicia 2026 galicia_2026: 1 nombres sin municipio del INE (pedanías o variantes): Guntín de Pallares
+madrid 2026: Valdeolmos-Alalpardo tiene 3 festivos locales en madrid_2026
+madrid 2026 madrid_2026: 7 nombres sin municipio del INE (pedanías o variantes): Berzosa de Lozoya, Braojos de la Sierra, Buitrago de Lozoya, Cerceda, El Espartal, Mataelpino, Moraleja de En medio
+madrid_2026_c1: corrige o añade 9 municipios: Brunete, Cervera de Buitrago, Colmenar de Oreja, Coslada, Lozoyuela-Navas-Sieteiglesias, Talamanca de Jarama, Torrelaguna, Valdelaguna, Villarejo de Salvanés
+madrid 2026 madrid_2026_mod: 1 nombres sin municipio del INE (pedanías o variantes): Valdetorres del Jarama
+madrid_2026_mod: corrige o añade 5 municipios: Hiruela, La, Montejo de la Sierra, Rascafría, Santa María de la Alameda, Villaconejos
+baleares 2026: FORMENTERA aparece dos veces en baleares_2026; se queda la primera
+baleares 2026: FORMENTERA aparece dos veces en baleares_2026; se queda la primera
+baleares 2026 baleares_2026: 54 nombres sin municipio del INE (pedanías o variantes): Algaida y Randa, Biniali, Biniamar, CALENDARIO, CIUTADELLA, Caimari, Cala Ferrera, Cala Figuera, Cala Millor, sa Coma i s'Illot, Cala d'Or, Calonge, Can Picafort, Cas Concos, Colònia de Sant Jordi, Colònia de Sant Pere, Debe decir:, En la versión castellana, donde dice:, Es Llombards, Fornells, Fundamentos de derecho, Moscari, Orient, Palmanyola, Parroquias de Sant Jordi de, Parroquias de Sant Josep de sa, Parròquia de Jesús, Parròquia de Sant Antoni, Parròquia de Sant Carles de Peralta, Parròquia de Sant Mateu, Parròquia de Sant Rafel, Parròquia de Santa Agnès, Parròquia de Santa Gertrudis, Parròquia de Santa Gertrudis de Fruitera, Parròquies de Santa Eulària i, Parròquies de Santa Eulària i Puig d'en Valls, Pina, Port d'Andratx, Port des Canonge, Porto Cristo, Porto Petro, Portocolom, Puig d'en Valls, S'Alqueria Blanca, Sant Llorenç de Balafia, Sant Miquel de Balansat, Sant Vicent de sa Cala, Son Carrió, Son Serra de Marina, Talaia, es Cubells y Sant Agustí des Vedrà
+Murcia 2026: PLIEGO 2026-02-02 figura como Viernes y es lunes
+navarra 2026 navarra_2026: 432 nombres sin municipio del INE (pedanías o variantes): ABÍNZANO, ACEDO, ADOÁIN, AGORRETA, AGUINAGA DE IZA, AINTZIALDE ARIZKUN, AIZKORBE, AIZOÁIN, AIZPÚN, AKERRETA (Esteribar), ALBIASU, ALDABA, ALDATZ, ALDUNATE, ALKOTZ (Ultzama), ALLI, ALLOZ, ALZUZA, ALZÓRRIZ, AMILLANO, ANOCIBAR, ANOZ, ANOZ (Ollo), ANTXORITZ, AOS, ARANDIGOYEN, ARAZURI (Olza), ARBONIÉS, ARDAITZ, ARDANAZ (Egüés), ARDANAZ (Izagaondoa), ARGUIÑANO, ARGUIÑÁRIZ, ARITZU, ARIZ, ARIZALA, ARIZALETA, ARLEGUI, ARRAITZ-ORKIN, ARRAIZA, ARRARATS, ARRE (Ezcabarte), ARRIBE, ARRIETA, ARRUITZ, ARTAIZ, ARTAJO, ARTEAGA, ARTETA, ARTICA, ARTIEDA, ARTOZQUI, ARTÁZCOZ, ARZOZ, ARÍSTREGUI, ARÓSTEGUI, ASIÁIN, ASPURZ, ASTITZ, ASTRÁIN
+navarra_2026: fiesta común a toda la provincia 31: [{'f': '2026-12-03', 'n': 'San Francisco Javier'}]
+navarra 2026 navarra_2026_mod: 7 nombres sin municipio del INE (pedanías o variantes): Ilundain, Labiano, Laquidain (Aranguren), Mutilva, RESUELVO:, Tajonar, Zolina
+navarra_2026_mod: corrige o añade 3 municipios: Aranguren, Bera, Cadreita
+pais-vasco 2026 alava_2026: 27 nombres sin municipio del INE (pedanías o variantes): Agiñaga, Añes, Beotegi, Costera, Cripán, Delegación territorial de Álava, Día de fiesta del territorio histórico, Erbi, Etxegoien, Izoria, Lejarzo, Llanteno, Luiaondo, Lujo, Madaria, Maroño, Menagarai, Menoio, Murga, Olabezar, Ozeka, Quejana, Respaldiza, Retes de Llanteno, Salmantón, Sojo, Zuaza
+alava_2026: fiesta común a toda la provincia 01: [{'f': '2026-04-28', 'n': 'San Prudencio'}]
+pais-vasco 2026 bizkaia_2026: 4 nombres sin municipio del INE (pedanías o variantes): Abanto y Ciérvana, Departamento de Economía, Trabajo y Empleo, Trucíos, Valle de Karrantza
+bizkaia_2026: fiesta común a toda la provincia 48: [{'f': '2026-07-31', 'n': 'Festividad de San Ignacio de Loyola'}]
+bizkaia_2026_mod: corrige o añade 1 municipios: Bilbao
+pais-vasco 2026 gipuzkoa_2026: 15 nombres sin municipio del INE (pedanías o variantes): Bidania, DISPONGO, Documento oficial en PDF: Enlace, Ezkio auzoa, Goiatz, Itsaso hirigunea, Itsaso-Alegia auzoa, LEABURU TXARAMA, Mendialdea Zozkera, P. Antxo, P. Donibane, P. San Pedro, PLACENCIA DE LAS ARMAS, Santa Luzia-Anduaga auzoa, Trintxerpe
+gipuzkoa_2026: fiesta común a toda la provincia 20: [{'f': '2026-07-31', 'n': 'San Ignacio de Loyola'}]
+la-rioja 2026 rioja_2026: 11 nombres sin municipio del INE (pedanías o variantes): Cabretón, Ciriñuela, Gallinero de Rioja, Islallana, Larriba, Rincón de Olivedo, Torremuña, Valdegutur, Valverde, Ventas del Baño, Villaseca de Rioja
+melilla 2026 melilla_2026: 1 nombres sin municipio del INE (pedanías o variantes): HECHOS Y FUNDAMENTOS
+== 2026 andalucia: 764 de 786 municipios con fiestas locales
+== 2026 aragon: 456 de 731 municipios con fiestas locales
+== 2026 asturias: 0 de 78 municipios con fiestas locales
+== 2026 baleares: 62 de 67 municipios con fiestas locales
+== 2026 canarias: 88 de 88 municipios con fiestas locales
+== 2026 cantabria: 13 de 102 municipios con fiestas locales
+== 2026 castilla-la-mancha: 893 de 919 municipios con fiestas locales
+== 2026 castilla-y-leon: 456 de 2248 municipios con fiestas locales
+== 2026 cataluna: 754 de 948 municipios con fiestas locales
+== 2026 extremadura: 385 de 388 municipios con fiestas locales
+== 2026 galicia: 268 de 317 municipios con fiestas locales
+== 2026 madrid: 172 de 179 municipios con fiestas locales
+== 2026 murcia: 45 de 45 municipios con fiestas locales
+== 2026 navarra: 223 de 272 municipios con fiestas locales
+== 2026 pais-vasco: 241 de 252 municipios con fiestas locales
+== 2026 la-rioja: 163 de 174 municipios con fiestas locales
+== 2026 valenciana: 500 de 543 municipios con fiestas locales
+== 2026 ceuta: 0 de 1 municipios con fiestas locales
+== 2026 melilla: 0 de 1 municipios con fiestas locales
 BOE 2027: canarias tiene solo 11 fiestas
-murcia 2027: 45 de 45 municipios con festivos locales (murcia_2027)
-la-rioja 2027: 11 nombres sin municipio del INE (pueden ser pedanías): Cabretón, Ciriñuela, Gallinero de Rioja, Islallana, Larriba, Rincón de Olivedo, Torremuña, Valdegutur, Valverde, Ventas del Baño, Villaseca de Rioja
-la-rioja 2027: 165 de 174 municipios con festivos locales (rioja_2027)
+la-rioja 2027 rioja_2027: 11 nombres sin municipio del INE (pedanías o variantes): Cabretón, Ciriñuela, Gallinero de Rioja, Islallana, Larriba, Rincón de Olivedo, Torremuña, Valdegutur, Valverde, Ventas del Baño, Villaseca de Rioja
+baleares 2027: Banyalbufar aparece dos veces en baleares_2027; se queda la primera
+baleares 2027: Puigpunyent aparece dos veces en baleares_2027; se queda la primera
+baleares 2027: Santa Margalida aparece dos veces en baleares_2027; se queda la primera
+baleares 2027: Selva aparece dos veces en baleares_2027; se queda la primera
+baleares 2027 baleares_2027: 53 nombres sin municipio del INE (pedanías o variantes): ANEXO, Algaida y Randa, Biniali, Biniamar                                       Santa Tecla, Bunyola                              San Mateo, Caimari                                        Dijous Bo, Cala Ferrera, Cala Figuera, Cala d'Or, Calonge, Can Picafort                            Lunes de la Beata, Cardassar, Cas Concos, Ciutadella, Colònia de Sant Jordi, Colònia de Sant Pere, Dijous Bo, Día siguiente a la fiesta patronal de San, Es Capdellà, Es Llombards, Eulària i Puig d'en Valls, Fornells, Galilea, Illes Balears, Llucmajor                            San Miguel, Moscari, Orient, Palmanyola, Parroquia de Jesús, Parroquia de Sant Antoni, Parroquia de Sant Mateu, Parroquia de Sant Rafel, Parroquia de Santa Agnès, Parroquia de Santa Gertrudis, Parroquias de Sant Jordi de, Peralta, Pina, Port d'Andratx, Port des Canonge, Porto Cristo, Portocolom, Portopetro, S'Alqueria Blanca, S'Arracó, S'Horta, S'Illot, Sant Agustí des Vedrà, Sant Llorenç de Balàfia, Sant Miquel de Balansat, Sant Vicent de sa Cala, Son Carrió, Son Serra de Marina
+asturias 2027: PESOZ tiene 3 festivos locales en asturias_2027
+asturias 2027: PILOÑA tiene 3 festivos locales en asturias_2027
+asturias 2027 asturias_2027: 62 nombres sin municipio del INE (pedanías o variantes): ABRES, ALTA, ASTURIAS, BAJA, CANGAS DEL, CASARIEGO, CASTROPOL        octubre, Carmen de Torazu y Jira de Incós, Día de San Martín, Día de San Miguel, Día del Fuero de Valdés, en todo el Concejo, excepto en, Día posterior a La Feriona, El Carmín, en todo el Concejo excepto en la parroquia de, El Cristo, En Sevares, Festividad de Las Ferias, Festividad de San Juan, en todo el Municipio excepto en, Festividad de San Martín, Festividad del Bollo en Salas, Festividad del Ecce-Homo, Festividad del Santísimo Cristo de Candás, Festivo en Colombres, La Sacramental, Fiestas Patronales Nuestra Señora del Portal, Fiestas Populares de Corvera de Asturias, Fundamentos de derecho, Jira de Puerto de Vega, Jorge), La Gira, La Magdalena (excepto Posada, Nueva y Valle de San, La propia Fiesta Mayor o Patronal de cada pueblo con, Lunes siguiente a San Cipriano, MIRANDA, Martes de San Roque Lastres, NARCEA, Ntra. Señora de la Consolación, Nuestra Señora, OSCOS, PEÑAMELLERA, RESUELVO, REY AURELIO, Remedios, SALIME, SAN TIRSO DE, SIERO                            Lugones/Llugones, San Agustín, San Andrés, San Bartolomé, San Mateo, San Roque, Santa Bárbara, Santa Isabel, en la Parroquia de Lugones/Llugones, Santa Lucía, Santa Lucía en Posada y Parroquia, Santa María de Oneta, Santo Antolín, Sta. Teresa en Infiesto y resto del Concejo, TAPIA DE, Trevías, VILLANUEVA DE, Víspera Fiesta Nacional
+castilla-y-leon 2027 cyl_palencia_2027: 35 nombres sin municipio del INE (pedanías o variantes): Anuncios Municipal., Arroyo, BOP de Palencia                          Lunes, Barrios de la Vega, CASTRILLO DE ONIELO               no comunicado, CUARTA. - ADMISIÓN DE ASPIRANTES, Cascón de la Nava, Gañinas de la Vega, HECHOS, Hijosa de Boedo, Leg, Lobera de la Vega, Miñanes, PUEBLA DE VALDAVIA, Población de Soto, Portillejo, Quintanadiez de la Vega, Revilla de Campos, Robladillo de Ucieza, Santa Olaja de la Vega, Valdecañas de Cerrato, Valdespina, Velillas del Duque, Villacuende, Villamorco, Villantodrigo, Villanueva de los Nabos, Villaproviano, Villarmienzo, Villarrodrigo de la Vega, Villasabariego de Ucieza, Villotilla
+castilla-y-leon 2027 cyl_zamora_2027: 34 nombres sin municipio del INE (pedanías o variantes): BOLETÍN OFICIAL DE LA PROVINCIA DE ZAMORA, Cód., FIESTAS TRADICIONALES DE ÁMBITO LOCAL, EN ZAMORA CAPITAL, GranUcillo de VidrialeS, Verificación: https://diputaciondezamora.sedelectronica.es/
+cyl_zamora_2027_c1: corrige o añade 0 municipios: 
+== 2027 andalucia: 0 de 786 municipios con fiestas locales
+== 2027 aragon: 0 de 731 municipios con fiestas locales
+== 2027 asturias: 59 de 78 municipios con fiestas locales
+== 2027 baleares: 59 de 67 municipios con fiestas locales
+== 2027 canarias: 88 de 88 municipios con fiestas locales
+== 2027 cantabria: 0 de 102 municipios con fiestas locales
+== 2027 castilla-la-mancha: 0 de 919 municipios con fiestas locales
+== 2027 castilla-y-leon: 263 de 2248 municipios con fiestas locales
+== 2027 cataluna: 0 de 948 municipios con fiestas locales
+== 2027 extremadura: 0 de 388 municipios con fiestas locales
+== 2027 galicia: 0 de 317 municipios con fiestas locales
+== 2027 madrid: 0 de 179 municipios con fiestas locales
+== 2027 murcia: 45 de 45 municipios con fiestas locales
+== 2027 navarra: 0 de 272 municipios con fiestas locales
+== 2027 pais-vasco: 0 de 252 municipios con fiestas locales
+== 2027 la-rioja: 165 de 174 municipios con fiestas locales
+== 2027 valenciana: 0 de 543 municipios con fiestas locales
+== 2027 ceuta: 0 de 1 municipios con fiestas locales
+== 2027 melilla: 0 de 1 municipios con fiestas locales
