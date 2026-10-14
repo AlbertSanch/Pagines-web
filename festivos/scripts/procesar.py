@@ -101,6 +101,12 @@ def fechas_en(texto, anio):
                 res.append((fecha(anio, d, m.group(3)), nombre[:1].upper() + nombre[1:]))
             except ValueError:
                 aviso(f"Fecha imposible: «{m.group(0)}»")
+    for m in re.finditer(r"\b(\d{1,2})[./](\d{1,2})[./](\d{4})\b\s*([^\d\n]{0,60})", texto):
+        if int(m.group(3)) == anio:
+            try:
+                res.append((dt.date(anio, int(m.group(2)), int(m.group(1))), m.group(4).strip(" .,;")))
+            except ValueError:
+                aviso(f"Fecha imposible: «{m.group(0)}»")
     return res
 
 
@@ -142,8 +148,30 @@ def leer_general(txt, anio, ccaa):
     for linea in crudas:
         # «Sahún. 24 de junio y 8 de septiembre. Eriste. 20 de enero…»: una entrada por localidad
         lineas += re.split(r"(?<=[.;])\s+(?=[A-ZÁÉÍÓÚÑ][^\d.:;]{1,60}[.:]\s*\d)", linea)
-    for linea in lineas:
+    limpias = [l.strip() for l in lineas]
+
+    def siguiente_es_nombre(i):
+        """¿La siguiente línea con texto es solo un nombre en mayúsculas (sin fechas)?"""
+        for t in lineas[i + 1:i + 3]:
+            if t.strip():
+                col = re.split(r"\s{2,}", t.rstrip())[0]
+                return bool(t[:1].strip()) and bool(re.match(r"^[A-ZÁÉÍÓÚÑÜ][A-ZÁÉÍÓÚÑÜ ,.'()/-]{2,}$", col)) and not re.search(r"\d", t)
+        return False
+
+    pendiente_fechas = None
+    for idx, linea in enumerate(lineas):
         s = linea.strip()
+        # Versalitas mal extraídas del PDF (Zamora: «alcaÑiceS   3 de julio»): nombre en la primera columna
+        if re.match(r"^[a-záéíóúñ][\wÁÉÍÓÚÑáéíóúñü' ()-]+\s{2,}\d", linea):
+            s = s[:1].upper() + s[1:]
+        # «Ávila, 27 de enero de 2026.» / «En Madrid, a 22 de diciembre de 2025.—…»: firma, no festivo
+        if re.match(r"^(?:en\s+)?[A-ZÁÉÍÓÚÑ][\w'’ -]{1,40},\s*(?:a\s+)?\d{1,2} de \w+ de \d{4}\b", s):
+            continue
+        col = re.split(r"\s{2,}", linea.rstrip())[0].strip() if linea[:1].strip() else ""
+        if pendiente_fechas and col and re.match(r"^[A-ZÁÉÍÓÚÑÜ][A-ZÁÉÍÓÚÑÜ ,.'()/-]{2,}$", col) and not re.search(r"\d", s):
+            entradas.append([col, prov, pendiente_fechas])
+            pendiente_fechas, pendiente = None, None
+            continue
         if s[:1] in "•·" or re.match(r"^[-–]\s+\d", s):
             s = s.lstrip("•·-– \t")
         if not s:
@@ -160,6 +188,8 @@ def leer_general(txt, anio, ccaa):
         elif re.match(r"^\d{1,2}\b", s) and pendiente:
             entradas.append([pendiente, prov, s])
             pendiente = None
+        elif re.match(r"^\d{1,2}\s+(?:de\s+)?(" + "|".join(MESES) + r")\b", s, re.I) and siguiente_es_nombre(idx):
+            pendiente_fechas = s  # el nombre del municipio viene en la línea siguiente (celda centrada)
         elif re.match(r"^\d{1,2}\s+(?:de\s+)?(" + "|".join(MESES) + r")\b", s, re.I) and entradas and len(fechas_en(entradas[-1][2], anio)) < 2:
             entradas[-1][2] += " ; " + s  # segunda fecha en su propia línea
         elif not re.search(r"\d", s) and len(s) < 60 and re.match(r"^[A-ZÁÉÍÓÚÑ]", s):
