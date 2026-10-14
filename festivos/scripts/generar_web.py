@@ -71,6 +71,15 @@ def corto(nombre_ine):
     return partes[-1] if len(partes) > 1 else partes[0]
 
 
+def de(nombre):
+    """«de la Comunidad de Madrid», «de las Illes Balears», «de Andalucía»."""
+    if nombre.startswith(("Comunidad", "Región", "Comunitat")):
+        return f"de la {nombre}"
+    if nombre.startswith("Illes"):
+        return f"de las {nombre}"
+    return f"de {nombre}"
+
+
 def fecha_larga(f, con_dia=True):
     d = dt.date.fromisoformat(f) if isinstance(f, str) else f
     texto = f"{d.day} de {MESES[d.month - 1]}"
@@ -224,7 +233,7 @@ def fuentes_html(datos, anio, ccaa, con_locales):
     partes = [f'<a href="{d["boe"]["url"]}" rel="nofollow noopener">{escape(d["boe"]["titulo"])}</a> (BOE de {fecha_larga(d["boe"]["publicado"], False)} de {d["boe"]["publicado"][:4]})']
     f = d["fuentes"].get(ccaa)
     if con_locales and f:
-        partes.append(f'<a href="{escape(f["url"])}" rel="nofollow noopener">fiestas locales de {escape(COMUNIDADES[ccaa][0])} para {anio}</a>'
+        partes.append(f'<a href="{escape(f["url"])}" rel="nofollow noopener">fiestas locales {escape(de(COMUNIDADES[ccaa][0]))} para {anio}</a>'
                       + (f' ({escape(f["titulo"])})' if f.get("titulo") else ""))
     return '<p class="fuente">Fuente: ' + "; ".join(partes) + ".</p>"
 
@@ -260,16 +269,16 @@ def pagina_municipio(datos, cod, m, vecinos):
             resumen = f"<p>Las <strong>fiestas locales de {escape(N)} en {anio}</strong> son {loc_txt}. En total, {len(lista)} días festivos en el año.</p>"
             preguntas.append((f"¿Cuáles son las fiestas locales de {N} en {anio}?",
                               f"Las fiestas locales de {escape(N)} en {anio} son " + " y ".join(fecha_larga(x["f"]) for x in locales)
-                              + f". Además, hay {len(lista) - len(locales)} festivos nacionales y de {escape(ccaa_nombre)}."))
+                              + f". Además, hay {len(lista) - len(locales)} festivos nacionales y {escape(de(ccaa_nombre))}."))
         else:
             resto = datos[anio]["fuentes"].get(ccaa, {}).get("resto")
             if resto:
-                pendiente = (f"El boletín oficial de {escape(ccaa_nombre)} no indica fechas concretas para {escape(N)}: dice «{escape(resto)}». "
+                pendiente = (f"El boletín oficial {escape(de(ccaa_nombre))} no indica fechas concretas para {escape(N)}: dice «{escape(resto)}». "
                              "Consulta las fechas exactas en tu ayuntamiento.")
             else:
                 pendiente = (f"Las dos fiestas locales de {escape(N)} para {anio} todavía no están publicadas en nuestros datos. "
-                             f"Las aprueba cada año el boletín oficial de {escape(ccaa_nombre)} y las añadiremos en cuanto salgan.")
-            resumen = f'<p class="pendiente">{pendiente}</p><p>De momento, estos son los {len(lista)} festivos nacionales y de {escape(ccaa_nombre)} que también se celebran en {escape(N)}:</p>'
+                             f"Las aprueba cada año el boletín oficial {escape(de(ccaa_nombre))} y las añadiremos en cuanto salgan.")
+            resumen = f'<p class="pendiente">{pendiente}</p><p>De momento, estos son los {len(lista)} festivos nacionales y {escape(de(ccaa_nombre))} que también se celebran en {escape(N)}:</p>'
         secciones.append(f"""<section class="anio" id="festivos-{anio}">
 <h2>Festivos de {escape(N)} en {anio}</h2>
 {resumen}
@@ -282,17 +291,17 @@ def pagina_municipio(datos, cod, m, vecinos):
 </section>""")
         preguntas.append((f"¿Cuántos festivos hay en {N} en {anio}?",
                           f"En {escape(N)} hay {len(lista)} días festivos en {anio}: "
-                          f"{sum(1 for x in lista if x['t'] == 'nacional')} nacionales, {sum(1 for x in lista if x['t'] == 'autonomico')} de {escape(ccaa_nombre)}"
+                          f"{sum(1 for x in lista if x['t'] == 'nacional')} nacionales, {sum(1 for x in lista if x['t'] == 'autonomico')} {escape(de(ccaa_nombre))}"
                           + (f" y {len(locales)} locales." if locales else ". Las fiestas locales aún no están publicadas.")))
     lista_vecinos = "".join(f'<li><a href="{v["url"]}">{escape(v["nombre"])}</a></li>' for v in vecinos)
     cuerpo = f"""<h1>Festivos en {escape(N)}</h1>
-<p class="lead">Calendario laboral de {escape(N)} ({escape(prov_nombre)}): fiestas locales, de {escape(ccaa_nombre)} y nacionales de {' y '.join(map(str, ANIOS))}.</p>
+<p class="lead">Calendario laboral de {escape(N)} ({escape(prov_nombre)}): fiestas locales, {escape(de(ccaa_nombre))} y nacionales de {' y '.join(map(str, ANIOS))}.</p>
 <div class="hoy" id="hoy" data-municipio="{escape(N)}"></div>
 <nav class="saltos">{''.join(f'<a href="#festivos-{a}">{a}</a>' for a in ANIOS)}<button class="boton-ics" type="button">📅 Añadir a mi calendario</button></nav>
 {''.join(secciones)}
 <section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>
 <section><h2>Otros municipios de {escape(prov_nombre)}</h2><ul class="lista-municipios">{lista_vecinos}</ul>
-<p><a href="{RUTAS_PROV[cod[:2]]}">Todos los festivos locales de la provincia de {escape(prov_nombre)} →</a> · <a href="/comunidad/{ccaa}/">Calendario laboral de {escape(ccaa_nombre)} →</a></p></section>
+<p><a href="{RUTAS_PROV[cod[:2]]}">Todos los festivos locales de la provincia de {escape(prov_nombre)} →</a> · <a href="/comunidad/{ccaa}/">Calendario laboral {escape(de(ccaa_nombre))} →</a></p></section>
 <script type="application/json" id="datos-festivos">{json.dumps({"municipio": N, "festivos": embebido, "locales": [a for a in ANIOS if tiene_locales(datos, a, cod)]}, ensure_ascii=False, separators=(",", ":"))}</script>"""
     anio_tit = max(a for a in ANIOS)
     titulo = f"Festivos en {corto(m['nombre_ine'])} {min(ANIOS)} y {anio_tit}: calendario laboral"
@@ -301,7 +310,7 @@ def pagina_municipio(datos, cod, m, vecinos):
     con_locales = [a for a in ANIOS if tiene_locales(datos, a, cod)]
     # Descripción para Google: qué hay en la página, sin dar las fechas (si las da, nadie entra)
     desc = (f"Cuáles son las fiestas locales de {N} en {' y '.join(map(str, ANIOS))}, el próximo festivo, "
-            f"los puentes y todos los festivos de {ccaa_nombre}, con el boletín oficial. Añádelos a tu calendario.")
+            f"los puentes y todos los festivos {de(ccaa_nombre)}, con el boletín oficial. Añádelos a tu calendario.")
     migas = [(ccaa_nombre, f"/comunidad/{ccaa}/"), (prov_nombre, RUTAS_PROV[cod[:2]]), (N, None)]
     if ccaa_nombre == prov_nombre:
         migas = migas[1:]
@@ -324,7 +333,7 @@ def pagina_provincia(datos, codp, muni_prov):
 <p>{'Con fechas publicadas: ' + str(con) + ' de ' + str(len(muni_prov)) + ' municipios.' if con else 'Las fiestas locales de ' + str(anio) + ' todavía no están publicadas.'}</p>
 <div class="tabla-envoltorio"><table class="festivos"><thead><tr><th>Municipio</th><th>Fiestas locales</th></tr></thead><tbody>{''.join(filas)}</tbody></table></div></section>""")
     cuerpo = f"""<h1>Festivos en la provincia de {escape(nombre)}</h1>
-<p class="lead">Las dos fiestas locales de cada municipio de {escape(nombre)} y el <a href="/comunidad/{ccaa}/">calendario laboral de {escape(COMUNIDADES[ccaa][0])}</a>.</p>
+<p class="lead">Las dos fiestas locales de cada municipio de {escape(nombre)} y el <a href="/comunidad/{ccaa}/">calendario laboral {escape(de(COMUNIDADES[ccaa][0]))}</a>.</p>
 {''.join(secciones)}"""
     alguno = any(tiene_locales(datos, a, c) for a in ANIOS for c, _ in muni_prov)
     return pagina(RUTAS_PROV[codp], f"Festivos locales de la provincia de {nombre} {min(ANIOS)} y {max(ANIOS)}",
@@ -338,7 +347,7 @@ def pagina_comunidad(datos, ccaa, provs):
     for anio in ANIOS:
         lista = datos[anio]["nacionales_autonomicos"][ccaa]
         notas = "".join(f'<p class="nota">{escape(t)}</p>' for t in datos[anio]["notas"].get(ccaa, []))
-        secciones.append(f"""<section id="festivos-{anio}"><h2>Calendario laboral de {escape(nombre)} {anio}</h2>
+        secciones.append(f"""<section id="festivos-{anio}"><h2>Calendario laboral {escape(de(nombre))} {anio}</h2>
 <p>{len(lista)} festivos comunes a toda la comunidad, más las dos fiestas locales de cada municipio.</p>
 {tabla_festivos(lista)}{bloque_puentes(lista, anio)}{notas}
 <p class="fuente">Fuente: <a href="{datos[anio]['boe']['url']}" rel="nofollow noopener">{escape(datos[anio]['boe']['titulo'])}</a>.</p></section>""")
