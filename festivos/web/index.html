@@ -19,7 +19,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="stylesheet" href="/assets/style.css?v=2">
+<link rel="stylesheet" href="/assets/style.css?v=3">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -29,7 +29,7 @@
 <body>
 <header class="cabecera">
   <div class="contenedor">
-    <a href="/" class="logo"><span class="logo-hoja"><b>14</b><i>oct</i></span><span>festivos<span class="de">de</span>.es</span></a>
+    <a href="/" class="logo"><span class="logo-hoja"><b id="logo-dia">14</b><i id="logo-mes">oct</i></span><span>festivos<span class="de">de</span>.es</span></a>
     <nav class="menu">
       <a href="/calendario-laboral-2027/">Calendario 2027</a>
       <a href="/puentes-2027/">Puentes 2027</a>
@@ -40,18 +40,31 @@
 <main class="contenedor">
 
 <section class="portada">
-<h1>Festivos de tu municipio</h1>
-<p class="lead">Las fiestas locales, autonómicas y nacionales de los más de 8.000 municipios de España, sacadas del BOE y de los boletines oficiales de cada comunidad.</p>
+<div class="portada-texto">
+<h1>Los festivos de tu municipio</h1>
+<p class="lead">Fiestas locales, autonómicas y nacionales de los más de 8.000 municipios de España, con los puentes y el próximo festivo. Sacadas del BOE y de los boletines oficiales de cada comunidad.</p>
 <form class="buscador" role="search" action="/" onsubmit="return false"><label for="q" class="oculto">Municipio</label>
-<input id="q" type="search" placeholder="Escribe tu municipio: Getafe, Elche, Reus…" autocomplete="off"><ul id="sugerencias" class="sugerencias"></ul></form>
+<input id="q" type="search" placeholder="Busca tu municipio: Getafe, Elche, Reus…" autocomplete="off"><ul id="sugerencias" class="sugerencias"></ul></form>
+<ul class="chips"><li><a href="/madrid/">Madrid</a></li><li><a href="/barcelona/">Barcelona</a></li><li><a href="/valencia/">València</a></li><li><a href="/sevilla/">Sevilla</a></li><li><a href="/zaragoza/">Zaragoza</a></li><li><a href="/malaga/">Málaga</a></li><li><a href="/murcia/">Murcia</a></li><li><a href="/elche/">Elche</a></li><li><a href="/alicante/">Alicante</a></li><li><a href="/bilbao/">Bilbao</a></li><li><a href="/getafe/">Getafe</a></li><li><a href="/cordoba/">Córdoba</a></li><li><a href="/valladolid/">Valladolid</a></li><li><a href="/vigo/">Vigo</a></li><li><a href="/gijon/">Gijón</a></li><li><a href="/logrono/">Logroño</a></li></ul>
+</div>
+<div class="hoy-portada" id="hoy-portada"><span class="etq">Hoy es</span><b id="hoy-fecha">miércoles 14 de octubre</b>
+<span class="etq">Próximo festivo en toda España</span><b id="prox-fecha">martes 8 de diciembre</b>
+<span id="prox-nombre">Inmaculada Concepción</span><span class="cuenta" id="prox-cuenta"></span></div>
 </section>
-<section><h2>Próximos festivos nacionales</h2><ul class="puentes"><li><b>lunes 2 de noviembre</b> 2026 · Día siguiente a Todos los Santos</li><li><b>lunes 7 de diciembre</b> 2026 · Lunes siguiente al Día de la Constitución Española</li><li><b>martes 8 de diciembre</b> 2026 · Inmaculada Concepción</li></ul>
-<p><a href="/calendario-laboral-2026/">Calendario laboral 2026 completo →</a> · <a href="/calendario-laboral-2027/">Calendario laboral 2027 completo →</a></p>
-<p class="acciones"><a class="boton-sec" href="/puentes-2027/">🌉 Puentes 2027</a><a class="boton-sec" href="/puentes-2026/">🌉 Puentes 2026</a><a class="boton-sec" href="/calculadora-dias-laborables/">🧮 Calculadora de días laborables</a></p></section>
-<section id="comunidades"><h2>Festivos por comunidad autónoma</h2><ul class="lista-municipios"><li><a href="/comunidad/andalucia/">Andalucía</a></li><li><a href="/comunidad/aragon/">Aragón</a></li><li><a href="/comunidad/asturias/">Asturias</a></li><li><a href="/comunidad/canarias/">Canarias</a></li><li><a href="/comunidad/cantabria/">Cantabria</a></li><li><a href="/comunidad/castilla-y-leon/">Castilla y León</a></li><li><a href="/comunidad/castilla-la-mancha/">Castilla-La Mancha</a></li><li><a href="/comunidad/cataluna/">Cataluña</a></li><li><a href="/comunidad/ceuta/">Ceuta</a></li><li><a href="/comunidad/madrid/">Comunidad de Madrid</a></li><li><a href="/comunidad/valenciana/">Comunitat Valenciana</a></li><li><a href="/comunidad/extremadura/">Extremadura</a></li><li><a href="/comunidad/galicia/">Galicia</a></li><li><a href="/comunidad/baleares/">Illes Balears</a></li><li><a href="/comunidad/la-rioja/">La Rioja</a></li><li><a href="/comunidad/melilla/">Melilla</a></li><li><a href="/comunidad/navarra/">Navarra</a></li><li><a href="/comunidad/pais-vasco/">País Vasco</a></li><li><a href="/comunidad/murcia/">Región de Murcia</a></li></ul></section>
+<section><h2>Próximos festivos nacionales</h2><ul class="hojas"><li class="hoja"><span class="hoja-mes">dic</span><b>8</b><span class="hoja-dia">martes</span><small>Inmaculada Concepción</small></li><li class="hoja"><span class="hoja-mes">dic</span><b>25</b><span class="hoja-dia">viernes</span><small>Natividad del Señor</small></li><li class="hoja"><span class="hoja-mes">ene</span><b>1</b><span class="hoja-dia">viernes</span><small>Año Nuevo</small></li><li class="hoja"><span class="hoja-mes">ene</span><b>6</b><span class="hoja-dia">miércoles</span><small>Epifanía del Señor</small></li></ul></section>
+<section class="accesos">
+<a class="acceso" href="/calendario-laboral-2027/"><span class="ico">📅</span><b>Calendario laboral 2027</b><span>Todos los festivos de España y qué se celebra en cada comunidad.</span></a>
+<a class="acceso" href="/puentes-2027/"><span class="ico">🌉</span><b>Puentes 2027</b><span>Qué días pedir de vacaciones para encadenar más días libres.</span></a>
+<a class="acceso" href="/calculadora-dias-laborables/"><span class="ico">🧮</span><b>Días laborables</b><span>Cuenta días laborables o hábiles con los festivos de tu municipio.</span></a>
+</section>
+<section><h2>2027 de un vistazo</h2>
+<p>Los 9 festivos nacionales que se celebran en toda España. Busca tu municipio para ver también los de tu comunidad y tus fiestas locales.</p>
+<div class="calendario" data-anio="2027"></div></section>
+<section id="comunidades"><h2>Festivos por comunidad autónoma</h2><ul class="tarjetas-ccaa"><li><a href="/comunidad/andalucia/"><b>Andalucía</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/aragon/"><b>Aragón</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/asturias/"><b>Asturias</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/canarias/"><b>Canarias</b><span>11 festivos en 2027</span></a></li><li><a href="/comunidad/cantabria/"><b>Cantabria</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/castilla-y-leon/"><b>Castilla y León</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/castilla-la-mancha/"><b>Castilla-La Mancha</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/cataluna/"><b>Cataluña</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/ceuta/"><b>Ceuta</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/madrid/"><b>Comunidad de Madrid</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/valenciana/"><b>Comunitat Valenciana</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/extremadura/"><b>Extremadura</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/galicia/"><b>Galicia</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/baleares/"><b>Illes Balears</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/la-rioja/"><b>La Rioja</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/melilla/"><b>Melilla</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/navarra/"><b>Navarra</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/pais-vasco/"><b>País Vasco</b><span>12 festivos en 2027</span></a></li><li><a href="/comunidad/murcia/"><b>Región de Murcia</b><span>12 festivos en 2027</span></a></li></ul></section>
 <section class="contenido"><h2>¿Cuántos festivos hay al año?</h2>
 <p>En España hay como máximo 14 fiestas laborales al año: 12 las fija el Estado y cada comunidad autónoma, que puede cambiar algunas fiestas nacionales por otras propias, y 2 son locales, elegidas por cada ayuntamiento. Por eso los festivos cambian de un municipio a otro aunque estén en la misma provincia.</p>
 <p>El calendario nacional y autonómico se publica en el BOE en otoño del año anterior. Las fiestas locales las publica cada comunidad en su boletín oficial, normalmente entre el verano y el final del año anterior.</p></section>
+<script type="application/json" id="datos-festivos">{"municipio":"España","festivos":{"2027":[["2027-01-01","Año Nuevo","n"],["2027-01-06","Epifanía del Señor","n"],["2027-03-26","Viernes Santo","n"],["2027-05-01","Fiesta del Trabajo","n"],["2027-10-12","Fiesta Nacional de España","n"],["2027-11-01","Todos los Santos","n"],["2027-12-06","Día de la Constitución Española","n"],["2027-12-08","Inmaculada Concepción","n"],["2027-12-25","Natividad del Señor","n"]]},"locales":[],"proximos":[["2026-01-01","Año Nuevo"],["2026-01-06","Epifanía del Señor"],["2026-04-03","Viernes Santo"],["2026-05-01","Fiesta del Trabajo"],["2026-08-15","Asunción de la Virgen"],["2026-10-12","Fiesta Nacional de España"],["2026-12-08","Inmaculada Concepción"],["2026-12-25","Natividad del Señor"],["2027-01-01","Año Nuevo"],["2027-01-06","Epifanía del Señor"],["2027-03-26","Viernes Santo"],["2027-05-01","Fiesta del Trabajo"],["2027-10-12","Fiesta Nacional de España"],["2027-11-01","Todos los Santos"],["2027-12-06","Día de la Constitución Española"],["2027-12-08","Inmaculada Concepción"],["2027-12-25","Natividad del Señor"]]}</script>
 </main>
 <footer class="pie">
   <div class="contenedor">
@@ -60,7 +73,7 @@
     <p>Las fechas se toman de las publicaciones oficiales. Si ves un error, escríbenos a contacto.ahorrometro@gmail.com.</p>
   </div>
 </footer>
-<script src="/assets/app.js?v=2" defer></script>
+<script src="/assets/app.js?v=3" defer></script>
 
 </body>
 </html>

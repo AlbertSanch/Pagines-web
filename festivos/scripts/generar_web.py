@@ -29,7 +29,7 @@ WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 SITIO = "Festivos de"
-VERSION = "2"
+VERSION = "3"
 HOY = dt.date.today()
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -222,7 +222,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <body>
 <header class="cabecera">
   <div class="contenedor">
-    <a href="/" class="logo"><span class="logo-hoja"><b>{HOY.day}</b><i>{MESES[HOY.month - 1][:3]}</i></span><span>festivos<span class="de">de</span>.es</span></a>
+    <a href="/" class="logo"><span class="logo-hoja"><b id="logo-dia">{HOY.day}</b><i id="logo-mes">{MESES[HOY.month - 1][:3]}</i></span><span>festivos<span class="de">de</span>.es</span></a>
     <nav class="menu">
       <a href="/calendario-laboral-{max(ANIOS)}/">Calendario {max(ANIOS)}</a>
       <a href="/puentes-{max(ANIOS)}/">Puentes {max(ANIOS)}</a>
@@ -517,24 +517,52 @@ def lista_comunidades():
 
 
 def portada(datos):
-    anio = HOY.year if HOY.year in datos else min(ANIOS)
-    proximos = [x for x in datos[anio]["nacionales_autonomicos"]["madrid"] if x["t"] == "nacional" and x["f"] >= HOY.isoformat()][:3]
-    if anio + 1 in datos and len(proximos) < 3:
-        proximos += [x for x in datos[anio + 1]["nacionales_autonomicos"]["madrid"] if x["t"] == "nacional"][:3 - len(proximos)]
-    prox = "".join(f'<li><b>{fecha_larga(x["f"])}</b> {x["f"][:4]} · {escape(x["n"])}</li>' for x in proximos)
+    anio_sig = max(ANIOS)
+    d_sig = datos[anio_sig]["nacionales_autonomicos"]
+    comunes_sig = set.intersection(*[{x["f"] for x in l} for l in d_sig.values()])
+    nacionales = [x for x in d_sig["madrid"] if x["f"] in comunes_sig]
+    # Festivos comunes a toda España de todos los años, para la cuenta atrás y las hojas de calendario
+    todos = []
+    for a in ANIOS:
+        da = datos[a]["nacionales_autonomicos"]
+        com = set.intersection(*[{x["f"] for x in l} for l in da.values()])
+        todos += [[x["f"], x["n"]] for x in da["madrid"] if x["f"] in com]
+    proximos = [x for x in todos if x[0] >= HOY.isoformat()][:4]
+    hojas = "".join(
+        f'<li class="hoja"><span class="hoja-mes">{MESES[int(f[5:7]) - 1][:3]}</span><b>{int(f[8:])}</b>'
+        f'<span class="hoja-dia">{DIAS[dt.date.fromisoformat(f).weekday()]}</span><small>{escape(n)}</small></li>' for f, n in proximos)
+    populares = ["28079", "08019", "46250", "41091", "50297", "29067", "30030", "03065", "03014", "48020", "28065", "14021", "47186", "36057", "33024", "26089"]
+    chips = "".join(f'<li><a href="{INFO[c]["url"]}">{escape(INFO[c]["nombre"].split(" / ")[-1])}</a></li>' for c in populares if c in INFO)
+    tarjetas_ccaa = "".join(
+        f'<li><a href="/comunidad/{c}/"><b>{escape(n)}</b><span>{len(d_sig[c])} festivos en {anio_sig}</span></a></li>'
+        for c, (n, _) in sorted(COMUNIDADES.items(), key=lambda x: x[1][0]))
+    embebido = {"municipio": "España", "festivos": {anio_sig: [[x["f"], x["n"], "n"] for x in nacionales]}, "locales": [], "proximos": todos}
     cuerpo = f"""<section class="portada">
-<h1>Festivos de tu municipio</h1>
-<p class="lead">Las fiestas locales, autonómicas y nacionales de los más de 8.000 municipios de España, sacadas del BOE y de los boletines oficiales de cada comunidad.</p>
+<div class="portada-texto">
+<h1>Los festivos de tu municipio</h1>
+<p class="lead">Fiestas locales, autonómicas y nacionales de los más de 8.000 municipios de España, con los puentes y el próximo festivo. Sacadas del BOE y de los boletines oficiales de cada comunidad.</p>
 <form class="buscador" role="search" action="/" onsubmit="return false"><label for="q" class="oculto">Municipio</label>
-<input id="q" type="search" placeholder="Escribe tu municipio: Getafe, Elche, Reus…" autocomplete="off"><ul id="sugerencias" class="sugerencias"></ul></form>
+<input id="q" type="search" placeholder="Busca tu municipio: Getafe, Elche, Reus…" autocomplete="off"><ul id="sugerencias" class="sugerencias"></ul></form>
+<ul class="chips">{chips}</ul>
+</div>
+<div class="hoy-portada" id="hoy-portada"><span class="etq">Hoy es</span><b id="hoy-fecha">{fecha_larga(HOY)}</b>
+<span class="etq">Próximo festivo en toda España</span><b id="prox-fecha">{fecha_larga(proximos[0][0]) if proximos else ''}</b>
+<span id="prox-nombre">{escape(proximos[0][1]) if proximos else ''}</span><span class="cuenta" id="prox-cuenta"></span></div>
 </section>
-<section><h2>Próximos festivos nacionales</h2><ul class="puentes">{prox}</ul>
-<p>{' · '.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a} completo →</a>' for a in ANIOS)}</p>
-<p class="acciones">{''.join(f'<a class="boton-sec" href="/puentes-{a}/">🌉 Puentes {a}</a>' for a in reversed(ANIOS))}<a class="boton-sec" href="/calculadora-dias-laborables/">🧮 Calculadora de días laborables</a></p></section>
-<section id="comunidades"><h2>Festivos por comunidad autónoma</h2>{lista_comunidades()}</section>
+<section><h2>Próximos festivos nacionales</h2><ul class="hojas">{hojas}</ul></section>
+<section class="accesos">
+<a class="acceso" href="/calendario-laboral-{anio_sig}/"><span class="ico">📅</span><b>Calendario laboral {anio_sig}</b><span>Todos los festivos de España y qué se celebra en cada comunidad.</span></a>
+<a class="acceso" href="/puentes-{anio_sig}/"><span class="ico">🌉</span><b>Puentes {anio_sig}</b><span>Qué días pedir de vacaciones para encadenar más días libres.</span></a>
+<a class="acceso" href="/calculadora-dias-laborables/"><span class="ico">🧮</span><b>Días laborables</b><span>Cuenta días laborables o hábiles con los festivos de tu municipio.</span></a>
+</section>
+<section><h2>{anio_sig} de un vistazo</h2>
+<p>Los {len(nacionales)} festivos nacionales que se celebran en toda España. Busca tu municipio para ver también los de tu comunidad y tus fiestas locales.</p>
+<div class="calendario" data-anio="{anio_sig}"></div></section>
+<section id="comunidades"><h2>Festivos por comunidad autónoma</h2><ul class="tarjetas-ccaa">{tarjetas_ccaa}</ul></section>
 <section class="contenido"><h2>¿Cuántos festivos hay al año?</h2>
 <p>En España hay como máximo 14 fiestas laborales al año: 12 las fija el Estado y cada comunidad autónoma, que puede cambiar algunas fiestas nacionales por otras propias, y 2 son locales, elegidas por cada ayuntamiento. Por eso los festivos cambian de un municipio a otro aunque estén en la misma provincia.</p>
-<p>El calendario nacional y autonómico se publica en el BOE en otoño del año anterior. Las fiestas locales las publica cada comunidad en su boletín oficial, normalmente entre el verano y el final del año anterior.</p></section>"""
+<p>El calendario nacional y autonómico se publica en el BOE en otoño del año anterior. Las fiestas locales las publica cada comunidad en su boletín oficial, normalmente entre el verano y el final del año anterior.</p></section>
+<script type="application/json" id="datos-festivos">{json.dumps(embebido, ensure_ascii=False, separators=(",", ":"))}</script>"""
     return pagina("/", f"Festivos de tu municipio {min(ANIOS)} y {max(ANIOS)}: calendario laboral de España",
                   "Busca tu municipio y consulta sus festivos locales, autonómicos y nacionales, los puentes y el próximo festivo. Datos del BOE y de los boletines oficiales.",
                   cuerpo, scripts="")
@@ -586,7 +614,7 @@ def legales():
 # ---------------------------------------------------------------- main
 
 def main():
-    global ANIOS, RUTAS_PROV
+    global ANIOS, RUTAS_PROV, INFO
     datos = cargar()
     ANIOS = sorted(datos)
     muni = municipios()
@@ -605,6 +633,7 @@ def main():
             s = f"{s}-{slug(PROVINCIAS[cod[:2]][0])}"
         info[cod] = {"nombre": bonito(nom), "nombre_ine": nom, "url": f"/{s}/"}
     assert len({m["url"] for m in info.values()}) == len(info), "rutas repetidas"
+    INFO = info
 
     if WEB.exists():
         shutil.rmtree(WEB)
@@ -662,6 +691,7 @@ def main():
 
 ANIOS = []
 RUTAS_PROV = {}
+INFO = {}
 
 if __name__ == "__main__":
     main()
