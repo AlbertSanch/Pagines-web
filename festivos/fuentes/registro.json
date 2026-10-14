@@ -163,15 +163,15 @@
  },
  "cyl_burgos_2026": {
   "descargado": "2026-10-14",
-  "descargado_de": "https://www.iberley.es/legislacion/calendario-laboral-fiestas-locales-provincia-burgos-retribuidas-no-recuperables-ano-2026-27284446",
-  "sha1": "a51624923ffcb715f34babe8653e09f4fdc3eadb",
+  "descargado_de": "https://d2eb79appvasri.cloudfront.net/smartlex_boletines/81505.pdf",
+  "sha1": "95e384729c2f840b145b2dc7c008ea92d07bd9f3",
   "url": "http://bopbur.diputaciondeburgos.es/bopbur-2025-165"
  },
  "cyl_burgos_2026_c1": {
   "descargado": "2026-10-14",
-  "descargado_de": "https://www.iberley.es/legislacion/resolucion-complementaria-calendario-laboral-fiestas-locales-provincia-burgos-retribuidas-no-recuperables-ano-2026-27285651",
-  "sha1": "34c85e7103f32b97a22622f8dcd9a009ec8b8742",
-  "url": "https://www.iberley.es/legislacion/resolucion-complementaria-calendario-laboral-fiestas-locales-provincia-burgos-retribuidas-no-recuperables-ano-2026-27285651"
+  "descargado_de": "https://d2eb79appvasri.cloudfront.net/smartlex_boletines/82617.pdf",
+  "sha1": "95b5bb67ccb67878061237d95e48c9d148f74517",
+  "url": "http://bopbur.diputaciondeburgos.es/bopbur-2026-001"
  },
  "cyl_leon_2026": {
   "descargado": "2026-10-14",
@@ -212,7 +212,7 @@
  "cyl_salamanca_2026_c1": {
   "descargado": "2026-10-14",
   "descargado_de": "https://www.iberley.es/legislacion/acuerdo-determinacion-fiestas-locales-ano-2026-municipios-provincia-salamanca-relacion-complementaria-27285248",
-  "sha1": "1a7840a685b8f6cd2e158084fddcbe22d877a101",
+  "sha1": "35349863eeeff75df7b63f00cd379b195961b14e",
   "url": "https://www.iberley.es/legislacion/acuerdo-determinacion-fiestas-locales-ano-2026-municipios-provincia-salamanca-relacion-complementaria-27285248"
  },
  "cyl_segovia_2026": {
@@ -278,7 +278,7 @@
  "gipuzkoa_2026": {
   "descargado": "2026-10-14",
   "descargado_de": "https://www.iberley.es/legislacion/resolucion-1-septiembre-2025-delegado-territorial-trabajo-seguridad-social-gipuzkoa-aprueba-calendario-fiestas-locales-gipuzkoa-ano-2026-27284448",
-  "sha1": "b671d210ad816cd6f25c26da9c99f476c27c35b1",
+  "sha1": "e618cd57768f1da77c420b2bc977ea6f2da27159",
   "url": "https://www.iberley.es/legislacion/resolucion-1-septiembre-2025-delegado-territorial-trabajo-seguridad-social-gipuzkoa-aprueba-calendario-fiestas-locales-gipuzkoa-ano-2026-27284448"
  },
  "madrid_2026": {
@@ -326,7 +326,7 @@
  "navarra_2026_mod": {
   "descargado": "2026-10-14",
   "descargado_de": "https://www.iberley.es/legislacion/resolucion-765-2025-22-diciembre-director-general-economia-social-trabajo-modifican-fiestas-locales-ano-2026-caracter-retribuido-no-recuperable-ambito-comunicad-foral-navarra-27285650",
-  "sha1": "64bd66c31de855598125095fcaf85d04345bd78e",
+  "sha1": "af71a741b0fe42cd2827caf4b9cb1dc9ce4c4e95",
   "url": "https://www.iberley.es/legislacion/resolucion-765-2025-22-diciembre-director-general-economia-social-trabajo-modifican-fiestas-locales-ano-2026-caracter-retribuido-no-recuperable-ambito-comunicad-foral-navarra-27285650"
  },
  "rioja_2026": {
