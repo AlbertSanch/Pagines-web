@@ -101,3 +101,38 @@ table.festivos { width: 100%; border-collapse: collapse; font-size: .97rem; }
   .festivos th:nth-child(2), .festivos td:nth-child(2) { display: none; }
   .festivos td, .festivos th { padding: 9px 10px; }
 }
+
+/* Botones secundarios, imprimir y calculadora */
+.acciones { display: flex; gap: 8px; flex-wrap: wrap; margin: 6px 0 14px; }
+.boton-imprimir, .boton-sec { padding: 8px 14px; border-radius: 999px; background: var(--papel); border: 1px solid var(--linea); color: var(--tinta);
+  font: inherit; font-weight: 700; font-size: .92rem; cursor: pointer; text-decoration: none; }
+.boton-imprimir:hover, .boton-sec:hover { border-color: var(--rojo); color: var(--rojo-osc); }
+.calc { background: var(--papel); border-radius: var(--radio); box-shadow: var(--sombra); padding: 18px; max-width: 720px; position: relative; }
+.calc .campo { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; position: relative; flex: 1 1 180px; }
+.calc .fila { display: flex; gap: 12px; flex-wrap: wrap; }
+.calc label { font-weight: 700; font-size: .92rem; }
+.calc input, .calc select { font: inherit; padding: 10px 12px; border: 2px solid var(--linea); border-radius: 10px; background: #fff; width: 100%; }
+.calc input:focus, .calc select:focus { outline: none; border-color: var(--rojo); }
+.calc .check { display: flex; gap: 8px; align-items: center; font-weight: 400; margin: 4px 0 12px; }
+.calc .check input { width: auto; }
+.calc .sugerencias { top: 100%; }
+.resultado { border-top: 2px solid var(--linea); padding-top: 12px; }
+.cifra-grande { font-size: 2rem; font-weight: 800; color: var(--rojo-osc); line-height: 1.2; }
+.cifra-grande small { font-size: 1rem; color: var(--suave); }
+
+@media print {
+  .cabecera, .pie, .migas, .hoy, .saltos, .acciones, .faq, ins, iframe, .boton-ics { display: none !important; }
+  body { background: #fff; font-size: 11px; }
+  body.modo-imprimir main > *:not(.imprimir) { display: none !important; }
+  body.modo-imprimir .imprimir > *:not(h2):not(.calendario):not(.leyenda):not(.tabla-envoltorio) { display: none !important; }
+  .imprimir h2 { border: 0; margin: 0 0 8px; font-size: 18px; }
+  .calendario { grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 6px 0; }
+  .mes { box-shadow: none; border: 1px solid #ccc; padding: 4px 6px; break-inside: avoid; }
+  .mes .dias { font-size: 9px; }
+  .mes .dias span { padding: 1px 0; }
+  .tabla-envoltorio { box-shadow: none; }
+  table.festivos { font-size: 10px; }
+  .festivos td, .festivos th { padding: 2px 6px; }
+  .festivos th:nth-child(2), .festivos td:nth-child(2) { display: table-cell; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

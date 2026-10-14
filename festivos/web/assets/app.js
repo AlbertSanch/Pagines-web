@@ -20,6 +20,7 @@
       cargar().then(function (d) {
         var emp = [], con = [];
         d.forEach(function (x) { var i = x[0].indexOf(t); if (i === 0 || x[0].indexOf(' ' + t) > 0 || x[0].indexOf('/' + t) > 0) emp.push(x); else if (i > 0) con.push(x); });
+        emp.sort(function (a, b) { return a[0].length - b[0].length; });
         lista.innerHTML = emp.concat(con).slice(0, 8).map(function (x) { return '<li><a href="' + x[2] + '">' + txt(x[1]) + ' <small>' + txt(x[3]) + '</small></a></li>'; }).join('');
       });
     });
@@ -96,3 +97,15 @@
     });
   });
 })();
+
+/* Imprimir el calendario de un año */
+document.querySelectorAll('.boton-imprimir').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var sec = document.getElementById('festivos-' + b.getAttribute('data-anio'));
+    if (!sec) return;
+    sec.classList.add('imprimir');
+    document.body.classList.add('modo-imprimir');
+    window.print();
+    setTimeout(function () { sec.classList.remove('imprimir'); document.body.classList.remove('modo-imprimir'); }, 500);
+  });
+});
