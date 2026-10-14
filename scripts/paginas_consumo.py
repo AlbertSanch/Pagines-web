@@ -179,6 +179,35 @@ APARATOS = [
          trucos=["Prográmalo para que se encienda solo antes de la ducha.", "No lo dejes encendido todo el día: con 1–2 horas basta para secar las toallas.", "Si tiene termostato, ponlo a media potencia."],
          faq=[("¿Cuánto gasta un toallero eléctrico encendido todo el día?", "Un toallero de 500 W encendido 24 horas a media potencia gasta unos 9–10 kWh al día, más de 2 euros diarios. Por eso conviene programarlo."),
               ("¿Merece la pena un toallero eléctrico?", "Si lo usas 1–2 horas al día cuesta unos 5 euros al mes, y seca las toallas y templa el baño. Encendido todo el día deja de compensar.")]),
+    dict(slug="secadora", nombre="Secadora", art="una secadora", icono="🌀",
+         modo="ciclo", kwh=4.0, usos=3,
+         uso="3 secados a la semana en una secadora de condensación",
+         titulo="¿Cuánto gasta una secadora? Por secado, al mes y al año",
+         modelos=[("Bomba de calor (la más eficiente)", 1.6), ("Condensación", 4.0), ("Evacuación (la más antigua)", 4.6)],
+         texto="La secadora gasta casi toda la electricidad en calentar el aire que seca la ropa. Las de bomba de calor reciclan ese calor y gastan menos de la mitad que las de condensación o evacuación, aunque tardan un poco más. Lo que más cambia el gasto es lo mojada que entra la ropa: cuanto mejor centrifugada, menos tiempo de secado.",
+         trucos=["Centrifuga en la lavadora a 1.200 revoluciones o más antes de secar.", "Llénala, pero sin apretar: la ropa necesita moverse para secarse.", "Limpia el filtro de pelusa después de cada uso y el condensador cada pocas semanas.", "Tiende lo que puedas: un deshumidificador junto al tendedero gasta mucho menos."],
+         faq=[("¿Cuánto cuesta poner la secadora una vez?", "Con el precio medio actual de la luz, entre 35 y 45 céntimos en una secadora de bomba de calor y alrededor de 1 euro en una de condensación o evacuación."),
+              ("¿Gasta más la secadora o la lavadora?", "La secadora, unas 4 veces más por uso: una lavadora a 40 °C gasta alrededor de 1 kWh y una secadora de condensación, unos 4 kWh."),
+              ("¿Merece la pena una secadora de bomba de calor?", "Si secas varias veces por semana, sí: ahorra unos 2,4 kWh en cada secado, que con 3 secados a la semana son más de 80 euros al año con el precio actual de la luz.")]),
+    dict(slug="deshumidificador", meses=6, nombre="Deshumidificador", art="un deshumidificador", icono="💧",
+         modo="potencia", w=250, horas=8, dias=30, factor=0.7,
+         uso="8 horas al día en invierno, con el higrostato al 55 %",
+         modelos=[("Compresor de 10 litros al día", 200), ("Compresor de 20 litros al día", 300), ("Desecante de 7 litros al día", 600)],
+         texto="Los deshumidificadores de compresor funcionan como una nevera pequeña: enfrían el aire para que el agua se condense. Gastan poco, pero rinden peor con frío. Los de desecante gastan bastante más, pero funcionan mejor en habitaciones frías y además dan algo de calor. Si tiene higrostato, se para cuando llega a la humedad que le marques.",
+         trucos=["Pon el higrostato al 50–55 %: más seco no hace falta y gasta más.", "Cierra puertas y ventanas de la habitación mientras funciona.", "Ponlo junto al tendedero: la ropa se seca en horas y gasta mucho menos que una secadora.", "Limpia el filtro cada pocas semanas."],
+         faq=[("¿Cuánto gasta un deshumidificador al día?", "Uno de compresor de 250 W encendido 8 horas, con el higrostato parándolo a ratos, gasta unos 1,4 kWh al día: alrededor de 30–35 céntimos con el precio medio de la luz."),
+              ("¿Es más barato secar la ropa con un deshumidificador que con la secadora?", "Normalmente sí. Un deshumidificador de compresor junto al tendedero gasta alrededor de 1 kWh en secar una colada, frente a los 4 kWh de una secadora de condensación."),
+              ("¿Gasta mucho un deshumidificador de desecante?", "Más que uno de compresor: unos 600 W, casi como un radiador pequeño. A cambio, funciona mejor en habitaciones frías y calienta un poco el ambiente.")]),
+    dict(slug="luces-de-navidad", meses=1, nombre="Luces de Navidad", art="las luces de Navidad", icono="🎄",
+         verbo="gastan", modo="potencia", w=20, horas=6, dias=30, factor=1,
+         uso="6 horas al día durante un mes, con varias tiras LED",
+         titulo="¿Cuánto gastan las luces de Navidad? LED y antiguas",
+         modelos=[("Una tira LED de 100 luces", 7), ("Varias tiras LED (árbol y balcón)", 20), ("Tira de 100 luces de bombilla antigua", 40), ("Decoración grande de fachada", 150)],
+         texto="Las luces LED gastan muy poco: una tira de 100 luces consume unos 5–8 W, menos que una bombilla. Las tiras antiguas de bombillitas incandescentes gastan entre 5 y 8 veces más, y además se calientan. Lo que de verdad sube la factura son las decoraciones grandes de fachada o los proyectores, y dejarlas encendidas toda la noche.",
+         trucos=["Usa luces LED: gastan hasta 8 veces menos que las antiguas.", "Ponles un temporizador o un enchufe programable para que se apaguen solas a medianoche.", "Apágalas cuando no haya nadie en casa ni nadie las vea.", "Las de exterior con placa solar no gastan luz de la red."],
+         faq=[("¿Cuánto gastan las luces de Navidad al día?", "Una tira LED de 100 luces encendida 6 horas gasta unos 0,04 kWh, menos de un céntimo al día. Una tira antigua de bombillitas, unos 0,24 kWh: alrededor de 5–6 céntimos."),
+              ("¿Gastan más las luces de Navidad LED o las antiguas?", "Las antiguas, entre 5 y 8 veces más. Una tira LED de 100 luces consume unos 7 W y una de bombillitas incandescentes, unos 40 W."),
+              ("¿Es caro dejar las luces de Navidad encendidas toda la noche?", "Con tiras LED, poco: unos céntimos al día. Con luces antiguas o decoraciones grandes de fachada puede sumar varios euros al mes, así que conviene un temporizador.")]),
     dict(slug="estufa-halogena", meses=5, nombre="Estufa halógena o de cuarzo", art="una estufa halógena", icono="🔆",
          modo="potencia", w=1200, horas=3, dias=30, factor=1,
          uso="3 horas al día con todos los tubos encendidos",
@@ -222,7 +251,14 @@ def meses(a):
 
 
 def al_anio(a):
+    if meses(a) == 1:
+        return "en toda la temporada (un mes)"
     return "al año" if meses(a) == 12 else f"al año ({meses(a)} meses de uso)"
+
+
+def verbo(a):
+    """«gasta» o «gastan» (las luces de Navidad)."""
+    return a.get("verbo", "gasta")
 
 
 def kwh_mes(a):
@@ -247,9 +283,9 @@ def pagina(a, p, otros, base):
     e = escape
     url = f"{DOMINIO}/{CARPETA}/{a['slug']}"
     mes = kwh_mes(a)
-    titulo = a.get("titulo") or f"¿Cuánto gasta {a['art']}? Consumo y coste al mes"
+    titulo = a.get("titulo") or f"¿Cuánto {verbo(a)} {a['art']}? Consumo y coste al mes"
     if len(titulo) > 60:
-        titulo = f"¿Cuánto gasta {a['art']} al mes?"
+        titulo = f"¿Cuánto {verbo(a)} {a['art']} al mes?"
     desc = (f"{a['nombre']}: unos {num(mes, 0)} kWh y {eur(mes * p)} al mes con un uso normal y el precio actual "
             f"de la luz. Calcula tu gasto según el modelo y las horas de uso.")
     if a["modo"] == "ciclo":
@@ -322,7 +358,7 @@ def pagina(a, p, otros, base):
         filas_h = "".join(f"<tr><td>{h} {'hora' if h == 1 else 'horas'}</td>"
                           + "".join(f"<td class=\"num\">{eur(w / 1000 * a['factor'] * h * p)}</td>" for _, w in a["modelos"])
                           + "</tr>" for h in a["horas_tabla"])
-        extra += (f"\n        <h2>Cuánto gasta {e(a['art'])} al día</h2>\n"
+        extra += (f"\n        <h2>Cuánto {verbo(a)} {e(a['art'])} al día</h2>\n"
                   f"        <div class=\"table-wrap\"><table class=\"data\"><thead><tr><th>Encendida al día</th>{cab_h}</tr></thead><tbody>{filas_h}</tbody></table></div>\n"
                   f"        <p>Coste de un día de uso con el precio medio de la luz ({num(p, 3)} €/kWh). Para saber el gasto del mes, multiplica por los días que la enciendas.</p>\n")
     if a.get("comparar"):
@@ -368,8 +404,8 @@ def pagina(a, p, otros, base):
   <nav class="breadcrumbs"><a href="../">Inicio</a> › <a href="../consumo-electrodomesticos">Consumo de electrodomésticos</a> › {e(a['nombre'])}</nav>
   <div class="layout">
     <article>
-      <h1>¿Cuánto gasta {e(a['art'])}?</h1>
-      <p class="lead">Con un uso normal ({e(a['uso'])}), {e(a['art'])} gasta unos <strong>{num(mes, 0)} kWh al mes</strong>, es decir, <strong>{eur(mes * p)} al mes</strong> y {eur(mes * p * meses(a))} {al_anio(a)} con el precio medio actual de la luz ({num(p, 3)} €/kWh con impuestos).</p>
+      <h1>¿Cuánto {verbo(a)} {e(a['art'])}?</h1>
+      <p class="lead">Con un uso normal ({e(a['uso'])}), {e(a['art'])} {verbo(a)} unos <strong>{num(mes, 0)} kWh al mes</strong>, es decir, <strong>{eur(mes * p)} al mes</strong>{"" if meses(a) == 1 else f" y {eur(mes * p * meses(a))} {al_anio(a)}"} con el precio medio actual de la luz ({num(p, 3)} €/kWh con impuestos).</p>
       <p class="updated">Por Albert Sanchez · Precio de la luz actualizado automáticamente con datos de Red Eléctrica</p>
 
       <div class="calc">
@@ -390,7 +426,7 @@ def pagina(a, p, otros, base):
         <div class="table-wrap"><table class="data"><thead><tr>{cab}</tr></thead><tbody>{filas}</tbody></table></div>
         <p>{nota_tabla} Precio de la luz: {num(p, 3)} €/kWh, media del PVPC de las últimas 4 semanas con impuestos.</p>
 
-        <h2>Por qué gasta lo que gasta</h2>
+        <h2>Por qué {verbo(a)} lo que {verbo(a)}</h2>
         <p>{e(a['texto'])}</p>
 {extra}
         <h2>Cómo calcular el consumo</h2>
