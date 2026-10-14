@@ -71,6 +71,30 @@
     caja.innerHTML = html;
   }
 
+  // Próximos festivos (se recalculan con la fecha de hoy)
+  var prox4 = document.getElementById('proximos');
+  if (prox4 && todos.length) {
+    var sig = todos.filter(function (x) { return x[0] >= hoy; }).slice(0, 4);
+    if (sig.length) prox4.innerHTML = '<ul class="hojas">' + sig.map(function (x) {
+      var d = deIso(x[0]);
+      return '<li class="hoja' + (x[2] === 'l' ? ' local' : '') + '"><span class="hoja-mes">' + MESES[d.getMonth()].slice(0, 3) + '</span><b>' + d.getDate() +
+        '</b><span class="hoja-dia">' + DIAS[d.getDay()] + (x[0].slice(0, 4) !== hoy.slice(0, 4) ? ' ' + x[0].slice(0, 4) : '') + '</span><small>' + txt(x[1]) + '</small></li>';
+    }).join('') + '</ul>';
+  }
+
+  // Pestañas por año: se muestra el año actual (o el primero que haya)
+  var pest = document.querySelectorAll('.pestanas a[data-anio]');
+  if (pest.length) {
+    var anios = Array.prototype.map.call(pest, function (a) { return a.getAttribute('data-anio'); });
+    function mostrar(a) {
+      document.querySelectorAll('section.anio').forEach(function (s) { s.hidden = s.getAttribute('data-anio') !== a; });
+      pest.forEach(function (p) { p.classList.toggle('activa', p.getAttribute('data-anio') === a); });
+    }
+    pest.forEach(function (p) { p.addEventListener('click', function (e) { e.preventDefault(); mostrar(p.getAttribute('data-anio')); history.replaceState(null, '', '#festivos-' + p.getAttribute('data-anio')); }); });
+    var pedido = (location.hash.match(/festivos-(\d{4})/) || [])[1];
+    mostrar(anios.indexOf(pedido) >= 0 ? pedido : anios.indexOf(hoy.slice(0, 4)) >= 0 ? hoy.slice(0, 4) : anios[0]);
+  }
+
   // Calendario por meses
   document.querySelectorAll('.calendario[data-anio]').forEach(function (cont) {
     var anio = +cont.getAttribute('data-anio'), marcas = {};
@@ -119,7 +143,7 @@ document.querySelectorAll('.boton-imprimir').forEach(function (b) {
   b.addEventListener('click', function () {
     var sec = document.getElementById('festivos-' + b.getAttribute('data-anio'));
     if (!sec) return;
-    sec.classList.add('imprimir');
+    sec.classList.add('imprimir'); sec.hidden = false;
     document.body.classList.add('modo-imprimir');
     window.print();
     setTimeout(function () { sec.classList.remove('imprimir'); document.body.classList.remove('modo-imprimir'); }, 500);

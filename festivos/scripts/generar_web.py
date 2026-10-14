@@ -29,7 +29,7 @@ WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 SITIO = "Festivos de"
-VERSION = "3"
+VERSION = "4"
 HOY = dt.date.today()
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -272,6 +272,13 @@ def tabla_festivos(lista):
             f'<th>Ámbito</th></tr></thead><tbody>{filas}</tbody></table></div>')
 
 
+def hojas_html(lista, clase="hojas"):
+    """Fechas como hojas de calendario: [{f, n}]."""
+    return f'<ul class="{clase}">' + "".join(
+        f'<li class="hoja"><span class="hoja-mes">{MESES[int(x["f"][5:7]) - 1][:3]}</span><b>{int(x["f"][8:])}</b>'
+        f'<span class="hoja-dia">{DIAS[dt.date.fromisoformat(x["f"]).weekday()]}</span><small>{escape(x["n"])}</small></li>' for x in lista) + "</ul>"
+
+
 def bloque_puentes(lista, anio, titulo=None):
     items = "".join(texto_puente(p) for p in calcular_puentes(lista))
     if not items:
@@ -330,8 +337,15 @@ def pagina_municipio(datos, cod, m, vecinos):
                 pendiente = (f"Las dos fiestas locales de {escape(N)} para {anio} todavía no están publicadas en nuestros datos. "
                              f"Las aprueba cada año el boletín oficial {escape(de(ccaa_nombre))} y las añadiremos en cuanto salgan.")
             resumen = f'<p class="pendiente">{pendiente}</p><p>De momento, estos son los {len(lista)} festivos nacionales y {escape(de(ccaa_nombre))} que también se celebran en {escape(N)}:</p>'
-        secciones.append(f"""<section class="anio" id="festivos-{anio}">
+        n_puentes = sum(1 for p in calcular_puentes(lista) if p["dias"] >= 3 or p["mejor"])
+        cifras = (f'<ul class="cifras"><li><b>{len(lista)}</b><span>festivos en {anio}</span></li>'
+                  f'<li><b>{len(locales) if tiene_locales(datos, anio, cod) else "–"}</b><span>fiestas locales</span></li>'
+                  f'<li><b>{n_puentes}</b><span>puentes y fines de semana largos</span></li></ul>')
+        destacadas = (f'<h3>Fiestas locales de {escape(N)} en {anio}</h3>' + hojas_html(locales, "hojas locales")) if tiene_locales(datos, anio, cod) else ""
+        secciones.append(f"""<section class="anio" id="festivos-{anio}" data-anio="{anio}">
 <h2>Festivos de {escape(N)} en {anio}</h2>
+{cifras}
+{destacadas}
 {resumen}
 {aviso_varias}
 {tabla_festivos(lista)}
@@ -347,10 +361,15 @@ def pagina_municipio(datos, cod, m, vecinos):
                           f"{sum(1 for x in lista if x['t'] == 'nacional')} nacionales, {sum(1 for x in lista if x['t'] == 'autonomico')} {escape(de(ccaa_nombre))}"
                           + (f" y {len(locales)} locales." if locales else ". Las fiestas locales aún no están publicadas.")))
     lista_vecinos = "".join(f'<li><a href="{v["url"]}">{escape(v["nombre"])}</a></li>' for v in vecinos)
-    cuerpo = f"""<h1>Festivos en {escape(N)}</h1>
+    proximos = [x for a in ANIOS for x in festivos_de(datos, a, cod) if x["f"] >= HOY.isoformat()][:4]
+    cuerpo = f"""<section class="cabecera-muni">
+<div><h1>Festivos en {escape(N)}</h1>
 <p class="lead">Calendario laboral de {escape(N)} ({escape(prov_nombre)}): fiestas locales, {escape(de(ccaa_nombre))} y nacionales de {' y '.join(map(str, ANIOS))}.</p>
+<ul class="chips"><li><a href="/calculadora-dias-laborables/?m={cod}">🧮 Días laborables</a></li><li><a href="/puentes-{max(ANIOS)}/">🌉 Puentes {max(ANIOS)}</a></li><li><a href="{RUTAS_PROV[cod[:2]]}">Provincia de {escape(prov_nombre)}</a></li><li><a href="/comunidad/{ccaa}/">{escape(ccaa_nombre)}</a></li></ul></div>
 <div class="hoy" id="hoy" data-municipio="{escape(N)}"></div>
-<nav class="saltos">{''.join(f'<a href="#festivos-{a}">{a}</a>' for a in ANIOS)}<button class="boton-ics" type="button">📅 Añadir a mi calendario</button></nav>
+</section>
+<section><h2>Próximos festivos en {escape(N)}</h2><div id="proximos">{hojas_html(proximos)}</div></section>
+<nav class="pestanas" aria-label="Año">{''.join(f'<a href="#festivos-{a}" data-anio="{a}">{a}</a>' for a in ANIOS)}<button class="boton-ics" type="button">📅 Añadir a mi calendario</button></nav>
 {''.join(secciones)}
 <section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>
 <section><h2>Otros municipios de {escape(prov_nombre)}</h2><ul class="lista-municipios">{lista_vecinos}</ul>
