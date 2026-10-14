@@ -11,6 +11,8 @@ No interpreta nada: los lectores están en procesar.py.
 """
 import datetime as dt
 import hashlib
+import html
+import re
 import json
 import pathlib
 import subprocess
@@ -96,11 +98,15 @@ def main():
     # Boletines autonómicos: fiestas locales
     for f in cfg["locales"]:
         clave = f["id"]
-        try:
-            datos = bajar(f["descarga"])
-        except Exception as e:
-            errores.append(f"{clave}: {e}")
-            print(f"{clave}: ERROR {e}")
+        datos, usada = None, None
+        for url in [f["descarga"]] + ([f["respaldo"]] if f.get("respaldo") else []):
+            try:
+                datos, usada = bajar(url), url
+                break
+            except Exception as e:
+                errores.append(f"{clave}: {url}: {e}")
+                print(f"{clave}: ERROR {url}: {e}")
+        if datos is None:
             continue
         sha = hashlib.sha1(datos).hexdigest()
         if datos[:4] == b"%PDF":
@@ -108,10 +114,16 @@ def main():
             pdf.write_bytes(datos)
             subprocess.run(["pdftotext", "-layout", str(pdf), str(FUENTES / f"{clave}.txt")], check=True)
             pdf.unlink()
-        else:  # HTML
+        else:  # HTML: se guarda también como texto plano para los lectores
             (FUENTES / f"{clave}.html").write_bytes(datos)
+            texto = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", datos.decode("utf-8", "replace"), flags=re.S | re.I)
+            texto = re.sub(r"<br\s*/?>|</(p|tr|li|h\d|div)>", "\n", texto, flags=re.I)
+            texto = re.sub(r"<td[^>]*>", "\t", texto, flags=re.I)
+            texto = html.unescape(re.sub(r"<[^>]+>", " ", texto))
+            (FUENTES / f"{clave}.txt").write_text(re.sub(r"[ \xa0]+", " ", texto), encoding="utf-8")
         cambio = registro.get(clave, {}).get("sha1") not in (None, sha)
-        registro[clave] = {"url": f.get("oficial") or f["descarga"], "sha1": sha, "descargado": dt.date.today().isoformat()}
+        registro[clave] = {"url": f.get("oficial") or f["descarga"], "descargado_de": usada, "sha1": sha,
+                           "descargado": dt.date.today().isoformat()}
         print(f"{clave}: {len(datos)} bytes{' (HA CAMBIADO)' if cambio else ''}")
 
     registro_ruta.write_text(json.dumps(registro, ensure_ascii=False, indent=1, sort_keys=True), encoding="utf-8")

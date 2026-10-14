@@ -9,11 +9,309 @@
  },
  "locales": [
   {
+   "id": "andalucia_2026",
+   "ccaa": "andalucia",
+   "anio": 2026,
+   "descarga": "https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/sites/default/files/sincfiles/wsas-media-sas_normativa_mediafile/2025/BOJA251014_fiestas_locales_2026.pdf",
+   "oficial": "https://www.juntadeandalucia.es/boja/2025/197/28",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/calendario-fiestas-locales-andalucia-2026.pdf"
+  },
+  {
+   "id": "andalucia_2026_c1",
+   "ccaa": "andalucia",
+   "anio": 2026,
+   "descarga": "https://www.juntadeandalucia.es/boja/2025/247/BOJA25-247-00002-17289-01_00330886.pdf",
+   "tipo": "correccion"
+  },
+  {
+   "id": "andalucia_2026_c2",
+   "ccaa": "andalucia",
+   "anio": 2026,
+   "descarga": "https://www.juntadeandalucia.es/boja/2026/32/BOJA26-032-00001-2090-01_00333315.pdf",
+   "tipo": "correccion"
+  },
+  {
+   "id": "andalucia_2026_c3",
+   "ccaa": "andalucia",
+   "anio": 2026,
+   "descarga": "https://juntadeandalucia.es/boja/2026/33/31",
+   "tipo": "correccion"
+  },
+  {
+   "id": "andalucia_2026_mod",
+   "ccaa": "andalucia",
+   "anio": 2026,
+   "descarga": "https://www.juntadeandalucia.es/eboja/2026/79/BOJA26-079-00002-5437-01_00336674.pdf",
+   "tipo": "correccion"
+  },
+  {
+   "id": "aragon_2026",
+   "ccaa": "aragon",
+   "anio": 2026,
+   "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/FIESTAS-LOCALES-ARAGON-2026.pdf",
+   "oficial": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1421874360606"
+  },
+  {
+   "id": "asturias_2026",
+   "ccaa": "asturias",
+   "anio": 2026,
+   "descarga": "https://miprincipado.asturias.es/documents/d/guest/2025-04744"
+  },
+  {
+   "id": "cantabria_2026",
+   "ccaa": "cantabria",
+   "anio": 2026,
+   "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/calendario-fiestas-estatales-atonomicas-locales-cantabria-2026.pdf",
+   "oficial": "https://dgte.cantabria.es/-/noticia-calendario-fiestas-2026",
+   "respaldo": "https://tecnisa-campos.com/wp-content/uploads/2025/12/FIESTAS-LOCALES-CANTABRIA-2026.pdf"
+  },
+  {
+   "id": "clm_2026",
+   "ccaa": "castilla-la-mancha",
+   "anio": 2026,
+   "descarga": "https://docm.jccm.es/docm/verArchivoHtml.do?ruta=2025%2F12%2F12%2Fhtml%2F2025_9468.html&tipo=rutaDocm"
+  },
+  {
+   "id": "cyl_avila_2026",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "descarga": "https://www.diputacionavila.es/bops/2025/26-09-2025/26-09-2025_188425.pdf",
+   "provincia": "05"
+  },
+  {
+   "id": "cyl_avila_2026_c1",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "descarga": "https://www.diputacionavila.es/bops/2025/01-12-2025/01-12-2025_239925.pdf",
+   "tipo": "complementaria",
+   "provincia": "05"
+  },
+  {
+   "id": "cyl_avila_2026_c2",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "descarga": "https://www.diputacionavila.es/bops/2026/04-02-2026/04-02-2026_021326.pdf",
+   "tipo": "complementaria",
+   "provincia": "05"
+  },
+  {
+   "id": "cyl_burgos_2026",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "descarga": "http://bopbur.diputaciondeburgos.es/bopbur-2025-165",
+   "provincia": "09"
+  },
+  {
+   "id": "cyl_leon_2026",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "descarga": "https://bop.dipuleon.es/publica/buscador-anuncios/anuncio/Festivos-locales-para-2026-00078/",
+   "provincia": "24"
+  },
+  {
+   "id": "cyl_leon_2026_c1",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "descarga": "https://bop.dipuleon.es/export/sites/bop/.galleries/Documentos-Anuncios-en-PDF/firmado-1768369600562-final-3731f08.pdf",
+   "tipo": "complementaria",
+   "provincia": "24"
+  },
+  {
+   "id": "cyl_segovia_2026",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "descarga": "https://www.dipsegovia.es/documents/39512/01582b77-49da-7674-975e-ffa4d2debaa2",
+   "provincia": "40"
+  },
+  {
+   "id": "cyl_soria_2026",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "descarga": "https://www.dipsoria.es/sites/dipsoria/files/public/paginas/archivos/calendario_fiestas_ayuntamientos_2026.pdf",
+   "provincia": "42"
+  },
+  {
+   "id": "cyl_valladolid_2026",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "descarga": "https://bop.sede.diputaciondevalladolid.es/boletines/2025/septiembre/19/BOPVA-A-2025-03050.pdf",
+   "provincia": "47"
+  },
+  {
+   "id": "cyl_zamora_2026",
+   "ccaa": "castilla-y-leon",
+   "anio": 2026,
+   "descarga": "https://www.diputaciondezamora.es/opencms/export/sites/dipu-zamora/servicios/BOP/.Archivos/documentos/BOP/anuncios/2025/106/202502347.pdf",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-zamora-2026.pdf",
+   "provincia": "49"
+  },
+  {
+   "id": "cataluna_2026",
+   "ccaa": "cataluna",
+   "anio": 2026,
+   "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-cataluna-2026.pdf",
+   "oficial": "https://dogc.gencat.cat/ca/document-del-dogc/?documentId=1032232",
+   "respaldo": "https://www.acra.cat/calendari-de-festes-locals-a-catalunya-per-a-l-any-2026_1270286.pdf"
+  },
+  {
+   "id": "cataluna_2026_mod",
+   "ccaa": "cataluna",
+   "anio": 2026,
+   "descarga": "https://portal.personal.upc.edu/ca/ptgas/fitxers/relacions-laborals/calendari/2026/ordre_emt_3_2026_mod_calendari_festes_locals.pdf",
+   "tipo": "correccion"
+  },
+  {
+   "id": "valenciana_2026",
+   "ccaa": "valenciana",
+   "anio": 2026,
+   "descarga": "https://dogv.gva.es/datos/2025/11/14/pdf/2025_46326_es.pdf",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/FIESTAS-LOCALES-COMUNIDAD-VALENCIANA-2026.pdf"
+  },
+  {
+   "id": "valenciana_2026_c1",
+   "ccaa": "valenciana",
+   "anio": 2026,
+   "descarga": "https://habitatge.gva.es/documents/21189/9578859/2026_1043_va+DOGV+VC.pdf/23bcf9f7-0b75-7ee9-ab43-400a140f93b4",
+   "tipo": "correccion"
+  },
+  {
+   "id": "valenciana_2026_c2",
+   "ccaa": "valenciana",
+   "anio": 2026,
+   "descarga": "https://dogv.gva.es/datos/2026/03/03/pdf/2026_6733_es.pdf",
+   "tipo": "correccion"
+  },
+  {
+   "id": "extremadura_2026",
+   "ccaa": "extremadura",
+   "anio": 2026,
+   "descarga": "https://doe.juntaex.es/pdfs/doe/2025/2040o/25063799.pdf"
+  },
+  {
+   "id": "extremadura_2026_consolidado",
+   "ccaa": "extremadura",
+   "anio": 2026,
+   "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/Calendario-fiestas-locales-extremadura-2026-8.pdf",
+   "tipo": "consolidado"
+  },
+  {
+   "id": "galicia_2026",
+   "ccaa": "galicia",
+   "anio": 2026,
+   "descarga": "https://www.xunta.gal/dog/Publicados/2025/20251030/AnuncioG0767-221025-0001_es.html",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-galicia-2026.pdf"
+  },
+  {
+   "id": "madrid_2026",
+   "ccaa": "madrid",
+   "anio": 2026,
+   "descarga": "https://www.comunidad.madrid/sites/default/files/doc/empleo/bocm-20251212-34.pdf",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-madrid-2026.pdf"
+  },
+  {
+   "id": "madrid_2026_c1",
+   "ccaa": "madrid",
+   "anio": 2026,
+   "descarga": "https://www.bocm.es/boletin/CM_Orden_BOCM/2025/12/29/BOCM-20251229-19.PDF",
+   "tipo": "correccion"
+  },
+  {
+   "id": "madrid_2026_mod",
+   "ccaa": "madrid",
+   "anio": 2026,
+   "descarga": "https://originjofjn-boc.comunidad.madrid/boletin/CM_Orden_BOCM/2026/01/08/BOCM-20260108-18.PDF",
+   "tipo": "correccion"
+  },
+  {
+   "id": "baleares_2026",
+   "ccaa": "baleares",
+   "anio": 2026,
+   "descarga": "https://seu.conselldemallorca.net/documents/d/seu/05-boib_fiestaslaborales2026",
+   "oficial": "https://www.caib.es/sites/calendarilaboral/es/aao_2026/",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/calendario-laboral-general-local-baleares-2026.pdf"
+  },
+  {
+   "id": "murcia_2026",
+   "ccaa": "murcia",
+   "anio": 2026,
+   "descarga": "https://www.borm.es/services/anuncio/ano/2025/numero/3546/pdf?id=837607",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/calendario-fiestas-laborales-murcia-2026.pdf"
+  },
+  {
+   "id": "navarra_2026",
+   "ccaa": "navarra",
+   "anio": 2026,
+   "descarga": "https://cof-navarra.com/wp-content/uploads/2025/12/Fiestas-Oficiales-por-Poblacion-2026.pdf",
+   "oficial": "https://bon.navarra.es/es/anuncio/-/texto/2025/241/12",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-Navarra-2026.pdf"
+  },
+  {
+   "id": "navarra_2026_mod",
+   "ccaa": "navarra",
+   "anio": 2026,
+   "descarga": "https://www.iberley.es/legislacion/resolucion-765-2025-22-diciembre-director-general-economia-social-trabajo-modifican-fiestas-locales-ano-2026-caracter-retribuido-no-recuperable-ambito-comunicad-foral-navarra-27285650",
+   "tipo": "correccion"
+  },
+  {
+   "id": "alava_2026",
+   "ccaa": "pais-vasco",
+   "anio": 2026,
+   "descarga": "https://www.araba.eus/Botha/Boletines/2025/082/2025_082_02192_C.pdf",
+   "provincia": "01"
+  },
+  {
+   "id": "bizkaia_2026",
+   "ccaa": "pais-vasco",
+   "anio": 2026,
+   "descarga": "https://www.euskadi.eus/contenidos/informacion/5907/es_2296/Calendario-laboral-BIZKAIA-2026-cas.pdf",
+   "provincia": "48"
+  },
+  {
+   "id": "bizkaia_2026_mod",
+   "ccaa": "pais-vasco",
+   "anio": 2026,
+   "descarga": "https://www.euskadi.eus/contenidos/informacion/5907/es_2296/calendario-laboral-BIZKAIA-2026-modificacion-cas.pdf",
+   "tipo": "correccion",
+   "provincia": "48"
+  },
+  {
+   "id": "gipuzkoa_2026",
+   "ccaa": "pais-vasco",
+   "anio": 2026,
+   "descarga": "https://www.iberley.es/legislacion/resolucion-1-septiembre-2025-delegado-territorial-trabajo-seguridad-social-gipuzkoa-aprueba-calendario-fiestas-locales-gipuzkoa-ano-2026-27284448",
+   "provincia": "20"
+  },
+  {
+   "id": "rioja_2026",
+   "ccaa": "la-rioja",
+   "anio": 2026,
+   "descarga": "https://ias1.larioja.org/boletin/Bor_Boletin_visor_Servlet?referencia=36153930-1-PDF-571537",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/calendario-fiestas-locales-rioja-2026.pdf"
+  },
+  {
+   "id": "canarias_2026",
+   "ccaa": "canarias",
+   "anio": 2026,
+   "descarga": "https://iac.edu.es/system/files/documents/2026-01/CAC_fiestas%20locales%20propias%20de%20cada%20municipio%20_boc-a-2025-165-3029.pdf"
+  },
+  {
+   "id": "ceuta_2026",
+   "ccaa": "ceuta",
+   "anio": 2026,
+   "descarga": "https://www.ceuta.es/ceuta/component/jdownloads/finish/1960-septiembre/22923-bocce-6549-19-09-2025?Itemid=0",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-ceuta-2026.pdf"
+  },
+  {
+   "id": "melilla_2026",
+   "ccaa": "melilla",
+   "anio": 2026,
+   "descarga": "https://bomemelilla.es/bome/descargar/BOME-A-2025-1033.pdf"
+  },
+  {
    "id": "murcia_2027",
    "ccaa": "murcia",
    "anio": 2027,
-   "descarga": "https://www.borm.es/services/anuncio/844400/pdf",
-   "oficial": "https://www.borm.es/services/anuncio/844400/pdf"
+   "descarga": "https://www.borm.es/services/anuncio/844400/pdf"
   },
   {
    "id": "rioja_2027",
@@ -28,24 +326,54 @@
    "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/calendario-laboral-general-local-baleares-2027.pdf"
   },
   {
-   "id": "canarias_2026",
+   "id": "asturias_2027",
+   "ccaa": "asturias",
+   "anio": 2027,
+   "descarga": "https://miprincipado.asturias.es/bopa/2026/06/10/2026-04656.pdf",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-asturias-2027.pdf"
+  },
+  {
+   "id": "canarias_2027",
    "ccaa": "canarias",
-   "anio": 2026,
-   "descarga": "https://iac.edu.es/system/files/documents/2026-01/CAC_fiestas%20locales%20propias%20de%20cada%20municipio%20_boc-a-2025-165-3029.pdf"
+   "anio": 2027,
+   "descarga": "https://www.gobiernodecanarias.org/boc/2026/168/3035.html",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-canarias-2027.pdf"
   },
   {
-   "id": "madrid_2026_mod",
-   "ccaa": "madrid",
-   "anio": 2026,
-   "descarga": "https://originjofjn-boc.comunidad.madrid/boletin/CM_Orden_BOCM/2026/01/08/BOCM-20260108-18.PDF",
-   "tipo": "correccion"
+   "id": "cyl_leon_2027",
+   "ccaa": "castilla-y-leon",
+   "anio": 2027,
+   "descarga": "https://bop.dipuleon.es/publica/buscador-anuncios/anuncio/Festivos-locales-de-los-Municipios-de-la-Provincia-de-Leon-para-2027/",
+   "provincia": "24"
   },
   {
-   "id": "andalucia_2026_mod",
-   "ccaa": "andalucia",
-   "anio": 2026,
-   "descarga": "https://www.juntadeandalucia.es/eboja/2026/79/BOJA26-079-00002-5437-01_00336674.pdf",
-   "tipo": "correccion"
+   "id": "cyl_palencia_2027",
+   "ccaa": "castilla-y-leon",
+   "anio": 2027,
+   "descarga": "https://www.diputaciondepalencia.es/system/files/bop/2026/20260713-bop-83-Ordinario.pdf",
+   "provincia": "34"
+  },
+  {
+   "id": "cyl_zamora_2027",
+   "ccaa": "castilla-y-leon",
+   "anio": 2027,
+   "descarga": "https://www.diputaciondezamora.es/opencms/export/sites/dipu-zamora/servicios/BOP/.Archivos/documentos/BOP/anuncios/2026/87/202601859.pdf",
+   "provincia": "49"
+  },
+  {
+   "id": "cyl_zamora_2027_c1",
+   "ccaa": "castilla-y-leon",
+   "anio": 2027,
+   "descarga": "https://www.diputaciondezamora.es/opencms/export/sites/dipu-zamora/servicios/BOP/.Archivos/documentos/BOP/anuncios/2026/88/202601897.pdf",
+   "tipo": "correccion",
+   "provincia": "49"
+  },
+  {
+   "id": "bizkaia_2027",
+   "ccaa": "pais-vasco",
+   "anio": 2027,
+   "descarga": "https://noticias.juridicas.com/base_datos/CCAA/1012195-r-trabajo-y-seguridad-social-12-sep-2026-bizkaia-calendario-de-fiestas-locales.html",
+   "provincia": "48"
   }
  ]
 }
