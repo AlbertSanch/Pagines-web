@@ -285,7 +285,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="site-footer">
   <div class="container">
     <p><strong>{SITIO}</strong> responde cuántas personas se llaman o se apellidan de cada forma en España con los datos oficiales del Instituto Nacional de Estadística (INE).</p>
-    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/ideas/">Ideas para bebé</a><a href="/cuantos-se-llaman-como-tu/">Nombre y apellidos como tú</a><a href="/tu-nombre-el-ano-que-naciste/">Tu nombre el año que naciste</a><a href="/nombres-en-peligro-de-extincion/">Nombres en peligro de extinción</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/nombres/">Nombres de la A a la Z</a><a href="/apellidos/a/">Apellidos de la A a la Z</a><a href="/ideas/">Ideas para bebé</a><a href="/cuantos-se-llaman-como-tu/">Nombre y apellidos como tú</a><a href="/tu-nombre-el-ano-que-naciste/">Tu nombre el año que naciste</a><a href="/nombres-en-peligro-de-extincion/">Nombres en peligro de extinción</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Fuente: INE. Datos reutilizados conforme a sus condiciones de uso; esta web no está vinculada al INE.</p>
   </div>
 </footer>
@@ -685,6 +685,7 @@ def portada(idx, nombres, bebes, referencia, n_paginas):
   <a class="card" href="/tu-nombre-el-ano-que-naciste/"><h3>Tu nombre el año que naciste</h3><p>¿Estaba de moda tu nombre cuando naciste? ¿Y ahora?</p></a>
   <a class="card" href="/nombres-en-peligro-de-extincion/"><h3>Nombres en peligro de extinción</h3><p>Josefa, Dolores, Saturnino… los que ya casi no se ponen.</p></a>
   <a class="card" href="/ideas/"><h3>Ideas para bebé</h3><p>Nombres de moda, poco comunes, cortos, por letra y clásicos que vuelven.</p></a>
+  <a class="card" href="/nombres/"><h3>Todos los nombres de la A a la Z</h3><p>El índice completo de nombres, letra por letra.</p></a>
   <a class="card" href="/bebes/"><h3>Nombres de bebé</h3><p>Los más puestos cada año desde {min(bebes)}. En {ultimo}: {escape(mostrar(esp['H']['top'][0][0]))} y {escape(mostrar(esp['M']['top'][0][0]))}.</p></a>
 </div>
 <div class="dos-col">
@@ -1229,6 +1230,55 @@ def pagina_apellido(e, idx, por_p1, referencia):
     return pagina(f"/apellido/{e['slug']}/", titulo, desc, "\n".join(cuerpo), [("Apellidos", "/apellidos/"), (X, None)], ld)
 
 
+def letras_html(base, letras, actual=None):
+    return '<ul class="chips">' + "".join(
+        f'<li><a href="{base}{l}/"{" aria-current=\"page\"" if l == actual else ""}>{l.upper()}</a></li>' for l in letras) + "</ul>"
+
+
+def paginas_directorio(idx, idx_ape):
+    """Índices de la A a la Z con todos los nombres y apellidos que tienen página propia: así cualquier página
+    queda a dos clics de la portada y Google las encuentra antes."""
+    rutas = []
+    for tipo, entradas, base, cifra, singular, plural, texto in (
+            ("nombres", [e for e in idx.values() if e["pagina"]], "/nombres/", lambda e: e["total"], "nombre", "Nombres",
+             "personas se llaman así"),
+            ("apellidos", [e for e in idx_ape.values() if e["pagina"]], "/apellidos/", lambda e: e["p1"], "apellido", "Apellidos",
+             "personas lo tienen como primer apellido")):
+        grupos = {}
+        for e in entradas:
+            l = e["slug"][:1]
+            if l.isalpha() and l.isascii():
+                grupos.setdefault(l, []).append(e)
+        letras = sorted(grupos)
+        ruta_pag = "/nombre/" if tipo == "nombres" else "/apellido/"
+        for l in letras:
+            lista = sorted(grupos[l], key=lambda e: e["slug"])
+            items = "".join(f'<li><a href="{ruta_pag}{e["slug"]}/">{escape(e["mostrar"])}</a> <small>{n(cifra(e))}</small></li>'
+                            for e in lista)
+            ruta = f"{base}{l}/"
+            cuerpo = (f"<h1>{plural} que empiezan por {l.upper()}</h1>"
+                      f'<p class="lead">Los {n(len(lista))} {plural.lower()} que empiezan por {l.upper()} con página propia, por orden alfabético. '
+                      f"Al lado de cada uno, cuántas {texto} en España.</p>"
+                      + letras_html(base, letras, l)
+                      + f'<ul class="columnas">{items}</ul>'
+                      + f'<p>¿No está el tuyo? Búscalo en {"la <a href=\"/\">portada</a>" if tipo == "nombres" else "<a href=\"/apellidos/\">apellidos</a>"}: '
+                      "ahí salen todos los que publica el INE, aunque no tengan página propia.</p>")
+            guardar(ruta, pagina(ruta, f"{plural} que empiezan por {l.upper()} en España",
+                                 f"Lista de los {len(lista)} {plural.lower()} que empiezan por {l.upper()} y cuántas {texto} en España, según el INE.",
+                                 cuerpo, [(plural, base if tipo == "nombres" else "/apellidos/"), (l.upper(), None)]))
+            rutas.append(ruta)
+        if tipo == "nombres":
+            cuerpo = ("<h1>Todos los nombres de la A a la Z</h1>"
+                      f'<p class="lead">Elige una letra para ver todos los nombres con página propia ({n(len(entradas))}) y cuántas personas se llaman así en España.</p>'
+                      + letras_html(base, letras)
+                      + '<p>También puedes ver <a href="/apellidos/a/">todos los apellidos de la A a la Z</a>.</p>')
+            guardar(base, pagina(base, "Todos los nombres de la A a la Z | ¿Cuántos se llaman?",
+                                 "Índice alfabético de todos los nombres con página propia y cuántas personas se llaman así en España, según el INE.",
+                                 cuerpo, [("Nombres", None)]))
+            rutas.append(base)
+    return rutas
+
+
 def paginas_apellidos(idx, apellidos):
     ref = apellidos["referencia"]
     provincias = apellidos["provincias"]
@@ -1258,7 +1308,9 @@ def paginas_apellidos(idx, apellidos):
               '<div><h2>El apellido más común de cada provincia</h2><div class="table-wrap"><table class="data"><thead><tr><th>Provincia</th><th>Apellido</th></tr></thead><tbody>'
               + "".join(f'<tr><td><a href="/apellidos/provincia/{slug(PROVINCIAS[c])}/">{PROVINCIAS[c]}</a></td>'
                         f'<td>{enlace_apellido(idx, provincias[c]["res"][0][0])}</td></tr>' for c in orden)
-              + f'</tbody></table></div></div></div><p class="fuente">Fuente: INE, estadística de apellidos a partir de los Censos de población anuales, datos a {fecha_larga(ref)}. '
+              + '</tbody></table></div></div></div><h2>Todos los apellidos de la A a la Z</h2>'
+              + "".join(f'<a class="btn-c" style="margin:0 6px 6px 0" href="/apellidos/{l}/">{l.upper()}</a>' for l in sorted({e["slug"][:1] for e in idx.values() if e["pagina"] and e["slug"][:1].isalpha() and e["slug"][:1].isascii()}))
+              + f'<p class="fuente">Fuente: INE, estadística de apellidos a partir de los Censos de población anuales, datos a {fecha_larga(ref)}. '
               'Solo se publican los apellidos que llevan al menos 20 personas como primer apellido.</p>')
     guardar("/apellidos/", pagina("/apellidos/", "¿Cuánta gente se apellida como tú? Apellidos en España",
                                   "Busca tu apellido y descubre cuántas personas se apellidan como tú en España, los 100 apellidos más comunes y el más frecuente de cada provincia. Datos del INE.",
@@ -1327,6 +1379,7 @@ def main():
     for e in ape_pagina:
         guardar(f"/apellido/{e['slug']}/", pagina_apellido(e, idx_ape, por_p1, ape["referencia"]))
     rutas += paginas_apellidos(idx_ape, ape)
+    rutas += paginas_directorio(idx, idx_ape)
     indices_apellidos(idx_ape)
     guardar("/", portada(idx, nombres, beb["anios"], nombres["referencia"], len(con_pagina)))
     grupos = indices_busqueda(idx)
