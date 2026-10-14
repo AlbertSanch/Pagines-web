@@ -103,8 +103,9 @@ def pagina(datos, base, hoy, luz):
     url = f"{DOMINIO}/{RUTA}"
     mes_txt = f"{MESES[desde.month - 1]} de {desde.year}"
     titulo = f"Precio de la bombona de butano hoy ({MESES[hoy.month - 1]} {hoy.year})"
-    desc = (f"La bombona de butano de {num(kg, 1)} kg cuesta {eur(precio)} desde el {fecha(desde)}. "
-            f"Próxima revisión, historial de precios y cuánto te dura una bombona.")
+    # Descripción para Google: qué hay en la página, sin dar la cifra (si la da, nadie entra)
+    desc = (f"Precio oficial de la bombona de butano de {num(kg, 1)} kg este mes, cuándo vuelve a cambiar, "
+            f"el historial de precios y cuánto te dura una bombona.")
 
     if len(hist) > 1:
         ant = hist[1]["precio"]

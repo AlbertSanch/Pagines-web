@@ -752,9 +752,25 @@ def pagina_municipio(m, T, por_prov, total_es, anios, t):
         cuerpo.append(f'<div class="content"><h2>Preguntas frecuentes</h2>{faq_html(preguntas)}</div>')
     cuerpo.append(f'<p class="fuente">Fuente: INE, Atlas de Distribución de Renta de los Hogares (datos de {anios[0]} a {ultimo}). '
                   f'Las cifras son la renta del año indicado, que el INE publica unos dos años después. <a href="/sobre-los-datos/">Sobre los datos</a>.</p>')
-    titulo = f"Renta media y per cápita en {nombre} ({ultimo}): {euros(m['renta'])}" if m["renta"] else f"Renta media en {nombre}"
-    if len(titulo) > 65 and m["renta"]:
-        titulo = f"Renta media en {nombre}: {euros(m['renta'])}"
+    # Título y descripción para Google: qué hay en la página, sin dar la cifra (si la da, nadie entra)
+    if m["renta"]:
+        anio_titulo = HACIENDA["anio_municipios"] if h and h.get("bruta_media") else ultimo
+        titulo = f"Renta media y per cápita en {nombre} (datos {anio_titulo})"
+        if len(titulo) > 65:
+            titulo = f"Renta media en {nombre} (datos {anio_titulo})"
+        texto = "\n".join(cuerpo)
+        extras = ["la renta por persona y por hogar del INE" if m["hogar"] else "la renta por persona del INE"]
+        if h and h.get("bruta_media"):
+            extras.append(f"los datos de Hacienda de {HACIENDA['anio_municipios']}")
+        if "<h2>Los barrios más ricos de" in texto:
+            extras.append("los barrios más ricos")
+        if "<h2>Mapa de la renta en" in texto:
+            extras.append("el mapa por zonas")
+        extras.append("su puesto en España y en su provincia")
+        extras.append(f"la evolución desde {primero[0]}" if primero and primero[0] != ultimo else "cómo ha cambiado")
+        descripcion = f"¿Cuánto se gana en {nombre}? Mira " + ", ".join(extras[:-1]) + " y " + extras[-1] + "."
+    else:
+        titulo = f"Renta media en {nombre}"
     migas = [(COMUNIDADES[PROVINCIAS[p][2]], ruta_ccaa(PROVINCIAS[p][2])), (prov_nombre, ruta_prov(p)), (nombre, None)]
     if ccaa_nombre == prov_nombre:
         migas = migas[1:]
@@ -805,7 +821,7 @@ def paginas_ranking(con_dato, por_prov, T, anios, todos_municipios=()):
     cuerpo += f'<div class="content"><h2>Preguntas frecuentes</h2>{faq_html(preguntas)}</div>'
     guardar("/municipios-mas-ricos-de-espana/", pagina(
         "/municipios-mas-ricos-de-espana/", f"Los pueblos y ciudades más ricos de España (renta {ultimo})",
-        f"Los 100 pueblos y ciudades más ricos de España por renta media por persona ({ultimo}, INE). {top['nombre']} encabeza la lista con {euros(top['renta'])}.",
+        f"Los 100 pueblos y ciudades más ricos de España por renta media por persona ({ultimo}, INE): cuál es el más rico, cuánto se gana y en qué provincias están.",
         cuerpo, [("Municipios más ricos", None)], [faq_ld(preguntas)]))
     rutas.append("/municipios-mas-ricos-de-espana/")
 
@@ -821,7 +837,7 @@ def paginas_ranking(con_dato, por_prov, T, anios, todos_municipios=()):
 <p class="fuente">Fuente: INE, Atlas de Distribución de Renta de los Hogares, {ultimo}. Municipios con al menos {n(MIN_HAB_RANKING)} habitantes.</p>"""
     guardar("/municipios-mas-pobres-de-espana/", pagina(
         "/municipios-mas-pobres-de-espana/", f"Los pueblos más pobres de España (renta {ultimo})",
-        f"Los 100 pueblos y ciudades de España con menos renta media por persona ({ultimo}, INE). {ult['nombre']} tiene la más baja: {euros(ult['renta'])}.",
+        f"Los 100 pueblos y ciudades de España con menos renta media por persona ({ultimo}, INE): cuál tiene la renta más baja y en qué provincias están.",
         cuerpo, [("Municipios más pobres", None)]))
     rutas.append("/municipios-mas-pobres-de-espana/")
 
@@ -847,7 +863,7 @@ def paginas_ranking(con_dato, por_prov, T, anios, todos_municipios=()):
     cuerpo += f'<div class="content"><h2>Preguntas frecuentes</h2>{faq_html(preguntas)}</div>'
     guardar("/ciudades-mas-ricas-de-espana/", pagina(
         "/ciudades-mas-ricas-de-espana/", f"Las ciudades más ricas de España: ranking de renta {ultimo}",
-        f"Ranking de las {len(ciudades)} ciudades de más de {n(MIN_HAB_CIUDAD)} habitantes por renta media por persona ({ultimo}, INE). La primera: {primera['nombre']}.",
+        f"Ranking de las {len(ciudades)} ciudades de más de {n(MIN_HAB_CIUDAD)} habitantes por renta media por persona ({ultimo}, INE): cuál es la más rica y en qué puesto está la tuya.",
         cuerpo, [("Ciudades más ricas", None)], [faq_ld(preguntas)]))
     rutas.append("/ciudades-mas-ricas-de-espana/")
 
@@ -872,7 +888,7 @@ def paginas_ranking(con_dato, por_prov, T, anios, todos_municipios=()):
 <p class="fuente">Fuente: INE, Atlas de Distribución de Renta de los Hogares, {ultimo}. Los municipios sin cifra publicada (secreto estadístico) no aparecen.</p>"""
         ruta = ruta_prov(p)
         guardar(ruta, pagina(ruta, f"Pueblos más ricos de {nombre}: renta media {ultimo}",
-                             f"Ranking de los {len(lista)} pueblos y ciudades de la provincia de {nombre} por renta media por persona ({ultimo}, INE). El más rico: {lista[0]['nombre']}.",
+                             f"Ranking de los {len(lista)} pueblos y ciudades de la provincia de {nombre} por renta media por persona ({ultimo}, INE): cuál es el más rico, el más pobre y dónde está el tuyo.",
                              cuerpo, [(COMUNIDADES[ccaa], ruta_ccaa(ccaa)), (nombre, None)]))
         rutas.append(ruta)
     # Comunidades
@@ -896,7 +912,7 @@ def paginas_ranking(con_dato, por_prov, T, anios, todos_municipios=()):
 <p class="fuente">Fuente: INE, Atlas de Distribución de Renta de los Hogares, {ultimo}.</p>"""
         ruta = ruta_ccaa(ine)
         guardar(ruta, pagina(ruta, f"Pueblos más ricos de {nombre}: renta media {ultimo}",
-                             f"Renta media en {nombre} ({euros(v)} por persona, {ultimo}) y ranking de sus pueblos y ciudades más ricos según el INE.",
+                             f"Renta media en {nombre} ({ultimo}) y ranking de sus pueblos y ciudades más ricos según el INE: cuál es el primero y dónde está el tuyo.",
                              cuerpo, [(nombre, None)]))
         rutas.append(ruta)
     filas_html = "".join(f'<tr><td>{i + 1}</td><td><a href="{ruta_ccaa(ine)}">{escape(nombre)}</a></td><td class="num">{euros(v)}</td></tr>'
@@ -987,7 +1003,7 @@ def paginas_barrios(municipios, t, T, anios):
 <div class="content"><h2>Preguntas frecuentes</h2>{faq_html(preguntas)}</div>
 <p class="fuente">Fuente: Agencia Tributaria, Estadística de los declarantes del IRPF de los mayores municipios por código postal, {ac}{f"; INE, Atlas de Distribución de Renta de los Hogares, {anios[-1]}" if distritos else ""}.</p>"""
         guardar(ruta, pagina(ruta, f"Los barrios más ricos de {nombre}: renta por código postal {ac}",
-                             f"Ranking de los {len(cps)} barrios (códigos postales) de {nombre} por renta media en {ac} según Hacienda. El más rico: {top['nombre']}, con {euros(top['bruta_media'])}.",
+                             f"Ranking de los {len(cps)} barrios (códigos postales) de {nombre} por renta media en {ac} según Hacienda: cuáles son los más ricos, los más pobres y en qué puesto está el tuyo.",
                              cuerpo, [(nombre, ruta_mun(m)), ("Barrios", "/barrios/"), (f"Barrios de {nombre}", None)], [faq_ld(preguntas)]))
         rutas.append(ruta)
 
