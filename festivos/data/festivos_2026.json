@@ -1,0 +1,2077 @@
+{
+"anio": 2026,
+"boe": {
+"id": "BOE-A-2025-21667",
+"titulo": "Resolución de 17 de octubre de 2025, de la Dirección General de Trabajo, por la que se publica la relación de fiestas laborales para el año 2026.",
+"publicado": "2025-10-28",
+"url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2025-21667"
+},
+"nacionales_autonomicos": {
+"andalucia": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-02-28",
+"n": "Día de Andalucía",
+"t": "autonomico"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-11-02",
+"n": "Día siguiente a Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2026-12-07",
+"n": "Lunes siguiente al Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"aragon": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-23",
+"n": "San Jorge/Día de Aragón",
+"t": "autonomico"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-11-02",
+"n": "Día siguiente a Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2026-12-07",
+"n": "Lunes siguiente al Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"asturias": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-09-08",
+"n": "Día de Asturias",
+"t": "autonomico"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-11-02",
+"n": "Día siguiente a Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2026-12-07",
+"n": "Lunes siguiente al Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"baleares": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-03-02",
+"n": "Lunes siguiente al Día de les Illes Balears",
+"t": "autonomico"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-06",
+"n": "Lunes de Pascua",
+"t": "autonomico"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-12-26",
+"n": "San Esteban",
+"t": "autonomico"
+}
+],
+"canarias": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-05-30",
+"n": "Día de Canarias",
+"t": "autonomico"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-11-02",
+"n": "Día siguiente a Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"cantabria": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-07-28",
+"n": "Día de las Instituciones de Cantabria",
+"t": "autonomico"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-09-15",
+"n": "La Bien Aparecida",
+"t": "autonomico"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-12-07",
+"n": "Lunes siguiente al Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"castilla-la-mancha": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-06",
+"n": "Lunes de Pascua",
+"t": "autonomico"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-06-04",
+"n": "Corpus Christi",
+"t": "autonomico"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-11-02",
+"n": "Día siguiente a Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"castilla-y-leon": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-23",
+"n": "Fiesta de Castilla y León",
+"t": "autonomico"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-11-02",
+"n": "Día siguiente a Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2026-12-07",
+"n": "Lunes siguiente al Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"cataluna": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-06",
+"n": "Lunes de Pascua",
+"t": "autonomico"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-06-24",
+"n": "San Juan",
+"t": "autonomico"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-09-11",
+"n": "Fiesta Nacional de Cataluña",
+"t": "autonomico"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-12-26",
+"n": "San Esteban",
+"t": "autonomico"
+}
+],
+"extremadura": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-09-08",
+"n": "Día de Extremadura",
+"t": "autonomico"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-11-02",
+"n": "Día siguiente a Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2026-12-07",
+"n": "Lunes siguiente al Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"galicia": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-03-19",
+"n": "San José",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-06-24",
+"n": "San Juan",
+"t": "autonomico"
+},
+{
+"f": "2026-07-25",
+"n": "Santiago Apóstol/Día Nacional de Galicia",
+"t": "nacional"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"madrid": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-05-02",
+"n": "Fiesta de la Comunidad de Madrid",
+"t": "autonomico"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-11-02",
+"n": "Día siguiente a Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2026-12-07",
+"n": "Lunes siguiente al Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"murcia": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-03-19",
+"n": "San José",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-06-09",
+"n": "Día de la Región de Murcia",
+"t": "autonomico"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-12-07",
+"n": "Lunes siguiente al Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"navarra": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-03-19",
+"n": "San José",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-06",
+"n": "Lunes de Pascua",
+"t": "autonomico"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-11-02",
+"n": "Día siguiente a Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"pais-vasco": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-03-19",
+"n": "San José",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-06",
+"n": "Lunes de Pascua",
+"t": "autonomico"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-07-25",
+"n": "Santiago Apóstol/Día Nacional de Galicia",
+"t": "nacional"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"la-rioja": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-06",
+"n": "Lunes de Pascua",
+"t": "autonomico"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-06-09",
+"n": "Día de la Rioja",
+"t": "autonomico"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-12-07",
+"n": "Lunes siguiente al Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"valenciana": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-03-19",
+"n": "San José",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-06",
+"n": "Lunes de Pascua",
+"t": "autonomico"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-06-24",
+"n": "San Juan",
+"t": "autonomico"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-09",
+"n": "Día de la Comunitat Valenciana",
+"t": "autonomico"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"ceuta": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-05-27",
+"n": "Fiesta Sacrificio-Eidul Adha",
+"t": "autonomico"
+},
+{
+"f": "2026-08-05",
+"n": "Nuestra Señora de África",
+"t": "autonomico"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-09-02",
+"n": "Día de Ceuta",
+"t": "autonomico"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"melilla": [
+{
+"f": "2026-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2026-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2026-03-20",
+"n": "Fiesta del Eid Fitr",
+"t": "autonomico"
+},
+{
+"f": "2026-04-02",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2026-04-03",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2026-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2026-05-27",
+"n": "Fiesta Sacrificio-Aid al Adha",
+"t": "autonomico"
+},
+{
+"f": "2026-08-15",
+"n": "Asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2026-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2026-12-07",
+"n": "Lunes siguiente al Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2026-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2026-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+]
+},
+"notas": {
+"canarias": [
+"En la Comunidad Autónoma de Canarias, el Decreto 61/2025, de 28 de abril, por el que se determina el calendario de fiestas laborales de la Comunidad Autónoma de Canarias para el año 2026 (BOC de 5 de mayo de 2025) dispone que: «En las islas de El Hierro, Fuerteventura, Gran Canaria, La Gomera, La Palma, Lanzarote, La Graciosa y Tenerife, las fiestas laborales serán, además, las siguientes: en El Hierro: el 24 de septiembre, festividad de Nuestra Señora de los Reyes; en Fuerteventura: el 18 de septiembre, festividad de Nuestra Señora de la Peña; en Gran Canaria: el 8 de septiembre, festividad de Nuestra Señora del Pino; en La Gomera: el 5 de octubre, festividad de Nuestra Señora de Guadalupe; en La Palma: el 5 de agosto, festividad de Nuestra Señora de Las Nieves; en Lanzarote y La Graciosa: el 15 de septiembre, festividad de Nuestra Señora de los Volcanes; en Tenerife: el 2 de febrero, festividad de la Virgen de la Candelaria»."
+],
+"cataluna": [
+"En la Comunidad Autónoma de Cataluña, la Orden EMT/66/2025, de 30 de abril, por la que se establece el calendario oficial de fiestas laborales en Cataluña para el año 2026 (DOGC de 6 de mayo de 2025) dispone que: «En el territorio de Arán, la fiesta del día 26 de diciembre (Sant Esteve) queda sustituida por la de 17 de junio (Fiesta de Arán), miércoles»."
+]
+},
+"locales": {
+"35001": [
+{
+"f": "2026-06-29",
+"n": "Festividad de San Pedro Apóstol"
+},
+{
+"f": "2026-08-05",
+"n": "Festividad de Nuestra Señora de las Nieves"
+}
+],
+"35002": [
+{
+"f": "2026-01-20",
+"n": "Festividad de San Sebastián"
+},
+{
+"f": "2026-02-19",
+"n": "Jueves de Carnaval"
+}
+],
+"35003": [
+{
+"f": "2026-02-09",
+"n": "Carnavales"
+},
+{
+"f": "2026-09-08",
+"n": "Festividad de Nuestra Señora de Antigua"
+}
+],
+"35004": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-08-25",
+"n": "Festividad de San Ginés"
+}
+],
+"35005": [
+{
+"f": "2026-08-31",
+"n": "Festividad de la Virgen de la Cuevita"
+},
+{
+"f": "2026-09-14",
+"n": "Festividad del Cristo de Acusa"
+}
+],
+"35006": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-06-24",
+"n": "Festividad de San Juan Bautista"
+}
+],
+"35007": [
+{
+"f": "2026-07-14",
+"n": "Festividad de San Buenaventura"
+},
+{
+"f": "2026-08-24",
+"n": "Festividad de San Bartolomé"
+}
+],
+"35008": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-08-17",
+"n": "Festividad de San Roque"
+}
+],
+"35009": [
+{
+"f": "2026-05-15",
+"n": "Festividad de San Isidro Labrador"
+},
+{
+"f": "2026-07-25",
+"n": "Festividad de Santiago Apóstol"
+}
+],
+"35010": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-06-24",
+"n": "Festividad de San Juan"
+}
+],
+"35011": [
+{
+"f": "2026-02-02",
+"n": "Festividad de Nuestra Señora de la Candelaria"
+},
+{
+"f": "2026-06-29",
+"n": "Festividad del Apóstol San Pedro"
+}
+],
+"35012": [
+{
+"f": "2026-04-06",
+"n": "Festividad de San Antonio"
+},
+{
+"f": "2026-07-16",
+"n": "Festividad de la Virgen del Carmen"
+}
+],
+"35013": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-06-15",
+"n": "Festividad de San Antonio de Padua"
+}
+],
+"35014": [
+{
+"f": "2026-02-02",
+"n": "Festividad Nuestra Señora de la Candelaria"
+},
+{
+"f": "2026-07-16",
+"n": "Festividad Nuestra Señora del Carmen"
+}
+],
+"35015": [
+{
+"f": "2026-07-02",
+"n": "Festividad de Nuestra Señora de Regla"
+},
+{
+"f": "2026-07-16",
+"n": "Festividad de Nuestra Señora del Carmen"
+}
+],
+"35016": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-06-24",
+"n": "Conmemoración de la Fundación de la Ciudad https://sede.gobiernodecanarias.org/boc                                                                  boc-a-2025-165-3029 Boletín Oficial de Canarias núm. 165               37633              Jueves 21 de agosto de 2025"
+}
+],
+"35017": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-10-07",
+"n": "Festividad de Nuestra Señora del Rosario"
+}
+],
+"35018": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-08-24",
+"n": "Festividad de San Bartolomé"
+}
+],
+"35019": [
+{
+"f": "2026-07-25",
+"n": "Festividad de Santiago Apóstol"
+},
+{
+"f": "2026-08-24",
+"n": "Festividad de San Bartolomé"
+}
+],
+"35020": [
+{
+"f": "2026-09-10",
+"n": "Festividad del Santo Patrono San Nicolás de Tolentino"
+},
+{
+"f": "2026-09-11",
+"n": "Día del Charco"
+}
+],
+"35021": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-06-13",
+"n": "Festividad de San Antonio de Padua https://sede.gobiernodecanarias.org/boc                                                             boc-a-2025-165-3029 Boletín Oficial de Canarias núm. 165              37635                        Jueves 21 de agosto de 2025"
+}
+],
+"35022": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+}
+],
+"35023": [
+{
+"f": "2026-03-19",
+"n": "Festividad de San José"
+},
+{
+"f": "2026-09-21",
+"n": "Lunes posterior a la Festividad de Las Marías"
+}
+],
+"35024": [
+{
+"f": "2026-07-16",
+"n": "Festividad Nuestra Señora del Carmen"
+},
+{
+"f": "2026-08-05",
+"n": "Festividad Nuestra Señora de Las Nieves"
+}
+],
+"35025": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-09-14",
+"n": "Festividad de la Virgen del Socorro"
+}
+],
+"35026": [
+{
+"f": "2026-06-24",
+"n": "Festividad de San Juan Bautista"
+},
+{
+"f": "2026-11-17",
+"n": "Festividad de San Gregorio Taumaturgo"
+}
+],
+"35027": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-06-12",
+"n": "Festividad del Sagrado Corazón de Jesús"
+}
+],
+"35028": [
+{
+"f": "2026-02-02",
+"n": "Festividad Nuestra Señora La Candelaria"
+},
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+}
+],
+"35029": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-06-24",
+"n": "Festividad de San Juan Bautista"
+}
+],
+"35030": [
+{
+"f": "2026-02-02",
+"n": "Festividad de Nuestra Señora de La Candelaria https://sede.gobiernodecanarias.org/boc                                                            boc-a-2025-165-3029 Boletín Oficial de Canarias núm. 165              37637                    Jueves 21 de agosto de 2025"
+},
+{
+"f": "2026-10-13",
+"n": "Fiestas juradas en honor a San Miguel Arcángel y Conmemoración de las batallas del Cuchillete y Tamasite"
+}
+],
+"35031": [
+{
+"f": "2026-06-24",
+"n": "Festividad de San Juan Bautista"
+},
+{
+"f": "2026-09-29",
+"n": "Festividad de San Miguel"
+}
+],
+"35032": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-05-25",
+"n": "Fiesta del Patrón del Municipio"
+}
+],
+"35033": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-09-21",
+"n": "Festividad en Honor al Apóstol San Mateo"
+}
+],
+"35034": [
+{
+"f": "2026-07-07",
+"n": "Festividad de San Marcial del Rubicón"
+},
+{
+"f": "2026-09-08",
+"n": "Festividad de Nuestra Señora de los Remedios https://sede.gobiernodecanarias.org/boc                                                            boc-a-2025-165-3029"
+}
+],
+"38001": [
+{
+"f": "2026-01-20",
+"n": "Festividad de San Sebastián"
+},
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+}
+],
+"38002": [
+{
+"f": "2026-04-27",
+"n": "Festividad de San Marcos Evangelista"
+},
+{
+"f": "2026-09-24",
+"n": "Festividad de Nuestra Señora de las Mercedes"
+}
+],
+"38003": [
+{
+"f": "2026-07-16",
+"n": "Festividad de Nuestra Señora del Carmen"
+},
+{
+"f": "2026-09-15",
+"n": "Festividad de Nuestra Señora del Buen Paso"
+}
+],
+"38004": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-08-31",
+"n": "Festividad de San Bernardo"
+}
+],
+"38005": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-09-08",
+"n": "Festividad de Nuestra Señora de Abona https://sede.gobiernodecanarias.org/boc                                                               boc-a-2025-165-3029 Boletín Oficial de Canarias núm. 165             37629                           Jueves 21 de agosto de 2025"
+}
+],
+"38006": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-10-05",
+"n": "Festividad del Santísimo Cristo de la Salud"
+}
+],
+"38007": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-10-07",
+"n": "Festividad de Nuestra Señora del Rosario"
+}
+],
+"38008": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-06-29",
+"n": "Festividad de San Pedro Apóstol"
+}
+],
+"38009": [
+{
+"f": "2026-03-19",
+"n": "Festividad de San José"
+},
+{
+"f": "2026-10-07",
+"n": "Festividad de Nuestra Señora del Rosario"
+}
+],
+"38010": [
+{
+"f": "2026-08-24",
+"n": "Festividad de San Bartolomé"
+},
+{
+"f": "2026-10-26",
+"n": "Festividad de Nuestra Señora de los Remedios. Patrona de la Villa https://sede.gobiernodecanarias.org/boc                                                                  boc-a-2025-165-3029 Boletín Oficial de Canarias núm. 165              37630                        Jueves 21 de agosto de 2025"
+}
+],
+"38011": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-07-27",
+"n": "Festividad de Santa Ana"
+}
+],
+"38012": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-08-17",
+"n": "Fiestas Patronales"
+}
+],
+"38013": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-08-10",
+"n": "Festividad de San Lorenzo"
+}
+],
+"38014": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-02-19",
+"n": "Día del Municipio https://sede.gobiernodecanarias.org/boc                                                                boc-a-2025-165-3029 Boletín Oficial de Canarias núm. 165             37631                            Jueves 21 de agosto de 2025"
+}
+],
+"38015": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-06-24",
+"n": "Festividad de San Juan"
+}
+],
+"38016": [
+{
+"f": "2026-06-12",
+"n": "Festividad de San Antonio del Monte"
+},
+{
+"f": "2026-08-21",
+"n": "Festividad de Nuestra Señora de la Luz"
+}
+],
+"38017": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-06-13",
+"n": "Festividad de San Antonio de Padua"
+}
+],
+"38018": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-08-17",
+"n": "Fiestas Patronales"
+}
+],
+"38019": [
+{
+"f": "2026-06-24",
+"n": "Festividad de San Juan Bautista"
+},
+{
+"f": "2026-09-21",
+"n": "Festividad del Santísimo Cristo de la Dulce Muerte"
+}
+],
+"38020": [
+{
+"f": "2026-06-29",
+"n": "Festividad de San Pedro Apóstol"
+},
+{
+"f": "2026-09-07",
+"n": "Festividad de Nuestra Señora del Socorro"
+}
+],
+"38021": [
+{
+"f": "2026-08-07",
+"n": "Festividad de Santo Domingo de Guzmán"
+},
+{
+"f": "2026-09-08",
+"n": "Festividad de Nuestra Señora de la Encarnación"
+}
+],
+"38022": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-04-25",
+"n": "Festividad de San Marcos Evangelista https://sede.gobiernodecanarias.org/boc                                                                   boc-a-2025-165-3029 Boletín Oficial de Canarias núm. 165            37632                            Jueves 21 de agosto de 2025"
+}
+],
+"38023": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-09-14",
+"n": "Festividad del Santísimo Cristo de La Laguna"
+}
+],
+"38024": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-07-02",
+"n": "Festividad de Nuestra Señora de los Remedios"
+}
+],
+"38025": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-08-06",
+"n": "Festividad de El Salvador"
+}
+],
+"38026": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-06-11",
+"n": "Infraoctava del Corpus Christi"
+}
+],
+"38027": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-09-04",
+"n": "Viernes previo a la Festividad del Pino"
+}
+],
+"38028": [
+{
+"f": "2026-07-13",
+"n": "Festividad del Gran Poder de Dios"
+},
+{
+"f": "2026-07-14",
+"n": "Festividad de la Virgen del Carmen"
+}
+],
+"38029": [
+{
+"f": "2026-01-15",
+"n": "Festividad de San Mauro Abad"
+},
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval https://sede.gobiernodecanarias.org/boc                                                       boc-a-2025-165-3029 Boletín Oficial de Canarias núm. 165            37634                       Jueves 21 de agosto de 2025"
+}
+],
+"38030": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-06-24",
+"n": "Festividad de San Juan Bautista"
+}
+],
+"38031": [
+{
+"f": "2026-01-22",
+"n": "Festividad de San Vicente"
+},
+{
+"f": "2026-06-01",
+"n": "Lunes de Remedios"
+}
+],
+"38032": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-08-03",
+"n": "Festividad de Nuestra Señora de La Esperanza"
+}
+],
+"38033": [
+{
+"f": "2026-04-27",
+"n": "Festividad de Nuestra Señora de Montserrat"
+},
+{
+"f": "2026-11-30",
+"n": "Festividad de San Andrés"
+}
+],
+"38034": [
+{
+"f": "2026-06-24",
+"n": "Festividad de San Juan Bautista"
+},
+{
+"f": "2026-09-14",
+"n": "Festividad de San José"
+}
+],
+"38035": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-09-29",
+"n": "Festividad de San Miguel Arcángel"
+}
+],
+"38036": [
+{
+"f": "2026-01-20",
+"n": "Festividad de San Sebastián"
+},
+{
+"f": "2026-02-24",
+"n": "Martes de Carnaval"
+}
+],
+"38037": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-07-16",
+"n": "Festividad Nuestra Señora del Carmen"
+}
+],
+"38038": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-05-04",
+"n": "Festividad del Día de la Cruz"
+}
+],
+"38039": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-10-21",
+"n": "Festividad de Santa Úrsula"
+}
+],
+"38040": [
+{
+"f": "2026-05-15",
+"n": "Festividad de San Isidro Labrador"
+},
+{
+"f": "2026-07-16",
+"n": "Festividad de Nuestra Señora de la Virgen del Carmen"
+}
+],
+"38041": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-06-29",
+"n": "Festividad de San Pedro Apóstol"
+}
+],
+"38042": [
+{
+"f": "2026-06-24",
+"n": "Festividad de San Juan"
+},
+{
+"f": "2026-09-08",
+"n": "Festividad de Nuestra Señora de la Luz"
+}
+],
+"38043": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-11-25",
+"n": "Festividad de Santa Catalina"
+}
+],
+"38044": [
+{
+"f": "2026-08-31",
+"n": "Festividad Nuestra Señora de Buen Viaje"
+},
+{
+"f": "2026-10-19",
+"n": "Festividad del Santísimo Cristo del Calvario"
+}
+],
+"38045": [
+{
+"f": "2026-07-16",
+"n": "Festividad de Nuestra Señora del Carmen"
+},
+{
+"f": "2026-09-29",
+"n": "Festividad de San Miguel Arcángel"
+}
+],
+"38046": [
+{
+"f": "2026-04-25",
+"n": "Festividad de San Marcos Evangelista"
+},
+{
+"f": "2026-09-08",
+"n": "Festividad de Nuestra Señora de los Remedios https://sede.gobiernodecanarias.org/boc                                                                boc-a-2025-165-3029 Boletín Oficial de Canarias núm. 165            37636                      Jueves 21 de agosto de 2025"
+}
+],
+"38047": [
+{
+"f": "2026-02-02",
+"n": "Presentación de Jesús en el Templo"
+},
+{
+"f": "2026-09-08",
+"n": "Festividad de la Natividad de la Virgen"
+}
+],
+"38048": [
+{
+"f": "2026-05-15",
+"n": "Festividad de San Isidro Labrador"
+},
+{
+"f": "2026-06-29",
+"n": "Festividad de San Pedro"
+}
+],
+"38049": [
+{
+"f": "2026-01-07",
+"n": "Festividad de Nuestra Señora Virgen de Los Reyes"
+},
+{
+"f": "2026-06-24",
+"n": "Festividad de San Juan Bautista"
+}
+],
+"38050": [
+{
+"f": "2026-06-24",
+"n": "Festividad de San Juan Bautista"
+},
+{
+"f": "2026-07-23",
+"n": "Festividad Virgen del Carmen"
+}
+],
+"38051": [
+{
+"f": "2026-02-17",
+"n": "Martes de Carnaval"
+},
+{
+"f": "2026-08-31",
+"n": "Festividad de Nuestra Señora de la Encarnación"
+}
+],
+"38052": [
+{
+"f": "2026-04-24",
+"n": "Festividad del Santo Hermano Pedro"
+},
+{
+"f": "2026-08-31",
+"n": "Festividad de San Roque y San Agustín"
+}
+],
+"38053": [
+{
+"f": "2026-02-03",
+"n": "Festividad de San Blas"
+},
+{
+"f": "2026-06-04",
+"n": "Festividad del Corpus Christi"
+}
+],
+"38901": [
+{
+"f": "2026-06-24",
+"n": "Festividad de San Juan"
+},
+{
+"f": "2026-07-16",
+"n": "Festividad de Nuestra Señora de la Virgen del Carmen"
+}
+]
+},
+"fuentes": {
+"canarias": {
+"titulo": "",
+"url": "https://iac.edu.es/system/files/documents/2026-01/CAC_fiestas%20locales%20propias%20de%20cada%20municipio%20_boc-a-2025-165-3029.pdf",
+"publicado": ""
+}
+}
+}

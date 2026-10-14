@@ -1,0 +1,6 @@
+BOE 2026: canarias tiene solo 11 fiestas
+canarias 2026: 88 de 88 municipios con festivos locales (canarias_2026)
+BOE 2027: canarias tiene solo 11 fiestas
+murcia 2027: 45 de 45 municipios con festivos locales (murcia_2027)
+la-rioja 2027: 11 nombres sin municipio del INE (pueden ser pedanías): Cabretón, Ciriñuela, Gallinero de Rioja, Islallana, Larriba, Rincón de Olivedo, Torremuña, Valdegutur, Valverde, Ventas del Baño, Villaseca de Rioja
+la-rioja 2027: 165 de 174 municipios con festivos locales (rioja_2027)

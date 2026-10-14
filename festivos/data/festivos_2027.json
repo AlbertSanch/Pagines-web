@@ -1,0 +1,3307 @@
+{
+"anio": 2027,
+"boe": {
+"id": "BOE-A-2026-21254",
+"titulo": "Resolución de 8 de octubre de 2026, de la Dirección General de Trabajo, por la que se publica relación de fiestas laborales para el año 2027.",
+"publicado": "2026-10-13",
+"url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2026-21254"
+},
+"nacionales_autonomicos": {
+"andalucia": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-01",
+"n": "Día de Andalucía",
+"t": "autonomico"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-08-16",
+"n": "Lunes siguiente a asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"aragon": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-04-23",
+"n": "San Jorge/Día de Aragón",
+"t": "autonomico"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-08-16",
+"n": "Lunes siguiente a asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"asturias": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-08-16",
+"n": "Lunes siguiente a asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2027-09-08",
+"n": "Día de Asturias",
+"t": "autonomico"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"baleares": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-01",
+"n": "Día de les Illes Balears",
+"t": "autonomico"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-29",
+"n": "Lunes de Pascua",
+"t": "autonomico"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"canarias": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-08-16",
+"n": "Lunes siguiente a asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"cantabria": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-07-28",
+"n": "Día de las Instituciones de Cantabria",
+"t": "autonomico"
+},
+{
+"f": "2027-09-15",
+"n": "La Bien Aparecida",
+"t": "autonomico"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"castilla-la-mancha": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-05-27",
+"n": "Corpus Christi",
+"t": "autonomico"
+},
+{
+"f": "2027-05-31",
+"n": "Día de Castilla-La Mancha",
+"t": "autonomico"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"castilla-y-leon": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-04-23",
+"n": "Fiesta de Castilla y León",
+"t": "autonomico"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-08-16",
+"n": "Lunes siguiente a asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"cataluna": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-29",
+"n": "Lunes de Pascua",
+"t": "autonomico"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-06-24",
+"n": "Día de San Juan",
+"t": "autonomico"
+},
+{
+"f": "2027-09-11",
+"n": "Fiesta Nacional de Cataluña",
+"t": "autonomico"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"extremadura": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-09-08",
+"n": "Día de Extremadura",
+"t": "autonomico"
+},
+{
+"f": "2027-10-11",
+"n": "Sustitución 15 de agosto",
+"t": "autonomico"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"galicia": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-19",
+"n": "San José",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-05-17",
+"n": "Día de las Letras Gallegas",
+"t": "autonomico"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"madrid": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-19",
+"n": "San José",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-08-16",
+"n": "Lunes siguiente a asunción de la Virgen",
+"t": "nacional"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"murcia": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-19",
+"n": "San José",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-06-09",
+"n": "Día de la Región de Murcia",
+"t": "autonomico"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"navarra": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-19",
+"n": "San José",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-29",
+"n": "Lunes de Pascua",
+"t": "autonomico"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"pais-vasco": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-29",
+"n": "Lunes de Pascua",
+"t": "autonomico"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-10-07",
+"n": "Aniversario 1er Gobierno Euskadi",
+"t": "autonomico"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"la-rioja": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-29",
+"n": "Lunes de Pascua",
+"t": "autonomico"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-06-09",
+"n": "Día de La Rioja",
+"t": "autonomico"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"valenciana": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-19",
+"n": "San José",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-29",
+"n": "Lunes de Pascua",
+"t": "autonomico"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-10-09",
+"n": "Día de la Comunitat Valenciana",
+"t": "autonomico"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"ceuta": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-05-17",
+"n": "Eidul Adha-Fiesta Sacrificio",
+"t": "autonomico"
+},
+{
+"f": "2027-08-05",
+"n": "Nuestra Señora de África",
+"t": "autonomico"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+],
+"melilla": [
+{
+"f": "2027-01-01",
+"n": "Año Nuevo",
+"t": "nacional"
+},
+{
+"f": "2027-01-06",
+"n": "Epifanía del Señor",
+"t": "nacional"
+},
+{
+"f": "2027-03-10",
+"n": "Fiesta del Eid Fitr",
+"t": "autonomico"
+},
+{
+"f": "2027-03-25",
+"n": "Jueves Santo",
+"t": "nacional"
+},
+{
+"f": "2027-03-26",
+"n": "Viernes Santo",
+"t": "nacional"
+},
+{
+"f": "2027-05-01",
+"n": "Fiesta del Trabajo",
+"t": "nacional"
+},
+{
+"f": "2027-05-17",
+"n": "Fiesta Sacrificio-Aid Al Adha",
+"t": "autonomico"
+},
+{
+"f": "2027-10-12",
+"n": "Fiesta Nacional de España",
+"t": "nacional"
+},
+{
+"f": "2027-11-01",
+"n": "Todos los Santos",
+"t": "nacional"
+},
+{
+"f": "2027-12-06",
+"n": "Día de la Constitución Española",
+"t": "nacional"
+},
+{
+"f": "2027-12-08",
+"n": "Inmaculada Concepción",
+"t": "nacional"
+},
+{
+"f": "2027-12-25",
+"n": "Natividad del Señor",
+"t": "nacional"
+}
+]
+},
+"notas": {
+"canarias": [
+"En la Comunidad Autónoma de Canarias, el Decreto 115/2026, de 29 de junio, por el que se determina el calendario de fiestas laborales de la Comunidad Autónoma de Canarias para el año 2027 (BOC de 3 de julio de 2026) dispone que: «En las islas de El Hierro, Fuerteventura, Gran Canaria, La Gomera, La Palma, Lanzarote y La Graciosa, y Tenerife, las fiestas laborales serán, además, las siguientes: en El Hierro: el 24 de septiembre, festividad de Nuestra Señora de los Reyes; en Fuerteventura: el 17 de septiembre, festividad de Nuestra Señora de la Peña; en Gran Canaria: el 8 de septiembre, festividad de Nuestra Señora del Pino; en La Gomera: el 4 de octubre, festividad de Nuestra Señora de Guadalupe; en La Palma: el 5 de agosto, festividad de Nuestra Señora de Las Nieves; en Lanzarote y La Graciosa: el 15 de septiembre, festividad de Nuestra Señora de los Volcanes; en Tenerife: el 2 de febrero, festividad de la Virgen de la Candelaria»."
+],
+"cataluna": [
+"En la Comunidad Autónoma de Cataluña, la Orden EMT/52/2026, de 25 de marzo, por la que se establece el calendario oficial de fiestas laborales en Cataluña para el año 2027 (DOGC de 1 de abril de 2026) dispone que: «En el territorio de Arán, la fiesta del día 29 de marzo (Pasqua Florida) queda sustituida por la de 17 de junio (Fiesta de Arán), jueves»."
+]
+},
+"locales": {
+"26001": [
+{
+"f": "2027-08-03",
+"n": "San Esteban"
+},
+{
+"f": "2027-09-08",
+"n": "Virgen de la Rosa"
+}
+],
+"26002": [
+{
+"f": "2027-08-16",
+"n": ""
+},
+{
+"f": "2027-09-21",
+"n": ""
+}
+],
+"26003": [
+{
+"f": "2027-05-03",
+"n": "La Cruz"
+},
+{
+"f": "2027-08-16",
+"n": "San Roque"
+}
+],
+"26004": [
+{
+"f": "2027-07-08",
+"n": "San Cristóbal"
+},
+{
+"f": "2027-08-17",
+"n": "Rosario de las Vacas"
+}
+],
+"26005": [
+{
+"f": "2027-04-28",
+"n": "San Prudencio"
+},
+{
+"f": "2027-08-27",
+"n": "Fiestas de verano"
+}
+],
+"26006": [
+{
+"f": "2027-09-08",
+"n": "Nuestra Señora la Virgen de la Antigua"
+},
+{
+"f": "2027-11-11",
+"n": "San Martín"
+}
+],
+"26007": [
+{
+"f": "2027-02-05",
+"n": ""
+},
+{
+"f": "2027-05-17",
+"n": ""
+}
+],
+"26008": [
+{
+"f": "2027-08-24",
+"n": "San Bartolomé"
+},
+{
+"f": "2027-09-08",
+"n": "Virgen de los Remedios"
+}
+],
+"26009": [
+{
+"f": "2027-07-26",
+"n": "Santiago Apóstol"
+},
+{
+"f": "2027-09-13",
+"n": "Nuestra Señora La Virgen del Prado"
+}
+],
+"26010": [
+{
+"f": "2027-07-26",
+"n": ""
+},
+{
+"f": "2027-07-27",
+"n": ""
+}
+],
+"26011": [
+{
+"f": "2027-08-16",
+"n": "San Roque"
+},
+{
+"f": "2027-09-08",
+"n": "Virgen del Burgo"
+}
+],
+"26012": [
+{
+"f": "2027-06-10",
+"n": ""
+},
+{
+"f": "2027-09-16",
+"n": ""
+}
+],
+"26013": [
+{
+"f": "2027-04-29",
+"n": ""
+},
+{
+"f": "2027-08-23",
+"n": ""
+}
+],
+"26014": [
+{
+"f": "2027-07-22",
+"n": ""
+},
+{
+"f": "2027-07-23",
+"n": ""
+}
+],
+"26015": [
+{
+"f": "2027-07-16",
+"n": ""
+},
+{
+"f": "2027-09-08",
+"n": ""
+}
+],
+"26016": [
+{
+"f": "2027-05-14",
+"n": "San Isidro"
+},
+{
+"f": "2027-08-28",
+"n": "San Ramiro"
+}
+],
+"26017": [
+{
+"f": "2027-08-05",
+"n": ""
+},
+{
+"f": "2027-10-23",
+"n": ""
+}
+],
+"26018": [
+{
+"f": "2027-09-08",
+"n": "Virgen de Vico"
+},
+{
+"f": "2027-09-27",
+"n": "San Cosme y San Damián"
+}
+],
+"26019": [
+{
+"f": "2027-08-06",
+"n": "San Justo y San Pastor"
+},
+{
+"f": "2027-09-21",
+"n": "San Mateo"
+}
+],
+"26020": [
+{
+"f": "2027-05-03",
+"n": ""
+},
+{
+"f": "2027-09-29",
+"n": ""
+}
+],
+"26021": [
+{
+"f": "2027-02-03",
+"n": "San Blas"
+},
+{
+"f": "2027-09-08",
+"n": "San Adrián y Santa Natalia"
+}
+],
+"26022": [
+{
+"f": "2027-05-17",
+"n": "San Isidro"
+},
+{
+"f": "2027-07-22",
+"n": "Santa María Magdalena"
+}
+],
+"26023": [
+{
+"f": "2027-08-16",
+"n": ""
+},
+{
+"f": "2027-08-17",
+"n": ""
+}
+],
+"26024": [
+{
+"f": "2027-08-23",
+"n": ""
+},
+{
+"f": "2027-09-24",
+"n": ""
+}
+],
+"26025": [
+{
+"f": "2027-07-22",
+"n": ""
+},
+{
+"f": "2027-10-13",
+"n": ""
+}
+],
+"26026": [
+{
+"f": "2027-09-21",
+"n": "San Mateo"
+},
+{
+"f": "2027-09-22",
+"n": "Virgen de los Parrales"
+}
+],
+"26027": [
+{
+"f": "2027-09-16",
+"n": "Gracias"
+},
+{
+"f": "2027-12-10",
+"n": "Santa Eulalia"
+}
+],
+"26028": [
+{
+"f": "2027-01-20",
+"n": ""
+},
+{
+"f": "2027-05-21",
+"n": ""
+}
+],
+"26029": [
+{
+"f": "2027-06-08",
+"n": ""
+},
+{
+"f": "2027-07-13",
+"n": ""
+}
+],
+"26030": [
+{
+"f": "2027-08-16",
+"n": "San Roque"
+},
+{
+"f": "2027-10-22",
+"n": "San Esteban"
+}
+],
+"26031": [
+{
+"f": "2027-06-24",
+"n": "San Juan"
+},
+{
+"f": "2027-06-25",
+"n": "San Juan"
+}
+],
+"26032": [
+{
+"f": "2027-07-30",
+"n": ""
+},
+{
+"f": "2027-08-02",
+"n": "San Felices"
+}
+],
+"26033": [
+{
+"f": "2027-05-15",
+"n": "San Isidro"
+},
+{
+"f": "2027-09-16",
+"n": "San Cornelio y San Cipriano"
+}
+],
+"26034": [
+{
+"f": "2027-09-20",
+"n": ""
+},
+{
+"f": "2027-09-21",
+"n": ""
+}
+],
+"26035": [
+{
+"f": "2027-07-19",
+"n": "Santa Marina"
+},
+{
+"f": "2027-11-11",
+"n": "San Martín"
+}
+],
+"26036": [
+{
+"f": "2027-03-03",
+"n": ""
+},
+{
+"f": "2027-08-31",
+"n": ""
+}
+],
+"26037": [
+{
+"f": "2027-06-23",
+"n": "Romería en honor a la Virgen del Tajo"
+},
+{
+"f": "2027-10-15",
+"n": "Santa Teresa"
+}
+],
+"26038": [
+{
+"f": "2027-07-26",
+"n": ""
+},
+{
+"f": "2027-08-16",
+"n": ""
+}
+],
+"26039": [
+{
+"f": "2027-06-14",
+"n": "San Antonio"
+},
+{
+"f": "2027-09-08",
+"n": "Virgen de la Vega"
+}
+],
+"26040": [
+{
+"f": "2027-09-10",
+"n": "Acción de Gracias"
+},
+{
+"f": "2027-12-20",
+"n": "Santo Domingo de Silos"
+}
+],
+"26042": [
+{
+"f": "2027-06-24",
+"n": "San Juan"
+},
+{
+"f": "2027-09-27",
+"n": "Fiesta Patronal"
+}
+],
+"26043": [
+{
+"f": "2027-09-07",
+"n": ""
+},
+{
+"f": "2027-09-08",
+"n": ""
+}
+],
+"26044": [
+{
+"f": "2027-01-23",
+"n": "San Ildefonso"
+},
+{
+"f": "2027-10-22",
+"n": "San Esteban"
+}
+],
+"26046": [
+{
+"f": "2027-05-14",
+"n": ""
+},
+{
+"f": "2027-09-08",
+"n": ""
+}
+],
+"26047": [
+{
+"f": "2027-07-26",
+"n": ""
+},
+{
+"f": "2027-09-01",
+"n": ""
+}
+],
+"26048": [
+{
+"f": "2027-06-29",
+"n": ""
+},
+{
+"f": "2027-09-08",
+"n": ""
+}
+],
+"26049": [
+{
+"f": "2027-05-15",
+"n": "San Isidro"
+},
+{
+"f": "2027-08-07",
+"n": "San Clemente"
+}
+],
+"26050": [
+{
+"f": "2027-09-03",
+"n": ""
+},
+{
+"f": "2027-09-06",
+"n": ""
+}
+],
+"26051": [
+{
+"f": "2027-06-24",
+"n": "San Juan"
+},
+{
+"f": "2027-09-29",
+"n": "San Miguel"
+}
+],
+"26052": [
+{
+"f": "2027-07-09",
+"n": "San Cristóbal"
+},
+{
+"f": "2027-09-20",
+"n": "Día de hermandad vecinal"
+}
+],
+"26053": [
+{
+"f": "2027-01-20",
+"n": "San Sebastián"
+},
+{
+"f": "2027-05-13",
+"n": "Procesión General"
+}
+],
+"26054": [
+{
+"f": "2027-02-05",
+"n": "San Blas"
+},
+{
+"f": "2027-09-10",
+"n": "Nuestra Señora de la Soledad"
+}
+],
+"26055": [
+{
+"f": "2027-08-13",
+"n": "San Hipólito"
+},
+{
+"f": "2027-08-25",
+"n": "San Peregrino"
+}
+],
+"26056": [
+{
+"f": "2027-05-17",
+"n": ""
+},
+{
+"f": "2027-09-29",
+"n": ""
+}
+],
+"26057": [
+{
+"f": "2027-08-10",
+"n": "San Lorenzo"
+},
+{
+"f": "2027-10-30",
+"n": "San Lamberto"
+}
+],
+"26058": [
+{
+"f": "2027-06-29",
+"n": ""
+},
+{
+"f": "2027-08-16",
+"n": ""
+}
+],
+"26059": [
+{
+"f": "2027-02-03",
+"n": "San Blas"
+},
+{
+"f": "2027-07-12",
+"n": ""
+}
+],
+"26060": [
+{
+"f": "2027-09-08",
+"n": "Natividad de Nuestra Señora"
+},
+{
+"f": "2027-12-17",
+"n": "Expectación de la Virgen"
+}
+],
+"26061": [
+{
+"f": "2027-08-10",
+"n": "San Lorenzo"
+},
+{
+"f": "2027-09-24",
+"n": "Nuestra Señora de Allende"
+}
+],
+"26063": [
+{
+"f": "2027-05-15",
+"n": "San Isidro"
+},
+{
+"f": "2027-11-11",
+"n": "San Martín de Tours"
+}
+],
+"26064": [
+{
+"f": "2027-06-24",
+"n": "San Juan"
+},
+{
+"f": "2027-09-14",
+"n": "Festividad de la Cruz"
+}
+],
+"26065": [
+{
+"f": "2027-01-09",
+"n": "San Julián"
+},
+{
+"f": "2027-01-23",
+"n": "San Vicente"
+}
+],
+"26066": [
+{
+"f": "2027-01-22",
+"n": ""
+},
+{
+"f": "2027-05-17",
+"n": ""
+}
+],
+"26067": [
+{
+"f": "2027-07-12",
+"n": "San Cristóbal"
+},
+{
+"f": "2027-08-30",
+"n": "Virgen de La Cuesta"
+}
+],
+"26068": [
+{
+"f": "2027-11-11",
+"n": ""
+},
+{
+"f": "2027-12-07",
+"n": ""
+}
+],
+"26069": [
+{
+"f": "2027-03-20",
+"n": "Nuestra Señora de Carrasquedo"
+},
+{
+"f": "2027-06-24",
+"n": "San Juan Bautista"
+}
+],
+"26070": [
+{
+"f": "2027-04-22",
+"n": "Virgen de Nuestra Señora del Humilladero"
+},
+{
+"f": "2027-09-08",
+"n": "Virgen Nuestra Señora de La Antigua"
+}
+],
+"26071": [
+{
+"f": "2027-06-25",
+"n": ""
+},
+{
+"f": "2027-09-08",
+"n": "Ntra. Sra. Virgen de la Vega"
+}
+],
+"26072": [
+{
+"f": "2027-07-26",
+"n": ""
+},
+{
+"f": "2027-09-13",
+"n": ""
+}
+],
+"26073": [
+{
+"f": "2027-08-03",
+"n": "San Esteban"
+},
+{
+"f": "2027-08-16",
+"n": "San Roque"
+}
+],
+"26074": [
+{
+"f": "2027-05-15",
+"n": "San Isidro"
+},
+{
+"f": "2027-08-24",
+"n": "San Bartolomé"
+}
+],
+"26075": [
+{
+"f": "2027-07-26",
+"n": "Santa Ana"
+},
+{
+"f": "2027-11-11",
+"n": "San Martín"
+}
+],
+"26076": [
+{
+"f": "2027-05-10",
+"n": "San Gregorio"
+},
+{
+"f": "2027-11-26",
+"n": "Santa Catalina"
+}
+],
+"26077": [
+{
+"f": "2027-05-28",
+"n": "Pentecostés"
+},
+{
+"f": "2027-08-27",
+"n": "San Félix del Monte"
+}
+],
+"26078": [
+{
+"f": "2027-04-26",
+"n": "San Marcos"
+},
+{
+"f": "2027-09-04",
+"n": "Primer sábado de septiembre"
+}
+],
+"26079": [
+{
+"f": "2027-07-27",
+"n": "San Pantaleón"
+},
+{
+"f": "2027-08-16",
+"n": "San Roque"
+}
+],
+"26080": [
+{
+"f": "2027-09-06",
+"n": ""
+},
+{
+"f": "2027-10-11",
+"n": ""
+}
+],
+"26081": [
+{
+"f": "2027-07-20",
+"n": "Santa Justa"
+},
+{
+"f": "2027-09-30",
+"n": "San Miguel"
+}
+],
+"26082": [
+{
+"f": "2027-07-22",
+"n": "Víspera de Santiago"
+},
+{
+"f": "2027-07-23",
+"n": "Víspera de Santiago"
+}
+],
+"26084": [
+{
+"f": "2027-06-29",
+"n": ""
+},
+{
+"f": "2027-06-30",
+"n": ""
+}
+],
+"26086": [
+{
+"f": "2027-05-15",
+"n": "San Isidro"
+},
+{
+"f": "2027-08-24",
+"n": "San Bartolomé"
+}
+],
+"26087": [
+{
+"f": "2027-06-30",
+"n": ""
+},
+{
+"f": "2027-11-30",
+"n": ""
+}
+],
+"26088": [
+{
+"f": "2027-08-05",
+"n": "Virgen Blanca"
+},
+{
+"f": "2027-11-11",
+"n": "San Martín"
+}
+],
+"26089": [
+{
+"f": "2027-06-11",
+"n": "San Bernabé"
+},
+{
+"f": "2027-09-21",
+"n": "San Mateo"
+}
+],
+"26091": [
+{
+"f": "2027-10-29",
+"n": ""
+},
+{
+"f": "2027-12-07",
+"n": ""
+}
+],
+"26092": [
+{
+"f": "2027-08-26",
+"n": ""
+},
+{
+"f": "2027-08-27",
+"n": ""
+}
+],
+"26093": [
+{
+"f": "2027-05-03",
+"n": ""
+},
+{
+"f": "2027-09-14",
+"n": ""
+}
+],
+"26094": [
+{
+"f": "2027-06-28",
+"n": "Valvanera"
+},
+{
+"f": "2027-08-23",
+"n": "Santa Teodosia"
+}
+],
+"26095": [
+{
+"f": "2027-06-16",
+"n": "San Quiles y Santa Julita"
+},
+{
+"f": "2027-06-17",
+"n": "San Quiles y Santa Julita"
+}
+],
+"26096": [
+{
+"f": "2027-01-20",
+"n": "San Sebastián"
+},
+{
+"f": "2027-09-08",
+"n": "Nuestra Señora de la Natividad"
+}
+],
+"26098": [
+{
+"f": "2027-01-18",
+"n": ""
+},
+{
+"f": "2027-09-02",
+"n": ""
+}
+],
+"26099": [
+{
+"f": "2027-08-03",
+"n": "Virgen del Cortijo"
+},
+{
+"f": "2027-09-08",
+"n": "San Esteban"
+}
+],
+"26100": [
+{
+"f": "2027-05-20",
+"n": "San Baudilio"
+},
+{
+"f": "2027-08-13",
+"n": "Viernes más próximo a Nuestra Señora de la Asunción"
+}
+],
+"26101": [
+{
+"f": "2027-07-30",
+"n": ""
+},
+{
+"f": "2027-09-17",
+"n": ""
+}
+],
+"26102": [
+{
+"f": "2027-04-28",
+"n": "San Prudencio"
+},
+{
+"f": "2027-09-16",
+"n": "San Juan Mártir"
+}
+],
+"26103": [
+{
+"f": "2027-02-03",
+"n": ""
+},
+{
+"f": "2027-05-14",
+"n": ""
+}
+],
+"26104": [
+{
+"f": "2027-02-03",
+"n": "San Blas"
+},
+{
+"f": "2027-08-18",
+"n": ""
+}
+],
+"26105": [
+{
+"f": "2027-08-16",
+"n": ""
+},
+{
+"f": "2027-09-29",
+"n": ""
+}
+],
+"26106": [
+{
+"f": "2027-05-14",
+"n": ""
+},
+{
+"f": "2027-09-08",
+"n": ""
+}
+],
+"26107": [
+{
+"f": "2027-07-26",
+"n": ""
+},
+{
+"f": "2027-07-27",
+"n": ""
+}
+],
+"26108": [
+{
+"f": "2027-05-17",
+"n": "San Isidro"
+},
+{
+"f": "2027-09-27",
+"n": "San Cosme y San Damián"
+}
+],
+"26109": [
+{
+"f": "2027-05-17",
+"n": "San Isidro"
+},
+{
+"f": "2027-08-20",
+"n": "Virgen de Legarda"
+}
+],
+"26110": [
+{
+"f": "2027-01-07",
+"n": "San Julián y Santa Basilisa"
+},
+{
+"f": "2027-01-18",
+"n": "San Antón"
+}
+],
+"26111": [
+{
+"f": "2027-08-20",
+"n": "Acción de Gracias"
+},
+{
+"f": "2027-12-10",
+"n": "Santa Eulalia"
+}
+],
+"26112": [
+{
+"f": "2027-06-29",
+"n": ""
+},
+{
+"f": "2027-07-16",
+"n": ""
+}
+],
+"26115": [
+{
+"f": "2027-08-14",
+"n": ""
+},
+{
+"f": "2027-08-16",
+"n": ""
+}
+],
+"26117": [
+{
+"f": "2027-08-31",
+"n": "San Antonio"
+},
+{
+"f": "2027-11-19",
+"n": "San Ponciano"
+}
+],
+"26118": [
+{
+"f": "2027-06-14",
+"n": ""
+},
+{
+"f": "2027-08-30",
+"n": ""
+}
+],
+"26119": [
+{
+"f": "2027-04-23",
+"n": ""
+},
+{
+"f": "2027-09-14",
+"n": ""
+}
+],
+"26120": [
+{
+"f": "2027-05-03",
+"n": ""
+},
+{
+"f": "2027-09-14",
+"n": ""
+}
+],
+"26121": [
+{
+"f": "2027-06-10",
+"n": "Santos Mártires Primo Feliciano"
+},
+{
+"f": "2027-08-24",
+"n": "Acción de Gracias"
+}
+],
+"26122": [
+{
+"f": "2027-05-14",
+"n": ""
+},
+{
+"f": "2027-08-06",
+"n": ""
+}
+],
+"26123": [
+{
+"f": "2027-05-13",
+"n": "Procesión General"
+},
+{
+"f": "2027-08-06",
+"n": "San Justo y San Pastor"
+}
+],
+"26124": [
+{
+"f": "2027-04-30",
+"n": ""
+},
+{
+"f": "2027-08-24",
+"n": ""
+}
+],
+"26125": [
+{
+"f": "2027-03-19",
+"n": ""
+},
+{
+"f": "2027-09-29",
+"n": "San Miguel"
+}
+],
+"26127": [
+{
+"f": "2027-01-20",
+"n": "San Sebastián"
+},
+{
+"f": "2027-07-09",
+"n": "San Cristóbal"
+}
+],
+"26128": [
+{
+"f": "2027-04-23",
+"n": ""
+},
+{
+"f": "2027-09-08",
+"n": ""
+}
+],
+"26129": [
+{
+"f": "2027-06-10",
+"n": "Traslado de la festividad de San Isidro"
+},
+{
+"f": "2027-08-30",
+"n": "Lunes de fiestas"
+}
+],
+"26130": [
+{
+"f": "2027-09-27",
+"n": "Festividad de la Traslación"
+},
+{
+"f": "2027-11-12",
+"n": "San Millán"
+}
+],
+"26131": [
+{
+"f": "2027-05-17",
+"n": ""
+},
+{
+"f": "2027-11-12",
+"n": ""
+}
+],
+"26132": [
+{
+"f": "2027-01-20",
+"n": "San Sebastián"
+},
+{
+"f": "2027-05-15",
+"n": "San Isidro Labrador"
+}
+],
+"26134": [
+{
+"f": "2027-05-28",
+"n": ""
+},
+{
+"f": "2027-12-31",
+"n": ""
+}
+],
+"26135": [
+{
+"f": "2027-04-16",
+"n": ""
+},
+{
+"f": "2027-06-24",
+"n": ""
+}
+],
+"26136": [
+{
+"f": "2027-08-20",
+"n": ""
+},
+{
+"f": "2027-12-13",
+"n": ""
+}
+],
+"26138": [
+{
+"f": "2027-05-12",
+"n": ""
+},
+{
+"f": "2027-09-20",
+"n": ""
+}
+],
+"26139": [
+{
+"f": "2027-01-25",
+"n": "San Pablo"
+},
+{
+"f": "2027-05-14",
+"n": "San Isidro"
+}
+],
+"26142": [
+{
+"f": "2027-01-22",
+"n": "San Vicente"
+},
+{
+"f": "2027-09-08",
+"n": "Virgen de los Remedios"
+}
+],
+"26143": [
+{
+"f": "2027-05-10",
+"n": "Virgen de la Hermedaña"
+},
+{
+"f": "2027-08-30",
+"n": "San Judas Tadeo"
+}
+],
+"26144": [
+{
+"f": "2027-05-15",
+"n": ""
+},
+{
+"f": "2027-11-11",
+"n": ""
+}
+],
+"26145": [
+{
+"f": "2027-06-24",
+"n": "San Juan"
+},
+{
+"f": "2027-11-11",
+"n": "San Martín"
+}
+],
+"26146": [
+{
+"f": "2027-08-03",
+"n": "San Esteban"
+},
+{
+"f": "2027-09-09",
+"n": "Virgen del Cortijo"
+}
+],
+"26147": [
+{
+"f": "2027-04-23",
+"n": ""
+},
+{
+"f": "2027-07-02",
+"n": ""
+}
+],
+"26148": [
+{
+"f": "2027-08-06",
+"n": "El Salvador"
+},
+{
+"f": "2027-08-16",
+"n": "San Roque"
+}
+],
+"26149": [
+{
+"f": "2027-08-21",
+"n": "Gracias"
+},
+{
+"f": "2027-12-13",
+"n": "Santa Lucía"
+}
+],
+"26150": [
+{
+"f": "2027-08-16",
+"n": ""
+},
+{
+"f": "2027-10-01",
+"n": ""
+}
+],
+"26151": [
+{
+"f": "2027-09-08",
+"n": ""
+},
+{
+"f": "2027-09-09",
+"n": ""
+}
+],
+"26152": [
+{
+"f": "2027-05-14",
+"n": "San Isidoro"
+},
+{
+"f": "2027-08-16",
+"n": "Virgen de la Asunción y de San Roque"
+}
+],
+"26153": [
+{
+"f": "2027-07-09",
+"n": ""
+},
+{
+"f": "2027-11-11",
+"n": ""
+}
+],
+"26154": [
+{
+"f": "2027-09-22",
+"n": ""
+},
+{
+"f": "2027-12-20",
+"n": ""
+}
+],
+"26155": [
+{
+"f": "2027-09-08",
+"n": ""
+},
+{
+"f": "2027-11-12",
+"n": ""
+}
+],
+"26157": [
+{
+"f": "2027-08-24",
+"n": ""
+},
+{
+"f": "2027-09-29",
+"n": ""
+}
+],
+"26158": [
+{
+"f": "2027-08-16",
+"n": "San Roque"
+},
+{
+"f": "2027-12-07",
+"n": "Santa Bárbara"
+}
+],
+"26160": [
+{
+"f": "2027-02-01",
+"n": "San Ignacio de Antioquía"
+},
+{
+"f": "2027-05-14",
+"n": "San Isidro"
+}
+],
+"26161": [
+{
+"f": "2027-06-28",
+"n": "San Pelayo"
+},
+{
+"f": "2027-09-14",
+"n": "El Cristo"
+}
+],
+"26162": [
+{
+"f": "2027-06-11",
+"n": "San Antonio"
+},
+{
+"f": "2027-08-20",
+"n": "Acción de Gracias"
+}
+],
+"26163": [
+{
+"f": "2027-05-15",
+"n": "San Isidro"
+},
+{
+"f": "2027-07-05",
+"n": "Virgen Blanca"
+}
+],
+"26164": [
+{
+"f": "2027-08-16",
+"n": ""
+},
+{
+"f": "2027-08-17",
+"n": ""
+}
+],
+"26165": [
+{
+"f": "2027-07-26",
+"n": "Santa Ana"
+},
+{
+"f": "2027-08-06",
+"n": "Ecce Homo"
+}
+],
+"26166": [
+{
+"f": "2027-06-25",
+"n": ""
+},
+{
+"f": "2027-09-10",
+"n": ""
+}
+],
+"26167": [
+{
+"f": "2027-04-15",
+"n": "Santo Toribio"
+},
+{
+"f": "2027-08-25",
+"n": "San Peregrino"
+}
+],
+"26168": [
+{
+"f": "2027-05-14",
+"n": "San Isidro"
+},
+{
+"f": "2027-09-16",
+"n": "Santa Eufemia"
+}
+],
+"26169": [
+{
+"f": "2027-06-07",
+"n": ""
+},
+{
+"f": "2027-08-13",
+"n": ""
+}
+],
+"26170": [
+{
+"f": "2027-04-02",
+"n": ""
+},
+{
+"f": "2027-09-14",
+"n": ""
+}
+],
+"26171": [
+{
+"f": "2027-06-24",
+"n": ""
+},
+{
+"f": "2027-06-25",
+"n": "San Juan"
+}
+],
+"26172": [
+{
+"f": "2027-07-24",
+"n": "Santa Ana"
+},
+{
+"f": "2027-09-10",
+"n": "Gracias"
+}
+],
+"26173": [
+{
+"f": "2027-06-24",
+"n": "San Juan"
+},
+{
+"f": "2027-08-25",
+"n": "Degollación del Santo y acción de gracias"
+}
+],
+"26174": [
+{
+"f": "2027-05-17",
+"n": "San Isidro"
+},
+{
+"f": "2027-12-27",
+"n": "San Esteban"
+}
+],
+"26175": [
+{
+"f": "2027-03-11",
+"n": "Santa Áurea"
+},
+{
+"f": "2027-08-09",
+"n": "Fiestas Patronales"
+}
+],
+"26176": [
+{
+"f": "2027-01-18",
+"n": "San Antón"
+},
+{
+"f": "2027-11-25",
+"n": "Santa Catalina"
+}
+],
+"26177": [
+{
+"f": "2027-06-11",
+"n": "Día de La Rioja"
+},
+{
+"f": "2027-08-16",
+"n": "Fiestas patronales"
+}
+],
+"26178": [
+{
+"f": "2027-01-23",
+"n": ""
+},
+{
+"f": "2027-07-24",
+"n": ""
+}
+],
+"26179": [
+{
+"f": "2027-01-22",
+"n": ""
+},
+{
+"f": "2027-07-17",
+"n": ""
+}
+],
+"26180": [
+{
+"f": "2027-02-03",
+"n": "San Blas"
+},
+{
+"f": "2027-08-16",
+"n": "San Roque"
+}
+],
+"26181": [
+{
+"f": "2027-06-05",
+"n": ""
+},
+{
+"f": "2027-08-02",
+"n": ""
+}
+],
+"26183": [
+{
+"f": "2027-08-26",
+"n": "San Vitores"
+},
+{
+"f": "2027-12-13",
+"n": "Santa Lucía"
+}
+],
+"30001": [
+{
+"f": "2027-05-03",
+"n": ""
+},
+{
+"f": "2027-09-14",
+"n": ""
+}
+],
+"30002": [
+{
+"f": "2027-03-30",
+"n": ""
+},
+{
+"f": "2027-09-27",
+"n": ""
+}
+],
+"30003": [
+{
+"f": "2027-02-09",
+"n": ""
+},
+{
+"f": "2027-04-30",
+"n": ""
+}
+],
+"30004": [
+{
+"f": "2027-08-30",
+"n": ""
+},
+{
+"f": "2027-09-08",
+"n": ""
+}
+],
+"30005": [
+{
+"f": "2027-05-14",
+"n": ""
+},
+{
+"f": "2027-09-14",
+"n": ""
+}
+],
+"30006": [
+{
+"f": "2027-08-26",
+"n": ""
+},
+{
+"f": "2027-08-27",
+"n": ""
+}
+],
+"30007": [
+{
+"f": "2027-03-30",
+"n": ""
+},
+{
+"f": "2027-07-16",
+"n": ""
+}
+],
+"30008": [
+{
+"f": "2027-02-02",
+"n": ""
+},
+{
+"f": "2027-10-07",
+"n": ""
+}
+],
+"30009": [
+{
+"f": "2027-05-27",
+"n": ""
+},
+{
+"f": "2027-09-01",
+"n": ""
+}
+],
+"30010": [
+{
+"f": "2027-02-02",
+"n": ""
+},
+{
+"f": "2027-08-24",
+"n": ""
+}
+],
+"30011": [
+{
+"f": "2027-04-02",
+"n": ""
+},
+{
+"f": "2027-08-16",
+"n": ""
+}
+],
+"30012": [
+{
+"f": "2027-10-04",
+"n": ""
+},
+{
+"f": "2027-10-05",
+"n": ""
+}
+],
+"30013": [
+{
+"f": "2027-07-30",
+"n": ""
+},
+{
+"f": "2027-09-08",
+"n": ""
+}
+],
+"30014": [
+{
+"f": "2027-06-24",
+"n": ""
+},
+{
+"f": "2027-06-25",
+"n": ""
+}
+],
+"30015": [
+{
+"f": "2027-05-03",
+"n": ""
+},
+{
+"f": "2027-05-04",
+"n": ""
+}
+],
+"30016": [
+{
+"f": "2027-01-07",
+"n": ""
+},
+{
+"f": "2027-09-24",
+"n": ""
+}
+],
+"30017": [
+{
+"f": "2027-09-10",
+"n": ""
+},
+{
+"f": "2027-09-14",
+"n": ""
+}
+],
+"30018": [
+{
+"f": "2027-07-22",
+"n": ""
+},
+{
+"f": "2027-08-16",
+"n": ""
+}
+],
+"30019": [
+{
+"f": "2027-05-03",
+"n": ""
+},
+{
+"f": "2027-08-24",
+"n": ""
+}
+],
+"30020": [
+{
+"f": "2027-03-29",
+"n": ""
+},
+{
+"f": "2027-08-16",
+"n": ""
+}
+],
+"30021": [
+{
+"f": "2027-07-20",
+"n": ""
+},
+{
+"f": "2027-08-28",
+"n": ""
+}
+],
+"30022": [
+{
+"f": "2027-03-29",
+"n": ""
+},
+{
+"f": "2027-07-26",
+"n": ""
+}
+],
+"30023": [
+{
+"f": "2027-08-24",
+"n": ""
+},
+{
+"f": "2027-08-25",
+"n": ""
+}
+],
+"30024": [
+{
+"f": "2027-09-08",
+"n": ""
+},
+{
+"f": "2027-11-23",
+"n": ""
+}
+],
+"30025": [
+{
+"f": "2027-01-18",
+"n": ""
+},
+{
+"f": "2027-07-23",
+"n": ""
+}
+],
+"30026": [
+{
+"f": "2027-06-14",
+"n": ""
+},
+{
+"f": "2027-11-17",
+"n": ""
+}
+],
+"30027": [
+{
+"f": "2027-01-22",
+"n": ""
+},
+{
+"f": "2027-09-20",
+"n": ""
+}
+],
+"30028": [
+{
+"f": "2027-04-19",
+"n": ""
+},
+{
+"f": "2027-06-15",
+"n": ""
+}
+],
+"30029": [
+{
+"f": "2027-09-21",
+"n": ""
+},
+{
+"f": "2027-09-23",
+"n": ""
+}
+],
+"30030": [
+{
+"f": "2027-03-30",
+"n": ""
+},
+{
+"f": "2027-09-14",
+"n": ""
+}
+],
+"30031": [
+{
+"f": "2027-08-27",
+"n": ""
+},
+{
+"f": "2027-08-28",
+"n": ""
+}
+],
+"30032": [
+{
+"f": "2027-02-02",
+"n": ""
+},
+{
+"f": "2027-09-08",
+"n": ""
+}
+],
+"30033": [
+{
+"f": "2027-07-07",
+"n": ""
+},
+{
+"f": "2027-10-07",
+"n": ""
+}
+],
+"30034": [
+{
+"f": "2027-01-20",
+"n": ""
+},
+{
+"f": "2027-01-22",
+"n": ""
+}
+],
+"30035": [
+{
+"f": "2027-02-03",
+"n": ""
+},
+{
+"f": "2027-12-03",
+"n": ""
+}
+],
+"30036": [
+{
+"f": "2027-06-29",
+"n": ""
+},
+{
+"f": "2027-07-16",
+"n": ""
+}
+],
+"30037": [
+{
+"f": "2027-10-07",
+"n": ""
+},
+{
+"f": "2027-12-27",
+"n": ""
+}
+],
+"30038": [
+{
+"f": "2027-03-30",
+"n": ""
+},
+{
+"f": "2027-08-27",
+"n": ""
+}
+],
+"30039": [
+{
+"f": "2027-01-07",
+"n": ""
+},
+{
+"f": "2027-12-10",
+"n": ""
+}
+],
+"30040": [
+{
+"f": "2027-05-03",
+"n": ""
+},
+{
+"f": "2027-08-24",
+"n": ""
+}
+],
+"30041": [
+{
+"f": "2027-07-26",
+"n": ""
+},
+{
+"f": "2027-10-07",
+"n": ""
+}
+],
+"30042": [
+{
+"f": "2027-07-16",
+"n": ""
+},
+{
+"f": "2027-08-16",
+"n": ""
+}
+],
+"30043": [
+{
+"f": "2027-09-13",
+"n": ""
+},
+{
+"f": "2027-12-07",
+"n": ""
+}
+],
+"30901": [
+{
+"f": "2027-09-29",
+"n": ""
+},
+{
+"f": "2027-10-07",
+"n": ""
+}
+],
+"30902": [
+{
+"f": "2027-03-29",
+"n": ""
+},
+{
+"f": "2027-10-13",
+"n": ""
+}
+]
+},
+"fuentes": {
+"murcia": {
+"titulo": "",
+"url": "https://www.borm.es/services/anuncio/844400/pdf",
+"publicado": ""
+},
+"la-rioja": {
+"titulo": "",
+"url": "https://www.laboral-social.com/sites/laboral-social.com/files/Fiestas-locales-Rioja-2027.pdf",
+"publicado": "",
+"resto": "Las dos fiestas tradicionales de cada uno de ellos."
+}
+}
+}

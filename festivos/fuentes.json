@@ -1,12 +1,51 @@
 {
- "anios": [2026, 2027],
- "boe": {"2026": "BOE-A-2025-21667", "2027": "BOE-A-2026-21254"},
+ "anios": [
+  2026,
+  2027
+ ],
+ "boe": {
+  "2026": "BOE-A-2025-21667",
+  "2027": "BOE-A-2026-21254"
+ },
  "locales": [
-  {"id": "murcia_2027", "ccaa": "14", "anio": 2027, "descarga": "https://www.borm.es/services/anuncio/844400/pdf", "oficial": "https://www.borm.es/services/anuncio/844400/pdf"},
-  {"id": "rioja_2027", "ccaa": "17", "anio": 2027, "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/Fiestas-locales-Rioja-2027.pdf"},
-  {"id": "baleares_2027", "ccaa": "04", "anio": 2027, "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/calendario-laboral-general-local-baleares-2027.pdf"},
-  {"id": "canarias_2026", "ccaa": "05", "anio": 2026, "descarga": "https://iac.edu.es/system/files/documents/2026-01/CAC_fiestas%20locales%20propias%20de%20cada%20municipio%20_boc-a-2025-165-3029.pdf"},
-  {"id": "madrid_2026_mod", "ccaa": "13", "anio": 2026, "descarga": "https://originjofjn-boc.comunidad.madrid/boletin/CM_Orden_BOCM/2026/01/08/BOCM-20260108-18.PDF"},
-  {"id": "andalucia_2026_mod", "ccaa": "01", "anio": 2026, "descarga": "https://www.juntadeandalucia.es/eboja/2026/79/BOJA26-079-00002-5437-01_00336674.pdf"}
+  {
+   "id": "murcia_2027",
+   "ccaa": "murcia",
+   "anio": 2027,
+   "descarga": "https://www.borm.es/services/anuncio/844400/pdf",
+   "oficial": "https://www.borm.es/services/anuncio/844400/pdf"
+  },
+  {
+   "id": "rioja_2027",
+   "ccaa": "la-rioja",
+   "anio": 2027,
+   "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/Fiestas-locales-Rioja-2027.pdf"
+  },
+  {
+   "id": "baleares_2027",
+   "ccaa": "baleares",
+   "anio": 2027,
+   "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/calendario-laboral-general-local-baleares-2027.pdf"
+  },
+  {
+   "id": "canarias_2026",
+   "ccaa": "canarias",
+   "anio": 2026,
+   "descarga": "https://iac.edu.es/system/files/documents/2026-01/CAC_fiestas%20locales%20propias%20de%20cada%20municipio%20_boc-a-2025-165-3029.pdf"
+  },
+  {
+   "id": "madrid_2026_mod",
+   "ccaa": "madrid",
+   "anio": 2026,
+   "descarga": "https://originjofjn-boc.comunidad.madrid/boletin/CM_Orden_BOCM/2026/01/08/BOCM-20260108-18.PDF",
+   "tipo": "correccion"
+  },
+  {
+   "id": "andalucia_2026_mod",
+   "ccaa": "andalucia",
+   "anio": 2026,
+   "descarga": "https://www.juntadeandalucia.es/eboja/2026/79/BOJA26-079-00002-5437-01_00336674.pdf",
+   "tipo": "correccion"
+  }
  ]
 }

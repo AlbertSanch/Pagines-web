@@ -1,0 +1,213 @@
+"""Convierte las fuentes oficiales descargadas en datos de festivos por municipio.
+
+Lee festivos/fuentes/ (ver descargar_fuentes.py) y escribe festivos/data/festivos_{año}.json:
+  {"anio", "nacionales_autonomicos": {comunidad: [{f, n, t}]}, "notas": {comunidad: [texto]},
+   "locales": {código INE: [{f, n}]}, "fuentes": {comunidad: {...}}, "boe": {...}}
+t = «nacional» o «autonomico». Nunca se inventa una fecha: si un municipio no
+aparece en su boletín, simplemente no tiene festivos locales en los datos.
+Cada lector comprueba lo que puede (día de la semana, dos festivos por municipio)
+y los avisos se escriben en festivos/data/informe.txt.
+"""
+import datetime as dt
+import html
+import json
+import re
+
+from comun import COMUNIDADES, DATA, FUENTES, MESES, DIAS, PROVINCIAS, clave_nombre, indice_nombres, municipios
+
+AVISOS = []
+
+
+def aviso(t):
+    AVISOS.append(t)
+
+
+def fecha(anio, dia, mes):
+    mes = MESES.index(mes.lower().strip()) + 1
+    return dt.date(anio, mes, int(dia))
+
+
+RE_MES = "(" + "|".join(MESES) + ")"
+
+
+# ------------------------------------------------------------------ BOE
+def leer_boe(anio):
+    x = (FUENTES / f"boe_{anio}.xml").read_text(encoding="utf-8")
+    limpio = lambda c: re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", c))).strip()
+    cab = [limpio(c) for c in re.findall(r"<th[^>]*>(.*?)</th>", x, re.S)][2:]
+    columnas = []
+    for c in cab:
+        clave = next((k for k, (_, b) in COMUNIDADES.items() if b.lower() in c.lower()), None)
+        if not clave:
+            raise SystemExit(f"BOE {anio}: columna desconocida «{c}»")
+        columnas.append(clave)
+    assert len(columnas) == 19, columnas
+    res = {k: [] for k in COMUNIDADES}
+    mes = None
+    for fila in re.findall(r"<tr>(.*?)</tr>", x[x.find("<tbody>"):x.find("</tbody>")], re.S):
+        celdas = [limpio(c) for c in re.findall(r"<td[^>]*>(.*?)</td>", fila, re.S)]
+        if len(celdas) != 20:
+            continue
+        primera = celdas[0]
+        if primera.lower() in MESES:
+            mes = primera.lower()
+            continue
+        m = re.match(r"(\d{1,2})\s+(.*?)\.?$", primera)
+        if not m or not mes:
+            aviso(f"BOE {anio}: fila no entendida «{primera}»")
+            continue
+        f = fecha(anio, m.group(1), mes)
+        for clave, marca in zip(columnas, celdas[1:]):
+            if marca:
+                res[clave].append({"f": f.isoformat(), "n": m.group(2).strip(), "t": "autonomico" if marca == "***" else "nacional"})
+    notas = {}
+    for p in re.findall(r'<p class="parrafo[^"]*">(\d\.\s.*?)</p>', x, re.S):
+        t = limpio(p)
+        for clave, (nombre, _) in COMUNIDADES.items():
+            if f"Comunidad Autónoma de {nombre}" in t or f"Comunidad Autónoma de {_}" in t:
+                notas.setdefault(clave, []).append(re.sub(r"^\d\.\s*", "", t))
+    ident = re.search(r'<identificador>(.*?)</identificador>', x).group(1)
+    titulo = limpio(re.search(r"<titulo>(.*?)</titulo>", x, re.S).group(1))
+    publicado = re.search(r"<fecha_publicacion>(\d{8})</fecha_publicacion>", x).group(1)
+    for clave, lista in res.items():
+        if len(lista) < 12:
+            aviso(f"BOE {anio}: {clave} tiene solo {len(lista)} fiestas")
+    return res, notas, {"id": ident, "titulo": titulo, "publicado": f"{publicado[:4]}-{publicado[4:6]}-{publicado[6:]}",
+                        "url": f"https://www.boe.es/buscar/doc.php?id={ident}"}
+
+
+# ------------------------------------------------------------------ lectores autonómicos
+def trozo(txt, desde, hasta):
+    i = txt.find(desde)
+    j = txt.find(hasta, i + 1) if hasta else -1
+    return txt[i if i >= 0 else 0: j if j > 0 else None]
+
+
+def fechas_en(texto, anio):
+    """«3 de mayo (San X) y 22 y 23 de julio (Y)» -> [(fecha, nombre)]."""
+    res = []
+    for m in re.finditer(r"(\d{1,2})((?:\s*(?:,|y)\s*\d{1,2})*)\s+(?:de\s+)?" + RE_MES + r"\b\s*(?:\(([^)]*)\)?)?", texto, re.I):
+        dias = [m.group(1)] + re.findall(r"\d{1,2}", m.group(2) or "")
+        nombre = (m.group(4) or "").strip()
+        if nombre.lower() in ("fiestas locales", "festivos locales", "fiesta local", "festivo local"):
+            nombre = ""
+        for d in dias:
+            res.append((fecha(anio, d, m.group(3)), nombre))
+    return res
+
+
+def leer_murcia(txt, anio):
+    """Tabla: n.º, MUNICIPIO, día semana, día, mes, día semana, día, mes."""
+    res = {}
+    patron = re.compile(r"^\s*\d+\s+(.+?)\s{2,}(" + "|".join(DIAS) + r")\s+(\d{1,2})\s+(?:de\s+)?" + RE_MES +
+                        r"\s+(" + "|".join(DIAS) + r")\s+(\d{1,2})\s+(?:de\s+)?" + RE_MES + r"\s*$", re.I)
+    for linea in txt.splitlines():
+        m = patron.match(linea)
+        if not m:
+            continue
+        lista = []
+        for ds, d, mes in ((m.group(2), m.group(3), m.group(4)), (m.group(5), m.group(6), m.group(7))):
+            f = fecha(anio, d, mes)
+            if DIAS[f.weekday()] != ds.lower():
+                aviso(f"Murcia {anio}: {m.group(1)} {f} figura como {ds} y es {DIAS[f.weekday()]}")
+            lista.append((f, ""))
+        res[m.group(1).strip()] = lista
+    return res
+
+
+def leer_entradas_dos_puntos(txt, anio):
+    """«Logroño: 11 de junio (San Bernabé) y 21 de septiembre (San Mateo)», con líneas partidas
+    y varias localidades separadas por «;» (La Rioja)."""
+    plano = re.sub(r"www\.laboral-social\.com", " ", txt)
+    plano = re.sub(r"\s+", " ", plano)
+    nombre_re = r"[A-ZÁÉÍÓÚÑ][A-Za-zÁÉÍÓÚÑáéíóúñüÜ'’ .-]{1,60}?"
+    res = {}
+    for m in re.finditer(r"(?:^|[;)\s])(" + nombre_re + r"):\s(.*?)(?=(?:[;)]|\s)\s*" + nombre_re + r":\s|$)", plano):
+        lista = fechas_en(m.group(2), anio)
+        if lista:
+            res[m.group(1).strip()] = lista
+    return res
+
+
+def leer_canarias(txt, anio):
+    """«INGENIO.» y debajo «2 de febrero: Festividad de …»."""
+    res, actual = {}, None
+    for linea in txt.splitlines():
+        s = linea.strip()
+        m = re.match(r"^(\d{1,2}) de " + RE_MES + r":\s*(.*?)\.?$", s, re.I)
+        if m and actual:
+            res[actual].append((fecha(anio, m.group(1), m.group(2)), m.group(3).strip()))
+        elif re.match(r"^[A-ZÁÉÍÓÚÑÜ][A-ZÁÉÍÓÚÑÜ ,'’().-]+\.$", s) and len(s) < 60:
+            actual = s.rstrip(".")
+            res[actual] = []
+        elif m is None and actual and s and res[actual] and not s[0].isdigit():
+            # nombre de la fiesta partido en dos líneas
+            f, n = res[actual][-1]
+            if not re.match(r"^[A-ZÁÉÍÓÚÑÜ ]+\.$", s):
+                res[actual][-1] = (f, (n + " " + s).strip().rstrip("."))
+    return {k: v for k, v in res.items() if v}
+
+
+LECTORES = {
+    "murcia": leer_murcia,
+    "la-rioja": lambda t, a: leer_entradas_dos_puntos(trozo(t, "Ábalos", "Restantes municipios"), a) or leer_entradas_dos_puntos(t, a),
+    "canarias": leer_canarias,
+}
+
+
+# ------------------------------------------------------------------ cruce con el INE
+def asignar(ccaa, anio, crudo, fuente):
+    idx = indice_nombres(ccaa)
+    res, sin_cruce = {}, []
+    for nombre, lista in crudo.items():
+        cods = idx.get(clave_nombre(nombre))
+        if not cods:
+            sin_cruce.append(nombre)
+            continue
+        if len(cods) > 1:
+            aviso(f"{ccaa} {anio}: «{nombre}» corresponde a varios municipios {sorted(cods)}; se omite")
+            continue
+        cod = next(iter(cods))
+        fiestas = [{"f": f.isoformat(), "n": n} for f, n in sorted(lista)]
+        if len(fiestas) > 2:
+            aviso(f"{ccaa} {anio}: {nombre} tiene {len(fiestas)} festivos locales")
+        res[cod] = fiestas
+    total = sum(1 for c in municipios() if PROVINCIAS[c[:2]][1] == ccaa)
+    if sin_cruce:
+        aviso(f"{ccaa} {anio}: {len(sin_cruce)} nombres sin municipio del INE (pueden ser pedanías): " + ", ".join(sorted(sin_cruce)[:40]))
+    aviso(f"{ccaa} {anio}: {len(res)} de {total} municipios con festivos locales ({fuente})")
+    return res
+
+
+def main():
+    cfg = json.loads((FUENTES.parent / "fuentes.json").read_text(encoding="utf-8"))
+    registro = json.loads((FUENTES / "registro.json").read_text(encoding="utf-8"))
+    for anio in cfg["anios"]:
+        if not (FUENTES / f"boe_{anio}.xml").exists():
+            continue
+        generales, notas, boe = leer_boe(anio)
+        locales, fuentes = {}, {}
+        for f in cfg["locales"]:
+            if f["anio"] != anio or f.get("tipo") == "correccion":
+                continue
+            lector = LECTORES.get(f["ccaa"])
+            ruta = FUENTES / f"{f['id']}.txt"
+            if not lector or not ruta.exists():
+                continue
+            crudo = lector(ruta.read_text(encoding="utf-8"), anio)
+            locales.update(asignar(f["ccaa"], anio, crudo, f["id"]))
+            fuentes[f["ccaa"]] = {"titulo": f.get("titulo", ""), "url": registro.get(f["id"], {}).get("url") or f["descarga"],
+                                  "publicado": f.get("publicado", "")}
+            resto = re.search(r"Restantes municipios[^:]*:\s*([^\n]+)", ruta.read_text(encoding="utf-8"))
+            if resto:
+                fuentes[f["ccaa"]]["resto"] = resto.group(1).strip()
+        salida = {"anio": anio, "boe": boe, "nacionales_autonomicos": generales, "notas": notas,
+                  "locales": dict(sorted(locales.items())), "fuentes": fuentes}
+        (DATA / f"festivos_{anio}.json").write_text(json.dumps(salida, ensure_ascii=False, indent=0), encoding="utf-8")
+        print(f"{anio}: {len(locales)} municipios con festivos locales; comunidades: {sorted(fuentes)}")
+    (DATA / "informe.txt").write_text("\n".join(AVISOS) + "\n", encoding="utf-8")
+    print("\n".join(AVISOS))
+
+
+if __name__ == "__main__":
+    main()
