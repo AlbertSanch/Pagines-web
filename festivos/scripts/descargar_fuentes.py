@@ -19,6 +19,7 @@ import subprocess
 import sys
 import time
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 
 BASE = pathlib.Path(__file__).resolve().parent.parent
 FUENTES = BASE / "fuentes"
@@ -26,13 +27,13 @@ CONFIG = BASE / "fuentes.json"
 UA = {"User-Agent": "Mozilla/5.0 (descarga de datos abiertos de festivos)"}
 
 
-def bajar(url, accept=None, intentos=3):
+def bajar(url, accept=None, intentos=2):
     cab = dict(UA)
     if accept:
         cab["Accept"] = accept
     for i in range(intentos):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=cab), timeout=90) as r:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=cab), timeout=40) as r:
                 return r.read()
         except Exception as e:
             if i == intentos - 1:
@@ -95,36 +96,42 @@ def main():
                            "sha1": hashlib.sha1(datos).hexdigest(), "descargado": dt.date.today().isoformat()}
         print(f"{clave}: {ident} ({len(datos)} bytes)")
 
-    # Boletines autonómicos: fiestas locales
-    for f in cfg["locales"]:
-        clave = f["id"]
-        datos, usada = None, None
+    # Boletines autonómicos: fiestas locales (varios a la vez: algunos servidores tardan mucho)
+    def una(f):
         for url in [f["descarga"]] + ([f["respaldo"]] if f.get("respaldo") else []):
             try:
-                datos, usada = bajar(url), url
-                break
+                return f, bajar(url), url, None
             except Exception as e:
-                errores.append(f"{clave}: {url}: {e}")
-                print(f"{clave}: ERROR {url}: {e}")
-        if datos is None:
-            continue
-        sha = hashlib.sha1(datos).hexdigest()
-        if datos[:4] == b"%PDF":
-            pdf = FUENTES / f"{clave}.pdf"
-            pdf.write_bytes(datos)
-            subprocess.run(["pdftotext", "-layout", str(pdf), str(FUENTES / f"{clave}.txt")], check=True)
-            pdf.unlink()
-        else:  # HTML: se guarda también como texto plano para los lectores
-            (FUENTES / f"{clave}.html").write_bytes(datos)
-            texto = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", datos.decode("utf-8", "replace"), flags=re.S | re.I)
-            texto = re.sub(r"<br\s*/?>|</(p|tr|li|h\d|div)>", "\n", texto, flags=re.I)
-            texto = re.sub(r"<td[^>]*>", "\t", texto, flags=re.I)
-            texto = html.unescape(re.sub(r"<[^>]+>", " ", texto))
-            (FUENTES / f"{clave}.txt").write_text(re.sub(r"[ \xa0]+", " ", texto), encoding="utf-8")
-        cambio = registro.get(clave, {}).get("sha1") not in (None, sha)
-        registro[clave] = {"url": f.get("oficial") or f["descarga"], "descargado_de": usada, "sha1": sha,
-                           "descargado": dt.date.today().isoformat()}
-        print(f"{clave}: {len(datos)} bytes{' (HA CAMBIADO)' if cambio else ''}")
+                ultimo = f"{url}: {e}"
+        return f, None, None, ultimo
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        for f, datos, usada, error in pool.map(una, cfg["locales"]):
+            clave = f["id"]
+            if datos is None:
+                errores.append(f"{clave}: {error}")
+                print(f"{clave}: ERROR {error}", flush=True)
+                continue
+            sha = hashlib.sha1(datos).hexdigest()
+            if datos[:4] == b"%PDF":
+                pdf = FUENTES / f"{clave}.pdf"
+                pdf.write_bytes(datos)
+                subprocess.run(["pdftotext", "-layout", str(pdf), str(FUENTES / f"{clave}.txt")], check=True)
+                pdf.unlink()
+            else:  # HTML: se guarda también como texto plano para los lectores
+                (FUENTES / f"{clave}.html").write_bytes(datos)
+                bruto = datos.decode("utf-8", "replace")
+                if bruto.count("\ufffd") > 5:
+                    bruto = datos.decode("latin-1")
+                texto = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", bruto, flags=re.S | re.I)
+                texto = re.sub(r"<br\s*/?>|</(p|tr|li|h\d|div)>", "\n", texto, flags=re.I)
+                texto = re.sub(r"<td[^>]*>", "\t", texto, flags=re.I)
+                texto = html.unescape(re.sub(r"<[^>]+>", " ", texto))
+                (FUENTES / f"{clave}.txt").write_text(re.sub(r"[ \xa0]+", " ", texto), encoding="utf-8")
+            cambio = registro.get(clave, {}).get("sha1") not in (None, sha)
+            registro[clave] = {"url": f.get("oficial") or f["descarga"], "descargado_de": usada, "sha1": sha,
+                               "descargado": dt.date.today().isoformat()}
+            print(f"{clave}: {len(datos)} bytes desde {usada}{' (HA CAMBIADO)' if cambio else ''}", flush=True)
 
     registro_ruta.write_text(json.dumps(registro, ensure_ascii=False, indent=1, sort_keys=True), encoding="utf-8")
     if errores:
