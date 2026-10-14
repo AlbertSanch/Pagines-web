@@ -1,0 +1,44 @@
+{
+ "andalucia_2026_mod": {
+  "descargado": "2026-10-14",
+  "sha1": "2d1a9da7846ac6919df562c91df0f64ebea43c85",
+  "url": "https://www.juntadeandalucia.es/eboja/2026/79/BOJA26-079-00002-5437-01_00336674.pdf"
+ },
+ "baleares_2027": {
+  "descargado": "2026-10-14",
+  "sha1": "a04d27155b2422f153a62aaf98bdd1201ca1f9f2",
+  "url": "https://www.laboral-social.com/sites/laboral-social.com/files/calendario-laboral-general-local-baleares-2027.pdf"
+ },
+ "boe_2026": {
+  "descargado": "2026-10-14",
+  "id": "BOE-A-2025-21667",
+  "sha1": "bb9ce634cbbdbe83c91f24548a484c335a7acf5b",
+  "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2025-21667"
+ },
+ "boe_2027": {
+  "descargado": "2026-10-14",
+  "id": "BOE-A-2026-21254",
+  "sha1": "2ec52f1dd4dc097df235a9b681f70088d76129df",
+  "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2026-21254"
+ },
+ "canarias_2026": {
+  "descargado": "2026-10-14",
+  "sha1": "2cc17b632246b708a0a3b237f0e287d35a661496",
+  "url": "https://iac.edu.es/system/files/documents/2026-01/CAC_fiestas%20locales%20propias%20de%20cada%20municipio%20_boc-a-2025-165-3029.pdf"
+ },
+ "madrid_2026_mod": {
+  "descargado": "2026-10-14",
+  "sha1": "e1830ab37915a478b65582a3bec48b3c79589601",
+  "url": "https://originjofjn-boc.comunidad.madrid/boletin/CM_Orden_BOCM/2026/01/08/BOCM-20260108-18.PDF"
+ },
+ "murcia_2027": {
+  "descargado": "2026-10-14",
+  "sha1": "68232630c80c62d5041e54a17fe33045dbbac9b1",
+  "url": "https://www.borm.es/services/anuncio/844400/pdf"
+ },
+ "rioja_2027": {
+  "descargado": "2026-10-14",
+  "sha1": "56e5cce4b3dfc2a6d4d9698a59d282cc852c32a4",
+  "url": "https://www.laboral-social.com/sites/laboral-social.com/files/Fiestas-locales-Rioja-2027.pdf"
+ }
+}
