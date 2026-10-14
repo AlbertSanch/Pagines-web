@@ -1,0 +1,33 @@
+# Prueba de descarga de los festivos oficiales (BOE y boletines autonómicos).
+# Solo se ejecuta en la rama de desarrollo; no publica nada.
+name: Prueba festivos
+
+on:
+  push:
+    branches: [claude/trusting-bell-woc5fv]
+    paths:
+      - festivos/scripts/prueba_descarga.py
+      - .github/workflows/prueba-festivos.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar pdftotext
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - name: Descargar y mostrar extractos
+        run: python festivos/scripts/prueba_descarga.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prueba-festivos
+          path: festivos/prueba/
