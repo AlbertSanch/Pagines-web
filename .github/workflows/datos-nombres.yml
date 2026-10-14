@@ -1,13 +1,14 @@
 # Descarga los datos de nombres y apellidos del INE y regenera cuantossellaman.es (carpeta cuantossellaman/web).
-# El INE publica los nombres de la población en mayo y los de los recién nacidos en noviembre;
-# por eso se ejecuta el 1 de junio, el 1 de julio y el 1 de diciembre, y también a mano.
+# El INE publica los nombres de la población en mayo y los de los recién nacidos hacia noviembre o diciembre;
+# por eso se ejecuta el 1 de junio, el 1 de julio y cada lunes de noviembre y diciembre, y también a mano.
 # Si la descarga falla o el formato del INE cambia, el workflow falla y NO publica nada:
 # la web sigue con los últimos datos buenos.
 name: Datos de nombres (INE)
 
 on:
   schedule:
-    - cron: "23 7 1 6,7,12 *"
+    - cron: "23 7 1 6,7 *"
+    - cron: "23 7 * 11,12 1"
   workflow_dispatch:
   push:
     branches: [main]
