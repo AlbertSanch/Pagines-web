@@ -254,6 +254,11 @@ VIDEOS = {
         (3.0, 0.0, [("texto", "Estimación con los datos de nombres y apellidos del INE")]),
         CIERRE("¿Cuántos se llaman como tú?"),
     ],
+    "12-famosos-corto": [
+        (5.2, 0.9, [("gancho", "¿Cuántos Pedro Sánchez hay en España?"), ("fila", "Jordi Évole", "solo él"),
+                    ("fila", "Rafael Nadal", "≈ 40"), ("fila", "Fernando Alonso", "≈ 780")]),
+        (4.5, 0.6, [("texto", "Y Pedro Sánchez…"), ("cifra", "≈ 3.500"), ("web",), ("texto", "Estimación con datos del INE")]),
+    ],
     "7-anos-80-vs-ahora": [
         (3.0, 0.0, [("gancho", "Nombres de los 80 vs nombres de ahora")]),
         (5.5, 0.55, [("titulo", "Nacidos en los 80"), ("texto", "Chicos y chicas más comunes"), ("fila", "David", "Laura"), ("fila", "Javier", "Cristina"), ("fila", "Daniel", "María")]),
@@ -320,6 +325,10 @@ VOCES = {
         "Y Pedro Sánchez... ¡unos tres mil quinientos!",
         "Es una estimación con los datos del INE.",
         f"¿Cuántos se llaman como tú? Búscalo en {WEB_DICHA}.",
+    ],
+    "12-famosos-corto": [
+        "¿Cuántos Pedro Sánchez hay en España? Jordi Évole, solo él. Rafael Nadal, unos cuarenta. Fernando Alonso, unos setecientos ochenta.",
+        f"Y Pedro Sánchez... ¡unos tres mil quinientos! Busca el tuyo en {WEB_DICHA}.",
     ],
     "7-anos-80-vs-ahora": [
         "Nombres de los ochenta contra nombres de ahora.",
