@@ -260,9 +260,9 @@ VIDEOS = {
         (4.5, 0.6, [("texto", "Y Pedro Sánchez…"), ("cifra", "≈ 3.500"), ("web",), ("texto", "Estimación con datos del INE")]),
     ],
     "13-deportistas": [
-        (5.2, 0.9, [("gancho", "¿Cuántos Raúl González hay en España?"), ("fila", "Alexia Putellas", "solo ella"),
-                    ("fila", "Andrés Iniesta", "≈ 17"), ("fila", "Fernando Torres", "≈ 750")]),
-        (4.5, 0.6, [("texto", "Y Raúl González…"), ("cifra", "≈ 2.800"), ("web",), ("texto", "Estimación con datos del INE")]),
+        (5.2, 0.9, [("gancho", "¿Cuántos Sergio Ramos hay en España?"), ("fila", "Pau Gasol", "solo él"),
+                    ("fila", "Andrés Iniesta", "≈ 17"), ("fila", "Carolina Marín", "≈ 160")]),
+        (4.5, 0.6, [("texto", "Y Sergio Ramos…"), ("cifra", "≈ 680"), ("web",), ("texto", "Estimación con datos del INE")]),
     ],
     "7-anos-80-vs-ahora": [
         (3.0, 0.0, [("gancho", "Nombres de los 80 vs nombres de ahora")]),
@@ -336,8 +336,8 @@ VOCES = {
         f"Y Pedro Sánchez... ¡unos tres mil quinientos! Busca el tuyo en {WEB_DICHA}.",
     ],
     "13-deportistas": [
-        "¿Cuántos Raúl González hay en España? Alexia Putellas, solo ella. Andrés Iniesta, unos diecisiete. Fernando Torres, unos setecientos cincuenta.",
-        f"Y Raúl González... ¡unos dos mil ochocientos! Busca el tuyo en {WEB_DICHA}.",
+        "¿Cuántos Sergio Ramos hay en España? Pau Gasol, solo él. Andrés Iniesta, unos diecisiete. Carolina Marín, unas ciento sesenta.",
+        f"Y Sergio Ramos... ¡unos seiscientos ochenta! Busca el tuyo en {WEB_DICHA}.",
     ],
     "7-anos-80-vs-ahora": [
         "Nombres de los ochenta contra nombres de ahora.",
