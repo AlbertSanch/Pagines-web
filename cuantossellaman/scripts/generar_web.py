@@ -21,6 +21,7 @@ from urllib.parse import quote
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from tildes import mostrar, mostrar_apellido, normalizar  # noqa: E402
+import articulos  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
 DATOS = RAIZ / "data"
@@ -274,6 +275,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
       <a href="/decadas/">Por década</a>
       <a href="/bebes/">Bebés</a>
       <a href="/ideas/">Ideas</a>
+      <a href="/articulos/">Artículos</a>
       <a href="/sobre-los-datos/">Sobre los datos</a>
     </nav>
   </div>
@@ -285,7 +287,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="site-footer">
   <div class="container">
     <p><strong>{SITIO}</strong> responde cuántas personas se llaman o se apellidan de cada forma en España con los datos oficiales del Instituto Nacional de Estadística (INE).</p>
-    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/nombres/">Nombres de la A a la Z</a><a href="/apellidos/a/">Apellidos de la A a la Z</a><a href="/ideas/">Ideas para bebé</a><a href="/cuantos-se-llaman-como-tu/">Nombre y apellidos como tú</a><a href="/tu-nombre-el-ano-que-naciste/">Tu nombre el año que naciste</a><a href="/nombres-en-peligro-de-extincion/">Nombres en peligro de extinción</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/nombres/">Nombres de la A a la Z</a><a href="/apellidos/a/">Apellidos de la A a la Z</a><a href="/ideas/">Ideas para bebé</a><a href="/cuantos-se-llaman-como-tu/">Nombre y apellidos como tú</a><a href="/tu-nombre-el-ano-que-naciste/">Tu nombre el año que naciste</a><a href="/nombres-en-peligro-de-extincion/">Nombres en peligro de extinción</a><a href="/articulos/">Artículos</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Fuente: INE. Datos reutilizados conforme a sus condiciones de uso; esta web no está vinculada al INE.</p>
   </div>
 </footer>
@@ -691,6 +693,7 @@ def portada(idx, nombres, bebes, referencia, n_paginas):
   <a class="card" href="/nombres-en-peligro-de-extincion/"><h3>Nombres en peligro de extinción</h3><p>Josefa, Dolores, Saturnino… los que ya casi no se ponen.</p></a>
   <a class="card" href="/ideas/"><h3>Ideas para bebé</h3><p>Nombres de moda, poco comunes, cortos, por letra y clásicos que vuelven.</p></a>
   <a class="card" href="/nombres/"><h3>Todos los nombres de la A a la Z</h3><p>El índice completo de nombres, letra por letra.</p></a>
+  <a class="card destacada" href="/articulos/"><h3>Artículos</h3><p>Los nombres de bebé que más suben, cómo han cambiado los nombres en un siglo, los apellidos más comunes y más.</p></a>
   <a class="card" href="/bebes/"><h3>Nombres de bebé</h3><p>Los más puestos cada año desde {min(bebes)}. En {ultimo}: {escape(mostrar(esp['H']['top'][0][0]))} y {escape(mostrar(esp['M']['top'][0][0]))}.</p></a>
 </div>
 <div class="dos-col">
@@ -1378,6 +1381,7 @@ def main():
     rutas += paginas_ideas(idx, dec["decadas"], beb["anios"], nombres["referencia"])
     rutas += paginas_curiosidades(idx, dec["decadas"], beb["anios"], nombres["referencia"])
     rutas += pagina_como_tu(ape)
+    rutas += articulos.paginas_articulos(sys.modules[__name__], idx, idx_ape, nombres, dec["decadas"], beb["anios"], ape)[0]
     ape_pagina = [e for e in idx_ape.values() if e["pagina"]]
     if len(ape_pagina) < MIN_PAGINAS:
         sys.exit(f"ERROR: solo {len(ape_pagina)} apellidos tienen página (mínimo {MIN_PAGINAS}). No se publica.")
