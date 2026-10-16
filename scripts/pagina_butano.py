@@ -246,6 +246,7 @@ def pagina(datos, base, hoy, luz):
         <h2>¿Compensa calentarse con butano?</h2>
         <p>A potencia media (2,8 kW), una estufa de butano cuesta unos <strong>{eur(precio / horas_media)} por hora</strong>. Con el precio medio actual de la luz ({num(luz, 3)} €/kWh), dar el mismo calor con un radiador eléctrico cuesta unos <strong>{eur(2.8 * luz)} por hora</strong>, y con una bomba de calor (el aire acondicionado en modo calor), unos <strong>{eur(2.8 / 3.5 * luz)}</strong>. {comparacion} Compáralo con tus datos en la calculadora <a href="calculadoras/calefaccion-mas-barata">¿qué calefacción es más barata?</a></p>
 
+        <p class="note guia-rel">📘 <strong>Guía:</strong> <a href="guias/bombona-de-butano">Bombona de butano: precio, cuánto dura y si sale a cuenta</a></p>
         <h2>Preguntas frecuentes</h2>
 {faq_html}
       </div>

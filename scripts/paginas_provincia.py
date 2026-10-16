@@ -272,6 +272,7 @@ PLANTILLA = """<!DOCTYPE html>
     <nav class="nav">
       <a href="../">Inicio</a>
       <a href="../#calculadoras">Calculadoras</a>
+      <a href="../guias/">Guías</a>
       <a href="../precio-luz-hoy">Precio de la luz</a>
       <a href="../precio-gasolina-hoy">Precio de la gasolina</a>
       <a href="../sobre-nosotros">Sobre nosotros</a>

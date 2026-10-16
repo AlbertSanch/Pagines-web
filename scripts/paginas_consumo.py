@@ -267,6 +267,49 @@ def kwh_mes(a):
     return a["w"] / 1000 * a["horas"] * a["dias"] * a["factor"]
 
 
+def precio_valle():
+    try:
+        d = json.loads((WEB / "datos" / "luz.json").read_text(encoding="utf-8"))
+        return float(d["conImpuestos"]["valle"])
+    except Exception:
+        return None
+
+
+def secciones_comunes(a, p):
+    """Secciones calculadas para todas las páginas: coste según el precio de la luz y comparación con el resto de aparatos."""
+    e = escape
+    mes = kwh_mes(a)
+    m = meses(a)
+    precios = sorted({0.12, 0.16, 0.20, 0.25, 0.30, round(p, 3)})
+    filas = "".join(f"<tr{' class=\"sel\"' if abs(x - p) < 1e-9 else ''}><td>{num(x, 3)} €/kWh{' (media actual)' if abs(x - p) < 1e-9 else ''}</td>"
+                    f"<td class=\"num\">{eur(mes * x)}</td><td class=\"num\">{eur(mes * x * m)}</td></tr>" for x in precios)
+    v = precio_valle()
+    valle = ""
+    if v and v < p:
+        valle = (f" Si lo usas en horas valle (de 0:00 a 8:00 y los fines de semana), con el precio medio de esas horas en las últimas semanas "
+                 f"({num(v, 3)} €/kWh) te costaría {eur(mes * v)} al mes en lugar de {eur(mes * p)}.")
+    html = (f"\n        <h2>Cuánto cuesta según el precio de la luz</h2>\n"
+            f"        <p>Con un uso normal, {e(a['art'])} {verbo(a)} unos {num(mes, 1)} kWh al mes. Lo que pagas depende del precio del kWh de tu tarifa, que en España suele moverse entre 0,12 y 0,30 € con impuestos:</p>\n"
+            f"        <div class=\"table-wrap\"><table class=\"data\"><thead><tr><th>Precio de la luz</th><th class=\"num\">Al mes</th>"
+            f"<th class=\"num\">{'En la temporada' if m == 1 else ('Al año' if m == 12 else f'Al año ({m} meses)')}</th></tr></thead><tbody>{filas}</tbody></table></div>\n"
+            f"        <p>El precio de tu kWh viene en la factura, en el apartado del término de energía: si no sabes leerla, mira la guía <a href=\"../guias/factura-de-la-luz-explicada\">cómo entender la factura de la luz</a>.{valle}</p>\n")
+    orden = sorted(APARATOS, key=kwh_mes, reverse=True)
+    i = orden.index(a)
+    vecinos = orden[max(0, i - 2):i + 3]
+    def celda(o):
+        return f"<strong>{e(o['nombre'])}</strong>" if o is a else f'<a href="{o["slug"]}">{e(o["nombre"])}</a>'
+    filas_v = "".join(f"<tr{' class=\"sel\"' if o is a else ''}><td>{orden.index(o) + 1}</td><td>{celda(o)}</td><td>{e(o['uso'])}</td>"
+                      f"<td class=\"num\">{num(kwh_mes(o), 1)} kWh</td><td class=\"num\">{eur(kwh_mes(o) * p)}</td></tr>" for o in vecinos)
+    html += (f"\n        <h2>Comparado con otros aparatos de casa</h2>\n"
+             f"        <p>De los {len(orden)} aparatos que analizamos, {e(a['art'])} es el número {i + 1} por consumo al mes con un uso normal "
+             f"(el 1 es el que más gasta). Estos son los que tiene más cerca:</p>\n"
+             f"        <div class=\"table-wrap\"><table class=\"data\"><thead><tr><th>#</th><th>Aparato</th><th>Uso normal</th>"
+             f"<th class=\"num\">Al mes</th><th class=\"num\">Coste al mes</th></tr></thead><tbody>{filas_v}</tbody></table></div>\n"
+             f"        <p>La lista completa está en <a href=\"../consumo-electrodomesticos\">cuánto gasta cada electrodoméstico</a>. "
+             f"Los aparatos de calefacción y aire acondicionado solo gastan en su temporada.</p>\n")
+    return html
+
+
 def plantilla_base():
     base = (WEB / "calculadoras" / "coste-viaje-coche.html").read_text(encoding="utf-8")
     head_assets = base[base.index('  <link rel="stylesheet"'):base.index("</head>")]
@@ -375,6 +418,7 @@ def pagina(a, p, otros, base):
                   f"        <div class=\"table-wrap\"><table class=\"data\"><thead><tr><th>Aparato</th><th class=\"num\">Consumo por hora</th><th class=\"num\">Coste por hora</th></tr></thead><tbody>{filas_c}</tbody></table></div>\n"
                   f"        <p>Con la potencia y el uso normal de cada aparato. {e(a['comparar_texto'])} "
                   f"Si dudas entre gas y electricidad, compara con la <a href=\"../calculadoras/estufa-butano-o-electrica\">calculadora de estufa de butano o eléctrica</a>.</p>\n")
+    extra += secciones_comunes(a, p)
     faq = "\n".join(f"        <details>\n          <summary>{e(q)}</summary>\n          <p>{e(r)}</p>\n        </details>" for q, r in a["faq"])
     trucos = "".join(f"<li>{e(t)}</li>" for t in a["trucos"])
     rel = "\n".join(f'          <li><a href="{o["slug"]}">{o["icono"]} {e(o["nombre"])}</a></li>' for o in otros)
@@ -437,6 +481,7 @@ def pagina(a, p, otros, base):
         <h2>Trucos para que gaste menos</h2>
         <ul>{trucos}</ul>
         <p>Si tienes la tarifa PVPC, usar los aparatos que más gastan en las horas baratas también reduce la factura: consulta el <a href="../precio-luz-hoy">precio de la luz hoy por horas</a>.</p>
+        <p>Más ideas, con lo que ahorra cada una, en la guía <a href="../guias/como-bajar-la-factura-de-la-luz">cómo bajar la factura de la luz</a>.</p>
 
         <h2>Preguntas frecuentes</h2>
 {faq}

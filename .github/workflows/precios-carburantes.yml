@@ -18,6 +18,7 @@ on:
       - scripts/actualizar_luz.py
       - scripts/paginas_consumo.py
       - scripts/pagina_butano.py
+      - scripts/guias.py
       - ahorrometro/datos/butano.json
       - .github/workflows/precios-carburantes.yml
 
@@ -56,11 +57,14 @@ jobs:
       - name: Página del precio del butano
         run: python scripts/pagina_butano.py
 
+      - name: Guías con las cifras al día
+        run: python scripts/guias.py
+
       - name: Guardar cambios
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ahorrometro/datos/carburantes.json ahorrometro/datos/luz.json ahorrometro/cuanto-gasta ahorrometro/consumo-electrodomesticos.html ahorrometro/gasolina ahorrometro/precio-gasolina-hoy.html ahorrometro/precio-bombona-butano.html ahorrometro/calculadoras ahorrometro/sitemap.xml
+          git add ahorrometro/datos/carburantes.json ahorrometro/datos/luz.json ahorrometro/cuanto-gasta ahorrometro/consumo-electrodomesticos.html ahorrometro/gasolina ahorrometro/precio-gasolina-hoy.html ahorrometro/precio-bombona-butano.html ahorrometro/guias ahorrometro/calculadoras ahorrometro/sitemap.xml
           if git diff --cached --quiet; then
             echo "Sin cambios en los precios."
             exit 0
