@@ -264,6 +264,11 @@ VIDEOS = {
                     ("fila", "Andrés Iniesta", "≈ 17"), ("fila", "Carolina Marín", "≈ 160")]),
         (4.5, 0.6, [("texto", "Y Sergio Ramos…"), ("cifra", "≈ 680"), ("web",), ("texto", "Estimación con datos del INE")]),
     ],
+    "14-famosos-ninos": [
+        (5.6, 0.75, [("gancho", "¿Cuántos se llaman como un famoso?"), ("fila", "Anuel", "38"), ("fila", "Zendaya", "41"),
+                     ("fila", "Neymar", "269"), ("fila", "Rihanna", "274"), ("fila", "Dua", "283")]),
+        (4.8, 0.6, [("texto", "Y Kylian…"), ("cifra", "1.280"), ("texto", "Edad media de todos ellos: menos de 10 años"), ("web",)]),
+    ],
     "7-anos-80-vs-ahora": [
         (3.0, 0.0, [("gancho", "Nombres de los 80 vs nombres de ahora")]),
         (5.5, 0.55, [("titulo", "Nacidos en los 80"), ("texto", "Chicos y chicas más comunes"), ("fila", "David", "Laura"), ("fila", "Javier", "Cristina"), ("fila", "Daniel", "María")]),
@@ -338,6 +343,10 @@ VOCES = {
     "13-deportistas": [
         "¿Cuántos Sergio Ramos hay en España? Pau Gasol, solo él. Andrés Iniesta, unos diecisiete. Carolina Marín, unas ciento sesenta.",
         f"Y Sergio Ramos... ¡unos seiscientos ochenta! Busca el tuyo en {WEB_DICHA}.",
+    ],
+    "14-famosos-ninos": [
+        "¿Cuántos se llaman como un famoso? Anuel, treinta y ocho. Zendaya, cuarenta y uno. Neymar, doscientos sesenta y nueve.",
+        f"Y Kylian... ¡mil doscientos ochenta! Busca el tuyo en {WEB_DICHA}.",
     ],
     "7-anos-80-vs-ahora": [
         "Nombres de los ochenta contra nombres de ahora.",
