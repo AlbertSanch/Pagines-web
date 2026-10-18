@@ -575,7 +575,7 @@ def paginas_ranking(idx, nombres, provincias, decadas, bebes, ref_nombres, ref_p
                   f'<h2>Otras provincias</h2><ul class="columnas">' + "".join(
                       f'<li><a href="/provincia/{slug(PROVINCIAS[c])}/">{PROVINCIAS[c]}</a></li>' for c in orden if c != cod) + "</ul>")
         guardar(ruta, pagina(ruta, f"Nombres más comunes en {nombre}: los 50 más frecuentes",
-                             f"Los 50 nombres de hombre y de mujer más frecuentes en {nombre} según el INE. El más común: {mostrar(p['H'][0][0])} y {mostrar(p['M'][0][0])}.",
+                             f"¿Cuál es el nombre más común en {nombre}? Mira los 50 nombres de hombre y de mujer más frecuentes según el INE y en qué puesto está el tuyo.",
                              cuerpo, [("Provincias", "/provincias/"), (nombre, None)]))
         rutas.append(ruta)
     cuerpo = ('<h1>Nombres más comunes por provincia</h1><p class="lead">Los tres nombres de hombre y de mujer más frecuentes de cada provincia. Elige una para ver sus 50 primeros.</p>'
@@ -1306,7 +1306,7 @@ def paginas_apellidos(idx, apellidos):
                   '<h2>Otras provincias</h2><ul class="columnas">' + "".join(
                       f'<li><a href="/apellidos/provincia/{slug(PROVINCIAS[c])}/">{PROVINCIAS[c]}</a></li>' for c in orden if c != cod) + "</ul>")
         guardar(ruta, pagina(ruta, f"Apellidos más comunes en {nombre}: los 50 más frecuentes",
-                             f"Los 50 apellidos más frecuentes en {nombre} según el INE, por provincia de residencia y de nacimiento. El más común: {mostrar_apellido(p['res'][0][0])}.",
+                             f"¿Cuál es el apellido más común en {nombre}? Mira los 50 apellidos más frecuentes según el INE, por provincia de residencia y de nacimiento, y busca el tuyo.",
                              cuerpo, [("Apellidos", "/apellidos/"), (nombre, None)]))
         rutas.append(ruta)
     cuerpo = ("<h1>¿Cuánta gente se apellida como tú?</h1>"
