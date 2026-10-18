@@ -1041,7 +1041,7 @@ def paginas_barrios(municipios, t, T, anios):
 <p class="fuente">Fuente: Agencia Tributaria, Estadística de los declarantes del IRPF de los mayores municipios por código postal, {ac}. Solo incluye las {len(resumen)} ciudades que publica Hacienda (no incluye el País Vasco ni Navarra).</p>"""
     guardar("/barrios-mas-ricos-de-espana/", pagina(
         "/barrios-mas-ricos-de-espana/", f"Los barrios más ricos de España: ranking por código postal {ac}",
-        f"Los 100 barrios (códigos postales) más ricos de España según Hacienda ({ac}). El primero: {d0['nombre']}, en {municipios[m0]['nombre']}, con {euros(d0['bruta_media'])}.",
+        f"¿Cuál es el barrio más rico de España? Mira el ranking de los 100 códigos postales con más renta según Hacienda ({ac}), en qué ciudades están y en qué puesto está el tuyo.",
         cuerpo, [("Barrios", "/barrios/"), ("Barrios más ricos de España", None)], [faq_ld(preguntas)]))
     rutas.append("/barrios-mas-ricos-de-espana/")
     return rutas
