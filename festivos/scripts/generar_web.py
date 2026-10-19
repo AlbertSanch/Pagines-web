@@ -29,7 +29,7 @@ WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 SITIO = "Festivos de"
-VERSION = "4"
+VERSION = "5"
 HOY = dt.date.today()
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -226,6 +226,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
     <nav class="menu">
       <a href="/calendario-laboral-{max(ANIOS)}/">Calendario {max(ANIOS)}</a>
       <a href="/puentes-{max(ANIOS)}/">Puentes {max(ANIOS)}</a>
+      <a href="/calendario-laboral-para-imprimir/">Para imprimir</a>
       <a href="/calculadora-dias-laborables/">Días laborables</a>
     </nav>
   </div>
@@ -237,7 +238,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="pie">
   <div class="contenedor">
     <p><strong>festivosde.es</strong> reúne los días festivos de cada municipio de España a partir del Boletín Oficial del Estado y de los boletines oficiales de cada comunidad autónoma.</p>
-    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/calendario-laboral-para-imprimir/">Calendario para imprimir</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Las fechas se toman de las publicaciones oficiales. Si ves un error, escríbenos a {TITULAR['email']}.</p>
   </div>
 </footer>
@@ -351,6 +352,7 @@ def pagina_municipio(datos, cod, m, vecinos):
 {tabla_festivos(lista)}
 <div class="calendario" data-anio="{anio}"></div>
 <p class="acciones"><button class="boton-imprimir" type="button" data-anio="{anio}">🖨️ Imprimir calendario {anio}</button>
+<a class="boton-sec" href="/calendario-laboral-para-imprimir/?m={cod}&amp;a={anio}">📄 Calendario {anio} en PDF</a>
 <a class="boton-sec" href="/calculadora-dias-laborables/?m={cod}">🧮 Calcular días laborables en {escape(N)}</a></p>
 {bloque_puentes(lista, anio)}
 {notas_html(datos, anio, cod)}
@@ -454,6 +456,7 @@ def pagina_espana(datos, anio):
 <p class="lead">Todos los festivos de {anio} en España según el BOE: {len(comunes)} fiestas comunes a todo el país y las de cada comunidad autónoma. Busca tu municipio para ver también sus dos fiestas locales.</p>
 <div class="tabla-envoltorio"><table class="festivos"><thead><tr><th>Fecha</th><th>Día</th><th>Fiesta</th><th>Dónde es festivo</th></tr></thead><tbody>{''.join(filas)}</tbody></table></div>
 <p class="fuente">Fuente: <a href="{datos[anio]['boe']['url']}" rel="nofollow noopener">{escape(datos[anio]['boe']['titulo'])}</a>, publicada en el BOE el {fecha_larga(datos[anio]['boe']['publicado'], False)} de {datos[anio]['boe']['publicado'][:4]}.</p>
+<p class="acciones"><a class="boton-sec" href="/calendario-laboral-para-imprimir/?a={anio}">🖨️ Calendario laboral {anio} para imprimir con tus fiestas locales</a></p>
 <section id="comunidades"><h2>Calendario laboral {anio} por comunidad</h2>{lista_comunidades()}</section>"""
     return pagina(f"/calendario-laboral-{anio}/", f"Calendario laboral {anio}: todos los festivos de España",
                   f"Festivos de {anio} en España según el BOE: fiestas nacionales, de cada comunidad autónoma y locales de cada municipio.",
@@ -517,6 +520,39 @@ def pagina_calculadora(datos):
                   scripts=f'<script src="/assets/calculadora.js?v={VERSION}" defer></script>')
 
 
+def pagina_imprimible(datos):
+    ult = max(ANIOS)
+    opciones = "".join(f'<option value="{a}"{" selected" if a == ult else ""}>{a}</option>' for a in sorted(ANIOS, reverse=True))
+    preguntas = [
+        ("¿Cómo guardo el calendario en PDF?", "Pulsa «Imprimir o guardar en PDF» y, en la ventana de impresión, elige «Guardar como PDF» en lugar de tu impresora. En el móvil, la opción aparece al compartir o imprimir la página."),
+        ("¿Qué festivos incluye?", "Los festivos nacionales y los de tu comunidad autónoma que publica el BOE, y las dos fiestas locales de tu municipio que publica el boletín oficial de tu comunidad o provincia."),
+        (f"¿Cuándo se publican las fiestas locales de {ult}?", "Cada comunidad las publica en su boletín oficial, normalmente entre octubre y enero. Si las de tu municipio aún no están, el calendario te lo avisa y solo incluye los festivos nacionales y autonómicos."),
+        ("¿Se puede imprimir en blanco y negro?", "Sí. Marca «Blanco y negro» y los festivos se distinguen por el relleno (locales en negro, autonómicos en gris y nacionales con un recuadro), sin gastar tinta de color."),
+    ]
+    cuerpo = f"""<style>@page {{ size: A4 landscape; margin: 8mm; }}</style>
+<h1>Calendario laboral {ult} para imprimir</h1>
+<p class="lead">Elige tu municipio y descarga en PDF o imprime el calendario de todo el año en una sola hoja, con los festivos nacionales, autonómicos y las fiestas locales de tu pueblo o ciudad. Gratis y sin registrarte.</p>
+<form class="calc" onsubmit="return false">
+  <div class="campo"><label for="municipio">Municipio</label>
+    <input id="municipio" type="search" autocomplete="off" placeholder="Escribe tu municipio"><ul id="sug-municipio" class="sugerencias"></ul></div>
+  <div class="opciones-hoja">
+    <label>Año <select id="anio">{opciones}</select></label>
+    <label class="check"><input id="bn" type="checkbox"> Blanco y negro (ahorra tinta)</label>
+    <label class="check"><input id="lista" type="checkbox" checked> Con la lista de festivos</label>
+  </div>
+  <p><button class="boton-imprimir" id="imprimir" type="button" disabled>🖨️ Imprimir o guardar en PDF</button> <span id="resumen" class="fuente"></span></p>
+</form>
+<div id="hoja" class="hoja-a4" hidden></div>
+<section class="contenido"><h2>Un calendario para la nevera, la oficina o la agenda</h2>
+<p>El calendario ocupa una hoja A4 apaisada: los doce meses con los festivos marcados por colores y, debajo, la lista de todos los festivos con su día de la semana. Los datos son los mismos que en la página de cada municipio: el BOE para los festivos nacionales y autonómicos y el boletín oficial de cada comunidad para las fiestas locales.</p>
+<p>Si quieres organizar las vacaciones, mira también los <a href="/puentes-{ult}/">puentes de {ult}</a> o cuenta los <a href="/calculadora-dias-laborables/">días laborables</a> entre dos fechas.</p></section>
+<section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
+    return pagina("/calendario-laboral-para-imprimir/", f"Calendario laboral {ult} para imprimir (PDF) con tus festivos locales",
+                  f"Descarga en PDF o imprime el calendario laboral de {ult} de tu municipio en una hoja: festivos nacionales, autonómicos y fiestas locales.",
+                  cuerpo, [("Calendario para imprimir", None)], [faq_ld(preguntas)],
+                  scripts=f'<script src="/assets/imprimible.js?v={VERSION}" defer></script>')
+
+
 def datos_provincias(datos, info):
     """Un JSON por provincia para la calculadora: festivos de cada municipio y año."""
     (WEB / "datos").mkdir(exist_ok=True)
@@ -572,6 +608,7 @@ def portada(datos):
 <section class="accesos">
 <a class="acceso" href="/calendario-laboral-{anio_sig}/"><span class="ico">📅</span><b>Calendario laboral {anio_sig}</b><span>Todos los festivos de España y qué se celebra en cada comunidad.</span></a>
 <a class="acceso" href="/puentes-{anio_sig}/"><span class="ico">🌉</span><b>Puentes {anio_sig}</b><span>Qué días pedir de vacaciones para encadenar más días libres.</span></a>
+<a class="acceso" href="/calendario-laboral-para-imprimir/"><span class="ico">🖨️</span><b>Calendario para imprimir</b><span>El año entero en una hoja A4, con las fiestas de tu pueblo. En PDF.</span></a>
 <a class="acceso" href="/calculadora-dias-laborables/"><span class="ico">🧮</span><b>Días laborables</b><span>Cuenta días laborables o hábiles con los festivos de tu municipio.</span></a>
 </section>
 <section><h2>{anio_sig} de un vistazo</h2>
@@ -657,7 +694,7 @@ def main():
     if WEB.exists():
         shutil.rmtree(WEB)
     (WEB / "assets").mkdir(parents=True)
-    for f in ("style.css", "app.js", "calculadora.js"):
+    for f in ("style.css", "app.js", "calculadora.js", "imprimible.js"):
         shutil.copy(PLANTILLA / f, WEB / "assets" / f)
     for f in ("og.png", "favicon.svg", "favicon.ico", "apple-touch-icon.png"):
         if (PLANTILLA / f).exists():
@@ -690,6 +727,8 @@ def main():
         rutas_sitemap += [f"/calendario-laboral-{anio}/", f"/puentes-{anio}/"]
     guardar("/calculadora-dias-laborables/", pagina_calculadora(datos))
     rutas_sitemap.append("/calculadora-dias-laborables/")
+    guardar("/calendario-laboral-para-imprimir/", pagina_imprimible(datos))
+    rutas_sitemap.append("/calendario-laboral-para-imprimir/")
     datos_provincias(datos, info)
     guardar("/", portada(datos))
     rutas_sitemap += legales()
