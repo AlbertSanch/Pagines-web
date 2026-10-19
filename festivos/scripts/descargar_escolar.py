@@ -12,13 +12,33 @@ import hashlib
 import html
 import json
 import re
+import ssl
 import subprocess
+import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
-from descargar_fuentes import BASE, bajar
+from descargar_fuentes import BASE, UA
 
 DESTINO = BASE / "fuentes" / "escolar"
 CONFIG = BASE / "escolar.json"
+
+
+# Algunos servidores oficiales (p. ej. el DOGC) solo aceptan cifrados antiguos que Python rechaza por defecto
+SSL_ANTIGUO = ssl.create_default_context()
+SSL_ANTIGUO.set_ciphers("DEFAULT:@SECLEVEL=1")
+
+
+def bajar(url, intentos=2):
+    for i in range(intentos):
+        for contexto in (None, SSL_ANTIGUO):
+            try:
+                with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120, context=contexto) as r:
+                    return r.read()
+            except Exception as e:
+                ultimo = e
+                if "SSL" not in str(e):
+                    break
+    raise ultimo
 
 
 def a_texto(datos):
