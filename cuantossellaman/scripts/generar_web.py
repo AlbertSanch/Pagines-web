@@ -1200,7 +1200,7 @@ def bloque_buscar_otro(tipo, referencia):
     titulo = "¿Y otro apellido?" if tipo == "apellido" else "¿Y otro nombre?"
     sub = ("Busca el apellido de tu pareja, de tu familia o de tus amigos." if tipo == "apellido"
            else "Busca el nombre de tu pareja, de tus hijos o de tus amigos.")
-    return (f'<section class="buscar-otro"><h2>{titulo}</h2><p>{sub}</p>{formulario(tipo, referencia)}</section>'
+    return (f'<section class="buscar-otro"><div class="buscar-caja"><h2>{titulo}</h2><p>{sub}</p>{formulario(tipo, referencia)}</div></section>'
             f'<script src="/assets/app.js?v={VERSION}" defer></script>')
 
 
@@ -1389,7 +1389,7 @@ def indices_apellidos(idx):
     return grupos
 
 
-VERSION = "13"
+VERSION = "14"
 
 
 def main():

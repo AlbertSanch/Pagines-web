@@ -31,7 +31,12 @@ h2 { font-size: 1.35rem; margin-top: 2em; }
 .nav { display: flex; gap: 18px; flex-wrap: wrap; }
 .nav a { color: var(--text); text-decoration: none; font-weight: 500; font-size: .93rem; white-space: nowrap; }
 .nav a:hover { color: var(--primary); }
-@media (max-width: 640px) { .nav { gap: 12px; padding-bottom: 8px; } .nav a { font-size: .88rem; } }
+@media (max-width: 640px) {
+  .site-header .container { min-height: 50px; row-gap: 0; }
+  .nav { gap: 14px; padding-bottom: 8px; flex-wrap: nowrap; overflow-x: auto; width: 100%; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a { font-size: .88rem; }
+}
 
 .breadcrumbs { font-size: .85rem; color: var(--muted); margin: 18px 0 0; }
 .breadcrumbs a { color: var(--muted); }
@@ -207,6 +212,6 @@ summary { font-weight: 600; cursor: pointer; }
 /* Buscador en las páginas de nombre y apellido */
 .buscar-otro { background: var(--primary-soft); border-radius: 18px; padding: 18px 18px 20px; margin: 22px 0; text-align: center; }
 .buscar-otro h2 { margin: 0 0 4px; font-size: 1.3rem; }
-.buscar-otro > p { margin: 0 0 14px; color: var(--muted); }
+.buscar-otro .buscar-caja > p { margin: 0 0 14px; color: var(--muted); }
 .buscar-otro .resultado:empty, .buscar-otro .sugerencias:empty { display: none; }
 .buscar-otro .resultado { text-align: left; }
