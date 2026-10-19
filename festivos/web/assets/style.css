@@ -239,3 +239,22 @@ table.festivos { width: 100%; border-collapse: collapse; font-size: .97rem; }
   .hoja-lista { font-size: 10px; columns: 3; margin-top: 6px; }
   .hoja-aviso, .hoja-pie { font-size: 8px; margin-top: 4px; }
 }
+
+/* Planificador de vacaciones */
+.mes .dias .v { background: var(--ambar); color: #fff; font-weight: 800; }
+.mes .dias .b { background: #fbecc8; }
+.mes .dias .n.b, .mes .dias .l.b { box-shadow: inset 0 0 0 2px var(--ambar); }
+.hoja-a4 .leyenda i.v { background: var(--ambar); }
+.hoja-a4 .leyenda i.b { background: #fbecc8; border: 1px solid var(--ambar); }
+.plan-resumen { margin: 18px 0 8px; }
+.plan-resumen p { margin: 4px 0; }
+.plan-lista { list-style: none; padding: 0; display: grid; gap: 10px; margin: 14px 0; }
+.plan-lista li { background: var(--papel); border-radius: 12px; box-shadow: var(--sombra); padding: 12px 14px; border-left: 5px solid var(--ambar); line-height: 1.45; }
+.plan-lista li.plan-largas { border-left-color: var(--azul); }
+.plan-lista li.plan-escapada { border-left-color: var(--verde); }
+.plan-etq { display: block; font-size: .82rem; font-weight: 700; color: var(--suave); }
+@media print {
+  body:has(#plan:not([hidden])) main > *:not(#plan) { display: none !important; }
+  #plan > *:not(#hoja-plan) { display: none !important; }
+  .hoja-a4 .leyenda i.v, .mes .dias .v, .mes .dias .b { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
