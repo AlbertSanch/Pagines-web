@@ -201,3 +201,5 @@ summary { font-weight: 600; cursor: pointer; }
 .j-final .compartir { justify-content: center; }
 .j-nombres { text-align: left; columns: 2 200px; max-width: 520px; margin: 0 auto; }
 @media (max-width: 560px) { .j-cartas { grid-template-columns: 1fr; } .j-vs { text-align: center; } .j-carta { min-height: 0; padding: 16px 12px; } .j-nombre { font-size: 1.3rem; } .j-cifra { font-size: 1.7rem; } }
+.j-modos { display: flex; gap: 8px; margin: 14px 0 0; }
+.j-modos .btn-c[aria-pressed="true"] { background: var(--primary); color: #fff; border-color: var(--primary); }
