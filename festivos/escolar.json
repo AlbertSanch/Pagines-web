@@ -103,7 +103,11 @@
   {
    "id": "cantabria",
    "ccaa": "cantabria",
-   "descarga": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=434226"
+   "descarga": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=434226",
+   "oficial": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=434226",
+   "respaldo": [
+    "https://www.laboral-social.com/sites/laboral-social.com/files/calendario-escolar-cantabria-2026-2027.pdf"
+   ]
   },
   {
    "id": "cyl",
@@ -151,7 +155,12 @@
   {
    "id": "cataluna",
    "ccaa": "cataluna",
-   "descarga": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9653/2147444.pdf"
+   "descarga": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9653/2147444.pdf",
+   "oficial": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9653/2147444.pdf",
+   "respaldo": [
+    "https://educacio.paeria.cat/ca/escolaritzacio/copy_of_calendari-escolar/ordre-edf662026-de-22-dabril-per-la-qual-sestableix-el-calendari-escolar-dels-cursos-2026-2027-2027-2028-2028-2029.pdf",
+    "https://www.laboral-social.com/sites/laboral-social.com/files/calendario-escolar-cataluna-2026-2027.pdf"
+   ]
   },
   {
    "id": "valenciana",
