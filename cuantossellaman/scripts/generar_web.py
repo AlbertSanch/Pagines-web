@@ -694,7 +694,7 @@ def portada(idx, nombres, bebes, referencia, n_paginas):
   <a class="card" href="/nombres-en-peligro-de-extincion/"><h3>Nombres en peligro de extinción</h3><p>Josefa, Dolores, Saturnino… los que ya casi no se ponen.</p></a>
   <a class="card" href="/ideas/"><h3>Ideas para bebé</h3><p>Nombres de moda, poco comunes, cortos, por letra y clásicos que vuelven.</p></a>
   <a class="card" href="/nombres/"><h3>Todos los nombres de la A a la Z</h3><p>El índice completo de nombres, letra por letra.</p></a>
-  <a class="card destacada" href="/juego/"><h3>🎮 Juego diario: ¿más o menos?</h3><p>¿Hay más Lucías o más Pilares? Una partida nueva cada día.</p></a>
+  <a class="card destacada" href="/juego/"><h3>🎮 Juego diario: ¿más o menos?</h3><p>¿Hay más Lucías o más Pilares? ¿Más García o más Fernández? Una partida nueva cada día.</p></a>
   <a class="card destacada" href="/articulos/"><h3>Artículos</h3><p>Los nombres de bebé que más suben, cómo han cambiado los nombres en un siglo, los apellidos más comunes y más.</p></a>
   <a class="card" href="/bebes/"><h3>Nombres de bebé</h3><p>Los más puestos cada año desde {min(bebes)}. En {ultimo}: {escape(mostrar(esp['H']['top'][0][0]))} y {escape(mostrar(esp['M']['top'][0][0]))}.</p></a>
 </div>
@@ -940,18 +940,25 @@ def paginas_curiosidades(idx, decadas, bebes, referencia):
 JUEGO_INICIO = "2026-10-19"  # el juego #1
 
 
-def pagina_juego(idx, referencia):
-    """Juego diario «¿Más o menos?»: los nombres (hombres y mujeres juntos) que lleva más gente, con página propia."""
-    lista = sorted((e for e in idx.values() if e["pagina"] and e["total"] >= 5000), key=lambda e: -e["total"])
+def pagina_juego(idx, idx_ape, referencia):
+    """Juego diario «¿Más o menos?» con los nombres (hombres y mujeres juntos) y los apellidos (como primer apellido)
+    que lleva más gente y tienen página propia."""
+    nombres = sorted((e for e in idx.values() if e["pagina"] and e["total"] >= 5000), key=lambda e: -e["total"])
+    apellidos = sorted((e for e in idx_ape.values() if e["pagina"] and e["p1"] >= 5000), key=lambda e: -e["p1"])
     (WEB / "datos").mkdir(parents=True, exist_ok=True)
-    (WEB / "datos" / "juego.json").write_text(json.dumps({"inicio": JUEGO_INICIO, "n": [[e["mostrar"], e["total"], e["slug"]] for e in lista]},
+    (WEB / "datos" / "juego.json").write_text(json.dumps({"inicio": JUEGO_INICIO,
+                                                          "n": [[e["mostrar"], e["total"], e["slug"]] for e in nombres],
+                                                          "a": [[e["mostrar"], e["p1"], e["slug"]] for e in apellidos]},
                                                          ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     ruta = "/juego/"
     preguntas = [("¿Cómo se juega?", "Ves un nombre con el número de personas que lo llevan en España y otro sin la cifra. Adivina si el segundo lo llevan más o menos personas. Son 10 rondas y cada día hay una partida nueva, la misma para todo el mundo."),
-                 ("¿De dónde salen las cifras?", f"Del INE: personas que viven en España con cada nombre a {fecha_larga(referencia)}, sumando hombres y mujeres. Solo entran nombres que llevan al menos 5.000 personas."),
+                 ("¿De dónde salen las cifras?", f"Del INE, con datos a {fecha_larga(referencia)}. En los nombres, personas que viven en España con ese nombre, sumando hombres y mujeres. En los apellidos, personas que lo tienen como primer apellido. Solo entran nombres y apellidos que llevan al menos 5.000 personas."),
+                 ("¿Puedo jugar con nombres y con apellidos el mismo día?", "Sí. Cada modo tiene su propia partida diaria y su propia racha."),
                  ("¿Cada cuánto cambia?", "Cada día a medianoche hay un juego nuevo. Si juegas varios días seguidos, sumas racha.")]
     cuerpo = (f'<h1>¿Más o menos? <span class="j-num" id="juego-numero"></span></h1>'
-              '<p class="lead">El juego diario de los nombres de España: ¿hay más Lucías o más Pilares? ¿Más Hugos o más Fernandos? Adivina si cada nombre lo llevan más o menos personas que el anterior.</p>'
+              '<p class="lead">El juego diario de los nombres y apellidos de España: ¿hay más Lucías o más Pilares? ¿Más García o más Fernández? Adivina si cada uno lo llevan más o menos personas que el anterior.</p>'
+              '<div class="j-modos" role="group" aria-label="Modo de juego"><button type="button" class="btn-c" data-modo="n" aria-pressed="true">👤 Nombres</button>'
+              '<button type="button" class="btn-c" data-modo="a" aria-pressed="false">👪 Apellidos</button></div>'
               '<div class="juego" id="juego" aria-live="polite"><p>Cargando el juego de hoy…</p></div>'
               f'<div class="content"><h2>Preguntas frecuentes</h2>'
               + "".join(f"<details><summary>{escape(q)}</summary><p>{escape(r)}</p></details>" for q, r in preguntas)
@@ -959,8 +966,8 @@ def pagina_juego(idx, referencia):
               f'<script src="/assets/juego.js?v={VERSION}" defer></script>')
     ld = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in preguntas]}]
-    guardar(ruta, pagina(ruta, "¿Más o menos? El juego diario de los nombres de España",
-                         "Juego diario gratis: adivina qué nombre llevan más personas en España. 10 rondas, una partida nueva cada día y datos reales del INE.",
+    guardar(ruta, pagina(ruta, "¿Más o menos? El juego diario de nombres y apellidos de España",
+                         "Juego diario gratis: adivina qué nombre o apellido llevan más personas en España. 10 rondas, una partida nueva cada día y datos reales del INE.",
                          cuerpo, [("Juego diario", None)], ld))
     return [ruta]
 
@@ -1412,7 +1419,6 @@ def main():
     rutas += paginas_ideas(idx, dec["decadas"], beb["anios"], nombres["referencia"])
     rutas += paginas_curiosidades(idx, dec["decadas"], beb["anios"], nombres["referencia"])
     rutas += pagina_como_tu(ape)
-    rutas += pagina_juego(idx, nombres["referencia"])
     rutas += articulos.paginas_articulos(sys.modules[__name__], idx, idx_ape, nombres, dec["decadas"], beb["anios"], ape)[0]
     ape_pagina = [e for e in idx_ape.values() if e["pagina"]]
     if len(ape_pagina) < MIN_PAGINAS:
@@ -1421,6 +1427,7 @@ def main():
     for e in ape_pagina:
         guardar(f"/apellido/{e['slug']}/", pagina_apellido(e, idx_ape, por_p1, ape["referencia"]))
     rutas += paginas_apellidos(idx_ape, ape)
+    rutas += pagina_juego(idx, idx_ape, nombres["referencia"])
     rutas += paginas_directorio(idx, idx_ape)
     indices_apellidos(idx_ape)
     guardar("/", portada(idx, nombres, beb["anios"], nombres["referencia"], len(con_pagina)))
