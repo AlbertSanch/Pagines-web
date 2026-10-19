@@ -178,3 +178,26 @@ summary { font-weight: 600; cursor: pointer; }
 .mapa { margin: 12px 0 24px; max-width: 560px; }
 .mapa svg { width: 100%; height: auto; display: block; font-family: inherit; }
 .mapa figcaption { font-size: .85rem; color: var(--muted); margin-top: 8px; }
+
+/* Juego «¿Más o menos?» */
+.juego { background: var(--surface, #fff); border-radius: 18px; box-shadow: var(--shadow); padding: 18px; margin: 18px 0; min-height: 320px; }
+.j-progreso { margin: 0 0 12px; font-weight: 700; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+.j-cartas { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; }
+.j-carta { border: 2px solid var(--border, #e3e6f0); border-radius: 16px; padding: 22px 14px; text-align: center; display: flex; flex-direction: column; gap: 6px; min-height: 190px; justify-content: center; transition: border-color .2s, background .2s; }
+.j-nombre { font-size: 1.5rem; font-weight: 800; line-height: 1.15; }
+.j-cifra { font-size: 2rem; font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums; }
+.j-carta small { color: var(--muted); }
+.j-vs { font-weight: 800; color: var(--muted); }
+.j-botones { display: flex; gap: 8px; justify-content: center; margin-top: 8px; flex-wrap: wrap; }
+.j-botones .btn { padding: 10px 18px; }
+.j-botones .btn:disabled { opacity: .5; cursor: default; }
+.j-bien { border-color: #2e9d5b; background: #eaf7ef; }
+.j-mal { border-color: #d64545; background: #fdeeee; }
+.j-mensaje { text-align: center; min-height: 1.6em; font-weight: 600; }
+.j-final { text-align: center; }
+.j-nota { font-size: 3rem; font-weight: 800; margin: 0; color: var(--primary); }
+.j-cuadros { font-size: 1.6rem; letter-spacing: 2px; margin: 4px 0; }
+.j-racha { font-weight: 700; }
+.j-final .compartir { justify-content: center; }
+.j-nombres { text-align: left; columns: 2 200px; max-width: 520px; margin: 0 auto; }
+@media (max-width: 560px) { .j-cartas { grid-template-columns: 1fr; } .j-vs { text-align: center; } .j-carta { min-height: 0; padding: 16px 12px; } .j-nombre { font-size: 1.3rem; } .j-cifra { font-size: 1.7rem; } }
