@@ -37,6 +37,10 @@ jobs:
       - name: Descargar fuentes oficiales
         if: github.event_name != 'push'
         run: python -u festivos/scripts/descargar_fuentes.py
+      - name: Descargar calendarios escolares
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: python -u festivos/scripts/descargar_escolar.py
       - name: Extraer festivos
         run: cd festivos/scripts && python -u procesar.py | grep -v "^BOE" | tail -60
       - name: Generar la web
