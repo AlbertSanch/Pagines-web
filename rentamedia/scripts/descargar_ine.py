@@ -31,15 +31,24 @@ SALIDA = Path(__file__).resolve().parent.parent / "datos-ine"
 CABECERAS = {"User-Agent": "Mozilla/5.0 (rentamedia.es; datos abiertos del INE)"}
 
 
-def bajar(url):
-    for intento in range(4):
+def es_csv(datos):
+    return not datos[:200].lower().lstrip().startswith((b"<!doc", b"<html")) and b";" in datos[:500]
+
+
+def bajar(url, comprobar=None, intentos=4):
+    """Descarga con reintentos. Con «comprobar», también reintenta si el INE devuelve otra cosa
+    (a veces responde con una página de error en lugar del CSV cuando la tabla tarda en generarse)."""
+    for intento in range(intentos):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=CABECERAS), timeout=180) as r:
-                return r.read()
+                datos = r.read()
+            if comprobar is None or comprobar(datos):
+                return datos
+            print(f"{url}: no es un CSV, empieza por {datos[:120]!r} (intento {intento + 1})", file=sys.stderr)
         except Exception as e:
             print(f"{url}: {e} (intento {intento + 1})", file=sys.stderr)
-            time.sleep(10 * (intento + 1))
-    sys.exit(f"ERROR: no se ha podido descargar {url}")
+        time.sleep(30 * (intento + 1))
+    sys.exit(f"ERROR: no se ha podido descargar {url} como CSV")
 
 
 def main():
@@ -57,9 +66,7 @@ def main():
         tema, i = trabajo
         destino = SALIDA / f"{tema}_{i}.csv"
         inicio = time.time()
-        datos = bajar(f"https://www.ine.es/jaxiT3/files/t/es/csv_bdsc/{i}.csv")
-        if datos[:200].lower().lstrip().startswith((b"<!doc", b"<html")) or b";" not in datos[:500]:
-            sys.exit(f"ERROR: la tabla {i} no es un CSV")
+        datos = bajar(f"https://www.ine.es/jaxiT3/files/t/es/csv_bdsc/{i}.csv", es_csv, intentos=5)
         destino.write_bytes(datos)
         print(f"OK {destino.name} ({len(datos) // 1024} KB, {time.time() - inicio:.0f} s)", flush=True)
 
