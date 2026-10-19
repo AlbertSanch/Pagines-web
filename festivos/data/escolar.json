@@ -1,0 +1,2346 @@
+{
+ "curso": "2026-2027",
+ "territorios": [
+  {
+   "id": "andalucia_almeria",
+   "ccaa": "andalucia",
+   "provincia": "Almería",
+   "norma": "Resolución de la Delegación Territorial de Desarrollo Educativo y Formación Profesional y de Universidad, Investigación e Innovación en Almería, por la que se aprueba el calendario escolar en los centros docentes no universitarios, a excepción de los de primer ciclo de educación infantil, de esta provincia para el curso académico 2026-2027 (firmada el 28/05/2026)",
+   "fuentes": [
+    "andalucia_almeria",
+    "andalucia_almeria_graf"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2026-09-10",
+     "fuente": "andalucia_almeria",
+     "cita": "régimen ordinario de clases comenzará el día 10 de septiembre de 2026, finalizando el 22 de"
+    },
+    {
+     "etapas": "ESO y Bachillerato",
+     "fecha": "2026-09-15",
+     "fuente": "andalucia_almeria",
+     "cita": "de Personas Adultas, el régimen ordinario de clases comenzará el 15 de septiembre de 2026,"
+    },
+    {
+     "etapas": "FP",
+     "fecha": "2026-09-15",
+     "fuente": "andalucia_almeria",
+     "cita": "11. En Formación Profesional, el régimen ordinario de clases comenzará el 15 de septiembre"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2027-06-22",
+     "fuente": "andalucia_almeria",
+     "cita": "régimen ordinario de clases comenzará el día 10 de septiembre de 2026, finalizando el 22 de"
+    },
+    {
+     "etapas": "ESO y 1.º Bachillerato",
+     "fecha": "2027-06-22",
+     "fuente": "andalucia_almeria",
+     "cita": "finalizando el 22 de junio de 2027, siendo 175 el número de días lectivos. Para el segundo curso"
+    },
+    {
+     "etapas": "2.º Bachillerato",
+     "fecha": "2027-05-24",
+     "fuente": "andalucia_almeria",
+     "cita": "de Bachillerato, la finalización del régimen ordinario de clases será el 24 de mayo de 2027."
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-24",
+     "hasta": "2027-01-06",
+     "fuente": "andalucia_almeria",
+     "cita": "24. Las vacaciones de Navidad comprenderán desde el día 24 de diciembre de 2026 hasta el"
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-21",
+     "hasta": "2027-03-28",
+     "fuente": "andalucia_almeria",
+     "cita": "25. Las vacaciones de Semana Santa comprenderán desde el día 21 de marzo hasta el día 28 de"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2026-10-09",
+     "motivo": "Día no lectivo provincial",
+     "fuente": "andalucia_almeria",
+     "cita": "a) 9 de octubre de 2026."
+    },
+    {
+     "fecha": "2026-10-30",
+     "motivo": "Día no lectivo provincial",
+     "fuente": "andalucia_almeria",
+     "cita": "b) 30 de octubre de 2026."
+    },
+    {
+     "fecha": "2026-12-23",
+     "motivo": "Día no lectivo provincial (víspera de vacaciones de Navidad)",
+     "fuente": "andalucia_almeria",
+     "cita": "c) 23 de diciembre de 2026."
+    },
+    {
+     "fecha": "2027-02-26",
+     "motivo": "Día de la Comunidad Educativa",
+     "fuente": "andalucia_almeria",
+     "cita": "e) 26 de febrero de 2027, día de la Comunidad Educativa."
+    },
+    {
+     "fecha": "2027-03-29",
+     "motivo": "Día no lectivo provincial (lunes de Pascua)",
+     "fuente": "andalucia_almeria",
+     "cita": "f) 29 de marzo de 2027."
+    },
+    {
+     "fecha": "2027-04-30",
+     "motivo": "Día no lectivo provincial",
+     "fuente": "andalucia_almeria",
+     "cita": "g) 30 de abril de 2027."
+    }
+   ],
+   "locales": "Son no lectivas las fiestas locales de cada municipio. Donde las fiestas locales caigan en días lectivos, los Consejos Escolares de centro o Municipales deben solicitar a la Delegación (plazo hasta el 1 de febrero de 2027) sustituirlas por alguno de los 6 días no lectivos provinciales (9 y 30 oct, 23 dic, 26 feb, 29 mar, 30 abr).",
+   "dudas": [
+    "La FP solo tiene fecha de inicio (15 sep); no se fija un fin de clases propio: la segunda sesión de evaluación final 'se corresponderá con la finalización del régimen ordinario de clase y no podrá ser anterior al 22 de junio'.",
+    "Semana Santa: el texto dice 'desde el día 21 de marzo hasta el día 28 de marzo' (21 es domingo), así que el primer día sin clase efectivo es el lunes 22; además el lunes 29 de marzo es no lectivo, por lo que las clases se reanudan el 30 de marzo.",
+    "Navidad empieza el 24 de diciembre, pero el 23 de diciembre es día no lectivo provincial: en la práctica no hay clase del 23 de diciembre al 6 de enero.",
+    "La lista de no lectivos salta de la letra c) a la e) (no hay d)); no parece faltar ningún día porque la lista de días sustituibles (apartado 29) contiene los mismos 6.",
+    "Los días no lectivos provinciales pueden cambiarse localmente por las fiestas locales (apartado 29), así que no son fijos en todos los municipios.",
+    "2 de noviembre, 7 de diciembre de 2026 y 1 de marzo de 2027 son traslados de festivos oficiales (Todos los Santos, Constitución, Día de Andalucía, caídos en domingo); no se incluyen en no_lectivos.",
+    "En Enseñanzas de Idiomas el texto dice 'finalizando el 22 de junio de 2026' (errata, debe ser 2027); no afecta a las enseñanzas generales."
+   ],
+   "urls": {
+    "andalucia_almeria": "https://www.juntadeandalucia.es/educacion/portales/documents/1183913/3343033/Resoluci%C3%B3n_calendario_escolar_26_27_Almer%C3%ADa(F).pdf/fb0a8b29-7d79-13a6-dd6d-caf9340047ef?t=1780046260347",
+    "andalucia_almeria_graf": "https://www.juntadeandalucia.es/educacion/portales/documents/1183913/3343033/Calendario_Escolar_26_27_Almer%C3%ADa.pdf/52eb1bc9-fd55-cbe1-d6da-8ab010c10349?t=1780046317118"
+   }
+  },
+  {
+   "id": "andalucia_cadiz",
+   "ccaa": "andalucia",
+   "provincia": "Cádiz",
+   "norma": "Resolución de la Delegación Territorial de Desarrollo Educativo y Formación Profesional y de Universidad, Investigación e Innovación en Cádiz, por la que se aprueba el calendario y la jornada escolar en los centros docentes, a excepción de los universitarios, para el curso académico 2026/2027 (firmada el 29/05/2026)",
+   "fuentes": [
+    "andalucia_cadiz",
+    "andalucia_cadiz_graf"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2026-09-10",
+     "fuente": "andalucia_cadiz",
+     "cita": "2.2 El día 10 de septiembre de 2026, jueves, en Segundo Ciclo de Educación Infantil, Educación Primaria"
+    },
+    {
+     "etapas": "ESO, Bachillerato y FP",
+     "fecha": "2026-09-15",
+     "fuente": "andalucia_cadiz",
+     "cita": "2.3 El día 15 de septiembre de 2026, martes, en Educación Secundaria Obligatoria, Bachillerato, Ciclos"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial, ESO, 1.º Bachillerato y FP (todas las enseñanzas)",
+     "fecha": "2027-06-23",
+     "fuente": "andalucia_cadiz",
+     "cita": "3. La finalización del régimen ordinario de clases será el día 23 de junio de 2027, miércoles, en todas las"
+    },
+    {
+     "etapas": "2.º Bachillerato",
+     "fecha": "2027-05-24",
+     "fuente": "andalucia_cadiz",
+     "cita": "enseñanzas, excepto segundo de Bachillerato, que lo hará el día 24 de mayo de 2027, lunes, y para los cursos"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-08",
+     "fuente": "andalucia_cadiz",
+     "cita": "Desde el 23 de diciembre de 2026 hasta el 8 de enero de 2027, ambos inclusive (vacaciones de Navidad)."
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-28",
+     "fuente": "andalucia_cadiz",
+     "cita": "Desde el 22 hasta el 28 de marzo de 2027, ambos inclusive (vacaciones de Semana Santa)."
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2027-04-30",
+     "motivo": "Día de la Comunidad Educativa",
+     "fuente": "andalucia_cadiz",
+     "cita": "•    30 de abril (viernes): .................................................... Día de la Comunidad Educativa."
+    }
+   ],
+   "locales": "Los Ayuntamientos, previa consulta al Consejo Escolar Municipal (o a los Consejos Escolares de centro), pueden solicitar a la Delegación hasta 3 días no lectivos siempre que las fiestas locales no coincidan con el periodo lectivo; solicitud antes del 30 de septiembre de 2026.",
+   "dudas": [
+    "En Cádiz el Día de la Comunidad Educativa es el 30 de abril de 2027 (no el 26 de febrero como en otras provincias).",
+    "El cuadro gráfico (andalucia_cadiz_graf) da 181 días lectivos para Infantil/Primaria/E. Especial y 178 para ESO/Bach/FP, mientras que la Resolución dice 178 y 175 (probablemente porque el gráfico no descuenta los días no lectivos locales).",
+    "El lunes 29 de marzo de 2027 (después de Semana Santa) no figura como no lectivo: es lectivo según el texto.",
+    "La fecha de fin de FP se toma de 'en todas las enseñanzas' (23 de junio); el número de días lectivos de FP depende de cada ciclo.",
+    "2 de noviembre, 7 de diciembre de 2026 y 1 de marzo de 2027 son traslados de festivos oficiales (Todos los Santos, Constitución, Día de Andalucía, caídos en domingo); no se incluyen en no_lectivos."
+   ],
+   "urls": {
+    "andalucia_cadiz": "https://www.juntadeandalucia.es/educacion/portales/documents/1197071/0/Resoluci%C3%B3n%20calendario%20escolar%202026_2027.pdf/5c97e0d2-d79a-e80a-9433-d3f1e305f8fd",
+    "andalucia_cadiz_graf": "https://www.juntadeandalucia.es/educacion/portales/documents/1197071/0/CALENDARIO%20ESCOLAR%202026_2027.pdf/a55f8427-74f2-8211-eca1-20044826ba52?version=1.0"
+   }
+  },
+  {
+   "id": "andalucia_cordoba",
+   "ccaa": "andalucia",
+   "provincia": "Córdoba",
+   "norma": "Resolución de la fecha de su firma (21/05/2026), de la Delegación Territorial de Desarrollo Educativo y Formación Profesional y de Universidad, Investigación e Innovación en Córdoba, por la que se aprueban el calendario y la jornada escolar en los centros docentes no universitarios para el curso académico 2026/2027",
+   "fuentes": [
+    "andalucia_cordoba"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2026-09-10",
+     "fuente": "andalucia_cordoba",
+     "cita": "régimen ordinario de clases comenzará el día 10 de septiembre de 2026. El número de"
+    },
+    {
+     "etapas": "ESO, Bachillerato y FP",
+     "fecha": "2026-09-15",
+     "fuente": "andalucia_cordoba",
+     "cita": "comenzará el día 15 de septiembre de 2026. El número de días lectivos para estas"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2027-06-22",
+     "fuente": "andalucia_cordoba",
+     "cita": "Infantil, Educación Primaria y Educación Especial, será el 22 de junio de 2027."
+    },
+    {
+     "etapas": "ESO, 1.º Bachillerato y FP",
+     "fecha": "2027-06-22",
+     "fuente": "andalucia_cordoba",
+     "cita": "será el 22 de junio de 2027. Para el segundo curso de Bachillerato, Segundo Curso de"
+    },
+    {
+     "etapas": "2.º Bachillerato (y 2.º de CFGS)",
+     "fecha": "2027-05-21",
+     "fuente": "andalucia_cordoba",
+     "cita": "adultas será el día 22 de mayo de cada año o el último día laborable anterior en caso de"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-06",
+     "fuente": "andalucia_cordoba",
+     "cita": "- Desde el 23 de diciembre de 2026 al 6 de enero de 2027, ambos inclusive."
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-28",
+     "fuente": "andalucia_cordoba",
+     "cita": "- Desde el 22 de marzo al 28 de marzo de 2027, ambos inclusive."
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2027-01-07",
+     "motivo": "Día no lectivo provincial",
+     "fuente": "andalucia_cordoba",
+     "cita": "- Días no lectivos provinciales para todos los niveles educativos: el 7 de enero de"
+    },
+    {
+     "fecha": "2027-02-26",
+     "motivo": "Día de la Comunidad Educativa",
+     "fuente": "andalucia_cordoba",
+     "cita": "Comunidad Educativa el 26 de febrero de 2027."
+    }
+   ],
+   "locales": "Los Ayuntamientos, previa consulta al Consejo Escolar Municipal (o a los de los centros), pueden solicitar a la Delegación hasta 3 días no lectivos siempre que las fiestas locales no coincidan con el periodo lectivo; solicitud antes del 1 de septiembre.",
+   "dudas": [
+    "Fin de 2.º de Bachillerato: el texto dice 'el día 22 de mayo de cada año o el último día laborable anterior en caso de que sea sábado o festivo'; el 22 de mayo de 2027 es sábado, así que se ha puesto 2027-05-21 (viernes). Es una interpretación.",
+    "El 7 de enero es no lectivo provincial, así que en la práctica no hay clase del 23 de diciembre al 7 de enero (las clases se reanudan el 8 de enero).",
+    "El texto no menciona expresamente los festivos trasladados (2 nov, 7 dic, 1 mar): remite a los establecidos por el Consejo de Ministros y el Consejo de Gobierno.",
+    "Solo hay fichero de texto de la Resolución; no hay cuadro gráfico para contrastar."
+   ],
+   "urls": {
+    "andalucia_cordoba": "https://www.juntadeandalucia.es/educacion/portales/documents/1197067/4486666/Resoluci%C3%B3n%20Calendario%20Escolar%202026_2027(F).pdf/92aee8f6-6e23-e2c8-0f0e-a118ecf2e271"
+   }
+  },
+  {
+   "id": "andalucia_granada",
+   "ccaa": "andalucia",
+   "provincia": "Granada",
+   "norma": "Resolución de 27 de mayo de 2026 de la Delegación Territorial de la Consejería de Desarrollo Educativo y Formación Profesional de la Junta de Andalucía en Granada por la que se dictan las normas que han de regir el calendario escolar para el curso escolar 2026/2027",
+   "fuentes": [
+    "andalucia_granada"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2026-09-10",
+     "fuente": "andalucia_granada",
+     "cita": "a) El régimen ordinario de clases lectivas dará comienzo el día 10 de septiembre de 2026 en segundo ciclo de"
+    },
+    {
+     "etapas": "ESO, Bachillerato y FP (grados D y E)",
+     "fecha": "2026-09-15",
+     "fuente": "andalucia_granada",
+     "cita": "a) El régimen ordinario de clases lectivas comenzará el día 15 de septiembre de 2026. El número de días"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2027-06-22",
+     "fuente": "andalucia_granada",
+     "cita": "d) La finalización del régimen ordinario de clase será el 22 de junio de 2027."
+    },
+    {
+     "etapas": "ESO y 1.º Bachillerato",
+     "fecha": "2027-06-22",
+     "fuente": "andalucia_granada",
+     "cita": "bachillerato será el día 22 de junio de 2027. El segundo curso de bachillerato terminará el día 24 de mayo de"
+    },
+    {
+     "etapas": "2.º Bachillerato",
+     "fecha": "2027-05-24",
+     "fuente": "andalucia_granada",
+     "cita": "bachillerato será el día 22 de junio de 2027. El segundo curso de bachillerato terminará el día 24 de mayo de"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-06",
+     "fuente": "andalucia_granada",
+     "cita": "NAVIDAD: El periodo no lectivo de Navidad estará comprendido entre los días 23 de diciembre de 2026 y el 6"
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-28",
+     "fuente": "andalucia_granada",
+     "cita": "SEMANA SANTA: El periodo no lectivo de Semana Santa comprenderá desde el día 22 al 28 de marzo de"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2027-02-26",
+     "motivo": "Día de la Comunidad Educativa",
+     "fuente": "andalucia_granada",
+     "cita": "- 26 de febrero de 2027, día de la Comunidad Educativa (para todos los niveles educativos)."
+    },
+    {
+     "fecha": "2027-05-28",
+     "motivo": "Día no lectivo provincial",
+     "fuente": "andalucia_granada",
+     "cita": "- 28 de mayo de 2027, día no lectivo provincial."
+    }
+   ],
+   "locales": "Son no lectivas las fiestas locales (máximo 2). Además los Consejos Escolares Municipales (o, en su defecto, los de centro) pueden fijar hasta 3 días no lectivos: 3, 2 o 1 según que ninguna, una o las dos fiestas locales caigan en periodo lectivo; se graban en Séneca y se notifican a la Delegación con 15 días de antelación.",
+   "dudas": [
+    "El calendario gráfico anexo (incluido en el mismo fichero) da 181 días lectivos para Infantil/Primaria/E. Especial y 178 para ESO/Bach/FP, frente a los 178 y 175 de la Resolución (probablemente sin descontar los días locales).",
+    "Para FP (grados D y E) no se fija fecha de fin propia: depende de la duración de cada ciclo (apartado 5.j); el gráfico dice 'Fin días lectivos, resto de enseñanzas con carácter general' el 22 de junio.",
+    "El texto avisa de que las festividades 'tienen carácter provisional'. 2 de noviembre, 7 de diciembre de 2026 y 1 de marzo de 2027 son traslados de festivos oficiales (Todos los Santos, Constitución, Día de Andalucía, caídos en domingo); no se incluyen en no_lectivos.",
+    "El lunes 29 de marzo de 2027 no figura como no lectivo: es lectivo según el texto."
+   ],
+   "urls": {
+    "andalucia_granada": "https://www.juntadeandalucia.es/educacion/portales/documents/1197087/4286700/Resoluci%C3%B3n%2027%20mayo%202026%20calendario%20escolar%20curso%202026-2027%20Granada%20-%20con%20anexos.pdf/f7a1efc3-e16c-b891-4179-8c29ab1288cf?version=1.0"
+   }
+  },
+  {
+   "id": "andalucia_huelva",
+   "ccaa": "andalucia",
+   "provincia": "Huelva",
+   "norma": "Resolución de 29 de mayo de 2026 de la Delegación Territorial de Educación y Deporte en Huelva, por la que se aprueba el calendario escolar en los centros docentes no universitarios para el curso académico 2026/2027",
+   "fuentes": [
+    "andalucia_huelva"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2026-09-10",
+     "fuente": "andalucia_huelva",
+     "cita": "a) El régimen ordinario de clases lectivas dará comienzo el día 10 de septiembre de 2026 en"
+    },
+    {
+     "etapas": "ESO, Bachillerato y FP (grado básico, grados D y E)",
+     "fecha": "2026-09-15",
+     "fuente": "andalucia_huelva",
+     "cita": "a) El régimen ordinario de clases lectivas comenzará el 15 de septiembre de 2026. El número de"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2027-06-22",
+     "fuente": "andalucia_huelva",
+     "cita": "d) El último día lectivo será el 22 de junio de 2027."
+    },
+    {
+     "etapas": "ESO y 1.º Bachillerato",
+     "fecha": "2027-06-22",
+     "fuente": "andalucia_huelva",
+     "cita": "22 de junio de 2027. El 2º curso de bachillerato terminará el día 22 de mayo de 2027 o el último día"
+    },
+    {
+     "etapas": "2.º Bachillerato",
+     "fecha": "2027-05-21",
+     "fuente": "andalucia_huelva",
+     "cita": "22 de junio de 2027. El 2º curso de bachillerato terminará el día 22 de mayo de 2027 o el último día"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-07",
+     "fuente": "andalucia_huelva",
+     "cita": "a) Las vacaciones de Navidad comprenderán el período entre el 23 de diciembre de 2026 y el 7 de enero"
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-28",
+     "fuente": "andalucia_huelva",
+     "cita": "b) Las vacaciones de Semana Santa comprenderán el período entre el 22 de marzo y el 28 de marzo de"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2027-02-26",
+     "motivo": "Día de la Comunidad Educativa",
+     "fuente": "andalucia_huelva",
+     "cita": "e) Se establece como Día de la Comunidad Educativa (día no lectivo de ámbito provincial) el 26 de"
+    }
+   ],
+   "locales": "Las fiestas locales (máximo 2 por localidad) las fija la Consejería de Empleo. Los Consejos Escolares Municipales (o, donde no existan, los Consejos Escolares de centro) pueden fijar otros días vacacionales locales, que incluyen las 2 fiestas locales si caen en periodo lectivo; los anexos prevén hasta 3 días ('Vac Local 1/2/3'), garantizando 178/175 días lectivos.",
+   "dudas": [
+    "Fin de 2.º de Bachillerato: 'el día 22 de mayo de 2027 o el último día laborable anterior en caso de que sea sábado o festivo'; el 22 de mayo de 2027 es sábado, así que se ha puesto 2027-05-21 (viernes). Es una interpretación.",
+    "No se da fecha de fin propia para FP (solo la regla de evaluación final 'no podrá ser anterior al 22 de junio').",
+    "El apartado 9 (días vacacionales locales) y los anexos I y II conservan fechas del curso anterior (10 de septiembre de 2025, 22 de junio de 2026, plazo 'antes del 30 de junio de 2025', 'curso escolar 2025/2026'): parecen erratas de copia; no queda claro el plazo real para comunicar los días locales.",
+    "El encabezado nombra la 'Delegación Territorial de Educación y Deporte en Huelva' (denominación antigua), aunque el membrete es de la Consejería de Desarrollo Educativo y Formación Profesional.",
+    "El texto lista como festivos de carácter general 2 de noviembre, 7 y 8 de diciembre, 1 de marzo, etc. (decretos de fiestas laborales); no se incluyen en no_lectivos.",
+    "Solo hay fichero de texto de la Resolución; no hay cuadro gráfico para contrastar."
+   ],
+   "urls": {
+    "andalucia_huelva": "https://www.juntadeandalucia.es/educacion/portales/documents/1197074/4609198/Resoluci%C3%B3n%20calendario%20Huelva%2026-27.pdf/4338f98f-b951-7f3a-7921-052dcc0a1ffb"
+   }
+  },
+  {
+   "id": "andalucia_malaga",
+   "ccaa": "andalucia",
+   "provincia": "Málaga",
+   "norma": "Resolución de 20 de mayo de 2026 de la Delegación Territorial de la Consejería de Desarrollo Educativo y Formación Profesional de la Junta de Andalucía en Málaga por la que se dictan las normas que han de regir el calendario escolar para el curso escolar 2026/2027 en todos los centros docentes públicos y privados a excepción de los universitarios",
+   "fuentes": [
+    "andalucia_malaga"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2026-09-10",
+     "fuente": "andalucia_malaga",
+     "cita": "a) El régimen ordinario de clases lectivas dará comienzo el día 10 de septiembre de 2026"
+    },
+    {
+     "etapas": "ESO, Bachillerato y FP (grado básico, grados D y E)",
+     "fecha": "2026-09-15",
+     "fuente": "andalucia_malaga",
+     "cita": "a) El régimen ordinario de clases lectivas comenzará el día 15 de septiembre de 2026."
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2027-06-24",
+     "fuente": "andalucia_malaga",
+     "cita": "d) El último día lectivo será el 24 de junio de 2027."
+    },
+    {
+     "etapas": "ESO y 1.º Bachillerato",
+     "fecha": "2027-06-24",
+     "fuente": "andalucia_malaga",
+     "cita": "será el día 24 de junio de 2027. El 2º curso de bachillerato terminará el día 24 de mayo de"
+    },
+    {
+     "etapas": "2.º Bachillerato",
+     "fecha": "2027-05-24",
+     "fuente": "andalucia_malaga",
+     "cita": "será el día 24 de junio de 2027. El 2º curso de bachillerato terminará el día 24 de mayo de"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-06",
+     "fuente": "andalucia_malaga",
+     "cita": "diciembre de 2026 al 6 de enero de 2027, ambos inclusive."
+    },
+    {
+     "nombre": "Semana Blanca",
+     "desde": "2027-02-22",
+     "hasta": "2027-02-26",
+     "fuente": "andalucia_malaga",
+     "cita": "SEMANA BLANCA: Se considerará no lectivos los días comprendidos entre el 22 y el 26"
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-28",
+     "fuente": "andalucia_malaga",
+     "cita": "SEMANA SANTA: El periodo no lectivo de Semana Santa comprenderá desde el día 22 al"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2027-02-26",
+     "motivo": "Día de la Comunidad Educativa (dentro de la Semana Blanca)",
+     "fuente": "andalucia_malaga",
+     "cita": "26 de febrero de 2027, día de la Comunidad Educativa (para todos los niveles educativos)."
+    }
+   ],
+   "locales": "Son no lectivas las fiestas locales (máximo 2). Si alguna fiesta local no cae en periodo lectivo, son no lectivos días fijados por la Delegación: si ninguna de las dos cae en periodo lectivo, el 29 de marzo y el 3 de mayo de 2027; si solo una, el 3 de mayo de 2027. No hay días de libre elección por consejos escolares.",
+   "dudas": [
+    "La Semana Blanca (22-26 feb) incluye el 26 de febrero, Día de la Comunidad Educativa; el calendario gráfico separa 'Semana Blanca 22-25' y '26 Día de la Comunidad Educativa'. El 26 se repite en vacaciones y en no_lectivos.",
+    "El 29 de marzo y el 3 de mayo de 2027 solo son no lectivos en los centros cuyas fiestas locales no caen en periodo lectivo; por eso no se ponen en no_lectivos.",
+    "El preámbulo de la Resolución dice 'el calendario escolar para el curso 2025/2026' (errata; el título y todas las fechas son de 2026/2027). También 'a partir del día 1 de junio de 2026' en música y danza (errata).",
+    "No se da fecha de fin propia para FP (solo reglas de evaluación final 'no anterior al 22 de junio'); el gráfico dice 'Último día lectivo resto de enseñanzas' el 24 de junio.",
+    "Las actividades de 2.º de Bachillerato continúan 'hasta el día 22 de junio', aunque el último día lectivo general es el 24 de junio.",
+    "2 de noviembre, 7 de diciembre de 2026 y 1 de marzo de 2027 son traslados de festivos oficiales (Todos los Santos, Constitución, Día de Andalucía, caídos en domingo); no se incluyen en no_lectivos."
+   ],
+   "urls": {
+    "andalucia_malaga": "https://www.juntadeandalucia.es/educacion/portales/documents/2854624/4501041/RESOLUCION%20CALENDARIO%20ESCOLAR%202026_27%20MALAGA.pdf/6f0af8f4-b17b-3b67-2797-e53eb85376e9"
+   }
+  },
+  {
+   "id": "andalucia_sevilla",
+   "ccaa": "andalucia",
+   "provincia": "Sevilla",
+   "norma": "Resolución del Ilmo. Sr. Delegado Territorial de Desarrollo Educativo y Formación Profesional y de Universidad, Investigación e Innovación en Sevilla, por la que se aprueba el calendario y la jornada escolar en los centros docentes no universitarios para el curso académico 2026/2027 (firmada el 28/05/2026)",
+   "fuentes": [
+    "andalucia_sevilla",
+    "andalucia_sevilla_graf"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2026-09-10",
+     "fuente": "andalucia_sevilla",
+     "cita": "9. El régimen ordinario de clases comenzará el día 10 de septiembre de 2026."
+    },
+    {
+     "etapas": "ESO, Bachillerato y FP",
+     "fecha": "2026-09-15",
+     "fuente": "andalucia_sevilla",
+     "cita": "13. El régimen ordinario de clases comenzará el día 15 de septiembre de 2026."
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2027-06-23",
+     "fuente": "andalucia_sevilla",
+     "cita": "Primaria y Educación Especial, será el 23 de junio de 2027."
+    },
+    {
+     "etapas": "ESO y 1.º Bachillerato",
+     "fecha": "2027-06-23",
+     "fuente": "andalucia_sevilla",
+     "cita": "Bachillerato, Educación Permanente para personas Adultas será el 23 de junio de 2027. Para el segundo"
+    },
+    {
+     "etapas": "FP",
+     "fecha": "2027-06-23",
+     "fuente": "andalucia_sevilla_graf",
+     "cita": "23 ESO, 1º Bach, FP, E. Art.,Idiomas y EPA."
+    },
+    {
+     "etapas": "2.º Bachillerato",
+     "fecha": "2027-05-24",
+     "fuente": "andalucia_sevilla",
+     "cita": "curso de Bachillerato, la finalización será el 24 de mayo de 2027."
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-24",
+     "hasta": "2027-01-07",
+     "fuente": "andalucia_sevilla",
+     "cita": "a) Desde el 24 de diciembre de 2026 al 7 de enero de 2027, ambos inclusive."
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-28",
+     "fuente": "andalucia_sevilla",
+     "cita": "b) Desde el 22 al 28 de marzo 2027, ambos inclusive."
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2027-02-26",
+     "motivo": "Día de la Comunidad Educativa",
+     "fuente": "andalucia_sevilla",
+     "cita": "26 de febrero de 2027."
+    },
+    {
+     "fecha": "2027-01-08",
+     "motivo": "Día no lectivo provincial",
+     "fuente": "andalucia_sevilla",
+     "cita": "excepción del primer ciclo de Educación Infantil, el 8 de enero de 2027."
+    }
+   ],
+   "locales": "Son no lectivas las fiestas locales. Los Consejos Escolares Municipales (o, en su defecto, los de centro) acuerdan hasta 2 días de libre disposición, a proponer antes del 15 de octubre de 2026; si alguna fiesta local no cae en día lectivo, pueden decidir días a cambio.",
+   "dudas": [
+    "Navidad empieza el 24 de diciembre (el 23 es lectivo) y, con el 8 de enero no lectivo provincial, las clases se reanudan el lunes 11 de enero de 2027.",
+    "La fecha de fin de FP (23 de junio) solo aparece en el cuadro gráfico; la Resolución no la fija para FP (depende de cada ciclo).",
+    "El cuadro gráfico da 182 días lectivos (Infantil/Primaria) y 179 (ESO/Bach/FP) e indica que el cómputo de 178/175 incluye 2 días de fiestas locales y 2 de libre disposición.",
+    "El texto no menciona expresamente los festivos trasladados; el gráfico marca 2 nov, 7 dic y 1 mar como 'Lunes siguiente' a Todos los Santos, Constitución y Día de Andalucía (no incluidos en no_lectivos).",
+    "El lunes 29 de marzo de 2027 no figura como no lectivo: es lectivo según el texto."
+   ],
+   "urls": {
+    "andalucia_sevilla": "https://www.juntadeandalucia.es/educacion/portales/documents/1176698/3340178/RESOL%20CALEND%2026_27(F).pdf/8c2fd440-3e04-a1c5-d497-2170af36e265?version=1.0",
+    "andalucia_sevilla_graf": "https://www.juntadeandalucia.es/educacion/portales/documents/1176698/3340178/CALENDARIO%2026_27(F).pdf/8faf6172-bab9-3786-06f2-d56ea397e8c2?version=1.0"
+   }
+  },
+  {
+   "id": "castilla-la-mancha_albacete",
+   "ccaa": "castilla-la-mancha",
+   "provincia": "Albacete",
+   "norma": "Resolución, de 19 de junio de 2026, de la Delegación Provincial de la Consejería de Educación, Cultura y Deportes en Albacete, por la que se aprueba el calendario escolar en las enseñanzas no universitarias, vigente en la provincia de Albacete durante el curso 2026-2027 (desarrolla la Orden 79/2026, de 26 de mayo, de la Consejería de Educación, Cultura y Deportes, por la que se establece el calendario escolar para el curso 2026/2027)",
+   "fuentes": [
+    "clm",
+    "clm_albacete"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2026-09-08",
+     "fuente": "clm",
+     "cita": "Educación Especial y Educación Secundaria Obligatoria comenzarán el día 08/09/2026 y finalizarán el día 22/06/2027"
+    },
+    {
+     "etapas": "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "fecha": "2026-09-08",
+     "fuente": "clm",
+     "cita": "Formación Profesional y Bachillerato, comenzarán el día 08/09/2026 y finalizarán el día 22/06/2027"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2027-06-22",
+     "fuente": "clm",
+     "cita": "Educación Especial y Educación Secundaria Obligatoria comenzarán el día 08/09/2026 y finalizarán el día 22/06/2027"
+    },
+    {
+     "etapas": "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "fecha": "2027-06-22",
+     "fuente": "clm",
+     "cita": "Formación Profesional y Bachillerato, comenzarán el día 08/09/2026 y finalizarán el día 22/06/2027"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-08",
+     "fuente": "clm_albacete",
+     "cita": "diciembre de 2026 hasta el 8 de enero de 2027, ambos inclusive."
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-29",
+     "fuente": "clm_albacete",
+     "cita": "hasta el 29 de marzo de 2027, ambos inclusive."
+    },
+    {
+     "nombre": "Carnaval (días de libre disposición)",
+     "desde": "2027-02-08",
+     "hasta": "2027-02-09",
+     "fuente": "clm_albacete",
+     "cita": "Los días de descanso docente de libre disposición o Carnaval serán el 8 y 9 de febrero de"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2026-11-20",
+     "motivo": "Día de la Enseñanza",
+     "fuente": "clm_albacete",
+     "cita": "d) El 20 de noviembre de 2026 se celebrará el Día de la Enseñanza."
+    },
+    {
+     "fecha": "2026-12-07",
+     "motivo": "Día sin actividad docente",
+     "fuente": "clm_albacete",
+     "cita": "f)   Serán días sin actividad docente 7 de diciembre de 2026 y 28 de mayo de 2027."
+    },
+    {
+     "fecha": "2027-05-28",
+     "motivo": "Día sin actividad docente",
+     "fuente": "clm_albacete",
+     "cita": "f)   Serán días sin actividad docente 7 de diciembre de 2026 y 28 de mayo de 2027."
+    }
+   ],
+   "locales": "Dos fiestas locales fijadas por cada ayuntamiento (publicadas en el BOP). Los ayuntamientos, con informe favorable del Consejo Escolar de Localidad, pueden pedir antes del 30/11/2026 sustituir fiestas locales que caigan en periodo no lectivo y trasladar los 2 días de libre disposición (8 y 9 de febrero por defecto) a otras fechas.",
+   "dudas": [
+    "El 2 de noviembre de 2026 no se incluye en no_lectivos porque es fiesta laboral (la resolución de Albacete lo enumera entre las fiestas laborales nacionales de Castilla-La Mancha).",
+    "No se incluyen los festivos laborales (12 oct, 2 nov, 8 dic, 6 ene, 1 may, 27 may, 31 may 2027, etc.). El 7/12/2026 y el 28/05/2027 sí se incluyen porque la Orden los declara expresamente días no lectivos (el 6/12 y el 27/05 son los festivos).",
+    "Los días 8 y 9 de febrero de 2027 son 'días de descanso lectivo de libre disposición' fijados con carácter general, condicionados a cumplir el mínimo de 175 días lectivos; los ayuntamientos/consejos escolares pueden trasladarlos.",
+    "2.º de Bachillerato: la finalización depende de las fechas de las pruebas de acceso a la Universidad.",
+    "Navidad: 'ambos inclusive' hasta el 08/01/2027 (viernes); las clases se reanudan el lunes 11/01/2027.",
+    "La tabla de fechas de inicio/fin de la resolución de Albacete está desestructurada en el texto extraído; las citas de inicio/fin se toman de la Orden regional (clm), cuyas fechas coinciden con la tabla (08/09/2026 y 22/06/2027).",
+    "La resolución denomina a la Semana Santa 'descanso escolar entre el segundo y tercer trimestre' y a los días 8-9 de febrero 'días de descanso docente de libre disposición o Carnaval'."
+   ],
+   "urls": {
+    "clm": "https://docm.jccm.es/docm/verArchivoHtml.do?ruta=2026%2F06%2F03%2Fhtml%2F2026_4106.html&tipo=rutaDocm",
+    "clm_albacete": "https://educacion.castillalamancha.es/sites/default/files/2026-06/ALBACETE%20-%20RESOLUCION%20CALENDARIO%20ESCOLAR%20PROVINCIAL%202026-2027%20ALBACETE.pdf"
+   }
+  },
+  {
+   "id": "castilla-la-mancha_ciudad_real",
+   "ccaa": "castilla-la-mancha",
+   "provincia": "Ciudad Real",
+   "norma": "Resolución, de 25 de junio de 2026, de la Delegación Provincial de la Consejería de Educación, Cultura y Deportes en Ciudad Real, por la que se aprueba el calendario escolar en las enseñanzas no universitarias, vigente en la provincia de Ciudad Real durante el curso 2026/2027 (desarrolla la Orden 79/2026, de 26 de mayo, de la Consejería de Educación, Cultura y Deportes, por la que se establece el calendario escolar para el curso 2026/2027)",
+   "fuentes": [
+    "clm",
+    "clm_ciudad_real"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2026-09-08",
+     "fuente": "clm_ciudad_real",
+     "cita": "día 08/09/2026 y finalizarán el día 22/06/2027. Los centros de Educación"
+    },
+    {
+     "etapas": "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "fecha": "2026-09-08",
+     "fuente": "clm_ciudad_real",
+     "cita": "Formación Profesional y Bachillerato, comenzarán el día 08/09/2026 y"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2027-06-22",
+     "fuente": "clm_ciudad_real",
+     "cita": "día 08/09/2026 y finalizarán el día 22/06/2027. Los centros de Educación"
+    },
+    {
+     "etapas": "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "fecha": "2027-06-22",
+     "fuente": "clm_ciudad_real",
+     "cita": "finalizarán el día 22/06/2027, excepto para el segundo curso de Bachillerato,"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-08",
+     "fuente": "clm_ciudad_real",
+     "cita": "desde el día 23/12/2026 hasta el 08/01/2027, ambos inclusive."
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-29",
+     "fuente": "clm_ciudad_real",
+     "cita": "22/03/2027 hasta el 29/03/2027, ambos inclusive."
+    },
+    {
+     "nombre": "Días de libre disposición",
+     "desde": "2027-02-08",
+     "hasta": "2027-02-09",
+     "fuente": "clm_ciudad_real",
+     "cita": "f) Los días de descanso lectivo de libre disposición serán el 08/02/2027 y el"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2026-11-20",
+     "motivo": "Día de la Enseñanza",
+     "fuente": "clm_ciudad_real",
+     "cita": "e) El día de la Enseñanza, fijado para el día 20/11/2026."
+    },
+    {
+     "fecha": "2026-12-07",
+     "motivo": "Día no lectivo",
+     "fuente": "clm_ciudad_real",
+     "cita": "g) Serán días no lectivos el 07/12/2026 y el 28/05/2027."
+    },
+    {
+     "fecha": "2027-05-28",
+     "motivo": "Día no lectivo",
+     "fuente": "clm_ciudad_real",
+     "cita": "g) Serán días no lectivos el 07/12/2026 y el 28/05/2027."
+    }
+   ],
+   "locales": "Dos fiestas locales por ayuntamiento (BOP). Si caen en periodo no lectivo, el ayuntamiento puede pedir antes del 30/11/2026 otras fechas (con informe del Consejo Escolar de Localidad); si no lo hace, serán no lectivos el 22/06/2027 (una fiesta) o el 21 y 22/06/2027 (dos). Los 2 días de libre disposición pueden cambiarse vía Consejo Escolar de Localidad y pueden quedar sin efecto si hay más de 2 festivos locales en el curso.",
+   "dudas": [
+    "El 2 de noviembre de 2026 no se incluye en no_lectivos porque es fiesta laboral (la resolución de Albacete lo enumera entre las fiestas laborales nacionales de Castilla-La Mancha).",
+    "No se incluyen los festivos laborales (12 oct, 2 nov, 8 dic, 6 ene, 1 may, 27 may, 31 may 2027, etc.). El 7/12/2026 y el 28/05/2027 sí se incluyen porque la Orden los declara expresamente días no lectivos (el 6/12 y el 27/05 son los festivos).",
+    "Los días 8 y 9 de febrero de 2027 son 'días de descanso lectivo de libre disposición' fijados con carácter general, condicionados a cumplir el mínimo de 175 días lectivos; los ayuntamientos/consejos escolares pueden trasladarlos.",
+    "2.º de Bachillerato: la finalización depende de las fechas de las pruebas de acceso a la Universidad.",
+    "Navidad: 'ambos inclusive' hasta el 08/01/2027 (viernes); las clases se reanudan el lunes 11/01/2027."
+   ],
+   "urls": {
+    "clm": "https://docm.jccm.es/docm/verArchivoHtml.do?ruta=2026%2F06%2F03%2Fhtml%2F2026_4106.html&tipo=rutaDocm",
+    "clm_ciudad_real": "https://educacion.castillalamancha.es/sites/default/files/2026-06/RESOLUCI%C3%93N%20CALENDARIO%20ESCOLAR%20PROVINCIAL%20CIUDAD%20REAL%2026-27.pdf"
+   }
+  },
+  {
+   "id": "castilla-la-mancha_cuenca",
+   "ccaa": "castilla-la-mancha",
+   "provincia": "Cuenca",
+   "norma": "Resolución, de 24 de junio de 2026, de la Delegación Provincial de la Consejería de Educación, Cultura y Deportes en Cuenca, por la que se aprueba el calendario escolar en las enseñanzas no universitarias, vigente en la provincia de Cuenca durante el curso 2026/2027 (desarrolla la Orden 79/2026, de 26 de mayo, de la Consejería de Educación, Cultura y Deportes, por la que se establece el calendario escolar para el curso 2026/2027)",
+   "fuentes": [
+    "clm",
+    "clm_cuenca"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2026-09-08",
+     "fuente": "clm_cuenca",
+     "cita": "Especial y Educación Secundaria Obligatoria comenzarán el día 08/09/2026 y finalizarán"
+    },
+    {
+     "etapas": "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "fecha": "2026-09-08",
+     "fuente": "clm_cuenca",
+     "cita": "Profesional y Bachillerato, comenzarán el día 08/09/2026 y finalizarán el día 22/06/2027,"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2027-06-22",
+     "fuente": "clm",
+     "cita": "Educación Especial y Educación Secundaria Obligatoria comenzarán el día 08/09/2026 y finalizarán el día 22/06/2027"
+    },
+    {
+     "etapas": "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "fecha": "2027-06-22",
+     "fuente": "clm_cuenca",
+     "cita": "Profesional y Bachillerato, comenzarán el día 08/09/2026 y finalizarán el día 22/06/2027,"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-08",
+     "fuente": "clm_cuenca",
+     "cita": "23/12/2026 hasta el 08/01/2027, ambos inclusive."
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-29",
+     "fuente": "clm_cuenca",
+     "cita": "d) El descanso escolar entre el segundo y el tercer trimestre será desde el 22/03/2027"
+    },
+    {
+     "nombre": "Días de libre disposición",
+     "desde": "2027-02-08",
+     "hasta": "2027-02-09",
+     "fuente": "clm_cuenca",
+     "cita": "f) Los días de descanso docente de libre disposición serán el 08/02/2027 y el"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2026-11-20",
+     "motivo": "Día de la Enseñanza",
+     "fuente": "clm_cuenca",
+     "cita": "e) El Día de la Enseñanza, fijado para el día 20/11/2026."
+    },
+    {
+     "fecha": "2026-12-07",
+     "motivo": "Día no lectivo",
+     "fuente": "clm_cuenca",
+     "cita": "g) Serán días no lectivos el 07/12/2026 y el 28/05/2027."
+    },
+    {
+     "fecha": "2027-05-28",
+     "motivo": "Día no lectivo",
+     "fuente": "clm_cuenca",
+     "cita": "g) Serán días no lectivos el 07/12/2026 y el 28/05/2027."
+    }
+   ],
+   "locales": "Dos fiestas locales por ayuntamiento (BOP); las que caigan en periodo no lectivo se sustituyen preferentemente por fechas del 1.er o 2.º trimestre a petición municipal antes del 30/11/2026; si no se pide, serán no lectivos el 22/06/2027 (una) o el 21 y 22/06/2027 (dos). Los 2 días de libre disposición pueden modificarse vía Consejo Escolar de Localidad.",
+   "dudas": [
+    "El 2 de noviembre de 2026 no se incluye en no_lectivos porque es fiesta laboral (la resolución de Albacete lo enumera entre las fiestas laborales nacionales de Castilla-La Mancha).",
+    "No se incluyen los festivos laborales (12 oct, 2 nov, 8 dic, 6 ene, 1 may, 27 may, 31 may 2027, etc.). El 7/12/2026 y el 28/05/2027 sí se incluyen porque la Orden los declara expresamente días no lectivos (el 6/12 y el 27/05 son los festivos).",
+    "Los días 8 y 9 de febrero de 2027 son 'días de descanso lectivo de libre disposición' fijados con carácter general, condicionados a cumplir el mínimo de 175 días lectivos; los ayuntamientos/consejos escolares pueden trasladarlos.",
+    "2.º de Bachillerato: la finalización depende de las fechas de las pruebas de acceso a la Universidad.",
+    "Navidad: 'ambos inclusive' hasta el 08/01/2027 (viernes); las clases se reanudan el lunes 11/01/2027.",
+    "La resolución de Cuenca parte en dos líneas la fecha de fin de Infantil/Primaria/ESO; la cita de fin se toma de la Orden regional (clm), con la misma fecha 22/06/2027."
+   ],
+   "urls": {
+    "clm": "https://docm.jccm.es/docm/verArchivoHtml.do?ruta=2026%2F06%2F03%2Fhtml%2F2026_4106.html&tipo=rutaDocm",
+    "clm_cuenca": "https://educacion.castillalamancha.es/sites/default/files/2026-06/CUENCA%20-%20RESOLUCION%20CALENDARIO%20ESCOLAR%20PROVINCIAL%202026-2027%20CUENCA.pdf"
+   }
+  },
+  {
+   "id": "castilla-la-mancha_guadalajara",
+   "ccaa": "castilla-la-mancha",
+   "provincia": "Guadalajara",
+   "norma": "Resolución del 11 de junio de 2026 de la Delegación Provincial de la Consejería de Educación, Cultura y Deportes en Guadalajara por la que se aprueba el calendario escolar provincial de las enseñanzas no universitarias para el curso 2026-2027 (desarrolla la Orden 79/2026, de 26 de mayo, de la Consejería de Educación, Cultura y Deportes, por la que se establece el calendario escolar para el curso 2026/2027)",
+   "fuentes": [
+    "clm",
+    "clm_guadalajara"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2026-09-08",
+     "fuente": "clm",
+     "cita": "Educación Especial y Educación Secundaria Obligatoria comenzarán el día 08/09/2026 y finalizarán el día 22/06/2027"
+    },
+    {
+     "etapas": "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "fecha": "2026-09-08",
+     "fuente": "clm",
+     "cita": "Formación Profesional y Bachillerato, comenzarán el día 08/09/2026 y finalizarán el día 22/06/2027"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2027-06-22",
+     "fuente": "clm",
+     "cita": "Educación Especial y Educación Secundaria Obligatoria comenzarán el día 08/09/2026 y finalizarán el día 22/06/2027"
+    },
+    {
+     "etapas": "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "fecha": "2027-06-22",
+     "fuente": "clm",
+     "cita": "Formación Profesional y Bachillerato, comenzarán el día 08/09/2026 y finalizarán el día 22/06/2027"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-08",
+     "fuente": "clm_guadalajara",
+     "cita": "entre el 23 de diciembre de 2026 y el 8 de enero de 2027, ambos"
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-29",
+     "fuente": "clm_guadalajara",
+     "cita": "entre el 22 y el 29 de marzo, ambos inclusive."
+    },
+    {
+     "nombre": "Días de libre disposición",
+     "desde": "2027-02-08",
+     "hasta": "2027-02-09",
+     "fuente": "clm_guadalajara",
+     "cita": "b) Días de descanso lectivo de libre disposición: 8 y 9 de febrero de 2027. (siempre"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2026-11-20",
+     "motivo": "Día de la Enseñanza",
+     "fuente": "clm_guadalajara",
+     "cita": "a) El Día de la Enseñanza: 20 de noviembre de 2026"
+    },
+    {
+     "fecha": "2026-12-07",
+     "motivo": "Día no lectivo",
+     "fuente": "clm_guadalajara",
+     "cita": "d) Días no lectivos: el 7 de diciembre de 2026 y el 28 de mayo de 2027."
+    },
+    {
+     "fecha": "2027-05-28",
+     "motivo": "Día no lectivo",
+     "fuente": "clm_guadalajara",
+     "cita": "d) Días no lectivos: el 7 de diciembre de 2026 y el 28 de mayo de 2027."
+    }
+   ],
+   "locales": "Dos fiestas locales por municipio (BOP de Guadalajara), que son festivos. Si caen en periodo no lectivo o solo hay una en el curso, el ayuntamiento puede pedir (antes del 30/11/2026, con informe del Consejo Escolar de Localidad) declarar no lectivas otras celebraciones tradicionales; también puede proponer cambiar los 2 días de libre disposición.",
+   "dudas": [
+    "El 2 de noviembre de 2026 no se incluye en no_lectivos porque es fiesta laboral (la resolución de Albacete lo enumera entre las fiestas laborales nacionales de Castilla-La Mancha).",
+    "No se incluyen los festivos laborales (12 oct, 2 nov, 8 dic, 6 ene, 1 may, 27 may, 31 may 2027, etc.). El 7/12/2026 y el 28/05/2027 sí se incluyen porque la Orden los declara expresamente días no lectivos (el 6/12 y el 27/05 son los festivos).",
+    "Los días 8 y 9 de febrero de 2027 son 'días de descanso lectivo de libre disposición' fijados con carácter general, condicionados a cumplir el mínimo de 175 días lectivos; los ayuntamientos/consejos escolares pueden trasladarlos.",
+    "2.º de Bachillerato: la finalización depende de las fechas de las pruebas de acceso a la Universidad.",
+    "Navidad: 'ambos inclusive' hasta el 08/01/2027 (viernes); las clases se reanudan el lunes 11/01/2027.",
+    "La tabla de inicio/fin de la resolución de Guadalajara está desestructurada en el texto extraído (08/09/2026 y 22/06/2027 en celdas separadas); las citas se toman de la Orden regional (clm), con las mismas fechas.",
+    "La Semana Santa se cita como 'entre el 22 y el 29 de marzo, ambos inclusive' sin año; se asume 2027.",
+    "Errata en el art. 6.2: dice 'carácter general el 8 y 9 de febrero de 2026'; el art. 5.b dice 8 y 9 de febrero de 2027, que es lo que se recoge."
+   ],
+   "urls": {
+    "clm": "https://docm.jccm.es/docm/verArchivoHtml.do?ruta=2026%2F06%2F03%2Fhtml%2F2026_4106.html&tipo=rutaDocm",
+    "clm_guadalajara": "https://educacion.castillalamancha.es/sites/default/files/2026-06/GUADALAJARA%20-%20RESOLUCION%20CALENDARIO%20ESCOLAR%20PROVINCIAL%202026-2027%20GUADALAJARA.pdf"
+   }
+  },
+  {
+   "id": "castilla-la-mancha_toledo",
+   "ccaa": "castilla-la-mancha",
+   "provincia": "Toledo",
+   "norma": "Resolución, de 24 de junio de 2026, de la Delegación Provincial de la Consejería de Educación, Cultura y Deportes en Toledo, por la que se aprueba el calendario escolar en las enseñanzas no universitarias, vigente en la provincia de Toledo durante el curso 2026/2027 (desarrolla la Orden 79/2026, de 26 de mayo, de la Consejería de Educación, Cultura y Deportes, por la que se establece el calendario escolar para el curso 2026/2027)",
+   "fuentes": [
+    "clm",
+    "clm_toledo"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2026-09-08",
+     "fuente": "clm_toledo",
+     "cita": "Especial y Educación Secundaria Obligatoria comenzarán el día 08/09/2026 y"
+    },
+    {
+     "etapas": "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "fecha": "2026-09-08",
+     "fuente": "clm_toledo",
+     "cita": "Profesional y Bachillerato, comenzarán el día 08/09/2026 y finalizarán el día"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2027-06-22",
+     "fuente": "clm_toledo",
+     "cita": "finalizarán el día 22/06/2027."
+    },
+    {
+     "etapas": "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "fecha": "2027-06-22",
+     "fuente": "clm_toledo",
+     "cita": "22/06/2027, excepto para el segundo curso de Bachillerato, cuya finalización estará en"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-08",
+     "fuente": "clm_toledo",
+     "cita": "23/12/2026 hasta el 08/01/2027, ambos inclusive."
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-29",
+     "fuente": "clm_toledo",
+     "cita": "d) El descanso escolar entre el segundo y el tercer trimestre será desde el 22/03/2027 hasta"
+    },
+    {
+     "nombre": "Días de libre disposición",
+     "desde": "2027-02-08",
+     "hasta": "2027-02-09",
+     "fuente": "clm_toledo",
+     "cita": "f) Los días de descanso lectivo de libre disposición serán el 08/02/2027 y el 09/02/2027"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2026-11-20",
+     "motivo": "Día de la Enseñanza",
+     "fuente": "clm_toledo",
+     "cita": "e) El día de la Enseñanza, fijado para el día 20/11/2026."
+    },
+    {
+     "fecha": "2026-12-07",
+     "motivo": "Día no lectivo",
+     "fuente": "clm_toledo",
+     "cita": "g) Serán días no lectivos el 07/12/2026 y el 28/05/2027."
+    },
+    {
+     "fecha": "2027-05-28",
+     "motivo": "Día no lectivo",
+     "fuente": "clm_toledo",
+     "cita": "g) Serán días no lectivos el 07/12/2026 y el 28/05/2027."
+    }
+   ],
+   "locales": "Dos fiestas locales por ayuntamiento (BOP); las que caigan en periodo no lectivo se sustituyen preferentemente por fechas del 1.er o 2.º trimestre a petición municipal antes del 30/11/2026; si no se pide, serán no lectivos el 22/06/2027 (una) o el 21 y 22/06/2027 (dos). Los 2 días de libre disposición pueden modificarse vía Consejo Escolar de Localidad y pueden quedar sin efecto si hay más de 2 festivos locales en el curso.",
+   "dudas": [
+    "El 2 de noviembre de 2026 no se incluye en no_lectivos porque es fiesta laboral (la resolución de Albacete lo enumera entre las fiestas laborales nacionales de Castilla-La Mancha).",
+    "No se incluyen los festivos laborales (12 oct, 2 nov, 8 dic, 6 ene, 1 may, 27 may, 31 may 2027, etc.). El 7/12/2026 y el 28/05/2027 sí se incluyen porque la Orden los declara expresamente días no lectivos (el 6/12 y el 27/05 son los festivos).",
+    "Los días 8 y 9 de febrero de 2027 son 'días de descanso lectivo de libre disposición' fijados con carácter general, condicionados a cumplir el mínimo de 175 días lectivos; los ayuntamientos/consejos escolares pueden trasladarlos.",
+    "2.º de Bachillerato: la finalización depende de las fechas de las pruebas de acceso a la Universidad.",
+    "Navidad: 'ambos inclusive' hasta el 08/01/2027 (viernes); las clases se reanudan el lunes 11/01/2027."
+   ],
+   "urls": {
+    "clm": "https://docm.jccm.es/docm/verArchivoHtml.do?ruta=2026%2F06%2F03%2Fhtml%2F2026_4106.html&tipo=rutaDocm",
+    "clm_toledo": "https://educacion.castillalamancha.es/sites/default/files/2026-06/TOLEDO%20-%20RESOLUCION%20CALENDARIO%20ESCOLAR%20PROVINCIAL%202026-2027%20TOLEDO.pdf"
+   }
+  },
+  {
+   "id": "aragon_huesca",
+   "ccaa": "aragon",
+   "provincia": "Huesca",
+   "norma": "Resolución de 29 de abril de 2025, del Director General de Planificación, Centros y Formación Profesional, por la que se aprueban los calendarios escolares de los cursos 2025-2026 y 2026-2027 correspondientes a las enseñanzas de niveles no universitarios de la Comunidad Autónoma de Aragón (BOA n.º 88, de 12 de mayo de 2025)",
+   "fuentes": [
+    "aragon",
+    "aragon_educa"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo; también 3.er curso del 1.er ciclo en CEIP, CPI y CRA), Primaria, Educación Especial y ESO",
+     "fecha": "2026-09-08",
+     "fuente": "aragon",
+     "cita": "iniciarán el martes 8 de septiembre de 2026 y finalizarán el viernes 18 de junio de"
+    },
+    {
+     "etapas": "Bachillerato",
+     "fecha": "2026-09-09",
+     "fuente": "aragon",
+     "cita": "Las actividades lectivas de Bachillerato se iniciarán el miércoles 9 de septiembre de"
+    },
+    {
+     "etapas": "FP (Grados D y E) presencial",
+     "fecha": "2026-09-10",
+     "fuente": "aragon",
+     "cita": "a) Modalidad presencial se iniciarán el jueves 10 de septiembre de 2026."
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2027-06-18",
+     "fuente": "aragon",
+     "cita": "iniciarán el martes 8 de septiembre de 2026 y finalizarán el viernes 18 de junio de"
+    },
+    {
+     "etapas": "Bachillerato",
+     "fecha": "2027-06-18",
+     "fuente": "aragon",
+     "cita": "2026 y finalizarán el viernes 18 de junio de 2027."
+    },
+    {
+     "etapas": "FP (Grados D y E)",
+     "fecha": "2027-06-18",
+     "fuente": "aragon",
+     "cita": "finalizarán el viernes 18 de junio de 2027. No obstante, la finalización de las"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-06",
+     "fuente": "aragon",
+     "cita": "la mañana del martes 22 de diciembre de 2026 al miércoles 6 de enero de"
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-25",
+     "hasta": "2027-04-02",
+     "fuente": "aragon",
+     "cita": "b) Semana Santa: comprenderán desde el jueves 25 de marzo hasta el"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2027-02-18",
+     "motivo": "Vacación de ámbito provincial",
+     "fuente": "aragon",
+     "cita": "a) Huesca: jueves 18 y viernes 19 de febrero de 2027 y lunes 3 de mayo de"
+    },
+    {
+     "fecha": "2027-02-19",
+     "motivo": "Vacación de ámbito provincial",
+     "fuente": "aragon",
+     "cita": "a) Huesca: jueves 18 y viernes 19 de febrero de 2027 y lunes 3 de mayo de"
+    },
+    {
+     "fecha": "2027-05-03",
+     "motivo": "Vacación de ámbito provincial",
+     "fuente": "aragon_educa",
+     "cita": "Huesca: jueves 18 y viernes 19 de febrero de 2027 y lunes 3 de mayo de 2027."
+    }
+   ],
+   "locales": "Dos festividades locales del calendario laboral de cada localidad (el ayuntamiento las comunica al Servicio Provincial antes del 1/09/2026; si caen en no lectivo, señala días sustitutos oído el Consejo Escolar Municipal). Además, el ayuntamiento puede sustituir los días no lectivos provinciales por otras festividades locales o tradicionales. Los centros pueden pedir modificaciones al Servicio Provincial.",
+   "dudas": [
+    "La resolución es bienal (cursos 2025-2026 y 2026-2027); solo se recogen los datos del curso 2026-2027 (apartados undécimo a decimonoveno).",
+    "Navidad: empieza 'desde la finalización de las actividades lectivas de la mañana del martes 22 de diciembre de 2026' (el 22 hay clase por la mañana); se toma como primer día completo sin clase el 23/12/2026. Fin el 06/01/2027 inclusive.",
+    "Semana Santa: del jueves 25 de marzo al viernes 2 de abril de 2027, ambos incluidos (la cita de la línea no incluye el 'viernes 2 de abril de 2027', que está en la línea siguiente).",
+    "No se incluyen en no_lectivos los días que la resolución califica de 'festividades nacionales y autonómicas': 12/10/2026, 2/11/2026 (sustituye a Todos los Santos), 7/12/2026 (sustituye al Día de la Constitución), 8/12/2026 y 23/04/2027 (Día de Aragón).",
+    "El 'Día de la Educación en Aragón' (24 de marzo de 2027) tiene carácter lectivo, por lo que no se incluye.",
+    "Los días de vacaciones de ámbito provincial no tienen nombre (no se denominan Carnaval); se recogen como no lectivos provinciales.",
+    "FP semipresencial y virtual empieza el 1/10/2026 (no recogido en inicio)."
+   ],
+   "urls": {
+    "aragon": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1392479120808",
+    "aragon_educa": "https://educa.aragon.es/documents/20126/2820569/Calendario+Escolar+2026-2027+-+Educaragon.pdf/50447fc8-06ec-56ce-0fb0-3906719f4b18?t=1786103855636"
+   }
+  },
+  {
+   "id": "aragon_teruel",
+   "ccaa": "aragon",
+   "provincia": "Teruel",
+   "norma": "Resolución de 29 de abril de 2025, del Director General de Planificación, Centros y Formación Profesional, por la que se aprueban los calendarios escolares de los cursos 2025-2026 y 2026-2027 correspondientes a las enseñanzas de niveles no universitarios de la Comunidad Autónoma de Aragón (BOA n.º 88, de 12 de mayo de 2025)",
+   "fuentes": [
+    "aragon",
+    "aragon_educa"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo; también 3.er curso del 1.er ciclo en CEIP, CPI y CRA), Primaria, Educación Especial y ESO",
+     "fecha": "2026-09-08",
+     "fuente": "aragon",
+     "cita": "iniciarán el martes 8 de septiembre de 2026 y finalizarán el viernes 18 de junio de"
+    },
+    {
+     "etapas": "Bachillerato",
+     "fecha": "2026-09-09",
+     "fuente": "aragon",
+     "cita": "Las actividades lectivas de Bachillerato se iniciarán el miércoles 9 de septiembre de"
+    },
+    {
+     "etapas": "FP (Grados D y E) presencial",
+     "fecha": "2026-09-10",
+     "fuente": "aragon",
+     "cita": "a) Modalidad presencial se iniciarán el jueves 10 de septiembre de 2026."
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2027-06-18",
+     "fuente": "aragon",
+     "cita": "iniciarán el martes 8 de septiembre de 2026 y finalizarán el viernes 18 de junio de"
+    },
+    {
+     "etapas": "Bachillerato",
+     "fecha": "2027-06-18",
+     "fuente": "aragon",
+     "cita": "2026 y finalizarán el viernes 18 de junio de 2027."
+    },
+    {
+     "etapas": "FP (Grados D y E)",
+     "fecha": "2027-06-18",
+     "fuente": "aragon",
+     "cita": "finalizarán el viernes 18 de junio de 2027. No obstante, la finalización de las"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-06",
+     "fuente": "aragon",
+     "cita": "la mañana del martes 22 de diciembre de 2026 al miércoles 6 de enero de"
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-25",
+     "hasta": "2027-04-02",
+     "fuente": "aragon",
+     "cita": "b) Semana Santa: comprenderán desde el jueves 25 de marzo hasta el"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2027-02-18",
+     "motivo": "Vacación de ámbito provincial",
+     "fuente": "aragon",
+     "cita": "b) Teruel: jueves 18 y viernes 19 de febrero de 2027 y lunes 26 de abril de"
+    },
+    {
+     "fecha": "2027-02-19",
+     "motivo": "Vacación de ámbito provincial",
+     "fuente": "aragon",
+     "cita": "b) Teruel: jueves 18 y viernes 19 de febrero de 2027 y lunes 26 de abril de"
+    },
+    {
+     "fecha": "2027-04-26",
+     "motivo": "Vacación de ámbito provincial",
+     "fuente": "aragon_educa",
+     "cita": "Teruel: jueves 18 y viernes 19 de febrero de 2027 y lunes 26 de abril de 2027."
+    }
+   ],
+   "locales": "Dos festividades locales del calendario laboral de cada localidad (el ayuntamiento las comunica al Servicio Provincial antes del 1/09/2026; si caen en no lectivo, señala días sustitutos oído el Consejo Escolar Municipal). Además, el ayuntamiento puede sustituir los días no lectivos provinciales por otras festividades locales o tradicionales. Los centros pueden pedir modificaciones al Servicio Provincial.",
+   "dudas": [
+    "La resolución es bienal (cursos 2025-2026 y 2026-2027); solo se recogen los datos del curso 2026-2027 (apartados undécimo a decimonoveno).",
+    "Navidad: empieza 'desde la finalización de las actividades lectivas de la mañana del martes 22 de diciembre de 2026' (el 22 hay clase por la mañana); se toma como primer día completo sin clase el 23/12/2026. Fin el 06/01/2027 inclusive.",
+    "Semana Santa: del jueves 25 de marzo al viernes 2 de abril de 2027, ambos incluidos (la cita de la línea no incluye el 'viernes 2 de abril de 2027', que está en la línea siguiente).",
+    "No se incluyen en no_lectivos los días que la resolución califica de 'festividades nacionales y autonómicas': 12/10/2026, 2/11/2026 (sustituye a Todos los Santos), 7/12/2026 (sustituye al Día de la Constitución), 8/12/2026 y 23/04/2027 (Día de Aragón).",
+    "El 'Día de la Educación en Aragón' (24 de marzo de 2027) tiene carácter lectivo, por lo que no se incluye.",
+    "Los días de vacaciones de ámbito provincial no tienen nombre (no se denominan Carnaval); se recogen como no lectivos provinciales.",
+    "FP semipresencial y virtual empieza el 1/10/2026 (no recogido en inicio)."
+   ],
+   "urls": {
+    "aragon": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1392479120808",
+    "aragon_educa": "https://educa.aragon.es/documents/20126/2820569/Calendario+Escolar+2026-2027+-+Educaragon.pdf/50447fc8-06ec-56ce-0fb0-3906719f4b18?t=1786103855636"
+   }
+  },
+  {
+   "id": "aragon_zaragoza",
+   "ccaa": "aragon",
+   "provincia": "Zaragoza",
+   "norma": "Resolución de 29 de abril de 2025, del Director General de Planificación, Centros y Formación Profesional, por la que se aprueban los calendarios escolares de los cursos 2025-2026 y 2026-2027 correspondientes a las enseñanzas de niveles no universitarios de la Comunidad Autónoma de Aragón (BOA n.º 88, de 12 de mayo de 2025)",
+   "fuentes": [
+    "aragon",
+    "aragon_educa"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo; también 3.er curso del 1.er ciclo en CEIP, CPI y CRA), Primaria, Educación Especial y ESO",
+     "fecha": "2026-09-08",
+     "fuente": "aragon",
+     "cita": "iniciarán el martes 8 de septiembre de 2026 y finalizarán el viernes 18 de junio de"
+    },
+    {
+     "etapas": "Bachillerato",
+     "fecha": "2026-09-09",
+     "fuente": "aragon",
+     "cita": "Las actividades lectivas de Bachillerato se iniciarán el miércoles 9 de septiembre de"
+    },
+    {
+     "etapas": "FP (Grados D y E) presencial",
+     "fecha": "2026-09-10",
+     "fuente": "aragon",
+     "cita": "a) Modalidad presencial se iniciarán el jueves 10 de septiembre de 2026."
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2027-06-18",
+     "fuente": "aragon",
+     "cita": "iniciarán el martes 8 de septiembre de 2026 y finalizarán el viernes 18 de junio de"
+    },
+    {
+     "etapas": "Bachillerato",
+     "fecha": "2027-06-18",
+     "fuente": "aragon",
+     "cita": "2026 y finalizarán el viernes 18 de junio de 2027."
+    },
+    {
+     "etapas": "FP (Grados D y E)",
+     "fecha": "2027-06-18",
+     "fuente": "aragon",
+     "cita": "finalizarán el viernes 18 de junio de 2027. No obstante, la finalización de las"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-06",
+     "fuente": "aragon",
+     "cita": "la mañana del martes 22 de diciembre de 2026 al miércoles 6 de enero de"
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-25",
+     "hasta": "2027-04-02",
+     "fuente": "aragon",
+     "cita": "b) Semana Santa: comprenderán desde el jueves 25 de marzo hasta el"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2026-10-13",
+     "motivo": "Vacación de ámbito provincial",
+     "fuente": "aragon",
+     "cita": "c) Zaragoza: martes 13 y miércoles 14 de octubre de 2026 y lunes 3 de mayo"
+    },
+    {
+     "fecha": "2026-10-14",
+     "motivo": "Vacación de ámbito provincial",
+     "fuente": "aragon",
+     "cita": "c) Zaragoza: martes 13 y miércoles 14 de octubre de 2026 y lunes 3 de mayo"
+    },
+    {
+     "fecha": "2027-05-03",
+     "motivo": "Vacación de ámbito provincial",
+     "fuente": "aragon_educa",
+     "cita": "Zaragoza: martes 13 y miércoles 14 de octubre de 2026 y lunes 3 de mayo de 2027."
+    }
+   ],
+   "locales": "Dos festividades locales del calendario laboral de cada localidad (el ayuntamiento las comunica al Servicio Provincial antes del 1/09/2026; si caen en no lectivo, señala días sustitutos oído el Consejo Escolar Municipal). Además, el ayuntamiento puede sustituir los días no lectivos provinciales por otras festividades locales o tradicionales. Los centros pueden pedir modificaciones al Servicio Provincial.",
+   "dudas": [
+    "La resolución es bienal (cursos 2025-2026 y 2026-2027); solo se recogen los datos del curso 2026-2027 (apartados undécimo a decimonoveno).",
+    "Navidad: empieza 'desde la finalización de las actividades lectivas de la mañana del martes 22 de diciembre de 2026' (el 22 hay clase por la mañana); se toma como primer día completo sin clase el 23/12/2026. Fin el 06/01/2027 inclusive.",
+    "Semana Santa: del jueves 25 de marzo al viernes 2 de abril de 2027, ambos incluidos (la cita de la línea no incluye el 'viernes 2 de abril de 2027', que está en la línea siguiente).",
+    "No se incluyen en no_lectivos los días que la resolución califica de 'festividades nacionales y autonómicas': 12/10/2026, 2/11/2026 (sustituye a Todos los Santos), 7/12/2026 (sustituye al Día de la Constitución), 8/12/2026 y 23/04/2027 (Día de Aragón).",
+    "El 'Día de la Educación en Aragón' (24 de marzo de 2027) tiene carácter lectivo, por lo que no se incluye.",
+    "Los días de vacaciones de ámbito provincial no tienen nombre (no se denominan Carnaval); se recogen como no lectivos provinciales.",
+    "FP semipresencial y virtual empieza el 1/10/2026 (no recogido en inicio)."
+   ],
+   "urls": {
+    "aragon": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1392479120808",
+    "aragon_educa": "https://educa.aragon.es/documents/20126/2820569/Calendario+Escolar+2026-2027+-+Educaragon.pdf/50447fc8-06ec-56ce-0fb0-3906719f4b18?t=1786103855636"
+   }
+  },
+  {
+   "id": "asturias",
+   "ccaa": "asturias",
+   "provincia": null,
+   "norma": "Resolución de 13 de mayo de 2026, de la Consejería de Educación, por la que se aprueba el calendario escolar para el curso 2026-2027 y las instrucciones necesarias para su aplicación (BOPA núm. 103 de 1-VI-2026)",
+   "fuentes": [
+    "asturias"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (3 a 6 años), Primaria, Educación Especial, ESO y Bachillerato",
+     "fecha": "2026-09-09",
+     "fuente": "asturias",
+     "cita": "9 de septiembre    23 de junio"
+    },
+    {
+     "etapas": "Formación Profesional",
+     "fecha": "2026-09-14",
+     "fuente": "asturias",
+     "cita": "Formación Profesional                                                       14 de septiembre   18 de junio"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (3 a 6 años), Primaria, Educación Especial, ESO y Bachillerato",
+     "fecha": "2027-06-23",
+     "fuente": "asturias",
+     "cita": "9 de septiembre    23 de junio"
+    },
+    {
+     "etapas": "Formación Profesional",
+     "fecha": "2027-06-18",
+     "fuente": "asturias",
+     "cita": "Formación Profesional                                                       14 de septiembre   18 de junio"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-10",
+     "fuente": "asturias",
+     "cita": "Desde el 23 de diciembre de 2026 al 10 de enero de 2027 (ambos inclusive)."
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-28",
+     "fuente": "asturias",
+     "cita": "Desde el 22 a 28 de marzo de 2027 (ambos inclusive)."
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2026-10-30",
+     "motivo": "Día no lectivo",
+     "fuente": "asturias",
+     "cita": "30 de octubre, 3 y 4 de noviembre de 2026."
+    },
+    {
+     "fecha": "2026-11-03",
+     "motivo": "Día no lectivo",
+     "fuente": "asturias",
+     "cita": "30 de octubre, 3 y 4 de noviembre de 2026."
+    },
+    {
+     "fecha": "2026-11-04",
+     "motivo": "Día no lectivo",
+     "fuente": "asturias",
+     "cita": "30 de octubre, 3 y 4 de noviembre de 2026."
+    },
+    {
+     "fecha": "2027-02-08",
+     "motivo": "Día no lectivo",
+     "fuente": "asturias",
+     "cita": "8 y 9 de febrero de 2027."
+    },
+    {
+     "fecha": "2027-02-09",
+     "motivo": "Día no lectivo",
+     "fuente": "asturias",
+     "cita": "8 y 9 de febrero de 2027."
+    },
+    {
+     "fecha": "2027-04-30",
+     "motivo": "Día no lectivo",
+     "fuente": "asturias",
+     "cita": "30 de abril y 3 de mayo de 2027."
+    },
+    {
+     "fecha": "2027-05-03",
+     "motivo": "Día no lectivo",
+     "fuente": "asturias",
+     "cita": "30 de abril y 3 de mayo de 2027."
+    }
+   ],
+   "locales": "Los dos festivos locales del calendario laboral de cada municipio son no lectivos; si coinciden con días no lectivos, los Consejos Escolares de los centros de la localidad (o el Consejo Escolar Municipal) fijan de común acuerdo los días sustitutos, que no pueden ser contiguos a vacaciones ni a los no lectivos del 4.1 y deben comunicarse antes del 15/07/2026.",
+   "dudas": [
+    "La tabla de actividades lectivas da las fechas sin año ('9 de septiembre', '23 de junio'); se asume 2026 para el inicio y 2027 para el fin.",
+    "La cita de inicio/fin de Infantil-Bachillerato corresponde a la fila de la tabla cuya etiqueta ('Educación Infantil de 3 a 6 años, Educación Primaria, Educación Especial, ... Educación Secundaria Obligatoria y Bachillerato') está partida en las líneas anterior y posterior.",
+    "El texto no menciona el 2 de noviembre ni el 7 de diciembre de 2026; solo dice que son no lectivos además las fiestas nacionales y autonómicas. No se recoge ningún día de esas fechas.",
+    "Los días no lectivos del 4.1 no tienen motivo/nombre en el texto (no se denominan Carnaval ni de otra forma).",
+    "Navidad hasta el domingo 10/01/2027 inclusive; Semana Santa hasta el domingo 28/03/2027 inclusive (el lunes 29/03 es lectivo según el texto)."
+   ],
+   "urls": {
+    "asturias": "https://www.asturias.es/bopa/2026/06/01/2026-04361.pdf"
+   }
+  },
+  {
+   "id": "baleares",
+   "ccaa": "baleares",
+   "provincia": null,
+   "norma": "Resolució del conseller d'Educació i Universitats per la qual s'estableix el calendari escolar del curs 2026-2027 per als centres docents no universitaris de la comunitat autònoma de les Illes Balears (27 de març de 2026, BOIB núm. 41, de 31 de març de 2026), modificada por la Resolución del consejero de Educación y Universidades de 25 de junio de 2026 (BOIB núm. 82, de 30 de junio de 2026)",
+   "fuentes": [
+    "baleares",
+    "baleares_mod"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil, Primaria, Educación Especial, ESO y Bachillerato",
+     "fecha": "2026-09-10",
+     "fuente": "baleares",
+     "cita": "centres públics, privats i privats concertats inicia les activitats lectives el dia 10 de setembre de 2026 i les finalitza el dia 18 de juny de"
+    },
+    {
+     "etapas": "FP (Grado Básico, Grado Medio, Grado Superior y cursos de especialización)",
+     "fecha": "2026-09-21",
+     "fuente": "baleares",
+     "cita": "inicia les activitats lectives el dia 21 de setembre de 2026 i les finalitza el dia 18 de juny de 2027."
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil, Primaria, Educación Especial, ESO y Bachillerato",
+     "fecha": "2027-06-18",
+     "fuente": "baleares",
+     "cita": "centres públics, privats i privats concertats inicia les activitats lectives el dia 10 de setembre de 2026 i les finalitza el dia 18 de juny de"
+    },
+    {
+     "etapas": "2.º de Bachillerato (alumnado que titula)",
+     "fecha": "2027-05-20",
+     "fuente": "baleares",
+     "cita": "Excepcionalment, l'alumnat del segon curs de batxillerat que tituli finalitza les activitats lectives el 20 de maig de 2027"
+    },
+    {
+     "etapas": "FP (Grado Básico, Grado Medio, Grado Superior y cursos de especialización)",
+     "fecha": "2027-06-18",
+     "fuente": "baleares",
+     "cita": "inicia les activitats lectives el dia 21 de setembre de 2026 i les finalitza el dia 18 de juny de 2027."
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-06",
+     "fuente": "baleares",
+     "cita": "- Nadal: del 23 de desembre de 2026 al 6 de gener de 2027, ambdós inclosos."
+    },
+    {
+     "nombre": "Semana Santa (Pasqua)",
+     "desde": "2027-03-25",
+     "hasta": "2027-04-04",
+     "fuente": "baleares",
+     "cita": "- Pasqua: del 25 de març al 4 d'abril de 2027, ambdós inclosos."
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2027-02-26",
+     "motivo": "Festa escolar unificada",
+     "fuente": "baleares",
+     "cita": "- Dia 26 de febrer de 2027 (Festa escolar unificada)"
+    }
+   ],
+   "locales": "Las dos fiestas locales de cada municipio son festivas; si coinciden con días no lectivos, el centro puede fijar tantos días no lectivos sustitutos como coincidencias (máximo 2). Además, cada centro fija dos días festivos de libre disposición en su PGA (los consejos escolares municipales promueven que coincidan en el municipio).",
+   "dudas": [
+    "El texto original está en catalán; las citas son literales en catalán.",
+    "La modificación de 25 de junio de 2026 (baleares_mod) solo cambia redacciones sobre horarios, autorización del consejo escolar y modificaciones del calendario; no altera ninguna fecha.",
+    "Festivos listados en el apartado séptimo (12/10/2026, 8/12/2026, 6/01/2027, 1/03/2027 Dia de les Illes Balears) no se incluyen por ser festivos oficiales.",
+    "El total de 176 días lectivos y el inicio el 10/09/2026 se aplican también al primer ciclo de Infantil según el texto.",
+    "2.º de Bachillerato (alumnado que titula) termina el 20/05/2027, sin perjuicio de lo que se disponga en relación con la PAU."
+   ],
+   "urls": {
+    "baleares": "https://www.caib.es/eboibfront/pdf/ca/2026/41/1216208",
+    "baleares_mod": "https://intranet.caib.es/eboibfront/pdf/es/2026/82/1222864"
+   }
+  },
+  {
+   "id": "castilla-y-leon",
+   "ccaa": "castilla-y-leon",
+   "provincia": null,
+   "norma": "ORDEN EDU/478/2026, de 25 de mayo, por la que se aprueba el calendario escolar para el curso académico 2026-2027 en los centros docentes que impartan enseñanzas no universitarias en la Comunidad de Castilla y León",
+   "fuentes": [
+    "cyl",
+    "cyl_resumen"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Educación Especial, Primaria (y ESO escolarizada en centros de Primaria; 2.º curso de FP de grado superior presencial)",
+     "fecha": "2026-09-09",
+     "fuente": "cyl",
+     "cita": "09/09/2026                Inicio de curso en:"
+    },
+    {
+     "etapas": "ESO, Bachillerato (ordinario y nocturno) y FP presencial",
+     "fecha": "2026-09-15",
+     "fuente": "cyl",
+     "cita": "15/09/2026                Inicio de curso en:"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "2.º de Bachillerato (ordinario y nocturno)",
+     "fecha": "2027-05-21",
+     "fuente": "cyl",
+     "cita": "21/05/2027                Fin de curso en:"
+    },
+    {
+     "etapas": "1.º de Bachillerato y ciclos formativos de FP",
+     "fecha": "2027-06-17",
+     "fuente": "cyl",
+     "cita": "17/06/2027                Fin de curso en:"
+    },
+    {
+     "etapas": "Infantil (2.º ciclo), Educación Especial, Primaria y ESO",
+     "fecha": "2027-06-24",
+     "fuente": "cyl",
+     "cita": "24/06/2027   Fin de curso en:"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-10",
+     "fuente": "cyl",
+     "cita": "23/12/2026 - 10/01/2027   Vacaciones de Navidad"
+    },
+    {
+     "nombre": "Carnaval",
+     "desde": "2027-02-08",
+     "hasta": "2027-02-09",
+     "fuente": "cyl",
+     "cita": "08/02/2027 - 09/02/2027   Fiestas de Carnaval"
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-20",
+     "hasta": "2027-03-30",
+     "fuente": "cyl",
+     "cita": "20/03/2027 - 30/03/2027   Vacaciones de Semana Santa"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2026-10-30",
+     "motivo": "Día del Docente",
+     "fuente": "cyl",
+     "cita": "30/10/2026                Día del Docente"
+    }
+   ],
+   "locales": "El texto (resumen gráfico del calendario y ficha de la Orden) no dice nada sobre días no lectivos locales ni de libre disposición de los centros.",
+   "dudas": [
+    "Solo se dispone del resumen de eventos del calendario (cyl.txt) y de la ficha del Portal de Educación con el título de la Orden (cyl_resumen.txt); el articulado de la Orden EDU/478/2026 no está en el texto.",
+    "Navidad termina el 10/01/2027 (domingo) y Semana Santa empieza el 20/03/2027 (sábado) según el resumen; se copian tal cual.",
+    "2/11/2026 (Todos los Santos, traslado) y 7/12/2026 (Día de la Constitución, traslado) aparecen como fiestas, no se incluyen en no_lectivos.",
+    "2.º de FP de grado superior: nota (2) permite finalizar en mayo a quien vaya a hacer las pruebas de acceso a la universidad.",
+    "No consta cómo se fijan días no lectivos locales."
+   ],
+   "urls": {
+    "cyl": "https://www.educa.jcyl.es/es/informacion/calendario-escolar-2026-2027.ficheros/1894435-Calendario_Escolar_2026_2027.pdf",
+    "cyl_resumen": "https://www.educa.jcyl.es/es/resumenbocyl/orden-edu-478-2026-25-mayo-aprueba-calendario-escolar-curso"
+   }
+  },
+  {
+   "id": "extremadura",
+   "ccaa": "extremadura",
+   "provincia": null,
+   "norma": "RESOLUCIÓN de 15 de junio de 2026, de la Secretaría General de Educación, por la que se aprueba el calendario escolar para el curso 2026/2027",
+   "fuentes": [
+    "extremadura"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2026-09-10",
+     "fuente": "extremadura",
+     "cita": "10 de septiembre   18 de junio          23 de junio"
+    },
+    {
+     "etapas": "FP Grado Básico",
+     "fecha": "2026-09-10",
+     "fuente": "extremadura",
+     "cita": "Ciclos Formativos de GB               10 de septiembre   18 de junio"
+    },
+    {
+     "etapas": "FP Grado Medio y Grado Superior",
+     "fecha": "2026-09-10",
+     "fuente": "extremadura",
+     "cita": "Ciclos Formativos de GM y GS          10 de septiembre   4 de junio"
+    },
+    {
+     "etapas": "1.º de Bachillerato",
+     "fecha": "2026-09-11",
+     "fuente": "extremadura",
+     "cita": "Primer curso de Bachillerato.         11 de septiembre   17 de junio"
+    },
+    {
+     "etapas": "2.º de Bachillerato",
+     "fecha": "2026-09-11",
+     "fuente": "extremadura",
+     "cita": "Segundo curso de Bachillerato.        11 de septiembre   7 de mayo"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+     "fecha": "2027-06-18",
+     "fuente": "extremadura",
+     "cita": "10 de septiembre   18 de junio          23 de junio"
+    },
+    {
+     "etapas": "FP Grado Básico",
+     "fecha": "2027-06-18",
+     "fuente": "extremadura",
+     "cita": "Ciclos Formativos de GB               10 de septiembre   18 de junio"
+    },
+    {
+     "etapas": "FP Grado Medio y Grado Superior",
+     "fecha": "2027-06-04",
+     "fuente": "extremadura",
+     "cita": "Ciclos Formativos de GM y GS          10 de septiembre   4 de junio"
+    },
+    {
+     "etapas": "1.º de Bachillerato",
+     "fecha": "2027-06-17",
+     "fuente": "extremadura",
+     "cita": "Primer curso de Bachillerato.         11 de septiembre   17 de junio"
+    },
+    {
+     "etapas": "2.º de Bachillerato",
+     "fecha": "2027-05-07",
+     "fuente": "extremadura",
+     "cita": "Segundo curso de Bachillerato.        11 de septiembre   7 de mayo"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-07",
+     "fuente": "extremadura",
+     "cita": "— \u0007Navidad: Del 23 de diciembre de 2026 al 7 de enero de 2027 ambos inclusive."
+    },
+    {
+     "nombre": "Carnaval",
+     "desde": "2027-02-08",
+     "hasta": "2027-02-09",
+     "fuente": "extremadura",
+     "cita": "— \u00078 y 9 de febrero de 2027: Carnavales."
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-29",
+     "fuente": "extremadura",
+     "cita": "— \u0007Semana Santa: Del 22 de marzo de 2027 al 29 de marzo de 2027, ambos inclusive."
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2026-11-02",
+     "motivo": "Lunes siguiente al día de Todos los Santos",
+     "fuente": "extremadura",
+     "cita": "— \u00072 de noviembre de 2026: lunes siguiente al día de Todos los Santos."
+    },
+    {
+     "fecha": "2026-12-07",
+     "motivo": "Lunes siguiente al día de la Constitución Española",
+     "fuente": "extremadura",
+     "cita": "— \u00077 de diciembre de 2026: lunes siguiente al día de la Constitución Española."
+    },
+    {
+     "fecha": "2027-01-29",
+     "motivo": "Día del Docente",
+     "fuente": "extremadura",
+     "cita": "— \u000729 de enero de 2027: Día del Docente (excepto para los Conservatorios Oficiales de"
+    }
+   ],
+   "locales": "Son no lectivas las 2 fiestas locales fijadas por cada Ayuntamiento; si coinciden con días no lectivos, los Consejos Escolares de los centros de la localidad (o el Consejo Escolar Municipal) pueden fijar de común acuerdo el día o días lectivos que las sustituyan. Además cada centro elige un Día del Centro, que es lectivo.",
+   "dudas": [
+    "El texto da las fechas de inicio y fin de la tabla sin año ('10 de septiembre', '18 de junio'); se entiende 2026 para septiembre y 2027 para mayo/junio.",
+    "El 2 de noviembre y el 7 de diciembre de 2026 figuran en la lista de 'festividades y días no lectivos' como 'lunes siguiente' a festivos en domingo; el texto no aclara si son festivo laboral oficial en Extremadura, se incluyen como no lectivos. No se incluyen 8-9, 12-10, 1-11, 6-12, 8-12, 6-1 ni 1-5, que son festivos.",
+    "Carnavales (8 y 9 de febrero de 2027) aparecen en la lista de festividades y días no lectivos, no en la de periodos no lectivos; se ponen en vacaciones como 'Carnaval'.",
+    "Navidad y Semana Santa: 'ambos inclusive' según el texto. El 23-11-2026 (Santa Cecilia) es solo para conservatorios y se omite."
+   ],
+   "urls": {
+    "extremadura": "https://doe.juntaex.es/pdfs/doe/2026/1160o/26061567.pdf"
+   }
+  },
+  {
+   "id": "galicia",
+   "ccaa": "galicia",
+   "provincia": null,
+   "norma": "ORDEN de 4 de junio de 2026 por la que se aprueba el calendario escolar para el curso 2026/27 en los centros docentes sostenidos con fondos públicos en la Comunidad Autónoma de Galicia",
+   "fuentes": [
+    "galicia"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil, Primaria, ESO, Bachillerato y FP (todos los cursos)",
+     "fecha": "2026-09-09",
+     "fuente": "galicia",
+     "cita": "de especialización y en las enseñanzas de régimen especial se realizarán desde el día 9"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil, Primaria, ESO, Bachillerato y 1.º de ciclos de FP (básico, medio y superior)",
+     "fecha": "2027-06-21",
+     "fuente": "galicia",
+     "cita": "de septiembre de 2026 hasta el 21 de junio de 2027, ambos incluidos."
+    },
+    {
+     "etapas": "2.º de ciclos de FP (básico, medio y superior)",
+     "fecha": "2027-06-15",
+     "fuente": "galicia",
+     "cita": "septiembre de 2026 hasta el 15 de junio de 2027, ambos incluidos."
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-22",
+     "hasta": "2027-01-07",
+     "fuente": "galicia",
+     "cita": "– Desde el día 22 de diciembre de 2026 hasta el día 7 de enero de 2027, ambos inclu-"
+    },
+    {
+     "nombre": "Entroido",
+     "desde": "2027-02-08",
+     "hasta": "2027-02-10",
+     "fuente": "galicia",
+     "cita": "– Los días 8, 9 y 10 de febrero de 2027."
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-29",
+     "fuente": "galicia",
+     "cita": "– Desde el día 22 hasta el día 29 de marzo de 2027, ambos inclusive."
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2026-12-07",
+     "motivo": "Día de la Enseñanza",
+     "fuente": "galicia",
+     "cita": "el 7 de diciembre de 2026."
+    }
+   ],
+   "locales": "Son no lectivas las 2 fiestas laborales locales; si una o las dos no coinciden con días lectivos, los consejos escolares (o consejos sociales, o los responsables de centros de menos de tres unidades) pueden solicitar 1 o 2 días no lectivos a la dirección territorial antes del 16-10-2026.",
+   "dudas": [
+    "2.º de Bachillerato: la impartición de clases finaliza 'de acuerdo con las fechas previstas de la prueba de acceso a la universidad'; no hay fecha fija (se incluye en el fin general del 21-6-2027 solo de forma genérica).",
+    "El texto no nombra 'Entroido'; solo dice 'Los días 8, 9 y 10 de febrero de 2027' como vacaciones escolares.",
+    "Cita del 7 de diciembre: la frase está partida en dos líneas ('El Día de la Enseñanza, que tendrá la consideración de día no lectivo, se celebrará / el 7 de diciembre de 2026.'); la cita recoge solo la línea con la fecha."
+   ],
+   "urls": {
+    "galicia": "https://www.xunta.gal/dog/Publicados/2026/20260615/AnuncioG0761-050626-0001_es.pdf"
+   }
+  },
+  {
+   "id": "madrid",
+   "ccaa": "madrid",
+   "provincia": null,
+   "norma": "ORDEN 2034/2026, de 25 de mayo, de la Consejera de Educación, Ciencia y Universidades, por la que se establece el calendario escolar para el curso 2026/2027 en los centros educativos no universitarios sostenidos con fondos públicos de la Comunidad de Madrid",
+   "fuentes": [
+    "madrid"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2026-09-07",
+     "fuente": "madrid",
+     "cita": "Primaria o Educación Especial, las actividades lectivas comenzarán el día 7 de septiembre"
+    },
+    {
+     "etapas": "ESO, Bachillerato y FP",
+     "fecha": "2026-09-08",
+     "fuente": "madrid",
+     "cita": "Formación Profesional, las actividades lectivas comenzarán el día 8 de septiembre de 2026"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2027-06-18",
+     "fuente": "madrid",
+     "cita": "de 2026 y finalizarán el 18 de junio de 2027."
+    },
+    {
+     "etapas": "ESO, Bachillerato (salvo 2.º) y FP",
+     "fecha": "2027-06-18",
+     "fuente": "madrid",
+     "cita": "y terminarán el día 18 de junio de 2027, excepto para los alumnos de segundo curso de Ba-"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-06",
+     "fuente": "madrid",
+     "cita": "5.1.1. Navidad. Comprenderán desde el día 23 de diciembre de 2026 hasta el día 6"
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-20",
+     "hasta": "2027-03-28",
+     "fuente": "madrid",
+     "cita": "5.1.2. Semana Santa. Comprenderán desde el día 20 hasta el día 28 de marzo"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2027-01-07",
+     "motivo": "Otro día no lectivo",
+     "fuente": "madrid",
+     "cita": "— 7 y 8 de enero de 2027."
+    },
+    {
+     "fecha": "2027-01-08",
+     "motivo": "Otro día no lectivo",
+     "fuente": "madrid",
+     "cita": "— 7 y 8 de enero de 2027."
+    },
+    {
+     "fecha": "2027-02-12",
+     "motivo": "Otro día no lectivo",
+     "fuente": "madrid",
+     "cita": "— 12 y 15 de febrero de 2027."
+    },
+    {
+     "fecha": "2027-02-15",
+     "motivo": "Otro día no lectivo",
+     "fuente": "madrid",
+     "cita": "— 12 y 15 de febrero de 2027."
+    },
+    {
+     "fecha": "2027-03-19",
+     "motivo": "Otro día no lectivo",
+     "fuente": "madrid",
+     "cita": "— 19 y 29 de marzo de 2027."
+    },
+    {
+     "fecha": "2027-03-29",
+     "motivo": "Otro día no lectivo",
+     "fuente": "madrid",
+     "cita": "— 19 y 29 de marzo de 2027."
+    }
+   ],
+   "locales": "Son no lectivas las festividades locales que fije cada municipio (publicadas en el BOCM) para 2026 y 2027. Los centros concertados pueden trasladar, con acuerdo del Consejo Escolar, uno de los 'otros días no lectivos' para celebrar el patrono del centro. No hay días de libre disposición de los centros.",
+   "dudas": [
+    "Las vacaciones de Navidad (23-12 a 6-1) quedan unidas a los no lectivos 7 y 8 de enero de 2027, y Semana Santa (20 a 28-3) al no lectivo 29-3-2027; se mantienen separados como dice el texto.",
+    "12 de octubre, 2 de noviembre y 7 y 8 de diciembre de 2026 figuran como 'Festividades'; no se incluyen en no_lectivos. El 19 de marzo de 2027 aparece como 'otro día no lectivo' (no como festividad) y se incluye.",
+    "2.º de Bachillerato finaliza según las necesidades de la prueba de acceso a la Universidad; no hay fecha fija."
+   ],
+   "urls": {
+    "madrid": "https://www.bocm.es/boletin/CM_Orden_BOCM/2026/06/04/BOCM-20260604-13.PDF"
+   }
+  },
+  {
+   "id": "murcia",
+   "ccaa": "murcia",
+   "provincia": null,
+   "norma": "Resolución de 8 de junio de 2026 de la Dirección General de Centros Educativos e Infraestructuras por la que se establece el período lectivo del curso escolar 2026-2027",
+   "fuentes": [
+    "murcia"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2026-09-08",
+     "fuente": "murcia",
+     "cita": "Ed. Infantil                                 8 de septiembre de 2026                22 de junio de 2027"
+    },
+    {
+     "etapas": "ESO y FP Grado Básico",
+     "fecha": "2026-09-10",
+     "fuente": "murcia",
+     "cita": "ESO                                          10 de septiembre de 2026               21 de junio de 2027"
+    },
+    {
+     "etapas": "Bachillerato",
+     "fecha": "2026-09-10",
+     "fuente": "murcia",
+     "cita": "Bachillerato                                 10 de septiembre de 2026               21 de junio de 2027"
+    },
+    {
+     "etapas": "FP Grado Medio y Grado Superior",
+     "fecha": "2026-09-14",
+     "fuente": "murcia",
+     "cita": "Formación Profesional (FPGM, FPGS)           14 de septiembre de 2026               21 de junio de 2027"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2027-06-22",
+     "fuente": "murcia",
+     "cita": "Ed. Infantil                                 8 de septiembre de 2026                22 de junio de 2027"
+    },
+    {
+     "etapas": "ESO y FP Grado Básico",
+     "fecha": "2027-06-21",
+     "fuente": "murcia",
+     "cita": "ESO                                          10 de septiembre de 2026               21 de junio de 2027"
+    },
+    {
+     "etapas": "Bachillerato",
+     "fecha": "2027-06-21",
+     "fuente": "murcia",
+     "cita": "Bachillerato                                 10 de septiembre de 2026               21 de junio de 2027"
+    },
+    {
+     "etapas": "FP Grado Medio y Grado Superior",
+     "fecha": "2027-06-21",
+     "fuente": "murcia",
+     "cita": "Formación Profesional (FPGM, FPGS)           14 de septiembre de 2026               21 de junio de 2027"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-24",
+     "hasta": "2027-01-06",
+     "fuente": "murcia",
+     "cita": "Vacaciones de Navidad                            24 de diciembre de 2026                    6 de enero de 2027"
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-29",
+     "fuente": "murcia",
+     "cita": "Vacaciones de Semana Santa                        22 de marzo de 2027                      29 de marzo de 2027"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2026-12-23",
+     "motivo": "Día no lectivo establecido por la D.G. de Centros Educativos e Infraestructuras",
+     "fuente": "murcia",
+     "cita": "universitarios de la Región de Murcia, se establece como día no lectivo el 23 de"
+    },
+    {
+     "fecha": "2026-11-27",
+     "motivo": "Festividad del patrón de Infantil, Primaria y Educación Especial",
+     "fuente": "murcia",
+     "cita": "Ed. Infantil                                                                            27 de noviembre de 2026"
+    },
+    {
+     "fecha": "2027-01-29",
+     "motivo": "Festividad del patrón de ESO, Bachillerato (y FPGB, según la tabla)",
+     "fuente": "murcia",
+     "cita": "ESO                                                                                        29 de enero de 2027"
+    },
+    {
+     "fecha": "2027-02-01",
+     "motivo": "Festividad del patrón de Formación Profesional (FPGB, FPGM, FPGS)",
+     "fuente": "murcia",
+     "cita": "Formación Profesional (FPGB, FPGM, FPGS)                                                   1 de febrero de 2027"
+    }
+   ],
+   "locales": "Cada municipio tiene 2 días festivos locales (o trasladados a periodo lectivo si caen en días no lectivos) y 3 días no lectivos a propuesta del Consejo Escolar Municipal (a instancia de los consejos escolares de los centros), que afectan a todos los centros del municipio; se detallan por municipio en el anexo V (no copiados). Si el patrón coincide con un no lectivo municipal, se traslada según el anexo V.",
+   "dudas": [
+    "murcia_mod.txt (Resolución de 2 de julio de 2026 de la D.G. de Recursos Humanos, Planificación Educativa e Innovación) trata de la fase permanente de escolarización del curso 2026-2027, no del calendario escolar: se ignora.",
+    "El 23-12-2026 aparece como no lectivo aparte, inmediatamente antes de Navidad (24-12 a 6-1); se mantiene separado. La tabla no dice 'ambos inclusive'; se asume que las fechas de vacaciones son el primer y último día sin clase.",
+    "Cita del 23-12-2026 partida en dos líneas ('...día no lectivo el 23 de / diciembre de 2026.'); se copia la línea con el día.",
+    "Patrón de FP Grado Básico ambiguo: en la tabla figura 'FPGB' bajo el bloque del 29 de enero de 2027 y también en 'Formación Profesional (FPGB, FPGM, FPGS)' con el 1 de febrero de 2027.",
+    "2.º de Bachillerato y ciclos de FP pueden finalizar antes según la evaluación final/PAU o la formación en empresa; no hay fecha fija.",
+    "Las fechas de los días del patrón son 'festividades del patrón de las enseñanzas'; en centros con varias enseñanzas el director decide si se celebran juntas en un solo día o por separado."
+   ],
+   "urls": {
+    "murcia": "https://www.borm.es/services/anuncio/ano/2026/numero/2748/pdf?id=843430"
+   }
+  },
+  {
+   "id": "valenciana",
+   "ccaa": "valenciana",
+   "provincia": null,
+   "norma": "RESOLUCIÓ de 15 de juny de 2026, de la Direcció General de Centres Docents, per la qual es fixa el calendari escolar del curs acadèmic 2026-2027 a la Comunitat Valenciana",
+   "fuentes": [
+    "valenciana"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil y Primaria",
+     "fecha": "2026-09-09",
+     "fuente": "valenciana",
+     "cita": "1. En Educació Infantil i Educació Primària s'iniciaran el 9 de setembre de 2026 i finalitzaran el 18 de juny de"
+    },
+    {
+     "etapas": "ESO y Bachillerato",
+     "fecha": "2026-09-09",
+     "fuente": "valenciana",
+     "cita": "2. En Educació Secundària Obligatòria i Batxillerat s'iniciaran el 9 de setembre de 2026 i finalitzaran el 18 de juny"
+    },
+    {
+     "etapas": "FP (grado básico, medio y superior)",
+     "fecha": "2026-09-09",
+     "fuente": "valenciana",
+     "cita": "3. En Formació Professional, grau bàsic, grau mitjà i grau superior, s'iniciaran el 9 de setembre de 2026 i"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil y Primaria",
+     "fecha": "2027-06-18",
+     "fuente": "valenciana",
+     "cita": "1. En Educació Infantil i Educació Primària s'iniciaran el 9 de setembre de 2026 i finalitzaran el 18 de juny de"
+    },
+    {
+     "etapas": "ESO y Bachillerato",
+     "fecha": "2027-06-18",
+     "fuente": "valenciana",
+     "cita": "2. En Educació Secundària Obligatòria i Batxillerat s'iniciaran el 9 de setembre de 2026 i finalitzaran el 18 de juny"
+    },
+    {
+     "etapas": "FP (grado básico, medio y superior)",
+     "fecha": "2027-06-18",
+     "fuente": "valenciana",
+     "cita": "finalitzaran el 18 de juny de 2027."
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-22",
+     "hasta": "2027-01-06",
+     "fuente": "valenciana",
+     "cita": "1. Vacacions de Nadal: des del 22 de desembre de 2026 fins al 6 de gener de 2027, els dos inclusivament."
+    },
+    {
+     "nombre": "Semana Santa (Pascua)",
+     "desde": "2027-03-25",
+     "hasta": "2027-04-05",
+     "fuente": "valenciana",
+     "cita": "2. Vacacions de Pasqua: des del 25 de març fins al 5 d'abril de 2027, els dos inclusivament."
+    }
+   ],
+   "no_lectivos": [],
+   "locales": "Los ayuntamientos, previo acuerdo del consejo escolar municipal, pueden proponer hasta 3 días no lectivos de carácter local a efectos escolares.",
+   "dudas": [
+    "Texto en valenciano. valenciana_ceice.txt es solo la página web de la Conselleria con un enlace al calendario 2026/27 publicado en el DOGV; no aporta datos y no se usa.",
+    "Las frases de inicio/fin están partidas en dos líneas: en Infantil/Primaria y ESO/Bachillerato el año 2027 del fin queda en la línea siguiente; en FP la cita del fin es la línea 'finalitzaran el 18 de juny de 2027.'.",
+    "Los únicos días no lectivos citados (9 de octubre, 12 de octubre, 8 de diciembre y 19 de marzo) son festivos, por lo que no_lectivos queda vacío.",
+    "2.º de Bachillerato y 2.º de FP de grado superior: evaluación según las pruebas de acceso a la universidad, sin fecha de fin distinta.",
+    "No hay vacaciones de Carnaval/Fallas en el texto."
+   ],
+   "urls": {
+    "valenciana": "https://portal.edu.gva.es/ceiplalbereda/wp-content/uploads/sites/933/2026/07/Calendario-Escolar-2026-2027-Val.pdf"
+   }
+  },
+  {
+   "id": "pais-vasco",
+   "ccaa": "pais-vasco",
+   "provincia": null,
+   "norma": "Resolución de la Viceconsejera de Políticas Educativas, por la que se dictan normas complementarias que han de regular la elaboración del calendario escolar para el curso 2026-2027 de los centros públicos de la Comunidad Autónoma del País Vasco, en las etapas educativas de Educación Infantil y Primaria (firmada el 21/04/2026)",
+   "fuentes": [
+    "euskadi",
+    "euskadi_primaria"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil y Primaria (centros públicos) - LÍMITE: las clases no pueden empezar antes de esta fecha; cada centro fija su primer día",
+     "fecha": "2026-09-07",
+     "fuente": "euskadi_primaria",
+     "cita": "actividades lectivas no podrán comenzar antes del día 7 de septiembre de 2026"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil y Primaria (centros públicos) - LÍMITE: las clases terminan como muy tarde esta fecha; cada centro fija su último día",
+     "fecha": "2027-06-18",
+     "fuente": "euskadi_primaria",
+     "cita": "Las actividades lectivas finalizarán, a más tardar, el día 18 de junio de 2027."
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad (periodo mínimo obligatorio)",
+     "desde": "2026-12-24",
+     "hasta": "2027-01-06",
+     "fuente": "euskadi_primaria",
+     "cita": "de diciembre de 2026 y el día 6 de enero del año 2027, incluido."
+    },
+    {
+     "nombre": "Semana Santa (periodo mínimo obligatorio)",
+     "desde": "2027-03-25",
+     "hasta": "2027-03-29",
+     "fuente": "euskadi_primaria",
+     "cita": "Las vacaciones de Semana Santa incluirán al menos los días comprendidos entre el 25 y el 29"
+    }
+   ],
+   "no_lectivos": [],
+   "locales": "El Departamento solo fija un marco: el consejo escolar de cada centro elabora su propio calendario (inicio, fin, ampliación de vacaciones, Carnaval, etc.) dentro de esos límites y lo tramita por la aplicación informática. Son festivos además las fiestas patronales de la localidad y del territorio, y cada centro puede declarar festivo el día de la fiesta patronal de su nivel educativo. Mínimo 175 días lectivos.",
+   "dudas": [
+    "Marco, no calendario cerrado: inicio 7-sep-2026 es 'no antes de' y fin 18-jun-2027 es 'a más tardar'; las fechas reales varían por centro.",
+    "Navidad (24-dic a 6-ene) y Semana Santa (25 a 29-mar) son periodos MÍNIMOS ('incluirán al menos'); cada centro puede ampliarlos.",
+    "La resolución de Carnaval/Semana Blanca no aparece: el texto solo menciona 'Carnavales' al hablar de suprimir la tarde, sin fechas.",
+    "Solo está el texto de Infantil y Primaria. La resolución de ESO, Bachillerato y FP aparece enlazada en euskadi.txt pero su contenido no está en las fuentes: no se incluyen fechas para esas etapas.",
+    "Solo aplica a centros públicos; los concertados tienen su propia organización (enlace en euskadi.txt, sin contenido)."
+   ],
+   "urls": {
+    "euskadi": "https://www.euskadi.eus/estructura-y-organizacion-de-los-centros-calendario-escolar-centros-publicos-y-privados/web01-a2hikast/es/",
+    "euskadi_primaria": "https://www.euskadi.eus/contenidos/informacion/cee_organizacioncentros_calend/es_def/adjuntos/2026_2027/Resolucion-calendario-Primaria-2026_27-cast-.pdf"
+   }
+  },
+  {
+   "id": "melilla",
+   "ccaa": "melilla",
+   "provincia": null,
+   "norma": "Resolución del Director General de Planificación y Gestión Educativa por la que se establece el calendario escolar para el curso 2026-2027 en los centros docentes no universitarios de la Ciudad de Melilla (firmada el 10/06/2026)",
+   "fuentes": [
+    "melilla",
+    "melilla_graf"
+   ],
+   "inicio": [
+    {
+     "etapas": "Educación Especial, Infantil, Primaria, ESO, FP Grado Básico y Bachillerato (ordinario y nocturno)",
+     "fecha": "2026-09-09",
+     "fuente": "melilla",
+     "cita": "- 9 de septiembre de 2026: en las enseñanzas de Educación Especial, Educación"
+    },
+    {
+     "etapas": "Ciclos Formativos de FP presenciales (y Artes Plásticas y Diseño)",
+     "fecha": "2026-09-14",
+     "fuente": "melilla",
+     "cita": "- 14 de septiembre de 2026: en los Ciclos Formativos de Formación Profesional en"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Todas las enseñanzas",
+     "fecha": "2027-06-23",
+     "fuente": "melilla",
+     "cita": "Las actividades lectivas finalizarán el 23 de junio de 2027."
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-07",
+     "fuente": "melilla",
+     "cita": "▪ De Navidad. Comprenderán desde el día 23 de diciembre de 2026 hasta el día 7 de"
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-26",
+     "fuente": "melilla",
+     "cita": "▪ De Semana Santa. Comprenderán desde el día 22 al 26 de marzo de 2027, ambos"
+    }
+   ],
+   "no_lectivos": [
+    {
+     "fecha": "2026-09-21",
+     "motivo": "Día de libre disposición",
+     "fuente": "melilla",
+     "cita": "▪ 21 de septiembre. Día de libre disposición."
+    },
+    {
+     "fecha": "2026-11-02",
+     "motivo": "Día de libre disposición",
+     "fuente": "melilla",
+     "cita": "▪ 2 de noviembre. Día de libre disposición."
+    },
+    {
+     "fecha": "2027-01-08",
+     "motivo": "Día de libre disposición",
+     "fuente": "melilla",
+     "cita": "▪ 8 de enero. Día de libre disposición."
+    },
+    {
+     "fecha": "2027-03-29",
+     "motivo": "Día de libre disposición",
+     "fuente": "melilla",
+     "cita": "▪ 29, 30 y 31 de marzo y 1 y 2 de abril. Días de libre disposición."
+    },
+    {
+     "fecha": "2027-03-30",
+     "motivo": "Día de libre disposición",
+     "fuente": "melilla",
+     "cita": "▪ 29, 30 y 31 de marzo y 1 y 2 de abril. Días de libre disposición."
+    },
+    {
+     "fecha": "2027-03-31",
+     "motivo": "Día de libre disposición",
+     "fuente": "melilla",
+     "cita": "▪ 29, 30 y 31 de marzo y 1 y 2 de abril. Días de libre disposición."
+    },
+    {
+     "fecha": "2027-04-01",
+     "motivo": "Día de libre disposición",
+     "fuente": "melilla",
+     "cita": "▪ 29, 30 y 31 de marzo y 1 y 2 de abril. Días de libre disposición."
+    },
+    {
+     "fecha": "2027-04-02",
+     "motivo": "Día de libre disposición",
+     "fuente": "melilla",
+     "cita": "▪ 29, 30 y 31 de marzo y 1 y 2 de abril. Días de libre disposición."
+    }
+   ],
+   "locales": "No hay días locales por centro o ayuntamiento: la resolución fija los días de libre disposición para toda la ciudad (21-sep, 2-nov, 8-ene y 29-mar a 2-abr).",
+   "dudas": [
+    "La resolución también lista como no lectivas estas 'festividades', que no se incluyen en no_lectivos por ser festivos: 8-sep (Virgen de la Victoria), 17-sep (Día de Melilla), 7-dic (el texto lo llama 'Festivo local'), 9-mar-2027 (Final del Ramadán) y 17-may-2027 (Eid al-Adha), además de 12-oct y 8-dic. Si no se consideran festivos laborales oficiales, habría que añadirlos como no lectivos.",
+    "melilla_graf indica que 9-mar (Final de Ramadán) y 17-may (Pascua Musulmana) son 'Fechas aproximadas'.",
+    "Navidad acaba oficialmente el 7-ene, pero el 8-ene (viernes) es de libre disposición: las clases vuelven el 11-ene-2027.",
+    "Semana Santa oficial es del 22 al 26-mar, pero del 29-mar al 2-abr son días de libre disposición: en la práctica no hay clase del 22-mar al 2-abr-2027.",
+    "Fin de clases: la resolución da una única fecha (23-jun-2027) para todas las enseñanzas; las actividades escolares acaban el 30-jun. En 2.º de Bachillerato el calendario se adapta a las pruebas de acceso a la universidad."
+   ],
+   "urls": {
+    "melilla": "https://www.educacionfpydeportes.gob.es/gl/dam/jcr:97a96fff-bae7-4388-a5ec-bb6b7e564abc/resolucion-calendario-escolar-26-27.pdf",
+    "melilla_graf": "https://www.educacionfpydeportes.gob.es/dam/jcr:8ad09335-8919-42a7-8bbe-8d4ff54cb6e0/calendario-escolar-26-27.pdf"
+   }
+  }
+ ],
+ "pendientes": [
+  {
+   "id": "andalucia_jaen",
+   "ccaa": "andalucia",
+   "provincia": "Jaén",
+   "motivo": "El fichero andalucia_jaen_portal es solo la portada web de la Delegación Territorial de Educación en Jaén (menús y noticias de octubre de 2026); contiene un enlace 'Calendario escolar en Jaén' pero no el calendario ni la Resolución, así que no hay fechas que extraer.; Hace falta obtener la Resolució"
+  },
+  {
+   "id": "canarias",
+   "ccaa": "canarias",
+   "provincia": null,
+   "motivo": "Las fechas de inicio de clases por enseñanza están en un anexo-imagen ('Ver anexo en las páginas 12190-12191') que no está en el texto: inicio queda vacío. El texto sí indica jornada intensiva en centros concertados de Infantil y Primaria 'entre el 9 y el 11 de septiembre de 2026', lo que sugiere in"
+  },
+  {
+   "id": "la-rioja",
+   "ccaa": "la-rioja",
+   "provincia": null,
+   "motivo": "rioja.txt es solo la página web con el título de la Resolución 34/2026 y enlaces a sus anexos (ANEXO I y ANEXO II); no contiene ninguna fecha del calendario. Hay que extraer el texto de la resolución o del ANEXO II."
+  },
+  {
+   "id": "ceuta",
+   "ccaa": "ceuta",
+   "provincia": null,
+   "motivo": "ceuta.txt es solo la cuadrícula gráfica del calendario: los días se marcaban por colores (leyenda: inicio de clases, días de fiesta, libre disposición, vacaciones de Navidad, Semana Santa, fin de actividades lectivas) y los colores se pierden al pasar a texto. No se puede determinar ninguna fecha.; "
+  }
+ ]
+}

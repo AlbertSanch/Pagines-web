@@ -30,7 +30,7 @@ WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 SITIO = "Festivos de"
-VERSION = "7"
+VERSION = "8"
 HOY = dt.date.today()
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -46,7 +46,7 @@ CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
            "email": "contacto.ahorrometro@gmail.com"}
 RESERVADOS = {"comunidad", "provincia", "assets", "sobre-los-datos", "aviso-legal", "privacidad", "indice", "datos",
-              "calculadora-dias-laborables", "planificador-vacaciones"}
+              "calculadora-dias-laborables", "planificador-vacaciones", "calendario-escolar"}
 TIPOS = {"nacional": "Nacional", "autonomico": "Autonómica", "local": "Local"}
 # Val d'Aran: el BOE recoge una sustitución solo para este territorio
 ARAN = {"Arres", "Bausen", "Bossòst", "Canejan", "Bòrdes, Es", "Les", "Naut Aran", "Vielha e Mijaran", "Vilamòs"}
@@ -80,6 +80,11 @@ def de(nombre):
     if nombre.startswith("Illes"):
         return f"de las {nombre}"
     return f"de {nombre}"
+
+
+def en(nombre):
+    """«en la Comunidad de Madrid», «en las Illes Balears», «en Andalucía»."""
+    return "en " + de(nombre)[3:]
 
 
 def fecha_larga(f, con_dia=True):
@@ -227,6 +232,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
     <nav class="menu">
       <a href="/calendario-laboral-{max(ANIOS)}/">Calendario {max(ANIOS)}</a>
       <a href="/puentes-{max(ANIOS)}/">Puentes {max(ANIOS)}</a>
+      <a href="/calendario-escolar/">Calendario escolar</a>
       <a href="/planificador-vacaciones/">Vacaciones</a>
       <a href="/calendario-laboral-para-imprimir/">Para imprimir</a>
       <a href="/calculadora-dias-laborables/">Días laborables</a>
@@ -240,7 +246,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="pie">
   <div class="contenedor">
     <p><strong>festivosde.es</strong> reúne los días festivos de cada municipio de España a partir del Boletín Oficial del Estado y de los boletines oficiales de cada comunidad autónoma.</p>
-    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/planificador-vacaciones/">Planificador de vacaciones</a><a href="/calendario-laboral-para-imprimir/">Calendario para imprimir</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/planificador-vacaciones/">Planificador de vacaciones</a><a href="/calendario-escolar/">Calendario escolar</a><a href="/calendario-laboral-para-imprimir/">Calendario para imprimir</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Las fechas se toman de las publicaciones oficiales. Si ves un error, escríbenos a {TITULAR['email']}.</p>
   </div>
 </footer>
@@ -590,6 +596,190 @@ def pagina_planificador(datos):
                   scripts=f'<script src="/assets/planificador.js?v={VERSION}" defer></script>')
 
 
+# ---------------------------------------------------------------- calendario escolar
+
+ESCOLAR = RAIZ / "data" / "escolar.json"
+CLASES_FUERA = "fuera"
+
+
+def cargar_escolar():
+    return json.loads(ESCOLAR.read_text(encoding="utf-8")) if ESCOLAR.exists() else None
+
+
+def rango_escolar(desde, hasta):
+    a, b = dt.date.fromisoformat(desde), dt.date.fromisoformat(hasta)
+    if a == b:
+        return f"el {fecha_larga(a)}"
+    return rango(a, b)
+
+
+def rango_corto(desde, hasta):
+    a, b = dt.date.fromisoformat(desde), dt.date.fromisoformat(hasta)
+    return f"{a.day} {MESES[a.month - 1][:3]} – {b.day} {MESES[b.month - 1][:3]}"
+
+
+def fecha_corta(f):
+    d = dt.date.fromisoformat(f)
+    return f"{d.day} {MESES[d.month - 1][:3]}"
+
+
+def principal(lista):
+    """La fila de Infantil y Primaria (la que más gente busca) o, si no hay, la primera."""
+    return next((x for x in lista if "Primaria" in x["etapas"]), lista[0]) if lista else None
+
+
+def resumen_escolar(t):
+    vac = {k: next((v for v in t["vacaciones"] if k in v["nombre"].lower()), None) for k in ("navidad", "semana santa")}
+    if not vac["semana santa"]:
+        vac["semana santa"] = next((v for v in t["vacaciones"] if "pascua" in v["nombre"].lower() or "pasqua" in v["nombre"].lower()), None)
+    return principal(t["inicio"]), principal(t["fin"]), vac["navidad"], vac["semana santa"]
+
+
+def calendario_escolar(t, datos):
+    """Septiembre a junio con los días sin clase marcados (vacaciones, no lectivos y festivos de la comunidad)."""
+    ini, fin, _, _ = resumen_escolar(t)
+    d0, d1 = dt.date.fromisoformat(ini["fecha"]), dt.date.fromisoformat(fin["fecha"])
+    festivos = {}
+    for anio in (2026, 2027):
+        if anio in datos:
+            for x in datos[anio]["nacionales_autonomicos"].get(t["ccaa"], []):
+                festivos[x["f"]] = ("n" if x["t"] == "nacional" else "a", x["n"])
+    marcas = {}
+    for v in t["vacaciones"]:
+        d, h = dt.date.fromisoformat(v["desde"]), dt.date.fromisoformat(v["hasta"])
+        while d <= h:
+            marcas.setdefault(d.isoformat(), ("vac", v["nombre"]))
+            d += dt.timedelta(days=1)
+    for x in t["no_lectivos"]:
+        marcas.setdefault(x["fecha"], ("nl", x["motivo"]))
+    html = []
+    for anio, mes in [(2026, m) for m in range(9, 13)] + [(2027, m) for m in range(1, 7)]:
+        primero = dt.date(anio, mes, 1)
+        celdas = ['<span class="cab">' + c + "</span>" for c in "LMXJVSD"] + ["<span></span>"] * primero.weekday()
+        d = primero
+        while d.month == mes:
+            f = d.isoformat()
+            clase, titulo = "", ""
+            if f in festivos:
+                clase, titulo = festivos[f]
+            elif d.weekday() >= 5:
+                clase = "finde"
+            elif d < d0 or d > d1:
+                clase, titulo = CLASES_FUERA, "Sin clase (fuera del curso)"
+            elif f in marcas:
+                clase, titulo = marcas[f]
+            celdas.append(f'<span class="{clase}"' + (f' title="{escape(titulo)}"' if titulo else "") + f">{d.day}</span>")
+            d += dt.timedelta(days=1)
+        html.append(f'<div class="mes"><h4>{MESES[mes - 1]} {anio}</h4><div class="dias">{"".join(celdas)}</div></div>')
+    leyenda = ('<div class="leyenda"><span><i class="vac"></i>Vacaciones</span><span><i class="nl"></i>Día no lectivo</span>'
+               '<span><i class="n"></i>Festivo nacional</span><span><i class="a"></i>Festivo autonómico</span></div>')
+    return leyenda + '<div class="calendario">' + "".join(html) + "</div>"
+
+
+def fuente_escolar(t):
+    enlaces = " · ".join(f'<a href="{escape(u)}" rel="nofollow noopener">documento oficial{"" if i == 0 else f" ({i + 1})"}</a>'
+                         for i, u in enumerate(dict.fromkeys(u for u in t["urls"].values() if u)))
+    return f'<p class="fuente">Fuente: {escape(t["norma"] or "norma oficial de la consejería de educación")}. {enlaces}.</p>'
+
+
+def seccion_escolar(t, datos, titulo):
+    filas = []
+    for etiqueta, lista in (("Empiezan las clases", t["inicio"]), ("Terminan las clases", t["fin"])):
+        for x in lista:
+            filas.append(f"<tr><td>{etiqueta}</td><td>{escape(x['etapas'])}</td><td><b>{fecha_larga(x['fecha'])} de {x['fecha'][:4]}</b></td></tr>")
+    vac = "".join(f"<li><b>{escape(v['nombre'])}</b>: {rango_escolar(v['desde'], v['hasta'])}.</li>" for v in t["vacaciones"])
+    nl = "".join(f"<li>{fecha_larga(x['fecha'])} de {x['fecha'][:4]}: {escape(x['motivo'])}.</li>" for x in sorted(t["no_lectivos"], key=lambda x: x["fecha"]))
+    locales = f'<p class="nota"><b>Días locales:</b> {escape(t["locales"])}</p>' if t.get("locales") else ""
+    return f"""<section class="escolar" id="{t['id']}"><h2>{escape(titulo)}</h2>
+<div class="tabla-envoltorio"><table class="festivos tabla-escolar"><thead><tr><th></th><th>Enseñanzas</th><th>Fecha</th></tr></thead><tbody>{''.join(filas)}</tbody></table></div>
+<h3>Vacaciones</h3><ul>{vac}</ul>
+{f'<h3>Otros días sin clase</h3><ul>{nl}</ul>' if nl else ''}
+{locales}
+<h3>El curso de un vistazo</h3>
+{calendario_escolar(t, datos)}
+{fuente_escolar(t)}
+</section>"""
+
+
+def pagina_escolar_ccaa(esc, ccaa, datos):
+    nombre = COMUNIDADES[ccaa][0]
+    ts = [t for t in esc["territorios"] if t["ccaa"] == ccaa]
+    curso = esc["curso"]
+    ini, fin, nav, ss = resumen_escolar(ts[0])
+    varias = len(ts) > 1
+    if varias:
+        filas = "".join(
+            f'<tr><td><a href="#{t["id"]}">{escape(t["provincia"])}</a></td><td>{fecha_corta(r[0]["fecha"])}</td>'
+            f'<td>{fecha_corta(r[1]["fecha"])}</td><td>{rango_corto(r[2]["desde"], r[2]["hasta"]) if r[2] else "—"}</td>'
+            f'<td>{rango_corto(r[3]["desde"], r[3]["hasta"]) if r[3] else "—"}</td></tr>'
+            for t, r in ((t, resumen_escolar(t)) for t in ts))
+        cabeza = (f'<p>En {escape(nombre)} cada provincia aprueba su propio calendario escolar. Este es el resumen para Infantil y Primaria; '
+                  f'pulsa en tu provincia para ver todas las etapas y los días sin clase.</p>'
+                  f'<div class="tabla-envoltorio"><table class="festivos tabla-escolar"><thead><tr><th>Provincia</th><th>Empiezan</th><th>Terminan</th>'
+                  f'<th>Navidad</th><th>Semana Santa</th></tr></thead><tbody>{filas}</tbody></table></div>')
+    else:
+        cabeza = f"""<ul class="cifras escolar-cifras">
+<li><span>Empiezan las clases</span><b>{fecha_larga(ini['fecha'], False)}</b><span>{escape(ini['etapas'])}</span></li>
+<li><span>Terminan</span><b>{fecha_larga(fin['fecha'], False)}</b><span>{escape(fin['etapas'])}</span></li>
+<li><span>Navidad</span><b>{rango_escolar(nav['desde'], nav['hasta']) if nav else '—'}</b><span>vacaciones</span></li></ul>"""
+    secciones = "".join(seccion_escolar(t, datos, f"Calendario escolar en {t['provincia']}" if varias else "Fechas del curso por etapas") for t in ts)
+    pendientes = [p["provincia"] for p in esc["pendientes"] if p["ccaa"] == ccaa and p.get("provincia")]
+    aviso = (f'<p class="pendiente">Todavía no tenemos comprobado el calendario de {", ".join(pendientes)}: lo añadiremos en cuanto lo tengamos del documento oficial.</p>'
+             if pendientes else "")
+    preguntas = [(f"¿Cuándo empiezan las clases en {nombre} en el curso {curso}?",
+                  f"Infantil y Primaria empiezan el {fecha_larga(ini['fecha'])} de {ini['fecha'][:4]}" + (" (según la provincia puede variar; mira la tabla)" if varias else "") + "."),
+                 (f"¿Cuándo terminan las clases en {nombre}?", f"Infantil y Primaria terminan el {fecha_larga(fin['fecha'])} de {fin['fecha'][:4]}.")]
+    if nav:
+        preguntas.append((f"¿Cuándo son las vacaciones de Navidad {curso} en {nombre}?", f"Las vacaciones de Navidad son {rango_escolar(nav['desde'], nav['hasta'])}."))
+    if ss:
+        preguntas.append((f"¿Cuándo son las vacaciones de Semana Santa 2027 en {nombre}?", f"Las vacaciones de Semana Santa son {rango_escolar(ss['desde'], ss['hasta'])}."))
+    cuerpo = f"""<h1>Calendario escolar {curso} {escape(de(nombre))}</h1>
+<p class="lead">Cuándo empiezan y terminan las clases, las vacaciones de Navidad y Semana Santa y los días sin cole del curso {curso} {escape(en(nombre))}, sacados de la norma oficial de la consejería de educación.</p>
+{cabeza}{aviso}
+{secciones}
+<section class="contenido"><h2>Organiza las vacaciones con las de los niños</h2>
+<p>Mira los <a href="/comunidad/{ccaa}/">festivos {escape(de(nombre))}</a> y las fiestas locales de tu municipio, que también son días sin clase, o usa el <a href="/planificador-vacaciones/">planificador de vacaciones</a> para encadenar puentes. Puedes ver el <a href="/calendario-escolar/">calendario escolar de todas las comunidades</a>.</p>
+<p>Cada centro puede tener además días de libre disposición o fiestas propias: confírmalos siempre con el colegio o el instituto.</p></section>
+<section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
+    return pagina(f"/calendario-escolar/{ccaa}/", f"Calendario escolar {curso} {de(nombre)}: inicio de curso y vacaciones",
+                  f"Cuándo empiezan las clases en {nombre} en el curso {curso}, las vacaciones de Navidad y Semana Santa y los días no lectivos, según la norma oficial.",
+                  cuerpo, [("Calendario escolar", "/calendario-escolar/"), (nombre, None)], [faq_ld(preguntas)])
+
+
+def pagina_escolar_indice(esc):
+    curso = esc["curso"]
+    por_ccaa = {}
+    for t in esc["territorios"]:
+        por_ccaa.setdefault(t["ccaa"], []).append(t)
+    filas = []
+    for ccaa, (nombre, _) in sorted(COMUNIDADES.items(), key=lambda x: x[1][0]):
+        if ccaa not in por_ccaa:
+            continue
+        ts = por_ccaa[ccaa]
+        res = [resumen_escolar(t) for t in ts]
+        def celda(i, fmt):
+            vals = sorted({fmt(r[i]) for r in res if r[i]})
+            return " / ".join(vals) if len(vals) <= 2 else "según la provincia"
+        def dias(i):
+            fs = sorted({r[i]["fecha"] for r in res if r[i]})
+            return fecha_corta(fs[0]) if len(fs) == 1 else f"{fecha_corta(fs[0])} – {fecha_corta(fs[-1])}"
+        filas.append(f'<tr><td><a href="/calendario-escolar/{ccaa}/">{escape(nombre)}</a></td>'
+                     f'<td>{dias(0)}</td><td>{dias(1)}</td>'
+                     f'<td>{celda(2, lambda v: rango_corto(v["desde"], v["hasta"]))}</td><td>{celda(3, lambda v: rango_corto(v["desde"], v["hasta"]))}</td></tr>')
+    faltan = sorted({COMUNIDADES[c][0] for c in COMUNIDADES if c not in por_ccaa})
+    cuerpo = f"""<h1>Calendario escolar {curso} por comunidades</h1>
+<p class="lead">Cuándo empiezan las clases, las vacaciones de Navidad y Semana Santa y cuándo acaba el curso {curso} en cada comunidad autónoma, sacado de la orden o resolución oficial de cada consejería de educación.</p>
+<div class="tabla-envoltorio"><table class="festivos tabla-escolar"><thead><tr><th>Comunidad</th><th>Empiezan (Primaria)</th><th>Terminan</th><th>Navidad</th><th>Semana Santa</th></tr></thead>
+<tbody>{''.join(filas)}</tbody></table></div>
+{f'<p class="pendiente">Estamos comprobando con el documento oficial el calendario de {", ".join(faltan)}. Lo añadiremos en cuanto esté verificado: no publicamos fechas sacadas de la prensa.</p>' if faltan else ''}
+<section class="contenido"><h2>Cómo leer el calendario escolar</h2>
+<p>Cada comunidad aprueba cada primavera el calendario del curso siguiente: el primer y el último día de clase de cada etapa, las vacaciones de Navidad y Semana Santa y otros días no lectivos. En algunas, como Andalucía, Aragón o Castilla-La Mancha, cada provincia tiene su propio calendario.</p>
+<p>Además, las dos fiestas locales de cada municipio son días sin clase, y muchos centros tienen días de libre disposición que fija su consejo escolar. Consulta los <a href="/">festivos de tu municipio</a> y confirma siempre los días propios con el colegio.</p></section>"""
+    return pagina("/calendario-escolar/", f"Calendario escolar {curso}: inicio de curso y vacaciones por comunidades",
+                  f"Cuándo empiezan las clases del curso {curso} en cada comunidad autónoma, las vacaciones de Navidad y Semana Santa y el fin de curso, según las normas oficiales.",
+                  cuerpo, [("Calendario escolar", None)])
+
+
 def datos_provincias(datos, info):
     """Un JSON por provincia para la calculadora: festivos de cada municipio y año."""
     (WEB / "datos").mkdir(exist_ok=True)
@@ -645,6 +835,7 @@ def portada(datos):
 <section class="accesos">
 <a class="acceso" href="/calendario-laboral-{anio_sig}/"><span class="ico">📅</span><b>Calendario laboral {anio_sig}</b><span>Todos los festivos de España y qué se celebra en cada comunidad.</span></a>
 <a class="acceso" href="/puentes-{anio_sig}/"><span class="ico">🌉</span><b>Puentes {anio_sig}</b><span>Qué días pedir de vacaciones para encadenar más días libres.</span></a>
+<a class="acceso" href="/calendario-escolar/"><span class="ico">🎒</span><b>Calendario escolar</b><span>Cuándo empiezan las clases y las vacaciones de Navidad y Semana Santa en cada comunidad.</span></a>
 <a class="acceso" href="/planificador-vacaciones/"><span class="ico">🏖️</span><b>Planificador de vacaciones</b><span>Qué días pedir en tu municipio para tener más días libres con tus días de vacaciones.</span></a>
 <a class="acceso" href="/calendario-laboral-para-imprimir/"><span class="ico">🖨️</span><b>Calendario para imprimir</b><span>El año entero en una hoja A4, con las fiestas de tu pueblo. En PDF.</span></a>
 <a class="acceso" href="/calculadora-dias-laborables/"><span class="ico">🧮</span><b>Días laborables</b><span>Cuenta días laborables o hábiles con los festivos de tu municipio.</span></a>
@@ -769,6 +960,13 @@ def main():
     rutas_sitemap.append("/calendario-laboral-para-imprimir/")
     guardar("/planificador-vacaciones/", pagina_planificador(datos))
     rutas_sitemap.append("/planificador-vacaciones/")
+    esc = cargar_escolar()
+    if esc:
+        guardar("/calendario-escolar/", pagina_escolar_indice(esc))
+        rutas_sitemap.append("/calendario-escolar/")
+        for ccaa in sorted({t["ccaa"] for t in esc["territorios"]}):
+            guardar(f"/calendario-escolar/{ccaa}/", pagina_escolar_ccaa(esc, ccaa, datos))
+            rutas_sitemap.append(f"/calendario-escolar/{ccaa}/")
     datos_provincias(datos, info)
     guardar("/", portada(datos))
     rutas_sitemap += legales()
