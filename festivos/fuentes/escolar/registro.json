@@ -44,7 +44,7 @@
  "andalucia_jaen_portal": {
   "descargado": "2026-10-19",
   "descargado_de": "https://www.juntadeandalucia.es/educacion/portales/web/educacion/jaen",
-  "sha1": "9d6c487fe40c65a65de4ad0aba39decf4249e04a",
+  "sha1": "bfc5f07c5316043a997ad886bbf9c1c7ef5d3056",
   "url": "https://www.juntadeandalucia.es/educacion/portales/web/educacion/jaen"
  },
  "andalucia_malaga": {
@@ -107,6 +107,18 @@
   "sha1": "059b401980c72e006414ff464e539d2cd698c668",
   "url": "https://www.gobiernodecanarias.org/boc/2026/075/1240.html"
  },
+ "cantabria": {
+  "descargado": "2026-10-19",
+  "descargado_de": "https://www.laboral-social.com/sites/laboral-social.com/files/calendario-escolar-cantabria-2026-2027.pdf",
+  "sha1": "565163fb52f1e5bead1358d1cc699127bac99ef2",
+  "url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=434226"
+ },
+ "cataluna": {
+  "descargado": "2026-10-19",
+  "descargado_de": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9653/2147444.pdf",
+  "sha1": "ac7e785eed5ffc9c04a33d0e8d70aa2d436315c0",
+  "url": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9653/2147444.pdf"
+ },
  "ceuta": {
   "descargado": "2026-10-19",
   "descargado_de": "https://www.educacionfpydeportes.gob.es/dam/jcr:a9cf685a-32f4-480f-8878-c06cae54fc37/26-070-01-calendario-escolar-26-27-v1.pdf",
@@ -158,7 +170,7 @@
  "cyl_resumen": {
   "descargado": "2026-10-19",
   "descargado_de": "https://www.educa.jcyl.es/es/resumenbocyl/orden-edu-478-2026-25-mayo-aprueba-calendario-escolar-curso",
-  "sha1": "ce1e9341cf3de4fdd223ac81a619fd625eb31f45",
+  "sha1": "442086bd06f24acf32563a2a4e6eff8c2b4ea031",
   "url": "https://www.educa.jcyl.es/es/resumenbocyl/orden-edu-478-2026-25-mayo-aprueba-calendario-escolar-curso"
  },
  "euskadi": {
@@ -218,7 +230,7 @@
  "rioja": {
   "descargado": "2026-10-19",
   "descargado_de": "https://www.larioja.org/larioja-client/cm/edu-orden-academica/tkContent?locale=en&idContent=1763689",
-  "sha1": "50809ff7aeb8d67d49cbaf7d7f0481ba359c49e4",
+  "sha1": "8ba38deb81d28d143caacedbd05e0a6af913fbbf",
   "url": "https://www.larioja.org/larioja-client/cm/edu-orden-academica/tkContent?locale=en&idContent=1763689"
  },
  "valenciana": {
@@ -230,7 +242,7 @@
  "valenciana_ceice": {
   "descargado": "2026-10-19",
   "descargado_de": "https://ceice.gva.es/es/web/centros-docentes/calendario-escolar",
-  "sha1": "b397cb41a2996ca25e44f33ef10988e6ef992d1a",
+  "sha1": "ac65ecd659c63af7d5cb4ce3c9e897f89d26948f",
   "url": "https://ceice.gva.es/es/web/centros-docentes/calendario-escolar"
  }
 }
