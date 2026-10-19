@@ -1,0 +1,247 @@
+{
+ "curso": "2026-2027",
+ "fuentes": [
+  {
+   "id": "andalucia_almeria",
+   "ccaa": "andalucia",
+   "descarga": "https://www.juntadeandalucia.es/educacion/portales/documents/1183913/3343033/Resoluci%C3%B3n_calendario_escolar_26_27_Almer%C3%ADa(F).pdf/fb0a8b29-7d79-13a6-dd6d-caf9340047ef?t=1780046260347"
+  },
+  {
+   "id": "andalucia_almeria_graf",
+   "ccaa": "andalucia",
+   "descarga": "https://www.juntadeandalucia.es/educacion/portales/documents/1183913/3343033/Calendario_Escolar_26_27_Almer%C3%ADa.pdf/52eb1bc9-fd55-cbe1-d6da-8ab010c10349?t=1780046317118"
+  },
+  {
+   "id": "andalucia_cadiz",
+   "ccaa": "andalucia",
+   "descarga": "https://www.juntadeandalucia.es/educacion/portales/documents/1197071/0/Resoluci%C3%B3n%20calendario%20escolar%202026_2027.pdf/5c97e0d2-d79a-e80a-9433-d3f1e305f8fd"
+  },
+  {
+   "id": "andalucia_cadiz_graf",
+   "ccaa": "andalucia",
+   "descarga": "https://www.juntadeandalucia.es/educacion/portales/documents/1197071/0/CALENDARIO%20ESCOLAR%202026_2027.pdf/a55f8427-74f2-8211-eca1-20044826ba52?version=1.0"
+  },
+  {
+   "id": "andalucia_cordoba",
+   "ccaa": "andalucia",
+   "descarga": "https://www.juntadeandalucia.es/educacion/portales/documents/1197067/4486666/Resoluci%C3%B3n%20Calendario%20Escolar%202026_2027(F).pdf/92aee8f6-6e23-e2c8-0f0e-a118ecf2e271"
+  },
+  {
+   "id": "andalucia_granada",
+   "ccaa": "andalucia",
+   "descarga": "https://www.juntadeandalucia.es/educacion/portales/documents/1197087/4286700/Resoluci%C3%B3n%2027%20mayo%202026%20calendario%20escolar%20curso%202026-2027%20Granada%20-%20con%20anexos.pdf/f7a1efc3-e16c-b891-4179-8c29ab1288cf?version=1.0"
+  },
+  {
+   "id": "andalucia_huelva",
+   "ccaa": "andalucia",
+   "descarga": "https://www.juntadeandalucia.es/educacion/portales/documents/1197074/4609198/Resoluci%C3%B3n%20calendario%20Huelva%2026-27.pdf/4338f98f-b951-7f3a-7921-052dcc0a1ffb"
+  },
+  {
+   "id": "andalucia_jaen_portal",
+   "ccaa": "andalucia",
+   "descarga": "https://www.juntadeandalucia.es/educacion/portales/web/educacion/jaen"
+  },
+  {
+   "id": "andalucia_malaga",
+   "ccaa": "andalucia",
+   "descarga": "https://www.juntadeandalucia.es/educacion/portales/documents/2854624/4501041/RESOLUCION%20CALENDARIO%20ESCOLAR%202026_27%20MALAGA.pdf/6f0af8f4-b17b-3b67-2797-e53eb85376e9"
+  },
+  {
+   "id": "andalucia_sevilla",
+   "ccaa": "andalucia",
+   "descarga": "https://www.juntadeandalucia.es/educacion/portales/documents/1176698/3340178/RESOL%20CALEND%2026_27(F).pdf/8c2fd440-3e04-a1c5-d497-2170af36e265?version=1.0"
+  },
+  {
+   "id": "andalucia_sevilla_graf",
+   "ccaa": "andalucia",
+   "descarga": "https://www.juntadeandalucia.es/educacion/portales/documents/1176698/3340178/CALENDARIO%2026_27(F).pdf/8faf6172-bab9-3786-06f2-d56ea397e8c2?version=1.0"
+  },
+  {
+   "id": "aragon",
+   "ccaa": "aragon",
+   "descarga": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1392479120808"
+  },
+  {
+   "id": "aragon_educa",
+   "ccaa": "aragon",
+   "descarga": "https://educa.aragon.es/documents/20126/2820569/Calendario+Escolar+2026-2027+-+Educaragon.pdf/50447fc8-06ec-56ce-0fb0-3906719f4b18?t=1786103855636"
+  },
+  {
+   "id": "asturias",
+   "ccaa": "asturias",
+   "descarga": "https://www.asturias.es/bopa/2026/06/01/2026-04361.pdf",
+   "respaldo": [
+    "https://miprincipado.asturias.es/bopa/2026/06/01/2026-04361.pdf"
+   ]
+  },
+  {
+   "id": "baleares",
+   "ccaa": "baleares",
+   "descarga": "https://www.caib.es/eboibfront/pdf/ca/2026/41/1216208",
+   "respaldo": [
+    "https://apps.caib.es/sites/planificacioicentres/f/549995"
+   ]
+  },
+  {
+   "id": "baleares_mod",
+   "ccaa": "baleares",
+   "descarga": "https://intranet.caib.es/eboibfront/pdf/es/2026/82/1222864",
+   "respaldo": [
+    "https://www.caib.es/eboibfront/pdf/es/2026/82/1222864"
+   ]
+  },
+  {
+   "id": "canarias",
+   "ccaa": "canarias",
+   "descarga": "https://www.gobiernodecanarias.org/boc/2026/061/1025.html"
+  },
+  {
+   "id": "canarias_corr",
+   "ccaa": "canarias",
+   "descarga": "https://www.gobiernodecanarias.org/boc/2026/075/1240.html"
+  },
+  {
+   "id": "cantabria",
+   "ccaa": "cantabria",
+   "descarga": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=434226"
+  },
+  {
+   "id": "cyl",
+   "ccaa": "castilla-y-leon",
+   "descarga": "https://www.educa.jcyl.es/es/informacion/calendario-escolar-2026-2027.ficheros/1894435-Calendario_Escolar_2026_2027.pdf"
+  },
+  {
+   "id": "cyl_resumen",
+   "ccaa": "castilla-y-leon",
+   "descarga": "https://www.educa.jcyl.es/es/resumenbocyl/orden-edu-478-2026-25-mayo-aprueba-calendario-escolar-curso"
+  },
+  {
+   "id": "clm",
+   "ccaa": "castilla-la-mancha",
+   "descarga": "https://docm.jccm.es/docm/verArchivoHtml.do?ruta=2026%2F06%2F03%2Fhtml%2F2026_4106.html&tipo=rutaDocm",
+   "respaldo": [
+    "https://educacion.castillalamancha.es/sites/default/files/2026-06/Orden%2079-2026%20calendario%20escolar%20curso%2026-27.pdf"
+   ]
+  },
+  {
+   "id": "clm_albacete",
+   "ccaa": "castilla-la-mancha",
+   "descarga": "https://educacion.castillalamancha.es/sites/default/files/2026-06/ALBACETE%20-%20RESOLUCION%20CALENDARIO%20ESCOLAR%20PROVINCIAL%202026-2027%20ALBACETE.pdf"
+  },
+  {
+   "id": "clm_ciudad_real",
+   "ccaa": "castilla-la-mancha",
+   "descarga": "https://educacion.castillalamancha.es/sites/default/files/2026-06/RESOLUCI%C3%93N%20CALENDARIO%20ESCOLAR%20PROVINCIAL%20CIUDAD%20REAL%2026-27.pdf"
+  },
+  {
+   "id": "clm_cuenca",
+   "ccaa": "castilla-la-mancha",
+   "descarga": "https://educacion.castillalamancha.es/sites/default/files/2026-06/CUENCA%20-%20RESOLUCION%20CALENDARIO%20ESCOLAR%20PROVINCIAL%202026-2027%20CUENCA.pdf"
+  },
+  {
+   "id": "clm_guadalajara",
+   "ccaa": "castilla-la-mancha",
+   "descarga": "https://educacion.castillalamancha.es/sites/default/files/2026-06/GUADALAJARA%20-%20RESOLUCION%20CALENDARIO%20ESCOLAR%20PROVINCIAL%202026-2027%20GUADALAJARA.pdf"
+  },
+  {
+   "id": "clm_toledo",
+   "ccaa": "castilla-la-mancha",
+   "descarga": "https://educacion.castillalamancha.es/sites/default/files/2026-06/TOLEDO%20-%20RESOLUCION%20CALENDARIO%20ESCOLAR%20PROVINCIAL%202026-2027%20TOLEDO.pdf"
+  },
+  {
+   "id": "cataluna",
+   "ccaa": "cataluna",
+   "descarga": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9653/2147444.pdf"
+  },
+  {
+   "id": "valenciana",
+   "ccaa": "valenciana",
+   "descarga": "https://portal.edu.gva.es/ceiplalbereda/wp-content/uploads/sites/933/2026/07/Calendario-Escolar-2026-2027-Val.pdf"
+  },
+  {
+   "id": "valenciana_ceice",
+   "ccaa": "valenciana",
+   "descarga": "https://ceice.gva.es/es/web/centros-docentes/calendario-escolar"
+  },
+  {
+   "id": "extremadura",
+   "ccaa": "extremadura",
+   "descarga": "https://doe.juntaex.es/pdfs/doe/2026/1160o/26061567.pdf"
+  },
+  {
+   "id": "galicia",
+   "ccaa": "galicia",
+   "descarga": "https://www.xunta.gal/dog/Publicados/2026/20260615/AnuncioG0761-050626-0001_es.pdf",
+   "respaldo": [
+    "https://www.xunta.gal/dog/Publicados/2026/20260615/AnuncioG0761-050626-0001_es.html"
+   ]
+  },
+  {
+   "id": "madrid",
+   "ccaa": "madrid",
+   "descarga": "https://www.bocm.es/boletin/CM_Orden_BOCM/2026/06/04/BOCM-20260604-13.PDF",
+   "respaldo": [
+    "https://www.comunidad.madrid/docs/2026-06/bocm-131-04-06-2026_orden-2034-calendario-escolar-curso-2026-27.pdf"
+   ]
+  },
+  {
+   "id": "murcia",
+   "ccaa": "murcia",
+   "descarga": "https://www.borm.es/services/anuncio/ano/2026/numero/2748/pdf?id=843430"
+  },
+  {
+   "id": "murcia_mod",
+   "ccaa": "murcia",
+   "descarga": "https://www.borm.es/services/anuncio/ano/2026/numero/3265/pdf?id=843947"
+  },
+  {
+   "id": "navarra",
+   "ccaa": "navarra",
+   "descarga": "https://www.educacion.navarra.es/web/dpto/calendario-escolar",
+   "respaldo": [
+    "https://www.educacion.navarra.es/en/web/dpto/calendario-escolar"
+   ]
+  },
+  {
+   "id": "navarra_condiciones",
+   "ccaa": "navarra",
+   "descarga": "https://www.educacion.navarra.es/web/dpto/calendario-escolar/condiciones",
+   "respaldo": [
+    "https://www.educacion.navarra.es/en/web/dpto/calendario-escolar/condiciones"
+   ]
+  },
+  {
+   "id": "euskadi",
+   "ccaa": "pais-vasco",
+   "descarga": "https://www.euskadi.eus/estructura-y-organizacion-de-los-centros-calendario-escolar-centros-publicos-y-privados/web01-a2hikast/es/"
+  },
+  {
+   "id": "euskadi_primaria",
+   "ccaa": "pais-vasco",
+   "descarga": "https://www.euskadi.eus/contenidos/informacion/cee_organizacioncentros_calend/es_def/adjuntos/2026_2027/Resolucion-calendario-Primaria-2026_27-cast-.pdf"
+  },
+  {
+   "id": "rioja",
+   "ccaa": "la-rioja",
+   "descarga": "https://www.larioja.org/larioja-client/cm/edu-orden-academica/tkContent?locale=en&idContent=1763689",
+   "respaldo": [
+    "https://www.larioja.org/edu-orden-academica/es/accesos-directos/calendario-escolar"
+   ]
+  },
+  {
+   "id": "ceuta",
+   "ccaa": "ceuta",
+   "descarga": "https://www.educacionfpydeportes.gob.es/dam/jcr:a9cf685a-32f4-480f-8878-c06cae54fc37/26-070-01-calendario-escolar-26-27-v1.pdf"
+  },
+  {
+   "id": "melilla",
+   "ccaa": "melilla",
+   "descarga": "https://www.educacionfpydeportes.gob.es/gl/dam/jcr:97a96fff-bae7-4388-a5ec-bb6b7e564abc/resolucion-calendario-escolar-26-27.pdf"
+  },
+  {
+   "id": "melilla_graf",
+   "ccaa": "melilla",
+   "descarga": "https://www.educacionfpydeportes.gob.es/dam/jcr:8ad09335-8919-42a7-8bbe-8d4ff54cb6e0/calendario-escolar-26-27.pdf"
+  }
+ ]
+}
