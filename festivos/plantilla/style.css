@@ -243,7 +243,8 @@ table.festivos { width: 100%; border-collapse: collapse; font-size: .97rem; }
 /* Planificador de vacaciones */
 .mes .dias .v { background: var(--ambar); color: #fff; font-weight: 800; }
 .mes .dias .b { background: #fbecc8; }
-.mes .dias .n.b, .mes .dias .l.b { box-shadow: inset 0 0 0 2px var(--ambar); }
+.mes .dias .n.b { background: var(--azul-claro); box-shadow: inset 0 0 0 2px var(--ambar); }
+.mes .dias .l.b { background: var(--rojo); box-shadow: inset 0 0 0 2px var(--ambar); }
 .hoja-a4 .leyenda i.v { background: var(--ambar); }
 .hoja-a4 .leyenda i.b { background: #fbecc8; border: 1px solid var(--ambar); }
 .plan-resumen { margin: 18px 0 8px; }
