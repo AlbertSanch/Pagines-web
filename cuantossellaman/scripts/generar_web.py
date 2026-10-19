@@ -434,9 +434,14 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
         cifra = n(e[s]["f"])
     edades = [f"{dec(e[s]['e'])} años ({SEXO[s][1]})" if len(sexos) == 2 else f"{dec(e[s]['e'])} años"
               for s in sexos if e[s]["e"] is not None]
-    # Solo lo que no dice ya el recuadro azul (las cifras y el puesto están allí): la edad media
-    stats = "".join(f'<div class="stat"><b>{dec(e[s]["e"])} años</b><span>edad media ({SEXO[s][1]})</span></div>'
-                    for s in sexos if e[s]["e"] is not None)
+    # La edad media va en una frase dentro del recuadro azul (no en recuadros aparte): así el buscador queda a la vista
+    con_edad = [s for s in sexos if e[s]["e"] is not None]
+    if len(con_edad) == 2:
+        respuesta += f" La edad media es de <strong>{dec(e['H']['e'])} años</strong> en los hombres y <strong>{dec(e['M']['e'])}</strong> en las mujeres."
+    elif con_edad and len(sexos) == 1:
+        respuesta += f" Su edad media es de <strong>{dec(e[con_edad[0]]['e'])} años</strong>."
+    elif con_edad:
+        respuesta += f" La edad media de los {SEXO[con_edad[0]][1]} es de <strong>{dec(e[con_edad[0]]['e'])} años</strong>."
 
     if len(sexos) == 2:
         texto_compartir = f"En España hay {n(e['total'])} personas que se llaman {X}. ¿Cuántas se llaman como tú?"
@@ -444,10 +449,9 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
         texto_compartir = f"En España hay {n(e[sexos[0]]['f'])} {SEXO[sexos[0]][1]} que se llaman {X}. ¿Cuántas personas se llaman como tú?"
     cuerpo = [f'<h1>¿Cuántas personas se llaman {escape(X)} en España?</h1>',
               f'<div class="respuesta"><p>Según el INE</p><p class="cifra">{cifra}</p><p>{respuesta}</p></div>',
-              f'<div class="stats">{stats}</div>' if stats else "",
-              f'<p class="updated">Datos del INE a {referencia}. Solo cuenta a las personas cuyo nombre completo es «{escape(X)}» (no incluye nombres compuestos que lo contienen).</p>',
-              bloque_compartir(texto_compartir, f"/nombre/{e['slug']}/"),
               bloque_buscar_otro("nombre", ref),
+              bloque_compartir(texto_compartir, f"/nombre/{e['slug']}/"),
+              f'<p class="updated">Datos del INE a {referencia}. Solo cuenta a las personas cuyo nombre completo es «{escape(X)}» (no incluye nombres compuestos que lo contienen).</p>',
               ENLACE_COMO_TU,
               nota_variantes(e, "/nombre/", "", lambda v: v["total"]),
               nota_cruce(e["k"], "nombre")]
@@ -1210,18 +1214,19 @@ def pagina_apellido(e, idx, por_p1, referencia):
     respuesta = (f"En España hay <strong>{n(e['p1'])} personas</strong> que tienen {escape(X)} como primer apellido"
                  + (f" y <strong>{p2}</strong> que lo tienen como segundo." if p2 else ". El INE no publica la cifra del segundo apellido.")
                  + (" Es el apellido más frecuente de España." if e["r"] == 1 else f" Es el apellido número {n(e['r'])} más frecuente."))
-    # Solo lo que no dice ya el recuadro azul (primer y segundo apellido y puesto están allí)
-    stats = ""
-    if e["ambos"] is not None:
-        stats += f'<div class="stat"><b>{n(e["ambos"])}</b><span>se apellidan {escape(X)} {escape(X)}</span></div>'
-    if e["total"] is not None:
-        stats += f'<div class="stat"><b>{n(e["total"])}</b><span>personas con el apellido (primero, segundo o ambos)</span></div>'
+    # Los dobles y el total van en una frase dentro del recuadro azul (no en recuadros aparte): así el buscador queda a la vista
+    if e["ambos"] is not None and e["total"] is not None:
+        respuesta += (f" <strong>{n(e['ambos'])}</strong> personas se apellidan {escape(X)} {escape(X)} y <strong>{n(e['total'])}</strong> "
+                      "lo tienen como primero, segundo o en los dos.")
+    elif e["ambos"] is not None:
+        respuesta += f" <strong>{n(e['ambos'])}</strong> personas se apellidan {escape(X)} {escape(X)}."
+    elif e["total"] is not None:
+        respuesta += f" <strong>{n(e['total'])}</strong> personas lo tienen como primero, segundo o en los dos."
     cuerpo = [f"<h1>¿Cuántas personas se apellidan {escape(X)} en España?</h1>",
               f'<div class="respuesta"><p>Según el INE, como primer apellido</p><p class="cifra">{n(e["p1"])}</p><p>{respuesta}</p></div>',
-              f'<div class="stats">{stats}</div>' if stats else "",
-              f'<p class="updated">Datos del INE a {ref}. El INE publica los apellidos sin tildes; aquí las añadimos para facilitar la lectura.</p>',
-              bloque_compartir(f"En España hay {n(e['p1'])} personas que tienen {X} como primer apellido. ¿Y el tuyo?", f"/apellido/{e['slug']}/"),
               bloque_buscar_otro("apellido", referencia),
+              bloque_compartir(f"En España hay {n(e['p1'])} personas que tienen {X} como primer apellido. ¿Y el tuyo?", f"/apellido/{e['slug']}/"),
+              f'<p class="updated">Datos del INE a {ref}. El INE publica los apellidos sin tildes; aquí las añadimos para facilitar la lectura.</p>',
               ENLACE_COMO_TU,
               nota_variantes(e, "/apellido/", "tipo=apellido&amp;", lambda v: v["p1"]),
               nota_cruce(e["k"], "apellido")]
