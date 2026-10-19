@@ -98,7 +98,7 @@ cataluna 2026 cataluna_2026: 332 nombres sin municipio del INE (pedanías o vari
 cataluna_2026_mod: corrige o añade 10 municipios: Balenyà, Cardona, Castelldefels, Polinyà, Sant Joan Despí, Sitges, Tavèrnoles, Tordera, Torà, Viladecans
 valenciana 2026: «GÁTOVA» corresponde a varios municipios ['12066', '46902']; se omite
 valenciana 2026 valenciana_2026: 4 nombres sin municipio del INE (pedanías o variantes): LA POBLA DE TORNESA, MONCADA/ MONTCADA, RAFÓL DE ALMÚNIA, VALL DE GALLINERA
-valenciana_2026_c1: no descargado
+valenciana_2026_c1: corrige o añade 5 municipios: Alcosser, Benissoda, Onil, Penàguila, Villamalur
 valenciana_2026_c2: corrige o añade 1 municipios: Orba
 extremadura 2026 extremadura_2026: 59 nombres sin municipio del INE (pedanías o variantes): ALMORCHÓN, ALONSO DE OJEDA, ARROYO SAN SERVÁN, AZABAL, BARBAÑO, BARQUILLA DE PINARES, BATÁN (EL), BAZANA (LA), BRONCO (EL), BROVALES, CASAR DE MIAJADAS, CORTEGANA, ENTRERRÍOS, ENTRÍN ALTO, GARGÁLIGAS, GARVÍN DE LA JARA, GUADAJIRA, GUADALPERALES (LOS), HELECHAL, HERNÁN CORTÉS, MAJADAS .DE TIETAR, MOHEDA DE GATA (LA), NAVA (LA), NAVATRASIERRA, OBANDO, PALAZUELO, PALLARES, PIZARRO, PRADOCHANO, PUEBLA DE ALCOLLARÍN, PUERTO HURRACO, RETAMAR, RETAMOSA DE CABAÑAS, ROTURA DE CABAÑAS, RUECAS, SAN BENITO DE LA CONTIENDA, SAN FRANCISCO DE OLIVENZA, SAN GIL, SAN JORGE DE ALOR, SAN RAFAEL DE OLIVENZA, SANTA MARÍA, SANTA MARÍA DE LAS LOMAS, SANTO DOMINGO DE GUZMÁN, SOLANA DE CABAÑAS, TORREFRESNEDA, TORVISCAL (EL), TREVEJO, VALDEHORNILLOS, VALDENCÍN, VALDESALOR, VALDEÍÑIGOS, VALDIVIA, VALRÍO, VALUENGO, VEGAS ALTAS, VILLARREAL, VIVARES, YELBES, ZURBARÁN
 galicia 2026 galicia_2026: 1 nombres sin municipio del INE (pedanías o variantes): Guntín de Pallares
