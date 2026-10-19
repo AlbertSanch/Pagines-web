@@ -269,6 +269,12 @@ VIDEOS = {
                      ("fila", "Neymar", "269"), ("fila", "Rihanna", "274"), ("fila", "Dua", "283")]),
         (4.8, 0.6, [("texto", "Y Kylian…"), ("cifra", "1.280"), ("texto", "Edad media de todos ellos: menos de 10 años"), ("web",)]),
     ],
+    "15-juego-intro": [
+        (2.8, 0.5, [("gancho", "¿Hay más Lucías o más Pilares?"), ("texto", "El juego diario de los nombres de España")]),
+    ],
+    "15-juego-cierre": [
+        (3.4, 0.45, [("titulo", "¿Cuántas aciertas tú?"), ("texto", "Una partida nueva cada día, gratis:"), ("web",), ("texto", "Entra en «Juego»")]),
+    ],
     "7-anos-80-vs-ahora": [
         (3.0, 0.0, [("gancho", "Nombres de los 80 vs nombres de ahora")]),
         (5.5, 0.55, [("titulo", "Nacidos en los 80"), ("texto", "Chicos y chicas más comunes"), ("fila", "David", "Laura"), ("fila", "Javier", "Cristina"), ("fila", "Daniel", "María")]),
@@ -348,6 +354,8 @@ VOCES = {
         "¿Cuántos se llaman como un famoso? Anuel, treinta y ocho. Zendaya, cuarenta y uno. Neymar, doscientos sesenta y nueve.",
         f"Y Kylian... ¡mil doscientos ochenta! Busca el tuyo en {WEB_DICHA}.",
     ],
+    "15-juego-intro": [None],
+    "15-juego-cierre": [None],
     "7-anos-80-vs-ahora": [
         "Nombres de los ochenta contra nombres de ahora.",
         "Si naciste en los ochenta, en tu clase había Davides, Javieres y Danieles. Y Lauras, Cristinas y Marías.",
