@@ -6,6 +6,7 @@ Páginas:
   /comunidad/<slug>/             calendario laboral de la comunidad y sus provincias
   /provincia/<slug>/             festivos locales de todos sus municipios
   /calendario-laboral-<año>/     calendario de toda España: qué fiesta tiene cada comunidad
+  /planificador-vacaciones/      qué días pedir de vacaciones para encadenar más días libres en tu municipio
   /sobre-los-datos/, /aviso-legal/, /privacidad/
 
 Todo sale del BOE y de los boletines oficiales de cada comunidad. Si un municipio todavía no tiene
@@ -29,7 +30,7 @@ WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 SITIO = "Festivos de"
-VERSION = "5"
+VERSION = "6"
 HOY = dt.date.today()
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -45,7 +46,7 @@ CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
            "email": "contacto.ahorrometro@gmail.com"}
 RESERVADOS = {"comunidad", "provincia", "assets", "sobre-los-datos", "aviso-legal", "privacidad", "indice", "datos",
-              "calculadora-dias-laborables"}
+              "calculadora-dias-laborables", "planificador-vacaciones"}
 TIPOS = {"nacional": "Nacional", "autonomico": "Autonómica", "local": "Local"}
 # Val d'Aran: el BOE recoge una sustitución solo para este territorio
 ARAN = {"Arres", "Bausen", "Bossòst", "Canejan", "Bòrdes, Es", "Les", "Naut Aran", "Vielha e Mijaran", "Vilamòs"}
@@ -226,6 +227,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
     <nav class="menu">
       <a href="/calendario-laboral-{max(ANIOS)}/">Calendario {max(ANIOS)}</a>
       <a href="/puentes-{max(ANIOS)}/">Puentes {max(ANIOS)}</a>
+      <a href="/planificador-vacaciones/">Vacaciones</a>
       <a href="/calendario-laboral-para-imprimir/">Para imprimir</a>
       <a href="/calculadora-dias-laborables/">Días laborables</a>
     </nav>
@@ -238,7 +240,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="pie">
   <div class="contenedor">
     <p><strong>festivosde.es</strong> reúne los días festivos de cada municipio de España a partir del Boletín Oficial del Estado y de los boletines oficiales de cada comunidad autónoma.</p>
-    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/calendario-laboral-para-imprimir/">Calendario para imprimir</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/planificador-vacaciones/">Planificador de vacaciones</a><a href="/calendario-laboral-para-imprimir/">Calendario para imprimir</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Las fechas se toman de las publicaciones oficiales. Si ves un error, escríbenos a {TITULAR['email']}.</p>
   </div>
 </footer>
@@ -353,6 +355,7 @@ def pagina_municipio(datos, cod, m, vecinos):
 <div class="calendario" data-anio="{anio}"></div>
 <p class="acciones"><button class="boton-imprimir" type="button" data-anio="{anio}">🖨️ Imprimir calendario {anio}</button>
 <a class="boton-sec" href="/calendario-laboral-para-imprimir/?m={cod}&amp;a={anio}">📄 Calendario {anio} en PDF</a>
+<a class="boton-sec" href="/planificador-vacaciones/?m={cod}&amp;a={anio}">🏖️ Planificar mis vacaciones {anio}</a>
 <a class="boton-sec" href="/calculadora-dias-laborables/?m={cod}">🧮 Calcular días laborables en {escape(N)}</a></p>
 {bloque_puentes(lista, anio)}
 {notas_html(datos, anio, cod)}
@@ -367,7 +370,7 @@ def pagina_municipio(datos, cod, m, vecinos):
     cuerpo = f"""<section class="cabecera-muni">
 <div><h1>Festivos en {escape(N)}</h1>
 <p class="lead">Calendario laboral de {escape(N)} ({escape(prov_nombre)}): fiestas locales, {escape(de(ccaa_nombre))} y nacionales de {' y '.join(map(str, ANIOS))}.</p>
-<ul class="chips"><li><a href="/calculadora-dias-laborables/?m={cod}">🧮 Días laborables</a></li><li><a href="/puentes-{max(ANIOS)}/">🌉 Puentes {max(ANIOS)}</a></li><li><a href="{RUTAS_PROV[cod[:2]]}">Provincia de {escape(prov_nombre)}</a></li><li><a href="/comunidad/{ccaa}/">{escape(ccaa_nombre)}</a></li></ul></div>
+<ul class="chips"><li><a href="/planificador-vacaciones/?m={cod}&amp;a={max(ANIOS)}">🏖️ Planificar vacaciones</a></li><li><a href="/calculadora-dias-laborables/?m={cod}">🧮 Días laborables</a></li><li><a href="/puentes-{max(ANIOS)}/">🌉 Puentes {max(ANIOS)}</a></li><li><a href="{RUTAS_PROV[cod[:2]]}">Provincia de {escape(prov_nombre)}</a></li><li><a href="/comunidad/{ccaa}/">{escape(ccaa_nombre)}</a></li></ul></div>
 <div class="hoy" id="hoy" data-municipio="{escape(N)}"></div>
 </section>
 <section><h2>Próximos festivos en {escape(N)}</h2><div id="proximos">{hojas_html(proximos)}</div></section>
@@ -476,7 +479,7 @@ def pagina_puentes(datos, anio):
     largos = sum(1 for p in resumen if p["dias"] >= 3)
     cuerpo = f"""<h1>Puentes {anio}</h1>
 <p class="lead">Todos los puentes de {anio} en España y en cada comunidad autónoma, según el calendario laboral publicado en el BOE: cuándo tienes fines de semana largos y qué días te conviene pedir de vacaciones para encadenar más días libres.</p>
-<p>Las fiestas locales de cada municipio pueden añadir más puentes: <a href="/">busca tu municipio</a> para verlos todos.</p>
+<p>Las fiestas locales de cada municipio pueden añadir más puentes: <a href="/">busca tu municipio</a> para verlos todos, o usa el <a href="/planificador-vacaciones/?a={anio}">planificador de vacaciones</a> para que te diga qué días pedir con tus días de vacaciones.</p>
 <h2>Puentes en toda España</h2>
 <p>Con las fiestas que se celebran en todas las comunidades hay {largos} fines de semana largos sin coger vacaciones.</p>
 <ul class="puentes">{''.join(texto_puente(p) for p in resumen)}</ul>
@@ -545,12 +548,46 @@ def pagina_imprimible(datos):
 <div id="hoja" class="hoja-a4" hidden></div>
 <section class="contenido"><h2>Un calendario para la nevera, la oficina o la agenda</h2>
 <p>El calendario ocupa una hoja A4 apaisada: los doce meses con los festivos marcados por colores y, debajo, la lista de todos los festivos con su día de la semana. Los datos son los mismos que en la página de cada municipio: el BOE para los festivos nacionales y autonómicos y el boletín oficial de cada comunidad para las fiestas locales.</p>
-<p>Si quieres organizar las vacaciones, mira también los <a href="/puentes-{ult}/">puentes de {ult}</a> o cuenta los <a href="/calculadora-dias-laborables/">días laborables</a> entre dos fechas.</p></section>
+<p>Si quieres organizar las vacaciones, usa el <a href="/planificador-vacaciones/">planificador de vacaciones</a>, mira los <a href="/puentes-{ult}/">puentes de {ult}</a> o cuenta los <a href="/calculadora-dias-laborables/">días laborables</a> entre dos fechas.</p></section>
 <section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
     return pagina("/calendario-laboral-para-imprimir/", f"Calendario laboral {ult} para imprimir (PDF) con tus festivos locales",
                   f"Descarga en PDF o imprime el calendario laboral de {ult} de tu municipio en una hoja: festivos nacionales, autonómicos y fiestas locales.",
                   cuerpo, [("Calendario para imprimir", None)], [faq_ld(preguntas)],
                   scripts=f'<script src="/assets/imprimible.js?v={VERSION}" defer></script>')
+
+
+def pagina_planificador(datos):
+    ult = max(ANIOS)
+    opciones = "".join(f'<option value="{a}"{" selected" if a == ult else ""}>{a}</option>' for a in sorted(ANIOS, reverse=True))
+    meses = "".join(f'<option value="{i}"{" selected" if i == 7 else ""}>En {m}</option>' for i, m in enumerate(MESES))
+    preguntas = [
+        ("¿Cómo elige el planificador los días de vacaciones?", "Primero busca los puentes: los días laborables entre un festivo y un fin de semana, que con uno o dos días de vacaciones te dan cuatro o cinco días libres seguidos. Elige los que más días libres dan por cada día de vacaciones. Con el resto de días arma unas vacaciones largas en el mes que elijas, juntándolas con los fines de semana y los festivos de ese mes."),
+        ("¿Cuántos días de vacaciones tengo al año?", "El Estatuto de los Trabajadores fija un mínimo de 30 días naturales al año, que en la práctica suelen ser 22 días laborables (de lunes a viernes). Tu convenio colectivo o tu contrato pueden darte más."),
+        ("¿Tiene en cuenta las fiestas locales de mi municipio?", "Sí: usa los festivos nacionales y autonómicos del BOE y las dos fiestas locales que publica el boletín oficial de tu comunidad o provincia. Si las fiestas locales del año aún no están publicadas, te avisa y planifica solo con las nacionales y autonómicas."),
+        ("¿Puedo guardar o imprimir mi plan?", "Sí. Pulsa «Imprimir o guardar en PDF» para tener el calendario con los días marcados en una hoja, o «Copiar enlace a mi plan» para guardarlo o enviárselo a quien quieras."),
+    ]
+    cuerpo = f"""<style>@page {{ size: A4 landscape; margin: 8mm; }}</style>
+<h1>Planificador de vacaciones {ult}</h1>
+<p class="lead">Dinos tu municipio y cuántos días de vacaciones tienes, y te decimos qué días pedir para encadenar el máximo de días libres con los puentes, los fines de semana y los festivos de tu pueblo o ciudad.</p>
+<form class="calc" onsubmit="return false">
+  <div class="campo"><label for="municipio">Municipio</label>
+    <input id="municipio" type="search" autocomplete="off" placeholder="Escribe tu municipio"><ul id="sug-municipio" class="sugerencias"></ul></div>
+  <div class="fila">
+    <div class="campo"><label for="anio">Año</label><select id="anio">{opciones}</select></div>
+    <div class="campo"><label for="dias">Días de vacaciones (laborables)</label><input id="dias" type="number" min="1" max="40" value="22"></div>
+    <div class="campo"><label for="mes">Vacaciones largas</label><select id="mes">{meses}<option value="-1">Sin vacaciones largas: todo en puentes y escapadas</option></select></div>
+  </div>
+</form>
+<div id="plan" hidden aria-live="polite"></div>
+<section class="contenido"><h2>Cómo sacar más días libres de tus vacaciones</h2>
+<p>El truco está en los puentes: cuando un festivo cae en martes o jueves, pedir el lunes o el viernes te da cuatro días libres seguidos por un solo día de vacaciones. Si cae en miércoles, con dos días tienes cinco. El planificador busca todos esos huecos con los festivos de tu municipio, elige los que más rinden y deja el resto de días para unas vacaciones largas en el mes que prefieras.</p>
+<p>Los festivos son los mismos que en la página de cada municipio: el BOE para los nacionales y autonómicos y el boletín oficial de cada comunidad para las fiestas locales. Antes de pedir los días, confirma con tu empresa el calendario laboral y si tu convenio tiene días de libre disposición o fiestas propias.</p>
+<p>Mira también los <a href="/puentes-{ult}/">puentes de {ult}</a> en cada comunidad, el <a href="/calendario-laboral-para-imprimir/">calendario laboral para imprimir</a> o cuenta los <a href="/calculadora-dias-laborables/">días laborables</a> entre dos fechas.</p></section>
+<section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
+    return pagina("/planificador-vacaciones/", f"Planificador de vacaciones {ult}: qué días pedir para tener más días libres",
+                  f"Elige tu municipio y tus días de vacaciones y te decimos qué días pedir en {ult} para aprovechar los puentes y los festivos locales. Gratis.",
+                  cuerpo, [("Planificador de vacaciones", None)], [faq_ld(preguntas)],
+                  scripts=f'<script src="/assets/planificador.js?v={VERSION}" defer></script>')
 
 
 def datos_provincias(datos, info):
@@ -608,6 +645,7 @@ def portada(datos):
 <section class="accesos">
 <a class="acceso" href="/calendario-laboral-{anio_sig}/"><span class="ico">📅</span><b>Calendario laboral {anio_sig}</b><span>Todos los festivos de España y qué se celebra en cada comunidad.</span></a>
 <a class="acceso" href="/puentes-{anio_sig}/"><span class="ico">🌉</span><b>Puentes {anio_sig}</b><span>Qué días pedir de vacaciones para encadenar más días libres.</span></a>
+<a class="acceso" href="/planificador-vacaciones/"><span class="ico">🏖️</span><b>Planificador de vacaciones</b><span>Qué días pedir en tu municipio para tener más días libres con tus días de vacaciones.</span></a>
 <a class="acceso" href="/calendario-laboral-para-imprimir/"><span class="ico">🖨️</span><b>Calendario para imprimir</b><span>El año entero en una hoja A4, con las fiestas de tu pueblo. En PDF.</span></a>
 <a class="acceso" href="/calculadora-dias-laborables/"><span class="ico">🧮</span><b>Días laborables</b><span>Cuenta días laborables o hábiles con los festivos de tu municipio.</span></a>
 </section>
@@ -694,7 +732,7 @@ def main():
     if WEB.exists():
         shutil.rmtree(WEB)
     (WEB / "assets").mkdir(parents=True)
-    for f in ("style.css", "app.js", "calculadora.js", "imprimible.js"):
+    for f in ("style.css", "app.js", "calculadora.js", "imprimible.js", "planificador.js"):
         shutil.copy(PLANTILLA / f, WEB / "assets" / f)
     for f in ("og.png", "favicon.svg", "favicon.ico", "apple-touch-icon.png"):
         if (PLANTILLA / f).exists():
@@ -729,6 +767,8 @@ def main():
     rutas_sitemap.append("/calculadora-dias-laborables/")
     guardar("/calendario-laboral-para-imprimir/", pagina_imprimible(datos))
     rutas_sitemap.append("/calendario-laboral-para-imprimir/")
+    guardar("/planificador-vacaciones/", pagina_planificador(datos))
+    rutas_sitemap.append("/planificador-vacaciones/")
     datos_provincias(datos, info)
     guardar("/", portada(datos))
     rutas_sitemap += legales()
