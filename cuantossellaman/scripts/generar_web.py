@@ -448,6 +448,7 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
               f'<div class="stats">{stats}</div>',
               f'<p class="updated">Datos del INE a {referencia}. Solo cuenta a las personas cuyo nombre completo es «{escape(X)}» (no incluye nombres compuestos que lo contienen).</p>',
               bloque_compartir(texto_compartir, f"/nombre/{e['slug']}/"),
+              bloque_buscar_otro("nombre", ref),
               ENLACE_COMO_TU,
               nota_variantes(e, "/nombre/", "", lambda v: v["total"]),
               nota_cruce(e["k"], "nombre")]
@@ -1194,6 +1195,15 @@ def formulario(tipo, referencia):
   <div class="resultado" id="resultado" aria-live="polite"></div>"""
 
 
+def bloque_buscar_otro(tipo, referencia):
+    """Buscador en las páginas de nombre y apellido: quien llega desde Google a su nombre busca el de su familia o sus amigos."""
+    titulo = "¿Y otro apellido?" if tipo == "apellido" else "¿Y otro nombre?"
+    sub = ("Busca el apellido de tu pareja, de tu familia o de tus amigos." if tipo == "apellido"
+           else "Busca el nombre de tu pareja, de tus hijos o de tus amigos.")
+    return (f'<section class="buscar-otro"><h2>{titulo}</h2><p>{sub}</p>{formulario(tipo, referencia)}</section>'
+            f'<script src="/assets/app.js?v={VERSION}" defer></script>')
+
+
 def pagina_apellido(e, idx, por_p1, referencia):
     X = e["mostrar"]
     ref = fecha_larga(referencia)
@@ -1213,6 +1223,7 @@ def pagina_apellido(e, idx, por_p1, referencia):
               f'<div class="stats">{stats}</div>',
               f'<p class="updated">Datos del INE a {ref}. El INE publica los apellidos sin tildes; aquí las añadimos para facilitar la lectura.</p>',
               bloque_compartir(f"En España hay {n(e['p1'])} personas que tienen {X} como primer apellido. ¿Y el tuyo?", f"/apellido/{e['slug']}/"),
+              bloque_buscar_otro("apellido", referencia),
               ENLACE_COMO_TU,
               nota_variantes(e, "/apellido/", "tipo=apellido&amp;", lambda v: v["p1"]),
               nota_cruce(e["k"], "apellido")]
@@ -1378,7 +1389,7 @@ def indices_apellidos(idx):
     return grupos
 
 
-VERSION = "12"
+VERSION = "13"
 
 
 def main():

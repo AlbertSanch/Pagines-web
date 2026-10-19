@@ -203,3 +203,10 @@ summary { font-weight: 600; cursor: pointer; }
 @media (max-width: 560px) { .j-cartas { grid-template-columns: 1fr; } .j-vs { text-align: center; } .j-carta { min-height: 0; padding: 16px 12px; } .j-nombre { font-size: 1.3rem; } .j-cifra { font-size: 1.7rem; } }
 .j-modos { display: flex; gap: 8px; margin: 14px 0 0; }
 .j-modos .btn-c[aria-pressed="true"] { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* Buscador en las páginas de nombre y apellido */
+.buscar-otro { background: var(--primary-soft); border-radius: 18px; padding: 18px 18px 20px; margin: 22px 0; text-align: center; }
+.buscar-otro h2 { margin: 0 0 4px; font-size: 1.3rem; }
+.buscar-otro > p { margin: 0 0 14px; color: var(--muted); }
+.buscar-otro .resultado:empty, .buscar-otro .sugerencias:empty { display: none; }
+.buscar-otro .resultado { text-align: left; }
