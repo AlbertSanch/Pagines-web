@@ -259,3 +259,27 @@ table.festivos { width: 100%; border-collapse: collapse; font-size: .97rem; }
   #plan > *:not(#hoja-plan) { display: none !important; }
   .hoja-a4 .leyenda i.v, .mes .dias .v, .mes .dias .b { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
+/* Calendario escolar */
+.mes .dias .vac { background: var(--ambar); color: #fff; font-weight: 800; }
+.mes .dias .nl { background: #fbecc8; color: var(--tinta); font-weight: 700; }
+.mes .dias .fuera { color: #c9bfb4; }
+.leyenda i.vac, .leyenda i.nl, .leyenda i.n, .leyenda i.a { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+.leyenda i.vac { background: var(--ambar); }
+.leyenda i.nl { background: #fbecc8; border: 1px solid var(--ambar); }
+.leyenda i.n { background: var(--azul-claro); border: 1px solid var(--azul); }
+.leyenda i.a { background: var(--verde-claro); border: 1px solid var(--verde); }
+.escolar { margin-top: 28px; }
+.escolar .calendario { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.escolar .mes { padding: 8px; }
+.escolar .mes .dias { font-size: .72rem; }
+.escolar .mes .dias span { padding: 3px 0; }
+.tabla-escolar td, .tabla-escolar th { vertical-align: top; }
+@media (max-width: 760px) {
+  .tabla-escolar th:nth-child(2), .tabla-escolar td:nth-child(2) { display: table-cell; }
+  .tabla-escolar { font-size: .88rem; }
+  .menu { flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; scrollbar-width: none; padding-bottom: 6px; width: 100%; }
+}
+.escolar-cifras b { font-size: 1.15rem; line-height: 1.3; margin: 2px 0; }
+.escolar-cifras li { gap: 2px; }
+@media (max-width: 760px) { .escolar-cifras { grid-template-columns: 1fr; } }
