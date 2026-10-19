@@ -2315,6 +2315,160 @@
     "melilla": "https://www.educacionfpydeportes.gob.es/gl/dam/jcr:97a96fff-bae7-4388-a5ec-bb6b7e564abc/resolucion-calendario-escolar-26-27.pdf",
     "melilla_graf": "https://www.educacionfpydeportes.gob.es/dam/jcr:8ad09335-8919-42a7-8bbe-8d4ff54cb6e0/calendario-escolar-26-27.pdf"
    }
+  },
+  {
+   "id": "cataluna",
+   "ccaa": "cataluna",
+   "provincia": null,
+   "norma": "Orden EDF/66/2026, de 22 de abril, por la que se establece el calendario escolar de los cursos 2026-2027, 2027-2028 y 2028-2029 para los centros educativos no universitarios de Cataluña",
+   "fuentes": [
+    "cataluna"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria, ESO, Bachillerato y FP Básica",
+     "fecha": "2026-09-08",
+     "fuente": "cataluna",
+     "cita": "- Curso 2026-2027, el 8 de septiembre de 2026 o el día laborable siguiente si es festivo."
+    },
+    {
+     "etapas": "FP de grado medio y superior (no más tarde de)",
+     "fecha": "2026-09-14",
+     "fuente": "cataluna",
+     "cita": "- Curso 2026-2027, el 14 de septiembre de 2026 o el día laborable siguiente si es festivo."
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y ESO",
+     "fecha": "2027-06-21",
+     "fuente": "cataluna",
+     "cita": "- Curso 2026-2027, el 21 de junio de 2027."
+    },
+    {
+     "etapas": "1.º de Bachillerato",
+     "fecha": "2027-06-17",
+     "fuente": "cataluna",
+     "cita": "- Curso 2026-2027, el 17 de junio de 2027."
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-22",
+     "hasta": "2027-01-07",
+     "fuente": "cataluna",
+     "cita": "- Navidad: del 22 de diciembre de 2026 al 7 de enero de 2027, ambos incluidos."
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-20",
+     "hasta": "2027-03-29",
+     "fuente": "cataluna",
+     "cita": "- Semana Santa: del 20 de marzo al 29 de marzo de 2027, ambos incluidos."
+    }
+   ],
+   "no_lectivos": [],
+   "locales": "Cada centro fija 4 días festivos de libre disposición (repartidos entre los tres trimestres, no en inicio/fin de curso ni en Navidad/Semana Santa); los consejos escolares municipales recomiendan los días comunes del municipio. Además, las 2 fiestas locales del municipio; si caen en día no lectivo, se pueden añadir a los de libre disposición.",
+   "dudas": [
+    "La Orden cubre los cursos 2026-2027, 2027-2028 y 2028-2029; solo se ha extraído 2026-2027.",
+    "El texto disponible es la versión en castellano del DOGC (Núm. 9653 - 27.4.2026).",
+    "Inicio: '8 de septiembre de 2026 o el día laborable siguiente si es festivo' (el 8/9/2026 es martes; se toma el 8).",
+    "FP de grado medio y superior: el texto dice que el curso se inicia 'no más tarde del' 14/9/2026; el final se fija según la programación del centro. FP Básica empieza el 8/9/2026 y también termina según programación del centro.",
+    "2.º de Bachillerato: la fecha de fin la determina la programación del centro y el acceso a la universidad; el 17/6/2027 es solo para 1.º.",
+    "No hay días no lectivos adicionales fijados por la Orden (ni Carnaval ni otros); solo Navidad, Semana Santa, festivos oficiales, 2 fiestas locales y 4 días de libre disposición por centro.",
+    "Semana Santa: 'del 20 al 29 de marzo de 2027, ambos incluidos' (el 20 es sábado y el 29, Lunes de Pascua)."
+   ],
+   "urls": {
+    "cataluna": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9653/2147444.pdf"
+   }
+  },
+  {
+   "id": "cantabria",
+   "ccaa": "cantabria",
+   "provincia": null,
+   "norma": "Orden EDU/10/2026, de 24 de marzo, por la que se establece el calendario escolar para el curso 2026-2027 para centros docentes no universitarios",
+   "fuentes": [
+    "cantabria"
+   ],
+   "inicio": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2026-09-08",
+     "fuente": "cantabria",
+     "cita": "especial, las actividades lectivas se desarrollarán desde el 8 de septiembre de 2026 hasta el"
+    },
+    {
+     "etapas": "ESO, Bachillerato y FP",
+     "fecha": "2026-09-09",
+     "fuente": "cantabria",
+     "cita": "las actividades lectivas se desarrollarán desde el 9 de septiembre de 2026 hasta el 24 de junio"
+    }
+   ],
+   "fin": [
+    {
+     "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+     "fecha": "2027-06-23",
+     "fuente": "cantabria",
+     "cita": "23 de junio de 2027, ambos inclusive."
+    },
+    {
+     "etapas": "ESO, Bachillerato y FP",
+     "fecha": "2027-06-24",
+     "fuente": "cantabria",
+     "cita": "las actividades lectivas se desarrollarán desde el 9 de septiembre de 2026 hasta el 24 de junio"
+    }
+   ],
+   "vacaciones": [
+    {
+     "nombre": "Descanso de noviembre",
+     "desde": "2026-11-02",
+     "hasta": "2026-11-06",
+     "fuente": "cantabria",
+     "cita": "— 2, 3, 4, 5, 6 de noviembre de 2026."
+    },
+    {
+     "nombre": "Navidad",
+     "desde": "2026-12-23",
+     "hasta": "2027-01-08",
+     "fuente": "cantabria",
+     "cita": "— 23, 24, 28, 29, 30 y 31 de diciembre de 2026."
+    },
+    {
+     "nombre": "Periodo de descanso de febrero",
+     "desde": "2027-02-10",
+     "hasta": "2027-02-12",
+     "fuente": "cantabria",
+     "cita": "— 10, 11 y 12 de febrero de 2027."
+    },
+    {
+     "nombre": "Semana Santa",
+     "desde": "2027-03-22",
+     "hasta": "2027-03-26",
+     "fuente": "cantabria",
+     "cita": "— 22, 23 y 24 de marzo de 2027."
+    },
+    {
+     "nombre": "Descanso de mayo",
+     "desde": "2027-05-03",
+     "hasta": "2027-05-04",
+     "fuente": "cantabria",
+     "cita": "— 3 y 4 de mayo de 2027."
+    }
+   ],
+   "no_lectivos": [],
+   "locales": "La Orden no prevé días de libre disposición de centros ni ayuntamientos. Las fiestas locales que caigan en día lectivo se recuperan retrasando el fin de curso en junio.",
+   "dudas": [
+    "Fuente verificada: es el texto del BOC (Boletín Oficial de Cantabria, BOC núm. 75, 21/04/2026, CVE-2026-3151, Orden EDU/10/2026, págs. 20644-20647), no un resumen de otra web.",
+    "Navidad: el texto lista 23, 24, 28-31 dic y 4, 5, 7 y 8 ene como no lectivos, más festivos y '1 y 6 de enero ... en caso de no ser declarados oficialmente festivos'; se toma el periodo continuo del 23/12/2026 al 8/1/2027 (las clases se reanudan el lunes 11/1). La cita solo recoge la línea de diciembre; la de enero es '— 4, 5, 7 y 8 de enero de 2027.'",
+    "Semana Santa: el texto lista 22, 23 y 24 de marzo, más '25 y 26 de marzo 2027, en caso de no ser declarados oficialmente festivos' serán no lectivos; se toma del 22 al 26/3/2027. El Lunes de Pascua (29/3) no aparece como no lectivo. El periodo es en marzo, no en abril.",
+    "Descansos de noviembre (2-6/11), febrero (10-12/2) y mayo (3-4/5): fechas sin contar los fines de semana adyacentes. El texto no los nombra; los nombres son descriptivos. 'Carnaval' es una interpretación: el texto solo da las fechas.",
+    "Día del Docente: el 30/1/2027 'se conmemorará el Día del Docente', pero cae en sábado y el texto no lo declara día no lectivo; no se incluye en no_lectivos.",
+    "Inicio ESO/Bach/FP y fin de ESO/Bach/FP comparten la misma cita (la frase del 9 sep al 24 de junio)."
+   ],
+   "urls": {
+    "cantabria": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=434226"
+   }
   }
  ],
  "pendientes": [
