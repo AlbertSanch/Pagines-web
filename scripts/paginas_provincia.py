@@ -254,7 +254,7 @@ PLANTILLA = """<!DOCTYPE html>
   [{{"@context":"https://schema.org","@type":"WebPage","name":"{og_titulo}","url":"{url}","inLanguage":"es-ES","dateModified":"{iso}","author":{{"@type":"Person","name":"Albert Sanchez Guiu"}}}},
    {{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ahorrometro.es/"}},{{"@type":"ListItem","position":2,"name":"Precio de la gasolina hoy","item":"https://ahorrometro.es/precio-gasolina-hoy"}},{{"@type":"ListItem","position":3,"name":"{breadcrumb}","item":"{url}"}}]}}]
   </script>
-  <link rel="stylesheet" href="../assets/style.css?v=5">
+  <link rel="stylesheet" href="../assets/style.css?v=7">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -286,6 +286,7 @@ PLANTILLA = """<!DOCTYPE html>
   <h1>Precio de la gasolina hoy en {nombre}</h1>
   <p class="lead">Precio medio por litro y gasolineras más baratas de {nombre}. Datos oficiales del Ministerio del {dia}{hora}, con impuestos incluidos.</p>
   <p class="updated">Se actualiza automáticamente dos veces al día.</p>
+  <p class="gp-atajos"><a class="btn" href="../gasolineras-baratas-cerca-de-mi">📍 Gasolineras baratas cerca de mí</a> <a class="btn btn-ghost" href="../gasolineras-low-cost">Gasolineras low cost</a></p>
 
   <section class="gp-cards">{tarjetas}</section>
 

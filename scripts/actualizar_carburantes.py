@@ -6,7 +6,8 @@ script guarda solo lo que usa la web: medias por provincia y las gasolineras má
 baratas de cada provincia.
 
 Además genera una página estática por provincia (ahorrometro/gasolina/<provincia>.html)
-con paginas_provincia.py.
+con paginas_provincia.py, y con paginas_gasolineras.py la lista completa de gasolineras
+(datos/gasolineras.json) para el buscador «cerca de mí» y la página de gasolineras low cost.
 
 Uso:
     python scripts/actualizar_carburantes.py                    # descarga del Ministerio
@@ -23,6 +24,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import paginas_gasolineras
 import paginas_provincia
 
 URL = ("https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/"
@@ -126,6 +128,8 @@ def resumir(datos):
             "rotulo": titulo(e.get("Rótulo", "")),
             "direccion": titulo(e.get("Dirección", "")),
             "municipio": titulo(e.get("Municipio", "")),
+            "cp": str(e.get("C.P.", "")).strip(),
+            "horario": str(e.get("Horario", "")).strip(),
             "lat": coord(e.get("Latitud")),
             "lon": coord(e.get("Longitud (WGS84)")),
             "precios": {},
@@ -192,6 +196,7 @@ def main():
     print(f"{len(resumen['provincias'])} provincias · gasolina 95 {e['gasolina95']['media']} €/L · "
           f"diésel {e['diesel']['media']} €/L · {salida.stat().st_size // 1024} KB", file=sys.stderr)
     paginas_provincia.generar(resumen, gasolineras, web)
+    paginas_gasolineras.generar(resumen, gasolineras, web)
 
 
 if __name__ == "__main__":
