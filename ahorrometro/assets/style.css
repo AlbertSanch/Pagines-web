@@ -224,11 +224,30 @@ table.data td .sub { display: block; font-size: .83rem; color: var(--muted); fon
 @media (max-width: 560px) { table.data .gp-rank { display: none; } table.data th, table.data td { padding: 7px 8px; } }
 
 /* Portada: precios de hoy (fila compacta bajo el buscador) */
-.precios-hoy { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 4px 0 28px; }
+.precios-hoy { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin: 4px 0 28px; }
 .ph { display: flex; flex-direction: column; gap: 2px; background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 10px; padding: 10px 14px; text-decoration: none; color: var(--text); transition: border-color .15s, transform .15s; }
 .ph:hover { border-color: var(--primary); transform: translateY(-1px); color: var(--text); }
 .ph-top { font-size: .82rem; font-weight: 600; color: var(--muted); }
 .ph b { font-size: 1.15rem; font-variant-numeric: tabular-nums; color: var(--primary-dark); }
 .ph small { font-size: .78rem; color: var(--muted); }
-@media (max-width: 760px) { .precios-hoy { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ph b { font-size: 1.05rem; } }
+@media (max-width: 760px) { .precios-hoy { grid-template-columns: repeat(2, minmax(0, 1fr)); } .precios-hoy .ph:last-child:nth-child(odd) { grid-column: span 2; } .ph b { font-size: 1.05rem; } }
 body.buscando .precios-hoy { display: none; }
+
+/* Gasolineras baratas cerca de mí */
+.gc-buscador { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); margin: 18px 0 28px; }
+.gc-fila { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+.gc-o { color: var(--muted); }
+.gc-form { display: flex; gap: 8px; flex: 1 1 260px; min-width: 0; }
+.gc-form .btn { padding: 11px 14px; flex: none; }
+.gc-form input { flex: 1; min-width: 0; font: inherit; padding: 11px 12px; border: 1px solid var(--border); border-radius: 8px; }
+.gc-lista { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 8px; }
+.gc-lista li { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+.gc-lista li.gc-top { border-color: var(--primary); background: var(--primary-soft); }
+.gc-lista .gc-precio { font-weight: 800; font-size: 1.25rem; font-variant-numeric: tabular-nums; text-align: right; }
+.gc-lista .sub { color: var(--muted); font-size: .86rem; }
+.gc-lista a { font-size: .9rem; font-weight: 600; }
+.gc-badge { display: inline-block; background: #fff3d6; color: #8a5a00; border-radius: 999px; padding: 1px 8px; font-size: .75rem; font-weight: 700; margin-left: 6px; vertical-align: 1px; }
+.gc-resumen { margin: 4px 0 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.gp-atajos { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 18px; }
+.gp-atajos .btn { padding: 9px 16px; font-size: .95rem; }
