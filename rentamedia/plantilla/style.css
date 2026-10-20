@@ -184,7 +184,3 @@ details.anual summary { color: var(--verde-2); }
 .leyenda { list-style: none; padding: 0; margin: 0 0 6px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
 .leyenda li { display: inline-flex; align-items: center; gap: 6px; }
 .leyenda i { width: 14px; height: 14px; display: inline-block; border: 1px solid var(--linea); }
-
-/* Alquiler (SERPAVI) */
-.respuesta.alquiler { border-left-color: #8a4b2a; }
-.respuesta.alquiler .cifra { color: #8a4b2a; }
