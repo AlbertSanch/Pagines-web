@@ -8,7 +8,10 @@
   var datos = null, centro = null, lugar = '', comb = 'gasolina95';
   try { comb = localStorage.getItem('gc-comb') || comb; } catch (e) { /* sin almacenamiento */ }
   if (!NOMBRES[comb]) comb = 'gasolina95';
-  if (new URLSearchParams(location.search).get('lowcost') === '1') $('gc-low').checked = true;
+  var params = new URLSearchParams(location.search), marca = (params.get('marca') || '').toUpperCase();
+  if (params.get('lowcost') === '1') $('gc-low').checked = true;
+  // Misma normalización que clave_marca() en scripts/paginas_gasolineras.py
+  function claveMarca(s) { return String(s).toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^A-Z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim(); }
 
   function txt(s) { var e = document.createElement('span'); e.textContent = s == null ? '' : s; return e.innerHTML; }
   function litro(p) { return p.toFixed(3).replace('.', ','); }
@@ -34,12 +37,13 @@
       d.gasolineras.forEach(function (g) {
         if (g[col] == null) return;
         if (low && !g[i.lowcost]) return;
+        if (marca && claveMarca(g[i.marca]) !== marca) return;
         if (h24 && !/24\s*H/i.test(g[i.horario])) return;
         var dist = km(centro[0], centro[1], g[i.lat], g[i.lon]);
         if (dist <= radio) lista.push({ g: g, d: dist });
       });
       if (!lista.length) {
-        aviso('No hay gasolineras' + (low ? ' low cost' : '') + (h24 ? ' abiertas 24 horas' : '') + ' con ' + NOMBRES[comb] + ' a menos de ' + radio + ' km' + (lugar ? ' ' + txt(lugar) : '') + '. Prueba con más distancia.');
+        aviso('No hay gasolineras' + (marca ? ' de esa marca' : '') + (low ? ' low cost' : '') + (h24 ? ' abiertas 24 horas' : '') + ' con ' + NOMBRES[comb] + ' a menos de ' + radio + ' km' + (lugar ? ' ' + txt(lugar) : '') + '. Prueba con más distancia.');
         return;
       }
       lista.sort(function (a, b) { return a.g[col] - b.g[col] || a.d - b.d; });
@@ -54,6 +58,7 @@
           '<div class="gc-precio">' + litro(g[col]) + ' €</div>' +
           '<a href="https://www.google.com/maps/dir/?api=1&amp;destination=' + g[i.lat] + ',' + g[i.lon] + '" target="_blank" rel="noopener">Cómo llegar →</a></li>';
       }).join('');
+      if (marca) cab = '<p class="gc-resumen">Solo gasolineras <strong>' + txt(lista[0].g[i.marca]) + '</strong> · <a href="' + location.pathname + '#buscador">ver todas las marcas</a></p>' + cab;
       res.innerHTML = cab + '<ol class="gc-lista">' + filas + '</ol>' +
         (lista.length > 40 ? '<p class="gp-updated">Se muestran las 40 más baratas.</p>' : '') +
         '<p class="gp-updated">Precios del Ministerio del ' + txt(d.fecha) + '. Confírmalos en el surtidor.</p>';

@@ -6,6 +6,7 @@ La llama actualizar_carburantes.py con todas las gasolineras ya descargadas del 
   - ahorrometro/gasolineras-baratas-cerca-de-mi.html: el buscador y, escritas en el HTML para que
     Google las lea, las gasolineras más baratas de España y de cada provincia.
   - ahorrometro/gasolineras-low-cost.html: qué marcas son más baratas, medido con los datos del día.
+  - ahorrometro/gasolineras-<marca>.html: una página por marca con todas sus gasolineras y sus precios.
 
 «Low cost» no es una etiqueta que pongamos a ojo: comparamos cada gasolinera con la media de su
 provincia y llamamos low cost a las marcas que, de media, están al menos LOW_COST céntimos por
@@ -19,11 +20,13 @@ import unicodedata
 from html import escape
 from pathlib import Path
 
-from paginas_provincia import CANARIAS_CEUTA_MELILLA, DOMINIO, euros, fecha, litro, mapa
+from paginas_provincia import CANARIAS_CEUTA_MELILLA, DOMINIO, euros, fecha, litro, mapa, slug
 
 MIN_MARCA = 10          # gasolineras mínimas para entrar en la comparación de marcas
 LOW_COST = 0.05         # €/L por debajo de la media de su provincia (gasolina 95 y diésel juntos)
 MAS_BARATAS_ESPANA = 15
+POR_PROVINCIA_MARCA = 10  # gasolineras de una marca que se listan en cada provincia
+FIJAS = {"gasolineras-baratas-cerca-de-mi", "gasolineras-low-cost"}
 GENERICOS = {"", "SIN ROTULO", "SIN ROTULO.", "NO TIENE", "NINGUNO", "INDEPENDIENTE", "GASOLINERA",
              "ESTACION DE SERVICIO", "E.S.", "ES", "SIN MARCA", "BLANCA", "N/A", "OTROS"}
 CAMPOS = ["marca", "direccion", "municipio", "cp", "provincia", "lat", "lon", "gasolina95", "gasolina98",
@@ -177,13 +180,13 @@ def pagina_cerca(resumen, gasolineras, ranking, iso, dia, hora):
   </div>"""
     return pagina("gasolineras-baratas-cerca-de-mi", "Gasolineras baratas cerca de mí: la más barata hoy",
                   "Encuentra la gasolinera más barata cerca de ti con los precios oficiales de hoy: ordenadas por precio y distancia, con gasolina 95, diésel y low cost.",
-                  cuerpo, iso, "Gasolineras baratas cerca de mí", [faq_ld], '<script src="assets/gasolineras.js?v=1" defer></script>')
+                  cuerpo, iso, "Gasolineras baratas cerca de mí", [faq_ld], '<script src="assets/gasolineras.js?v=2" defer></script>')
 
 
 def pagina_low_cost(resumen, gasolineras, ranking, iso, dia, hora):
     low = [m for m in ranking if m["lowcost"]]
     filas = "".join(
-        f'<tr{" class=sel" if m["lowcost"] else ""}><td>{escape(m["nombre"])}{" <span class=gc-badge>low cost</span>" if m["lowcost"] else ""}</td>'
+        f'<tr{" class=sel" if m["lowcost"] else ""}><td><a href="{m["ruta"]}">{escape(m["nombre"])}</a>{" <span class=gc-badge>low cost</span>" if m["lowcost"] else ""}</td>'
         f'<td class="num">{m["n"]}</td><td class="num {"gp-cheap" if m["dif"] < 0 else "gp-dear"}">{dif_texto(m["dif"])}</td>'
         f'<td class="num">{litro(m["gasolina95"]) + " €" if m["gasolina95"] else "—"}</td>'
         f'<td class="num">{litro(m["diesel"]) + " €" if m["diesel"] else "—"}</td></tr>'
@@ -234,6 +237,79 @@ def pagina_low_cost(resumen, gasolineras, ranking, iso, dia, hora):
                   cuerpo, iso, "Gasolineras low cost")
 
 
+def pagina_marca(m, estaciones, resumen, ranking, iso, dia, hora):
+    """Todas las gasolineras de una marca, por provincia y de más barata a más cara."""
+    nombre, total = m["nombre"], len(estaciones)
+    por_prov = {}
+    for codigo, g in estaciones:
+        por_prov.setdefault(codigo, []).append(g)
+    puesto = ranking.index(m) + 1
+    debajo = sum(1 for c, lista in por_prov.items() if c not in CANARIAS_CEUTA_MELILLA and "gasolina95" in resumen["provincias"][c]
+                 and any("gasolina95" in g["precios"] for g in lista)
+                 and sum(g["precios"]["gasolina95"] for g in lista if "gasolina95" in g["precios"]) / sum(1 for g in lista if "gasolina95" in g["precios"])
+                 < resumen["provincias"][c]["gasolina95"]["media"])
+    comparables = sum(1 for c in por_prov if c not in CANARIAS_CEUTA_MELILLA)
+    tarjetas = "".join(
+        f'<div class="gp-card{" main" if i == 0 else ""}"><p class="gp-name">{t}</p><p class="gp-price">{litro(m[k])}<small>€/L</small></p>'
+        f'<p class="gp-sub">precio medio de {escape(nombre)}</p><p class="gp-sub">media de España: {litro(resumen["espana"][k]["media"])} €/L</p></div>'
+        for i, (k, t) in enumerate((("gasolina95", "Gasolina 95"), ("diesel", "Diésel"))) if m.get(k) and k in resumen["espana"])
+    secciones = []
+    for codigo in sorted(por_prov, key=lambda c: resumen["provincias"][c]["slug"]):
+        prov = resumen["provincias"][codigo]
+        lista = sorted(por_prov[codigo], key=lambda g: (g["precios"].get("gasolina95", 9), g["precios"].get("diesel", 9)))
+        filas = "".join(
+            f'<tr><td><strong>{escape(g["municipio"])}</strong><span class="sub">{escape(g["direccion"])}</span></td>'
+            f'<td class="num">{litro(g["precios"]["gasolina95"]) + " €" if "gasolina95" in g["precios"] else "—"}</td>'
+            f'<td class="num">{litro(g["precios"]["diesel"]) + " €" if "diesel" in g["precios"] else "—"}</td><td>{mapa(g)}</td></tr>'
+            for g in lista[:POR_PROVINCIA_MARCA])
+        media = prov.get("gasolina95", {}).get("media")
+        resto = f'<p class="note">Y {len(lista) - POR_PROVINCIA_MARCA} gasolineras más de {escape(nombre)} en {escape(prov["nombre"])}: búscalas con el <a href="gasolineras-baratas-cerca-de-mi?marca={m["clave"].replace(" ", "+")}#buscador">buscador</a>.</p>' if len(lista) > POR_PROVINCIA_MARCA else ""
+        secciones.append(
+            f'<section><h3>{escape(nombre)} en {escape(prov["nombre"])} <small class="sub">({len(lista)} gasolinera{"s" if len(lista) != 1 else ""}'
+            f'{f" · media de la provincia: {litro(media)} €/L en gasolina 95" if media else ""})</small></h3>'
+            f'<div class="table-wrap"><table class="data"><thead><tr><th>Gasolinera</th><th class="num">Gasolina 95</th><th class="num">Diésel</th><th>Mapa</th></tr></thead>'
+            f'<tbody>{filas}</tbody></table></div>{resto}</section>')
+    baratas = sorted(((c, g) for c, g in estaciones if "gasolina95" in g["precios"] and c not in CANARIAS_CEUTA_MELILLA),
+                     key=lambda x: x[1]["precios"]["gasolina95"])[:5]
+    preguntas = [
+        (f"¿Es barata {nombre}?",
+         f"Hoy las gasolineras {nombre} están de media {dif_texto(m['dif'])} por litro que la media de su provincia (gasolina 95 y diésel). "
+         f"Es la marca número {puesto} de {len(ranking)} en nuestro ranking de precios"
+         + (", así que la consideramos low cost." if m["lowcost"] else ".")),
+        (f"¿Cuántas gasolineras {nombre} hay?",
+         f"En los datos del Ministerio de hoy aparecen {total} gasolineras con el rótulo {nombre}, en {len(por_prov)} provincia{'s' if len(por_prov) != 1 else ''}."),
+    ]
+    if baratas:
+        c, g = baratas[0]
+        preguntas.append((f"¿Cuál es la gasolinera {nombre} más barata?",
+                          f"Hoy, en gasolina 95, la de {g['direccion']} en {g['municipio']} ({resumen['provincias'][c]['nombre']}), a {litro(g['precios']['gasolina95'])} €/L."))
+    faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in preguntas]}
+    otras = "".join(f'<li><a href="{o["ruta"]}">{escape(o["nombre"])}</a></li>' for o in ranking if o is not m)
+    cuerpo = f"""<nav class="breadcrumbs"><a href="./">Inicio</a> › <a href="precio-gasolina-hoy">Precio de la gasolina</a> › <a href="gasolineras-low-cost">Marcas</a> › {escape(nombre)}</nav>
+  <h1>Gasolineras {escape(nombre)}: precios de hoy</h1>
+  <p class="lead">Precio de la gasolina y el diésel hoy en las {total} gasolineras {escape(nombre)} de España, ordenadas por provincia y de más barata a más cara. Datos oficiales del Ministerio del {escape(dia)}{hora}.</p>
+  <p class="gp-atajos"><a class="btn" href="gasolineras-baratas-cerca-de-mi?marca={m['clave'].replace(' ', '+')}#buscador">📍 {escape(nombre)} cerca de mí</a> <a class="btn btn-ghost" href="gasolineras-low-cost">Comparar con otras marcas</a></p>
+  <section class="gp-cards">{tarjetas}</section>
+  <div class="content gp-resumen">
+    <p>De media, las gasolineras {escape(nombre)} están <strong class="{'gp-cheap' if m['dif'] < 0 else 'gp-dear'}">{dif_texto(m['dif'])} por litro</strong> que la media de su provincia. Es la marca número {puesto} de {len(ranking)} por precio{', y entra en nuestra lista de <a href="gasolineras-low-cost">gasolineras low cost</a>' if m['lowcost'] else ''}.
+    {f'Su gasolina 95 está por debajo de la media en {debajo} de las {comparables} provincias de la península y Baleares donde tiene gasolineras.' if comparables else ''}</p>
+  </div>
+  {('<section><h2>Las gasolineras ' + escape(nombre) + ' más baratas hoy</h2>' + tabla_gasolineras([dict(g, _prov=c) for c, g in baratas], 'gasolina95', resumen) + '</section>') if baratas else ''}
+  <h2>Gasolineras {escape(nombre)} por provincia</h2>
+  {''.join(secciones)}
+  <div class="content">
+    <h2>Preguntas frecuentes</h2>
+    {''.join(f"<h3>{escape(q)}</h3><p>{escape(a)}</p>" for q, a in preguntas)}
+    <h2>Otras marcas</h2>
+    <ul class="gp-provincias">{otras}</ul>
+    <p class="note">Fuente: Ministerio para la Transición Ecológica y el Reto Demográfico, Geoportal de gasolineras. Aparecen las gasolineras que comunican al Ministerio el rótulo {escape(nombre)}. Ahorrómetro no tiene relación con la marca. Los precios pueden haber cambiado: confírmalos en el surtidor.</p>
+  </div>"""
+    return pagina(m["ruta"], f"Gasolineras {nombre}: precios hoy y la más barata",
+                  f"Precio de la gasolina y el diésel hoy en las gasolineras {nombre}: todas sus estaciones por provincia, la más barata y cuánto más barata o cara es que la media.",
+                  cuerpo, iso, f"Gasolineras {nombre}", [faq_ld])
+
+
 def pagina(ruta, titulo, descripcion, cuerpo, iso, miga, extra_ld=None, scripts=""):
     url = f"{DOMINIO}/{ruta}"
     ld = [{"@context": "https://schema.org", "@type": "WebPage", "name": titulo, "url": url, "inLanguage": "es-ES", "dateModified": iso},
@@ -261,17 +337,32 @@ def generar(resumen, gasolineras, web):
     hora = f", a las {hora}" if hora else ""
     ranking = marcas(gasolineras, resumen)
     lowcost = {m["clave"] for m in ranking if m["lowcost"]}
+    for m in ranking:
+        m["ruta"] = f"gasolineras-{slug(m['nombre'])}"
+        if m["ruta"] in FIJAS:
+            m["ruta"] += "-marca"
+    estaciones = {}
+    for codigo, lista in gasolineras.items():
+        for g in lista:
+            estaciones.setdefault(clave_marca(g["rotulo"]), []).append((codigo, g))
     (web / "datos" / "gasolineras.json").write_text(json.dumps(
         {"fecha": resumen.get("fechaMinisterio", ""), "campos": CAMPOS, "gasolineras": datos_json(gasolineras, lowcost)},
         ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     (web / "gasolineras-baratas-cerca-de-mi.html").write_text(pagina_cerca(resumen, gasolineras, ranking, iso, dia, hora), encoding="utf-8")
     (web / "gasolineras-low-cost.html").write_text(pagina_low_cost(resumen, gasolineras, ranking, iso, dia, hora), encoding="utf-8")
+    rutas = set(FIJAS)
+    for m in ranking:
+        (web / f"{m['ruta']}.html").write_text(pagina_marca(m, estaciones[m["clave"]], resumen, ranking, iso, dia, hora), encoding="utf-8")
+        rutas.add(m["ruta"])
+    for viejo in web.glob("gasolineras-*.html"):  # marcas que ya no llegan al mínimo de gasolineras
+        if viejo.stem not in rutas:
+            viejo.unlink()
     sitemap = web / "sitemap.xml"
     if "<!-- GASOLINERAS:INICIO -->" in sitemap.read_text(encoding="utf-8"):
         texto = sitemap.read_text(encoding="utf-8")
         nuevo = re.sub(r"(<!-- GASOLINERAS:INICIO -->).*?(<!-- GASOLINERAS:FIN -->)", lambda m: m[1] + "\n" + "\n".join(
             f"  <url><loc>{DOMINIO}/{r}</loc><lastmod>{iso}</lastmod><priority>0.9</priority></url>"
-            for r in ("gasolineras-baratas-cerca-de-mi", "gasolineras-low-cost")) + "\n  " + m[2], texto, flags=re.S)
+            for r in ["gasolineras-baratas-cerca-de-mi", "gasolineras-low-cost"] + [x["ruta"] for x in ranking]) + "\n  " + m[2], texto, flags=re.S)
         sitemap.write_text(nuevo, encoding="utf-8")
     print(f"gasolineras.json: {sum(len(v) for v in gasolineras.values())} gasolineras · "
           f"marcas low cost: {', '.join(m['nombre'] for m in ranking if m['lowcost']) or 'ninguna'}")
