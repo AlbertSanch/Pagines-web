@@ -15,6 +15,7 @@ on:
     paths:
       - scripts/actualizar_carburantes.py
       - scripts/paginas_provincia.py
+      - scripts/paginas_gasolineras.py
       - scripts/actualizar_luz.py
       - scripts/paginas_consumo.py
       - scripts/pagina_butano.py
