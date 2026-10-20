@@ -126,6 +126,9 @@ def pagina_cerca(resumen, gasolineras, ranking, iso, dia, hora):
         ("¿Cómo encuentro la gasolinera más barata cerca de mí?",
          "Pulsa «Buscar cerca de mí» y permite que el navegador use tu ubicación, o escribe tu código postal o tu municipio. "
          "Verás las gasolineras de alrededor ordenadas por precio, con la distancia y un enlace para llegar."),
+        ("¿Cómo encuentro una gasolinera abierta cerca de mí?",
+         "Marca «Abiertas ahora»: el buscador mira el horario que cada gasolinera comunica al Ministerio y la hora de tu móvil, y solo te enseña las que están abiertas en este momento. "
+         "Si buscas una que no cierre nunca, marca «Abiertas 24 h». Los festivos pueden tener otro horario."),
         ("¿Se guarda mi ubicación?",
          "No. La búsqueda se hace en tu propio navegador con la lista de gasolineras: tu ubicación no se envía a ningún servidor."),
         ("¿Cada cuánto se actualizan los precios?",
@@ -159,6 +162,7 @@ def pagina_cerca(resumen, gasolineras, ranking, iso, dia, hora):
       </div>
       <label>Distancia <select id="gc-radio"><option value="5">5 km</option><option value="10" selected>10 km</option><option value="25">25 km</option><option value="50">50 km</option></select></label>
       <label><input type="checkbox" id="gc-low"> Solo low cost</label>
+      <label><input type="checkbox" id="gc-abierta"> Abiertas ahora</label>
       <label><input type="checkbox" id="gc-24"> Abiertas 24 h</label>
     </div>
     <div id="gc-resultado" aria-live="polite"><p class="gp-status">Pulsa «Buscar cerca de mí» o escribe tu código postal para ver las gasolineras más baratas de tu zona.</p></div>
@@ -180,7 +184,7 @@ def pagina_cerca(resumen, gasolineras, ranking, iso, dia, hora):
   </div>"""
     return pagina("gasolineras-baratas-cerca-de-mi", "Gasolineras baratas cerca de mí: la más barata hoy",
                   "Encuentra la gasolinera más barata cerca de ti con los precios oficiales de hoy: ordenadas por precio y distancia, con gasolina 95, diésel y low cost.",
-                  cuerpo, iso, "Gasolineras baratas cerca de mí", [faq_ld], '<script src="assets/gasolineras.js?v=2" defer></script>')
+                  cuerpo, iso, "Gasolineras baratas cerca de mí", [faq_ld], '<script src="assets/gasolineras.js?v=3" defer></script>')
 
 
 def pagina_low_cost(resumen, gasolineras, ranking, iso, dia, hora):
