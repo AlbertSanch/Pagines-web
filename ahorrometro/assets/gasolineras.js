@@ -21,6 +21,44 @@
     var r = Math.PI / 180, x = Math.sin((c - a) * r / 2), y = Math.sin((d - b) * r / 2);
     return 12742 * Math.asin(Math.sqrt(x * x + Math.cos(a * r) * Math.cos(c * r) * y * y));
   }
+  // Horario del Ministerio («L-V: 07:00-22:00; S: 08:00-15:00», «L-D: 24H»…) → abierta ahora: true, false o null si no se entiende.
+  var DIAS = 'LMXJVSD';
+  function franjas(horario) {
+    var porDia = {}, ok = false, segs = String(horario || '').toUpperCase().split(';');
+    segs.forEach(function (seg) {
+      var m = seg.trim().match(/^([LMXJVSD](?:\s*-\s*[LMXJVSD])?(?:\s*,\s*[LMXJVSD](?:\s*-\s*[LMXJVSD])?)*)\s*:\s*(.+)$/);
+      if (!m) return;
+      var dias = [];
+      m[1].split(',').forEach(function (p) {
+        var r = p.split('-').map(function (x) { return DIAS.indexOf(x.trim()); });
+        for (var d = r[0]; d <= (r[1] != null ? r[1] : r[0]); d++) dias.push(d);
+      });
+      var rangos = [];
+      if (/24\s*H/.test(m[2])) rangos.push([0, 1440]);
+      else m[2].split(/\s+Y\s+|,/).forEach(function (t) {
+        var h = t.trim().match(/^(\d{1,2}):(\d{2})\s*-\s*(\d{1,2}):(\d{2})$/);
+        if (!h) return;
+        var a = +h[1] * 60 + +h[2], b = +h[3] * 60 + +h[4];
+        if (b === 0 || b === 1439) b = 1440;
+        rangos.push([a, b]);
+      });
+      if (!rangos.length) return;
+      dias.forEach(function (d) { porDia[d] = (porDia[d] || []).concat(rangos); });
+      ok = true;
+    });
+    // «L: 07:00-22:00» como único tramo suele querer decir todos los días: mejor no adivinar
+    if (!ok || (segs.length === 1 && Object.keys(porDia).length === 1 && porDia[0])) return null;
+    return porDia;
+  }
+  function abierta(horario, ahora) {
+    var f = franjas(horario);
+    if (!f) return null;
+    var d = (ahora.getDay() + 6) % 7, min = ahora.getHours() * 60 + ahora.getMinutes(), ayer = (d + 6) % 7;
+    var hoy = (f[d] || []).some(function (r) { return r[0] <= r[1] ? (min >= r[0] && min < r[1]) : min >= r[0]; });
+    var deAyer = (f[ayer] || []).some(function (r) { return r[0] > r[1] && min < r[1]; });  // franjas que pasan de medianoche
+    return hoy || deAyer;
+  }
+
   function cargar() {
     if (!datos) datos = fetch('datos/gasolineras.json').then(function (r) { return r.json(); }).then(function (d) {
       var i = {}; d.campos.forEach(function (c, n) { i[c] = n; }); d.i = i; return d;
@@ -33,6 +71,7 @@
     if (!centro) return;
     cargar().then(function (d) {
       var i = d.i, radio = +$('gc-radio').value, low = $('gc-low').checked, h24 = $('gc-24').checked, col = i[comb];
+      var ahora = new Date(), soloAbiertas = $('gc-abierta').checked;
       var lista = [];
       d.gasolineras.forEach(function (g) {
         if (g[col] == null) return;
@@ -40,10 +79,13 @@
         if (marca && claveMarca(g[i.marca]) !== marca) return;
         if (h24 && !/24\s*H/i.test(g[i.horario])) return;
         var dist = km(centro[0], centro[1], g[i.lat], g[i.lon]);
-        if (dist <= radio) lista.push({ g: g, d: dist });
+        if (dist > radio) return;
+        var ab = abierta(g[i.horario], ahora);
+        if (soloAbiertas && ab !== true) return;
+        lista.push({ g: g, d: dist, ab: ab });
       });
       if (!lista.length) {
-        aviso('No hay gasolineras' + (marca ? ' de esa marca' : '') + (low ? ' low cost' : '') + (h24 ? ' abiertas 24 horas' : '') + ' con ' + NOMBRES[comb] + ' a menos de ' + radio + ' km' + (lugar ? ' ' + txt(lugar) : '') + '. Prueba con más distancia.');
+        aviso('No hay gasolineras' + (marca ? ' de esa marca' : '') + (low ? ' low cost' : '') + (h24 ? ' abiertas 24 horas' : '') + (soloAbiertas ? ' abiertas ahora' : '') + ' con ' + NOMBRES[comb] + ' a menos de ' + radio + ' km' + (lugar ? ' ' + txt(lugar) : '') + '. Prueba con más distancia.');
         return;
       }
       lista.sort(function (a, b) { return a.g[col] - b.g[col] || a.d - b.d; });
@@ -54,7 +96,7 @@
         var g = x.g;
         return '<li' + (n === 0 ? ' class="gc-top"' : '') + '><div><strong>' + txt(g[i.marca] || 'Gasolinera') + '</strong>' + (g[i.lowcost] ? '<span class="gc-badge">low cost</span>' : '') +
           '<div class="sub">' + txt(g[i.direccion]) + ' · ' + txt(g[i.municipio]) + ' · ' + x.d.toFixed(1).replace('.', ',') + ' km</div>' +
-          (g[i.horario] ? '<div class="sub">Horario: ' + txt(g[i.horario]) + '</div>' : '') + '</div>' +
+          (g[i.horario] ? '<div class="sub">' + (x.ab === true ? '<span class="gc-abierta">● Abierta ahora</span> · ' : x.ab === false ? '<span class="gc-cerrada">● Cerrada ahora</span> · ' : '') + 'Horario: ' + txt(g[i.horario]) + '</div>' : '') + '</div>' +
           '<div class="gc-precio">' + litro(g[col]) + ' €</div>' +
           '<a href="https://www.google.com/maps/dir/?api=1&amp;destination=' + g[i.lat] + ',' + g[i.lon] + '" target="_blank" rel="noopener">Cómo llegar →</a></li>';
       }).join('');
@@ -118,5 +160,6 @@
       pintar();
     });
   });
-  ['gc-radio', 'gc-low', 'gc-24'].forEach(function (id) { $(id).addEventListener('change', pintar); });
+  if (params.get('abierta') === '1') $('gc-abierta').checked = true;
+  ['gc-radio', 'gc-low', 'gc-24', 'gc-abierta'].forEach(function (id) { $(id).addEventListener('change', pintar); });
 })();
