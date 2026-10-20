@@ -161,5 +161,6 @@
     });
   });
   if (params.get('abierta') === '1') $('gc-abierta').checked = true;
+  if (params.get('lugar')) { $('gc-lugar').value = params.get('lugar'); setTimeout(function () { $('gc-form').requestSubmit ? $('gc-form').requestSubmit() : $('gc-form').dispatchEvent(new Event('submit')); }, 0); }
   ['gc-radio', 'gc-low', 'gc-24', 'gc-abierta'].forEach(function (id) { $(id).addEventListener('change', pintar); });
 })();
