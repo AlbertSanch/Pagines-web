@@ -26,7 +26,7 @@ CAMPOS = ["n", "eur", "eur25", "eur75", "m2", "sup"]
 COLUMNA = re.compile(r"^(BI_ALVHEPCO_T|ALQTBID12_(M|25|75)_|ALQM2_LV_M_|SLVM2_M_)(VC|VU)_(\d{2})$")
 HOJAS = {"CCAA": ("ccaa", "CCAA", "LITCCAA"), "Provincias": ("prov", "CPRO", "LITPRO"), "Municipios": ("mun", "CUMUN", "NMUN"),
          "Distritos": ("dis", "CUDIS", None), "Secciones censales": ("sec", "CUSEC", None)}
-MIN_MUNICIPIOS = 6000
+MIN_MUNICIPIOS = 2000  # en 2024 el Ministerio da el dato de unos 2.500 (en los pueblos pequeños no hay bastantes alquileres)
 
 
 def campo(col):
