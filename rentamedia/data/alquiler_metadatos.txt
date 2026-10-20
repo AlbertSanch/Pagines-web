@@ -1,0 +1,41 @@
+Sistema Estatal Índices Alquiler de Vivienda		
+(Explotación estadística de fuentes tributarias)		
+Datos rentas y arrendamientos Modelo 100 por año Total: Los bienes inmuebles que se agregan son aquellos que tienen información tanto en la fuente tributaria como en la catastral.		
+Diseño de registro		
+Código	Denominación / definición	Tipo
+CUSEC_R	Código único de Sección Censal Censo Población 2021 INE (alfanumérico)	VARCHAR(10)
+CUSEC	Código único de Sección Censal Censo Población 2021 INE (numérico)	INT
+CUMUN	Código único de Municipio Censo Población 2021 INE (numérico)	INT
+CSEC	Código de Sección Censal Censo Población 2021 INE (numérico)	INT
+CDIS	Código de Distrito Censal Censo Población 2021 INE (numérico)	INT
+CMUN	Código Municipio Censo Población 2021 INE (numérico)	INT
+CPRO	Código de Provincia Censo Población 2021 INE (numérico)	INT
+CUSEC	Código de Sección Censal Censo Población 2021 INE (numérico)	INT
+CCA	Código único de Comunidad Autónoma Censo Población 2021 INE (numérico)	INT
+CUDIS	Código único de Distrito Censal Censo Población 2021 INE (numérico)	INT
+NPRO	Nombre de Provincia Censo Población 2021 INE	VARCHAR(50)
+NCA	Nombre de Comunidad Autónoma Censo Población 2021 INE	VARCHAR(50)
+NMUN	Nombre de Municipio Censo Población 2021 INE	VARCHAR(50)
+Las siguientes medidas son para el subconjunto de estudio del alquiler: bienes inmuebles con ingresos por arrendamiento para vivienda habitual (excluidos arrendamientoa a parientes).		
+BI_ALVHEPCO_TVC_AA	Recuento subconjunto alquiler Grupo GGT01 VC: Vivienda Colectiva como tipología de más superficie	INT
+BI_ALVHEPCO_TVU_AA	Recuento subconjunto alquiler Grupo GGT01 VU: Vivienda Unifamiliar o Rural como tipología de más superficie	INT
+ALQM2mes_LV_M_VC_AA	Alquiler mensual m2 mediano m2 Grupo GGT01 VC: Vivienda Colectiva como tipología de más superficie	DOBLE
+ALQM2mes_LV_25_VC_AA	Alquiler mensual m2 percentil 25 Grupo GGT01 VC: Vivienda Colectiva como tipología de más superficie	DOBLE
+ALQM2mes_LV_75_VC_AA	Alquiler mensual m2 percentil 75 Grupo GGT01 VC: Vivienda Colectiva como tipología de más superficie	DOBLE
+ALQM2mes_LV_M_VU_AA	Alquiler mensual m2 mediano m2 Grupo GGT01 VU: Vivienda Unifamiliar o Rural como tipología de más superficie	DOBLE
+ALQM2mes_LV_25_VU_AA	Alquiler mensual m2 percentil 25 Grupo GGT01 VC: Vivienda Unifamiliar o Rural como tipología de más superficie	DOBLE
+ALQM2mes_LV_75_VU_AA	Alquiler mensual m2 percentil 75 Grupo GGT01 VC: Vivienda Unifamiliar o Rural como tipología de más superficie	DOBLE
+ALQTBID12_M_VC_AA	Alquiler mensual todo el bien inmueble mediana Grupo GGT01 VC: Vivienda Colectiva como tipología de más superficie	DOBLE
+ALQTBID12_25_VC_AA	Alquiler mensual todo el bien inmueble percentil 25 Grupo GGT01 VC: Vivienda Colectiva como tipología de más superficie	DOBLE
+ALQTBID12_75_VC_AA	Alquiler mensual todo el bien inmueble percentil 75 Grupo GGT01 VC: Vivienda Colectiva como tipología de más superficie	DOBLE
+ALQTBID12_M_VU_AA	Alquiler mensual todo el bien inmueble mediana Grupo GGT01 VU: Vivienda Unifamiliar o Rural como tipología de más superficie	DOBLE
+ALQTBID12_25_VU_AA	Alquiler mensual todo el bien inmueble percentil 25 Grupo GGT01 VC: Vivienda Unifamiliar o Rural como tipología de más superficie	DOBLE
+ALQTBID12_75_VU_AA	Alquiler mensual todo el bien inmueble percentil 75 Grupo GGT01 VC: Vivienda Unifamiliar o Rural como tipología de más superficie	DOBLE
+SLVM2_M_VC_AA	Superficie m2 mediana Grupo GGT01 VC: Vivienda Colectiva como tipología de más superficie	DOBLE
+SLVM2_25_VC_AA	Superficie m2 percentil 25 Grupo GGT01 VC: Vivienda Colectiva como tipología de más superficie	DOBLE
+SLVM2_75_VC_AA	Superficie m2 percentil 75 Grupo GGT01 VC: Vivienda Colectiva como tipología de más superficie	DOBLE
+SLVM2_M_VU_AA	Superficie m2 mediana Grupo GGT01 VU: Vivienda Unifamiliar o Rural como tipología de más superficie	DOBLE
+SLVM2_25_VU_AA	Superficie m2 percentil 25 Grupo GGT01 VU: Vivienda Unifamiliar o Rural como tipología de más superficie	DOBLE
+SLVM2_75_VU_AA	Superficie m2 percentil 75 Grupo GGT01 VU: Vivienda Unifamiliar o Rural como tipología de más superficie	DOBLE
+--> La denominación del campo se marca al final con "_AA" para señalar el año		
+Nota: Este archivo 2026-03_09_bd_SERPAVI_2011-2024 - DEFINITIVO WEB_v2.xlsx únicamente incluye la corrección en la fecha de referencia del seccionado censal del INE utilizado (2021) en esta hoja de Metadatos (08/07/2026).		
