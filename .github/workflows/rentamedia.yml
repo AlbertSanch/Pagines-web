@@ -1,5 +1,6 @@
 # Renta Media (rentamedia.es): descarga los datos de renta del INE (Atlas de Distribución de Renta de los Hogares)
-# y de Hacienda (declarantes del IRPF por municipio y por código postal), los procesa y regenera la web en rentamedia/web, que publica Cloudflare Pages.
+# y de Hacienda (declarantes del IRPF por municipio y por código postal), y el alquiler declarado del
+# Ministerio de Vivienda (SERPAVI, por municipio, distrito y sección censal); los procesa y regenera la web en rentamedia/web, que publica Cloudflare Pages.
 # El INE publica el atlas una vez al año, en otoño: de octubre a diciembre se comprueba cada lunes y el resto del año,
 # el día 1 de cada mes. Al cambiar los scripts o la plantilla solo se regenera la web, sin volver a descargar.
 # Si la descarga falla o el formato del INE cambia, el workflow falla y NO publica nada: la web sigue como estaba.
@@ -46,6 +47,14 @@ jobs:
       - name: Descargar datos de Hacienda (renta por municipio y código postal)
         if: github.event_name != 'push'
         run: python rentamedia/scripts/descargar_hacienda.py
+
+      - name: Alquiler declarado (SERPAVI, Ministerio de Vivienda)
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: |
+          pip install -q openpyxl
+          python rentamedia/scripts/descargar_alquiler.py
+          python rentamedia/scripts/procesar_alquiler.py
 
       - name: Descargar contornos para los mapas
         if: github.event_name != 'push'
