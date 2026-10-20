@@ -310,6 +310,7 @@ PLANTILLA = """<!DOCTYPE html>
     <h2>Cómo calculamos estos precios</h2>
     <p>Todas las gasolineras de España deben comunicar sus precios al Ministerio para la Transición Ecológica y el Reto Demográfico. Dos veces al día descargamos esos datos y calculamos la media de {nombre}, contando solo las gasolineras abiertas al público general. Cada gasolinera cuenta lo mismo en la media, venda mucho o poco.</p>
     <p>Para saber cuánto te costará un viaje con estos precios, usa el enlace «Calcular un viaje» de cada combustible: abre la <a href="../calculadoras/coste-viaje-coche">calculadora del coste de un viaje en coche</a> con el precio medio de {nombre} ya puesto.</p>
+    <!-- MUNICIPIOS:INICIO --><!-- MUNICIPIOS:FIN -->
     <h2>Precio de la gasolina en otras provincias</h2>
     <ul class="gp-provincias">{otras}</ul>
     <p class="note">Fuente: Ministerio para la Transición Ecológica y el Reto Demográfico, Geoportal de gasolineras. Los precios pueden haber cambiado desde la última actualización; confírmalos en el surtidor.</p>
