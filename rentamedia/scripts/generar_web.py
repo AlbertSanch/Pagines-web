@@ -31,7 +31,7 @@ WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://rentamedia.es"
 SITIO = "Renta Media"
-VERSION = "3"
+VERSION = "4"
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que Ahorrómetro y ¿Cuántos se llaman?
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
                            "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"]
@@ -241,6 +241,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
       <a href="/municipios-mas-pobres-de-espana/">Más pobres</a>
       <a href="/provincias/">Provincias</a>
       <a href="/barrios/">Barrios</a>
+      <a href="/alquiler/">Alquiler</a>
       <a href="/comparar-renta/">¿Estás por encima?</a>
     </nav>
   </div>
@@ -252,7 +253,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="site-footer">
   <div class="container">
     <p><strong>{SITIO}</strong> muestra la renta media de cada municipio, provincia y barrio de España con los datos oficiales del Instituto Nacional de Estadística (INE).</p>
-    <div class="links"><a href="/">Buscar un municipio</a><a href="/municipios-mas-ricos-de-espana/">Municipios más ricos</a><a href="/municipios-mas-pobres-de-espana/">Municipios más pobres</a><a href="/ciudades-mas-ricas-de-espana/">Ciudades más ricas</a><a href="/provincias/">Provincias y comunidades</a><a href="/barrios/">Barrios de cada ciudad</a><a href="/barrios-mas-ricos-de-espana/">Barrios más ricos de España</a><a href="/comparar-renta/">¿Estás por encima de la media?</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="links"><a href="/">Buscar un municipio</a><a href="/municipios-mas-ricos-de-espana/">Municipios más ricos</a><a href="/municipios-mas-pobres-de-espana/">Municipios más pobres</a><a href="/ciudades-mas-ricas-de-espana/">Ciudades más ricas</a><a href="/provincias/">Provincias y comunidades</a><a href="/barrios/">Barrios de cada ciudad</a><a href="/barrios-mas-ricos-de-espana/">Barrios más ricos de España</a><a href="/alquiler/">Precio del alquiler</a><a href="/comparar-renta/">¿Estás por encima de la media?</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Fuente: INE, Atlas de Distribución de Renta de los Hogares. Datos reutilizados conforme a sus condiciones de uso; esta web no está vinculada al INE.</p>
   </div>
 </footer>
@@ -345,6 +346,162 @@ def barras_fuentes(valores, referencia, nombre_ref):
     return f'<ul class="barras fuentes">{"".join(filas)}</ul>' if filas else ""
 
 
+# ---------------------------------------------------------------- alquiler (SERPAVI)
+
+def alq_ultimo(d):
+    """Última fila de pisos de un territorio de alquiler.json, si tiene la renta mediana."""
+    if not d:
+        return None
+    f = d["vc"][-1]
+    return f if f and f[I_EUR] else None
+
+
+def alq_serie(d):
+    return [(a, f[I_EUR]) for a, f in zip(ALQ["anios"], d["vc"]) if f and f[I_EUR]] if d else []
+
+
+def grafico_alquiler(puntos, etiqueta):
+    """Barras del alquiler mediano por año (€/mes)."""
+    if len(puntos) < 2:
+        return ""
+    ancho, alto, abajo, arriba = 640, 220, 26, 24
+    maximo = max(v for _, v in puntos)
+    paso = ancho / len(puntos)
+    barra = paso * 0.62
+    escala = (alto - abajo - arriba) / maximo
+    partes = []
+    for i, (a, v) in enumerate(puntos):
+        h = v * escala
+        x = i * paso + (paso - barra) / 2
+        y = alto - abajo - h
+        ultimo = i == len(puntos) - 1
+        partes.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{barra:.1f}" height="{h:.1f}" rx="4" fill="{"#8a4b2a" if ultimo else "#e3cbb8"}"><title>{a}: {euros(v)} al mes</title></rect>'
+                      f'<text x="{x + barra / 2:.1f}" y="{y - 6:.1f}" text-anchor="middle" font-size="12.5" font-weight="{700 if ultimo else 500}" fill="#10231d">{n(v)}</text>'
+                      f'<text x="{x + barra / 2:.1f}" y="{alto - 8}" text-anchor="middle" font-size="12.5" fill="#5b6660">{str(a)[2:] if len(puntos) > 10 else a}</text>')
+    return (f'<figure class="grafico"><svg viewBox="0 0 {ancho} {alto}" role="img" aria-label="{escape(etiqueta)}">{"".join(partes)}</svg>'
+            f'<figcaption>{escape(etiqueta)}, en euros al mes.</figcaption></figure>')
+
+
+def seccion_alquiler(m, preguntas):
+    """Bloque «Precio del alquiler» de la página de un municipio. Devuelve "" si no hay dato fiable."""
+    if not ALQ:
+        return ""
+    d = ALQ["mun"].get(m["cod"])
+    f = alq_ultimo(d)
+    if not f or (f[I_N] or 0) < MIN_VIV_ALQUILER:
+        return ""
+    nombre, p = m["nombre"], m["prov"]
+    anio = ALQ["anios"][-1]
+    prov = alq_ultimo(ALQ["prov"].get(str(int(p)).zfill(2)) or ALQ["prov"].get(p))
+    partes = [f"""<h2 id="alquiler">Precio del alquiler en {escape(nombre)}</h2>
+<div class="respuesta alquiler">
+<p class="etiqueta">Alquiler mediano de un piso · {anio}</p>
+<p class="cifra">{euros(f[I_EUR])} <small>al mes</small></p>
+{indicador(f[I_EUR], prov[I_EUR], "la media de la provincia") if prov else ""}
+<p class="sub">La mitad de los pisos alquilados en {escape(nombre)} se pagan por menos y la otra mitad por más. Lo normal va de {euros(f[I_EUR25])} a {euros(f[I_EUR75])} al mes.</p>
+</div>"""]
+    stats = []
+    if f[I_M2]:
+        stats.append(f'<div class="stat"><b class="grande">{dec(f[I_M2], 2)} €/m²</b><span>al mes (mediana)</span></div>')
+    if f[I_SUP]:
+        stats.append(f'<div class="stat"><b class="grande">{n(f[I_SUP])} m²</b><span>superficie típica de un piso alquilado</span></div>')
+    stats.append(f'<div class="stat"><b class="grande">{n(f[I_N])}</b><span>pisos alquilados declarados a Hacienda</span></div>')
+    casa = d.get("vu")
+    if casa and casa[I_EUR] and (casa[I_N] or 0) >= MIN_VIV_ALQUILER:
+        stats.append(f'<div class="stat"><b class="grande">{euros(casa[I_EUR])}</b><span>al mes por una casa unifamiliar ({n(casa[I_N])} alquiladas)</span></div>')
+    partes.append(f'<div class="stats">{"".join(stats)}</div>')
+    esfuerzo = None
+    if m.get("hogar"):
+        esfuerzo = f[I_EUR] * 12 / m["hogar"] * 100
+        partes.append(f"<p>Un alquiler mediano en {escape(nombre)} se lleva el <strong>{pct(esfuerzo, 0)}</strong> de la renta neta media de un hogar "
+                      f"del municipio ({euros(m['hogar'])} al año). Se suele aconsejar que la vivienda no pase del 30-35 % de los ingresos.</p>")
+    serie = alq_serie(d)
+    if len(serie) >= 3:
+        a0, v0 = next(((a, v) for a, v in serie if a >= anio - 5), serie[0])
+        partes.append(f"<p>Desde {a0}, el alquiler mediano de un piso ha pasado de {euros(v0)} a {euros(f[I_EUR])} al mes: {variacion(v0, f[I_EUR])}.</p>")
+        partes.append(grafico_alquiler([x for x in serie if x[0] >= 2015] or serie, f"Alquiler mediano de un piso en {nombre}"))
+        preguntas.append((f"¿Cuánto ha subido el alquiler en {nombre}?",
+                          f"Según el Ministerio de Vivienda, el alquiler mediano de un piso en {nombre} pasó de {euros(v0)} al mes en {a0} "
+                          f"a {euros(f[I_EUR])} en {anio}, un {dec(abs((f[I_EUR] - v0) / v0 * 100))} % {'más' if f[I_EUR] >= v0 else 'menos'}."))
+    distritos = sorted(((c, x) for c, x in ALQ["dis"].items() if c.startswith(m["cod"]) and (x[I_N] or 0) >= MIN_VIV_ALQUILER),
+                       key=lambda x: -x[1][I_EUR])
+    if len(distritos) >= 2:
+        filas = "".join(f'<tr><td>{escape(nombre_distrito(c))}</td><td class="num"><b>{euros(x[I_EUR])}</b></td>'
+                        f'<td class="num">{dec(x[I_M2], 2) + " €" if x[I_M2] else "—"}</td>'
+                        f'<td class="num">{variacion(x[6], x[I_EUR]) if x[6] else "—"}</td></tr>' for c, x in distritos)
+        partes.append(f"<h3>Alquiler por distritos de {escape(nombre)}</h3>"
+                      '<div class="table-wrap"><table class="data"><thead><tr><th>Distrito</th><th class="num">€/mes</th><th class="num">€/m²</th>'
+                      f'<th class="num">En 5 años</th></tr></thead><tbody>{filas}</tbody></table></div>')
+    partes.append(f'<p class="updated">Fuente: Ministerio de Vivienda, Sistema Estatal de Índices de Alquiler de Vivienda ({anio}). Son las rentas que los caseros '
+                  'declaran a Hacienda de todos los contratos en vigor, no los precios de los anuncios: los pisos que se alquilan ahora suelen pedir más. '
+                  '<a href="/alquiler/">Ver el alquiler en toda España</a>.</p>')
+    preguntas.append((f"¿Cuánto cuesta alquilar un piso en {nombre}?",
+                      f"Según el Ministerio de Vivienda, en {anio} el alquiler mediano de un piso en {nombre} era de {euros(f[I_EUR])} al mes "
+                      f"({dec(f[I_M2], 2)} €/m²)" + (f", y lo habitual iba de {euros(f[I_EUR25])} a {euros(f[I_EUR75])}" if f[I_EUR25] and f[I_EUR75] else "")
+                      + ". Son rentas declaradas a Hacienda de contratos en vigor."))
+    return "\n".join(partes)
+
+
+def pagina_alquiler(municipios):
+    """/alquiler/: el alquiler por provincias y los municipios más caros y más baratos."""
+    anio = ALQ["anios"][-1]
+    provs = []
+    for p, (_, nombre, _) in PROVINCIAS.items():
+        f = alq_ultimo(ALQ["prov"].get(p))
+        if f:
+            antes = next((v for a, v in alq_serie(ALQ["prov"][p]) if a == anio - 5), None)
+            provs.append((nombre, p, f, antes))
+    provs.sort(key=lambda x: -x[2][I_EUR])
+    filas_p = "".join(f'<tr><td>{i}</td><td><a href="{ruta_prov(p)}">{escape(nom)}</a></td><td class="num"><b>{euros(f[I_EUR])}</b></td>'
+                      f'<td class="num">{dec(f[I_M2], 2)} €</td><td class="num">{variacion(antes, f[I_EUR]) if antes else "—"}</td></tr>'
+                      for i, (nom, p, f, antes) in enumerate(provs, 1))
+    lista = []
+    for m in municipios:
+        d = ALQ["mun"].get(m["cod"])
+        f = alq_ultimo(d)
+        if f and (f[I_N] or 0) >= MIN_VIV_RANKING:
+            lista.append((m, f))
+    lista.sort(key=lambda x: -x[1][I_EUR])
+
+    def tabla(filas):
+        return ('<div class="table-wrap"><table class="data ranking"><thead><tr><th>#</th><th>Municipio</th><th class="num">€/mes</th><th class="num">€/m²</th>'
+                '<th class="num">Pisos alquilados</th></tr></thead><tbody>'
+                + "".join(f'<tr><td>{i}</td><td><a href="{ruta_mun(m)}#alquiler">{escape(m["nombre"])}</a> <small>{escape(PROVINCIAS[m["prov"]][1])}</small></td>'
+                          f'<td class="num"><b>{euros(f[I_EUR])}</b></td><td class="num">{dec(f[I_M2], 2)} €</td><td class="num">{n(f[I_N])}</td></tr>'
+                          for i, m, f in filas) + "</tbody></table></div>")
+    caros = [(i, m, f) for i, (m, f) in enumerate(lista[:50], 1)]
+    baratos = [(len(lista) - i, m, f) for i, (m, f) in enumerate(list(reversed(lista))[:50])]
+    preguntas = [
+        ("¿Qué es el índice de referencia del precio del alquiler?",
+         "Es el sistema del Ministerio de Vivienda que, con los alquileres declarados a Hacienda y los datos del Catastro, calcula cuánto se paga por "
+         "las viviendas en cada zona. En las zonas declaradas de mercado tensionado sirve además, por la Ley 12/2023 de vivienda, como límite de precio "
+         "para algunos contratos nuevos: el rango exacto de un piso se consulta por su dirección en el visor oficial serpavi.mivau.gob.es."),
+        ("¿Estos precios son los de los anuncios?",
+         "No. Son las rentas de todos los contratos en vigor que los propietarios declaran en la renta, así que incluyen contratos antiguos. "
+         "Los portales inmobiliarios dan el precio que se pide hoy en los anuncios, que suele ser más alto."),
+        ("¿Cuánto me pueden subir el alquiler este año?",
+         "Depende del contrato. En los contratos firmados desde mayo de 2023, la actualización anual está limitada por el Índice de Referencia de "
+         "Arrendamientos de Vivienda (IRAV) que publica el INE cada mes; no es lo mismo que el índice de precios de esta página."),
+        ("¿Por qué no sale mi pueblo?",
+         f"El Ministerio no publica el dato cuando hay muy pocos alquileres declarados. En las páginas de municipio lo damos si hay al menos {MIN_VIV_ALQUILER} pisos alquilados, "
+         f"y en los rankings exigimos {MIN_VIV_RANKING} para que unos pocos contratos no muevan la cifra."),
+    ]
+    cuerpo = f"""<h1>Precio del alquiler en España por municipios ({anio})</h1>
+<p class="lead">Cuánto se paga de alquiler en cada provincia y municipio de España, según el índice oficial del Ministerio de Vivienda: la mediana de lo que los caseros declaran a Hacienda, en euros al mes y por metro cuadrado.</p>
+<h2>Alquiler mediano de un piso por provincia</h2>
+<div class="table-wrap"><table class="data ranking"><thead><tr><th>#</th><th>Provincia</th><th class="num">€/mes</th><th class="num">€/m²</th><th class="num">En 5 años</th></tr></thead><tbody>{filas_p}</tbody></table></div>
+<h2>Los 50 municipios con el alquiler más caro</h2>
+<p>Municipios con al menos {MIN_VIV_RANKING} pisos alquilados declarados en {anio}.</p>
+{tabla(caros)}
+<h2>Los 50 municipios con el alquiler más barato</h2>
+{tabla(baratos)}
+<div class="content"><h2>Preguntas frecuentes</h2>{faq_html(preguntas)}</div>
+<p class="fuente">Fuente: Ministerio de Vivienda y Agenda Urbana, Sistema Estatal de Índices de Alquiler de Vivienda, explotación estadística de las declaraciones del IRPF ({ALQ['anios'][0]}-{anio}). Busca tu municipio en el <a href="/">buscador</a> para ver su alquiler junto a su renta.</p>"""
+    return pagina("/alquiler/", f"Precio del alquiler por municipios y provincias ({anio})",
+                  f"Cuánto cuesta alquilar un piso en cada provincia y municipio de España según el índice oficial del Ministerio de Vivienda: euros al mes, €/m² y cuánto ha subido.",
+                  cuerpo, [("Alquiler", None)], [faq_ld(preguntas)])
+
+
 # ---------------------------------------------------------------- mapas
 
 COLORES_MAPA = ["#f3e7c9", "#dcd39b", "#9cc3a4", "#4f9677", "#0e4d3a"]
@@ -430,6 +587,10 @@ def mapa_svg(formas, etiqueta, ancho=640):
 # ---------------------------------------------------------------- datos
 
 HACIENDA = {}  # datos de Hacienda (data/hacienda.json); vacío si no hay
+ALQ = {}  # alquiler declarado del SERPAVI (data/alquiler.json); vacío si no hay
+I_N, I_EUR, I_EUR25, I_EUR75, I_M2, I_SUP = range(6)  # posiciones de los campos de alquiler.json
+MIN_VIV_ALQUILER = 20     # viviendas alquiladas mínimas para dar la cifra de un municipio
+MIN_VIV_RANKING = 300     # y para entrar en los rankings de alquiler
 
 
 def cargar():
@@ -437,6 +598,9 @@ def cargar():
         ruta = DATOS / f"{nombre}.json"
         if ruta.exists():
             GEO[nombre] = json.loads(ruta.read_text(encoding="utf-8"))
+    ruta_a = DATOS / "alquiler.json"
+    if ruta_a.exists():
+        ALQ.update(json.loads(ruta_a.read_text(encoding="utf-8")))
     ruta_h = DATOS / "hacienda.json"
     if ruta_h.exists():
         HACIENDA.update(json.loads(ruta_h.read_text(encoding="utf-8")))
@@ -640,6 +804,10 @@ def pagina_municipio(m, T, por_prov, total_es, anios, t):
                       '<p class="updated">La renta neta es la bruta menos impuestos y cotizaciones. La «unidad de consumo» ajusta la renta del hogar '
                       'según cuántas personas viven en él, para poder comparar hogares de distinto tamaño.</p>')
 
+    alquiler = seccion_alquiler(m, preguntas)
+    if alquiler:
+        cuerpo.append(alquiler)
+
     # Fuentes de ingreso
     F = T["mun_fuentes"]
     fuentes = [F.ultimo(m["cod"], ind) for ind, _ in FUENTES]
@@ -766,6 +934,8 @@ def pagina_municipio(m, T, por_prov, total_es, anios, t):
             extras.append("los barrios más ricos")
         if "<h2>Mapa de la renta en" in texto:
             extras.append("el mapa por zonas")
+        if 'id="alquiler"' in texto:
+            extras.append("el precio del alquiler")
         extras.append("su puesto en España y en su provincia")
         extras.append(f"la evolución desde {primero[0]}" if primero and primero[0] != ultimo else "cómo ha cambiado")
         descripcion = f"¿Cuánto se gana en {nombre}? Mira " + ", ".join(extras[:-1]) + " y " + extras[-1] + "."
@@ -1204,6 +1374,9 @@ def main():
     rutas += paginas_barrios(municipios, t, T, anios)
     guardar("/comparar-renta/", pagina_comparador(anios))
     rutas.append("/comparar-renta/")
+    if ALQ:
+        guardar("/alquiler/", pagina_alquiler(list(municipios.values())))
+        rutas.append("/alquiler/")
     rutas += paginas_legales(anios)
     guardar("/", portada(con_dato, grandes, T, anios, len(municipios)))
     grupos = indices_busqueda(municipios)
