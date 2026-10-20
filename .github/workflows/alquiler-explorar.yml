@@ -1,0 +1,35 @@
+# Temporal: descarga la base de datos del SERPAVI (alquiler) y guarda su estructura en
+# rentamedia/data/alquiler_explorar.txt para preparar las páginas de alquiler de rentamedia.
+name: Alquiler (explorar SERPAVI)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/alquiler-explorar.yml
+      - rentamedia/scripts/descargar_alquiler.py
+
+permissions:
+  contents: write
+
+jobs:
+  explorar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q openpyxl
+      - run: python rentamedia/scripts/descargar_alquiler.py --explorar
+      - name: Guardar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add rentamedia/data/alquiler_explorar.txt
+          git diff --cached --quiet && exit 0
+          git commit -m "Alquiler: estructura de la base de datos del SERPAVI"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep 5; done
+          exit 1

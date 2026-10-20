@@ -2,3 +2,4 @@ __pycache__/
 .claude/settings.local.json
 cuantossellaman/datos-ine/
 rentamedia/datos-ine/
+rentamedia/datos-alquiler/
