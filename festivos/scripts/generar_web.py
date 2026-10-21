@@ -17,6 +17,7 @@ Uso: python festivos/scripts/generar_web.py
 """
 import datetime as dt
 import json
+import os
 import re
 import shutil
 import sys
@@ -32,7 +33,7 @@ PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 SITIO = "Festivos de"
 VERSION = "9"
-HOY = dt.date.today()
+HOY = dt.date.fromisoformat(os.environ["FESTIVOS_HOY"]) if os.environ.get("FESTIVOS_HOY") else dt.date.today()  # FESTIVOS_HOY: para probar
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
                            "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"]
@@ -229,7 +230,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <body>
 <header class="cabecera">
   <div class="contenedor">
-    <a href="/" class="logo"><span class="logo-hoja"><b id="logo-dia">{HOY.day}</b><i id="logo-mes">{MESES[HOY.month - 1][:3]}</i></span><span>festivos<span class="de">de</span>.es</span></a>
+    <a href="/" class="logo"><span class="logo-hoja"><b id="logo-dia"></b><i id="logo-mes"></i></span><script>(function(){{var d=new Date();document.getElementById("logo-dia").textContent=d.getDate();document.getElementById("logo-mes").textContent={json.dumps([m[:3] for m in MESES])}[d.getMonth()]}})()</script><span>festivos<span class="de">de</span>.es</span></a>
     <nav class="menu">
       <a href="/calendario-laboral-{max(ANIOS)}/">Calendario {max(ANIOS)}</a>
       <a href="/puentes-{max(ANIOS)}/">Puentes {max(ANIOS)}</a>
@@ -757,6 +758,14 @@ def pagina_dia(datos, idx, mes, dia):
     return pagina(ruta_dia(d), titulo, desc, cuerpo, [("¿Es festivo hoy?", "/es-festivo/"), (nombre_dia.capitalize(), None)], [faq_ld(preguntas)])
 
 
+def caja_dia(id_, etiqueta, d, resumen):
+    """Respuesta de hoy o mañana tal como la escribe el script de /es-festivo/ (que la recalcula con la fecha del navegador)."""
+    r = resumen.get(d.isoformat())
+    texto = (("Festivo " if r.startswith("en ") else "Es ") + r) if r else "No es festivo en ninguna comunidad"
+    return (f'<div class="tarjeta{" si" if r else ""}" id="{id_}"><span class="etq">{etiqueta}, {fecha_larga(d)}</span>'
+            f'<p class="gran">{texto}</p><a href="{ruta_dia(d)}">Ver dónde es festivo →</a></div>')
+
+
 def pagina_es_festivo(datos, idx):
     a = anio_proximo(HOY.month, HOY.day) if HOY.year in ANIOS else max(ANIOS)
     # Resumen corto de cada fecha para la respuesta de hoy y mañana (se calcula en el navegador con su fecha)
@@ -776,7 +785,7 @@ def pagina_es_festivo(datos, idx):
               "var h=new Date();caja('f-hoy','Hoy',h);caja('f-manana','Mañana',new Date(h.getFullYear(),h.getMonth(),h.getDate()+1))})();</script>")
     cuerpo = f"""<h1>¿Es festivo hoy?</h1>
 <p class="lead">Mira si hoy o mañana es festivo en España, en tu comunidad o en tu municipio, y elige cualquier día del año para ver dónde es festivo. Con los datos del BOE y de los boletines oficiales de cada comunidad.</p>
-<div class="hoy"><div class="tarjeta" id="f-hoy"><span class="etq">Hoy</span><p class="gran">{fecha_larga(HOY)}</p></div><div class="tarjeta" id="f-manana"></div></div>
+<div class="hoy">{caja_dia("f-hoy", "Hoy", HOY, resumen)}{caja_dia("f-manana", "Mañana", HOY + dt.timedelta(days=1), resumen)}</div>
 <p>Las fiestas locales cambian en cada pueblo y ciudad: <a href="/">busca tu municipio</a> para ver exactamente sus festivos.</p>
 <section><h2>Elige un día de {a}</h2>
 <p class="leyenda"><span><span class="muestra n"></span> Festivo en toda España</span><span><span class="muestra a"></span> Festivo en alguna comunidad</span></p>
