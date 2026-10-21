@@ -283,3 +283,15 @@ table.festivos { width: 100%; border-collapse: collapse; font-size: .97rem; }
 .escolar-cifras b { font-size: 1.15rem; line-height: 1.3; margin: 2px 0; }
 .escolar-cifras li { gap: 2px; }
 @media (max-width: 760px) { .escolar-cifras { grid-template-columns: 1fr; } }
+
+/* ¿Es festivo el…? */
+.mes .dias a { padding: 4px 0; border-radius: 6px; text-decoration: none; color: var(--tinta); }
+.mes .dias a:hover { background: var(--rojo-claro); }
+.mes .dias a.finde { color: var(--suave); }
+.mes .dias a.n { background: var(--azul-claro); color: var(--azul); font-weight: 800; }
+.mes .dias a.a { background: var(--verde-claro); color: var(--verde); font-weight: 800; }
+.mes .dias a.sel { outline: 2px solid var(--rojo); }
+.muestra { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 4px; }
+.muestra.n { background: var(--azul-claro); border: 1px solid var(--azul); }
+.muestra.a { background: var(--verde-claro); border: 1px solid var(--verde); }
+.tarjeta a { font-weight: 700; }
