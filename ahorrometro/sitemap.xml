@@ -43,15 +43,15 @@
   <url><loc>https://ahorrometro.es/gasolineras-t9</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-family-energy</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-alcampo</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ahorrometro.es/gasolineras-plenergy</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-tamoil</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-gm-oil</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
+  <url><loc>https://ahorrometro.es/gasolineras-plenergy</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-petroprix</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-e-leclerc</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-gasexpress</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
+  <url><loc>https://ahorrometro.es/gasolineras-beroil</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-ballenoil</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-esclatoil</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ahorrometro.es/gasolineras-beroil</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-campsa-express</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-supeco</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-eroski</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
@@ -67,8 +67,8 @@
   <url><loc>https://ahorrometro.es/gasolineras-petromiralles</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-q8</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-agla</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ahorrometro.es/gasolineras-meroil</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-shell</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
+  <url><loc>https://ahorrometro.es/gasolineras-meroil</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-avia</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-galp</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-libre</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
@@ -81,8 +81,8 @@
   <url><loc>https://ahorrometro.es/gasolineras-petronor</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-repsol</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-ids</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ahorrometro.es/gasolineras-cepsa</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-moeve</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
+  <url><loc>https://ahorrometro.es/gasolineras-cepsa</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras-petrocat</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/albacete</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/almansa</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
@@ -565,6 +565,7 @@
   <url><loc>https://ahorrometro.es/gasolineras/entrambasaguas</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/marina-de-cudeyo</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/medio-cudeyo</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
+  <url><loc>https://ahorrometro.es/gasolineras/meruelo</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/miengo</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/pielagos</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/reinosa</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
@@ -579,6 +580,7 @@
   <url><loc>https://ahorrometro.es/gasolineras/torrelavega</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/val-de-san-vicente</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/valdaliga</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
+  <url><loc>https://ahorrometro.es/gasolineras/villacarriedo</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/villaescusa</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/albocasser</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/alcala-de-xivert</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
@@ -639,7 +641,6 @@
   <url><loc>https://ahorrometro.es/gasolineras/tomelloso</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/torralba-de-calatrava</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/valdepenas</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ahorrometro.es/gasolineras/villanueva-de-los-infantes</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/villarrubia-de-los-ojos</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/aguilar-de-la-frontera</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/almedinilla</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
@@ -1316,7 +1317,6 @@
   <url><loc>https://ahorrometro.es/gasolineras/valsequillo-de-gran-canaria</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/vega-de-san-mateo</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/yaiza</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
-  <url><loc>https://ahorrometro.es/gasolineras/agolada</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/arbo</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/barro</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://ahorrometro.es/gasolineras/caldas-de-reis</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
