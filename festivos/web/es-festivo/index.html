@@ -29,7 +29,7 @@
 <body>
 <header class="cabecera">
   <div class="contenedor">
-    <a href="/" class="logo"><span class="logo-hoja"><b id="logo-dia">21</b><i id="logo-mes">oct</i></span><span>festivos<span class="de">de</span>.es</span></a>
+    <a href="/" class="logo"><span class="logo-hoja"><b id="logo-dia"></b><i id="logo-mes"></i></span><script>(function(){var d=new Date();document.getElementById("logo-dia").textContent=d.getDate();document.getElementById("logo-mes").textContent=["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"][d.getMonth()]})()</script><span>festivos<span class="de">de</span>.es</span></a>
     <nav class="menu">
       <a href="/calendario-laboral-2027/">Calendario 2027</a>
       <a href="/puentes-2027/">Puentes 2027</a>
@@ -44,7 +44,7 @@
 <nav class="migas" aria-label="Ruta"><a href="/">Inicio</a> › ¿Es festivo hoy?</nav>
 <h1>¿Es festivo hoy?</h1>
 <p class="lead">Mira si hoy o mañana es festivo en España, en tu comunidad o en tu municipio, y elige cualquier día del año para ver dónde es festivo. Con los datos del BOE y de los boletines oficiales de cada comunidad.</p>
-<div class="hoy"><div class="tarjeta" id="f-hoy"><span class="etq">Hoy</span><p class="gran">miércoles 21 de octubre</p></div><div class="tarjeta" id="f-manana"></div></div>
+<div class="hoy"><div class="tarjeta si" id="f-hoy"><span class="etq">Hoy, miércoles 21 de octubre</span><p class="gran">Es fiesta local en 7 municipios</p><a href="/es-festivo/21-de-octubre/">Ver dónde es festivo →</a></div><div class="tarjeta si" id="f-manana"><span class="etq">Mañana, jueves 22 de octubre</span><p class="gran">Es fiesta local en 7 municipios</p><a href="/es-festivo/22-de-octubre/">Ver dónde es festivo →</a></div></div>
 <p>Las fiestas locales cambian en cada pueblo y ciudad: <a href="/">busca tu municipio</a> para ver exactamente sus festivos.</p>
 <section><h2>Elige un día de 2026</h2>
 <p class="leyenda"><span><span class="muestra n"></span> Festivo en toda España</span><span><span class="muestra a"></span> Festivo en alguna comunidad</span></p>
