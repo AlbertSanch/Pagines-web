@@ -115,3 +115,11 @@ Las cifras de cualquier nombre salen en un segundo en cuantossellaman.es.
 **Voz:** Y el que más sube: Gala, del puesto 53 al 16 en solo cinco años.
 **Cierre:** ¿Cuál le pondrías a tu hija? · cuantossellaman.es/ideas
 **Descripción:** Nombres de niña de moda #nombresdebebe #embarazada #mamás #nombres #bebé
+
+## 17. «Dime cómo te llamas y te diré de dónde eres»
+
+**Pantalla (0–2 s):** DIME CÓMO TE LLAMAS Y TE DIRÉ DE DÓNDE ERES
+**Pantalla, uno a uno:** MARÍA PINO → Las Palmas · MARÍA CANDELARIA → Tenerife · MARÍA BEGOÑA → Bizkaia · MONTSERRAT → Barcelona · MARÍA PILAR → Zaragoza · CATALINA → Baleares
+**Pantalla:** son el nombre de mujer nº1 o nº2 de su provincia; en el resto casi siempre gana MARÍA CARMEN (nº1 en 35 de las 52 provincias)
+**Cierre:** ¿Cuál es el nombre típico de tu tierra? · cuantossellaman.es
+**Descripción:** Nombres que delatan de dónde eres 👀 #nombres #provincias #españa #curiosidades #sabiasque

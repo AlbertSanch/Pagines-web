@@ -281,6 +281,15 @@ VIDEOS = {
         (5.5, 0.55, [("titulo", "Bebés de 2024"), ("texto", "Los más puestos"), ("fila", "Mateo", "Sofía"), ("fila", "Hugo", "Lucía"), ("fila", "Martín", "Martina")]),
         CIERRE("¿Cuántos se llamaban como tú en tu clase?"),
     ],
+    "17-nombres-de-tu-tierra": [
+        (3.0, 0.0, [("gancho", "Dime cómo te llamas y te diré de dónde eres")]),
+        (8.0, 0.75, [("titulo", "Nombres que delatan tu provincia"), ("fila", "María Pino", "Las Palmas"), ("fila", "M.ª Candelaria", "Tenerife"),
+                     ("fila", "María Begoña", "Bizkaia"), ("fila", "Montserrat", "Barcelona"), ("fila", "María Pilar", "Zaragoza"),
+                     ("fila", "Catalina", "Baleares")]),
+        (4.0, 0.6, [("texto", "Son el nombre de mujer nº1 o nº2 de su provincia. En el resto de España, casi siempre gana"), ("titulo", "María Carmen")]),
+        (3.5, 0.5, [("cifra", "35"), ("texto", "de las 52 provincias tienen a María Carmen en el nº1")]),
+        CIERRE("¿Cuál es el nombre típico de tu tierra?"),
+    ],
     "10-nombres-que-suben": [
         (3.0, 0.0, [("gancho", "Los nombres de niña que están arrasando")]),
         (6.5, 0.55, [("texto", "Nuevos en el top 100 de bebés:"), ("fila", "Alaia", ""), ("fila", "Catalina", ""), ("fila", "Violeta", ""),
@@ -361,6 +370,13 @@ VOCES = {
         "Si naciste en los ochenta, en tu clase había Davides, Javieres y Danieles. Y Lauras, Cristinas y Marías.",
         "Hoy, a los bebés se les pone Mateo, Hugo y Martín. Y Sofía, Lucía y Martina.",
         f"¿Cuántos se llamaban como tú en tu clase? Búscalo en {WEB_DICHA}.",
+    ],
+    "17-nombres-de-tu-tierra": [
+        "Dime cómo te llamas y te diré de dónde eres.",
+        "María Pino, Las Palmas. María Candelaria, Tenerife. María Begoña, Bizkaia. Montserrat, Barcelona. María Pilar, Zaragoza. Y Catalina, Baleares.",
+        "Son el primer o el segundo nombre de mujer más común de su provincia. En el resto de España, casi siempre gana María Carmen.",
+        "De hecho, María Carmen es el número uno en 35 de las 52 provincias.",
+        f"¿Cuál es el nombre típico de tu tierra? Busca el tuyo en {WEB_DICHA}.",
     ],
     "10-nombres-que-suben": [
         "Estos son los nombres de niña que están arrasando.",
