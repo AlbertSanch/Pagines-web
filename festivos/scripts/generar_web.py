@@ -6,6 +6,7 @@ Páginas:
   /comunidad/<slug>/             calendario laboral de la comunidad y sus provincias
   /provincia/<slug>/             festivos locales de todos sus municipios
   /calendario-laboral-<año>/     calendario de toda España: qué fiesta tiene cada comunidad
+  /es-festivo/<día>-de-<mes>/    dónde es festivo cada día del año (y /es-festivo/: ¿es festivo hoy?)
   /planificador-vacaciones/      qué días pedir de vacaciones para encadenar más días libres en tu municipio
   /sobre-los-datos/, /aviso-legal/, /privacidad/
 
@@ -30,7 +31,7 @@ WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 SITIO = "Festivos de"
-VERSION = "8"
+VERSION = "9"
 HOY = dt.date.today()
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -46,7 +47,7 @@ CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
            "email": "contacto.ahorrometro@gmail.com"}
 RESERVADOS = {"comunidad", "provincia", "assets", "sobre-los-datos", "aviso-legal", "privacidad", "indice", "datos",
-              "calculadora-dias-laborables", "planificador-vacaciones", "calendario-escolar"}
+              "calculadora-dias-laborables", "planificador-vacaciones", "calendario-escolar", "es-festivo"}
 TIPOS = {"nacional": "Nacional", "autonomico": "Autonómica", "local": "Local"}
 # Val d'Aran: el BOE recoge una sustitución solo para este territorio
 ARAN = {"Arres", "Bausen", "Bossòst", "Canejan", "Bòrdes, Es", "Les", "Naut Aran", "Vielha e Mijaran", "Vilamòs"}
@@ -246,7 +247,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="pie">
   <div class="contenedor">
     <p><strong>festivosde.es</strong> reúne los días festivos de cada municipio de España a partir del Boletín Oficial del Estado y de los boletines oficiales de cada comunidad autónoma.</p>
-    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/planificador-vacaciones/">Planificador de vacaciones</a><a href="/calendario-escolar/">Calendario escolar</a><a href="/calendario-laboral-para-imprimir/">Calendario para imprimir</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/es-festivo/">¿Es festivo hoy?</a><a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/planificador-vacaciones/">Planificador de vacaciones</a><a href="/calendario-escolar/">Calendario escolar</a><a href="/calendario-laboral-para-imprimir/">Calendario para imprimir</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Las fechas se toman de las publicaciones oficiales. Si ves un error, escríbenos a {TITULAR['email']}.</p>
   </div>
 </footer>
@@ -274,7 +275,7 @@ def faq_html(preguntas):
 
 def tabla_festivos(lista):
     filas = "".join(
-        f'<tr class="t-{x["t"]}"><td><time datetime="{x["f"]}">{fecha_larga(x["f"], False)}</time></td>'
+        f'<tr class="t-{x["t"]}"><td><a href="{ruta_dia(dt.date.fromisoformat(x["f"]))}"><time datetime="{x["f"]}">{fecha_larga(x["f"], False)}</time></a></td>'
         f'<td>{DIAS[dt.date.fromisoformat(x["f"]).weekday()]}</td><td>{escape(x["n"])}</td>'
         f'<td><span class="marca {x["t"]}">{TIPOS[x["t"]]}</span></td></tr>' for x in lista)
     return ('<div class="tabla-envoltorio"><table class="festivos"><thead><tr><th>Fecha</th><th>Día</th><th>Fiesta</th>'
@@ -458,7 +459,7 @@ def pagina_espana(datos, anio):
         else:
             donde = ", ".join(f'<a href="/comunidad/{c}/">{escape(COMUNIDADES[c][0])}</a>' for c, _ in sorted(cc))
         tipo = "nacional" if all(t == "nacional" for _, t in cc) else "autonomico"
-        filas.append(f'<tr class="t-{tipo}"><td><time datetime="{f}">{fecha_larga(f, False)}</time></td><td>{DIAS[dt.date.fromisoformat(f).weekday()]}</td>'
+        filas.append(f'<tr class="t-{tipo}"><td><a href="{ruta_dia(dt.date.fromisoformat(f))}"><time datetime="{f}">{fecha_larga(f, False)}</time></a></td><td>{DIAS[dt.date.fromisoformat(f).weekday()]}</td>'
                      f'<td>{escape(n)}</td><td>{donde}</td></tr>')
     comunes = [f for (f, n), cc in fechas.items() if len(cc) == todas]
     cuerpo = f"""<h1>Calendario laboral {anio}</h1>
@@ -594,6 +595,196 @@ def pagina_planificador(datos):
                   f"Elige tu municipio y tus días de vacaciones y te decimos qué días pedir en {ult} para aprovechar los puentes y los festivos locales. Gratis.",
                   cuerpo, [("Planificador de vacaciones", None)], [faq_ld(preguntas)],
                   scripts=f'<script src="/assets/planificador.js?v={VERSION}" defer></script>')
+
+
+# ---------------------------------------------------------------- ¿es festivo el...?
+
+def ruta_dia(d):
+    return f"/es-festivo/{d.day}-de-{MESES[d.month - 1]}/"
+
+
+def indice_fechas(datos, anio):
+    """Para cada fecha de un año: dónde es festivo.
+    {f: {"ccaa": {fiesta: [ccaa]}, "prov": [(codp, fiesta)], "mun": {codp: [(cod, fiesta)]}}}"""
+    d, idx = datos[anio], {}
+
+    def de_fecha(f):
+        return idx.setdefault(f, {"ccaa": {}, "prov": [], "mun": {}})
+    for c, lista in d["nacionales_autonomicos"].items():
+        for x in lista:
+            de_fecha(x["f"])["ccaa"].setdefault(x["n"], []).append(c)
+    for p, lista in d.get("comunes", {}).items():
+        for x in lista:
+            de_fecha(x["f"])["prov"].append((p, x["n"] or "Fiesta local"))
+    for cod, lista in d["locales"].items():
+        if cod not in INFO:
+            continue
+        for f in sorted({x["f"] for x in lista}):
+            nombres = [x["n"] for x in lista if x["f"] == f and x["n"]]
+            de_fecha(f)["mun"].setdefault(cod[:2], []).append((cod, nombres[0] if nombres else ""))
+    return idx
+
+
+def regiones(donde):
+    return {c for cc in donde["ccaa"].values() for c in cc}
+
+
+def lista_y(partes):
+    return ", ".join(partes[:-1]) + " y " + partes[-1] if len(partes) > 1 else "".join(partes)
+
+
+def resumen_dia(donde, con_enlaces=False):
+    """«en toda España (Todos los Santos)», «en Andalucía y Madrid (…)», «fiesta local en 12 municipios»."""
+    partes = []
+    for fiesta, cc in sorted(donde["ccaa"].items(), key=lambda x: -len(x[1])):
+        if len(cc) == len(COMUNIDADES):
+            partes.append(f"en toda España ({escape(fiesta)})")
+        else:
+            nombres = [f'<a href="/comunidad/{c}/">{escape(COMUNIDADES[c][0])}</a>' if con_enlaces else escape(COMUNIDADES[c][0])
+                       for c in sorted(cc, key=lambda c: COMUNIDADES[c][0])]
+            partes.append(f"en {lista_y(nombres)} ({escape(fiesta)})")
+    for p, fiesta in donde["prov"]:
+        partes.append(f"en toda la provincia de {escape(PROVINCIAS[p][0])} ({escape(fiesta)})")
+    n_mun = sum(len(v) for v in donde["mun"].values())
+    if n_mun:
+        partes.append(f"fiesta local en {n_mun} {'municipio' if n_mun == 1 else 'municipios'}")
+    return lista_y(partes)
+
+
+def miles(n):
+    return f"{n:,}".replace(",", ".")
+
+
+def respuesta_dia(datos, anio, d, donde):
+    """Respuesta a «¿es festivo el …?»: (sí/no, html)."""
+    publicados = len(datos[anio]["locales"])
+    fecha = f"{fecha_larga(d)} de {anio}"
+    if donde and (donde["ccaa"] or donde["prov"] or donde["mun"]):
+        todas = len(regiones(donde)) == len(COMUNIDADES)
+        if donde["ccaa"] or donde["prov"]:
+            texto = f"{'Sí' if todas else 'Sí, pero no en toda España'}: el {fecha} es festivo {resumen_dia(donde, True)}."
+        else:
+            texto = f"Solo en algunos municipios: el {fecha} es {resumen_dia(donde)}."
+        si = True
+    else:
+        texto = (f"No: el {fecha} no es fiesta nacional ni autonómica en ninguna comunidad, ni fiesta local en ninguno de los "
+                 f"{miles(publicados)} municipios de los que tenemos las fiestas locales de {anio}.")
+        si = False
+    pendientes = len(INFO) - publicados
+    if pendientes > 0:
+        texto += (f" Faltan en nuestros datos las fiestas locales de {anio} de {miles(pendientes)} municipios"
+                  + (": la mayoría de comunidades aún no las han publicado." if pendientes > len(INFO) / 2 else "."))
+    if d.weekday() >= 5:
+        texto += f" Además, cae en {DIAS[d.weekday()]}."
+    return si, texto
+
+
+def municipios_dia(donde):
+    bloques = []
+    for p in sorted(donde["mun"], key=lambda p: slug(PROVINCIAS[p][0])):
+        cods = sorted(donde["mun"][p], key=lambda x: slug(INFO[x[0]]["nombre"]))
+        enlaces = "".join(f'<li><a href="{INFO[c]["url"]}">{escape(INFO[c]["nombre"])}</a>{f" <small>({escape(n)})</small>" if n else ""}</li>'
+                          for c, n in cods)
+        bloques.append(f'<details><summary>Provincia de {escape(PROVINCIAS[p][0])}: {len(cods)} '
+                       f'{"municipio" if len(cods) == 1 else "municipios"}</summary><ul class="lista-municipios">{enlaces}</ul></details>')
+    return f'<div class="faq">{"".join(bloques)}</div>'
+
+
+def mes_enlazado(anio, mes, idx, marcado=None):
+    """Hoja de un mes con cada día enlazado a su página: azul si es festivo en toda España, verde si en alguna comunidad."""
+    d = dt.date(anio, mes, 1)
+    celdas = [f'<span class="cab">{x[:2]}</span>' for x in DIAS] + ["<span></span>"] * d.weekday()
+    while d.month == mes:
+        donde = idx.get(d.isoformat())
+        r = regiones(donde) if donde else set()
+        clase = "n" if len(r) == len(COMUNIDADES) else "a" if r else "finde" if d.weekday() >= 5 else ""
+        if d == marcado:
+            clase += " sel"
+        celdas.append(f'<a class="{clase.strip()}" href="{ruta_dia(d)}">{d.day}</a>')
+        d += dt.timedelta(days=1)
+    return f'<div class="mes"><h4>{MESES[mes - 1]} {anio}</h4><div class="dias">{"".join(celdas)}</div></div>'
+
+
+def anio_proximo(mes, dia):
+    """Año de la próxima vez que llega esta fecha (o el último año con datos)."""
+    return next((a for a in ANIOS if dt.date(a, mes, dia) >= HOY), max(ANIOS))
+
+
+def pagina_dia(datos, idx, mes, dia):
+    nombre_dia = f"{dia} de {MESES[mes - 1]}"
+    a_prox = anio_proximo(mes, dia)
+    orden = [a_prox] + [a for a in ANIOS if a != a_prox]
+    secciones, preguntas = [], []
+    for anio in orden:
+        d = dt.date(anio, mes, dia)
+        donde = idx[anio].get(d.isoformat())
+        si, texto = respuesta_dia(datos, anio, d, donde)
+        pregunta = f"¿Es festivo el {fecha_larga(d)} de {anio}?"
+        preguntas.append((pregunta, texto))
+        detalle = municipios_dia(donde) if donde and donde["mun"] else ""
+        if detalle:
+            detalle = f"<h3>Municipios donde el {nombre_dia} de {anio} es fiesta local</h3>{detalle}"
+        secciones.append(f"""<section id="festivo-{anio}"><h2>{escape(pregunta)}</h2>
+<div class="hoy"><div class="tarjeta{' si' if si else ''}"><span class="etq">{fecha_larga(d)} de {anio}</span>
+<p class="gran">{('No es festivo' if len(datos[anio]["locales"]) > len(INFO) / 2 else 'No es festivo nacional ni autonómico') if not si else 'Sí, es festivo en toda España' if len(regiones(donde)) == len(COMUNIDADES) else 'Festivo en algunas comunidades' if regiones(donde) else 'Festivo solo en algunos municipios'}</p></div></div>
+<p>{texto}</p>
+{detalle}
+<p class="fuente">Fuente: <a href="{datos[anio]['boe']['url']}" rel="nofollow noopener">{escape(datos[anio]['boe']['titulo'])}</a> y los boletines oficiales de cada comunidad con las fiestas locales.</p></section>""")
+    # Próximos festivos nacionales o autonómicos después de esta fecha
+    base = dt.date(a_prox, mes, dia).isoformat()
+    siguientes = sorted((f, a) for a in ANIOS for f, dn in idx[a].items() if f > base and dn["ccaa"])[:4]
+    proximos = "".join(f'<li><a href="{ruta_dia(dt.date.fromisoformat(f))}">{fecha_larga(f)} de {a}</a>: festivo {resumen_dia(idx[a][f])}.</li>'
+                       for f, a in siguientes)
+    hoy_d = dt.date(a_prox, mes, dia)
+    ayer, manana = hoy_d - dt.timedelta(days=1), hoy_d + dt.timedelta(days=1)
+    if (ayer.month, ayer.day) == (2, 29):
+        ayer -= dt.timedelta(days=1)
+    cuerpo = f"""<h1>¿Es festivo el {nombre_dia}?</h1>
+<p class="lead">Dónde es festivo el {nombre_dia} en {' y '.join(map(str, orden))}: fiestas nacionales y autonómicas del BOE y fiestas locales de cada municipio según los boletines oficiales.</p>
+<p class="saltos"><a href="{ruta_dia(ayer)}">← {ayer.day} de {MESES[ayer.month - 1]}</a><a href="/es-festivo/">¿Es festivo hoy?</a><a href="{ruta_dia(manana)}">{manana.day} de {MESES[manana.month - 1]} →</a></p>
+{''.join(secciones)}
+{f'<section><h2>Próximos festivos después del {nombre_dia} de {a_prox}</h2><ul class="puentes">{proximos}</ul><p>Las fiestas locales cambian en cada municipio: <a href="/">busca el tuyo</a> para ver todos sus festivos.</p></section>' if proximos else ''}
+<section><h2>Otros días de {MESES[mes - 1]}</h2><div class="calendario">{mes_enlazado(a_prox, mes, idx[a_prox], hoy_d)}</div>
+<p class="leyenda"><span><span class="muestra n"></span> Festivo en toda España</span><span><span class="muestra a"></span> Festivo en alguna comunidad</span></p>
+<p>Mira también el <a href="/calendario-laboral-{a_prox}/">calendario laboral de {a_prox}</a>, los <a href="/puentes-{a_prox}/">puentes de {a_prox}</a> o planifica tus días libres con el <a href="/planificador-vacaciones/">planificador de vacaciones</a>.</p></section>
+<section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
+    d = dt.date(a_prox, mes, dia)
+    titulo = f"¿Es festivo el {fecha_larga(d)} de {a_prox}? Dónde es festivo"
+    if len(titulo) > 65:
+        titulo = f"¿Es festivo el {fecha_larga(d)} de {a_prox}?"
+    desc = (f"Comprueba si el {nombre_dia} es festivo en tu comunidad o en tu municipio en {' y '.join(map(str, ANIOS))}: "
+            "fiestas nacionales, autonómicas y locales según el BOE y los boletines oficiales.")
+    return pagina(ruta_dia(d), titulo, desc, cuerpo, [("¿Es festivo hoy?", "/es-festivo/"), (nombre_dia.capitalize(), None)], [faq_ld(preguntas)])
+
+
+def pagina_es_festivo(datos, idx):
+    a = anio_proximo(HOY.month, HOY.day) if HOY.year in ANIOS else max(ANIOS)
+    # Resumen corto de cada fecha para la respuesta de hoy y mañana (se calcula en el navegador con su fecha)
+    resumen = {f: re.sub("<[^>]+>", "", resumen_dia(dn)) for an in ANIOS for f, dn in idx[an].items()}
+    meses = "".join(mes_enlazado(a, m, idx[a]) for m in range(1, 13))
+    preguntas = [
+        ("¿Cómo sé si hoy es festivo en mi municipio?", "Busca tu municipio en el buscador de la portada: verás sus fiestas locales, las de tu comunidad y las nacionales, y si hoy o mañana es festivo allí."),
+        ("¿Por qué un día es festivo en unas comunidades y en otras no?", "El Estado fija las fiestas nacionales, pero cada comunidad puede cambiar algunas por fiestas propias. Además, cada ayuntamiento elige dos fiestas locales al año."),
+        ("¿Cuántos festivos hay al año en España?", "Como máximo 14 fiestas laborales retribuidas al año: 12 nacionales y autonómicas, que fija el BOE para cada comunidad, y 2 locales, que elige cada ayuntamiento."),
+    ]
+    script = ("<script>(function(){var R=" + json.dumps(resumen, ensure_ascii=False, separators=(",", ":")) + ",M="
+              + json.dumps(MESES) + ",D=" + json.dumps(DIAS, ensure_ascii=False) + ";"
+              "function iso(d){return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}"
+              "function caja(id,et,d){var e=document.getElementById(id);if(!e)return;var r=R[iso(d)],f=D[(d.getDay()+6)%7]+' '+d.getDate()+' de '+M[d.getMonth()];"
+              "e.className='tarjeta'+(r?' si':'');e.innerHTML='<span class=\"etq\">'+et+', '+f+'</span><p class=\"gran\">'+(r?(r.indexOf('en ')===0?'Festivo ':'Es ')+r:'No es festivo en ninguna comunidad')+'</p>"
+              "<a href=\"/es-festivo/'+d.getDate()+'-de-'+M[d.getMonth()]+'/\">Ver dónde es festivo →</a>'}"
+              "var h=new Date();caja('f-hoy','Hoy',h);caja('f-manana','Mañana',new Date(h.getFullYear(),h.getMonth(),h.getDate()+1))})();</script>")
+    cuerpo = f"""<h1>¿Es festivo hoy?</h1>
+<p class="lead">Mira si hoy o mañana es festivo en España, en tu comunidad o en tu municipio, y elige cualquier día del año para ver dónde es festivo. Con los datos del BOE y de los boletines oficiales de cada comunidad.</p>
+<div class="hoy"><div class="tarjeta" id="f-hoy"><span class="etq">Hoy</span><p class="gran">{fecha_larga(HOY)}</p></div><div class="tarjeta" id="f-manana"></div></div>
+<p>Las fiestas locales cambian en cada pueblo y ciudad: <a href="/">busca tu municipio</a> para ver exactamente sus festivos.</p>
+<section><h2>Elige un día de {a}</h2>
+<p class="leyenda"><span><span class="muestra n"></span> Festivo en toda España</span><span><span class="muestra a"></span> Festivo en alguna comunidad</span></p>
+<div class="calendario">{meses}</div></section>
+<section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
+    return pagina("/es-festivo/", "¿Es festivo hoy? Mira si hoy o mañana es festivo en España",
+                  "Comprueba si hoy o mañana es festivo en España, en tu comunidad o en tu municipio, y dónde es festivo cualquier día del año.",
+                  cuerpo, [("¿Es festivo hoy?", None)], [faq_ld(preguntas)], scripts=script)
 
 
 # ---------------------------------------------------------------- calendario escolar
@@ -835,6 +1026,7 @@ def portada(datos):
 <section class="accesos">
 <a class="acceso" href="/calendario-laboral-{anio_sig}/"><span class="ico">📅</span><b>Calendario laboral {anio_sig}</b><span>Todos los festivos de España y qué se celebra en cada comunidad.</span></a>
 <a class="acceso" href="/puentes-{anio_sig}/"><span class="ico">🌉</span><b>Puentes {anio_sig}</b><span>Qué días pedir de vacaciones para encadenar más días libres.</span></a>
+<a class="acceso" href="/es-festivo/"><span class="ico">❓</span><b>¿Es festivo hoy?</b><span>Si hoy o mañana es festivo y dónde es festivo cualquier día del año.</span></a>
 <a class="acceso" href="/calendario-escolar/"><span class="ico">🎒</span><b>Calendario escolar</b><span>Cuándo empiezan las clases y las vacaciones de Navidad y Semana Santa en cada comunidad.</span></a>
 <a class="acceso" href="/planificador-vacaciones/"><span class="ico">🏖️</span><b>Planificador de vacaciones</b><span>Qué días pedir en tu municipio para tener más días libres con tus días de vacaciones.</span></a>
 <a class="acceso" href="/calendario-laboral-para-imprimir/"><span class="ico">🖨️</span><b>Calendario para imprimir</b><span>El año entero en una hoja A4, con las fiestas de tu pueblo. En PDF.</span></a>
@@ -967,6 +1159,18 @@ def main():
         for ccaa in sorted({t["ccaa"] for t in esc["territorios"]}):
             guardar(f"/calendario-escolar/{ccaa}/", pagina_escolar_ccaa(esc, ccaa, datos))
             rutas_sitemap.append(f"/calendario-escolar/{ccaa}/")
+    idx = {a: indice_fechas(datos, a) for a in ANIOS}
+    guardar("/es-festivo/", pagina_es_festivo(datos, idx))
+    rutas_sitemap.append("/es-festivo/")
+    for mes in range(1, 13):
+        for dia in range(1, 32):
+            try:
+                dt.date(2027, mes, dia)  # año no bisiesto: sin 29 de febrero
+            except ValueError:
+                continue
+            html = pagina_dia(datos, idx, mes, dia)
+            guardar(f"/es-festivo/{dia}-de-{MESES[mes - 1]}/", html)
+            rutas_sitemap.append(f"/es-festivo/{dia}-de-{MESES[mes - 1]}/")
     datos_provincias(datos, info)
     guardar("/", portada(datos))
     rutas_sitemap += legales()
