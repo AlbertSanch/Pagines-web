@@ -1,12 +1,15 @@
 # festivosde.es: descarga los boletines oficiales (BOE y comunidades), extrae los festivos
 # de cada municipio y regenera la web. Cloudflare Pages publica cada commit en main.
 #   - Cada lunes: comprueba si han cambiado las fuentes (correcciones, nuevas resoluciones).
+#   - El resto de días: busca también boletines nuevos (sin fallar si un servidor no responde) y
+#     regenera para que «¿Es festivo hoy?» y los próximos festivos estén al día.
 #   - Al cambiar los scripts, la plantilla o la lista de fuentes en main: regenera.
 name: Festivos
 
 on:
   schedule:
     - cron: "37 5 * * 1"
+    - cron: "7 4 * * 0,2-6"
   workflow_dispatch:
   push:
     branches: [main]
@@ -36,9 +39,10 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
       - name: Descargar fuentes oficiales
         if: github.event_name != 'push'
+        continue-on-error: ${{ github.event.schedule == '7 4 * * 0,2-6' }}
         run: python -u festivos/scripts/descargar_fuentes.py
       - name: Descargar calendarios escolares
-        if: github.event_name != 'push'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '37 5 * * 1'
         continue-on-error: true
         run: python -u festivos/scripts/descargar_escolar.py
       - name: Extraer festivos
