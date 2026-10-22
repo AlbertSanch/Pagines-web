@@ -1,5 +1,4 @@
 BOE 2026: canarias tiene solo 11 fiestas
-andalucia 2026 andalucia_2026: 10 nombres sin municipio del INE (pedanías o variantes): ALANÍS DE LA SIERRA, BEJÍJAR, CORTELAZOR LA REAL, DOMINGO PÉREZ, GRANADA DE RIOTINTO, LA, HORNOS DE SEGURA, HUÉTOR SANTILLÁN, POLOPOS-LA MAMOLA, VIÑUELA, LA, ZAHARA DE LA SIERRA
 andalucia_2026_c1: corrige o añade 18 municipios: Alpujarra de la Sierra, Baños de la Encina, Cambil, Carolina, La, Castril, Cogollos de Guadix, Coín, Cádiar, Cóbdar, Garrucha, Moclín, Oria, Porcuna, Puebla de Don Fadrique, Pujerra, Rus, Sayalonga, Villanueva de las Torres
 andalucia_2026_c2: corrige o añade 1 municipios: Guarromán
 andalucia_2026_c3: corrige o añade 1 municipios: Loja
@@ -128,7 +127,7 @@ castilla-y-leon 2026 cyl_palencia_2026: 24 nombres sin municipio del INE (pedan�
 castilla-y-leon 2026 cyl_salamanca_2026: 6 nombres sin municipio del INE (pedanías o variantes): BÓVEDA DE RIO ALMAR, CRISTÓBAL DE LA SIERRA, ESCUERNAVACAS, MASUECO DE LA RIBERA, PALACIOS RUBIOS, VENTOSA DE RÍO ALMAR
 castilla-y-leon 2026 cyl_salamanca_2026_c1: 1 nombres sin municipio del INE (pedanías o variantes): Publicación
 cyl_salamanca_2026_c1: corrige o añade 0 municipios: 
-== 2026 andalucia: 764 de 786 municipios con fiestas locales
+== 2026 andalucia: 24 de 786 municipios con fiestas locales
 == 2026 aragon: 456 de 731 municipios con fiestas locales
 == 2026 asturias: 73 de 78 municipios con fiestas locales
 == 2026 baleares: 62 de 67 municipios con fiestas locales
