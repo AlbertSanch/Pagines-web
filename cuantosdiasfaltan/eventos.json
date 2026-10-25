@@ -3046,7 +3046,7 @@
   "ventana": "anunciada, sin fecha"
  },
  {
-  "titulo": "Alya Sometimes Hides Her Feelings in Russian temporada 2 (Roshidere)",
+  "titulo": "Roshidere temporada 2 (Alya Sometimes Hides Her Feelings in Russian)",
   "slug": "alya-temporada-2",
   "categoria": "anime",
   "fecha": null,
@@ -3056,7 +3056,7 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "plataformas": "Crunchyroll",
-  "en_frase": "Alya temporada 2",
+  "en_frase": "Roshidere temporada 2",
   "ventana": "2027",
   "rango": [
    "2027-01-01",
@@ -3114,7 +3114,7 @@
   "estimacion": "Está anunciada para julio de 2027, sin día concreto todavía"
  },
  {
-  "titulo": "The Rising of the Shield Hero temporada 5 (Tate no Yuusha)",
+  "titulo": "Tate no Yuusha temporada 5 (The Rising of the Shield Hero)",
   "slug": "shield-hero-temporada-5",
   "categoria": "anime",
   "fecha": null,
@@ -3124,7 +3124,7 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "plataformas": "Crunchyroll",
-  "en_frase": "Shield Hero temporada 5",
+  "en_frase": "Tate no Yuusha temporada 5",
   "ventana": "2027",
   "rango": [
    "2027-01-01",
@@ -3271,6 +3271,32 @@
   "comprobado": "2026-10-25",
   "plataformas": "por confirmar",
   "en_frase": "la nueva serie de Evangelion",
+  "ventana": "anunciada, sin fecha"
+ },
+ {
+  "titulo": "Danmachi temporada 6",
+  "slug": "danmachi-temporada-6",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "sin_fecha",
+  "fuente_url": "https://myanimelist.net/anime/63442/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "anunciada, sin fecha"
+ },
+ {
+  "titulo": "Tsukimichi temporada 3",
+  "slug": "tsukimichi-temporada-3",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "sin_fecha",
+  "fuente_url": "https://myanimelist.net/anime/59139/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
   "ventana": "anunciada, sin fecha"
  }
 ]
