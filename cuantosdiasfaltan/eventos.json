@@ -2594,5 +2594,112 @@
   "comprobado": "2026-10-25",
   "plataformas": "cines",
   "ambito": "España"
+ },
+ {
+  "titulo": "Solo Leveling temporada 3",
+  "slug": "solo-leveling-temporada-3",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "anio",
+  "fuente_url": "https://www.levelup.com/noticias/solo-leveling-anuncia-la-ventana-de-estreno-de-su-temporada-3-pero-su-llegada-tardara-mas-de-lo-previsto/",
+  "fuente_nombre": "LevelUp (informe de D&C Media)",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "entre 2027 y 2028",
+  "rango": [
+   "2027-01-01",
+   "2028-12-31"
+  ],
+  "estimacion": "D&C Media, la editorial que tiene los derechos, la prevé entre 2027 y 2028 en su informe financiero; el estudio aún no ha dado fecha"
+ },
+ {
+  "titulo": "Dandadan temporada 3",
+  "slug": "dandadan-temporada-3",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "anio",
+  "fuente_url": "https://www.cbr.com/dandadan-official-season-3-preview/",
+  "fuente_nombre": "CBR (anuncio en la Jump Festa)",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Netflix y Crunchyroll",
+  "ventana": "2027",
+  "rango": [
+   "2027-01-01",
+   "2027-12-31"
+  ],
+  "estimacion": "Se anunció oficialmente para 2027 en la Jump Festa, sin día concreto todavía"
+ },
+ {
+  "titulo": "Sakamoto Days temporada 2",
+  "slug": "sakamoto-days-temporada-2",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "http://about.netflix.com/en/news/sakamoto-days-season-2-returns-january-2027",
+  "fuente_nombre": "Netflix",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-10-25",
+  "plataformas": "Netflix",
+  "ventana": "enero de 2027",
+  "rango": [
+   "2027-01-01",
+   "2027-01-31"
+  ],
+  "estimacion": "Netflix la ha anunciado para enero de 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "Spy x Family temporada 4",
+  "slug": "spy-x-family-temporada-4",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "sin_fecha",
+  "fuente_url": "https://www.superherohype.com/news/645287-spy-x-family-season-4-update-release-date-delay",
+  "fuente_nombre": "SuperHeroHype",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "aún no anunciada oficialmente"
+ },
+ {
+  "titulo": "Jujutsu Kaisen: El Juego del Sacrificio parte 2",
+  "slug": "jujutsu-kaisen-temporada-4",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "sin_fecha",
+  "fuente_url": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_3",
+  "fuente_nombre": "Wikipedia (anuncio tras el final de la temporada 3)",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "anunciada, sin fecha",
+  "en_frase": "la segunda parte del Juego del Sacrificio de Jujutsu Kaisen"
+ },
+ {
+  "titulo": "Demon Slayer: Castillo Infinito parte 2",
+  "slug": "demon-slayer-castillo-infinito-parte-2",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "sin_fecha",
+  "fuente_url": "https://gamerant.com/demon-slayer-infinity-castle-part-2-release-update/",
+  "fuente_nombre": "Game Rant",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines",
+  "ventana": "Ufotable aún no ha dado fecha"
+ },
+ {
+  "titulo": "Blue Lock temporada 3",
+  "slug": "blue-lock-temporada-3",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "sin_fecha",
+  "fuente_url": "https://animecorner.me/blue-lock-announces-season-3-live-action-film-adaptation/",
+  "fuente_nombre": "Anime Corner",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "anunciada, sin fecha"
  }
 ]
