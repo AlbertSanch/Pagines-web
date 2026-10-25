@@ -101,12 +101,30 @@ def cargar():
         assert e["precision"] in PRECISIONES, e
         assert e["precision"] != "dia" or e.get("fecha"), f"falta la fecha: {e['slug']}"
         assert e.get("fuente_url") and e.get("comprobado"), f"falta la fuente o la fecha de comprobación: {e['slug']}"
+        if e.get("estimada") or e.get("rango"):
+            # una estimación nunca sale de rumores: solo de una ventana oficial o de la costumbre del propio organizador
+            assert e["precision"] != "dia" and e.get("estimacion"), f"estimación sin motivo: {e['slug']}"
+            assert not e.get("rango") or e.get("ventana"), f"rango sin ventana: {e['slug']}"
         slugs.add(e["slug"])
     return eventos
 
 
 def fecha_de(e):
     return dt.date.fromisoformat(e["fecha"]) if e.get("fecha") and e["precision"] == "dia" else None
+
+
+def estimada_de(e):
+    """Fecha aproximada (no oficial) mientras no se anuncie el día; caducada no cuenta."""
+    d = dt.date.fromisoformat(e["estimada"]) if e.get("estimada") and e["precision"] != "dia" else None
+    return d if d and d >= HOY else None
+
+
+def rango_de(e):
+    """(desde, hasta) de la ventana anunciada, para decir «faltan entre X y Y días»."""
+    if not e.get("rango") or e["precision"] == "dia":
+        return None
+    desde, hasta = (dt.date.fromisoformat(x) for x in e["rango"])
+    return (max(desde, HOY), hasta) if hasta >= HOY else None
 
 
 # ---------------------------------------------------------------- plantilla de página
@@ -188,6 +206,12 @@ def tarjeta(e):
         cifra, ud, cuando = n, "día" if n == 1 else "días", fecha_simple(e["fecha"])
     elif d:
         cifra, ud, cuando = "✓", "ya disponible", fecha_simple(e["fecha"])
+    elif estimada_de(e):
+        n = (estimada_de(e) - HOY).days
+        cifra, ud, cuando = f"≈{n}", "días", f"Fecha estimada: {fecha_simple(e['estimada'])}"
+    elif rango_de(e):
+        a, b = rango_de(e)
+        cifra, ud, cuando = f"{(a - HOY).days}–{(b - HOY).days}", "días", f"Previsto: {e['ventana']}"
     else:
         cifra, ud, cuando = "?", "sin fecha", e.get("ventana") or "Fecha sin confirmar"
     ico = CATEGORIAS[e["categoria"]][1]
@@ -199,6 +223,9 @@ def orden(e):
     d = fecha_de(e)
     if d and d >= HOY:
         return (0, d.isoformat())
+    aprox = estimada_de(e) or (rango_de(e) or [None])[0]
+    if not d and aprox:
+        return (0, aprox.isoformat())
     if not d:
         return (1, e.get("fecha") or "9999", e["titulo"])
     return (2, (dt.date.max - d).days)
@@ -240,6 +267,19 @@ def pagina_evento(e, eventos):
         bloque = contador(d, pasado=True)
         titulo = f"¿Cuánto hace de {t}? Fecha de lanzamiento"
         desc = f"{t} salió el {fecha_larga(d)}: hace {texto_tiempo(d, HOY)}."
+    elif estimada_de(e):
+        est = estimada_de(e)
+        cab, titulo = preguntas_de(e)
+        sub = f'<strong>Fecha estimada: {fecha_larga(est)}</strong> · aún no es oficial'
+        bloque = '<p class="aviso-estimada">≈ Fecha aproximada, no oficial</p>' + contador(est)
+        desc = f"Faltan unos {(est - HOY).days} días para {t}: fecha estimada {fecha_larga(est)}, aún no oficial. {e['estimacion']}."
+    elif rango_de(e):
+        a, b = rango_de(e)
+        cab, titulo = preguntas_de(e)
+        sub = f'<strong>Previsto: {escape(e["ventana"])}</strong> · aún sin día oficial'
+        bloque = (f'<div class="contador sin-fecha"><p class="c-grande">Faltan entre {(a - HOY).days} y {(b - HOY).days} días</p>'
+                  f'<p class="c-dias">Fecha aproximada: {escape(e["ventana"])}. Pondremos la cuenta atrás exacta en cuanto se anuncie el día.</p></div>')
+        desc = f"{cab} Previsto para {e['ventana']}, entre {(a - HOY).days} y {(b - HOY).days} días desde hoy. Aún no hay día oficial."
     else:
         cab, titulo = preguntas_de(e)
         sub = f'<strong>Fecha sin confirmar</strong>{f": {escape(e["ventana"])}" if e.get("ventana") else ""}'
@@ -253,12 +293,18 @@ def pagina_evento(e, eventos):
     nota_ambito = f'<p class="nota">Fecha de estreno en {escape(e["ambito"])}.</p>' if e.get("ambito") and e["ambito"] not in ("España", "mundial") else ""
     fuente = (f'<p class="fuente">Fuente{"" if e.get("fuente_tipo") == "oficial" else " (medio)"}: <a href="{escape(e["fuente_url"])}" rel="nofollow noopener" target="_blank">'
               f'{escape(e.get("fuente_nombre") or "anuncio oficial")}</a> · Comprobado el {fecha_simple(e["comprobado"])}.</p>')
+    if not d and (estimada_de(e) or rango_de(e)):
+        fuente = f'<p class="nota">Por qué esta fecha: {escape(e["estimacion"])}. La cambiaremos por la oficial en cuanto se anuncie.</p>' + fuente
     otros = [x for x in eventos if x["categoria"] == e["categoria"] and x is not e]
     otros = sorted(otros, key=orden)[:8]
     preguntas = []
     if d and d >= HOY:
         preguntas.append((f"¿Cuándo sale {t}?", f"{t}: {fecha_larga(d)}{f' ({donde})' if donde else ''}, según {e.get('fuente_nombre') or 'el anuncio oficial'}."))
         preguntas.append((f"¿Cuántos días faltan para {t}?", f"Hoy, {fecha_larga(HOY)}, faltan {(d - HOY).days} días ({texto_tiempo(HOY, d)})."))
+    if not d and estimada_de(e):
+        preguntas.append((cab, f"Aún no hay fecha oficial. La fecha estimada es el {fecha_larga(estimada_de(e))}: {e['estimacion']}."))
+    elif not d and rango_de(e):
+        preguntas.append((cab, f"Aún no hay día oficial: está previsto para {e['ventana']}. {e['estimacion']}."))
     cuerpo = f"""<nav class="migas"><a href="/">Inicio</a> › <a href="/{e['categoria']}/">{cat}</a></nav>
 <h1>{escape(cab)}</h1>
 <p class="sub">{sub}{f' · {escape(donde)}' if donde else ''}</p>
@@ -281,7 +327,7 @@ def pagina_categoria(c, eventos):
     lista = [e for e in eventos if e["categoria"] == c]
     frase = FRASE_CAT[c]
     cuerpo = f"""<h1>{ico} ¿Cuánto falta para {frase}?</h1>
-<p class="sub">{nombre}: todas las fechas oficiales, ordenadas por lo que falta.</p>
+<p class="sub">{nombre}: las fechas oficiales (y la estimada si aún no la hay), ordenadas por lo que falta.</p>
 {lista_tarjetas(lista)}"""
     return pagina(f"/{c}/", f"{frase[0].upper() + frase[1:]}: cuántos días faltan y fechas",
                   f"Cuántos días faltan para {frase}, con la fecha oficial de cada uno y una cuenta atrás en directo.", cuerpo)
@@ -346,6 +392,9 @@ def main():
     eventos = cargar()
     if len(eventos) < 10:
         sys.exit(f"ERROR: solo {len(eventos)} eventos")
+    for e in eventos:
+        if (e.get("estimada") and not estimada_de(e)) or (e.get("rango") and not rango_de(e)):
+            print(f"AVISO: la estimación de {e['slug']} ya ha pasado; hay que revisarla")
     if WEB.exists():
         shutil.rmtree(WEB)
     (WEB / "assets").mkdir(parents=True)
