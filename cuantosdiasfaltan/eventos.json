@@ -2663,7 +2663,7 @@
   "ventana": "aún no anunciada oficialmente"
  },
  {
-  "titulo": "Jujutsu Kaisen: El Juego del Sacrificio parte 2",
+  "titulo": "Jujutsu Kaisen temporada 4",
   "slug": "jujutsu-kaisen-temporada-4",
   "categoria": "anime",
   "fecha": null,
@@ -2672,12 +2672,11 @@
   "fuente_nombre": "Wikipedia (anuncio tras el final de la temporada 3)",
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
-  "plataformas": "Crunchyroll",
-  "ventana": "anunciada, sin fecha",
-  "en_frase": "la segunda parte del Juego del Sacrificio de Jujutsu Kaisen"
+  "plataformas": "Crunchyroll · El Juego del Sacrificio, parte 2",
+  "ventana": "anunciada, sin fecha"
  },
  {
-  "titulo": "Demon Slayer: Castillo Infinito parte 2",
+  "titulo": "Kimetsu no Yaiba: Castillo Infinito parte 2 (Demon Slayer)",
   "slug": "demon-slayer-castillo-infinito-parte-2",
   "categoria": "anime",
   "fecha": null,
@@ -2687,7 +2686,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "plataformas": "cines",
-  "ventana": "Ufotable aún no ha dado fecha"
+  "ventana": "Ufotable aún no ha dado fecha",
+  "en_frase": "Kimetsu no Yaiba: Castillo Infinito parte 2"
  },
  {
   "titulo": "Blue Lock temporada 3",
@@ -2701,5 +2701,97 @@
   "comprobado": "2026-10-25",
   "plataformas": "Crunchyroll",
   "ventana": "anunciada, sin fecha"
+ },
+ {
+  "titulo": "Mushoku Tensei temporada 3 (parte 2)",
+  "slug": "mushoku-tensei-temporada-3",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "anio",
+  "fuente_url": "https://en.wikipedia.org/wiki/Mushoku_Tensei_season_3",
+  "fuente_nombre": "Wikipedia",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "2027",
+  "rango": [
+   "2027-01-01",
+   "2027-12-31"
+  ],
+  "estimacion": "La primera parte de la temporada 3 se emitió de julio a septiembre de 2026 y la segunda está prevista para 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "Chainsaw Man temporada 2",
+  "slug": "chainsaw-man-temporada-2",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "sin_fecha",
+  "fuente_url": "https://gamerant.com/chainsaw-man-season-2-trailer/",
+  "fuente_nombre": "Game Rant (anuncio de MAPPA)",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "por confirmar",
+  "ventana": "anunciada (arco de los Asesinos), sin fecha"
+ },
+ {
+  "titulo": "Tokyo Revengers temporada 4",
+  "slug": "tokyo-revengers-temporada-4",
+  "categoria": "anime",
+  "fecha": "2026-10-02",
+  "precision": "dia",
+  "fuente_url": "https://animecorner.me/tokyo-revengers-war-of-the-three-titans-arc-season-4-new-trailer-and-key-visual-revealed/",
+  "fuente_nombre": "Anime Corner",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Disney+"
+ },
+ {
+  "titulo": "Frieren temporada 3",
+  "slug": "frieren-temporada-3",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://www.animenewsnetwork.com/news/2026-03-27/frieren-beyond-journey-end-anime-gets-3rd-season-in-october-2027/.235822",
+  "fuente_nombre": "Anime News Network (web oficial del anime)",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "octubre de 2027",
+  "rango": [
+   "2027-10-01",
+   "2027-10-31"
+  ],
+  "estimacion": "La web oficial del anime la ha anunciado para octubre de 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "One Punch Man temporada 3 (parte 2)",
+  "slug": "one-punch-man-temporada-3-parte-2",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://en.wikipedia.org/wiki/One-Punch_Man_season_3",
+  "fuente_nombre": "Wikipedia",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "por confirmar en España",
+  "ventana": "enero de 2027",
+  "rango": [
+   "2027-01-01",
+   "2027-01-31"
+  ],
+  "estimacion": "La segunda parte de la temporada 3 se anunció al acabar la primera, para enero de 2027; la temporada 4 aún no está anunciada"
+ },
+ {
+  "titulo": "Oshi no Ko temporada 4 (final)",
+  "slug": "oshi-no-ko-temporada-4",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "sin_fecha",
+  "fuente_url": "https://animecorner.me/oshi-no-ko-season-4-final-season-teaser-visual-and-trailer-revealed/",
+  "fuente_nombre": "Anime Corner",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "anunciada como temporada final, sin fecha"
  }
 ]
