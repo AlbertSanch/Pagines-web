@@ -295,3 +295,17 @@ table.festivos { width: 100%; border-collapse: collapse; font-size: .97rem; }
 .muestra.n { background: var(--azul-claro); border: 1px solid var(--azul); }
 .muestra.a { background: var(--verde-claro); border: 1px solid var(--verde); }
 .tarjeta a { font-weight: 700; }
+
+/* Cuánto falta: cuentas atrás */
+.cuenta { background: var(--papel); border-radius: var(--radio); box-shadow: var(--sombra); border-top: 6px solid var(--rojo); padding: 18px 20px; margin: 18px 0; text-align: center; max-width: 560px; }
+.cuenta-num b { display: block; font-size: 4.2rem; line-height: 1; font-weight: 900; color: var(--rojo); letter-spacing: -2px; }
+.cuenta-num span { font-size: 1.1rem; font-weight: 700; color: var(--suave); text-transform: uppercase; letter-spacing: .08em; }
+.cuenta-vivo { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 1.15rem; margin-top: 8px; min-height: 1.4em; }
+.cuenta-pie { margin: 6px 0 0; color: var(--suave); }
+.tarjetas-cuenta { list-style: none; padding: 0; margin: 12px 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.tarjetas-cuenta a { display: block; background: var(--papel); border-radius: var(--radio); box-shadow: var(--sombra); padding: 12px 14px; text-decoration: none; color: var(--tinta); height: 100%; box-sizing: border-box; }
+.tarjetas-cuenta a:hover { outline: 2px solid var(--rojo); }
+.tarjetas-cuenta b { font-size: 2rem; font-weight: 900; color: var(--rojo); line-height: 1; }
+.tarjetas-cuenta span { margin-left: 4px; color: var(--suave); font-weight: 700; font-size: .85rem; }
+.tarjetas-cuenta em { display: block; font-style: normal; font-weight: 800; margin-top: 4px; }
+.tarjetas-cuenta small { color: var(--suave); }
