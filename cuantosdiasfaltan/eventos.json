@@ -2793,5 +2793,55 @@
   "comprobado": "2026-10-25",
   "plataformas": "Crunchyroll",
   "ventana": "anunciada como temporada final, sin fecha"
+ },
+ {
+  "titulo": "Jujutsu Kaisen temporada 3",
+  "slug": "jujutsu-kaisen-temporada-3",
+  "categoria": "anime",
+  "fecha": "2026-01-09",
+  "precision": "dia",
+  "fuente_url": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_3",
+  "fuente_nombre": "Wikipedia",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll"
+ },
+ {
+  "titulo": "Vinland Saga temporada 3",
+  "slug": "vinland-saga-temporada-3",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "sin_fecha",
+  "fuente_url": "https://kotaku.com/vinland-sagas-creator-has-no-good-news-on-season-3-the-project-is-not-currently-in-progress-2000749374",
+  "fuente_nombre": "Kotaku",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "sin anunciar",
+  "ventana": "no está anunciada: el autor dijo en octubre de 2026 que el proyecto no está en marcha"
+ },
+ {
+  "titulo": "Black Clover temporada 5",
+  "slug": "black-clover-temporada-5",
+  "categoria": "anime",
+  "fecha": "2026-10-03",
+  "precision": "dia",
+  "fuente_url": "https://en.wikipedia.org/wiki/Black_Clover_(TV_series)",
+  "fuente_nombre": "Wikipedia",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll"
+ },
+ {
+  "titulo": "Kusuriya no Hitorigoto temporada 3 (The Apothecary Diaries)",
+  "slug": "kusuriya-no-hitorigoto-temporada-3",
+  "categoria": "anime",
+  "fecha": "2026-10-02",
+  "precision": "dia",
+  "fuente_url": "https://www.imdb.com/news/ni65534155/",
+  "fuente_nombre": "IMDb News",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "en_frase": "Kusuriya no Hitorigoto temporada 3"
  }
 ]
