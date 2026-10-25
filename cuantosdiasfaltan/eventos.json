@@ -3031,5 +3031,246 @@
    "2027-04-30"
   ],
   "estimacion": "Está anunciada para abril de 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "Bocchi the Rock! temporada 2",
+  "slug": "bocchi-the-rock-temporada-2",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "sin_fecha",
+  "fuente_url": "https://myanimelist.net/anime/61006/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "anunciada, sin fecha"
+ },
+ {
+  "titulo": "Alya Sometimes Hides Her Feelings in Russian temporada 2 (Roshidere)",
+  "slug": "alya-temporada-2",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "anio",
+  "fuente_url": "https://myanimelist.net/anime/59873/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "en_frase": "Alya temporada 2",
+  "ventana": "2027",
+  "rango": [
+   "2027-01-01",
+   "2027-12-31"
+  ],
+  "estimacion": "Está anunciada para 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "KonoSuba temporada 4",
+  "slug": "konosuba-temporada-4",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "anio",
+  "fuente_url": "https://myanimelist.net/anime/61203/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "2027",
+  "rango": [
+   "2027-01-01",
+   "2027-12-31"
+  ],
+  "estimacion": "Está anunciada para 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "Gachiakuta temporada 2",
+  "slug": "gachiakuta-temporada-2",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "sin_fecha",
+  "fuente_url": "https://myanimelist.net/anime/63147/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "anunciada, sin fecha"
+ },
+ {
+  "titulo": "Tensei Shitara Slime temporada 4 (parte 2)",
+  "slug": "slime-temporada-4-parte-2",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://myanimelist.net/anime/63129/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "julio de 2027",
+  "rango": [
+   "2027-07-01",
+   "2027-07-31"
+  ],
+  "estimacion": "Está anunciada para julio de 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "The Rising of the Shield Hero temporada 5 (Tate no Yuusha)",
+  "slug": "shield-hero-temporada-5",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "anio",
+  "fuente_url": "https://myanimelist.net/anime/62564/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "en_frase": "Shield Hero temporada 5",
+  "ventana": "2027",
+  "rango": [
+   "2027-01-01",
+   "2027-12-31"
+  ],
+  "estimacion": "Está anunciada para 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "Spice and Wolf temporada 2 (Merchant Meets the Wise Wolf)",
+  "slug": "spice-and-wolf-temporada-2",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "anio",
+  "fuente_url": "https://myanimelist.net/anime/59928/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "en_frase": "Spice and Wolf temporada 2",
+  "ventana": "2027",
+  "rango": [
+   "2027-01-01",
+   "2027-12-31"
+  ],
+  "estimacion": "Está anunciada para 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "Kusuriya no Hitorigoto: la película",
+  "slug": "kusuriya-no-hitorigoto-pelicula",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://myanimelist.net/anime/62844/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines (Japón)",
+  "ambito": "Japón",
+  "ventana": "diciembre de 2026",
+  "rango": [
+   "2026-12-01",
+   "2026-12-31"
+  ],
+  "estimacion": "Está anunciada para diciembre de 2026, sin día concreto todavía"
+ },
+ {
+  "titulo": "The Eminence in Shadow: la película (Kage no Jitsuryokusha)",
+  "slug": "eminence-in-shadow-pelicula",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "anio",
+  "fuente_url": "https://myanimelist.net/anime/57584/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines",
+  "en_frase": "la película de The Eminence in Shadow",
+  "ventana": "2027",
+  "rango": [
+   "2027-01-01",
+   "2027-12-31"
+  ],
+  "estimacion": "Está anunciada para 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "Haikyu!! película: contra el Pequeño Gigante",
+  "slug": "haikyu-pelicula-pequeno-gigante",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "anio",
+  "fuente_url": "https://myanimelist.net/anime/58967/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines",
+  "en_frase": "la nueva película de Haikyu!!",
+  "ventana": "2027",
+  "rango": [
+   "2027-01-01",
+   "2027-12-31"
+  ],
+  "estimacion": "Está anunciada para 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "Kaiju n.º 8: la película",
+  "slug": "kaiju-8-pelicula",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "anio",
+  "fuente_url": "https://myanimelist.net/anime/63136/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines",
+  "en_frase": "la película de Kaiju n.º 8",
+  "ventana": "2027",
+  "rango": [
+   "2027-01-01",
+   "2027-12-31"
+  ],
+  "estimacion": "Está anunciada para 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "One Piece Film: God Valley",
+  "slug": "one-piece-film-god-valley",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "anio",
+  "fuente_url": "https://myanimelist.net/anime/64858/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines",
+  "ventana": "2027",
+  "rango": [
+   "2027-01-01",
+   "2027-12-31"
+  ],
+  "estimacion": "Está anunciada para 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "Dragon Ball Super: Galactic Patrol",
+  "slug": "dragon-ball-super-galactic-patrol",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "sin_fecha",
+  "fuente_url": "https://myanimelist.net/anime/63368/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "por confirmar",
+  "en_frase": "la nueva serie de Dragon Ball Super (Galactic Patrol)",
+  "ventana": "anunciada, sin fecha"
+ },
+ {
+  "titulo": "Evangelion: la nueva serie",
+  "slug": "evangelion-nueva-serie",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "sin_fecha",
+  "fuente_url": "https://myanimelist.net/anime/63534/",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "por confirmar",
+  "en_frase": "la nueva serie de Evangelion",
+  "ventana": "anunciada, sin fecha"
  }
 ]
