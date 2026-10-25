@@ -290,6 +290,11 @@ VIDEOS = {
         (3.5, 0.5, [("cifra", "35"), ("texto", "de las 52 provincias tienen a María Carmen en el nº1")]),
         CIERRE("¿Cuál es el nombre típico de tu tierra?"),
     ],
+    "18-halloween": [
+        (5.6, 0.75, [("gancho", "¿Cuántos se llaman como un personaje de terror?"), ("fila", "Carrie", "25"), ("fila", "Merlina", "44"),
+                     ("fila", "Annabelle", "132"), ("fila", "Jason", "754"), ("fila", "Freddy", "926")]),
+        (4.8, 0.6, [("texto", "Y Hannibal…"), ("cifra", "77"), ("texto", "con una edad media de 14 años"), ("web",)]),
+    ],
     "10-nombres-que-suben": [
         (3.0, 0.0, [("gancho", "Los nombres de niña que están arrasando")]),
         (6.5, 0.55, [("texto", "Nuevos en el top 100 de bebés:"), ("fila", "Alaia", ""), ("fila", "Catalina", ""), ("fila", "Violeta", ""),
@@ -377,6 +382,10 @@ VOCES = {
         "Son el primer o el segundo nombre de mujer más común de su provincia. En el resto de España, casi siempre gana María Carmen.",
         "De hecho, María Carmen es el número uno en 35 de las 52 provincias.",
         f"¿Cuál es el nombre típico de tu tierra? Busca el tuyo en {WEB_DICHA}.",
+    ],
+    "18-halloween": [
+        "¿Cuántos se llaman como un personaje de terror? Carrie, veinticinco. Merlina, cuarenta y cuatro. Jason, setecientos cincuenta y cuatro. Freddy, novecientos veintiséis.",
+        f"Y Hannibal... ¡setenta y siete, con catorce años de media! Busca el tuyo en {WEB_DICHA}.",
     ],
     "10-nombres-que-suben": [
         "Estos son los nombres de niña que están arrasando.",
