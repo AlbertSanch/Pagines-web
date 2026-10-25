@@ -26,7 +26,7 @@ PLANTILLA = RAIZ / "plantilla"
 EVENTOS = RAIZ / "eventos.json"
 DOMINIO = os.environ.get("CDF_DOMINIO", "https://cuantosdiasfaltan.es")
 NOMBRE_WEB = DOMINIO.split("//")[1]
-VERSION = "1"
+VERSION = "2"
 HOY = dt.date.fromisoformat(os.environ["CDF_HOY"]) if os.environ.get("CDF_HOY") else dt.date.today()
 ADSENSE = "ca-pub-8810566450749484"
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -151,7 +151,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts=""):
 <title>{escape(titulo)}</title>
 <meta name="description" content="{escape(descripcion)}">
 <link rel="canonical" href="{url}">
-<meta name="theme-color" content="#1e1b4b">
+<meta name="theme-color" content="#111111">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{NOMBRE_WEB}">
 <meta property="og:locale" content="es_ES">
