@@ -1,0 +1,62 @@
+# cuantosdiasfaltan: regenera la web cada día (las cuentas atrás cambian) y cuando cambian los datos
+# (cuantosdiasfaltan/eventos.json) o los scripts. Cloudflare Pages publica cada commit en main.
+name: Cuántos días faltan
+
+on:
+  schedule:
+    - cron: "11 4 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - cuantosdiasfaltan/scripts/**
+      - cuantosdiasfaltan/plantilla/**
+      - cuantosdiasfaltan/eventos.json
+      - .github/workflows/cuantosdiasfaltan.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cuantosdiasfaltan
+  cancel-in-progress: false
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generar la web
+        run: python -u cuantosdiasfaltan/scripts/generar_web.py
+      - name: Comprobar
+        run: |
+          test -f cuantosdiasfaltan/web/index.html
+          n=$(grep -c "<loc>" cuantosdiasfaltan/web/sitemap.xml)
+          echo "Páginas en el sitemap: $n"
+          test "$n" -gt 15
+      - name: Publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cuantosdiasfaltan/web
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Cuántos días faltan: actualizar cuentas atrás"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            # Si la web ha cambiado mientras tanto, se parte de main y se regenera
+            git rebase --abort 2>/dev/null || true
+            git fetch origin main
+            git reset --mixed origin/main
+            git checkout origin/main -- cuantosdiasfaltan/scripts cuantosdiasfaltan/plantilla cuantosdiasfaltan/eventos.json
+            python -u cuantosdiasfaltan/scripts/generar_web.py
+            git add cuantosdiasfaltan/web
+            if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+            git commit -m "Cuántos días faltan: actualizar cuentas atrás"
+            git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1

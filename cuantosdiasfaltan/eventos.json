@@ -1,0 +1,5 @@
+[
+ {"titulo": "Prueba A", "slug": "prueba-a", "categoria": "videojuegos", "fecha": "2027-01-28", "precision": "dia", "plataformas": "PS5, Xbox", "fuente_url": "https://example.com", "fuente_nombre": "Ejemplo", "fuente_tipo": "oficial", "comprobado": "2026-10-25", "retrasos": ["2026-11-19"]},
+ {"titulo": "Prueba B", "slug": "prueba-b", "categoria": "peliculas", "fecha": null, "precision": "anio", "ventana": "2027", "fuente_url": "https://example.com", "comprobado": "2026-10-25"},
+ {"titulo": "Prueba C", "slug": "prueba-c", "categoria": "series", "fecha": "2026-06-01", "precision": "dia", "fuente_url": "https://example.com", "comprobado": "2026-10-25"}
+]
