@@ -269,6 +269,11 @@ def pagina_evento(e, eventos):
         bloque = contador(d, pasado=True)
         titulo = f"¿Cuánto hace de {t}? Fecha de lanzamiento"
         desc = f"{t} salió el {fecha_larga(d)}: hace {texto_tiempo(d, HOY)}."
+        if e["categoria"] in ("series", "anime"):  # quien busca una temporada ya estrenada quiere saber desde cuándo y dónde verla
+            cab = f"¿Cuándo se estrenó {t}?"
+            sub = f'Se estrenó el <strong>{fecha_larga(d)}</strong>'
+            titulo = f"{t}: fecha de estreno y dónde verla"
+            desc = f"{t} se estrenó el {fecha_larga(d)}{f' en {donde}' if donde else ''}: hace {texto_tiempo(d, HOY)}."
     elif estimada_de(e):
         est = estimada_de(e)
         cab, titulo = preguntas_de(e)
