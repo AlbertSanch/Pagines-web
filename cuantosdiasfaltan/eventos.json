@@ -285,7 +285,7 @@
  {
   "titulo": "Super Bowl LXI",
   "slug": "super-bowl-2027",
-  "categoria": "eventos",
+  "categoria": "deportes",
   "fecha": "2027-02-14",
   "precision": "dia",
   "fuente_url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates",
@@ -334,7 +334,7 @@
  {
   "titulo": "Final de la Europa League 2027",
   "slug": "final-europa-league-2027",
-  "categoria": "eventos",
+  "categoria": "deportes",
   "fecha": "2027-05-26",
   "precision": "dia",
   "fuente_url": "https://it.uefa.com/uefaeuropaleague/news/02a6-20d7a0ce22a3-00fac1a69d7f-1000--2027-uefa-europa-league-final-frankfurt/",
@@ -346,7 +346,7 @@
  {
   "titulo": "Final de la Champions League 2027",
   "slug": "final-champions-2027",
-  "categoria": "eventos",
+  "categoria": "deportes",
   "fecha": "2027-06-05",
   "precision": "dia",
   "fuente_url": "https://www.uefa.com/uefachampionsleague/news/029d-1eb2d5faf53c-d67c9fed04fa-1000--2027-uefa-champions-league-final-estadio-metropolitano-m/",
@@ -358,7 +358,7 @@
  {
   "titulo": "Mundial Femenino 2027",
   "slug": "mundial-femenino-2027",
-  "categoria": "eventos",
+  "categoria": "deportes",
   "fecha": "2027-06-24",
   "precision": "dia",
   "fuente_url": "https://ipt.fifa.com/media-releases/womens-world-cup-2027-brazil-maracana-match-schedule-unveiled",
@@ -370,7 +370,7 @@
  {
   "titulo": "Tour de Francia 2027",
   "slug": "tour-de-francia-2027",
-  "categoria": "eventos",
+  "categoria": "deportes",
   "fecha": "2027-07-02",
   "precision": "dia",
   "fuente_url": "https://www.edinburgh.gov.uk/events-venues/tour-de-france-grande-depart-2027",
@@ -382,7 +382,7 @@
  {
   "titulo": "Eclipse total de Sol en España",
   "slug": "eclipse-total-2027",
-  "categoria": "eventos",
+  "categoria": "espacio",
   "fecha": "2027-08-02",
   "precision": "dia",
   "fuente_url": "https://astronomia.ign.es/es/eclipses-de-sol-y-luna/eclipse-total-sol-de-2-de-agosto-2027",
@@ -406,7 +406,7 @@
  {
   "titulo": "Mundial de Baloncesto 2027",
   "slug": "mundial-baloncesto-2027",
-  "categoria": "eventos",
+  "categoria": "deportes",
   "fecha": "2027-08-27",
   "precision": "dia",
   "fuente_url": "https://en.wikipedia.org/wiki/2027_FIBA_Basketball_World_Cup",
@@ -418,7 +418,7 @@
  {
   "titulo": "Gran Premio de España de F1 2027 (Madrid)",
   "slug": "gp-espana-f1-2027",
-  "categoria": "eventos",
+  "categoria": "deportes",
   "fecha": "2027-09-12",
   "precision": "dia",
   "fuente_url": "https://www.formula1.com/en/racing/2027",
@@ -430,7 +430,7 @@
  {
   "titulo": "Mundial de Rugby 2027",
   "slug": "mundial-rugby-2027",
-  "categoria": "eventos",
+  "categoria": "deportes",
   "fecha": "2027-10-01",
   "precision": "dia",
   "fuente_url": "https://www.world.rugby/news/1020949/mens-rugby-world-cup-2027-schedule-revealed-with-first-tickets-available-from-18-february",
@@ -442,7 +442,7 @@
  {
   "titulo": "Eclipse anular de Sol en España",
   "slug": "eclipse-anular-2028",
-  "categoria": "eventos",
+  "categoria": "espacio",
   "fecha": "2028-01-26",
   "precision": "dia",
   "fuente_url": "https://astronomia.ign.es/es/eclipses-de-sol-y-luna/eclipse-anular-sol-de-26-de-enero-2028",
@@ -454,7 +454,7 @@
  {
   "titulo": "Eurocopa 2028",
   "slug": "eurocopa-2028",
-  "categoria": "eventos",
+  "categoria": "deportes",
   "fecha": "2028-06-09",
   "precision": "dia",
   "fuente_url": "https://www.uefa.com/euro2028/news/028f-1b599fe02d18-0c758142f5e4-1000/",
@@ -466,7 +466,7 @@
  {
   "titulo": "Juegos Olímpicos de Los Ángeles 2028",
   "slug": "juegos-olimpicos-2028",
-  "categoria": "eventos",
+  "categoria": "deportes",
   "fecha": "2028-07-14",
   "precision": "dia",
   "fuente_url": "https://la28.org/en/newsroom/LA28_Announces_Games_Dates.html",
@@ -478,7 +478,7 @@
  {
   "titulo": "Juegos Olímpicos de Invierno 2030",
   "slug": "juegos-olimpicos-invierno-2030",
-  "categoria": "eventos",
+  "categoria": "deportes",
   "fecha": "2030-02-01",
   "precision": "dia",
   "fuente_url": "https://www.olympics.com/ioc/faq/future-olympic-games/where-will-the-next-olympic-games-be-held",
@@ -490,7 +490,7 @@
  {
   "titulo": "Mundial 2030",
   "slug": "mundial-2030",
-  "categoria": "eventos",
+  "categoria": "deportes",
   "fecha": null,
   "precision": "anio",
   "fuente_url": "https://www.fifa.com/en/tournaments/mens/worldcup/2030",

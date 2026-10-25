@@ -42,7 +42,12 @@ CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
            "email": "contacto.ahorrometro@gmail.com"}
 CATEGORIAS = {"videojuegos": ("Videojuegos", "🎮"), "peliculas": ("Películas", "🎬"), "series": ("Series", "📺"),
-              "tecnologia": ("Tecnología", "📱"), "eventos": ("Eventos", "🏆")}
+              "deportes": ("Deportes", "🏟️"), "musica": ("Música", "🎵"), "fiestas": ("Fiestas y cultura", "🎉"),
+              "tecnologia": ("Tecnología", "📱"), "espacio": ("Ciencia y espacio", "🔭"), "eventos": ("Eventos", "🏆")}
+FRASE_CAT = {"videojuegos": "los próximos videojuegos", "peliculas": "los próximos estrenos de cine", "series": "los próximos estrenos de series",
+             "deportes": "los próximos grandes eventos deportivos", "musica": "los próximos festivales y conciertos",
+             "fiestas": "las próximas fiestas y eventos culturales", "tecnologia": "los próximos lanzamientos de tecnología",
+             "espacio": "los próximos eclipses y fenómenos astronómicos", "eventos": "los próximos grandes eventos"}
 RESERVADOS = set(CATEGORIAS) | {"assets", "cuanto-hace", "sobre-nosotros", "aviso-legal", "privacidad", "buscar"}
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 DIAS = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
@@ -274,11 +279,12 @@ def pagina_evento(e, eventos):
 def pagina_categoria(c, eventos):
     nombre, ico = CATEGORIAS[c]
     lista = [e for e in eventos if e["categoria"] == c]
-    cuerpo = f"""<h1>{ico} ¿Cuánto falta para los próximos {nombre.lower()}?</h1>
-<p class="sub">Todas las fechas oficiales de {nombre.lower()}, ordenadas por lo que falta.</p>
+    frase = FRASE_CAT[c]
+    cuerpo = f"""<h1>{ico} ¿Cuánto falta para {frase}?</h1>
+<p class="sub">{nombre}: todas las fechas oficiales, ordenadas por lo que falta.</p>
 {lista_tarjetas(lista)}"""
-    return pagina(f"/{c}/", f"Próximos {nombre.lower()}: cuántos días faltan y fechas oficiales",
-                  f"Cuántos días faltan para los próximos lanzamientos de {nombre.lower()}, con la fecha oficial de cada uno.", cuerpo)
+    return pagina(f"/{c}/", f"{frase[0].upper() + frase[1:]}: cuántos días faltan y fechas",
+                  f"Cuántos días faltan para {frase}, con la fecha oficial de cada uno y una cuenta atrás en directo.", cuerpo)
 
 
 def pagina_portada(eventos):
