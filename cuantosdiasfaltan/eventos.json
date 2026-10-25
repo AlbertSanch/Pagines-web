@@ -2843,5 +2843,127 @@
   "comprobado": "2026-10-25",
   "plataformas": "Crunchyroll",
   "en_frase": "Kusuriya no Hitorigoto temporada 3"
+ },
+ {
+  "titulo": "Madoka Magica Walpurgisnacht: Rising",
+  "slug": "madoka-magica-walpurgisnacht-rising",
+  "categoria": "anime",
+  "fecha": "2026-11-27",
+  "precision": "dia",
+  "fuente_url": "https://www.espinof.com/anime/pelicula-madoka-magica-fin-tiene-fecha-estreno-final-anime-magical-girls-se-podra-ver-cines-para-colofon-historico",
+  "fuente_nombre": "Espinof (anuncio de Selecta Visión)",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines Yelmo, en versión original subtitulada",
+  "ambito": "España"
+ },
+ {
+  "titulo": "Shangri-La Frontier temporada 3",
+  "slug": "shangri-la-frontier-temporada-3",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://animotaku.fr/actualite/anime-shangri-la-frontier-saison-3-date-sortie/",
+  "fuente_nombre": "Animotaku",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "enero de 2027",
+  "estimada": "2027-01-10",
+  "estimacion": "La temporada está anunciada para enero de 2027 y Crunchyroll ha confirmado que la emitirá; el 10 de enero es la fecha de estreno en Japón que publica la prensa, aún sin confirmación oficial"
+ },
+ {
+  "titulo": "Mashle temporada 3",
+  "slug": "mashle-temporada-3",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://offmodel.media/articles/2027-anime-confirmed-releases/",
+  "fuente_nombre": "OffModel",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "ventana": "enero de 2027",
+  "rango": [
+   "2027-01-01",
+   "2027-01-31"
+  ],
+  "estimacion": "El anime lo ha anunciado para enero de 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "The One Piece (el remake de One Piece)",
+  "slug": "the-one-piece-remake",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://www.whats-on-netflix.com/news/anime/new-anime-coming-to-netflix-in-2027/",
+  "fuente_nombre": "What's on Netflix",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Netflix",
+  "en_frase": "el remake de One Piece (The One Piece)",
+  "ventana": "febrero de 2027",
+  "rango": [
+   "2027-02-01",
+   "2027-02-28"
+  ],
+  "estimacion": "Netflix lo ha anunciado para febrero de 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "Kagurabachi (anime)",
+  "slug": "kagurabachi-anime",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://www.animenewsnetwork.com/press-release/2026-06-26/crunchyroll-announces-it-will-stream-highly-anticipated-new-shonen-anime-kagurabachi-beginning-/.238970",
+  "fuente_nombre": "Crunchyroll (nota de prensa)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "en_frase": "el anime de Kagurabachi",
+  "ventana": "abril de 2027",
+  "rango": [
+   "2027-04-01",
+   "2027-04-30"
+  ],
+  "estimacion": "Crunchyroll lo ha anunciado para abril de 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "Eleceed (anime)",
+  "slug": "eleceed-anime",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://jeu.video/en/article/eleceed-anime-april-2027-crunchyroll",
+  "fuente_nombre": "jeu.video (anuncio de Crunchyroll)",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Crunchyroll",
+  "en_frase": "el anime de Eleceed",
+  "ventana": "abril de 2027",
+  "rango": [
+   "2027-04-01",
+   "2027-04-30"
+  ],
+  "estimacion": "Crunchyroll lo ha anunciado para abril de 2027, sin día concreto todavía"
+ },
+ {
+  "titulo": "Tragones y mazmorras temporada 2 (Delicious in Dungeon)",
+  "slug": "tragones-y-mazmorras-temporada-2",
+  "categoria": "anime",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://www.netflixjunkie.com/anime-news-2027-anime-releases-are-coming-for-the-crown-of-animes-best-year-yet/",
+  "fuente_nombre": "Netflix Junkie",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "Netflix",
+  "en_frase": "Tragones y mazmorras temporada 2",
+  "ventana": "octubre de 2027",
+  "rango": [
+   "2027-10-01",
+   "2027-10-31"
+  ],
+  "estimacion": "Netflix lo ha anunciado para octubre de 2027, sin día concreto todavía"
  }
 ]
