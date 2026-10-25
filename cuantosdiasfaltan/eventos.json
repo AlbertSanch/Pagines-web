@@ -304,7 +304,8 @@
   "fuente_nombre": "GSMA",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "plataformas": "Fira Barcelona Gran Via, del 1 al 4 de marzo"
+  "plataformas": "Fira Barcelona Gran Via, del 1 al 4 de marzo",
+  "en_frase": "el Mobile World Congress 2027"
  },
  {
   "titulo": "Eurovisión 2027",
@@ -509,7 +510,8 @@
   "fuente_nombre": "AppleInsider",
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
-  "plataformas": "Apple no ha anunciado fecha"
+  "plataformas": "Apple no ha anunciado fecha",
+  "en_frase": "el iPhone 18"
  },
  {
   "titulo": "Samsung Galaxy S27",
@@ -521,7 +523,8 @@
   "fuente_nombre": "PhoneArena",
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
-  "plataformas": "Samsung no ha anunciado fecha"
+  "plataformas": "Samsung no ha anunciado fecha",
+  "en_frase": "el Samsung Galaxy S27"
  },
  {
   "titulo": "PlayStation 6",
@@ -533,7 +536,8 @@
   "fuente_nombre": "VGC (resultados de Sony, mayo de 2026)",
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
-  "plataformas": "Sony dice que aún no ha decidido la fecha"
+  "plataformas": "Sony dice que aún no ha decidido la fecha",
+  "en_frase": "la PlayStation 6"
  },
  {
   "titulo": "Próxima Xbox (Project Helix)",
@@ -545,7 +549,8 @@
   "fuente_nombre": "Xbox Wire",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "plataformas": "Kits para desarrolladores desde 2027"
+  "plataformas": "Kits para desarrolladores desde 2027",
+  "en_frase": "la próxima Xbox"
  },
  {
   "titulo": "Nintendo Switch 2 edición Zelda 40.º aniversario",
@@ -557,7 +562,8 @@
   "fuente_nombre": "Nintendo (nota de prensa)",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "plataformas": "Consola de edición especial"
+  "plataformas": "Consola de edición especial",
+  "en_frase": "la Switch 2 edición Zelda"
  },
  {
   "titulo": "The Legend of Zelda: Ocarina of Time (Switch 2)",
