@@ -119,12 +119,22 @@ def estimada_de(e):
     return d if d and d >= HOY else None
 
 
+RANGO_MAX = 125  # días: «finales de 2027» o un trimestre sí; un año entero («previsto 2027») no, que no dice nada
+
+
 def rango_de(e):
-    """(desde, hasta) de la ventana anunciada, para decir «faltan entre X y Y días»."""
+    """(desde, hasta) de la ventana anunciada, para decir «faltan entre X y Y días» si es corta."""
     if not e.get("rango") or e["precision"] == "dia":
         return None
     desde, hasta = (dt.date.fromisoformat(x) for x in e["rango"])
+    if (hasta - desde).days > RANGO_MAX:
+        return None
     return (max(desde, HOY), hasta) if hasta >= HOY else None
+
+
+def previsto(e):
+    """Ventana anunciada demasiado larga para dar días («2027»): se dice tal cual."""
+    return bool(e.get("rango") and e.get("ventana") and not rango_de(e) and dt.date.fromisoformat(e["rango"][1]) >= HOY)
 
 
 # ---------------------------------------------------------------- plantilla de página
@@ -213,7 +223,8 @@ def tarjeta(e):
         a, b = rango_de(e)
         cifra, ud, cuando = f"{(a - HOY).days}–{(b - HOY).days}", "días", f"Previsto: {e['ventana']}"
     else:
-        cifra, ud, cuando = "?", "sin fecha", e.get("ventana") or "Fecha sin confirmar"
+        cifra, ud = "?", "previsto" if previsto(e) else "sin fecha"
+        cuando = f"Previsto: {e['ventana']}" if previsto(e) else e.get("ventana") or "Fecha sin confirmar"
     ico = CATEGORIAS[e["categoria"]][1]
     return (f'<li><a href="/{e["slug"]}/"><span class="t-cifra"><b>{cifra}</b> {ud}</span><span class="t-tit">{ico} {escape(e["titulo"])}</span>'
             f'<span class="t-cuando">{escape(cuando)}</span></a></li>')
@@ -287,6 +298,12 @@ def pagina_evento(e, eventos):
         bloque = (f'<div class="contador sin-fecha"><p class="c-grande">Faltan entre {(a - HOY).days} y {(b - HOY).days} días</p>'
                   f'<p class="c-dias">Fecha aproximada: {escape(e["ventana"])}. Pondremos la cuenta atrás exacta en cuanto se anuncie el día.</p></div>')
         desc = f"{cab} Previsto para {e['ventana']}, entre {(a - HOY).days} y {(b - HOY).days} días desde hoy. Aún no hay día oficial."
+    elif previsto(e):
+        cab, titulo = preguntas_de(e)
+        sub = f'<strong>Previsto: {escape(e["ventana"])}</strong> · aún sin día oficial'
+        bloque = (f'<div class="contador sin-fecha"><p class="c-grande">Previsto para {escape(e["ventana"])}</p>'
+                  '<p class="c-dias">Aún no hay día oficial. Pondremos aquí la cuenta atrás en cuanto se anuncie.</p></div>')
+        desc = f"{cab} Está previsto para {e['ventana']}, pero aún no hay día oficial. Aquí verás la cuenta atrás en cuanto se anuncie."
     else:
         cab, titulo = preguntas_de(e)
         sub = f'<strong>Fecha sin confirmar</strong>{f": {escape(e["ventana"])}" if e.get("ventana") else ""}'
@@ -300,7 +317,7 @@ def pagina_evento(e, eventos):
     nota_ambito = f'<p class="nota">Fecha de estreno en {escape(e["ambito"])}.</p>' if e.get("ambito") and e["ambito"] not in ("España", "mundial") else ""
     fuente = (f'<p class="fuente">Fuente{"" if e.get("fuente_tipo") == "oficial" else " (medio)"}: <a href="{escape(e["fuente_url"])}" rel="nofollow noopener" target="_blank">'
               f'{escape(e.get("fuente_nombre") or "anuncio oficial")}</a> · Comprobado el {fecha_simple(e["comprobado"])}.</p>')
-    if not d and (estimada_de(e) or rango_de(e)):
+    if not d and (estimada_de(e) or rango_de(e) or previsto(e)):
         fuente = f'<p class="nota">Por qué esta fecha: {escape(e["estimacion"])}. La cambiaremos por la oficial en cuanto se anuncie.</p>' + fuente
     otros = [x for x in eventos if x["categoria"] == e["categoria"] and x is not e]
     otros = sorted(otros, key=orden)[:8]
@@ -310,7 +327,7 @@ def pagina_evento(e, eventos):
         preguntas.append((f"¿Cuántos días faltan para {t}?", f"Hoy, {fecha_larga(HOY)}, faltan {(d - HOY).days} días ({texto_tiempo(HOY, d)})."))
     if not d and estimada_de(e):
         preguntas.append((cab, f"Aún no hay fecha oficial. La fecha estimada es el {fecha_larga(estimada_de(e))}: {e['estimacion']}."))
-    elif not d and rango_de(e):
+    elif not d and (rango_de(e) or previsto(e)):
         preguntas.append((cab, f"Aún no hay día oficial: está previsto para {e['ventana']}. {e['estimacion']}."))
     cuerpo = f"""<nav class="migas"><a href="/">Inicio</a> › <a href="/{e['categoria']}/">{cat}</a></nav>
 <h1>{escape(cab)}</h1>
@@ -400,7 +417,7 @@ def main():
     if len(eventos) < 10:
         sys.exit(f"ERROR: solo {len(eventos)} eventos")
     for e in eventos:
-        if (e.get("estimada") and not estimada_de(e)) or (e.get("rango") and not rango_de(e)):
+        if (e.get("estimada") and not estimada_de(e)) or (e.get("rango") and dt.date.fromisoformat(e["rango"][1]) < HOY):
             print(f"AVISO: la estimación de {e['slug']} ya ha pasado; hay que revisarla")
     if WEB.exists():
         shutil.rmtree(WEB)
