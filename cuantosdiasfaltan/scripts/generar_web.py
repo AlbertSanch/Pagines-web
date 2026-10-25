@@ -205,16 +205,29 @@ def lista_tarjetas(eventos):
 
 # ---------------------------------------------------------------- páginas
 
+def preguntas_de(e):
+    """(H1, título) con la forma más buscada de cada tipo (Keyword Planner, octubre de 2026):
+    «cuándo sale GTA 6» 22.200 frente a «cuánto falta» 170; «estreno Dune 3» 720 frente a «cuándo se estrena» 70;
+    «cuánto falta para Navidad» 8.100 frente a «cuándo es» 3.600 y «cuántos días faltan» 2.900."""
+    t, c = e.get("en_frase") or e["titulo"], e["categoria"]  # en_frase: «el iPhone 18», «la PlayStation 6»
+    if c in ("videojuegos", "tecnologia"):
+        return f"¿Cuándo sale {t}?", f"¿Cuándo sale {t}? Fecha de lanzamiento y cuenta atrás"
+    if c == "peliculas":
+        return f"¿Cuándo se estrena {t}?", f"Estreno de {t}: fecha en cines y cuenta atrás"
+    if c == "series":
+        return f"¿Cuándo se estrena {t}?", f"¿Cuándo se estrena {t}? Fecha de estreno y cuenta atrás"
+    return f"¿Cuánto falta para {t}?", f"¿Cuánto falta para {t}? Fecha y cuenta atrás"
+
+
 def pagina_evento(e, eventos):
     d = fecha_de(e)
     t = e["titulo"]
     cat, ico = CATEGORIAS[e["categoria"]]
     donde = e.get("plataformas") or e.get("lugar") or ""
     if d and d >= HOY:
-        cab = f"¿Cuántos días faltan para {t}?"
+        cab, titulo = preguntas_de(e)
         sub = f'{"Sale" if e["categoria"] in ("videojuegos", "tecnologia") else "Se estrena" if e["categoria"] in ("peliculas", "series") else "Es"} el <strong>{fecha_larga(d)}</strong>'
         bloque = contador(d)
-        titulo = f"¿Cuántos días faltan para {t}? Cuenta atrás"
         desc = f"Faltan {(d - HOY).days} días para {t}: {fecha_larga(d)}. Cuenta atrás en directo en meses, semanas, días y horas, con la fecha oficial."
     elif d:
         cab = f"¿Cuánto hace de {t}?"
@@ -223,11 +236,10 @@ def pagina_evento(e, eventos):
         titulo = f"¿Cuánto hace de {t}? Fecha de lanzamiento"
         desc = f"{t} salió el {fecha_larga(d)}: hace {texto_tiempo(d, HOY)}."
     else:
-        cab = f"¿Cuándo sale {t}?"
+        cab, titulo = preguntas_de(e)
         sub = f'<strong>Fecha sin confirmar</strong>{f": {escape(e["ventana"])}" if e.get("ventana") else ""}'
         bloque = ('<div class="contador sin-fecha"><p class="c-grande">Aún no hay fecha oficial</p>'
                   '<p class="c-dias">Pondremos aquí la cuenta atrás en cuanto se anuncie.</p></div>')
-        titulo = f"¿Cuándo sale {t}? Fecha oficial y cuenta atrás"
         ventana = f" ({e['ventana']})" if e.get("ventana") else ""
         desc = f"Cuándo sale {t}: todavía no hay fecha oficial{ventana}. Aquí verás la cuenta atrás en cuanto se anuncie."
     retrasos = ""
