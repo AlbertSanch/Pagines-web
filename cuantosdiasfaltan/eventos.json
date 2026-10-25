@@ -2494,5 +2494,105 @@
   ],
   "estimacion": "Disney la prevé para 2027, sin día concreto",
   "plataformas": "Disney+"
+ },
+ {
+  "titulo": "Vengadores: Doomsday (Avengers: Doomsday)",
+  "slug": "vengadores-doomsday",
+  "categoria": "peliculas",
+  "fecha": "2026-12-17",
+  "precision": "dia",
+  "fuente_url": "https://vandal.elespanol.com/noticia/r44310/vengadores-doomsday-cambia-su-estreno-hace-una-mencion-a-tony-stark-y-deslumbra-en-la-san-diego-comiccon-malaga",
+  "fuente_nombre": "Vandal (anuncio de Marvel en la Comic-Con de Málaga)",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines",
+  "ambito": "España",
+  "en_frase": "Vengadores: Doomsday",
+  "retrasos": [
+   "2026-12-18"
+  ]
+ },
+ {
+  "titulo": "El gato con sombrero",
+  "slug": "el-gato-con-sombrero",
+  "categoria": "peliculas",
+  "fecha": "2026-11-06",
+  "precision": "dia",
+  "fuente_url": "https://www.sensacine.com/noticias/cine/noticia-1000151762/",
+  "fuente_nombre": "SensaCine",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines",
+  "ambito": "España"
+ },
+ {
+  "titulo": "Las aventuras de Cliff Booth",
+  "slug": "las-aventuras-de-cliff-booth",
+  "categoria": "peliculas",
+  "fecha": "2026-11-25",
+  "precision": "dia",
+  "fuente_url": "https://www.espinof.com/estrenos/secuela-netflix-esperada-ano-fin-tiene-fecha-estreno-se-vera-cines-brad-pitt-tarantino-se-reunen-espectacular-aventura-hollywood",
+  "fuente_nombre": "Espinof (anuncio de Netflix)",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines IMAX durante dos semanas; en Netflix desde el 23 de diciembre",
+  "ambito": "mundial"
+ },
+ {
+  "titulo": "Perfectos conocidos (Javier Fesser)",
+  "slug": "perfectos-conocidos",
+  "categoria": "peliculas",
+  "fecha": "2027-01-01",
+  "precision": "dia",
+  "fuente_url": "https://www.universalpictures.es/fechasdeestreno/Estrenos-Universal.pdf",
+  "fuente_nombre": "Universal Pictures España",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines",
+  "ambito": "España"
+ },
+ {
+  "titulo": "Godzilla x Kong: Supernova",
+  "slug": "godzilla-x-kong-supernova",
+  "categoria": "peliculas",
+  "fecha": "2027-03-26",
+  "precision": "dia",
+  "fuente_url": "https://variety.com/2025/film/news/godzilla-x-kong-supernova-sequel-title-production-1236392290",
+  "fuente_nombre": "Variety (Warner Bros. y Legendary)",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines",
+  "ambito": "EE. UU."
+ },
+ {
+  "titulo": "The Legend of Zelda: la película",
+  "slug": "pelicula-zelda",
+  "categoria": "peliculas",
+  "fecha": "2027-04-30",
+  "precision": "dia",
+  "fuente_url": "https://www.wepc.com/news/legend-of-zelda-live-action-release-date-changed-again-but-shifts-forward/",
+  "fuente_nombre": "WePC (anuncio de Nintendo)",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines",
+  "ambito": "mundial",
+  "en_frase": "la película de Zelda",
+  "retrasos": [
+   "2027-03-26",
+   "2027-05-07"
+  ]
+ },
+ {
+  "titulo": "Campeones 3",
+  "slug": "campeones-3",
+  "categoria": "peliculas",
+  "fecha": "2027-07-30",
+  "precision": "dia",
+  "fuente_url": "https://www.universalpictures.es/fechasdeestreno/Estrenos-Universal.pdf",
+  "fuente_nombre": "Universal Pictures España",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-10-25",
+  "plataformas": "cines",
+  "ambito": "España"
  }
 ]
