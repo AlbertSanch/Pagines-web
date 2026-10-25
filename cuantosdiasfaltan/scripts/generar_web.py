@@ -41,10 +41,10 @@ CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};
                       'googlefc.callbackQueue.push(function(){googlefc.showRevocationMessage()});return false">Configurar cookies</a>')
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
            "email": "contacto.ahorrometro@gmail.com"}
-CATEGORIAS = {"videojuegos": ("Videojuegos", "🎮"), "peliculas": ("Películas", "🎬"), "series": ("Series", "📺"),
+CATEGORIAS = {"videojuegos": ("Videojuegos", "🎮"), "peliculas": ("Películas", "🎬"), "series": ("Series", "📺"), "anime": ("Anime", "⛩️"),
               "deportes": ("Deportes", "🏟️"), "musica": ("Música", "🎵"), "fiestas": ("Fiestas y cultura", "🎉"),
               "tecnologia": ("Tecnología", "📱"), "espacio": ("Ciencia y espacio", "🔭"), "eventos": ("Eventos", "🏆")}
-FRASE_CAT = {"videojuegos": "los próximos videojuegos", "peliculas": "los próximos estrenos de cine", "series": "los próximos estrenos de series",
+FRASE_CAT = {"videojuegos": "los próximos videojuegos", "peliculas": "los próximos estrenos de cine", "series": "los próximos estrenos de series", "anime": "los próximos estrenos de anime",
              "deportes": "los próximos grandes eventos deportivos", "musica": "los próximos festivales y conciertos",
              "fiestas": "las próximas fiestas y eventos culturales", "tecnologia": "los próximos lanzamientos de tecnología",
              "espacio": "los próximos eclipses y fenómenos astronómicos", "eventos": "los próximos grandes eventos"}
@@ -246,6 +246,8 @@ def preguntas_de(e):
         return f"¿Cuándo sale {t}?", f"¿Cuándo sale {t}? Fecha de lanzamiento y cuenta atrás"
     if c == "peliculas":
         return f"¿Cuándo se estrena {t}?", f"Estreno de {t}: fecha en cines y cuenta atrás"
+    if c == "anime":  # «solo leveling temporada 3» 6.600 frente a «cuándo sale jujutsu kaisen temporada 3» 390
+        return f"¿Cuándo sale {t}?", f"{t}: fecha de estreno y cuenta atrás"
     if c == "series":
         return f"¿Cuándo se estrena {t}?", f"¿Cuándo se estrena {t}? Fecha de estreno y cuenta atrás"
     return f"¿Cuánto falta para {t}?", f"¿Cuánto falta para {t}? Fecha y cuenta atrás"
@@ -258,7 +260,7 @@ def pagina_evento(e, eventos):
     donde = e.get("plataformas") or e.get("lugar") or ""
     if d and d >= HOY:
         cab, titulo = preguntas_de(e)
-        sub = f'{"Sale" if e["categoria"] in ("videojuegos", "tecnologia") else "Se estrena" if e["categoria"] in ("peliculas", "series") else "Es"} el <strong>{fecha_larga(d)}</strong>'
+        sub = f'{"Sale" if e["categoria"] in ("videojuegos", "tecnologia") else "Se estrena" if e["categoria"] in ("peliculas", "series", "anime") else "Es"} el <strong>{fecha_larga(d)}</strong>'
         bloque = contador(d)
         desc = f"Faltan {(d - HOY).days} días para {t}: {fecha_larga(d)}. Cuenta atrás en directo en meses, semanas, días y horas, con la fecha oficial."
     elif d:
