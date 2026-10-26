@@ -421,7 +421,11 @@
   "fuente_nombre": "Instituto Geográfico Nacional",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "Totalidad en Ceuta, Melilla, Cádiz y parte de Málaga, Granada y Almería, hacia las 10:45"
+  "lugar": "Totalidad en Ceuta, Melilla, Cádiz y parte de Málaga, Granada y Almería, hacia las 10:45",
+  "hora": "10:45",
+  "hora_que": "la totalidad",
+  "hora_nota": "cambia unos minutos según el lugar",
+  "en_frase": "el eclipse total de Sol de 2027"
  },
  {
   "titulo": "JMJ Seúl 2027",

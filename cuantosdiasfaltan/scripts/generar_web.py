@@ -263,6 +263,8 @@ def texto_hora(e, corto=False):
     if corto:
         return f"{otro_dia}a las {hora_txt}".strip()
     dia_can = f" del {DIAS[momento_can.weekday()]}" if momento_can.date() != dia else ""
+    if e.get("hora_nota"):  # p. ej. un eclipse: la hora cambia según el lugar y en Canarias no es el mismo fenómeno
+        return f"{que[0].upper() + que[1:]} es hacia las {hora_txt}, hora peninsular: {e['hora_nota']}"
     texto = f"{que[0].upper() + que[1:]} es {otro_dia}a las {hora_txt} en España ({can_txt}{dia_can} en Canarias)"
     return texto + (": es la hora habitual, aún sin confirmar" if aprox else "")
 
