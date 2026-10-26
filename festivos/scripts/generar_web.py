@@ -27,12 +27,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from comun import COMUNIDADES, DATA, PROVINCIAS, MESES, DIAS, municipios, slug  # noqa: E402
-from cuanto_falta import EVENTOS, GRADOS, pascua, proxima, proximo_cambio_de_hora  # noqa: E402
+from cuanto_falta import EVENTOS, proxima, proximo_cambio_de_hora  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
 WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
+CUANTOS_DIAS = "https://cuantosdiasfaltan.es"
 SITIO = "Festivos de"
 VERSION = "10"
 HOY = dt.date.fromisoformat(os.environ["FESTIVOS_HOY"]) if os.environ.get("FESTIVOS_HOY") else dt.date.today()  # FESTIVOS_HOY: para probar
@@ -1014,11 +1015,12 @@ def territorio_escolar(t):
 
 
 def proximas_cuentas(datos, esc):
-    """Todas las cuentas atrás con su próxima fecha: [(fecha, nombre, ruta)]."""
-    lista = [(proxima(s, HOY)[0], titulo_evento(n), f"/cuanto-falta/{s}/") for s, (n, *_) in EVENTOS.items()]
+    """Todas las cuentas atrás con su próxima fecha: [(fecha, nombre, ruta)]. Las de fechas señaladas
+    viven en cuantosdiasfaltan.es; aquí solo quedan las del cole, que salen del calendario escolar."""
+    lista = [(proxima(s, HOY)[0], titulo_evento(n), f"{CUANTOS_DIAS}/{s}/") for s, (n, *_) in EVENTOS.items()]
     cambio = proximo_cambio_de_hora(HOY)
     if cambio:
-        lista.append((cambio[0][0], "Cambio de hora", "/cuanto-falta/cambio-de-hora/"))
+        lista.append((cambio[0][0], "Cambio de hora", f"{CUANTOS_DIAS}/cambio-de-hora/"))
     for s, (nombre, f) in COLE.items():
         fechas = sorted(dt.date.fromisoformat(x) for t in (esc or {}).get("territorios", []) if (x := f(t)) and x >= HOY.isoformat())
         if fechas:
@@ -1030,67 +1032,6 @@ def tarjetas_cuenta(lista):
     return '<ul class="tarjetas-cuenta">' + "".join(
         f'<li><a href="{r}"><b>{(d - HOY).days}</b><span>{"día" if (d - HOY).days == 1 else "días"}</span><em>{escape(n)}</em>'
         f'<small>{fecha_larga(d)}{f" de {d.year}" if d.year != HOY.year else ""}</small></a></li>' for d, n, r in lista) + "</ul>"
-
-
-def pagina_cuenta(slug, datos, esc):
-    nombre, categoria, _, explicacion = EVENTOS[slug]
-    d, siguientes = proxima(slug, HOY)
-    n = (d - HOY).days
-    extra = ""
-    if slug == "semana-santa" and d.year in datos:
-        p = pascua(d.year)
-        partes = []
-        for f, nom in ((p - dt.timedelta(days=3), "Jueves Santo"), (p - dt.timedelta(days=2), "Viernes Santo"), (p + dt.timedelta(days=1), "Lunes de Pascua")):
-            cc = sorted(COMUNIDADES[c][0] for c, lista in datos[d.year]["nacionales_autonomicos"].items() if any(x["f"] == f.isoformat() for x in lista))
-            donde = "en toda España" if len(cc) == len(COMUNIDADES) else ("en " + lista_y(cc) if cc else "no es festivo en ninguna comunidad")
-            partes.append(f'<li><a href="{ruta_dia(f)}">{nom}, {fecha_larga(f)}</a>: festivo {donde}.</li>')
-        extra = (f'<h2>Festivos de Semana Santa {d.year}</h2><ul class="puentes">{"".join(partes)}</ul>'
-                 f'<p>Según el calendario laboral publicado en el BOE. Mira también las <a href="/cuanto-falta/vacaciones-de-semana-santa/">vacaciones de Semana Santa del cole</a> en cada comunidad.</p>')
-    elif slug in GRADOS:
-        extra = (f'<p>La fecha es la del inicio astronómico de la estación en España (hora peninsular), calculada con la posición del sol. '
-                 f'Mira también cuándo es el próximo <a href="/cuanto-falta/cambio-de-hora/">cambio de hora</a>.</p>')
-    filas = "".join(f'<tr><td>{x.year}</td><td>{DIAS[x.weekday()]}, {fecha_larga(x, False)}</td><td>{(x - HOY).days} días</td></tr>' for x in [d] + siguientes)
-    relacionadas = [x for x in proximas_cuentas(datos, esc) if x[2] != f"/cuanto-falta/{slug}/"][:8]
-    t = titulo_evento(nombre)
-    preguntas = [
-        (f"¿Cuántos días faltan para {nombre}?", f"Hoy, {fecha_larga(HOY)} de {HOY.year}, faltan {n} días para {nombre} ({n // 7} semanas y {n % 7} días), que es el {fecha_larga(d)} de {d.year}." if n > 1 else f"{t} es {'hoy' if n == 0 else 'mañana'}, {fecha_larga(d)} de {d.year}."),
-        (f"¿Qué día cae {nombre} en {siguientes[0].year}?", f"En {siguientes[0].year}, {nombre} cae en {fecha_larga(siguientes[0])}."),
-    ]
-    cuerpo = f"""<h1>¿Cuánto falta para {escape(nombre)}?</h1>
-<p class="lead">Cuenta atrás hasta {escape(nombre)} de {d.year}: el <strong>{fecha_larga(d)} de {d.year}</strong>.</p>
-{caja_cuenta(d, f"{faltan(d)} para {escape(nombre)}")}
-<p class="acciones"><a class="boton-sec compartir" href="https://wa.me/?text={escape(f'¿Cuánto falta para {nombre}? Mira la cuenta atrás: {DOMINIO}/cuanto-falta/{slug}/')}" rel="noopener">💬 Compartir por WhatsApp</a>
-<a class="boton-sec" href="{ruta_dia(d)}">¿Dónde es festivo el {d.day} de {MESES[d.month - 1]}?</a></p>
-<section class="contenido"><h2>Cuándo es {escape(nombre)}</h2><p>{escape(explicacion)}</p>{extra}</section>
-<section><h2>{escape(t)} en los próximos años</h2>
-<div class="tabla-envoltorio"><table class="festivos tabla-escolar"><thead><tr><th>Año</th><th>Fecha</th><th>Faltan</th></tr></thead><tbody>{filas}</tbody></table></div></section>
-<section><h2>Otras cuentas atrás</h2>{tarjetas_cuenta(relacionadas)}<p><a href="/cuanto-falta/">Todas las cuentas atrás y crea la tuya →</a></p></section>
-<section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
-    return pagina(f"/cuanto-falta/{slug}/", f"¿Cuántos días faltan para {t}? Cuenta atrás {d.year}",
-                  f"Cuenta atrás en directo para {nombre}: cuántos días, horas y minutos faltan hasta el {fecha_larga(d)} de {d.year}, y qué día cae los próximos años.",
-                  cuerpo, [("Cuánto falta", "/cuanto-falta/"), (t, None)], [faq_ld(preguntas)],
-                  scripts=f'<script src="/assets/cuenta.js?v={VERSION}" defer></script>')
-
-
-def pagina_cuenta_cambio_hora(datos, esc):
-    cambios = proximo_cambio_de_hora(HOY)
-    d, sentido = cambios[0]
-    texto = ("los relojes se adelantan una hora: a las 2:00 serán las 3:00 (en Canarias, a la 1:00 serán las 2:00)" if sentido > 0
-             else "los relojes se atrasan una hora: a las 3:00 serán las 2:00 (en Canarias, a las 2:00 será la 1:00)")
-    filas = "".join(f'<tr><td>{DIAS[f.weekday()]}, {fecha_larga(f, False)} de {f.year}</td><td>{"Se adelanta (horario de verano)" if s > 0 else "Se atrasa (horario de invierno)"}</td><td>{(f - HOY).days} días</td></tr>'
-                    for f, s in cambios[:5])
-    preguntas = [("¿Cuándo es el próximo cambio de hora?", f"El {fecha_larga(d)} de {d.year}: {texto}."),
-                 ("¿Cuándo se cambia la hora?", "El último domingo de marzo los relojes se adelantan una hora y el último domingo de octubre se atrasan una hora, según la Directiva 2000/84/CE que aplica el Real Decreto 236/2002.")]
-    cuerpo = f"""<h1>¿Cuánto falta para el cambio de hora?</h1>
-<p class="lead">El próximo cambio de hora es el <strong>{fecha_larga(d)} de {d.year}</strong>: {texto}.</p>
-{caja_cuenta(d, f"{faltan(d)} para el cambio de hora")}
-<section><h2>Próximos cambios de hora</h2><div class="tabla-envoltorio"><table class="festivos tabla-escolar"><thead><tr><th>Fecha</th><th>Cambio</th><th>Faltan</th></tr></thead><tbody>{filas}</tbody></table></div></section>
-<section><h2>Otras cuentas atrás</h2>{tarjetas_cuenta([x for x in proximas_cuentas(datos, esc) if "cambio" not in x[2]][:8])}</section>
-<section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
-    return pagina("/cuanto-falta/cambio-de-hora/", f"¿Cuánto falta para el cambio de hora? Cuenta atrás {d.year}",
-                  f"Cuenta atrás para el próximo cambio de hora, el {fecha_larga(d)} de {d.year}: si los relojes se adelantan o se atrasan y a qué hora.",
-                  cuerpo, [("Cuánto falta", "/cuanto-falta/"), ("Cambio de hora", None)], [faq_ld(preguntas)],
-                  scripts=f'<script src="/assets/cuenta.js?v={VERSION}" defer></script>')
 
 
 def pagina_cuenta_cole(slug, datos, esc):
@@ -1139,16 +1080,17 @@ def pagina_cuenta_cole(slug, datos, esc):
 def pagina_cuanto_falta(datos, esc):
     lista = proximas_cuentas(datos, esc)
     grupos = {"fiestas": "Fiestas y fechas señaladas", "estaciones": "Estaciones"}
-    secciones = "".join(f'<h3>{t}</h3><ul class="lista-municipios">' + "".join(
-        f'<li><a href="/cuanto-falta/{s}/">{escape(titulo_evento(n))}</a></li>' for s, (n, c, *_) in EVENTOS.items() if c == g) + "</ul>" for g, t in grupos.items())
-    secciones += ('<h3>Cole</h3><ul class="lista-municipios">' + "".join(f'<li><a href="/cuanto-falta/{s}/">{escape(titulo_evento(n))}</a></li>' for s, (n, _) in COLE.items())
-                  + '</ul><h3>Calendario</h3><ul class="lista-municipios"><li><a href="/cuanto-falta/cambio-de-hora/">Cambio de hora</a></li><li><a href="/es-festivo/">¿Es festivo hoy?</a></li><li><a href="/puentes-' + str(max(ANIOS)) + '/">Puentes ' + str(max(ANIOS)) + '</a></li></ul>')
+    secciones = ('<h3>Cole</h3><ul class="lista-municipios">' + "".join(f'<li><a href="/cuanto-falta/{s}/">{escape(titulo_evento(n))}</a></li>' for s, (n, _) in COLE.items())
+                  + '</ul><h3>Calendario</h3><ul class="lista-municipios"><li><a href="/es-festivo/">¿Es festivo hoy?</a></li><li><a href="/puentes-' + str(max(ANIOS)) + '/">Puentes ' + str(max(ANIOS)) + '</a></li></ul>')
+    secciones += "".join(f'<h3>{t} <small>(en cuantosdiasfaltan.es)</small></h3><ul class="lista-municipios">' + "".join(
+        f'<li><a href="{CUANTOS_DIAS}/{s}/">{escape(titulo_evento(n))}</a></li>' for s, (n, c, *_) in EVENTOS.items() if c == g)
+        + (f'<li><a href="{CUANTOS_DIAS}/cambio-de-hora/">Cambio de hora</a></li>' if g == "estaciones" else "") + "</ul>" for g, t in grupos.items())
     preguntas = [
         ("¿Cómo creo una cuenta atrás para mi cumpleaños o mi boda?", "Escribe el nombre y la fecha en «Tu cuenta atrás» y pulsa «Crear». Te sale la cuenta atrás en directo y un enlace para compartirla por WhatsApp o guardarla. Si marcas «Se repite cada año», cuenta siempre hasta la próxima vez."),
         ("¿Hasta qué hora cuenta?", "Hasta las 0:00 del día elegido, con la hora de tu móvil u ordenador."),
     ]
     cuerpo = f"""<h1>¿Cuánto falta para…?</h1>
-<p class="lead">Cuentas atrás en directo para Navidad, Semana Santa, las vacaciones del cole, el próximo festivo de tu municipio o lo que tú quieras: tu cumpleaños, tu boda o tus vacaciones.</p>
+<p class="lead">Cuentas atrás en directo para las vacaciones del cole, el próximo festivo de tu municipio o lo que tú quieras: tu cumpleaños, tu boda o tus vacaciones. Navidad, Semana Santa y el resto de fechas señaladas están en <a href="https://cuantosdiasfaltan.es/">cuantosdiasfaltan.es</a>.</p>
 <section><h2>Lo próximo</h2>{tarjetas_cuenta(lista[:12])}</section>
 <section id="tu-cuenta"><h2>Tu cuenta atrás</h2>
 <form class="calc" id="form-cuenta" onsubmit="return false">
@@ -1162,8 +1104,8 @@ def pagina_cuanto_falta(datos, esc):
 <input id="municipio" type="search" autocomplete="off" placeholder="Escribe tu municipio"><ul id="sug-municipio" class="sugerencias"></ul></div><div id="m-resultado" aria-live="polite"></div></form></section>
 <section><h2>Todas las cuentas atrás</h2>{secciones}</section>
 <section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
-    return pagina("/cuanto-falta/", "¿Cuánto falta para…? Cuentas atrás para Navidad, el cole y lo que quieras",
-                  "Cuántos días faltan para Navidad, Semana Santa, las vacaciones del cole o el próximo festivo de tu municipio, y crea tu propia cuenta atrás para compartir.",
+    return pagina("/cuanto-falta/", "¿Cuánto falta para las vacaciones del cole o el próximo festivo?",
+                  "Cuántos días faltan para las vacaciones del cole o el próximo festivo de tu municipio, y crea tu propia cuenta atrás para compartir.",
                   cuerpo, [("Cuánto falta", None)], [faq_ld(preguntas)],
                   scripts=f'<script src="/assets/cuenta.js?v={VERSION}" defer></script>')
 
@@ -1171,11 +1113,9 @@ def pagina_cuanto_falta(datos, esc):
 def generar_cuentas(datos, esc):
     rutas = ["/cuanto-falta/"]
     guardar("/cuanto-falta/", pagina_cuanto_falta(datos, esc))
-    for slug in EVENTOS:
-        guardar(f"/cuanto-falta/{slug}/", pagina_cuenta(slug, datos, esc))
-        rutas.append(f"/cuanto-falta/{slug}/")
-    guardar("/cuanto-falta/cambio-de-hora/", pagina_cuenta_cambio_hora(datos, esc))
-    rutas.append("/cuanto-falta/cambio-de-hora/")
+    # Las cuentas atrás de fechas señaladas se mudaron a cuantosdiasfaltan.es (cada web, lo suyo): 301.
+    (WEB / "_redirects").write_text("".join(f"/cuanto-falta/{s}/ {CUANTOS_DIAS}/{s}/ 301\n/cuanto-falta/{s} {CUANTOS_DIAS}/{s}/ 301\n"
+                                            for s in [*EVENTOS, "cambio-de-hora"]), encoding="utf-8")
     if esc:
         for slug in COLE:
             guardar(f"/cuanto-falta/{slug}/", pagina_cuenta_cole(slug, datos, esc))
@@ -1238,7 +1178,7 @@ def portada(datos):
 <section class="accesos">
 <a class="acceso" href="/calendario-laboral-{anio_sig}/"><span class="ico">📅</span><b>Calendario laboral {anio_sig}</b><span>Todos los festivos de España y qué se celebra en cada comunidad.</span></a>
 <a class="acceso" href="/puentes-{anio_sig}/"><span class="ico">🌉</span><b>Puentes {anio_sig}</b><span>Qué días pedir de vacaciones para encadenar más días libres.</span></a>
-<a class="acceso" href="/cuanto-falta/"><span class="ico">⏳</span><b>¿Cuánto falta?</b><span>Cuenta atrás para Navidad, las vacaciones del cole, el próximo festivo o lo que tú quieras.</span></a>
+<a class="acceso" href="/cuanto-falta/"><span class="ico">⏳</span><b>¿Cuánto falta?</b><span>Cuenta atrás para las vacaciones del cole, el próximo festivo o lo que tú quieras.</span></a>
 <a class="acceso" href="/es-festivo/"><span class="ico">❓</span><b>¿Es festivo hoy?</b><span>Si hoy o mañana es festivo y dónde es festivo cualquier día del año.</span></a>
 <a class="acceso" href="/calendario-escolar/"><span class="ico">🎒</span><b>Calendario escolar</b><span>Cuándo empiezan las clases y las vacaciones de Navidad y Semana Santa en cada comunidad.</span></a>
 <a class="acceso" href="/planificador-vacaciones/"><span class="ico">🏖️</span><b>Planificador de vacaciones</b><span>Qué días pedir en tu municipio para tener más días libres con tus días de vacaciones.</span></a>
