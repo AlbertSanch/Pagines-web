@@ -28,19 +28,32 @@
   // ---------- contadores: texto según la unidad elegida y segundos en directo
   var unidad = 'auto';
   try { unidad = localStorage.getItem('cdf-u') || 'auto'; } catch (e) { /* sin almacenamiento */ }
+  // el momento exacto de una hora de España (Europe/Madrid), esté donde esté quien mira
+  function enMadrid(fechaIso, hora) {
+    var p = fechaIso.split('-'), q = hora.split(':'), utc = Date.UTC(+p[0], +p[1] - 1, +p[2], +q[0], +q[1]);
+    try {
+      var x = {};
+      new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Madrid', hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })
+        .formatToParts(new Date(utc)).forEach(function (k) { x[k.type] = k.value; });
+      return new Date(utc - (Date.UTC(+x.year, +x.month - 1, +x.day, +x.hour, +x.minute) - utc));
+    } catch (e) { return new Date(+p[0], +p[1] - 1, +p[2], +q[0], +q[1]); }
+  }
   function pintar(c) {
     var f = deIso(c.getAttribute('data-fecha')), hace = c.getAttribute('data-modo') === 'hace', ahora = new Date(), h = hoy();
-    var dias = Math.round(Math.abs(f - h) / 864e5), ms = Math.abs(f - ahora);
+    var hora = c.getAttribute('data-hora'), objetivo = hora ? enMadrid(c.getAttribute('data-fecha'), hora) : f;
+    var dias = Math.round(Math.abs(f - h) / 864e5), ms = Math.abs(objetivo - ahora);
     var g = c.querySelector('.c-grande'), d = c.querySelector('.c-dias'), v = c.querySelector('.c-vivo');
     var pre = hace ? 'Hace ' : (dias === 1 ? 'Falta ' : 'Faltan ');
-    if (!hace && dias === 0) { g.textContent = '¡Es hoy! 🎉'; v.textContent = ''; return; }
+    if (!hace && hora && objetivo <= ahora && f >= h) { g.textContent = '¡Ya ha empezado! 🎉'; v.textContent = ''; return; }
+    if (!hace && dias === 0 && !hora) { g.textContent = '¡Es hoy! 🎉'; v.textContent = ''; return; }
+    if (!hace && dias === 0) { g.textContent = '¡Es hoy!'; }
     if (!hace && f < h) { g.textContent = 'Ya ha llegado'; return; }
     var t;
     if (unidad === 'dias') t = plural(dias, 'día', 'días').replace(/^\d+/, fmt(dias));
     else if (unidad === 'semanas') { var s = Math.floor(dias / 7), r = dias % 7; t = plural(s, 'semana', 'semanas') + (r ? ' y ' + plural(r, 'día', 'días') : ''); }
     else if (unidad === 'horas') { var hs = Math.floor(ms / 36e5); t = fmt(hs) + (hs === 1 ? ' hora' : ' horas'); }
     else t = hace ? tiempo(f, h) : tiempo(h, f);
-    g.textContent = pre + t;
+    if (!(!hace && dias === 0)) g.textContent = pre + t;
     // si el texto grande ya va en días, debajo basta la fecha
     var enDias = unidad === 'dias' || (unidad === 'auto' && !/mes|año/.test(t));
     d.innerHTML = (enDias ? '' : '<b>' + fmt(dias) + '</b> ' + (dias === 1 ? 'día' : 'días') + ' · ') + bonita(f);
