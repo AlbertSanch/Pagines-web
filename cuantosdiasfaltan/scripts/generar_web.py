@@ -220,7 +220,9 @@ def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", buscador=True
 <meta name="twitter:card" content="summary_large_image">
 {ld_html}
 <link rel="stylesheet" href="/assets/style.css?v={VERSION}">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 {CABECERA_ANUNCIOS}
 </head>
 <body>
@@ -376,7 +378,11 @@ def pagina_evento(e, eventos):
         bloque = contador(h[0], hora=h[1]) if h and h[0] >= HOY else contador(d)
         if h:
             sub += f' · <strong>{escape(texto_hora(e))}</strong>'
-        desc = f"Faltan {(d - HOY).days} días para {t}: {fecha_larga(d)}. Cuenta atrás en directo en meses, semanas, días y horas, con la fecha oficial."
+        n = (d - HOY).days
+        tf = e.get("en_frase") or t
+        desc = (f"¿Cuántos días faltan para {tf}? Faltan {n}: {fecha_larga(d)}. Cuenta atrás en directo en meses, semanas, días y horas."
+                if e["categoria"] == "fechas" else
+                f"Faltan {n} días para {tf}: {fecha_larga(d)}. Cuenta atrás en directo en meses, semanas, días y horas, con la fecha oficial.")
     elif d:
         cab = f"¿Cuánto hace de {t}?"
         sub = f'Fue el <strong>{fecha_larga(d)}</strong>'
@@ -455,6 +461,7 @@ def pagina_evento(e, eventos):
     cuerpo = f"""<nav class="migas"><a href="/">Inicio</a> › <a href="/{e['categoria']}/">{cat}</a></nav>
 <h1>{escape(cab)}</h1>
 <p class="sub">{sub}{f' · {escape(donde)}' if donde else ''}</p>
+{respuesta_directa(e, d, objetivo)}
 {bloque}
 <p class="acciones">{"".join(botones)}</p>
 {nota_ambito}{retrasos}{fuente}
@@ -467,16 +474,62 @@ def pagina_evento(e, eventos):
         {"@type": "ListItem", "position": 1, "name": "Inicio", "item": DOMINIO + "/"},
         {"@type": "ListItem", "position": 2, "name": cat, "item": f"{DOMINIO}/{e['categoria']}/"},
         {"@type": "ListItem", "position": 3, "name": t, "item": url}]}]
+    ev_ld = evento_ld(e, d, url)
+    if ev_ld:
+        ld.append(ev_ld)
     if preguntas:  # las mismas preguntas que se ven en la página
         ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in preguntas]})
     return pagina(f"/{e['slug']}/", titulo, desc, cuerpo, ld, imagen=f"/og/{e['slug']}.png", indexable=indexable(e))
 
 
+def evento_ld(e, d, url):
+    """Event de schema.org para lo que es un evento con lugar (partidos, festivales, conciertos, fiestas)."""
+    if e["categoria"] not in ("deportes", "musica", "fiestas", "eventos") or not d or not e.get("lugar"):
+        return None
+    inicio = d.isoformat()
+    h = hora_de(e)
+    if h and not e.get("hora_aprox"):
+        momento = dt.datetime.combine(h[0], dt.time.fromisoformat(h[1]))
+        verano = dt.date(momento.year, 3, 31) - dt.timedelta(days=(dt.date(momento.year, 3, 31).weekday() + 1) % 7) <= momento.date() < \
+            dt.date(momento.year, 10, 31) - dt.timedelta(days=(dt.date(momento.year, 10, 31).weekday() + 1) % 7)
+        inicio = momento.strftime("%Y-%m-%dT%H:%M") + ("+02:00" if verano else "+01:00")
+    texto = re.sub(r"<[^>]+>", "", " ".join(TEXTOS_EVENTO.get(e["slug"], [])[:1])) or e["titulo"]
+    lugar = re.split(r"[;(]", e["lugar"])[0].strip(" ,")
+    return {"@context": "https://schema.org", "@type": "Event", "name": e["titulo"], "startDate": inicio, "description": texto,
+            "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "location": {"@type": "Place", "name": lugar, "address": lugar}, "image": f"{DOMINIO}/og/{e['slug']}.png", "url": url}
+
+
+def respuesta_directa(e, d, objetivo):
+    """Una frase que responde sola a la búsqueda, con la fecha completa (que no caduca aunque Google guarde la página)."""
+    tf = e.get("en_frase") or e["titulo"]
+    if objetivo:
+        n = (objetivo - HOY).days
+        cuando = "hoy" if n == 0 else f"{'falta' if n == 1 else 'faltan'} {'unos ' if objetivo != d else ''}<strong>{plural(n, 'día', 'días')}</strong>"
+        hora = f", {texto_hora(e, corto=True)} en España" if hora_de(e) and objetivo == d and hora_de(e)[0] == d else ""
+        estimada = " (fecha estimada, aún no oficial)" if objetivo != d else ""
+        frase = f"Hoy, {fecha_larga(HOY)}, {cuando} para {escape(tf)}: el {fecha_larga(objetivo)}{hora}{estimada}." if n else f"¡Es hoy! {escape(tf[0].upper() + tf[1:])}: {fecha_larga(objetivo)}{hora}."
+    elif d:
+        verbo = "se estrenó" if e["categoria"] in ("series", "anime", "peliculas") else "salió" if e["categoria"] in ("videojuegos", "tecnologia") else "fue"
+        frase = f"{escape(tf[0].upper() + tf[1:])} {verbo} el {fecha_larga(d)}: hace {texto_tiempo(d, HOY)}."
+    elif rango_de(e) or previsto(e):
+        frase = f"Todavía no hay día oficial para {escape(tf)}: está previsto para {escape(e['ventana'])}."
+    else:
+        frase = f"Todavía no hay fecha oficial para {escape(tf)}."
+    return f'<p class="respuesta">{frase}</p>'
+
+
+UNA_VEZ = {"deportes", "musica", "fiestas", "eventos", "espacio"}  # categorías con eventos que pasan y ya no se buscan
+
+
 def indexable(e):
     """Sin fecha, sin ventana y sin texto propio, la página casi no tiene nada que Google pueda enseñar: noindex
     (con follow) hasta que lo tenga; se indexa sola en cuanto haya fecha o texto."""
-    return bool(fecha_de(e) or estimada_de(e) or rango_de(e) or previsto(e) or TEXTOS_EVENTO.get(e["slug"]))
+    d = fecha_de(e)
+    if d and not e.get("serie") and e["categoria"] in UNA_VEZ and (HOY - d).days > 30:
+        return False  # un concierto o un eclipse de hace más de un mes: ya nadie lo busca
+    return bool(d or estimada_de(e) or rango_de(e) or previsto(e) or TEXTOS_EVENTO.get(e["slug"]))
 
 
 def cuando_corto(e):
@@ -678,7 +731,8 @@ def main():
     (WEB / "assets").mkdir(parents=True)
     for f in ("style.css", "cuenta.js"):
         shutil.copy(PLANTILLA / f, WEB / "assets" / f)
-    shutil.copy(PLANTILLA / "favicon.svg", WEB / "favicon.svg")
+    for f in ("favicon.svg", "favicon.ico", "apple-touch-icon.png"):
+        shutil.copy(PLANTILLA / f, WEB / f)
     rutas = ["/"]
     guardar("/", pagina_portada(eventos))
     for c in CATEGORIAS:
