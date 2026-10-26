@@ -308,7 +308,12 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "SoFi Stadium, Inglewood (EE. UU.)",
-  "serie": "super-bowl"
+  "serie": "super-bowl",
+  "hora": "00:30",
+  "hora_dia": "2027-02-15",
+  "hora_que": "el partido",
+  "hora_aprox": true,
+  "en_frase": "la Super Bowl LXI"
  },
  {
   "titulo": "Mobile World Congress 2027",
@@ -335,7 +340,10 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Burgas (Bulgaria); semifinales el 11 y el 13 de mayo",
-  "serie": "eurovision"
+  "serie": "eurovision",
+  "hora": "21:00",
+  "hora_que": "la final",
+  "hora_aprox": true
  },
  {
   "titulo": "Elecciones municipales y autonómicas 2027",
@@ -373,7 +381,10 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Estadio Metropolitano, Madrid",
-  "serie": "final-champions"
+  "serie": "final-champions",
+  "hora": "21:00",
+  "hora_que": "la final",
+  "hora_aprox": true
  },
  {
   "titulo": "Mundial Femenino 2027",
@@ -978,7 +989,10 @@
   "comprobado": "2026-10-25",
   "lugar": "Autódromo Hermanos Rodríguez, Ciudad de México",
   "en_frase": "el GP de México de F1 2026",
-  "serie": "gp-mexico-f1"
+  "serie": "gp-mexico-f1",
+  "hora": "21:00",
+  "hora_que": "la carrera",
+  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/"
  },
  {
   "titulo": "GP de Brasil de F1 2026",
@@ -992,7 +1006,10 @@
   "comprobado": "2026-10-25",
   "lugar": "Interlagos, São Paulo",
   "en_frase": "el GP de Brasil de F1 2026",
-  "serie": "gp-brasil-f1"
+  "serie": "gp-brasil-f1",
+  "hora": "18:00",
+  "hora_que": "la carrera",
+  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/"
  },
  {
   "titulo": "ATP Finals 2026",
@@ -1020,7 +1037,11 @@
   "comprobado": "2026-10-25",
   "lugar": "Las Vegas (la carrera es de madrugada en España)",
   "en_frase": "el GP de Las Vegas de F1 2026",
-  "serie": "gp-las-vegas-f1"
+  "serie": "gp-las-vegas-f1",
+  "hora": "05:00",
+  "hora_dia": "2026-11-22",
+  "hora_que": "la carrera",
+  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/"
  },
  {
   "titulo": "GP de Qatar de F1 2026",
@@ -1034,7 +1055,10 @@
   "comprobado": "2026-10-25",
   "lugar": "Lusail (Qatar)",
   "en_frase": "el GP de Qatar de F1 2026",
-  "serie": "gp-qatar-f1"
+  "serie": "gp-qatar-f1",
+  "hora": "17:00",
+  "hora_que": "la carrera",
+  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/"
  },
  {
   "titulo": "GP de Valencia de MotoGP 2026",
@@ -1065,7 +1089,9 @@
   "comprobado": "2026-10-25",
   "lugar": "Bolonia (Italia)",
   "en_frase": "la final de la Copa Davis 2026",
-  "serie": "final-copa-davis"
+  "serie": "final-copa-davis",
+  "hora": "15:00",
+  "hora_que": "la final"
  },
  {
   "titulo": "Maratón de Valencia 2026",
@@ -1079,7 +1105,9 @@
   "comprobado": "2026-10-25",
   "lugar": "València",
   "en_frase": "el Maratón de Valencia 2026",
-  "serie": "maraton-valencia"
+  "serie": "maraton-valencia",
+  "hora": "08:15",
+  "hora_que": "la salida"
  },
  {
   "titulo": "GP de Abu Dabi de F1 2026",
@@ -1093,7 +1121,10 @@
   "comprobado": "2026-10-25",
   "lugar": "Yas Marina (Abu Dabi), última carrera del año",
   "en_frase": "el GP de Abu Dabi de F1 2026",
-  "serie": "gp-abu-dabi-f1"
+  "serie": "gp-abu-dabi-f1",
+  "hora": "14:00",
+  "hora_que": "la carrera",
+  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/"
  },
  {
   "titulo": "Semifinales de la Supercopa de España 2027",
@@ -1107,7 +1138,9 @@
   "comprobado": "2026-10-25",
   "lugar": "Estambul",
   "en_frase": "las semifinales de la Supercopa 2027",
-  "serie": "semifinales-supercopa"
+  "serie": "semifinales-supercopa",
+  "hora": "20:00",
+  "hora_que": "la primera semifinal (Barcelona-Atlético)"
  },
  {
   "titulo": "Final de la Supercopa de España 2027",
@@ -1121,7 +1154,9 @@
   "comprobado": "2026-10-25",
   "lugar": "RAMS Park, Estambul",
   "en_frase": "la final de la Supercopa 2027",
-  "serie": "final-supercopa"
+  "serie": "final-supercopa",
+  "hora": "20:00",
+  "hora_que": "la final"
  },
  {
   "titulo": "Mundial de MotoGP 2027 (primera carrera)",
@@ -1191,7 +1226,9 @@
   "comprobado": "2026-10-25",
   "lugar": "Paseo de la Castellana, Madrid",
   "en_frase": "el Maratón de Madrid 2027",
-  "serie": "maraton-madrid"
+  "serie": "maraton-madrid",
+  "hora": "08:45",
+  "hora_que": "la salida"
  },
  {
   "titulo": "GP de España de MotoGP 2027 (Jerez)",
@@ -1737,7 +1774,11 @@
   "comprobado": "2026-10-25",
   "lugar": "Los Ángeles (madrugada del 8 en España)",
   "en_frase": "los Grammy 2027",
-  "serie": "grammy"
+  "serie": "grammy",
+  "hora": "02:00",
+  "hora_dia": "2027-02-08",
+  "hora_que": "la gala",
+  "hora_aprox": true
  },
  {
   "titulo": "Carnaval de Santa Cruz de Tenerife 2027",
@@ -1779,7 +1820,11 @@
   "comprobado": "2026-10-25",
   "lugar": "Dolby Theatre, Los Ángeles (madrugada del 15 en España)",
   "en_frase": "los Óscar 2027",
-  "serie": "oscar"
+  "serie": "oscar",
+  "hora": "00:00",
+  "hora_dia": "2027-03-15",
+  "hora_que": "la gala",
+  "hora_aprox": true
  },
  {
   "titulo": "Fallas 2027",
@@ -1872,7 +1917,9 @@
   "comprobado": "2026-10-25",
   "lugar": "Pamplona: chupinazo el 6 de julio a las 12:00, fiestas hasta el 14",
   "en_frase": "San Fermín 2027",
-  "serie": "san-fermin"
+  "serie": "san-fermin",
+  "hora": "12:00",
+  "hora_que": "el chupinazo"
  },
  {
   "titulo": "Semana Grande de Bilbao 2027 (Aste Nagusia)",

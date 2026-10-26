@@ -242,7 +242,32 @@ def guardar(ruta, html):
 
 # ---------------------------------------------------------------- piezas
 
-def contador(d, pasado=False):
+def hora_de(e):
+    """(día en España, «21:00», qué empieza, aproximada) si se conoce la hora de inicio en España."""
+    if not e.get("hora") or not fecha_de(e):
+        return None
+    dia = dt.date.fromisoformat(e["hora_dia"]) if e.get("hora_dia") else fecha_de(e)
+    return dia, e["hora"], e.get("hora_que") or "empieza", bool(e.get("hora_aprox"))
+
+
+def texto_hora(e, corto=False):
+    """«La carrera es a las 21:00 en España (20:00 en Canarias)»."""
+    h = hora_de(e)
+    if not h:
+        return ""
+    dia, hora, que, aprox = h
+    momento_can = dt.datetime.combine(dia, dt.time.fromisoformat(hora)) - dt.timedelta(hours=1)
+    canarias = momento_can.strftime("%H:%M")
+    hora_txt, can_txt = hora.lstrip("0") if not hora.startswith("00") else "0" + hora[2:], canarias.lstrip("0") if not canarias.startswith("00") else "0" + canarias[2:]
+    otro_dia = f"el {DIAS[dia.weekday()]} {dia.day} de {MESES[dia.month - 1]} " if dia != fecha_de(e) else ""
+    if corto:
+        return f"{otro_dia}a las {hora_txt}".strip()
+    dia_can = f" del {DIAS[momento_can.weekday()]}" if momento_can.date() != dia else ""
+    texto = f"{que[0].upper() + que[1:]} es {otro_dia}a las {hora_txt} en España ({can_txt}{dia_can} en Canarias)"
+    return texto + (": es la hora habitual, aún sin confirmar" if aprox else "")
+
+
+def contador(d, pasado=False, hora=None):
     """La cuenta atrás grande: el texto en meses y días se ve sin script; el script la pone en directo
     y deja elegir días, semanas o meses."""
     if pasado:
@@ -251,7 +276,7 @@ def contador(d, pasado=False):
     else:
         n = (d - HOY).days
         principal = "¡Es hoy!" if n == 0 else ("Falta 1 día" if n == 1 else f"Faltan {texto_tiempo(HOY, d)}")
-    return (f'<div class="contador" data-fecha="{d.isoformat()}" data-modo="{"hace" if pasado else "falta"}">'
+    return (f'<div class="contador" data-fecha="{d.isoformat()}"{f' data-hora="{hora}"' if hora else ""} data-modo="{"hace" if pasado else "falta"}">'
             f'<p class="c-grande">{principal}</p>'
             f'<p class="c-dias">{f"<b>{n}</b> {plural_sin_n(n)} · " if principal_con_meses(d, pasado) else ""}{fecha_larga(d)}</p>'
             f'<p class="c-vivo"></p>'
@@ -273,7 +298,7 @@ def tarjeta(e):
     d = fecha_de(e)
     if d and d >= HOY:
         n = (d - HOY).days
-        cifra, ud, cuando = n, "día" if n == 1 else "días", fecha_simple(e["fecha"])
+        cifra, ud, cuando = n, "día" if n == 1 else "días", fecha_simple(e["fecha"]) + (f" · {texto_hora(e, corto=True)}" if hora_de(e) else "")
     elif d:
         cifra, ud, cuando = "✓", "ya disponible", fecha_simple(e["fecha"])
     elif estimada_de(e):
@@ -335,7 +360,10 @@ def pagina_evento(e, eventos):
     if d and d >= HOY:
         cab, titulo = preguntas_de(e)
         sub = f'{"Sale" if e["categoria"] in ("videojuegos", "tecnologia") else "Se estrena" if e["categoria"] in ("peliculas", "series", "anime") else "Es"} el <strong>{fecha_larga(d)}</strong>'
-        bloque = contador(d)
+        h = hora_de(e)
+        bloque = contador(h[0], hora=h[1]) if h and h[0] >= HOY else contador(d)
+        if h:
+            sub += f' · <strong>{escape(texto_hora(e))}</strong>'
         desc = f"Faltan {(d - HOY).days} días para {t}: {fecha_larga(d)}. Cuenta atrás en directo en meses, semanas, días y horas, con la fecha oficial."
     elif d:
         cab = f"¿Cuánto hace de {t}?"
@@ -378,6 +406,8 @@ def pagina_evento(e, eventos):
     if e.get("retrasos"):
         retrasos = '<p class="retrasos">Fechas anunciadas antes: ' + ", ".join(escape(fecha_simple(r) if len(r) == 10 and r[4] == "-" else r) for r in e["retrasos"]) + ".</p>"
     nota_ambito = f'<p class="nota">Fecha de estreno en {escape(e["ambito"])}.</p>' if e.get("ambito") and e["ambito"] not in ("España", "mundial") else ""
+    if e.get("hora_fuente"):
+        retrasos += f'<p class="fuente">Horario: <a href="{escape(e["hora_fuente"])}" rel="nofollow noopener" target="_blank">{escape(e["hora_fuente"].split("/")[2].removeprefix("www."))}</a>.</p>'
     if e.get("fija"):
         fuente = f'<p class="fuente">{escape(e["fija"])}</p>'
     else:
@@ -431,7 +461,7 @@ def cuando_corto(e):
     """La fecha tal como va en la imagen de compartir (no cambia cada día, para que las redes la guarden)."""
     d = fecha_de(e)
     if d:
-        texto = fecha_larga(d)
+        texto = fecha_larga(d) + (f" · {texto_hora(e, corto=True)}" if hora_de(e) and hora_de(e)[0] == d else "")
     elif estimada_de(e):
         texto = f"≈ {fecha_larga(estimada_de(e))} (estimada)"
     elif rango_de(e) or previsto(e):
@@ -526,6 +556,9 @@ def datos_y_preguntas(e, d, objetivo, cab, donde):
             preguntas.append((cab, f"{e['titulo']}: {fecha_larga(objetivo)}{f' ({donde})' if donde else ''}{fuente}."))
         if estimada or not cab.startswith("¿Cuánto falta"):
             preguntas.append((f"¿Cuántos días faltan para {t}?", f"{cuenta}."))
+        if hora_de(e) and not estimada:
+            preguntas.append((f"¿A qué hora es {t} en España?", texto_hora(e) + "."))
+            datos.insert(1, f"<strong>{escape(texto_hora(e))}</strong>.")
         preguntas.append((f"¿Qué día de la semana cae {t}?", f"Cae en {DIAS[objetivo.weekday()]}: {objetivo.day} de {MESES[objetivo.month - 1]} de {objetivo.year}."))
         preguntas.append((f"¿Cuántos fines de semana quedan hasta {t}?", f"Quedan {plural(finde, 'fin de semana', 'fines de semana')} y {laborables} días de lunes a viernes."))
     elif d:
