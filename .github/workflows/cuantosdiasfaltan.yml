@@ -12,6 +12,7 @@ on:
       - cuantosdiasfaltan/scripts/**
       - cuantosdiasfaltan/plantilla/**
       - cuantosdiasfaltan/eventos.json
+      - cuantosdiasfaltan/textos.json
       - festivos/scripts/cuanto_falta.py
       - .github/workflows/cuantosdiasfaltan.yml
 
@@ -32,7 +33,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Generar la web
-        run: python -u cuantosdiasfaltan/scripts/generar_web.py
+        run: |
+          pip install -q pillow
+          python -u cuantosdiasfaltan/scripts/generar_web.py
       - name: Comprobar
         run: |
           test -f cuantosdiasfaltan/web/index.html
@@ -41,6 +44,7 @@ jobs:
           test "$n" -gt 15
           test -s cuantosdiasfaltan/web/_redirects
           test -s cuantosdiasfaltan/web/indice.json
+          test -s cuantosdiasfaltan/web/og/portada.png
       - name: Publicar
         run: |
           git config user.name "github-actions[bot]"
