@@ -307,7 +307,8 @@
   "fuente_nombre": "NFL",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "SoFi Stadium, Inglewood (EE. UU.)"
+  "lugar": "SoFi Stadium, Inglewood (EE. UU.)",
+  "serie": "super-bowl"
  },
  {
   "titulo": "Mobile World Congress 2027",
@@ -320,7 +321,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "plataformas": "Fira Barcelona Gran Via, del 1 al 4 de marzo",
-  "en_frase": "el Mobile World Congress 2027"
+  "en_frase": "el Mobile World Congress 2027",
+  "serie": "mwc-barcelona"
  },
  {
   "titulo": "Eurovisión 2027",
@@ -332,7 +334,8 @@
   "fuente_nombre": "EBU (Unión Europea de Radiodifusión)",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "Burgas (Bulgaria); semifinales el 11 y el 13 de mayo"
+  "lugar": "Burgas (Bulgaria); semifinales el 11 y el 13 de mayo",
+  "serie": "eurovision"
  },
  {
   "titulo": "Elecciones municipales y autonómicas 2027",
@@ -356,7 +359,8 @@
   "fuente_nombre": "UEFA",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "Fráncfort (Alemania)"
+  "lugar": "Fráncfort (Alemania)",
+  "serie": "final-europa-league"
  },
  {
   "titulo": "Final de la Champions League 2027",
@@ -368,7 +372,8 @@
   "fuente_nombre": "UEFA",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "Estadio Metropolitano, Madrid"
+  "lugar": "Estadio Metropolitano, Madrid",
+  "serie": "final-champions"
  },
  {
   "titulo": "Mundial Femenino 2027",
@@ -392,7 +397,8 @@
   "fuente_nombre": "Ayuntamiento de Edimburgo",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "Salida en Edimburgo (Escocia)"
+  "lugar": "Salida en Edimburgo (Escocia)",
+  "serie": "tour-de-francia"
  },
  {
   "titulo": "Eclipse total de Sol en España",
@@ -440,7 +446,8 @@
   "fuente_nombre": "Formula 1 (calendario oficial 2027)",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "Circuito Madring (IFEMA), Madrid"
+  "lugar": "Circuito Madring (IFEMA), Madrid",
+  "serie": "gp-espana-f1"
  },
  {
   "titulo": "Mundial de Rugby 2027",
@@ -970,7 +977,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Autódromo Hermanos Rodríguez, Ciudad de México",
-  "en_frase": "el GP de México de F1 2026"
+  "en_frase": "el GP de México de F1 2026",
+  "serie": "gp-mexico-f1"
  },
  {
   "titulo": "GP de Brasil de F1 2026",
@@ -983,7 +991,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Interlagos, São Paulo",
-  "en_frase": "el GP de Brasil de F1 2026"
+  "en_frase": "el GP de Brasil de F1 2026",
+  "serie": "gp-brasil-f1"
  },
  {
   "titulo": "ATP Finals 2026",
@@ -996,7 +1005,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Inalpi Arena, Turín",
-  "en_frase": "las ATP Finals 2026"
+  "en_frase": "las ATP Finals 2026",
+  "serie": "atp-finals"
  },
  {
   "titulo": "GP de Las Vegas de F1 2026",
@@ -1009,7 +1019,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Las Vegas (la carrera es de madrugada en España)",
-  "en_frase": "el GP de Las Vegas de F1 2026"
+  "en_frase": "el GP de Las Vegas de F1 2026",
+  "serie": "gp-las-vegas-f1"
  },
  {
   "titulo": "GP de Qatar de F1 2026",
@@ -1022,7 +1033,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Lusail (Qatar)",
-  "en_frase": "el GP de Qatar de F1 2026"
+  "en_frase": "el GP de Qatar de F1 2026",
+  "serie": "gp-qatar-f1"
  },
  {
   "titulo": "GP de Valencia de MotoGP 2026",
@@ -1038,7 +1050,8 @@
   "en_frase": "el GP de Valencia de MotoGP 2026",
   "retrasos": [
    "22 de noviembre de 2026"
-  ]
+  ],
+  "serie": "gp-valencia-motogp"
  },
  {
   "titulo": "Final de la Copa Davis 2026",
@@ -1051,7 +1064,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Bolonia (Italia)",
-  "en_frase": "la final de la Copa Davis 2026"
+  "en_frase": "la final de la Copa Davis 2026",
+  "serie": "final-copa-davis"
  },
  {
   "titulo": "Maratón de Valencia 2026",
@@ -1064,7 +1078,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "València",
-  "en_frase": "el Maratón de Valencia 2026"
+  "en_frase": "el Maratón de Valencia 2026",
+  "serie": "maraton-valencia"
  },
  {
   "titulo": "GP de Abu Dabi de F1 2026",
@@ -1077,7 +1092,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Yas Marina (Abu Dabi), última carrera del año",
-  "en_frase": "el GP de Abu Dabi de F1 2026"
+  "en_frase": "el GP de Abu Dabi de F1 2026",
+  "serie": "gp-abu-dabi-f1"
  },
  {
   "titulo": "Semifinales de la Supercopa de España 2027",
@@ -1090,7 +1106,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Estambul",
-  "en_frase": "las semifinales de la Supercopa 2027"
+  "en_frase": "las semifinales de la Supercopa 2027",
+  "serie": "semifinales-supercopa"
  },
  {
   "titulo": "Final de la Supercopa de España 2027",
@@ -1103,7 +1120,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "RAMS Park, Estambul",
-  "en_frase": "la final de la Supercopa 2027"
+  "en_frase": "la final de la Supercopa 2027",
+  "serie": "final-supercopa"
  },
  {
   "titulo": "Mundial de MotoGP 2027 (primera carrera)",
@@ -1116,7 +1134,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Buriram (Tailandia)",
-  "en_frase": "el Mundial de MotoGP 2027"
+  "en_frase": "el Mundial de MotoGP 2027",
+  "serie": "mundial-motogp"
  },
  {
   "titulo": "Mundial de F1 2027 (primera carrera)",
@@ -1129,7 +1148,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Sakhir (Baréin)",
-  "en_frase": "el Mundial de F1 2027"
+  "en_frase": "el Mundial de F1 2027",
+  "serie": "mundial-f1"
  },
  {
   "titulo": "Mutua Madrid Open 2027",
@@ -1142,7 +1162,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Caja Mágica, Madrid",
-  "en_frase": "el Mutua Madrid Open 2027"
+  "en_frase": "el Mutua Madrid Open 2027",
+  "serie": "mutua-madrid-open"
  },
  {
   "titulo": "Final de la Copa del Rey 2027",
@@ -1155,7 +1176,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Estadio de La Cartuja, Sevilla",
-  "en_frase": "la final de la Copa del Rey 2027"
+  "en_frase": "la final de la Copa del Rey 2027",
+  "serie": "final-copa-del-rey"
  },
  {
   "titulo": "Maratón de Madrid 2027",
@@ -1168,7 +1190,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Paseo de la Castellana, Madrid",
-  "en_frase": "el Maratón de Madrid 2027"
+  "en_frase": "el Maratón de Madrid 2027",
+  "serie": "maraton-madrid"
  },
  {
   "titulo": "GP de España de MotoGP 2027 (Jerez)",
@@ -1181,7 +1204,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Circuito de Jerez-Ángel Nieto",
-  "en_frase": "el GP de Jerez de MotoGP 2027"
+  "en_frase": "el GP de Jerez de MotoGP 2027",
+  "serie": "gp-jerez-motogp"
  },
  {
   "titulo": "Clásico Real Madrid - Barcelona (mayo de 2027)",
@@ -1209,7 +1233,8 @@
   "fuente_nombre": "Tennisnerd (calendario ATP 2027)",
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
-  "lugar": "París"
+  "lugar": "París",
+  "serie": "roland-garros"
  },
  {
   "titulo": "Final Four de la Euroliga 2027",
@@ -1225,7 +1250,8 @@
   "en_frase": "la Final Four de la Euroliga 2027",
   "ventana": "finales de mayo de 2027",
   "estimada": "2027-05-30",
-  "estimacion": "COPE sitúa la final el domingo 30 de mayo, pero la Euroliga aún no ha confirmado ni la sede ni las fechas"
+  "estimacion": "COPE sitúa la final el domingo 30 de mayo, pero la Euroliga aún no ha confirmado ni la sede ni las fechas",
+  "serie": "final-four-euroliga"
  },
  {
   "titulo": "Última jornada de LaLiga 2026-27",
@@ -1241,7 +1267,8 @@
   "en_frase": "la última jornada de LaLiga",
   "ventana": "fin de semana del 29 y 30 de mayo de 2027",
   "estimada": "2027-05-30",
-  "estimacion": "Es la fecha de la jornada 38 en el calendario de LaLiga; los horarios se fijan unas semanas antes"
+  "estimacion": "Es la fecha de la jornada 38 en el calendario de LaLiga; los horarios se fijan unas semanas antes",
+  "serie": "ultima-jornada-laliga"
  },
  {
   "titulo": "GP de Mónaco de F1 2027",
@@ -1254,7 +1281,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Montecarlo",
-  "en_frase": "el GP de Mónaco de F1 2027"
+  "en_frase": "el GP de Mónaco de F1 2027",
+  "serie": "gp-monaco-f1"
  },
  {
   "titulo": "GP de Catalunya de MotoGP 2027 (Montmeló)",
@@ -1267,7 +1295,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Circuit de Barcelona-Catalunya, Montmeló",
-  "en_frase": "el GP de Montmeló de MotoGP 2027"
+  "en_frase": "el GP de Montmeló de MotoGP 2027",
+  "serie": "gp-catalunya-motogp"
  },
  {
   "titulo": "Mundial de Natación Budapest 2027",
@@ -1292,7 +1321,8 @@
   "fuente_nombre": "Tennisnerd (calendario ATP 2027)",
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
-  "lugar": "Londres"
+  "lugar": "Londres",
+  "serie": "wimbledon"
  },
  {
   "titulo": "GP de Gran Bretaña de F1 2027",
@@ -1305,7 +1335,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Silverstone",
-  "en_frase": "el GP de Gran Bretaña de F1 2027"
+  "en_frase": "el GP de Gran Bretaña de F1 2027",
+  "serie": "gp-gran-bretana-f1"
  },
  {
   "titulo": "Vuelta a España 2027",
@@ -1318,7 +1349,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Salida en Santiago de Compostela, llegada a Madrid el 26 de septiembre",
-  "en_frase": "la Vuelta a España 2027"
+  "en_frase": "la Vuelta a España 2027",
+  "serie": "vuelta-espana"
  },
  {
   "titulo": "GP de Italia de F1 2027 (Monza)",
@@ -1331,7 +1363,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Monza",
-  "en_frase": "el GP de Monza de F1 2027"
+  "en_frase": "el GP de Monza de F1 2027",
+  "serie": "gp-italia-f1"
  },
  {
   "titulo": "Mundial de Atletismo Pekín 2027",
@@ -1357,7 +1390,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "MotorLand Aragón, Alcañiz",
-  "en_frase": "el GP de Aragón de MotoGP 2027"
+  "en_frase": "el GP de Aragón de MotoGP 2027",
+  "serie": "gp-aragon-motogp"
  },
  {
   "titulo": "GP de Valencia de MotoGP 2027",
@@ -1370,7 +1404,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Circuit Ricardo Tormo, Cheste",
-  "en_frase": "el GP de Valencia de MotoGP 2027"
+  "en_frase": "el GP de Valencia de MotoGP 2027",
+  "serie": "gp-valencia-motogp"
  },
  {
   "titulo": "GP de Abu Dabi de F1 2027",
@@ -1383,7 +1418,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Yas Marina (Abu Dabi), última carrera del año",
-  "en_frase": "el GP de Abu Dabi de F1 2027"
+  "en_frase": "el GP de Abu Dabi de F1 2027",
+  "serie": "gp-abu-dabi-f1"
  },
  {
   "titulo": "Concierto de Pitbull en España 2026",
@@ -1448,7 +1484,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Villarrobledo (Albacete), del 29 de abril al 1 de mayo",
-  "en_frase": "el Viña Rock 2027"
+  "en_frase": "el Viña Rock 2027",
+  "serie": "vina-rock"
  },
  {
   "titulo": "Olivia Rodrigo en Barcelona 2027",
@@ -1474,7 +1511,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Parc del Fòrum, Barcelona (3, 4 y 5 de junio)",
-  "en_frase": "el Primavera Sound 2027"
+  "en_frase": "el Primavera Sound 2027",
+  "serie": "primavera-sound"
  },
  {
   "titulo": "Karol G en España 2027",
@@ -1513,7 +1551,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Fira de Barcelona (17, 18 y 19 de junio)",
-  "en_frase": "el Sónar 2027"
+  "en_frase": "el Sónar 2027",
+  "serie": "sonar"
  },
  {
   "titulo": "Resurrection Fest 2027",
@@ -1526,7 +1565,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Viveiro (Lugo), del 30 de junio al 3 de julio",
-  "en_frase": "el Resurrection Fest 2027"
+  "en_frase": "el Resurrection Fest 2027",
+  "serie": "resurrection-fest"
  },
  {
   "titulo": "Mad Cool 2027",
@@ -1545,7 +1585,8 @@
    "2027-07-01",
    "2027-07-31"
   ],
-  "estimacion": "El festival está anunciado para julio de 2027, pero aún no ha dado los días"
+  "estimacion": "El festival está anunciado para julio de 2027, pero aún no ha dado los días",
+  "serie": "mad-cool"
  },
  {
   "titulo": "Cruïlla 2027",
@@ -1558,7 +1599,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Parc del Fòrum, Barcelona (7 al 10 de julio)",
-  "en_frase": "el Cruïlla 2027"
+  "en_frase": "el Cruïlla 2027",
+  "serie": "cruilla"
  },
  {
   "titulo": "Bilbao BBK Live 2027",
@@ -1571,7 +1613,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Kobetamendi, Bilbao (8, 9 y 10 de julio)",
-  "en_frase": "el BBK Live 2027"
+  "en_frase": "el BBK Live 2027",
+  "serie": "bbk-live"
  },
  {
   "titulo": "Oasis en Barcelona 2027",
@@ -1597,7 +1640,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Benicàssim (15, 16 y 17 de julio)",
-  "en_frase": "el FIB 2027"
+  "en_frase": "el FIB 2027",
+  "serie": "fib"
  },
  {
   "titulo": "Arenal Sound 2027",
@@ -1610,7 +1654,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Playa de Burriana, del 29 de julio al 1 de agosto",
-  "en_frase": "el Arenal Sound 2027"
+  "en_frase": "el Arenal Sound 2027",
+  "serie": "arenal-sound"
  },
  {
   "titulo": "Harry Styles en Madrid 2027",
@@ -1636,7 +1681,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Playa de Cullera, del 12 al 16 de agosto",
-  "en_frase": "el Medusa 2027"
+  "en_frase": "el Medusa 2027",
+  "serie": "medusa-festival"
  },
  {
   "titulo": "FITUR 2027",
@@ -1648,7 +1694,8 @@
   "fuente_nombre": "IFEMA",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "IFEMA Madrid (público general el 23 y 24 de enero)"
+  "lugar": "IFEMA Madrid (público general el 23 y 24 de enero)",
+  "serie": "fitur"
  },
  {
   "titulo": "Final del Concurso del Carnaval de Cádiz 2027",
@@ -1661,7 +1708,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Gran Teatro Falla, Cádiz",
-  "en_frase": "la final del COAC 2027"
+  "en_frase": "la final del COAC 2027",
+  "serie": "final-coac"
  },
  {
   "titulo": "Premios Goya 2027",
@@ -1674,7 +1722,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Navarra Arena, Pamplona",
-  "en_frase": "los Goya 2027"
+  "en_frase": "los Goya 2027",
+  "serie": "premios-goya"
  },
  {
   "titulo": "Premios Grammy 2027",
@@ -1687,7 +1736,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Los Ángeles (madrugada del 8 en España)",
-  "en_frase": "los Grammy 2027"
+  "en_frase": "los Grammy 2027",
+  "serie": "grammy"
  },
  {
   "titulo": "Carnaval de Santa Cruz de Tenerife 2027",
@@ -1700,7 +1750,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Santa Cruz de Tenerife: carnaval en la calle del 19 al 28 de febrero",
-  "en_frase": "el Carnaval de Tenerife 2027"
+  "en_frase": "el Carnaval de Tenerife 2027",
+  "serie": "carnaval-tenerife"
  },
  {
   "titulo": "ARCOmadrid 2027",
@@ -1713,7 +1764,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "IFEMA Madrid (público del 5 al 7 de marzo)",
-  "en_frase": "ARCO 2027"
+  "en_frase": "ARCO 2027",
+  "serie": "arco"
  },
  {
   "titulo": "Premios Óscar 2027",
@@ -1726,7 +1778,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Dolby Theatre, Los Ángeles (madrugada del 15 en España)",
-  "en_frase": "los Óscar 2027"
+  "en_frase": "los Óscar 2027",
+  "serie": "oscar"
  },
  {
   "titulo": "Fallas 2027",
@@ -1739,7 +1792,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "València: plantà el 15 y 16 de marzo, cremà la noche del 19",
-  "en_frase": "las Fallas 2027"
+  "en_frase": "las Fallas 2027",
+  "serie": "fallas"
  },
  {
   "titulo": "Feria de Abril de Sevilla 2027",
@@ -1755,7 +1809,8 @@
   "en_frase": "la Feria de Abril 2027",
   "ventana": "semana del 12 al 18 de abril de 2027",
   "estimada": "2027-04-12",
-  "estimacion": "La Feria empieza dos semanas después del Domingo de Resurrección (28 de marzo de 2027), con el pescaíto y el alumbrado la noche del lunes, y el Ayuntamiento ya ha fijado el miércoles 14 de abril como festivo local por la Feria. Falta el anuncio oficial de las fechas"
+  "estimacion": "La Feria empieza dos semanas después del Domingo de Resurrección (28 de marzo de 2027), con el pescaíto y el alumbrado la noche del lunes, y el Ayuntamiento ya ha fijado el miércoles 14 de abril como festivo local por la Feria. Falta el anuncio oficial de las fechas",
+  "serie": "feria-de-abril"
  },
  {
   "titulo": "Moros y Cristianos de Alcoy 2027",
@@ -1768,7 +1823,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Alcoy (del 24 al 26 de abril)",
-  "en_frase": "los Moros y Cristianos de Alcoy"
+  "en_frase": "los Moros y Cristianos de Alcoy",
+  "serie": "moros-y-cristianos-alcoy"
  },
  {
   "titulo": "Feria del Libro de Madrid 2027",
@@ -1787,7 +1843,8 @@
    "2027-05-21",
    "2027-06-04"
   ],
-  "estimacion": "La organización la anuncia para mayo y junio de 2027 sin fechas; suele empezar el último fin de semana de mayo (en 2026, del 29 de mayo al 14 de junio)"
+  "estimacion": "La organización la anuncia para mayo y junio de 2027 sin fechas; suele empezar el último fin de semana de mayo (en 2026, del 29 de mayo al 14 de junio)",
+  "serie": "feria-del-libro-madrid"
  },
  {
   "titulo": "Hogueras de Alicante 2027",
@@ -1800,7 +1857,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Alicante: plantà el 20 de junio y cremà la noche del 24",
-  "en_frase": "las Hogueras de Alicante 2027"
+  "en_frase": "las Hogueras de Alicante 2027",
+  "serie": "hogueras-alicante"
  },
  {
   "titulo": "San Fermín 2027",
@@ -1813,7 +1871,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Pamplona: chupinazo el 6 de julio a las 12:00, fiestas hasta el 14",
-  "en_frase": "San Fermín 2027"
+  "en_frase": "San Fermín 2027",
+  "serie": "san-fermin"
  },
  {
   "titulo": "Semana Grande de Bilbao 2027 (Aste Nagusia)",
@@ -1829,7 +1888,8 @@
   "en_frase": "la Aste Nagusia 2027",
   "ventana": "del 21 al 29 de agosto de 2027 (estimación)",
   "estimada": "2027-08-21",
-  "estimacion": "Empieza siempre el sábado siguiente al 15 de agosto, que en 2027 es el día 21; el Ayuntamiento aún no lo ha confirmado"
+  "estimacion": "Empieza siempre el sábado siguiente al 15 de agosto, que en 2027 es el día 21; el Ayuntamiento aún no lo ha confirmado",
+  "serie": "aste-nagusia"
  },
  {
   "titulo": "La Tomatina 2027",
@@ -1845,7 +1905,8 @@
   "en_frase": "la Tomatina 2027",
   "ventana": "25 de agosto de 2027 (estimación)",
   "estimada": "2027-08-25",
-  "estimacion": "Se celebra el último miércoles de agosto, que en 2027 es el día 25; el Ayuntamiento de Buñol aún no lo ha confirmado"
+  "estimacion": "Se celebra el último miércoles de agosto, que en 2027 es el día 25; el Ayuntamiento de Buñol aún no lo ha confirmado",
+  "serie": "tomatina"
  },
  {
   "titulo": "Fiestas del Pilar 2027",
@@ -1858,7 +1919,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Zaragoza (el día grande es el 12 de octubre)",
-  "en_frase": "las Fiestas del Pilar 2027"
+  "en_frase": "las Fiestas del Pilar 2027",
+  "serie": "fiestas-del-pilar"
  },
  {
   "titulo": "Lluvia de estrellas Leónidas 2026",
@@ -1871,7 +1933,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Noche del 17 al 18 de noviembre, mejor de madrugada",
-  "en_frase": "las Leónidas 2026"
+  "en_frase": "las Leónidas 2026",
+  "serie": "leonidas"
  },
  {
   "titulo": "BepiColombo llega a Mercurio",
@@ -1928,7 +1991,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Noches del 13 al 14 y del 14 al 15 de diciembre",
-  "en_frase": "las Gemínidas 2026"
+  "en_frase": "las Gemínidas 2026",
+  "serie": "geminidas"
  },
  {
   "titulo": "Superluna de Nochebuena 2026",
@@ -1954,7 +2018,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Noche del 3 al 4 de enero, máximo muy corto",
-  "en_frase": "las Cuadrántidas 2027"
+  "en_frase": "las Cuadrántidas 2027",
+  "serie": "cuadrantidas"
  },
  {
   "titulo": "Superluna de enero de 2027",
@@ -2019,7 +2084,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Noche del 22 al 23 de abril (con Luna casi llena)",
-  "en_frase": "las Líridas 2027"
+  "en_frase": "las Líridas 2027",
+  "serie": "liridas"
  },
  {
   "titulo": "Lluvia de estrellas Perseidas 2027",
@@ -2032,7 +2098,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Noche del 12 al 13 de agosto",
-  "en_frase": "las Perseidas 2027"
+  "en_frase": "las Perseidas 2027",
+  "serie": "perseidas"
  },
  {
   "titulo": "Artemis III",

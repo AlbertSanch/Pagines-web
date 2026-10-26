@@ -41,7 +41,9 @@
     else if (unidad === 'horas') { var hs = Math.floor(ms / 36e5); t = fmt(hs) + (hs === 1 ? ' hora' : ' horas'); }
     else t = hace ? tiempo(f, h) : tiempo(h, f);
     g.textContent = pre + t;
-    d.innerHTML = '<b>' + fmt(dias) + '</b> ' + (dias === 1 ? 'día' : 'días') + ' · ' + bonita(f);
+    // si el texto grande ya va en días, debajo basta la fecha
+    var enDias = unidad === 'dias' || (unidad === 'auto' && !/mes|año/.test(t));
+    d.innerHTML = (enDias ? '' : '<b>' + fmt(dias) + '</b> ' + (dias === 1 ? 'día' : 'días') + ' · ') + bonita(f);
     var sg = Math.floor(ms / 1000);
     v.textContent = Math.floor(sg / 86400) + ' d ' + ('0' + Math.floor(sg / 3600) % 24).slice(-2) + ' h ' + ('0' + Math.floor(sg / 60) % 60).slice(-2) + ' min ' + ('0' + sg % 60).slice(-2) + ' s';
   }
@@ -61,20 +63,49 @@
   }
   function poner(el, html) { el.innerHTML = html; marcar(); todos(); }
 
-  // ---------- buscador de la portada
-  var q = $('q'), sug = $('sug'), indice = $('indice');
-  if (q && indice) {
-    var lista = JSON.parse(indice.textContent);
-    function norm(s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  // ---------- buscador (cabecera y portada): el índice se descarga al tocar la caja
+  var indice = null;
+  function cargarIndice() { if (!indice) indice = fetch('/indice.json').then(function (r) { return r.json(); }); return indice; }
+  function norm(s) { return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+  document.querySelectorAll('.js-q').forEach(function (q) {
+    var sug = q.parentNode.querySelector('.sug');
+    q.addEventListener('focus', cargarIndice);
     q.addEventListener('input', function () {
       var t = norm(q.value.trim());
       if (t.length < 2) { sug.innerHTML = ''; return; }
-      sug.innerHTML = lista.filter(function (x) { return norm(x[0]).indexOf(t) >= 0; }).slice(0, 8)
-        .map(function (x) { return '<li><a href="/' + x[1] + '/">' + x[2] + ' ' + txt(x[0]) + '</a></li>'; }).join('') ||
-        '<li><a href="#tu-cuenta">No lo tenemos todavía: crea tu propia cuenta atrás ↓</a></li>';
+      cargarIndice().then(function (lista) {
+        // primero los que empiezan por lo escrito («navi» → Navidad antes que Lotería de Navidad)
+        sug.innerHTML = lista.filter(function (x) { return norm(x[0]).indexOf(t) >= 0; })
+          .sort(function (a, b) { return (norm(a[0]).indexOf(t) > 0) - (norm(b[0]).indexOf(t) > 0); }).slice(0, 8)
+          .map(function (x) { return '<li><a href="/' + x[1] + '/">' + x[2] + ' ' + txt(x[0]) + '</a></li>'; }).join('') ||
+          '<li><a href="/#tu-cuenta">No lo tenemos todavía: crea tu propia cuenta atrás</a></li>';
+      });
     });
     q.addEventListener('keydown', function (e) { if (e.key === 'Enter') { var a = sug.querySelector('a'); if (a) location.href = a.href; } });
+  });
+
+  // ---------- copiar enlace y añadir al calendario (.ics de día completo)
+  function copiar(b, url) {
+    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () { b.textContent = '✔ Enlace copiado'; }, function () { prompt('Copia el enlace:', url); });
   }
+  function calendario(fecha, titulo, url) {
+    var fin = deIso(fecha); fin.setDate(fin.getDate() + 1);
+    var limpio = (titulo || 'Cuenta atrás').replace(/[\\;,\n]/g, ' ');
+    var ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//cuantosdiasfaltan.es//ES', 'BEGIN:VEVENT',
+      'UID:' + fecha + '-' + Math.random().toString(36).slice(2) + '@cuantosdiasfaltan.es',
+      'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z',
+      'DTSTART;VALUE=DATE:' + fecha.replace(/-/g, ''), 'DTEND;VALUE=DATE:' + iso(fin).replace(/-/g, ''),
+      'SUMMARY:' + limpio, 'URL:' + url, 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+    a.download = norm(limpio).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '.ics';
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-copiar], [data-ics]'); if (!b) return;
+    if (b.hasAttribute('data-copiar')) copiar(b, b.getAttribute('data-copiar'));
+    else { var p = b.getAttribute('data-ics').split('|'); calendario(p[0], p[1], p[2]); }
+  });
 
   // ---------- tu cuenta atrás (?t=&f=&a=1)
   if ($('c-crear')) {
@@ -83,7 +114,9 @@
       if (anual) { d = new Date(h.getFullYear(), d.getMonth(), d.getDate()); if (d < h) d = new Date(h.getFullYear() + 1, d.getMonth(), d.getDate()); }
       var enlace = location.origin + '/?t=' + encodeURIComponent(nombre) + '&f=' + f + (anual ? '&a=1' : '');
       poner($('c-resultado'), '<h3>' + txt(nombre || 'Tu cuenta atrás') + '</h3>' + contador(iso(d), d < h) +
-        '<p><a class="boton" href="https://wa.me/?text=' + encodeURIComponent('¿Cuánto falta para ' + (nombre || 'el gran día') + '? ' + enlace) + '" rel="noopener">💬 Compartir</a></p>');
+        '<p class="acciones"><a class="boton" href="https://wa.me/?text=' + encodeURIComponent('¿Cuánto falta para ' + (nombre || 'el gran día') + '? ' + enlace) + '" rel="noopener">💬 Compartir</a>' +
+        '<button class="boton-sec" type="button" data-copiar="' + txt(enlace) + '">🔗 Copiar enlace</button>' +
+        (d >= h ? '<button class="boton-sec" type="button" data-ics="' + iso(d) + '|' + txt(nombre || 'Mi cuenta atrás') + '|' + txt(enlace) + '">📅 Añadir al calendario</button>' : '') + '</p>');
       history.replaceState(null, '', enlace + '#tu-cuenta');
     }
     $('c-crear').addEventListener('click', function () { if ($('c-fecha').value) mostrar($('c-nombre').value.trim(), $('c-fecha').value, $('c-anual').checked); });
