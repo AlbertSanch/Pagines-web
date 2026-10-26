@@ -17,6 +17,7 @@ Uso: python cuantosdiasfaltan/scripts/generar_web.py
 import datetime as dt
 import importlib.util
 import json
+import re
 import os
 import shutil
 import sys
@@ -60,6 +61,15 @@ MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto
 DIAS = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
 PRECISIONES = {"dia", "mes", "trimestre", "anio", "sin_fecha"}
 TEXTOS_EVENTO = {}
+# sagas y temas para enlazar entre sí: título de la sección → expresión sobre el slug público
+SAGAS = {"Más de Zelda": r"zelda", "Más de Marvel": r"vengadores|spider-man|daredevil", "Más de Star Wars": r"star-wars|ahsoka", "Más de DC": r"superman|batman",
+         "Más carreras de Fórmula 1": r"(^|-)f1($|-)", "Más carreras de MotoGP": r"motogp", "Más de Pokémon": r"pokemon", "Más de Jujutsu Kaisen": r"jujutsu", "Más de Kusuriya no Hitorigoto": r"kusuriya",
+         "Más de One Piece": r"one-piece", "Más de Final Fantasy": r"final-fantasy", "Más para Nintendo Switch 2": r"switch-2",
+         "Más fiestas de Navidad": r"^(navidad|nochebuena|nochevieja|ano-nuevo|reyes|loteria-de-navidad|loteria-del-nino)$",
+         "Las estaciones y el cambio de hora": r"^(primavera|verano|otono|invierno|cambio-de-hora)$", "Más lluvias de estrellas": r"leonidas|geminidas|cuadrantidas|liridas|perseidas",
+         "Más eclipses y superlunas": r"eclipse|superluna", "Más tenis": r"roland-garros|wimbledon|mutua-madrid-open|atp-finals|copa-davis",
+         "Más fútbol": r"supercopa|copa-del-rey|clasico|laliga|champions|europa-league|euroliga", "Más festivales de música": r"primavera-sound|sonar|mad-cool|bbk-live|^fib$|arenal|medusa|vina-rock|resurrection|cruilla",
+         "Más premios de cine y música": r"oscar|goya|grammy", "Más maratones": r"maraton"}
 
 
 def fecha_larga(d, con_anio=True):
@@ -185,7 +195,7 @@ def previsto(e):
 
 # ---------------------------------------------------------------- plantilla de página
 
-def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", buscador=True, imagen="/og/portada.png"):
+def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", buscador=True, imagen="/og/portada.png", indexable=True):
     url = DOMINIO + ruta
     ld_html = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>' if ld else ""
     menu = "".join(f'<a href="/{c}/">{ico} {n}</a>' for c, (n, ico) in CATEGORIAS.items())
@@ -196,7 +206,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", buscador=True
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{escape(titulo)}</title>
 <meta name="description" content="{escape(descripcion)}">
-<link rel="canonical" href="{url}">
+<link rel="canonical" href="{url}">{'' if indexable else chr(10) + '<meta name="robots" content="noindex, follow">'}
 <meta name="theme-color" content="#111111">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{NOMBRE_WEB}">
@@ -436,7 +446,10 @@ def pagina_evento(e, eventos):
     faq = ""
     if preguntas:
         faq = '<section class="faq"><h2>Preguntas frecuentes</h2>' + "".join(f"<h3>{escape(q)}</h3><p>{escape(r)}</p>" for q, r in preguntas) + "</section>"
-    otros = [x for x in eventos if x["categoria"] == e["categoria"] and x is not e and x["slug"] != e["slug"]]
+    saga = next((n for n, rx in SAGAS.items() if re.search(rx, e["slug"])), None)
+    de_saga = sorted([x for x in eventos if saga and x["slug"] != e["slug"] and re.search(SAGAS[saga], x["slug"])], key=orden)[:6]
+    vistos = {x["slug"] for x in de_saga}
+    otros = [x for x in eventos if x["categoria"] == e["categoria"] and x["slug"] != e["slug"] and x["slug"] not in vistos]
     otros = sorted(otros, key=orden)[:6]
     proximos = [x for x in sorted(eventos, key=orden) if x["categoria"] != e["categoria"] and fecha_de(x) and fecha_de(x) >= HOY][:4]
     cuerpo = f"""<nav class="migas"><a href="/">Inicio</a> › <a href="/{e['categoria']}/">{cat}</a></nav>
@@ -446,6 +459,7 @@ def pagina_evento(e, eventos):
 <p class="acciones">{"".join(botones)}</p>
 {nota_ambito}{retrasos}{fuente}
 {sabe}{datos}{siguientes}{faq}
+{f'<section><h2>{saga}</h2>{lista_tarjetas(de_saga)}</section>' if de_saga else ''}
 {f'<section><h2>{ico} Más {cat.lower()}</h2>{lista_tarjetas(otros)}<p><a href="/{e["categoria"]}/">Ver todos →</a></p></section>' if otros else ''}
 {f'<section><h2>⏱️ También llega pronto</h2>{lista_tarjetas(proximos)}</section>' if proximos else ''}
 <p class="nota">¿Esperas otra cosa? <a href="/#tu-cuenta">Crea tu propia cuenta atrás</a> y compártela.</p>"""
@@ -456,7 +470,13 @@ def pagina_evento(e, eventos):
     if preguntas:  # las mismas preguntas que se ven en la página
         ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in preguntas]})
-    return pagina(f"/{e['slug']}/", titulo, desc, cuerpo, ld, imagen=f"/og/{e['slug']}.png")
+    return pagina(f"/{e['slug']}/", titulo, desc, cuerpo, ld, imagen=f"/og/{e['slug']}.png", indexable=indexable(e))
+
+
+def indexable(e):
+    """Sin fecha, sin ventana y sin texto propio, la página casi no tiene nada que Google pueda enseñar: noindex
+    (con follow) hasta que lo tenga; se indexa sola en cuanto haya fecha o texto."""
+    return bool(fecha_de(e) or estimada_de(e) or rango_de(e) or previsto(e) or TEXTOS_EVENTO.get(e["slug"]))
 
 
 def cuando_corto(e):
@@ -667,7 +687,8 @@ def main():
             rutas.append(f"/{c}/")
     for e in eventos:
         guardar(f"/{e['slug']}/", pagina_evento(e, eventos))
-        rutas.append(f"/{e['slug']}/")
+        if indexable(e):
+            rutas.append(f"/{e['slug']}/")
     for clave in set(TEXTOS_EVENTO) - {e["slug"] for e in eventos}:
         print(f"AVISO: textos.json tiene «{clave}», que no es ninguna página")
     imagenes_compartir(eventos)
