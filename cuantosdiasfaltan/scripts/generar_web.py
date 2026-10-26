@@ -2,8 +2,10 @@
 
 Páginas:
   /                     buscador, lo próximo por categorías y tu propia cuenta atrás
-  /<categoria>/         videojuegos, películas, series, tecnología y eventos
+  /<categoria>/         fechas señaladas, videojuegos, películas, series, anime, deportes…
   /<evento>/            cuánto falta (o cuánto hace, si ya ha pasado) con la fecha y la fuente oficial
+  /<serie>/             eventos de cada año (Fallas, Roland Garros…) en una URL sin año que enseña la próxima
+                        edición; las URL antiguas con año redirigen (_redirects de Cloudflare Pages)
   /cuanto-hace/         cuánto tiempo ha pasado desde una fecha
   /sobre-nosotros/, /aviso-legal/, /privacidad/
 
@@ -13,6 +15,7 @@ tiene fecha oficial, la página lo dice y da la ventana anunciada («2027»), nu
 Uso: python cuantosdiasfaltan/scripts/generar_web.py
 """
 import datetime as dt
+import importlib.util
 import json
 import os
 import shutil
@@ -24,9 +27,10 @@ RAIZ = Path(__file__).resolve().parent.parent
 WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 EVENTOS = RAIZ / "eventos.json"
+FIJAS = RAIZ.parent / "festivos" / "scripts" / "cuanto_falta.py"  # mismas fechas que festivosde: Pascua, estaciones, Black Friday…
 DOMINIO = os.environ.get("CDF_DOMINIO", "https://cuantosdiasfaltan.es")
 NOMBRE_WEB = DOMINIO.split("//")[1]
-VERSION = "2"
+VERSION = "3"
 HOY = dt.date.fromisoformat(os.environ["CDF_HOY"]) if os.environ.get("CDF_HOY") else dt.date.today()
 ADSENSE = "ca-pub-8810566450749484"
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -41,14 +45,15 @@ CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};
                       'googlefc.callbackQueue.push(function(){googlefc.showRevocationMessage()});return false">Configurar cookies</a>')
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
            "email": "contacto.ahorrometro@gmail.com"}
-CATEGORIAS = {"videojuegos": ("Videojuegos", "🎮"), "peliculas": ("Películas", "🎬"), "series": ("Series", "📺"), "anime": ("Anime", "⛩️"),
+CATEGORIAS = {"fechas": ("Fechas señaladas", "📅"), "videojuegos": ("Videojuegos", "🎮"), "peliculas": ("Películas", "🎬"), "series": ("Series", "📺"), "anime": ("Anime", "⛩️"),
               "deportes": ("Deportes", "🏟️"), "musica": ("Música", "🎵"), "fiestas": ("Fiestas y cultura", "🎉"),
               "tecnologia": ("Tecnología", "📱"), "espacio": ("Ciencia y espacio", "🔭"), "eventos": ("Eventos", "🏆")}
-FRASE_CAT = {"videojuegos": "los próximos videojuegos", "peliculas": "los próximos estrenos de cine", "series": "los próximos estrenos de series", "anime": "los próximos estrenos de anime",
+FRASE_CAT = {"fechas": "las próximas fechas señaladas", "videojuegos": "los próximos videojuegos", "peliculas": "los próximos estrenos de cine", "series": "los próximos estrenos de series", "anime": "los próximos estrenos de anime",
              "deportes": "los próximos grandes eventos deportivos", "musica": "los próximos festivales y conciertos",
              "fiestas": "las próximas fiestas y eventos culturales", "tecnologia": "los próximos lanzamientos de tecnología",
              "espacio": "los próximos eclipses y fenómenos astronómicos", "eventos": "los próximos grandes eventos"}
-RESERVADOS = set(CATEGORIAS) | {"assets", "cuanto-hace", "sobre-nosotros", "aviso-legal", "privacidad", "buscar"}
+RESERVADOS = set(CATEGORIAS) | {"assets", "cuanto-hace", "sobre-nosotros", "aviso-legal", "privacidad", "buscar", "contacto"}
+FESTIVOSDE = "https://festivosde.es"
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 DIAS = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
 PRECISIONES = {"dia", "mes", "trimestre", "anio", "sin_fecha"}
@@ -106,7 +111,45 @@ def cargar():
             assert e["precision"] != "dia" and e.get("estimacion"), f"estimación sin motivo: {e['slug']}"
             assert not e.get("rango") or e.get("ventana"), f"rango sin ventana: {e['slug']}"
         slugs.add(e["slug"])
-    return eventos
+    series = {e["serie"] for e in eventos if e.get("serie")}
+    assert not series & (slugs | RESERVADOS), f"serie que choca con un slug: {series & (slugs | RESERVADOS)}"
+    fijas = eventos_fijos()
+    assert not {e["slug"] for e in fijas} & (slugs | series), "fecha señalada que choca con un evento"
+    return eventos + fijas
+
+
+def eventos_fijos():
+    """Fechas que vuelven cada año (Navidad, Reyes, estaciones…), calculadas con el mismo módulo que festivosde."""
+    spec = importlib.util.spec_from_file_location("cuanto_falta", FIJAS)
+    cf = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(cf)
+    fijas = []
+    for slug, (nombre, _, _, texto) in cf.EVENTOS.items():
+        proxima, siguientes = cf.proxima(slug, HOY)
+        titulo = nombre.split(" ", 1)[1] if nombre.split(" ", 1)[0] in ("la", "el") else nombre
+        fijas.append({"titulo": titulo[0].upper() + titulo[1:], "en_frase": nombre, "slug": slug, "categoria": "fechas",
+                      "fecha": proxima.isoformat(), "precision": "dia", "fija": texto, "siguientes": [d.isoformat() for d in siguientes]})
+    cambios = cf.proximo_cambio_de_hora(HOY)
+    fijas.append({"titulo": "Cambio de hora", "en_frase": "el cambio de hora", "slug": "cambio-de-hora", "categoria": "fechas",
+                  "fecha": cambios[0][0].isoformat(), "precision": "dia",
+                  "fija": ("En España la hora cambia dos veces al año: el último domingo de marzo se adelanta (a las 2:00 pasan a ser las 3:00) "
+                           "y el último domingo de octubre se atrasa (a las 3:00 vuelven a ser las 2:00)."),
+                  "siguientes": [c[0].isoformat() for c in cambios[1:5]]})
+    return fijas
+
+
+def resolver_series(eventos):
+    """Una página por serie (/fallas/) con la próxima edición; las demás ediciones redirigen a ella."""
+    grupos, visibles, redirecciones = {}, [], []
+    for e in eventos:
+        grupos.setdefault(e.get("serie") or e["slug"], []).append(e)
+    for clave, eds in grupos.items():
+        futuras = [x for x in eds if orden(x)[0] < 2 and (fecha_de(x) is None or fecha_de(x) >= HOY)]
+        elegida = min(futuras, key=orden) if futuras else max(eds, key=lambda x: x.get("fecha") or "")
+        v = dict(elegida, slug=clave)
+        visibles.append(v)
+        redirecciones += [(x["slug"], clave) for x in eds if x["slug"] != clave]
+    return visibles, redirecciones
 
 
 def fecha_de(e):
@@ -139,7 +182,7 @@ def previsto(e):
 
 # ---------------------------------------------------------------- plantilla de página
 
-def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts=""):
+def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", buscador=True):
     url = DOMINIO + ruta
     ld_html = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>' if ld else ""
     menu = "".join(f'<a href="/{c}/">{ico} {n}</a>' for c, (n, ico) in CATEGORIAS.items())
@@ -167,6 +210,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts=""):
 <body>
 <header class="cab"><div class="cont">
 <a class="logo" href="/"><span class="logo-ico">⏳</span><span>cuantos<b>dias</b>faltan</span></a>
+<form class="buscador buscador-cab{'' if buscador else ' oculto'}" role="search" onsubmit="return false"><input class="js-q" type="search" placeholder="Buscar: Navidad, GTA 6, Fallas…" autocomplete="off" aria-label="Buscar un evento"><ul class="sug"></ul></form>
 <nav class="menu">{menu}</nav>
 </div></header>
 <main class="cont">
@@ -174,7 +218,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts=""):
 </main>
 <footer class="pie"><div class="cont">
 <p><strong>{NOMBRE_WEB}</strong>: cuántos días faltan para los próximos lanzamientos y eventos, con la fecha oficial y su fuente.</p>
-<p class="enlaces"><a href="/">Inicio</a>{''.join(f'<a href="/{c}/">{n}</a>' for c, (n, _) in CATEGORIAS.items())}<a href="/cuanto-hace/">Cuánto hace</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a>{CONFIGURAR_COOKIES}</p>
+<p class="enlaces"><a href="/">Inicio</a>{''.join(f'<a href="/{c}/">{n}</a>' for c, (n, _) in CATEGORIAS.items())}<a href="/cuanto-hace/">Cuánto hace</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a>{CONFIGURAR_COOKIES}</p>
 <p>¿Ha cambiado una fecha? Escríbenos a {TITULAR['email']}.</p>
 </div></footer>
 <script src="/assets/cuenta.js?v={VERSION}" defer></script>
@@ -203,10 +247,20 @@ def contador(d, pasado=False):
         principal = "¡Es hoy!" if n == 0 else ("Falta 1 día" if n == 1 else f"Faltan {texto_tiempo(HOY, d)}")
     return (f'<div class="contador" data-fecha="{d.isoformat()}" data-modo="{"hace" if pasado else "falta"}">'
             f'<p class="c-grande">{principal}</p>'
-            f'<p class="c-dias"><b>{n}</b> {"día" if n == 1 else "días"}</p>'
+            f'<p class="c-dias">{f"<b>{n}</b> {plural_sin_n(n)} · " if principal_con_meses(d, pasado) else ""}{fecha_larga(d)}</p>'
             f'<p class="c-vivo"></p>'
             f'<div class="c-unidades" role="group" aria-label="Ver en"><button type="button" data-u="auto" aria-pressed="true">Meses</button>'
             f'<button type="button" data-u="semanas">Semanas</button><button type="button" data-u="dias">Días</button><button type="button" data-u="horas">Horas</button></div></div>')
+
+
+def plural_sin_n(n):
+    return "día" if n == 1 else "días"
+
+
+def principal_con_meses(d, pasado):
+    """Si el texto grande ya va en días («Faltan 24 días»), debajo basta la fecha."""
+    m, _ = meses_y_dias(*((d, HOY) if pasado else (HOY, d)))
+    return m > 0
 
 
 def tarjeta(e):
@@ -226,7 +280,8 @@ def tarjeta(e):
         cifra, ud = "?", "previsto" if previsto(e) else "sin fecha"
         cuando = f"Previsto: {e['ventana']}" if previsto(e) else e.get("ventana") or "Fecha sin confirmar"
     ico = CATEGORIAS[e["categoria"]][1]
-    return (f'<li><a href="/{e["slug"]}/"><span class="t-cifra"><b>{cifra}</b> {ud}</span><span class="t-tit">{ico} {escape(e["titulo"])}</span>'
+    largo = ' class="t-largo"' if len(str(cifra)) > 4 else ""
+    return (f'<li><a href="/{e["slug"]}/"><span class="t-cifra"><b{largo}>{cifra}</b> {ud}</span><span class="t-tit">{ico} {escape(e["titulo"])}</span>'
             f'<span class="t-cuando">{escape(cuando)}</span></a></li>')
 
 
@@ -253,6 +308,8 @@ def preguntas_de(e):
     «cuándo sale GTA 6» 22.200 frente a «cuánto falta» 170; «estreno Dune 3» 720 frente a «cuándo se estrena» 70;
     «cuánto falta para Navidad» 8.100 frente a «cuándo es» 3.600 y «cuántos días faltan» 2.900."""
     t, c = e.get("en_frase") or e["titulo"], e["categoria"]  # en_frase: «el iPhone 18», «la PlayStation 6»
+    if c == "fechas":
+        return f"¿Cuánto falta para {t}?", f"¿Cuánto falta para {t} {e['fecha'][:4]}? Días, horas y cuenta atrás"
     if c in ("videojuegos", "tecnologia"):
         return f"¿Cuándo sale {t}?", f"¿Cuándo sale {t}? Fecha de lanzamiento y cuenta atrás"
     if c == "peliculas":
@@ -315,35 +372,92 @@ def pagina_evento(e, eventos):
     if e.get("retrasos"):
         retrasos = '<p class="retrasos">Fechas anunciadas antes: ' + ", ".join(escape(fecha_simple(r) if len(r) == 10 and r[4] == "-" else r) for r in e["retrasos"]) + ".</p>"
     nota_ambito = f'<p class="nota">Fecha de estreno en {escape(e["ambito"])}.</p>' if e.get("ambito") and e["ambito"] not in ("España", "mundial") else ""
-    fuente = (f'<p class="fuente">Fuente{"" if e.get("fuente_tipo") == "oficial" else " (medio)"}: <a href="{escape(e["fuente_url"])}" rel="nofollow noopener" target="_blank">'
-              f'{escape(e.get("fuente_nombre") or "anuncio oficial")}</a> · Comprobado el {fecha_simple(e["comprobado"])}.</p>')
+    if e.get("fija"):
+        fuente = f'<p class="fuente">{escape(e["fija"])}</p>'
+    else:
+        fuente = (f'<p class="fuente">Fuente{"" if e.get("fuente_tipo") == "oficial" else " (medio)"}: <a href="{escape(e["fuente_url"])}" rel="nofollow noopener" target="_blank">'
+                  f'{escape(e.get("fuente_nombre") or "anuncio oficial")}</a> · Comprobado el {fecha_simple(e["comprobado"])}.</p>')
     if not d and (estimada_de(e) or rango_de(e) or previsto(e)):
         fuente = f'<p class="nota">Por qué esta fecha: {escape(e["estimacion"])}. La cambiaremos por la oficial en cuanto se anuncie.</p>' + fuente
-    otros = [x for x in eventos if x["categoria"] == e["categoria"] and x is not e]
-    otros = sorted(otros, key=orden)[:8]
-    preguntas = []
-    if d and d >= HOY:
-        preguntas.append((f"¿Cuándo sale {t}?", f"{t}: {fecha_larga(d)}{f' ({donde})' if donde else ''}, según {e.get('fuente_nombre') or 'el anuncio oficial'}."))
-        preguntas.append((f"¿Cuántos días faltan para {t}?", f"Hoy, {fecha_larga(HOY)}, faltan {(d - HOY).days} días ({texto_tiempo(HOY, d)})."))
-    if not d and estimada_de(e):
-        preguntas.append((cab, f"Aún no hay fecha oficial. La fecha estimada es el {fecha_larga(estimada_de(e))}: {e['estimacion']}."))
-    elif not d and (rango_de(e) or previsto(e)):
-        preguntas.append((cab, f"Aún no hay día oficial: está previsto para {e['ventana']}. {e['estimacion']}."))
+    objetivo = d if d and d >= HOY else estimada_de(e)
+    url = f"{DOMINIO}/{e['slug']}/"
+    t_frase = e.get("en_frase") or t
+    botones = [f'<a class="boton" href="https://wa.me/?text={escape(f"¿Cuánto falta para {t_frase}? {url}")}" rel="noopener">💬 Compartir</a>',
+               f'<button class="boton-sec" type="button" data-copiar="{url}">🔗 Copiar enlace</button>']
+    if objetivo:
+        botones.append(f'<button class="boton-sec" type="button" data-ics="{objetivo.isoformat()}|{escape(t)}|{url}">📅 Añadir al calendario</button>')
+    datos, preguntas = datos_y_preguntas(e, d, objetivo, cab, donde)
+    siguientes = ""
+    if e.get("siguientes"):
+        siguientes = ('<section><h2>Los próximos años</h2><ul class="lista-datos">'
+                      + "".join(f"<li>{fecha_larga(dt.date.fromisoformat(x))}</li>" for x in e["siguientes"]) + "</ul></section>")
+    faq = ""
+    if preguntas:
+        faq = '<section class="faq"><h2>Preguntas frecuentes</h2>' + "".join(f"<h3>{escape(q)}</h3><p>{escape(r)}</p>" for q, r in preguntas) + "</section>"
+    otros = [x for x in eventos if x["categoria"] == e["categoria"] and x is not e and x["slug"] != e["slug"]]
+    otros = sorted(otros, key=orden)[:6]
+    proximos = [x for x in sorted(eventos, key=orden) if x["categoria"] != e["categoria"] and fecha_de(x) and fecha_de(x) >= HOY][:4]
     cuerpo = f"""<nav class="migas"><a href="/">Inicio</a> › <a href="/{e['categoria']}/">{cat}</a></nav>
 <h1>{escape(cab)}</h1>
 <p class="sub">{sub}{f' · {escape(donde)}' if donde else ''}</p>
 {bloque}
-<p class="acciones"><a class="boton" href="https://wa.me/?text={escape(f'¿Cuánto falta para {t}? {DOMINIO}/{e["slug"]}/')}" rel="noopener">💬 Compartir</a></p>
+<p class="acciones">{"".join(botones)}</p>
 {nota_ambito}{retrasos}{fuente}
-{f'<section><h2>{ico} Más {cat.lower()}</h2>{lista_tarjetas(otros)}</section>' if otros else ''}"""
+{datos}{siguientes}{faq}
+{f'<section><h2>{ico} Más {cat.lower()}</h2>{lista_tarjetas(otros)}<p><a href="/{e["categoria"]}/">Ver todos →</a></p></section>' if otros else ''}
+{f'<section><h2>⏱️ También llega pronto</h2>{lista_tarjetas(proximos)}</section>' if proximos else ''}
+<p class="nota">¿Esperas otra cosa? <a href="/#tu-cuenta">Crea tu propia cuenta atrás</a> y compártela.</p>"""
     ld = [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Inicio", "item": DOMINIO + "/"},
         {"@type": "ListItem", "position": 2, "name": cat, "item": f"{DOMINIO}/{e['categoria']}/"},
-        {"@type": "ListItem", "position": 3, "name": t, "item": f"{DOMINIO}/{e['slug']}/"}]}]
-    if preguntas:
+        {"@type": "ListItem", "position": 3, "name": t, "item": url}]}]
+    if preguntas:  # las mismas preguntas que se ven en la página
         ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in preguntas]})
     return pagina(f"/{e['slug']}/", titulo, desc, cuerpo, ld)
+
+
+def entre(desde, hasta, dias_semana):
+    """Días entre hoy y la fecha (sin contar ninguno de los dos) que caen en esos días de la semana."""
+    return sum(1 for k in range(1, (hasta - desde).days) if (desde + dt.timedelta(days=k)).weekday() in dias_semana)
+
+
+def datos_y_preguntas(e, d, objetivo, cab, donde):
+    """Datos calculados para la fecha (día de la semana, fines de semana, laborables…) y las preguntas frecuentes que se
+    muestran en la página y van también como FAQPage."""
+    t = e.get("en_frase") or e["titulo"]
+    preguntas, datos = [], []
+    fuente = "" if e.get("fija") else f", según {e.get('fuente_nombre') or 'el anuncio oficial'}"
+    if objetivo:
+        n = (objetivo - HOY).days
+        estimada = objetivo != d
+        aprox = "aproximadamente " if estimada else ""
+        finde, laborables = entre(HOY, objetivo, {5}), entre(HOY, objetivo, {0, 1, 2, 3, 4})
+        dia_mes = f"{objetivo.day} de {MESES[objetivo.month - 1]}"
+        en_meses = texto_tiempo(HOY, objetivo)
+        en_meses = "" if en_meses == plural(n, "día", "días") else en_meses
+        semanas = f"{plural(n // 7, 'semana', 'semanas')}" + (f" y {plural(n % 7, 'día', 'días')}" if n % 7 else "")
+        datos = [f"Cae en <strong>{DIAS[objetivo.weekday()]}</strong>, el día {objetivo.timetuple().tm_yday} del año {objetivo.year}.",
+                 f"Faltan <strong>{plural(n, 'día', 'días')}</strong>: " + (f"{en_meses}, o " if en_meses else "") + f"{semanas}.",
+                 f"Por el camino quedan <strong>{plural(finde, 'fin de semana', 'fines de semana')}</strong> y {laborables} días de lunes a viernes.",
+                 f'¿Es festivo ese día? Míralo en <a href="{FESTIVOSDE}/es-festivo/{objetivo.day}-de-{MESES[objetivo.month - 1]}/">¿Es festivo el {dia_mes}?</a>']
+        cuenta = f"Hoy, {fecha_larga(HOY)}, faltan {aprox}{plural(n, 'día', 'días')}" + (f" ({en_meses})" if en_meses else "")
+        if estimada:
+            preguntas.append((cab, f"Aún no hay fecha oficial. La fecha estimada es el {fecha_larga(objetivo)}: {e['estimacion']}."))
+        elif cab.startswith("¿Cuánto falta"):
+            preguntas.append((cab, f"{cuenta}: es el {fecha_larga(objetivo)}{f' ({donde})' if donde else ''}{fuente}."))
+        else:
+            preguntas.append((cab, f"{e['titulo']}: {fecha_larga(objetivo)}{f' ({donde})' if donde else ''}{fuente}."))
+        if estimada or not cab.startswith("¿Cuánto falta"):
+            preguntas.append((f"¿Cuántos días faltan para {t}?", f"{cuenta}."))
+        preguntas.append((f"¿Qué día de la semana cae {t}?", f"Cae en {DIAS[objetivo.weekday()]}: {objetivo.day} de {MESES[objetivo.month - 1]} de {objetivo.year}."))
+        preguntas.append((f"¿Cuántos fines de semana quedan hasta {t}?", f"Quedan {plural(finde, 'fin de semana', 'fines de semana')} y {laborables} días de lunes a viernes."))
+    elif d:
+        preguntas.append((cab, f"{e['titulo']}: {fecha_larga(d)}{f' ({donde})' if donde else ''}, hace {texto_tiempo(d, HOY)}{fuente}."))
+    elif rango_de(e) or previsto(e):
+        preguntas.append((cab, f"Aún no hay día oficial: está previsto para {e['ventana']}. {e['estimacion']}."))
+    lista = f'<section><h2>En datos</h2><ul class="lista-datos">{"".join(f"<li>{x}</li>" for x in datos)}</ul></section>' if datos else ""
+    return lista, preguntas
 
 
 def pagina_categoria(c, eventos):
@@ -358,14 +472,16 @@ def pagina_categoria(c, eventos):
 
 
 def pagina_portada(eventos):
-    proximos = [e for e in sorted(eventos, key=orden) if fecha_de(e) and fecha_de(e) >= HOY][:12]
-    secciones = "".join(f'<section><h2><a href="/{c}/">{ico} {n}</a></h2>{lista_tarjetas([e for e in eventos if e["categoria"] == c][:8])}'
-                        f'<p><a href="/{c}/">Ver todos →</a></p></section>' for c, (n, ico) in CATEGORIAS.items() if any(e["categoria"] == c for e in eventos))
-    indice = [[e["titulo"], e["slug"], CATEGORIAS[e["categoria"]][1]] for e in eventos]
+    proximos = [e for e in sorted(eventos, key=orden) if fecha_de(e) and fecha_de(e) >= HOY and e["categoria"] != "fechas"][:8]
+    vistos = {e["slug"] for e in proximos}
+    secciones = ""
+    for c, (n, ico) in CATEGORIAS.items():
+        lista = [e for e in sorted(eventos, key=orden) if e["categoria"] == c and e["slug"] not in vistos][:6 if c == "fechas" else 4]
+        if lista:
+            secciones += f'<section><h2><a href="/{c}/">{ico} {n}</a></h2>{lista_tarjetas(lista)}<p><a href="/{c}/">Ver {"todas" if c == "fechas" else "todos"} →</a></p></section>'
     cuerpo = f"""<section class="portada"><h1>¿Cuántos días faltan para…?</h1>
-<p class="sub">Cuenta atrás para los videojuegos, películas, series y eventos que esperas, con la fecha oficial.</p>
-<form class="buscador" role="search" onsubmit="return false"><input id="q" type="search" placeholder="Busca: GTA 6, Spider-Man, Eurovisión…" autocomplete="off" aria-label="Buscar"><ul id="sug" class="sug"></ul></form>
-<script type="application/json" id="indice">{json.dumps(indice, ensure_ascii=False, separators=(",", ":"))}</script></section>
+<p class="sub">Cuenta atrás para Navidad, Reyes, el verano y los estrenos, partidos y fiestas que esperas, con la fecha oficial.</p>
+<form class="buscador" role="search" onsubmit="return false"><input class="js-q" type="search" placeholder="Busca: Navidad, GTA 6, Fallas, Eurovisión…" autocomplete="off" aria-label="Buscar"><ul class="sug"></ul></form></section>
 <section><h2>⏱️ Lo próximo</h2>{lista_tarjetas(proximos)}</section>
 <section id="tu-cuenta" class="herramienta"><h2>🗓️ Tu cuenta atrás</h2>
 <p>¿Tu cumpleaños, tu boda, tus vacaciones? Pon la fecha y comparte el enlace.</p>
@@ -375,9 +491,9 @@ def pagina_portada(eventos):
 {secciones}
 <section><h2>⌛ ¿Cuánto hace de…?</h2><p>Calcula cuánto tiempo ha pasado desde cualquier fecha: <a href="/cuanto-hace/">cuánto hace de…</a></p></section>"""
     ld = {"@context": "https://schema.org", "@type": "WebSite", "name": NOMBRE_WEB, "url": DOMINIO + "/"}
-    return pagina("/", "¿Cuántos días faltan para…? Cuenta atrás de videojuegos, películas y eventos",
-                  "Cuántos días faltan para GTA 6, los próximos estrenos, series y grandes eventos, con la fecha oficial y una cuenta atrás en directo.",
-                  cuerpo, ld)
+    return pagina("/", "¿Cuántos días faltan para…? Navidad, estrenos y eventos: cuenta atrás",
+                  "Cuántos días faltan para Navidad, Reyes, el verano, GTA 6, los próximos estrenos, partidos y fiestas, con la fecha oficial y una cuenta atrás en directo.",
+                  cuerpo, ld, buscador=False)
 
 
 def pagina_cuanto_hace(eventos):
@@ -393,7 +509,8 @@ def pagina_cuanto_hace(eventos):
 def legales():
     t = TITULAR
     sobre = f"""<h1>Sobre nosotros</h1><div class="texto">
-<p>{NOMBRE_WEB} reúne en un solo sitio cuántos días faltan para los lanzamientos y eventos que más se esperan: videojuegos, películas, series, tecnología y grandes eventos.</p>
+<p>{NOMBRE_WEB} reúne en un solo sitio cuántos días faltan para las fechas señaladas (Navidad, Reyes, el verano…) y para los lanzamientos y eventos que más se esperan: videojuegos, películas, series, anime, deportes, música, fiestas y tecnología.</p>
+<p>Las fechas señaladas se calculan con las reglas del calendario (por ejemplo, la Semana Santa a partir de la Pascua, y las estaciones con la posición del Sol), con el mismo método que <a href="{FESTIVOSDE}/">festivosde.es</a>, nuestra web de festivos.</p>
 <p><strong>Solo publicamos fechas anunciadas oficialmente</strong> por la empresa, el estudio, la plataforma o el organizador, y en cada página enlazamos la fuente y decimos cuándo la comprobamos. Si algo aún no tiene fecha oficial, lo decimos: no publicamos rumores.</p>
 <p>Las fechas pueden cambiar (los retrasos son habituales). Si ves una fecha desactualizada, escríbenos a {t['email']} y la corregimos.</p></div>"""
     aviso = f"""<h1>Aviso legal</h1><div class="texto">
@@ -405,18 +522,22 @@ def legales():
 <p>El alojamiento (Cloudflare) puede registrar datos técnicos de la conexión por seguridad y ofrece estadísticas de visitas sin cookies.</p>
 <p>Esta web se financia con publicidad de Google AdSense (Google Ireland Limited), que usa cookies para mostrar y medir anuncios y, si lo aceptas, personalizarlos. La primera vez que entras se muestra el mensaje de consentimiento de Google; puedes cambiar tu elección en «Configurar cookies», al pie de la página. Más información: <a href="https://policies.google.com/technologies/ads?hl=es" rel="noopener">cómo usa Google las cookies en la publicidad</a>.</p>
 <p>Puedes ejercer tus derechos escribiendo a {t['email']} y reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).</p></div>"""
-    for ruta, tit, cuerpo in (("/sobre-nosotros/", "Sobre nosotros", sobre), ("/aviso-legal/", "Aviso legal", aviso), ("/privacidad/", "Política de privacidad", privacidad)):
+    contacto = f"""<h1>Contacto</h1><div class="texto">
+<p>¿Ha cambiado una fecha, falta un evento o has visto un error? Escríbenos a <a href="mailto:{t['email']}">{t['email']}</a> y lo revisamos.</p>
+<p>Si nos avisas de una fecha nueva, incluye el enlace al anuncio oficial: solo publicamos fechas con fuente.</p></div>"""
+    for ruta, tit, cuerpo in (("/contacto/", "Contacto", contacto), ("/sobre-nosotros/", "Sobre nosotros", sobre), ("/aviso-legal/", "Aviso legal", aviso), ("/privacidad/", "Política de privacidad", privacidad)):
         guardar(ruta, pagina(ruta, f"{tit} | {NOMBRE_WEB}", f"{tit} de {NOMBRE_WEB}.", cuerpo))
     guardar("/404.html", pagina("/404.html", "Página no encontrada", "Esta página no existe.",
                                 '<h1>Página no encontrada</h1><p>Vuelve a la <a href="/">portada</a> y búscalo.</p>'))
-    return ["/sobre-nosotros/", "/aviso-legal/", "/privacidad/"]
+    return ["/contacto/", "/sobre-nosotros/", "/aviso-legal/", "/privacidad/"]
 
 
 def main():
-    eventos = cargar()
+    todos = cargar()
+    eventos, redirecciones = resolver_series(todos)
     if len(eventos) < 10:
         sys.exit(f"ERROR: solo {len(eventos)} eventos")
-    for e in eventos:
+    for e in todos:
         if (e.get("estimada") and not estimada_de(e)) or (e.get("rango") and dt.date.fromisoformat(e["rango"][1]) < HOY):
             print(f"AVISO: la estimación de {e['slug']} ya ha pasado; hay que revisarla")
     if WEB.exists():
@@ -438,12 +559,15 @@ def main():
     rutas.append("/cuanto-hace/")
     rutas += legales()
     hoy = HOY.isoformat()
+    (WEB / "_redirects").write_text("".join(f"/{a}/ /{b}/ 301\n/{a} /{b}/ 301\n" for a, b in redirecciones), encoding="utf-8")
+    (WEB / "indice.json").write_text(json.dumps([[e["titulo"], e["slug"], CATEGORIAS[e["categoria"]][1]] for e in sorted(eventos, key=orden)],
+                                                ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     (WEB / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                      + "".join(f"<url><loc>{DOMINIO}{r}</loc><lastmod>{hoy}</lastmod></url>\n" for r in rutas) + "</urlset>\n", encoding="utf-8")
     (WEB / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {DOMINIO}/sitemap.xml\n", encoding="utf-8")
     (WEB / "ads.txt").write_text(f"google.com, {ADSENSE.replace('ca-', '')}, DIRECT, f08c47fec0942fa0\n", encoding="utf-8")
     con_fecha = sum(1 for e in eventos if fecha_de(e))
-    print(f"Web generada: {len(eventos)} eventos ({con_fecha} con fecha oficial), {len(rutas)} páginas en el sitemap.")
+    print(f"Web generada: {len(eventos)} eventos ({con_fecha} con fecha), {len(redirecciones)} redirecciones, {len(rutas)} páginas en el sitemap.")
 
 
 if __name__ == "__main__":

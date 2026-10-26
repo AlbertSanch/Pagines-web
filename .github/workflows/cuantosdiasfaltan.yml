@@ -12,6 +12,7 @@ on:
       - cuantosdiasfaltan/scripts/**
       - cuantosdiasfaltan/plantilla/**
       - cuantosdiasfaltan/eventos.json
+      - festivos/scripts/cuanto_falta.py
       - .github/workflows/cuantosdiasfaltan.yml
 
 permissions:
@@ -38,6 +39,8 @@ jobs:
           n=$(grep -c "<loc>" cuantosdiasfaltan/web/sitemap.xml)
           echo "Páginas en el sitemap: $n"
           test "$n" -gt 15
+          test -s cuantosdiasfaltan/web/_redirects
+          test -s cuantosdiasfaltan/web/indice.json
       - name: Publicar
         run: |
           git config user.name "github-actions[bot]"
