@@ -354,7 +354,8 @@
  ],
  "gp-valencia-motogp": [
   "El Gran Premio de la Comunitat Valenciana se corre en el Circuit Ricardo Tormo de Cheste y suele ser la última carrera del Mundial de MotoGP. Sus gradas rodean casi todo el trazado, como un estadio.",
-  "En 2026 la carrera se movió del 22 al 29 de noviembre por el cambio de fecha del Gran Premio de Qatar."
+  "En 2026 la carrera se movió del 22 al 29 de noviembre por el cambio de fecha del Gran Premio de Qatar.",
+  "En 2026 la carrera de MotoGP empieza a las 14:00 (13:00 en Canarias) y el sprint, el sábado 28 de noviembre a las 15:00, según el horario oficial."
  ],
  "final-copa-davis": [
   "La fase final de la Copa Davis 2026 se juega en Bolonia (Italia) del 24 al 29 de noviembre, con las ocho mejores selecciones en eliminatorias directas.",
@@ -1056,5 +1057,20 @@
  "otono": [
   "El otoño astronómico empieza con el equinoccio de septiembre, entre el 22 y el 23 de septiembre, cuando el día y la noche duran casi lo mismo. Termina con el solsticio de diciembre, cuando empieza el <a href=\"/invierno/\">invierno</a>.",
   "A finales de octubre llega el <a href=\"/cambio-de-hora/\">cambio de hora</a> al horario de invierno, y anochece una hora antes."
+ ],
+ "gp-malasia-motogp": [
+  "El Gran Premio de Malasia de MotoGP se corre en el circuito de Sepang, junto al aeropuerto de Kuala Lumpur.",
+  "Por la diferencia horaria, en España se ve por la mañana: en 2026 la carrera de MotoGP es el domingo 1 de noviembre a las 8:00 (7:00 en Canarias), y el sprint, el sábado 31 de octubre a la misma hora, según el horario oficial.",
+  "En 2027 vuelve el domingo 24 de octubre, según el calendario de MotoGP."
+ ],
+ "gp-qatar-motogp": [
+  "El Gran Premio de Qatar de MotoGP se corre de noche, con focos, en el circuito de Lusail, a las afueras de Doha.",
+  "En 2026 se disputa en noviembre, como penúltima carrera del año: el domingo 8 de noviembre a las 18:00 en España (17:00 en Canarias), con el sprint el sábado 7 a la misma hora, según el horario oficial.",
+  "En 2027 vuelve al principio de la temporada: el domingo 14 de marzo, segunda carrera del Mundial, según el calendario de MotoGP."
+ ],
+ "gp-portugal-motogp": [
+  "El Gran Premio de Portugal de MotoGP se corre en el Autódromo Internacional do Algarve, en Portimão, un trazado con muchas subidas y bajadas.",
+  "En 2026 la carrera de MotoGP es el domingo 22 de noviembre a las 14:00 en España (13:00 en Canarias), y el sprint, el sábado 21 a las 16:00, según el horario oficial.",
+  "En 2027 se adelanta al domingo 3 de octubre, según el calendario de MotoGP."
  ]
 }

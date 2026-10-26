@@ -1065,6 +1065,57 @@
   "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/"
  },
  {
+  "titulo": "GP de Malasia de MotoGP 2026",
+  "slug": "gp-malasia-motogp-2026",
+  "categoria": "deportes",
+  "fecha": "2026-11-01",
+  "precision": "dia",
+  "fuente_url": "https://www.motogp.com/es/calendar",
+  "fuente_nombre": "MotoGP (calendario oficial)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-10-26",
+  "lugar": "Circuito de Sepang (Malasia)",
+  "en_frase": "el GP de Malasia de MotoGP 2026",
+  "serie": "gp-malasia-motogp",
+  "hora": "08:00",
+  "hora_que": "la carrera de MotoGP",
+  "hora_fuente": "https://www.motogp.com/es/calendar"
+ },
+ {
+  "titulo": "GP de Qatar de MotoGP 2026",
+  "slug": "gp-qatar-motogp-2026",
+  "categoria": "deportes",
+  "fecha": "2026-11-08",
+  "precision": "dia",
+  "fuente_url": "https://www.motogp.com/es/calendar",
+  "fuente_nombre": "MotoGP (calendario oficial)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-10-26",
+  "lugar": "Circuito de Lusail (Qatar)",
+  "en_frase": "el GP de Qatar de MotoGP 2026",
+  "serie": "gp-qatar-motogp",
+  "hora": "18:00",
+  "hora_que": "la carrera de MotoGP",
+  "hora_fuente": "https://www.motogp.com/es/calendar"
+ },
+ {
+  "titulo": "GP de Portugal de MotoGP 2026",
+  "slug": "gp-portugal-motogp-2026",
+  "categoria": "deportes",
+  "fecha": "2026-11-22",
+  "precision": "dia",
+  "fuente_url": "https://www.motogp.com/es/calendar",
+  "fuente_nombre": "MotoGP (calendario oficial)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-10-26",
+  "lugar": "Autódromo Internacional do Algarve, Portimão",
+  "en_frase": "el GP de Portugal de MotoGP 2026",
+  "serie": "gp-portugal-motogp",
+  "hora": "14:00",
+  "hora_que": "la carrera de MotoGP",
+  "hora_fuente": "https://www.motogp.com/es/calendar"
+ },
+ {
   "titulo": "GP de Valencia de MotoGP 2026",
   "slug": "gp-valencia-motogp-2026",
   "categoria": "deportes",
@@ -1073,13 +1124,16 @@
   "fuente_url": "https://www.comunitatvalenciana.com/es/valencia/cheste/eventos/mundial-de-motogp",
   "fuente_nombre": "Comunitat Valenciana (Generalitat)",
   "fuente_tipo": "oficial",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-10-26",
   "lugar": "Circuit Ricardo Tormo, Cheste",
   "en_frase": "el GP de Valencia de MotoGP 2026",
   "retrasos": [
    "22 de noviembre de 2026"
   ],
-  "serie": "gp-valencia-motogp"
+  "serie": "gp-valencia-motogp",
+  "hora": "14:00",
+  "hora_que": "la carrera de MotoGP",
+  "hora_fuente": "https://www.motogp.com/es/calendar"
  },
  {
   "titulo": "Final de la Copa Davis 2026",
@@ -1175,6 +1229,20 @@
   "lugar": "Buriram (Tailandia)",
   "en_frase": "el Mundial de MotoGP 2027",
   "serie": "mundial-motogp"
+ },
+ {
+  "titulo": "GP de Qatar de MotoGP 2027",
+  "slug": "gp-qatar-motogp-2027",
+  "categoria": "deportes",
+  "fecha": "2027-03-14",
+  "precision": "dia",
+  "fuente_url": "https://www.motogp.com/es/calendar/2027",
+  "fuente_nombre": "MotoGP (calendario oficial)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-10-26",
+  "lugar": "Circuito de Lusail (Qatar)",
+  "en_frase": "el GP de Qatar de MotoGP 2027",
+  "serie": "gp-qatar-motogp"
  },
  {
   "titulo": "Mundial de F1 2027 (primera carrera)",
@@ -1433,6 +1501,34 @@
   "lugar": "MotorLand Aragón, Alcañiz",
   "en_frase": "el GP de Aragón de MotoGP 2027",
   "serie": "gp-aragon-motogp"
+ },
+ {
+  "titulo": "GP de Portugal de MotoGP 2027",
+  "slug": "gp-portugal-motogp-2027",
+  "categoria": "deportes",
+  "fecha": "2027-10-03",
+  "precision": "dia",
+  "fuente_url": "https://www.motogp.com/es/calendar/2027",
+  "fuente_nombre": "MotoGP (calendario oficial)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-10-26",
+  "lugar": "Autódromo Internacional do Algarve, Portimão",
+  "en_frase": "el GP de Portugal de MotoGP 2027",
+  "serie": "gp-portugal-motogp"
+ },
+ {
+  "titulo": "GP de Malasia de MotoGP 2027",
+  "slug": "gp-malasia-motogp-2027",
+  "categoria": "deportes",
+  "fecha": "2027-10-24",
+  "precision": "dia",
+  "fuente_url": "https://www.motogp.com/es/calendar/2027",
+  "fuente_nombre": "MotoGP (calendario oficial)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-10-26",
+  "lugar": "Circuito de Sepang (Malasia)",
+  "en_frase": "el GP de Malasia de MotoGP 2027",
+  "serie": "gp-malasia-motogp"
  },
  {
   "titulo": "GP de Valencia de MotoGP 2027",

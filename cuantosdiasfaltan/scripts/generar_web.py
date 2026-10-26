@@ -620,7 +620,7 @@ def datos_y_preguntas(e, d, objetivo, cab, donde):
         semanas = f"{plural(n // 7, 'semana', 'semanas')}" + (f" y {plural(n % 7, 'día', 'días')}" if n % 7 else "")
         datos = [f"Cae en <strong>{DIAS[objetivo.weekday()]}</strong>, el día {objetivo.timetuple().tm_yday} del año {objetivo.year}.",
                  f"Faltan <strong>{plural(n, 'día', 'días')}</strong>: " + (f"{en_meses}, o " if en_meses else "") + f"{semanas}.",
-                 f"Por el camino quedan <strong>{plural(finde, 'fin de semana', 'fines de semana')}</strong> y {laborables} días de lunes a viernes.",
+                 f"Por el camino quedan <strong>{plural(finde, 'fin de semana', 'fines de semana')}</strong> y {plural(laborables, 'día', 'días')} de lunes a viernes.",
                  f'¿Es festivo ese día? Míralo en <a href="{FESTIVOSDE}/es-festivo/{objetivo.day}-de-{MESES[objetivo.month - 1]}/">¿Es festivo el {dia_mes}?</a>']
         cuenta = f"Hoy, {fecha_larga(HOY)}, faltan {aprox}{plural(n, 'día', 'días')}" + (f" ({en_meses})" if en_meses else "")
         if estimada:
@@ -635,7 +635,7 @@ def datos_y_preguntas(e, d, objetivo, cab, donde):
             preguntas.append((f"¿A qué hora es {t} en España?", texto_hora(e) + "."))
             datos.insert(1, f"<strong>{escape(texto_hora(e))}</strong>.")
         preguntas.append((f"¿Qué día de la semana cae {t}?", f"Cae en {DIAS[objetivo.weekday()]}: {objetivo.day} de {MESES[objetivo.month - 1]} de {objetivo.year}."))
-        preguntas.append((f"¿Cuántos fines de semana quedan hasta {t}?", f"Quedan {plural(finde, 'fin de semana', 'fines de semana')} y {laborables} días de lunes a viernes."))
+        preguntas.append((f"¿Cuántos fines de semana quedan hasta {t}?", f"Quedan {plural(finde, 'fin de semana', 'fines de semana')} y {plural(laborables, 'día', 'días')} de lunes a viernes."))
     elif d:
         preguntas.append((cab, f"{e['titulo']}: {fecha_larga(d)}{f' ({donde})' if donde else ''}, hace {texto_tiempo(d, HOY)}{fuente}."))
     elif rango_de(e) or previsto(e):
