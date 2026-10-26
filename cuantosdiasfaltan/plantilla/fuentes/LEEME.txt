@@ -1,0 +1,2 @@
+Inter (Rasmus Andersson), licencia SIL Open Font License 1.1: https://github.com/rsms/inter
+Se usa para generar las imágenes de compartir (web/og/).

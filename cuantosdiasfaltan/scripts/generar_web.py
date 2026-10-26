@@ -27,6 +27,8 @@ RAIZ = Path(__file__).resolve().parent.parent
 WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 EVENTOS = RAIZ / "eventos.json"
+TEXTOS = RAIZ / "textos.json"  # «qué se sabe»: párrafos propios por evento (clave: slug o serie)
+FUENTES = PLANTILLA / "fuentes"
 FIJAS = RAIZ.parent / "festivos" / "scripts" / "cuanto_falta.py"  # mismas fechas que festivosde: Pascua, estaciones, Black Friday…
 DOMINIO = os.environ.get("CDF_DOMINIO", "https://cuantosdiasfaltan.es")
 NOMBRE_WEB = DOMINIO.split("//")[1]
@@ -57,6 +59,7 @@ FESTIVOSDE = "https://festivosde.es"
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 DIAS = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
 PRECISIONES = {"dia", "mes", "trimestre", "anio", "sin_fecha"}
+TEXTOS_EVENTO = {}
 
 
 def fecha_larga(d, con_anio=True):
@@ -182,7 +185,7 @@ def previsto(e):
 
 # ---------------------------------------------------------------- plantilla de página
 
-def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", buscador=True):
+def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", buscador=True, imagen="/og/portada.png"):
     url = DOMINIO + ruta
     ld_html = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>' if ld else ""
     menu = "".join(f'<a href="/{c}/">{ico} {n}</a>' for c, (n, ico) in CATEGORIAS.items())
@@ -201,7 +204,10 @@ def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", buscador=True
 <meta property="og:title" content="{escape(titulo)}">
 <meta property="og:description" content="{escape(descripcion)}">
 <meta property="og:url" content="{url}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{DOMINIO}{imagen}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 {ld_html}
 <link rel="stylesheet" href="/assets/style.css?v={VERSION}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -391,6 +397,10 @@ def pagina_evento(e, eventos):
     if e.get("siguientes"):
         siguientes = ('<section><h2>Los próximos años</h2><ul class="lista-datos">'
                       + "".join(f"<li>{fecha_larga(dt.date.fromisoformat(x))}</li>" for x in e["siguientes"]) + "</ul></section>")
+    sabe = ""
+    if TEXTOS_EVENTO.get(e["slug"]):
+        sabe = (f'<section class="texto"><h2>{"Sobre " + e["titulo"] if e.get("fija") else "Qué se sabe"}</h2>'
+                + "".join(f"<p>{p}</p>" for p in TEXTOS_EVENTO[e["slug"]]) + "</section>")
     faq = ""
     if preguntas:
         faq = '<section class="faq"><h2>Preguntas frecuentes</h2>' + "".join(f"<h3>{escape(q)}</h3><p>{escape(r)}</p>" for q, r in preguntas) + "</section>"
@@ -403,7 +413,7 @@ def pagina_evento(e, eventos):
 {bloque}
 <p class="acciones">{"".join(botones)}</p>
 {nota_ambito}{retrasos}{fuente}
-{datos}{siguientes}{faq}
+{sabe}{datos}{siguientes}{faq}
 {f'<section><h2>{ico} Más {cat.lower()}</h2>{lista_tarjetas(otros)}<p><a href="/{e["categoria"]}/">Ver todos →</a></p></section>' if otros else ''}
 {f'<section><h2>⏱️ También llega pronto</h2>{lista_tarjetas(proximos)}</section>' if proximos else ''}
 <p class="nota">¿Esperas otra cosa? <a href="/#tu-cuenta">Crea tu propia cuenta atrás</a> y compártela.</p>"""
@@ -414,7 +424,73 @@ def pagina_evento(e, eventos):
     if preguntas:  # las mismas preguntas que se ven en la página
         ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in preguntas]})
-    return pagina(f"/{e['slug']}/", titulo, desc, cuerpo, ld)
+    return pagina(f"/{e['slug']}/", titulo, desc, cuerpo, ld, imagen=f"/og/{e['slug']}.png")
+
+
+def cuando_corto(e):
+    """La fecha tal como va en la imagen de compartir (no cambia cada día, para que las redes la guarden)."""
+    d = fecha_de(e)
+    if d:
+        texto = fecha_larga(d)
+    elif estimada_de(e):
+        texto = f"≈ {fecha_larga(estimada_de(e))} (estimada)"
+    elif rango_de(e) or previsto(e):
+        texto = f"Previsto: {e['ventana']}"
+    else:
+        texto = e.get("ventana") or "Fecha por confirmar"
+    return texto[0].upper() + texto[1:]
+
+
+def imagenes_compartir(eventos):
+    """Una imagen 1200×630 por evento para WhatsApp y redes: nombre, fecha y la web."""
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError:
+        print("AVISO: sin Pillow no se generan las imágenes de compartir")
+        return
+    negra, gruesa = (str(FUENTES / "Inter-Black.otf"), str(FUENTES / "Inter-Bold.otf"))
+    (WEB / "og").mkdir(parents=True, exist_ok=True)
+
+    def partir(texto, fuente, ancho, dibujo):
+        lineas, actual = [], ""
+        for palabra in texto.split():
+            prueba = f"{actual} {palabra}".strip()
+            if dibujo.textlength(prueba, font=fuente) <= ancho or not actual:
+                actual = prueba
+            else:
+                lineas.append(actual)
+                actual = palabra
+        return lineas + [actual]
+
+    def dibujar(ruta, arriba, titulo, abajo):
+        im = Image.new("RGB", (1200, 630), "#111111")
+        d = ImageDraw.Draw(im)
+        d.rectangle((0, 0, 1200, 12), fill="#f97316")
+        d.text((80, 70), arriba.upper(), font=ImageFont.truetype(gruesa, 30), fill="#a1a1aa")
+        for tam in (84, 72, 62, 54, 46):
+            f = ImageFont.truetype(negra, tam)
+            lineas = partir(titulo, f, 1040, d)
+            if len(lineas) <= 3:
+                break
+        y = 130
+        for linea in lineas[:3]:
+            d.text((80, y), linea, font=f, fill="#ffffff")
+            y += int(tam * 1.15)
+        fb = ImageFont.truetype(negra, 50 if len(abajo) < 34 else 40)
+        d.text((80, max(y + 40, 330)), abajo, font=fb, fill="#f97316")
+        pie = ImageFont.truetype(gruesa, 34)
+        d.text((80, 545), "cuantos", font=pie, fill="#ffffff")
+        x = 80 + d.textlength("cuantos", font=pie)
+        d.text((x, 545), "dias", font=pie, fill="#f97316")
+        x += d.textlength("dias", font=pie)
+        d.text((x, 545), "faltan.es", font=pie, fill="#ffffff")
+        d.text((1120 - d.textlength("Cuenta atrás en directo →", font=pie), 545), "Cuenta atrás en directo →", font=pie, fill="#a1a1aa")
+        im.quantize(colors=48, method=Image.Quantize.MEDIANCUT).save(WEB / "og" / ruta, optimize=True)
+
+    dibujar("portada.png", "Cuenta atrás", "¿Cuántos días faltan para…?", "Navidad, estrenos, partidos y fiestas")
+    for e in eventos:
+        titulo = preguntas_de(e)[0] if not fecha_de(e) or fecha_de(e) >= HOY else e["titulo"]
+        dibujar(f"{e['slug']}.png", CATEGORIAS[e["categoria"]][0], titulo, cuando_corto(e))
 
 
 def entre(desde, hasta, dias_semana):
@@ -533,6 +609,8 @@ def legales():
 
 
 def main():
+    global TEXTOS_EVENTO
+    TEXTOS_EVENTO = json.loads(TEXTOS.read_text(encoding="utf-8")) if TEXTOS.exists() else {}
     todos = cargar()
     eventos, redirecciones = resolver_series(todos)
     if len(eventos) < 10:
@@ -555,6 +633,9 @@ def main():
     for e in eventos:
         guardar(f"/{e['slug']}/", pagina_evento(e, eventos))
         rutas.append(f"/{e['slug']}/")
+    for clave in set(TEXTOS_EVENTO) - {e["slug"] for e in eventos}:
+        print(f"AVISO: textos.json tiene «{clave}», que no es ninguna página")
+    imagenes_compartir(eventos)
     guardar("/cuanto-hace/", pagina_cuanto_hace(eventos))
     rutas.append("/cuanto-hace/")
     rutas += legales()
