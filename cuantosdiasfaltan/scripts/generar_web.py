@@ -675,11 +675,13 @@ def main():
     rutas.append("/cuanto-hace/")
     rutas += legales()
     hoy = HOY.isoformat()
+    # fecha en que cambian de verdad los datos de cada evento (no la de cada noche), para que Google se fíe del sitemap
+    modificado = {f"/{e['slug']}/": e["comprobado"] for e in eventos if e.get("comprobado")}
     (WEB / "_redirects").write_text("".join(f"/{a}/ /{b}/ 301\n/{a} /{b}/ 301\n" for a, b in redirecciones), encoding="utf-8")
     (WEB / "indice.json").write_text(json.dumps([[e["titulo"], e["slug"], CATEGORIAS[e["categoria"]][1]] for e in sorted(eventos, key=orden)],
                                                 ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     (WEB / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-                                     + "".join(f"<url><loc>{DOMINIO}{r}</loc><lastmod>{hoy}</lastmod></url>\n" for r in rutas) + "</urlset>\n", encoding="utf-8")
+                                     + "".join(f"<url><loc>{DOMINIO}{r}</loc><lastmod>{modificado.get(r, hoy)}</lastmod></url>\n" for r in rutas) + "</urlset>\n", encoding="utf-8")
     (WEB / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {DOMINIO}/sitemap.xml\n", encoding="utf-8")
     (WEB / "ads.txt").write_text(f"google.com, {ADSENSE.replace('ca-', '')}, DIRECT, f08c47fec0942fa0\n", encoding="utf-8")
     con_fecha = sum(1 for e in eventos if fecha_de(e))
