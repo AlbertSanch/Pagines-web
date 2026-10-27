@@ -178,6 +178,8 @@ castilla-y-leon 2027 cyl_leon_2027: 5 nombres sin municipio del INE (pedanías o
 castilla-y-leon 2027 cyl_palencia_2027: 35 nombres sin municipio del INE (pedanías o variantes): Anuncios Municipal., Arroyo, BOP de Palencia                          Lunes, Barrios de la Vega, CASTRILLO DE ONIELO               no comunicado, CUARTA. - ADMISIÓN DE ASPIRANTES, Cascón de la Nava, Gañinas de la Vega, HECHOS, Hijosa de Boedo, Leg, Lobera de la Vega, Miñanes, PUEBLA DE VALDAVIA, Población de Soto, Portillejo, Quintanadiez de la Vega, Revilla de Campos, Robladillo de Ucieza, Santa Olaja de la Vega, Valdecañas de Cerrato, Valdespina, Velillas del Duque, Villacuende, Villamorco, Villantodrigo, Villanueva de los Nabos, Villaproviano, Villarmienzo, Villarrodrigo de la Vega, Villasabariego de Ucieza, Villotilla
 castilla-y-leon 2027 cyl_zamora_2027: 29 nombres sin municipio del INE (pedanías o variantes): AbeZaneS, AlMeida, BOLETÍN OFICIAL DE LA PROVINCIA DE ZAMORA, BretÓ de la ribera, CaÑiZo de caMPoS, Cód., FerrerUela de tÁbara, GranUcillo de VidrialeS, RoaleS del Pan, Verificación: https://diputaciondezamora.sedelectronica.es/
 cyl_zamora_2027_c1: corrige o añade 0 municipios: 
+pais-vasco 2027 bizkaia_2027: 4 nombres sin municipio del INE (pedanías o variantes): Abanto y Ciérvana, Sumario, Trucíos, Valle de Karrantza
+bizkaia_2027: fiesta común a toda la provincia 48: [{'f': '2027-07-31', 'n': 'San Ignacio de Loyola'}]
 castilla-y-leon 2027: GRANDES Y SAN MARTÍN aparece dos veces en cyl_avila_2027; se queda la primera
 castilla-y-leon 2027: NARRILLOS DEL ÁLAMO - aparece dos veces en cyl_avila_2027; se queda la primera
 castilla-y-leon 2027: SAN LORENZO DE TORMES - aparece dos veces en cyl_avila_2027; se queda la primera
@@ -198,7 +200,7 @@ castilla-y-leon 2027 cyl_avila_2027: 46 nombres sin municipio del INE (pedanías
 == 2027 madrid: 0 de 179 municipios con fiestas locales
 == 2027 murcia: 45 de 45 municipios con fiestas locales
 == 2027 navarra: 0 de 272 municipios con fiestas locales
-== 2027 pais-vasco: 0 de 252 municipios con fiestas locales
+== 2027 pais-vasco: 110 de 252 municipios con fiestas locales
 == 2027 la-rioja: 165 de 174 municipios con fiestas locales
 == 2027 valenciana: 0 de 543 municipios con fiestas locales
 == 2027 ceuta: 0 de 1 municipios con fiestas locales
