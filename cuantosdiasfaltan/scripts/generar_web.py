@@ -485,7 +485,7 @@ def pagina_evento(e, eventos):
 
 def evento_ld(e, d, url):
     """Event de schema.org para lo que es un evento con lugar (partidos, festivales, conciertos, fiestas)."""
-    if e["categoria"] not in ("deportes", "musica", "fiestas", "eventos") or not d or not e.get("lugar"):
+    if e["categoria"] not in ("deportes", "musica", "fiestas", "eventos") or not d or not e.get("lugar") or e["lugar"] == "España":
         return None
     inicio = d.isoformat()
     h = hora_de(e)
@@ -496,9 +496,22 @@ def evento_ld(e, d, url):
         inicio = momento.strftime("%Y-%m-%dT%H:%M") + ("+02:00" if verano else "+01:00")
     texto = re.sub(r"<[^>]+>", "", " ".join(TEXTOS_EVENTO.get(e["slug"], [])[:1])) or e["titulo"]
     lugar = re.split(r"[;(]", e["lugar"])[0].strip(" ,")
-    return {"@context": "https://schema.org", "@type": "Event", "name": e["titulo"], "startDate": inicio, "description": texto,
-            "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "location": {"@type": "Place", "name": lugar, "address": lugar}, "image": f"{DOMINIO}/og/{e['slug']}.png", "url": url}
+    ld = {"@context": "https://schema.org", "@type": "Event", "name": e["titulo"], "startDate": inicio, "description": texto,
+          "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {"@type": "Place", "name": lugar, "address": lugar}, "image": f"{DOMINIO}/og/{e['slug']}.png", "url": url}
+    # Fin: el del evento si dura varios días; si es de un día (una carrera, una final, una gala), el mismo.
+    if e.get("fin"):
+        ld["endDate"] = e["fin"]
+    elif UN_DIA.search(e["slug"]):
+        ld["endDate"] = inicio
+    if e.get("organizador"):
+        ld["organizer"] = {"@type": "Organization", "name": e["organizador"]["nombre"], "url": e["organizador"]["url"]}
+    if e.get("artista"):
+        ld["performer"] = {"@type": "MusicGroup", "name": e["artista"]}
+    return ld
+
+
+UN_DIA = re.compile(r"^(gp-|final-|super-bowl|eurovision|maraton|oscar|premios-goya|grammy|f1-|motogp-)")
 
 
 def respuesta_directa(e, d, objetivo):

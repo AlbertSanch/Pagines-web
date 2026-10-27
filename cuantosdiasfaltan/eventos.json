@@ -313,7 +313,11 @@
   "hora_dia": "2027-02-15",
   "hora_que": "el partido",
   "hora_aprox": true,
-  "en_frase": "la Super Bowl LXI"
+  "en_frase": "la Super Bowl LXI",
+  "organizador": {
+   "nombre": "NFL",
+   "url": "https://www.nfl.com"
+  }
  },
  {
   "titulo": "Mobile World Congress 2027",
@@ -343,7 +347,11 @@
   "serie": "eurovision",
   "hora": "21:00",
   "hora_que": "la final",
-  "hora_aprox": true
+  "hora_aprox": true,
+  "organizador": {
+   "nombre": "Unión Europea de Radiodifusión (UER)",
+   "url": "https://eurovision.tv"
+  }
  },
  {
   "titulo": "Elecciones municipales y autonómicas 2027",
@@ -368,7 +376,11 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Fráncfort (Alemania)",
-  "serie": "final-europa-league"
+  "serie": "final-europa-league",
+  "organizador": {
+   "nombre": "UEFA",
+   "url": "https://www.uefa.com"
+  }
  },
  {
   "titulo": "Final de la Champions League 2027",
@@ -384,7 +396,11 @@
   "serie": "final-champions",
   "hora": "21:00",
   "hora_que": "la final",
-  "hora_aprox": true
+  "hora_aprox": true,
+  "organizador": {
+   "nombre": "UEFA",
+   "url": "https://www.uefa.com"
+  }
  },
  {
   "titulo": "Mundial Femenino 2027",
@@ -396,7 +412,12 @@
   "fuente_nombre": "FIFA",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "Brasil, del 24 de junio al 25 de julio"
+  "lugar": "Brasil, del 24 de junio al 25 de julio",
+  "fin": "2027-07-25",
+  "organizador": {
+   "nombre": "FIFA",
+   "url": "https://www.fifa.com"
+  }
  },
  {
   "titulo": "Tour de Francia 2027",
@@ -437,7 +458,8 @@
   "fuente_nombre": "ACI Prensa (anuncio del papa León XIV)",
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
-  "lugar": "Seúl, del 3 al 8 de agosto"
+  "lugar": "Seúl, del 3 al 8 de agosto",
+  "fin": "2027-08-08"
  },
  {
   "titulo": "Mundial de Baloncesto 2027",
@@ -449,7 +471,12 @@
   "fuente_nombre": "Wikipedia / Gulf Times",
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
-  "lugar": "Qatar, del 27 de agosto al 12 de septiembre"
+  "lugar": "Qatar, del 27 de agosto al 12 de septiembre",
+  "fin": "2027-09-12",
+  "organizador": {
+   "nombre": "FIBA",
+   "url": "https://www.fiba.basketball"
+  }
  },
  {
   "titulo": "Gran Premio de España de F1 2027 (Madrid)",
@@ -462,7 +489,11 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Circuito Madring (IFEMA), Madrid",
-  "serie": "gp-espana-f1"
+  "serie": "gp-espana-f1",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
  },
  {
   "titulo": "Mundial de Rugby 2027",
@@ -474,7 +505,11 @@
   "fuente_nombre": "World Rugby",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "Australia; final el 13 de noviembre"
+  "lugar": "Australia; final el 13 de noviembre",
+  "organizador": {
+   "nombre": "World Rugby",
+   "url": "https://www.world.rugby"
+  }
  },
  {
   "titulo": "Eclipse anular de Sol en España",
@@ -498,7 +533,11 @@
   "fuente_nombre": "UEFA",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "Reino Unido e Irlanda; final el 9 de julio en Wembley"
+  "lugar": "Reino Unido e Irlanda; final el 9 de julio en Wembley",
+  "organizador": {
+   "nombre": "UEFA",
+   "url": "https://www.uefa.com"
+  }
  },
  {
   "titulo": "Juegos Olímpicos de Los Ángeles 2028",
@@ -510,7 +549,11 @@
   "fuente_nombre": "LA28 (comité organizador)",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "Los Ángeles (EE. UU.); inauguración"
+  "lugar": "Los Ángeles (EE. UU.); inauguración",
+  "organizador": {
+   "nombre": "LA28",
+   "url": "https://la28.org"
+  }
  },
  {
   "titulo": "Juegos Olímpicos de Invierno 2030",
@@ -522,7 +565,12 @@
   "fuente_nombre": "COI",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "Alpes franceses, del 1 al 17 de febrero"
+  "lugar": "Alpes franceses, del 1 al 17 de febrero",
+  "fin": "2030-02-17",
+  "organizador": {
+   "nombre": "Comité Olímpico Internacional",
+   "url": "https://www.olympics.com"
+  }
  },
  {
   "titulo": "Mundial 2030",
@@ -996,7 +1044,11 @@
   "serie": "gp-mexico-f1",
   "hora": "21:00",
   "hora_que": "la carrera",
-  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/"
+  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
  },
  {
   "titulo": "GP de Brasil de F1 2026",
@@ -1013,7 +1065,11 @@
   "serie": "gp-brasil-f1",
   "hora": "18:00",
   "hora_que": "la carrera",
-  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/"
+  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
  },
  {
   "titulo": "ATP Finals 2026",
@@ -1027,7 +1083,12 @@
   "comprobado": "2026-10-25",
   "lugar": "Inalpi Arena, Turín",
   "en_frase": "las ATP Finals 2026",
-  "serie": "atp-finals"
+  "serie": "atp-finals",
+  "fin": "2026-11-22",
+  "organizador": {
+   "nombre": "ATP",
+   "url": "https://www.atptour.com"
+  }
  },
  {
   "titulo": "GP de Las Vegas de F1 2026",
@@ -1045,7 +1106,11 @@
   "hora": "05:00",
   "hora_dia": "2026-11-22",
   "hora_que": "la carrera",
-  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/"
+  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
  },
  {
   "titulo": "GP de Qatar de F1 2026",
@@ -1062,7 +1127,11 @@
   "serie": "gp-qatar-f1",
   "hora": "17:00",
   "hora_que": "la carrera",
-  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/"
+  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
  },
  {
   "titulo": "GP de Malasia de MotoGP 2026",
@@ -1079,7 +1148,11 @@
   "serie": "gp-malasia-motogp",
   "hora": "08:00",
   "hora_que": "la carrera de MotoGP",
-  "hora_fuente": "https://www.motogp.com/es/calendar"
+  "hora_fuente": "https://www.motogp.com/es/calendar",
+  "organizador": {
+   "nombre": "MotoGP",
+   "url": "https://www.motogp.com"
+  }
  },
  {
   "titulo": "GP de Qatar de MotoGP 2026",
@@ -1096,7 +1169,11 @@
   "serie": "gp-qatar-motogp",
   "hora": "18:00",
   "hora_que": "la carrera de MotoGP",
-  "hora_fuente": "https://www.motogp.com/es/calendar"
+  "hora_fuente": "https://www.motogp.com/es/calendar",
+  "organizador": {
+   "nombre": "MotoGP",
+   "url": "https://www.motogp.com"
+  }
  },
  {
   "titulo": "GP de Portugal de MotoGP 2026",
@@ -1113,7 +1190,11 @@
   "serie": "gp-portugal-motogp",
   "hora": "14:00",
   "hora_que": "la carrera de MotoGP",
-  "hora_fuente": "https://www.motogp.com/es/calendar"
+  "hora_fuente": "https://www.motogp.com/es/calendar",
+  "organizador": {
+   "nombre": "MotoGP",
+   "url": "https://www.motogp.com"
+  }
  },
  {
   "titulo": "GP de Valencia de MotoGP 2026",
@@ -1133,7 +1214,11 @@
   "serie": "gp-valencia-motogp",
   "hora": "14:00",
   "hora_que": "la carrera de MotoGP",
-  "hora_fuente": "https://www.motogp.com/es/calendar"
+  "hora_fuente": "https://www.motogp.com/es/calendar",
+  "organizador": {
+   "nombre": "MotoGP",
+   "url": "https://www.motogp.com"
+  }
  },
  {
   "titulo": "Final de la Copa Davis 2026",
@@ -1149,7 +1234,11 @@
   "en_frase": "la final de la Copa Davis 2026",
   "serie": "final-copa-davis",
   "hora": "15:00",
-  "hora_que": "la final"
+  "hora_que": "la final",
+  "organizador": {
+   "nombre": "ITF (Copa Davis)",
+   "url": "https://www.daviscup.com"
+  }
  },
  {
   "titulo": "Maratón de Valencia 2026",
@@ -1182,7 +1271,11 @@
   "serie": "gp-abu-dabi-f1",
   "hora": "14:00",
   "hora_que": "la carrera",
-  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/"
+  "hora_fuente": "https://www.motorsport.com/f1/news/f1-2026-race-start-times-in-full-canadian-gp-start-moved-to-avoid-indy-500-clash/10759863/",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
  },
  {
   "titulo": "Semifinales de la Supercopa de España 2027",
@@ -1198,7 +1291,11 @@
   "en_frase": "las semifinales de la Supercopa 2027",
   "serie": "semifinales-supercopa",
   "hora": "20:00",
-  "hora_que": "la primera semifinal (Barcelona-Atlético)"
+  "hora_que": "la primera semifinal (Barcelona-Atlético)",
+  "organizador": {
+   "nombre": "RFEF",
+   "url": "https://rfef.es"
+  }
  },
  {
   "titulo": "Final de la Supercopa de España 2027",
@@ -1214,7 +1311,11 @@
   "en_frase": "la final de la Supercopa 2027",
   "serie": "final-supercopa",
   "hora": "20:00",
-  "hora_que": "la final"
+  "hora_que": "la final",
+  "organizador": {
+   "nombre": "RFEF",
+   "url": "https://rfef.es"
+  }
  },
  {
   "titulo": "Mundial de MotoGP 2027 (primera carrera)",
@@ -1228,7 +1329,11 @@
   "comprobado": "2026-10-25",
   "lugar": "Buriram (Tailandia)",
   "en_frase": "el Mundial de MotoGP 2027",
-  "serie": "mundial-motogp"
+  "serie": "mundial-motogp",
+  "organizador": {
+   "nombre": "MotoGP",
+   "url": "https://www.motogp.com"
+  }
  },
  {
   "titulo": "GP de Qatar de MotoGP 2027",
@@ -1242,7 +1347,11 @@
   "comprobado": "2026-10-26",
   "lugar": "Circuito de Lusail (Qatar)",
   "en_frase": "el GP de Qatar de MotoGP 2027",
-  "serie": "gp-qatar-motogp"
+  "serie": "gp-qatar-motogp",
+  "organizador": {
+   "nombre": "MotoGP",
+   "url": "https://www.motogp.com"
+  }
  },
  {
   "titulo": "Mundial de F1 2027 (primera carrera)",
@@ -1256,7 +1365,11 @@
   "comprobado": "2026-10-25",
   "lugar": "Sakhir (Baréin)",
   "en_frase": "el Mundial de F1 2027",
-  "serie": "mundial-f1"
+  "serie": "mundial-f1",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
  },
  {
   "titulo": "Mutua Madrid Open 2027",
@@ -1270,7 +1383,12 @@
   "comprobado": "2026-10-25",
   "lugar": "Caja Mágica, Madrid",
   "en_frase": "el Mutua Madrid Open 2027",
-  "serie": "mutua-madrid-open"
+  "serie": "mutua-madrid-open",
+  "fin": "2027-05-02",
+  "organizador": {
+   "nombre": "Mutua Madrid Open",
+   "url": "https://mutuamadridopen.com"
+  }
  },
  {
   "titulo": "Final de la Copa del Rey 2027",
@@ -1284,7 +1402,11 @@
   "comprobado": "2026-10-25",
   "lugar": "Estadio de La Cartuja, Sevilla",
   "en_frase": "la final de la Copa del Rey 2027",
-  "serie": "final-copa-del-rey"
+  "serie": "final-copa-del-rey",
+  "organizador": {
+   "nombre": "RFEF",
+   "url": "https://rfef.es"
+  }
  },
  {
   "titulo": "Maratón de Madrid 2027",
@@ -1314,7 +1436,11 @@
   "comprobado": "2026-10-25",
   "lugar": "Circuito de Jerez-Ángel Nieto",
   "en_frase": "el GP de Jerez de MotoGP 2027",
-  "serie": "gp-jerez-motogp"
+  "serie": "gp-jerez-motogp",
+  "organizador": {
+   "nombre": "MotoGP",
+   "url": "https://www.motogp.com"
+  }
  },
  {
   "titulo": "Clásico Real Madrid - Barcelona (mayo de 2027)",
@@ -1343,7 +1469,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "París",
-  "serie": "roland-garros"
+  "serie": "roland-garros",
+  "fin": "2027-06-06"
  },
  {
   "titulo": "Final Four de la Euroliga 2027",
@@ -1391,7 +1518,11 @@
   "comprobado": "2026-10-25",
   "lugar": "Montecarlo",
   "en_frase": "el GP de Mónaco de F1 2027",
-  "serie": "gp-monaco-f1"
+  "serie": "gp-monaco-f1",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
  },
  {
   "titulo": "GP de Catalunya de MotoGP 2027 (Montmeló)",
@@ -1405,7 +1536,11 @@
   "comprobado": "2026-10-25",
   "lugar": "Circuit de Barcelona-Catalunya, Montmeló",
   "en_frase": "el GP de Montmeló de MotoGP 2027",
-  "serie": "gp-catalunya-motogp"
+  "serie": "gp-catalunya-motogp",
+  "organizador": {
+   "nombre": "MotoGP",
+   "url": "https://www.motogp.com"
+  }
  },
  {
   "titulo": "Mundial de Natación Budapest 2027",
@@ -1418,7 +1553,12 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Budapest (Hungría)",
-  "en_frase": "el Mundial de Natación 2027"
+  "en_frase": "el Mundial de Natación 2027",
+  "fin": "2027-07-18",
+  "organizador": {
+   "nombre": "World Aquatics",
+   "url": "https://www.worldaquatics.com"
+  }
  },
  {
   "titulo": "Wimbledon 2027",
@@ -1431,7 +1571,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Londres",
-  "serie": "wimbledon"
+  "serie": "wimbledon",
+  "fin": "2027-07-11"
  },
  {
   "titulo": "GP de Gran Bretaña de F1 2027",
@@ -1445,7 +1586,11 @@
   "comprobado": "2026-10-25",
   "lugar": "Silverstone",
   "en_frase": "el GP de Gran Bretaña de F1 2027",
-  "serie": "gp-gran-bretana-f1"
+  "serie": "gp-gran-bretana-f1",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
  },
  {
   "titulo": "Vuelta a España 2027",
@@ -1473,7 +1618,11 @@
   "comprobado": "2026-10-25",
   "lugar": "Monza",
   "en_frase": "el GP de Monza de F1 2027",
-  "serie": "gp-italia-f1"
+  "serie": "gp-italia-f1",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
  },
  {
   "titulo": "Mundial de Atletismo Pekín 2027",
@@ -1486,7 +1635,12 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Pekín (China)",
-  "en_frase": "el Mundial de Atletismo 2027"
+  "en_frase": "el Mundial de Atletismo 2027",
+  "fin": "2027-09-19",
+  "organizador": {
+   "nombre": "World Athletics",
+   "url": "https://worldathletics.org"
+  }
  },
  {
   "titulo": "GP de Aragón de MotoGP 2027",
@@ -1500,7 +1654,11 @@
   "comprobado": "2026-10-25",
   "lugar": "MotorLand Aragón, Alcañiz",
   "en_frase": "el GP de Aragón de MotoGP 2027",
-  "serie": "gp-aragon-motogp"
+  "serie": "gp-aragon-motogp",
+  "organizador": {
+   "nombre": "MotoGP",
+   "url": "https://www.motogp.com"
+  }
  },
  {
   "titulo": "GP de Portugal de MotoGP 2027",
@@ -1514,7 +1672,11 @@
   "comprobado": "2026-10-26",
   "lugar": "Autódromo Internacional do Algarve, Portimão",
   "en_frase": "el GP de Portugal de MotoGP 2027",
-  "serie": "gp-portugal-motogp"
+  "serie": "gp-portugal-motogp",
+  "organizador": {
+   "nombre": "MotoGP",
+   "url": "https://www.motogp.com"
+  }
  },
  {
   "titulo": "GP de Malasia de MotoGP 2027",
@@ -1528,7 +1690,11 @@
   "comprobado": "2026-10-26",
   "lugar": "Circuito de Sepang (Malasia)",
   "en_frase": "el GP de Malasia de MotoGP 2027",
-  "serie": "gp-malasia-motogp"
+  "serie": "gp-malasia-motogp",
+  "organizador": {
+   "nombre": "MotoGP",
+   "url": "https://www.motogp.com"
+  }
  },
  {
   "titulo": "GP de Valencia de MotoGP 2027",
@@ -1542,7 +1708,11 @@
   "comprobado": "2026-10-25",
   "lugar": "Circuit Ricardo Tormo, Cheste",
   "en_frase": "el GP de Valencia de MotoGP 2027",
-  "serie": "gp-valencia-motogp"
+  "serie": "gp-valencia-motogp",
+  "organizador": {
+   "nombre": "MotoGP",
+   "url": "https://www.motogp.com"
+  }
  },
  {
   "titulo": "GP de Abu Dabi de F1 2027",
@@ -1556,7 +1726,11 @@
   "comprobado": "2026-10-25",
   "lugar": "Yas Marina (Abu Dabi), última carrera del año",
   "en_frase": "el GP de Abu Dabi de F1 2027",
-  "serie": "gp-abu-dabi-f1"
+  "serie": "gp-abu-dabi-f1",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
  },
  {
   "titulo": "Concierto de Pitbull en España 2026",
@@ -1569,7 +1743,9 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Barcelona (Palau Sant Jordi) el 4 de noviembre y Madrid (Movistar Arena) el 5",
-  "en_frase": "el concierto de Pitbull"
+  "en_frase": "el concierto de Pitbull",
+  "fin": "2026-11-05",
+  "artista": "Pitbull"
  },
  {
   "titulo": "Vetusta Morla en Madrid 2026",
@@ -1582,7 +1758,9 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Movistar Arena, Madrid (19, 20 y 21 de noviembre)",
-  "en_frase": "el concierto de Vetusta Morla en Madrid"
+  "en_frase": "el concierto de Vetusta Morla en Madrid",
+  "fin": "2026-11-21",
+  "artista": "Vetusta Morla"
  },
  {
   "titulo": "Muse en España 2027",
@@ -1595,7 +1773,9 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Madrid (Movistar Arena) 19 y 20 de enero; Valencia (Roig Arena) 23 y 24",
-  "en_frase": "el concierto de Muse"
+  "en_frase": "el concierto de Muse",
+  "fin": "2027-01-24",
+  "artista": "Muse"
  },
  {
   "titulo": "Quevedo: El Baifo Tour 2027",
@@ -1608,7 +1788,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Madrid (Movistar Arena) desde el 9 de abril; Barcelona (Palau Sant Jordi) desde el 31 de mayo",
-  "en_frase": "la gira de Quevedo"
+  "en_frase": "la gira de Quevedo",
+  "artista": "Quevedo"
  },
  {
   "titulo": "Viña Rock 2027",
@@ -1622,7 +1803,8 @@
   "comprobado": "2026-10-25",
   "lugar": "Villarrobledo (Albacete), del 29 de abril al 1 de mayo",
   "en_frase": "el Viña Rock 2027",
-  "serie": "vina-rock"
+  "serie": "vina-rock",
+  "fin": "2027-05-01"
  },
  {
   "titulo": "Olivia Rodrigo en Barcelona 2027",
@@ -1635,7 +1817,9 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Palau Sant Jordi, Barcelona (1, 2, 5 y 6 de mayo)",
-  "en_frase": "el concierto de Olivia Rodrigo"
+  "en_frase": "el concierto de Olivia Rodrigo",
+  "fin": "2027-05-06",
+  "artista": "Olivia Rodrigo"
  },
  {
   "titulo": "Primavera Sound 2027",
@@ -1662,7 +1846,9 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Barcelona 3 y 4 de junio; Sevilla 11, 12 y 13; Madrid 24, 25, 26 y 27",
-  "en_frase": "el concierto de Karol G"
+  "en_frase": "el concierto de Karol G",
+  "fin": "2027-06-27",
+  "artista": "Karol G"
  },
  {
   "titulo": "Estopa: gira de estadios 2027",
@@ -1675,7 +1861,9 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Valencia 12 de junio, Barcelona 18, Sevilla 26 y Madrid 9 de julio",
-  "en_frase": "el concierto de Estopa"
+  "en_frase": "el concierto de Estopa",
+  "fin": "2027-07-09",
+  "artista": "Estopa"
  },
  {
   "titulo": "Sónar 2027",
@@ -1689,7 +1877,8 @@
   "comprobado": "2026-10-25",
   "lugar": "Fira de Barcelona (17, 18 y 19 de junio)",
   "en_frase": "el Sónar 2027",
-  "serie": "sonar"
+  "serie": "sonar",
+  "fin": "2027-06-19"
  },
  {
   "titulo": "Resurrection Fest 2027",
@@ -1703,7 +1892,8 @@
   "comprobado": "2026-10-25",
   "lugar": "Viveiro (Lugo), del 30 de junio al 3 de julio",
   "en_frase": "el Resurrection Fest 2027",
-  "serie": "resurrection-fest"
+  "serie": "resurrection-fest",
+  "fin": "2027-07-03"
  },
  {
   "titulo": "Mad Cool 2027",
@@ -1737,7 +1927,12 @@
   "comprobado": "2026-10-25",
   "lugar": "Parc del Fòrum, Barcelona (7 al 10 de julio)",
   "en_frase": "el Cruïlla 2027",
-  "serie": "cruilla"
+  "serie": "cruilla",
+  "fin": "2027-07-10",
+  "organizador": {
+   "nombre": "Festival Cruïlla",
+   "url": "https://www.cruillabarcelona.com"
+  }
  },
  {
   "titulo": "Bilbao BBK Live 2027",
@@ -1764,7 +1959,9 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Estadi Olímpic, Barcelona (10 y 11 de julio)",
-  "en_frase": "el concierto de Oasis en Barcelona"
+  "en_frase": "el concierto de Oasis en Barcelona",
+  "fin": "2027-07-11",
+  "artista": "Oasis"
  },
  {
   "titulo": "FIB Benicàssim 2027",
@@ -1778,7 +1975,8 @@
   "comprobado": "2026-10-25",
   "lugar": "Benicàssim (15, 16 y 17 de julio)",
   "en_frase": "el FIB 2027",
-  "serie": "fib"
+  "serie": "fib",
+  "fin": "2027-07-17"
  },
  {
   "titulo": "Arenal Sound 2027",
@@ -1792,7 +1990,12 @@
   "comprobado": "2026-10-25",
   "lugar": "Playa de Burriana, del 29 de julio al 1 de agosto",
   "en_frase": "el Arenal Sound 2027",
-  "serie": "arenal-sound"
+  "serie": "arenal-sound",
+  "fin": "2027-08-01",
+  "organizador": {
+   "nombre": "Arenal Sound",
+   "url": "https://arenalsound.com"
+  }
  },
  {
   "titulo": "Harry Styles en Madrid 2027",
@@ -1805,7 +2008,9 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Riyadh Air Metropolitano, Madrid (30 y 31 de julio)",
-  "en_frase": "el concierto de Harry Styles"
+  "en_frase": "el concierto de Harry Styles",
+  "fin": "2027-07-31",
+  "artista": "Harry Styles"
  },
  {
   "titulo": "Medusa Festival 2027",
@@ -1819,7 +2024,8 @@
   "comprobado": "2026-10-25",
   "lugar": "Playa de Cullera, del 12 al 16 de agosto",
   "en_frase": "el Medusa 2027",
-  "serie": "medusa-festival"
+  "serie": "medusa-festival",
+  "fin": "2027-08-16"
  },
  {
   "titulo": "FITUR 2027",
@@ -1832,7 +2038,12 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "IFEMA Madrid (público general el 23 y 24 de enero)",
-  "serie": "fitur"
+  "serie": "fitur",
+  "fin": "2027-01-24",
+  "organizador": {
+   "nombre": "IFEMA",
+   "url": "https://www.ifema.es"
+  }
  },
  {
   "titulo": "Final del Concurso del Carnaval de Cádiz 2027",
@@ -1892,7 +2103,8 @@
   "comprobado": "2026-10-25",
   "lugar": "Santa Cruz de Tenerife: carnaval en la calle del 19 al 28 de febrero",
   "en_frase": "el Carnaval de Tenerife 2027",
-  "serie": "carnaval-tenerife"
+  "serie": "carnaval-tenerife",
+  "fin": "2027-02-28"
  },
  {
   "titulo": "ARCOmadrid 2027",
@@ -1906,7 +2118,12 @@
   "comprobado": "2026-10-25",
   "lugar": "IFEMA Madrid (público del 5 al 7 de marzo)",
   "en_frase": "ARCO 2027",
-  "serie": "arco"
+  "serie": "arco",
+  "fin": "2027-03-07",
+  "organizador": {
+   "nombre": "IFEMA",
+   "url": "https://www.ifema.es"
+  }
  },
  {
   "titulo": "Premios Óscar 2027",
@@ -1924,7 +2141,11 @@
   "hora": "00:00",
   "hora_dia": "2027-03-15",
   "hora_que": "la gala",
-  "hora_aprox": true
+  "hora_aprox": true,
+  "organizador": {
+   "nombre": "Academia de Hollywood",
+   "url": "https://www.oscars.org"
+  }
  },
  {
   "titulo": "Fallas 2027",
@@ -1938,7 +2159,8 @@
   "comprobado": "2026-10-25",
   "lugar": "València: plantà el 15 y 16 de marzo, cremà la noche del 19",
   "en_frase": "las Fallas 2027",
-  "serie": "fallas"
+  "serie": "fallas",
+  "fin": "2027-03-19"
  },
  {
   "titulo": "Feria de Abril de Sevilla 2027",
@@ -1969,7 +2191,8 @@
   "comprobado": "2026-10-25",
   "lugar": "Alcoy (del 24 al 26 de abril)",
   "en_frase": "los Moros y Cristianos de Alcoy",
-  "serie": "moros-y-cristianos-alcoy"
+  "serie": "moros-y-cristianos-alcoy",
+  "fin": "2027-04-26"
  },
  {
   "titulo": "Feria del Libro de Madrid 2027",
@@ -2019,7 +2242,8 @@
   "en_frase": "San Fermín 2027",
   "serie": "san-fermin",
   "hora": "12:00",
-  "hora_que": "el chupinazo"
+  "hora_que": "el chupinazo",
+  "fin": "2027-07-14"
  },
  {
   "titulo": "Semana Grande de Bilbao 2027 (Aste Nagusia)",
