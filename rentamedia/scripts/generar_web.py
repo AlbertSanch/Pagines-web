@@ -253,7 +253,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="site-footer">
   <div class="container">
     <p><strong>{SITIO}</strong> muestra la renta media de cada municipio, provincia y barrio de España con los datos oficiales del Instituto Nacional de Estadística (INE).</p>
-    <div class="links"><a href="/">Buscar un municipio</a><a href="/municipios-mas-ricos-de-espana/">Municipios más ricos</a><a href="/municipios-mas-pobres-de-espana/">Municipios más pobres</a><a href="/ciudades-mas-ricas-de-espana/">Ciudades más ricas</a><a href="/provincias/">Provincias y comunidades</a><a href="/barrios/">Barrios de cada ciudad</a><a href="/barrios-mas-ricos-de-espana/">Barrios más ricos de España</a><a href="/alquiler/">Precio del alquiler</a><a href="/comparar-renta/">¿Estás por encima de la media?</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="links"><a href="/">Buscar un municipio</a><a href="/municipios-mas-ricos-de-espana/">Municipios más ricos</a><a href="/municipios-mas-pobres-de-espana/">Municipios más pobres</a><a href="/ciudades-mas-ricas-de-espana/">Ciudades más ricas</a><a href="/provincias/">Provincias y comunidades</a><a href="/barrios/">Barrios de cada ciudad</a><a href="/barrios-mas-ricos-de-espana/">Barrios más ricos de España</a><a href="/alquiler/">Precio del alquiler</a><a href="/comparar-renta/">¿Estás por encima de la media?</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/contacto/">Contacto</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Fuente: INE, Atlas de Distribución de Renta de los Hogares. Datos reutilizados conforme a sus condiciones de uso; esta web no está vinculada al INE.</p>
   </div>
 </footer>
@@ -745,6 +745,7 @@ def pagina_municipio(m, T, por_prov, total_es, anios, t):
                           + (f" y la disponible, después de impuestos, de {euros(h['disponible_media'])}" if h.get("disponible_media") else "")
                           + (f", frente a {euros(h['bruta_media_ant'])} brutos en {ah - 1}" if h.get("bruta_media_ant") else "")
                           + f". La media de España fue de {euros(hes['bruta_media'])} brutos."))
+    if m["renta"]:
         descripcion = (f"Renta media y per cápita de {nombre} ({prov_nombre}): {euros(m['renta'])} por persona y "
                        f"{euros(m['hogar']) + ' por hogar' if m['hogar'] else ''} al año ({ultimo}). Puesto {m['puesto_es']} de España "
                        f"y {m['puesto_prov']} de su provincia. Evolución desde 2015.")
@@ -1342,6 +1343,22 @@ def paginas_legales(anios):
 <p>No cedemos datos a terceros salvo obligación legal. Google y Cloudflare pueden tratar datos como proveedores del servicio; algunos pueden estar fuera del Espacio Económico Europeo, con las garantías previstas en el RGPD.</p>
 <h2>Tus derechos</h2>
 <p>Puedes ejercer tus derechos de acceso, rectificación, supresión y demás escribiendo a {t['email']}. También puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).</p></div>"""
+    nosotros = f"""<h1>Sobre nosotros</h1><div class="content">
+<p>{SITIO} es un proyecto independiente que quiere responder de forma clara a una pregunta que se hace mucha gente: <strong>¿cuánto se gana en mi municipio?</strong></p>
+<p>El INE publica cada año la renta de todos los municipios, distritos y secciones censales de España, pero en tablas difíciles de consultar. Aquí la ordenamos por municipio, la comparamos con la provincia y con España, la ponemos en mapas y la acompañamos de los datos de Hacienda y del precio del alquiler, siempre con fuentes oficiales y sin estimar cifras que no se publican.</p>
+<h2>Cómo trabajamos</h2>
+<ul>
+<li>Solo usamos datos oficiales: el Atlas de Distribución de Renta de los Hogares del INE, la estadística de declarantes del IRPF de la Agencia Tributaria y el Sistema Estatal de Referencia del Precio del Alquiler de Vivienda (SERPAVI) del Ministerio de Vivienda.</li>
+<li>La web se actualiza automáticamente cuando se publican datos nuevos.</li>
+<li>Si un dato no está publicado, lo decimos: nunca lo inventamos. Más detalles en <a href="/sobre-los-datos/">Sobre los datos</a>.</li>
+</ul>
+<h2>Contacto</h2>
+<p>¿Has visto un error o echas algo en falta? Escríbenos desde la página de <a href="/contacto/">contacto</a>.</p></div>"""
+    contacto = f"""<h1>Contacto</h1><div class="content">
+<p>¿Has encontrado un error, quieres proponer una mejora o tienes una pregunta sobre los datos? Escríbenos a <a href="mailto:{t['email']}">{t['email']}</a> y te responderemos lo antes posible.</p>
+<p>Si nos avisas de un dato que crees que está mal, indica el municipio y el año. Recuerda que las cifras son las que publica el INE: si hay una errata en el origen, te diremos cómo comunicarla.</p></div>"""
+    guardar("/sobre-nosotros/", pagina("/sobre-nosotros/", f"Sobre nosotros | {SITIO}", f"Qué es {SITIO}, de dónde salen sus datos y cómo trabajamos.", nosotros, [("Sobre nosotros", None)]))
+    guardar("/contacto/", pagina("/contacto/", f"Contacto | {SITIO}", f"Cómo contactar con {SITIO} para avisar de un error o proponer una mejora.", contacto, [("Contacto", None)]))
     guardar("/sobre-los-datos/", pagina("/sobre-los-datos/", "Sobre los datos: el Atlas de Distribución de Renta del INE",
                                         "De dónde salen los datos de renta por municipio (INE), qué significa cada cifra y por qué son de hace dos años.",
                                         sobre, [("Sobre los datos", None)]))
@@ -1349,7 +1366,7 @@ def paginas_legales(anios):
     guardar("/privacidad/", pagina("/privacidad/", f"Política de privacidad | {SITIO}", "Política de privacidad y cookies de rentamedia.es.", privacidad, [("Privacidad", None)]))
     guardar("/404.html", pagina("/404.html", "Página no encontrada", "Esta página no existe.",
                                 '<h1>Página no encontrada</h1><p>Busca tu municipio desde la <a href="/">portada</a>.</p>', indexable=False))
-    return ["/sobre-los-datos/", "/aviso-legal/", "/privacidad/"]
+    return ["/sobre-nosotros/", "/contacto/", "/sobre-los-datos/", "/aviso-legal/", "/privacidad/"]
 
 
 # ---------------------------------------------------------------- main
