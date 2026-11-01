@@ -366,6 +366,10 @@ def preparar_correccion(txt):
     frases = re.findall(r"[Mm]unicipio de ([A-ZÁÉÍÓÚÑ][\w' -]+?) para el año \d{4} (?:será|serán) (?:el|los)? ?(\d.*?\))", plano)
     if frases:
         return "\n".join(f"{a}: {b}" for a, b in frases)
+    # Gipuzkoa: «La fiesta local correspondiente a Anoeta queda fijada en el 27 de mayo de 2027, Corpus Christi, en sustitución…»
+    frases = re.findall(r"fiesta local correspondiente a ([A-ZÁÉÍÓÚÑ][\w' /-]+?) queda fijada en el (\d{1,2} de \w+)(?: de \d{4})?, ([^,]+?), en sustituci", plano)
+    if frases:
+        return "\n".join(f"{a}: {b} ({c})" for a, b, c in frases)
     # catalán -> castellano (meses y conjunción) para las órdenes del DOGC
     for ca, es in (("gener", "enero"), ("febrer", "febrero"), ("març", "marzo"), ("maig", "mayo"), ("juny", "junio"),
                    ("juliol", "julio"), ("setembre", "septiembre"), ("novembre", "noviembre"), ("desembre", "diciembre")):
