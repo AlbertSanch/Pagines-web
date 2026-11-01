@@ -186,6 +186,11 @@ castilla-y-leon 2027: SAN LORENZO DE TORMES - aparece dos veces en cyl_avila_202
 castilla-y-leon 2027: SANTIAGO DEL TORMES - aparece dos veces en cyl_avila_2027; se queda la primera
 castilla-y-leon 2027: SANTIAGO DEL TORMES - aparece dos veces en cyl_avila_2027; se queda la primera
 castilla-y-leon 2027 cyl_avila_2027: 46 nombres sin municipio del INE (pedanías o variantes): A n u n c io, ARENAS y SAN PEDRO DE ALCÁNTARA, ASUNCIÓN y SAN MIGUEL, BARTOLOMÉ, CARMEN, COSME Y SAN DAMIÁN, CRISTO, CRISTÓBAL, DE JESÚS, DE LA CUESTA, EVANGELISTA, GUZMAN y SANTÍSIMO CRISTO DE LA LUZ, JUAN DE LA CRUZ, LA LUZ y SANTÍSIMO CRISTO DE LA LUZ, LOCALIDAD                                          FIESTAS, LOCALIDAD                                       FIESTAS, LOCALIDAD                                      FIESTAS, LUNES DE VELA, MADRIGAL DE LAS ALTAS, MIGUEL, NAVA DE ARÉVALO - MAGAZOS, NAVA DE ARÉVALO - NOHARRE, NAVA DE ARÉVALO - PALACIOS, NAVA DE ARÉVALO - VINADERO, NAVALMORAL DE LA SIERRA, NAVASEQUILLA, NTRA SRA DEL SOTO, PADIERNOS - MUÑOCHAS, PADUA, RIVILLA, ROQUE, ROSARIO y SAN MIGUEL, SAN JUAN DE GREDOS - LA, SAN JUAN DE GREDOS - SAN, SAN MARTÍN DE LA VEGA DEL, SAN MIGUEL ARCÁNGEL, SANTIAGO DEL TORMES - LA, SANTO DOMINGO DE LAS, SEÑORA DEL ROSARIO, SOLEDAD, SOLOSANCHO - Baterna (Anejo), SOLOSANCHO - Robledillo (Anejo), TORRES                   LAS INJURIAS y SAN NICOLÁS DE BARI, TRANSFIGURACIÓN DEL SEÑOR, VERANO
+pais-vasco 2027 gipuzkoa_2027: 13 nombres sin municipio del INE (pedanías o variantes): Bidania, Ezkio auzoa, Goiatz, Itsaso hirigunea, Itsaso-Alegia auzoa, LEABURU-TXARAMA, Mendialdea Zozkera, P. Antxo, P. Donibane, P. San Pedro, PLACENCIA DE LAS ARMAS, Santa Luzia-Anduaga auzoa, Trintxerpe
+gipuzkoa_2027: fiesta común a toda la provincia 20: [{'f': '2027-07-31', 'n': 'San Ignacio de Loyola'}]
+gipuzkoa_2027_c1: corrige o añade 1 municipios: Anoeta
+pais-vasco 2027 alava_2027: 27 nombres sin municipio del INE (pedanías o variantes): Agiñaga, Añes, Beotegi, Costera, Cripán, Delegación territorial de Álava, Día de fiesta del territorio histórico, Erbi, Etxegoien, Izoria, Lejarzo, Llanteno, Luiaondo, Lujo, Madaria, Maroño, Menagarai, Menoio, Murga, Olabezar, Ozeka, Quejana, Respaldiza, Retes de Llanteno, Salmantón, Sojo, Zuaza
+alava_2027: fiesta común a toda la provincia 01: [{'f': '2027-04-28', 'n': 'San Prudencio'}]
 == 2027 andalucia: 0 de 786 municipios con fiestas locales
 == 2027 aragon: 0 de 731 municipios con fiestas locales
 == 2027 asturias: 72 de 78 municipios con fiestas locales
@@ -200,7 +205,7 @@ castilla-y-leon 2027 cyl_avila_2027: 46 nombres sin municipio del INE (pedanías
 == 2027 madrid: 0 de 179 municipios con fiestas locales
 == 2027 murcia: 45 de 45 municipios con fiestas locales
 == 2027 navarra: 0 de 272 municipios con fiestas locales
-== 2027 pais-vasco: 110 de 252 municipios con fiestas locales
+== 2027 pais-vasco: 240 de 252 municipios con fiestas locales
 == 2027 la-rioja: 165 de 174 municipios con fiestas locales
 == 2027 valenciana: 0 de 543 municipios con fiestas locales
 == 2027 ceuta: 0 de 1 municipios con fiestas locales

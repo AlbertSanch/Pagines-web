@@ -427,6 +427,29 @@
    "anio": 2027,
    "provincia": "42",
    "descarga": "https://bop.dipsoria.es/index.php/mod.boloficial/mem.detalle/id.55073/relcategoria.210/relmenu.149"
+  },
+  {
+   "id": "gipuzkoa_2027",
+   "ccaa": "pais-vasco",
+   "anio": 2027,
+   "descarga": "https://egoitza.gipuzkoa.eus/gao-bog/castell/bog/2026/10/01/c2606250.htm",
+   "provincia": "20",
+   "oficial": "https://egoitza.gipuzkoa.eus/gao-bog/castell/bog/2026/10/01/c2606250.pdf"
+  },
+  {
+   "id": "gipuzkoa_2027_c1",
+   "ccaa": "pais-vasco",
+   "anio": 2027,
+   "descarga": "https://egoitza.gipuzkoa.eus/gao-bog/castell/bog/2026/10/20/c2606579.htm",
+   "tipo": "correccion",
+   "provincia": "20"
+  },
+  {
+   "id": "alava_2027",
+   "ccaa": "pais-vasco",
+   "anio": 2027,
+   "descarga": "https://www.araba.eus/botha/Boletines/2026/116/2026_116_02851_C.pdf",
+   "provincia": "01"
   }
  ]
 }

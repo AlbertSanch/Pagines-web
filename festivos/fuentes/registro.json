@@ -5,6 +5,12 @@
   "sha1": "8c9de82c1f5b406f6efa88f697e1b707dc0eb797",
   "url": "https://www.araba.eus/Botha/Boletines/2025/082/2025_082_02192_C.pdf"
  },
+ "alava_2027": {
+  "descargado": "2026-11-01",
+  "descargado_de": "https://www.araba.eus/botha/Boletines/2026/116/2026_116_02851_C.pdf",
+  "sha1": "66559d6e1041cb6b4a5379ade9cf248534e6f07f",
+  "url": "https://www.araba.eus/botha/Boletines/2026/116/2026_116_02851_C.pdf"
+ },
  "andalucia_2026": {
   "descargado": "2026-10-31",
   "descargado_de": "https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/sites/default/files/sincfiles/wsas-media-sas_normativa_mediafile/2025/BOJA251014_fiestas_locales_2026.pdf",
@@ -84,13 +90,13 @@
   "url": "https://noticias.juridicas.com/base_datos/CCAA/1012195-r-trabajo-y-seguridad-social-12-sep-2026-bizkaia-calendario-de-fiestas-locales.html"
  },
  "boe_2026": {
-  "descargado": "2026-10-31",
+  "descargado": "2026-11-01",
   "id": "BOE-A-2025-21667",
   "sha1": "bb9ce634cbbdbe83c91f24548a484c335a7acf5b",
   "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2025-21667"
  },
  "boe_2027": {
-  "descargado": "2026-10-31",
+  "descargado": "2026-11-01",
   "id": "BOE-A-2026-21254",
   "sha1": "2ec52f1dd4dc097df235a9b681f70088d76129df",
   "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2026-21254"
@@ -280,6 +286,18 @@
   "descargado_de": "https://www.iberley.es/legislacion/resolucion-1-septiembre-2025-delegado-territorial-trabajo-seguridad-social-gipuzkoa-aprueba-calendario-fiestas-locales-gipuzkoa-ano-2026-27284448",
   "sha1": "339b8408f284a4b06e04cd788decdad02f1c6ae6",
   "url": "https://www.iberley.es/legislacion/resolucion-1-septiembre-2025-delegado-territorial-trabajo-seguridad-social-gipuzkoa-aprueba-calendario-fiestas-locales-gipuzkoa-ano-2026-27284448"
+ },
+ "gipuzkoa_2027": {
+  "descargado": "2026-11-01",
+  "descargado_de": "https://egoitza.gipuzkoa.eus/gao-bog/castell/bog/2026/10/01/c2606250.htm",
+  "sha1": "4df40adb34b56957d70835bede3e8c1eb956adbd",
+  "url": "https://egoitza.gipuzkoa.eus/gao-bog/castell/bog/2026/10/01/c2606250.pdf"
+ },
+ "gipuzkoa_2027_c1": {
+  "descargado": "2026-11-01",
+  "descargado_de": "https://egoitza.gipuzkoa.eus/gao-bog/castell/bog/2026/10/20/c2606579.htm",
+  "sha1": "24a22d931f782e7a67cff7d32017c8ea238def25",
+  "url": "https://egoitza.gipuzkoa.eus/gao-bog/castell/bog/2026/10/20/c2606579.htm"
  },
  "madrid_2026": {
   "descargado": "2026-10-31",
