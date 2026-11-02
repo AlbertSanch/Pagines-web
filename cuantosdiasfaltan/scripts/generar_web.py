@@ -721,7 +721,40 @@ def pagina_categoria(c, eventos):
                   f"Cuántos días faltan para {frase}, con la fecha oficial de cada uno y una cuenta atrás en directo.", cuerpo)
 
 
-def pagina_portada(eventos):
+def bloque_deportes(H):
+    """Portada: los próximos partidos de los equipos españoles (hoy y mañana), de Alcaraz, Sinner y Djokovic y las
+    próximas carreras, con el día escrito (la portada se genera dos veces al día: nunca «hoy» a secas)."""
+    items = []
+    for p in (H.get("futbol_hoy") or []):
+        m, _ = en_espana(instante(p["utc"]).isoformat())
+        if p["es"] and p["liga"] not in ("esp.2", "esp.w.1") and p["estado"] != "post" and m.date() >= HOY:
+            nombre = lambda n, i: f'<a href="{PAGINA_DE_EQUIPO[i]}">{escape(n)}</a>' if i in PAGINA_DE_EQUIPO else escape(n)
+            items.append((m, "⚽", f'{nombre(p["local"], p["ids"][0])} - {nombre(p["visitante"], p["ids"][1])}', p["competicion"], p["hora_valida"],
+                          0 if set(p["ids"]) & set(PAGINA_DE_EQUIPO) else 1))
+    for clave, (apellido, _, _) in TENISTAS_PAGINA.items():
+        pend = [p for p in (H.get("tenistas") or {}).get(clave, []) if p["estado"] in ("pre", "in")]
+        if pend:
+            m, _ = en_espana(instante(pend[0]["utc"]).isoformat())
+            if HOY <= m.date() <= HOY + dt.timedelta(days=1):
+                rival = f" - {escape(pend[0]['rival'])}" if pend[0]["rival"] else ""
+                items.append((m, "🎾", f'<a href="/a-que-hora-juega-{clave}/">{apellido}</a>{rival}', pend[0]["torneo"], pend[0]["hora_valida"], 0))
+    items = sorted(sorted(items, key=lambda x: (x[5], x[0]))[:8], key=lambda x: x[0])  # primero los equipos y tenistas con página
+    filas = "".join(f'<li><span class="d-cuando">{DIAS_CORTOS[m.weekday()]} {m.day} · {hhmm(m) if valida else "hora por confirmar"}</span> '
+                    f'{ico} {partido} <small>{escape(comp)}</small></li>' for m, ico, partido, comp, valida, _ in items)
+    carreras = ""
+    for serie in MOTOR:
+        proxima = next((g for a in sorted(H.get(serie, {})) for g in H[serie][a] if en_espana(carrera_de(g)["utc"])[0].date() >= HOY), None)
+        if proxima:
+            m, _ = en_espana(carrera_de(proxima)["utc"])
+            carreras += (f'<li><span class="d-cuando">{DIAS_CORTOS[m.weekday()]} {m.day}/{m.month} · {hhmm(m)}</span> {"🏎️" if serie == "f1" else "🏍️"} '
+                         f'<a href="/horario-{serie}/">{escape(proxima["gp"])} de {MOTOR[serie][0]}</a></li>')
+    if not filas and not carreras:
+        return ""
+    return (f'<section class="hoy-deportes"><h2>🏟️ Deportes: próximos partidos y carreras</h2><ul class="lista-deporte">{filas}{carreras}</ul>'
+            f'{BOTONES_DEPORTE}</section>')
+
+
+def pagina_portada(eventos, H=None):
     proximos = [e for e in sorted(eventos, key=orden) if fecha_de(e) and fecha_de(e) >= HOY and e["categoria"] != "fechas"][:8]
     vistos = {e["slug"] for e in proximos}
     secciones = ""
@@ -732,6 +765,7 @@ def pagina_portada(eventos):
     cuerpo = f"""<section class="portada"><h1>¿Cuántos días faltan para…?</h1>
 <p class="sub">Cuenta atrás para Navidad, Reyes, el verano y los estrenos, partidos y fiestas que esperas, con la fecha oficial.</p>
 <form class="buscador" role="search" onsubmit="return false"><input class="js-q" type="search" placeholder="Busca: Navidad, GTA 6, Fallas, Eurovisión…" autocomplete="off" aria-label="Buscar"><ul class="sug"></ul></form></section>
+{bloque_deportes(H or {})}
 <section><h2>⏱️ Lo próximo</h2>{lista_tarjetas(proximos)}</section>
 <section id="tu-cuenta" class="herramienta"><h2>🗓️ Tu cuenta atrás</h2>
 <p>¿Tu cumpleaños, tu boda, tus vacaciones? Pon la fecha y comparte el enlace.</p>
@@ -1277,7 +1311,7 @@ def main():
     for f in ("favicon.svg", "favicon.ico", "apple-touch-icon.png"):
         shutil.copy(PLANTILLA / f, WEB / f)
     rutas = ["/"]
-    guardar("/", pagina_portada(eventos))
+    guardar("/", pagina_portada(eventos, H))
     for c in CATEGORIAS:
         if any(e["categoria"] == c for e in eventos):
             guardar(f"/{c}/", pagina_categoria(c, eventos))
