@@ -122,3 +122,4 @@ h2 a { color: inherit; text-decoration: none; }
 .tabla-horario small { color: var(--suave); }
 .vivo-nota { color: var(--suave); font-size: .8rem; }
 .tabla-tenis td.t-hora { white-space: nowrap; font-weight: 700; width: 1%; }
+.enlaces-deporte { font-size: .92rem; line-height: 1.9; }
