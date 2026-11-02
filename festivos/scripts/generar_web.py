@@ -492,6 +492,7 @@ def pagina_puentes(datos, anio):
     cuerpo = f"""<h1>Puentes {anio}</h1>
 <p class="lead">Todos los puentes de {anio} en España y en cada comunidad autónoma, según el calendario laboral publicado en el BOE: cuándo tienes fines de semana largos y qué días te conviene pedir de vacaciones para encadenar más días libres.</p>
 <p>Las fiestas locales de cada municipio pueden añadir más puentes: <a href="/">busca tu municipio</a> para verlos todos, o usa el <a href="/planificador-vacaciones/?a={anio}">planificador de vacaciones</a> para que te diga qué días pedir con tus días de vacaciones.</p>
+<p class="acciones"><a class="boton-sec" href="/puente-de-diciembre-{anio}/">🌉 Puente de diciembre {anio} por comunidad</a></p>
 <h2>Puentes en toda España</h2>
 <p>Con las fiestas que se celebran en todas las comunidades hay {largos} fines de semana largos sin coger vacaciones.</p>
 <ul class="puentes">{''.join(texto_puente(p) for p in resumen)}</ul>
@@ -501,6 +502,61 @@ def pagina_puentes(datos, anio):
     return pagina(f"/puentes-{anio}/", f"Puentes {anio}: todos los puentes y festivos de España",
                   f"Cuándo hay puente en {anio} en España y en cada comunidad, qué días pedir de vacaciones para tener más días libres y los fines de semana largos.",
                   cuerpo, [(f"Puentes {anio}", None)])
+
+
+def pagina_puente_diciembre(datos, anio):
+    """El puente de la Constitución y la Inmaculada (6 y 8 de diciembre) en cada comunidad: «puente de diciembre 2026»
+    4.400 búsquedas al mes, «8 de diciembre festivo» 2.400 (Keyword Planner, noviembre de 2026)."""
+    d = datos[anio]["nacionales_autonomicos"]
+    ruta = f"/puente-de-diciembre-{anio}/"
+    seis, ocho = dt.date(anio, 12, 6), dt.date(anio, 12, 8)
+    filas, grupos = [], {}
+    for ccaa, (nombre, _) in sorted(COMUNIDADES.items(), key=lambda x: x[1][0]):
+        dic = [x for x in d[ccaa] if dt.date(anio, 12, 4) <= dt.date.fromisoformat(x["f"]) <= dt.date(anio, 12, 10)]
+        puente = next((p for p in calcular_puentes(d[ccaa]) if p["ini"] <= ocho <= p["fin"] or p["ini"] <= seis <= p["fin"]), None)
+        festivos = ", ".join(f'<a href="{ruta_dia(dt.date.fromisoformat(x["f"]))}">{DIAS[dt.date.fromisoformat(x["f"]).weekday()]} {dt.date.fromisoformat(x["f"]).day}</a>' for x in dic)
+        sin = f'{puente["dias"]} días ({rango(puente["ini"], puente["fin"])})' if puente and puente["dias"] >= 3 else "—"
+        con = ""
+        if puente and puente["mejor"]:
+            total, vac, i2, f2 = puente["mejor"]
+            con = f'coge el {" y ".join(f"{DIAS[v.weekday()]} {v.day}" for v in vac)}: {total} días ({rango(i2, f2)})'
+        filas.append(f'<tr><td><a href="/comunidad/{ccaa}/">{escape(nombre)}</a></td><td>{festivos}</td><td>{sin}</td><td>{con or "—"}</td></tr>')
+        grupos.setdefault((sin, con), []).append(nombre)
+    lunes7 = sorted(COMUNIDADES[c][0] for c in d if any(x["f"] == f"{anio}-12-07" for x in d[c]))
+    # fiestas locales esos días
+    locales = {}
+    for cod, lista in datos[anio]["locales"].items():
+        for x in lista:
+            f = dt.date.fromisoformat(x["f"])
+            if dt.date(anio, 12, 1) <= f <= dt.date(anio, 12, 12):
+                locales.setdefault(f, []).append(cod)
+    texto_locales = "".join(f'<li><a href="{ruta_dia(f)}">{DIAS[f.weekday()]} {f.day} de diciembre</a>: fiesta local en {plural(len(c), "municipio", "municipios")}.</li>'
+                            for f, c in sorted(locales.items()))
+    resumen = (f"En {anio}, el Día de la Constitución (6 de diciembre) cae en {DIAS[seis.weekday()]} y la Inmaculada (8 de diciembre), en {DIAS[ocho.weekday()]}.")
+    if lunes7:
+        resumen += (f" {len(lunes7)} comunidades pasan el festivo del domingo al lunes 7 ({lista_y(lunes7)}): allí el puente es de "
+                    f"4 días, del sábado 5 al martes 8, sin pedir vacaciones. En el resto solo es festivo el martes 8, y cogiendo el lunes 7 también tienes 4 días.")
+    if not lunes7:
+        (sin, con), quienes = max(grupos.items(), key=lambda g: len(g[1]))
+        partes = ([f"sin pedir días tienes {sin}"] if sin != "—" else []) + ([con] if con else [])
+        if partes:
+            resumen += (" En toda España" if len(quienes) == len(COMUNIDADES) else f" En {len(quienes)} comunidades") + ": " + "; o ".join(partes) + "."
+    preguntas = [(f"¿Cuándo es el puente de diciembre de {anio}?", re.sub(r"<[^>]+>", "", resumen))]
+    if lunes7:
+        preguntas.append((f"¿Es festivo el 7 de diciembre de {anio}?", f"Sí en {lista_y(lunes7)}, que trasladan al lunes 7 el Día de la Constitución por caer en domingo. En el resto de España es laborable, salvo fiesta local."))
+    preguntas.append((f"¿Es festivo el 8 de diciembre de {anio}?", f"Sí, la Inmaculada Concepción es festivo en toda España; en {anio} cae en {DIAS[ocho.weekday()]}."))
+    preguntas.append(("¿Y las fiestas locales?", "Algunos municipios tienen fiesta local esos días y su puente es aún más largo: búscalo en el buscador de la portada para ver sus festivos."))
+    cuerpo = f"""<h1>Puente de diciembre {anio}: la Constitución y la Inmaculada en cada comunidad</h1>
+<p class="lead">{resumen}</p>
+<div class="tabla-envoltorio"><table class="festivos"><thead><tr><th>Comunidad</th><th>Festivos</th><th>Sin pedir días</th><th>Pidiendo vacaciones</th></tr></thead><tbody>{''.join(filas)}</tbody></table></div>
+{f'<section><h2>Fiestas locales esos días</h2><ul class="puentes">{texto_locales}</ul><p>Busca tu municipio en la <a href="/">portada</a> para ver sus festivos.</p></section>' if texto_locales else ''}
+<p>Todos los puentes del año en <a href="/puentes-{anio}/">puentes {anio}</a>, y qué días pedir con tus vacaciones en el <a href="/planificador-vacaciones/?a={anio}">planificador de vacaciones</a>.</p>
+<p class="fuente">Fuente: <a href="{datos[anio]['boe']['url']}" rel="nofollow noopener">{escape(datos[anio]['boe']['titulo'])}</a> y los boletines oficiales de cada comunidad.</p>
+<section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
+    desc = (f"Puente de diciembre {anio}: qué comunidades tienen festivo el lunes 7 y 4 días seguidos sin pedir vacaciones, y qué día coger en el resto." if lunes7
+            else f"Puente de diciembre {anio} en cada comunidad: cuándo caen la Constitución y la Inmaculada y qué días pedir para tener más días libres.")
+    return pagina(ruta, f"Puente de diciembre {anio}: festivos y días libres por comunidad", desc, cuerpo,
+                  [(f"Puentes {anio}", f"/puentes-{anio}/"), ("Puente de diciembre", None)], [faq_ld(preguntas)])
 
 
 def pagina_calculadora(datos):
@@ -634,6 +690,10 @@ def regiones(donde):
     return {c for cc in donde["ccaa"].values() for c in cc}
 
 
+def plural(n, uno, varios):
+    return f"{n} {uno if n == 1 else varios}"
+
+
 def lista_y(partes):
     return ", ".join(partes[:-1]) + " y " + partes[-1] if len(partes) > 1 else "".join(partes)
 
@@ -747,6 +807,7 @@ def pagina_dia(datos, idx, mes, dia):
     cuerpo = f"""<h1>¿Es festivo el {nombre_dia}?</h1>
 <p class="lead">Dónde es festivo el {nombre_dia} en {' y '.join(map(str, orden))}: fiestas nacionales y autonómicas del BOE y fiestas locales de cada municipio según los boletines oficiales.</p>
 <p class="saltos"><a href="{ruta_dia(ayer)}">← {ayer.day} de {MESES[ayer.month - 1]}</a><a href="/es-festivo/">¿Es festivo hoy?</a><a href="{ruta_dia(manana)}">{manana.day} de {MESES[manana.month - 1]} →</a></p>
+{f'<p class="acciones"><a class="boton-sec" href="/puente-de-diciembre-{a_prox}/">🌉 Puente de diciembre {a_prox}: qué comunidades tienen 4 días</a></p>' if mes == 12 and 4 <= dia <= 9 else ''}
 {''.join(secciones)}
 {f'<section><h2>Próximos festivos después del {nombre_dia} de {a_prox}</h2><ul class="puentes">{proximos}</ul><p>Las fiestas locales cambian en cada municipio: <a href="/">busca el tuyo</a> para ver todos sus festivos.</p></section>' if proximos else ''}
 <section><h2>Otros días de {MESES[mes - 1]}</h2><div class="calendario">{mes_enlazado(a_prox, mes, idx[a_prox], hoy_d)}</div>
@@ -1298,7 +1359,8 @@ def main():
     for anio in ANIOS:
         guardar(f"/calendario-laboral-{anio}/", pagina_espana(datos, anio))
         guardar(f"/puentes-{anio}/", pagina_puentes(datos, anio))
-        rutas_sitemap += [f"/calendario-laboral-{anio}/", f"/puentes-{anio}/"]
+        guardar(f"/puente-de-diciembre-{anio}/", pagina_puente_diciembre(datos, anio))
+        rutas_sitemap += [f"/calendario-laboral-{anio}/", f"/puentes-{anio}/", f"/puente-de-diciembre-{anio}/"]
     guardar("/calculadora-dias-laborables/", pagina_calculadora(datos))
     rutas_sitemap.append("/calculadora-dias-laborables/")
     guardar("/calendario-laboral-para-imprimir/", pagina_imprimible(datos))
