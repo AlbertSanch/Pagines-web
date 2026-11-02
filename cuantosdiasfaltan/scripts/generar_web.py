@@ -23,17 +23,19 @@ import shutil
 import sys
 from html import escape
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 RAIZ = Path(__file__).resolve().parent.parent
 WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 EVENTOS = RAIZ / "eventos.json"
-TEXTOS = RAIZ / "textos.json"  # «qué se sabe»: párrafos propios por evento (clave: slug o serie)
+TEXTOS = RAIZ / "textos.json"
+HORARIOS = RAIZ / "horarios.json"  # F1 y MotoGP, con la hora de cada sesión (scripts/horarios.py)  # «qué se sabe»: párrafos propios por evento (clave: slug o serie)
 FUENTES = PLANTILLA / "fuentes"
 FIJAS = RAIZ.parent / "festivos" / "scripts" / "cuanto_falta.py"  # mismas fechas que festivosde: Pascua, estaciones, Black Friday…
 DOMINIO = os.environ.get("CDF_DOMINIO", "https://cuantosdiasfaltan.es")
 NOMBRE_WEB = DOMINIO.split("//")[1]
-VERSION = "3"
+VERSION = "4"
 HOY = dt.date.fromisoformat(os.environ["CDF_HOY"]) if os.environ.get("CDF_HOY") else dt.date.today()
 ADSENSE = "ca-pub-8810566450749484"
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -55,7 +57,7 @@ FRASE_CAT = {"fechas": "las próximas fechas señaladas", "videojuegos": "los pr
              "deportes": "los próximos grandes eventos deportivos", "musica": "los próximos festivales y conciertos",
              "fiestas": "las próximas fiestas y eventos culturales", "tecnologia": "los próximos lanzamientos de tecnología",
              "espacio": "los próximos eclipses y fenómenos astronómicos", "eventos": "los próximos grandes eventos"}
-RESERVADOS = set(CATEGORIAS) | {"assets", "cuanto-hace", "sobre-nosotros", "aviso-legal", "privacidad", "buscar", "contacto"}
+RESERVADOS = set(CATEGORIAS) | {"assets", "cuanto-hace", "horario-f1", "horario-motogp", "sobre-nosotros", "aviso-legal", "privacidad", "buscar", "contacto"}
 FESTIVOSDE = "https://festivosde.es"
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 DIAS = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
@@ -236,7 +238,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", buscador=True
 </main>
 <footer class="pie"><div class="cont">
 <p><strong>{NOMBRE_WEB}</strong>: cuántos días faltan para los próximos lanzamientos y eventos, con la fecha oficial y su fuente.</p>
-<p class="enlaces"><a href="/">Inicio</a>{''.join(f'<a href="/{c}/">{n}</a>' for c, (n, _) in CATEGORIAS.items())}<a href="/cuanto-hace/">Cuánto hace</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a>{CONFIGURAR_COOKIES}</p>
+<p class="enlaces"><a href="/">Inicio</a>{''.join(f'<a href="/{c}/">{n}</a>' for c, (n, _) in CATEGORIAS.items())}<a href="/cuanto-hace/">Cuánto hace</a><a href="/horario-f1/">Horario F1</a><a href="/horario-motogp/">Horario MotoGP</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a>{CONFIGURAR_COOKIES}</p>
 <p>¿Ha cambiado una fecha? Escríbenos a {TITULAR['email']}.</p>
 </div></footer>
 <script src="/assets/cuenta.js?v={VERSION}" defer></script>
@@ -444,6 +446,10 @@ def pagina_evento(e, eventos):
     nota_ambito = f'<p class="nota">Fecha de estreno en {escape(e["ambito"].rstrip("."))}. Si se anuncia otra fecha para España, la pondremos aquí.</p>' if fuera_de_espana(e) else ""
     if e.get("hora_fuente"):
         retrasos += f'<p class="fuente">Horario: <a href="{escape(e["hora_fuente"])}" rel="nofollow noopener" target="_blank">{escape(e["hora_fuente"].split("/")[2].removeprefix("www."))}</a>.</p>'
+    serie_motor = re.search(r"-(f1|motogp)(-\d{4})?$", e["slug"])
+    if serie_motor:
+        nombre_serie = "F1" if serie_motor.group(1) == "f1" else "MotoGP"
+        retrasos += f'<p class="boton-linea"><a class="boton-sec" href="/horario-{serie_motor.group(1)}/">🕒 Horario de {nombre_serie}: todas las sesiones en hora de España</a></p>'
     if e.get("fija"):
         fuente = f'<p class="fuente">{escape(e["fija"])}</p>'
     else:
@@ -704,6 +710,7 @@ def pagina_categoria(c, eventos):
     frase = FRASE_CAT[c]
     cuerpo = f"""<h1>{ico} ¿Cuánto falta para {frase}?</h1>
 <p class="sub">{nombre}: las fechas oficiales (y la estimada si aún no la hay), ordenadas por lo que falta.</p>
+{'<p class="boton-linea"><a class="boton-sec" href="/horario-f1/">🕒 Horario de F1</a> <a class="boton-sec" href="/horario-motogp/">🕒 Horario de MotoGP</a></p>' if c == "deportes" else ""}
 {lista_tarjetas(lista)}"""
     return pagina(f"/{c}/", f"{frase[0].upper() + frase[1:]}: cuántos días faltan y fechas",
                   f"Cuántos días faltan para {frase}, con la fecha oficial de cada uno y una cuenta atrás en directo.", cuerpo)
@@ -769,11 +776,161 @@ def legales():
                                 '<h1>Página no encontrada</h1><p>Vuelve a la <a href="/">portada</a> y búscalo.</p>'))
     return ["/contacto/", "/sobre-nosotros/", "/aviso-legal/", "/privacidad/"]
 
+# ---------------------------------------------------------------- horarios de F1 y MotoGP
+
+MADRID, CANARIAS = ZoneInfo("Europe/Madrid"), ZoneInfo("Atlantic/Canary")
+MOTOR = {"f1": ("F1", "Fórmula 1", "https://www.formula1.com/en/racing/{anio}", "la carrera"),
+         "motogp": ("MotoGP", "MotoGP", "https://www.motogp.com/es/calendar", "la carrera de MotoGP")}
+
+
+def cargar_horarios():
+    return json.loads(HORARIOS.read_text(encoding="utf-8")) if HORARIOS.exists() else {}
+
+
+def en_espana(utc):
+    """(hora peninsular, hora de Canarias) de un instante UTC."""
+    m = dt.datetime.fromisoformat(utc)
+    return m.astimezone(MADRID), m.astimezone(CANARIAS)
+
+
+def hhmm(momento):
+    return f"{momento.hour}:{momento.minute:02d}"
+
+
+def carrera_de(gp):
+    return next(s for s in gp["sesiones"] if s["n"] == "Carrera")
+
+
+def horas_automaticas(eventos, H):
+    """La hora de cada GP (gp-…-f1-2026, gp-…-motogp-2027) sale del horario oficial descargado: si la F1 o MotoGP la
+    cambian, la página se corrige sola al día siguiente. Devuelve {(serie, ronda, año): slug de la serie del GP}."""
+    enlaces = {}
+    for e in eventos:
+        m = re.match(r"^gp-.+-(f1|motogp)-(\d{4})$", e["slug"])
+        if not m or not e.get("fecha"):
+            continue
+        serie, anio = m.groups()
+        fecha = dt.date.fromisoformat(e["fecha"])
+        candidatos = [(abs((en_espana(carrera_de(g)["utc"])[0].date() - fecha).days), g) for g in H.get(serie, {}).get(anio, [])]
+        candidatos = [(d, g) for d, g in candidatos if d <= 1]
+        if not candidatos:
+            continue
+        gp = min(candidatos, key=lambda x: x[0])[1]
+        madrid, _ = en_espana(carrera_de(gp)["utc"])
+        e.update(hora=f"{madrid.hour:02d}:{madrid.minute:02d}", hora_que=MOTOR[serie][3], hora_fuente=MOTOR[serie][2].format(anio=anio))
+        e.pop("hora_aprox", None)
+        e.pop("hora_dia", None)
+        if madrid.date() != fecha:
+            e["hora_dia"] = madrid.date().isoformat()
+        enlaces[(serie, gp["ronda"], anio)] = e.get("serie") or e["slug"]
+    return enlaces
+
+
+def pagina_horario(serie, H, eventos, enlaces):
+    corto, largo, fuente_url, _ = MOTOR[serie]
+    anios = sorted(H.get(serie, {}))
+    temporada = [(a, g) for a in anios for g in H[serie][a]]
+    proximo = next(((a, g) for a, g in temporada if en_espana(carrera_de(g)["utc"])[0].date() >= HOY), None)
+    ruta = f"/horario-{serie}/"
+    preguntas = []
+    if proximo:
+        anio, gp = proximo
+        madrid, can = en_espana(carrera_de(gp)["utc"])
+        quedan = sum(1 for a, g in temporada if a == anio and en_espana(carrera_de(g)["utc"])[0].date() >= HOY)
+        enlace = enlaces.get((serie, gp["ronda"], anio))
+        nombre = f'<a href="/{enlace}/">{escape(gp["gp"])}</a>' if enlace else escape(gp["gp"])
+        filas = ""
+        for ses in gp["sesiones"]:
+            m, c = en_espana(ses["utc"])
+            clase = ' class="destacada"' if ses["n"] == "Carrera" else ""
+            filas += (f'<tr{clase}><td>{DIAS[m.weekday()][:3]} {m.day}</td><td>{escape(ses["n"])}</td>'
+                      f'<td>{hhmm(m)}</td><td>{hhmm(c)}{" (" + DIAS[c.weekday()] + ")" if c.date() != m.date() else ""}</td></tr>')
+        sprint = next((s for s in gp["sesiones"] if s["n"] == "Sprint"), None)
+        clasif = next((s for s in gp["sesiones"] if s["n"] in ("Clasificación", "Clasificación 2")), None)
+        cab = f"Horario de {corto}: {gp['gp']} {anio}"
+        titulo = f"Horario {corto} {gp['gp']} {anio}: hora en España de la carrera y {'el sprint' if serie == 'motogp' else 'la clasificación'}"
+        frase = (f"La próxima carrera de {corto} es el {nombre}: el <strong>{DIAS[madrid.weekday()]} {madrid.day} de {MESES[madrid.month - 1]} "
+                 f"a las {hhmm(madrid)}</strong> en España ({hhmm(can)} en Canarias).")
+        bloque = contador(madrid.date(), hora=f"{madrid.hour:02d}:{madrid.minute:02d}")
+        horario = (f'<section><h2>Horario del {escape(gp["gp"])} en España</h2>'
+                   f'<p class="sub">{escape(gp["circuito"])}{", " + escape(gp["ciudad"]) if gp.get("ciudad") else ""}. Horas peninsulares y de Canarias.</p>'
+                   f'<div class="tabla-env"><table class="tabla-horario"><thead><tr><th>Día</th><th>Sesión</th><th>España</th><th>Canarias</th></tr></thead>'
+                   f'<tbody>{filas}</tbody></table></div></section>')
+        desc = f"La carrera del {gp['gp']} es el {DIAS[madrid.weekday()]} {madrid.day} de {MESES[madrid.month - 1]} a las {hhmm(madrid)} en España ({hhmm(can)} en Canarias). Horario de todas las sesiones y calendario."
+        preguntas += [(f"¿Cuándo es la próxima carrera de {corto}?", f"Es el {gp['gp']}, el {fecha_larga(madrid.date())}, en {gp['circuito']}."),
+                      (f"¿A qué hora es la carrera de {corto} en España?", f"La carrera del {gp['gp']} empieza a las {hhmm(madrid)}, hora peninsular, y a las {hhmm(can)} en Canarias.")]
+        if sprint:
+            m, c = en_espana(sprint["utc"])
+            preguntas.append((f"¿A qué hora es el sprint de {corto}?", f"El sprint del {gp['gp']} es el {DIAS[m.weekday()]} {m.day} a las {hhmm(m)} en España ({hhmm(c)} en Canarias)."))
+        if clasif:
+            m, c = en_espana(clasif["utc"])
+            preguntas.append((f"¿A qué hora es la clasificación de {corto}?", f"La clasificación del {gp['gp']} es el {DIAS[m.weekday()]} {m.day} a las {hhmm(m)} en España ({hhmm(c)} en Canarias)."))
+        preguntas.append((f"¿Cuántas carreras de {corto} quedan en {anio}?", f"Quedan {plural(quedan, 'carrera', 'carreras')}, contando el {gp['gp']}."))
+    else:
+        primera = next((e for e in eventos if e.get("serie") == f"mundial-{serie}" and fecha_de(e) and fecha_de(e) >= HOY), None)
+        anio = str(HOY.year + 1)
+        cab = f"Horario de {corto} {anio}"
+        titulo = f"Horario {corto} {anio}: cuándo empieza la temporada y a qué hora son las carreras en España"
+        if primera:
+            d = fecha_de(primera)
+            frase = (f"La temporada {HOY.year} de {corto} ha terminado. La primera carrera de {anio} es el <strong>{fecha_larga(d)}</strong>, "
+                     f"en {escape(primera['lugar'])}. Pondremos aquí el horario de cada sesión en cuanto se publique.")
+            bloque = contador(d)
+            desc = f"La temporada {anio} de {corto} empieza el {fecha_larga(d)}. Aquí verás el horario de cada carrera en hora de España en cuanto se publique."
+            preguntas.append((f"¿Cuándo empieza la temporada {anio} de {corto}?", f"La primera carrera es el {fecha_larga(d)}, en {primera['lugar']}."))
+        else:
+            frase = f"La temporada de {corto} ha terminado. Pondremos aquí el horario de la próxima en cuanto se publique."
+            bloque, desc = "", f"Horario de {corto} en hora de España: lo pondremos aquí en cuanto se publique el de la próxima temporada."
+        horario = ""
+    # calendario de la temporada del próximo GP (o de la última con horario)
+    anio_cal = proximo[0] if proximo else next((a for a in reversed(anios) if H[serie][a]), None)
+    calendario = ""
+    if anio_cal and H[serie][anio_cal]:
+        filas = ""
+        for g in H[serie][anio_cal]:
+            m, c = en_espana(carrera_de(g)["utc"])
+            pasada = m.date() < HOY
+            enlace = enlaces.get((serie, g["ronda"], anio_cal))
+            nombre = f'<a href="/{enlace}/">{escape(g["gp"])}</a>' if enlace and not pasada else escape(g["gp"])
+            clase = ' class="pasada"' if pasada else (' class="destacada"' if proximo and g is proximo[1] else "")
+            filas += (f'<tr{clase}><td>{g["ronda"]}</td><td>{nombre}</td><td>{DIAS[m.weekday()][:3]} {m.day} {MESES[m.month - 1][:3]}</td>'
+                      f'<td>{"Disputado" if pasada else hhmm(m)}</td></tr>')
+        calendario = (f'<section><h2>Calendario de {corto} {anio_cal}: hora de cada carrera en España</h2>'
+                      f'<div class="tabla-env"><table class="tabla-horario"><thead><tr><th>#</th><th>Gran Premio</th><th>Fecha</th><th>Hora</th></tr></thead>'
+                      f'<tbody>{filas}</tbody></table></div></section>')
+    preguntas.append(("¿Las horas son de España?", "Sí: la primera columna es la hora peninsular (Madrid) y la segunda, la de Canarias, una hora menos. "
+                      "Tienen en cuenta el cambio de hora de España y del país de la carrera."))
+    origen = "Jolpica (la base de datos de la F1 que continúa a Ergast)" if serie == "f1" else "la web oficial de MotoGP"
+    fuente = (f'<p class="fuente">Horarios oficiales de {largo}, descargados cada día de {origen}; última comprobación: {fecha_simple(H.get("descargado", HOY.isoformat()))}. '
+              f'Calendario oficial: <a href="{escape(fuente_url.format(anio=anio_cal or HOY.year))}" rel="nofollow noopener" target="_blank">{escape(fuente_url.split("/")[2].removeprefix("www."))}</a>. '
+              f'Si cambian un horario, aquí se corrige solo.</p>')
+    otro = "motogp" if serie == "f1" else "f1"
+    faq = '<section class="faq"><h2>Preguntas frecuentes</h2>' + "".join(f"<h3>{escape(q)}</h3><p>{escape(r)}</p>" for q, r in preguntas) + "</section>"
+    cuerpo = f"""<nav class="migas"><a href="/">Inicio</a> › <a href="/deportes/">Deportes</a> › Horario de {corto}</nav>
+<h1>{escape(cab)}</h1>
+<p class="respuesta">{frase}</p>
+{bloque}
+{horario}
+{calendario}
+{fuente}
+{faq}
+<p class="boton-linea"><a class="boton-sec" href="/horario-{otro}/">🕒 Horario de {MOTOR[otro][0]}</a> <a class="boton-sec" href="/deportes/">🏆 Más deportes</a></p>"""
+    ld = [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Inicio", "item": DOMINIO + "/"},
+              {"@type": "ListItem", "position": 2, "name": "Deportes", "item": DOMINIO + "/deportes/"},
+              {"@type": "ListItem", "position": 3, "name": f"Horario de {corto}", "item": DOMINIO + ruta}]},
+          {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+              {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in preguntas]}]
+    return pagina(ruta, titulo, recortar(desc), cuerpo, ld)
+
+
 
 def main():
     global TEXTOS_EVENTO
     TEXTOS_EVENTO = json.loads(TEXTOS.read_text(encoding="utf-8")) if TEXTOS.exists() else {}
     todos = cargar()
+    H = cargar_horarios()
+    enlaces_horario = horas_automaticas(todos, H)
     eventos, redirecciones = resolver_series(todos)
     if len(eventos) < 10:
         sys.exit(f"ERROR: solo {len(eventos)} eventos")
@@ -803,6 +960,10 @@ def main():
     guardar("/cuanto-hace/", pagina_cuanto_hace(eventos))
     rutas.append("/cuanto-hace/")
     rutas += legales()
+    for serie in MOTOR:
+        if H.get(serie):
+            guardar(f"/horario-{serie}/", pagina_horario(serie, H, eventos, enlaces_horario))
+            rutas.append(f"/horario-{serie}/")
     hoy = HOY.isoformat()
     # fecha en que cambian de verdad los datos de cada evento (no la de cada noche), para que Google se fíe del sitemap
     modificado = {f"/{e['slug']}/": e["comprobado"] for e in eventos if e.get("comprobado")}
