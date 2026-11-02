@@ -1,9 +1,12 @@
-"""Horarios de F1 y MotoGP para /horario-f1/ y /horario-motogp/.
+"""Horarios de F1 y MotoGP (/horario-f1/, /horario-motogp/) y partidos de Alcaraz, el Madrid y el Barça
+(/a-que-hora-juega-alcaraz/, /a-que-hora-juega-el-madrid/, /a-que-hora-juega-el-barca/).
 
 Descarga el calendario con la hora de cada sesión y lo guarda en cuantosdiasfaltan/horarios.json,
 con las horas en UTC (el generador las pasa a hora peninsular y de Canarias):
   - F1: Jolpica (api.jolpi.ca), la continuación de la base de datos Ergast, con los horarios oficiales de la F1.
   - MotoGP: la API pública de motogp.com (la que usa su propio calendario).
+  - Tenis y fútbol: la API pública de ESPN (la de su web), con el orden de juego de la ATP y los calendarios de cada
+    competición. La web de la ATP no deja leer sus datos de forma automática.
 Si una fuente falla, se conserva lo último que se descargó bien: la web nunca se queda sin horarios.
 """
 import datetime as dt
@@ -93,6 +96,52 @@ def motogp(anio):
     return carreras
 
 
+ESPN = "https://site.api.espn.com/apis/site/v2/sports"
+ALCARAZ = "3782"  # id de Carlos Alcaraz en ESPN
+EQUIPOS = {"madrid": "86", "barca": "83"}  # Real Madrid y FC Barcelona en ESPN
+
+
+def alcaraz():
+    """Partidos individuales de Alcaraz de las últimas seis semanas y las tres siguientes."""
+    hoy = dt.date.today()
+    rango = f"{(hoy - dt.timedelta(days=45)):%Y%m%d}-{(hoy + dt.timedelta(days=21)):%Y%m%d}"
+    partidos = []
+    for ev in bajar(f"{ESPN}/tennis/atp/scoreboard?dates={rango}&lang=es&region=es").get("events", []):
+        for g in ev.get("groupings") or []:
+            for c in g.get("competitions", []):
+                if (c.get("type") or {}).get("slug") != "mens-singles":
+                    continue
+                jugadores = c.get("competitors", [])
+                yo = next((x for x in jugadores if x.get("id") == ALCARAZ), None)
+                if not yo:
+                    continue
+                rival = next((x for x in jugadores if x is not yo), {})
+                nombre = (rival.get("athlete") or {}).get("displayName") or ""
+                partidos.append({"torneo": ev.get("name"), "utc": c["date"], "hora_valida": bool(c.get("timeValid")),
+                                 "estado": c["status"]["type"]["state"], "ronda": (c.get("round") or {}).get("displayName", ""),
+                                 "pista": (c.get("venue") or {}).get("court") or "", "rival": "" if nombre in ("TBD", "Bye") else nombre,
+                                 "descanso": nombre == "Bye", "gano": yo.get("winner"),
+                                 "sets": [[int(a.get("value", 0)), int(b.get("value", 0))] for a, b in zip(yo.get("linescores", []), rival.get("linescores", []))]})
+    return sorted(partidos, key=lambda p: p["utc"])
+
+
+def equipo(ident):
+    """Próximos partidos (todas las competiciones) y últimos resultados de un equipo."""
+    partidos = []
+    for url in (f"{ESPN}/soccer/all/teams/{ident}/schedule?fixture=true&lang=es&region=es", f"{ESPN}/soccer/all/teams/{ident}/schedule?lang=es&region=es"):
+        for e in bajar(url).get("events", []):
+            c = e["competitions"][0]
+            local = next(x for x in c["competitors"] if x.get("homeAway") == "home")
+            fuera = next(x for x in c["competitors"] if x.get("homeAway") == "away")
+            goles = lambda x: (x.get("score") or {}).get("displayValue") if isinstance(x.get("score"), dict) else x.get("score")
+            partidos.append({"id": e["id"], "utc": e["date"], "hora_valida": bool(c.get("timeValid")), "estado": c["status"]["type"]["state"],
+                             "competicion": (e.get("league") or {}).get("name") or "", "local": local["team"]["displayName"],
+                             "visitante": fuera["team"]["displayName"], "en_casa": local["team"]["id"] == ident,
+                             "estadio": (c.get("venue") or {}).get("fullName") or "", "goles": [goles(local), goles(fuera)]})
+    unicos = {p["id"]: p for p in partidos}
+    return sorted(unicos.values(), key=lambda p: p["utc"])
+
+
 def main():
     datos = json.loads(SALIDA.read_text(encoding="utf-8")) if SALIDA.exists() else {}
     anio = dt.date.today().year
@@ -106,6 +155,12 @@ def main():
             if carreras or str(a) not in datos.get(serie, {}):
                 datos.setdefault(serie, {})[str(a)] = carreras
             print(f"{serie} {a}: {len(carreras)} carreras con horario")
+    for clave, lector in [("alcaraz", alcaraz)] + [(k, lambda i=i: equipo(i)) for k, i in EQUIPOS.items()]:
+        try:
+            datos[clave] = lector()
+            print(f"{clave}: {len(datos[clave])} partidos")
+        except Exception as e:
+            print(f"ERROR {clave}: {e}")
     datos["descargado"] = dt.date.today().isoformat()
     SALIDA.write_text(json.dumps(datos, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
     if not datos.get("f1") and not datos.get("motogp"):
