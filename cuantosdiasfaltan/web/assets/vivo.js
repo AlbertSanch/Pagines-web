@@ -107,7 +107,38 @@
     });
   }
 
+  function futbolHoy() {
+    var hoy = fmt(new Date(), "Europe/Madrid", { year: "numeric", month: "2-digit", day: "2-digit" }).split("/").reverse().join("-");
+    var dias = document.querySelectorAll(".tenis-dia"), hay = false;
+    for (var i = 0; i < dias.length; i++) if (dias[i].dataset.dia === hoy) hay = true;
+    if (hay) for (var j = 0; j < dias.length; j++) {
+      dias[j].hidden = dias[j].dataset.dia !== hoy;
+      var h2 = dias[j].querySelector("h2");
+      if (h2 && dias[j].dataset.dia === hoy) h2.textContent = h2.textContent.replace(/^Mañana/, "Hoy");
+    }
+    var ligas = {};
+    document.querySelectorAll('.tenis-dia[data-dia="' + hoy + '"] tr[data-liga]').forEach(function (tr) { ligas[tr.dataset.liga] = 1; });
+    Object.keys(ligas).forEach(function (liga) {
+      fetch(ESPN + "/soccer/" + liga + "/scoreboard?dates=" + hoy.replace(/-/g, "") + "&lang=es&region=es").then(function (r) { return r.json(); }).then(function (d) {
+        (d.events || []).forEach(function (ev) {
+          var celdas = document.querySelectorAll('tr[data-id="' + ev.id + '"] .t-hora');
+          if (!celdas.length) return;
+          var c = ev.competitions[0], st = c.status.type;
+          var local = c.competitors.filter(function (x) { return x.homeAway === "home"; })[0] || {};
+          var fuera = c.competitors.filter(function (x) { return x.homeAway === "away"; })[0] || {};
+          function g(x) { return x.score && typeof x.score === "object" ? x.score.displayValue : (x.score || "0"); }
+          var html;
+          if (st.state === "in") html = '<span class="vivo-ya">🔴 ' + esc(g(local) + "-" + g(fuera)) + '</span><br><small>' + esc(st.shortDetail || "") + "</small>";
+          else if (st.state === "post") html = esc(g(local) + "-" + g(fuera));
+          else html = c.timeValid ? hora(new Date(ev.date), "Europe/Madrid") : "Por confirmar";
+          for (var k = 0; k < celdas.length; k++) celdas[k].innerHTML = html;
+        });
+      }).catch(function () {});
+    });
+  }
+
   if (caja.dataset.tipo === "tenis") tenis(caja.dataset.id);
+  else if (caja.dataset.tipo === "futbol-hoy") futbolHoy();
   else if (caja.dataset.tipo === "tenis-hoy") tenisHoy();
   else if (caja.dataset.tipo === "equipo") equipo(caja.dataset.id);
 })();
