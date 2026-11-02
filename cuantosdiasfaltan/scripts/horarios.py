@@ -100,7 +100,7 @@ def motogp(anio):
 
 ESPN = "https://site.api.espn.com/apis/site/v2/sports"
 TENISTAS = {"alcaraz": "3782", "sinner": "3623", "djokovic": "296"}  # ids de ESPN
-EQUIPOS = {"madrid": "86", "barca": "83"}  # Real Madrid y FC Barcelona en ESPN
+EQUIPOS = {"madrid": "86", "barca": "83", "atletico": "1068", "espana": "164"}  # Madrid, Barça, Atlético y selección en ESPN
 
 
 def tenistas():

@@ -59,6 +59,7 @@ FRASE_CAT = {"fechas": "las próximas fechas señaladas", "videojuegos": "los pr
              "espacio": "los próximos eclipses y fenómenos astronómicos", "eventos": "los próximos grandes eventos"}
 RESERVADOS = set(CATEGORIAS) | {"assets", "cuanto-hace", "horario-f1", "horario-motogp", "a-que-hora-juega-alcaraz",
                                  "a-que-hora-juega-el-madrid", "a-que-hora-juega-el-barca", "a-que-hora-juega-sinner",
+                                 "a-que-hora-juega-el-atletico", "a-que-hora-juega-espana",
                                  "a-que-hora-juega-djokovic", "tenis-hoy", "sobre-nosotros", "aviso-legal", "privacidad", "buscar", "contacto"}
 FESTIVOSDE = "https://festivosde.es"
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
@@ -240,7 +241,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", buscador=True
 </main>
 <footer class="pie"><div class="cont">
 <p><strong>{NOMBRE_WEB}</strong>: cuántos días faltan para los próximos lanzamientos y eventos, con la fecha oficial y su fuente.</p>
-<p class="enlaces"><a href="/">Inicio</a>{''.join(f'<a href="/{c}/">{n}</a>' for c, (n, _) in CATEGORIAS.items())}<a href="/cuanto-hace/">Cuánto hace</a><a href="/horario-f1/">Horario F1</a><a href="/horario-motogp/">Horario MotoGP</a><a href="/tenis-hoy/">Tenis hoy</a><a href="/a-que-hora-juega-alcaraz/">¿A qué hora juega Alcaraz?</a><a href="/a-que-hora-juega-el-madrid/">¿A qué hora juega el Madrid?</a><a href="/a-que-hora-juega-el-barca/">¿A qué hora juega el Barça?</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a>{CONFIGURAR_COOKIES}</p>
+<p class="enlaces"><a href="/">Inicio</a>{''.join(f'<a href="/{c}/">{n}</a>' for c, (n, _) in CATEGORIAS.items())}<a href="/cuanto-hace/">Cuánto hace</a><a href="/horario-f1/">Horario F1</a><a href="/horario-motogp/">Horario MotoGP</a><a href="/tenis-hoy/">Tenis hoy</a><a href="/a-que-hora-juega-alcaraz/">¿A qué hora juega Alcaraz?</a><a href="/a-que-hora-juega-el-madrid/">¿A qué hora juega el Madrid?</a><a href="/a-que-hora-juega-el-barca/">¿A qué hora juega el Barça?</a><a href="/a-que-hora-juega-el-atletico/">¿A qué hora juega el Atlético?</a><a href="/a-que-hora-juega-espana/">¿A qué hora juega España?</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a>{CONFIGURAR_COOKIES}</p>
 <p>¿Ha cambiado una fecha? Escríbenos a {TITULAR['email']}.</p>
 </div></footer>
 <script src="/assets/cuenta.js?v={VERSION}" defer></script>
@@ -931,6 +932,7 @@ def pagina_horario(serie, H, eventos, enlaces):
 BOTONES_DEPORTE = ('<p class="boton-linea"><a class="boton-sec" href="/tenis-hoy/">🎾 Tenis hoy</a> <a class="boton-sec" href="/a-que-hora-juega-alcaraz/">🎾 ¿A qué hora juega Alcaraz?</a> '
                    '<a class="boton-sec" href="/a-que-hora-juega-sinner/">🎾 ¿Y Sinner?</a> <a class="boton-sec" href="/a-que-hora-juega-djokovic/">🎾 ¿Y Djokovic?</a> '
                    '<a class="boton-sec" href="/a-que-hora-juega-el-madrid/">⚽ ¿Y el Madrid?</a> <a class="boton-sec" href="/a-que-hora-juega-el-barca/">⚽ ¿Y el Barça?</a> '
+                   '<a class="boton-sec" href="/a-que-hora-juega-el-atletico/">⚽ ¿Y el Atlético?</a> <a class="boton-sec" href="/a-que-hora-juega-espana/">⚽ ¿Y España?</a> '
                    '<a class="boton-sec" href="/horario-f1/">🏎️ Horario de F1</a> <a class="boton-sec" href="/horario-motogp/">🏍️ Horario de MotoGP</a></p>')
 RONDAS = {"Round 1": "primera ronda", "Round 2": "segunda ronda", "Round 3": "tercera ronda", "Round 4": "cuarta ronda",
           "Round of 128": "primera ronda", "Round of 64": "segunda ronda", "Round of 32": "dieciseisavos de final", "Round of 16": "octavos de final",
@@ -1030,12 +1032,15 @@ def pagina_tenista(clave, partidos, eventos):
 
 TENISTAS_PAGINA = {"alcaraz": ("Alcaraz", "Carlos Alcaraz", "3782"), "sinner": ("Sinner", "Jannik Sinner", "3623"),
                    "djokovic": ("Djokovic", "Novak Djokovic", "296")}
-EQUIPOS_PAGINA = {"madrid": ("Real Madrid", "el Madrid", "/a-que-hora-juega-el-madrid/", "86"),
-                  "barca": ("FC Barcelona", "el Barça", "/a-que-hora-juega-el-barca/", "83")}
+# nombre, cómo se busca, ruta, id de ESPN, «del Real Madrid», artículo ante el rival («contra el Celta» / «contra Chequia»), competiciones
+EQUIPOS_PAGINA = {"madrid": ("Real Madrid", "el Madrid", "/a-que-hora-juega-el-madrid/", "86", "del Real Madrid", "el ", "LaLiga, la Champions y la Copa"),
+                  "barca": ("FC Barcelona", "el Barça", "/a-que-hora-juega-el-barca/", "83", "del Barça", "el ", "LaLiga, la Champions y la Copa"),
+                  "atletico": ("Atlético de Madrid", "el Atlético", "/a-que-hora-juega-el-atletico/", "1068", "del Atlético", "el ", "LaLiga, la Champions y la Copa"),
+                  "espana": ("La selección española", "España", "/a-que-hora-juega-espana/", "164", "de la selección", "", "la Nations League, la clasificación para el Mundial y los amistosos")}
 
 
 def pagina_equipo(clave, partidos):
-    nombre, corto, ruta, ident = EQUIPOS_PAGINA[clave]
+    nombre, corto, ruta, ident, del_equipo, art, competiciones = EQUIPOS_PAGINA[clave]
     futuros = [p for p in partidos if p["estado"] in ("pre", "in")]
     jugados = [p for p in partidos if p["estado"] == "post"]
     proximo = futuros[0] if futuros else None
@@ -1045,14 +1050,14 @@ def pagina_equipo(clave, partidos):
         m, c = en_espana(instante(proximo["utc"]).isoformat())
         lugar = f"en casa{', en el ' + proximo['estadio'] if proximo['estadio'] else ''}" if proximo["en_casa"] else f"fuera{', en el ' + proximo['estadio'] if proximo['estadio'] else ''}"
         hoy = m.date() == HOY
-        frase = (f"<strong>{'Hoy juega' if hoy else 'Hoy no juega'}.</strong> {'El partido' if hoy else 'Su próximo partido'} es contra el <strong>{escape(rival_de(proximo))}</strong> "
+        frase = (f"<strong>{'Hoy juega' if hoy else 'Hoy no juega'}.</strong> {'El partido' if hoy else 'Su próximo partido'} es contra {art}<strong>{escape(rival_de(proximo))}</strong> "
                  f"({escape(proximo['competicion'])}), {cuando_partido(proximo)}, {escape(lugar)}.")
         if not proximo["hora_valida"]:
             frase += " La competición fija la hora unas semanas antes; la pondremos en cuanto se publique."
         else:
             bloque = contador(m.date(), hora=f"{m.hour:02d}:{m.minute:02d}")
         preguntas.append((f"¿A qué hora juega {corto} hoy?", re.sub(r"<[^>]+>", "", frase)))
-        preguntas.append((f"¿Contra quién juega {corto}?", f"Su próximo partido es contra el {rival_de(proximo)}, de {proximo['competicion']}, {re.sub(r'<[^>]+>', '', cuando_partido(proximo))}."))
+        preguntas.append((f"¿Contra quién juega {corto}?", f"Su próximo partido es contra {art}{rival_de(proximo)}, de {proximo['competicion']}, {re.sub(r'<[^>]+>', '', cuando_partido(proximo))}."))
     else:
         frase = f"<strong>{nombre} no tiene partidos programados ahora mismo.</strong> Pondremos aquí el próximo en cuanto se publique."
         preguntas.append((f"¿A qué hora juega {corto} hoy?", re.sub(r"<[^>]+>", "", frase)))
@@ -1064,17 +1069,16 @@ def pagina_equipo(clave, partidos):
         else:
             dato = hhmm(m) if p["hora_valida"] else "Por confirmar"
         return f'<tr><td>{DIAS_CORTOS[m.weekday()]} {m.day}/{m.month}</td><td>{partido}<br><small>{escape(p["competicion"])}</small></td><td>{dato}</td></tr>'
-    proximos = (f'<section><h2>Próximos partidos del {nombre.removeprefix("FC ")} (hora de España)</h2>'
+    proximos = (f'<section><h2>Próximos partidos {del_equipo} (hora de España)</h2>'
                 f'<div class="tabla-env"><table class="tabla-horario"><thead><tr><th>Fecha</th><th>Partido</th><th>Hora</th></tr></thead>'
                 f'<tbody>{"".join(fila(p, False) for p in futuros[:10])}</tbody></table></div></section>') if futuros else ""
     ultimos = (f'<section><h2>Últimos resultados</h2><div class="tabla-env"><table class="tabla-horario"><thead><tr><th>Fecha</th><th>Partido</th><th>Resultado</th></tr></thead>'
                f'<tbody>{"".join(fila(p, True) for p in reversed(jugados[-6:]))}</tbody></table></div></section>') if jugados else ""
     if jugados:
         u = jugados[-1]
-        preguntas.append((f"¿Cómo quedó el último partido del {nombre}?", f"{u['local']} {u['goles'][0]}-{u['goles'][1]} {u['visitante']} ({u['competicion']})."))
+        preguntas.append((f"¿Cómo quedó el último partido {del_equipo}?", f"{u['local']} {u['goles'][0]}-{u['goles'][1]} {u['visitante']} ({u['competicion']})."))
     preguntas.append(("¿Las horas son de España?", "Sí: hora peninsular (Madrid) y, entre paréntesis, la de Canarias, una hora menos."))
     faq = '<section class="faq"><h2>Preguntas frecuentes</h2>' + "".join(f"<h3>{escape(q)}</h3><p>{escape(r)}</p>" for q, r in preguntas) + "</section>"
-    otro = "barca" if clave == "madrid" else "madrid"
     cuerpo = f"""<nav class="migas"><a href="/">Inicio</a> › <a href="/deportes/">Deportes</a> › ¿A qué hora juega {corto}?</nav>
 <h1>¿A qué hora juega {corto} hoy?</h1>
 <p class="respuesta" id="vivo-frase">{frase}</p>
@@ -1082,14 +1086,15 @@ def pagina_equipo(clave, partidos):
 {bloque}
 {proximos}
 {ultimos}
-<p class="fuente">Calendario de LaLiga, la Champions y la Copa, a través de ESPN; se comprueba cada día y, al abrir la página, se actualiza en directo. Las competiciones fijan la hora de cada partido unas semanas antes.</p>
+<p class="fuente">Calendario de {competiciones}, a través de ESPN; se comprueba cada día y, al abrir la página, se actualiza en directo. Las competiciones fijan la hora de cada partido unas semanas antes.</p>
 {faq}
 {BOTONES_DEPORTE}"""
     if proximo:
-        desc = f"{nombre} juega {re.sub(r'<[^>]+>', '', cuando_partido(proximo))} contra el {rival_de(proximo)} ({proximo['competicion']}). Próximos partidos y resultados."
+        desc = f"{nombre} juega {re.sub(r'<[^>]+>', '', cuando_partido(proximo))} contra {art}{rival_de(proximo)} ({proximo['competicion']}). Próximos partidos y resultados."
     else:
         desc = f"A qué hora juega {corto} hoy: su próximo partido con la hora en España, el calendario y los últimos resultados."
-    titulo = f"¿A qué hora juega {corto} hoy? Próximo partido y horario en España"
+    titulo = (f"¿A qué hora juega {corto} hoy? Próximo partido y horario en España" if clave != "espana"
+              else "¿A qué hora juega España hoy? Próximo partido de la selección y horario")
     return pagina(ruta, titulo, recortar(desc), cuerpo, ld_deporte(ruta, f"¿A qué hora juega {corto}?", preguntas),
                   scripts=f'<script src="/assets/vivo.js?v={VERSION}" defer></script>')
 
@@ -1214,7 +1219,7 @@ def main():
             rutas.append(f"/a-que-hora-juega-{clave}/")
     for clave in EQUIPOS_PAGINA:
         if H.get(clave):
-            guardar(EQUIPOS_PAGINA[clave][2], pagina_equipo(clave, H[clave]))
+            guardar(EQUIPOS_PAGINA[clave][2], pagina_equipo(clave, H[clave]))  # madrid, barca, atletico, espana
             rutas.append(EQUIPOS_PAGINA[clave][2])
     for serie in MOTOR:
         if H.get(serie):
