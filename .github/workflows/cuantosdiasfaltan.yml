@@ -1,4 +1,4 @@
-# cuantosdiasfaltan: regenera la web cada día (las cuentas atrás cambian) y cuando cambian los datos
+# cuantosdiasfaltan: regenera la web cada día (las cuentas atrás cambian; descarga los horarios de F1 y MotoGP) y cuando cambian los datos
 # (cuantosdiasfaltan/eventos.json) o los scripts. Cloudflare Pages publica cada commit en main.
 name: Cuántos días faltan
 
@@ -32,6 +32,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Horarios de F1 y MotoGP
+        # si una fuente falla, se queda el último horario bueno de cuantosdiasfaltan/horarios.json
+        continue-on-error: true
+        run: python -u cuantosdiasfaltan/scripts/horarios.py
       - name: Generar la web
         run: |
           pip install -q pillow
@@ -45,11 +49,13 @@ jobs:
           test -s cuantosdiasfaltan/web/_redirects
           test -s cuantosdiasfaltan/web/indice.json
           test -s cuantosdiasfaltan/web/og/portada.png
+          test -s cuantosdiasfaltan/web/horario-f1/index.html
+          test -s cuantosdiasfaltan/web/horario-motogp/index.html
       - name: Publicar
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cuantosdiasfaltan/web
+          git add cuantosdiasfaltan/web cuantosdiasfaltan/horarios.json
           if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
           git commit -m "Cuántos días faltan: actualizar cuentas atrás"
           for i in 1 2 3; do
@@ -60,7 +66,7 @@ jobs:
             git reset --mixed origin/main
             git checkout origin/main -- cuantosdiasfaltan/scripts cuantosdiasfaltan/plantilla cuantosdiasfaltan/eventos.json
             python -u cuantosdiasfaltan/scripts/generar_web.py
-            git add cuantosdiasfaltan/web
+            git add cuantosdiasfaltan/web cuantosdiasfaltan/horarios.json
             if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
             git commit -m "Cuántos días faltan: actualizar cuentas atrás"
             git push origin HEAD:main && exit 0

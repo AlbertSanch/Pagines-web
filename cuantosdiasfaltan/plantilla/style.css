@@ -103,3 +103,16 @@ h2 a { color: inherit; text-decoration: none; }
 }
 .oculto { display: none; }
 .respuesta { font-size: 1.08rem; margin: 6px 0 4px; }
+.tabla-env { overflow-x: auto; margin: 10px 0 6px; }
+.tabla-horario { width: 100%; border-collapse: collapse; background: var(--panel); border-radius: 12px; overflow: hidden; font-size: .95rem; }
+.tabla-horario th, .tabla-horario td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--linea); }
+.tabla-horario th { font-size: .82rem; text-transform: uppercase; letter-spacing: .03em; color: var(--suave); background: var(--fondo); }
+.tabla-horario tr.destacada td { font-weight: 800; background: #fff4ea; }
+.tabla-horario tr.pasada td { color: var(--suave); }
+.tabla-horario td:nth-child(n+3) { white-space: nowrap; }
+.boton-linea { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+@media (max-width: 700px) {
+  .tabla-horario { font-size: .88rem; }
+  .tabla-horario th, .tabla-horario td { padding: 8px 6px; }
+  .tabla-horario td:first-child { white-space: nowrap; }
+}
