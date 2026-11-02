@@ -357,12 +357,24 @@ def preguntas_de(e):
         return f"¿Cuánto falta para {t}?", f"¿Cuánto falta para {t} {e['fecha'][:4]}? Días, horas y cuenta atrás"
     if c in ("videojuegos", "tecnologia"):
         return f"¿Cuándo sale {t}?", f"¿Cuándo sale {t}? Fecha de lanzamiento y cuenta atrás"
-    if c == "peliculas":
-        return f"¿Cuándo se estrena {t}?", f"Estreno de {t}: fecha en cines y cuenta atrás"
+    if c == "peliculas":  # «frozen 3 fecha de estreno» 320 frente a «estreno frozen 3» 110 (noviembre de 2026)
+        return f"¿Cuándo se estrena {t}?", f"{e['titulo']}: fecha de estreno y cuenta atrás"
     if c == "anime":  # «solo leveling temporada 3» 6.600 frente a «cuándo sale jujutsu kaisen temporada 3» 390
         return f"¿Cuándo sale {t}?", f"{t}: fecha de estreno y cuenta atrás"
     if c == "series":
         return f"¿Cuándo se estrena {t}?", f"¿Cuándo se estrena {t}? Fecha de estreno y cuenta atrás"
+    # Keyword Planner, noviembre de 2026: «cuánto falta para…» casi no se busca en carreras, conciertos y fiestas.
+    fechas = "fecha" if UN_DIA.search(e["slug"]) else "fechas"
+    es = "son" if t.lower().startswith(("las ", "los ")) else "es"
+    sep = ", " if ":" in e["titulo"] else ": "  # «Quevedo: El Baifo Tour 2027, fechas y…», no dos «:» seguidos
+    if c == "deportes":  # «a qué hora es la carrera de motogp» 8.100; «cuánto falta para el gp de malasia», 0
+        if e.get("hora") and not e.get("hora_aprox"):
+            return f"¿Cuándo y a qué hora {es} {t}?", f"{e['titulo']}{sep}fecha, hora en España y cuenta atrás"
+        return f"¿Cuándo {es} {t}?", f"{e['titulo']}{sep}{fechas} y cuenta atrás"
+    if c == "musica" and e.get("artista") and " en " in e["titulo"] and not e["titulo"].lower().startswith("concierto"):
+        return f"¿Cuándo {es} {t}?", f"Concierto de {e['titulo']}: fechas y cuenta atrás"  # «concierto oasis barcelona 2027» 480
+    if c in ("musica", "fiestas", "eventos"):  # «feria de abril 2027 fechas» 260 frente a «cuánto falta para la feria de abril» 10
+        return f"¿Cuándo {es} {t}?", f"{e['titulo']}{sep}{fechas} y cuenta atrás"
     return f"¿Cuánto falta para {t}?", f"¿Cuánto falta para {t}? Fecha y cuenta atrás"
 
 
@@ -391,7 +403,8 @@ def pagina_evento(e, eventos):
         cab = f"¿Cuánto hace de {t}?"
         sub = f'Fue el <strong>{fecha_larga(d)}</strong>'
         bloque = contador(d, pasado=True)
-        titulo = f"¿Cuánto hace de {t}? Fecha de lanzamiento"
+        titulo = (f"¿Cuánto hace de {t}? Fecha de lanzamiento" if e["categoria"] in ("videojuegos", "tecnologia")
+                  else f"¿Cuándo fue {e.get('en_frase') or t}? Fecha y cuánto hace")
         desc = f"{t} salió el {fecha_larga(d)}: hace {texto_tiempo(d, HOY)}."
         if e["categoria"] in ("series", "anime"):  # quien busca una temporada ya estrenada quiere saber desde cuándo y dónde verla
             cab = f"¿Cuándo se estrenó {t}?"
@@ -516,7 +529,7 @@ def evento_ld(e, d, url):
     return ld
 
 
-UN_DIA = re.compile(r"^(gp-|final-|super-bowl|eurovision|maraton|oscar|premios-goya|grammy|f1-|motogp-)")
+UN_DIA = re.compile(r"^(gp-|final-|super-bowl|eurovision|maraton|oscar|premios-goya|grammy|f1-|motogp-|clasico|ultima-jornada|elecciones)")
 
 
 def recortar(texto, maximo=160):
