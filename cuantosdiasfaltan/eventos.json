@@ -363,7 +363,8 @@
   "fuente_nombre": "BOE (LOREG, art. 42.3: el cuarto domingo de mayo)",
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
-  "lugar": "España"
+  "lugar": "España",
+  "en_frase": "las elecciones municipales y autonómicas 2027"
  },
  {
   "titulo": "Final de la Europa League 2027",
@@ -380,7 +381,8 @@
   "organizador": {
    "nombre": "UEFA",
    "url": "https://www.uefa.com"
-  }
+  },
+  "en_frase": "la final de la Europa League 2027"
  },
  {
   "titulo": "Final de la Champions League 2027",
@@ -400,7 +402,8 @@
   "organizador": {
    "nombre": "UEFA",
    "url": "https://www.uefa.com"
-  }
+  },
+  "en_frase": "la final de la Champions League 2027"
  },
  {
   "titulo": "Mundial Femenino 2027",
@@ -417,7 +420,8 @@
   "organizador": {
    "nombre": "FIFA",
    "url": "https://www.fifa.com"
-  }
+  },
+  "en_frase": "el Mundial Femenino 2027"
  },
  {
   "titulo": "Tour de Francia 2027",
@@ -430,7 +434,8 @@
   "fuente_tipo": "oficial",
   "comprobado": "2026-10-25",
   "lugar": "Salida en Edimburgo (Escocia)",
-  "serie": "tour-de-francia"
+  "serie": "tour-de-francia",
+  "en_frase": "el Tour de Francia 2027"
  },
  {
   "titulo": "Eclipse total de Sol en España",
@@ -459,7 +464,8 @@
   "fuente_tipo": "medio",
   "comprobado": "2026-10-25",
   "lugar": "Seúl, del 3 al 8 de agosto",
-  "fin": "2027-08-08"
+  "fin": "2027-08-08",
+  "en_frase": "la JMJ de Seúl 2027"
  },
  {
   "titulo": "Mundial de Baloncesto 2027",
@@ -476,7 +482,8 @@
   "organizador": {
    "nombre": "FIBA",
    "url": "https://www.fiba.basketball"
-  }
+  },
+  "en_frase": "el Mundial de Baloncesto 2027"
  },
  {
   "titulo": "Gran Premio de España de F1 2027 (Madrid)",
@@ -493,7 +500,8 @@
   "organizador": {
    "nombre": "Formula 1",
    "url": "https://www.formula1.com"
-  }
+  },
+  "en_frase": "el GP de España de F1 2027 (Madrid)"
  },
  {
   "titulo": "Mundial de Rugby 2027",
@@ -509,7 +517,8 @@
   "organizador": {
    "nombre": "World Rugby",
    "url": "https://www.world.rugby"
-  }
+  },
+  "en_frase": "el Mundial de Rugby 2027"
  },
  {
   "titulo": "Eclipse anular de Sol en España",
@@ -537,7 +546,8 @@
   "organizador": {
    "nombre": "UEFA",
    "url": "https://www.uefa.com"
-  }
+  },
+  "en_frase": "la Eurocopa 2028"
  },
  {
   "titulo": "Juegos Olímpicos de Los Ángeles 2028",
@@ -553,7 +563,8 @@
   "organizador": {
    "nombre": "LA28",
    "url": "https://la28.org"
-  }
+  },
+  "en_frase": "los Juegos Olímpicos de Los Ángeles 2028"
  },
  {
   "titulo": "Juegos Olímpicos de Invierno 2030",
@@ -570,7 +581,8 @@
   "organizador": {
    "nombre": "Comité Olímpico Internacional",
    "url": "https://www.olympics.com"
-  }
+  },
+  "en_frase": "los Juegos Olímpicos de Invierno 2030"
  },
  {
   "titulo": "Mundial 2030",
@@ -588,7 +600,8 @@
    "2030-06-01",
    "2030-06-30"
   ],
-  "estimacion": "La FIFA ha anunciado que se juega en junio y julio de 2030; el calendario de partidos aún no está publicado"
+  "estimacion": "La FIFA ha anunciado que se juega en junio y julio de 2030; el calendario de partidos aún no está publicado",
+  "en_frase": "el Mundial 2030"
  },
  {
   "titulo": "iPhone 18",
@@ -1712,6 +1725,78 @@
   "organizador": {
    "nombre": "MotoGP",
    "url": "https://www.motogp.com"
+  }
+ },
+ {
+  "titulo": "GP de México de F1 2027",
+  "slug": "gp-mexico-f1-2027",
+  "categoria": "deportes",
+  "fecha": "2027-10-31",
+  "precision": "dia",
+  "fuente_url": "https://www.formula1.com/en/racing/2027",
+  "fuente_nombre": "Formula 1 (calendario oficial 2027)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-11-02",
+  "lugar": "Autódromo Hermanos Rodríguez, Ciudad de México",
+  "en_frase": "el GP de México de F1 2027",
+  "serie": "gp-mexico-f1",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
+ },
+ {
+  "titulo": "GP de Brasil de F1 2027",
+  "slug": "gp-brasil-f1-2027",
+  "categoria": "deportes",
+  "fecha": "2027-11-07",
+  "precision": "dia",
+  "fuente_url": "https://www.formula1.com/en/racing/2027",
+  "fuente_nombre": "Formula 1 (calendario oficial 2027)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-11-02",
+  "lugar": "Interlagos, São Paulo",
+  "en_frase": "el GP de Brasil de F1 2027",
+  "serie": "gp-brasil-f1",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
+ },
+ {
+  "titulo": "GP de Las Vegas de F1 2027",
+  "slug": "gp-las-vegas-f1-2027",
+  "categoria": "deportes",
+  "fecha": "2027-11-20",
+  "precision": "dia",
+  "fuente_url": "https://www.formula1.com/en/racing/2027",
+  "fuente_nombre": "Formula 1 (calendario oficial 2027)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-11-02",
+  "lugar": "Las Vegas (la carrera es de madrugada en España)",
+  "en_frase": "el GP de Las Vegas de F1 2027",
+  "serie": "gp-las-vegas-f1",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
+  }
+ },
+ {
+  "titulo": "GP de Qatar de F1 2027",
+  "slug": "gp-qatar-f1-2027",
+  "categoria": "deportes",
+  "fecha": "2027-12-05",
+  "precision": "dia",
+  "fuente_url": "https://www.formula1.com/en/racing/2027",
+  "fuente_nombre": "Formula 1 (calendario oficial 2027)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-11-02",
+  "lugar": "Lusail (Qatar)",
+  "en_frase": "el GP de Qatar de F1 2027",
+  "serie": "gp-qatar-f1",
+  "organizador": {
+   "nombre": "Formula 1",
+   "url": "https://www.formula1.com"
   }
  },
  {
