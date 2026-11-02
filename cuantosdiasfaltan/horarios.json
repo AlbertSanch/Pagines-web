@@ -1653,5 +1653,1813 @@
 ],
 "2027": []
 },
-"descargado": "2026-11-02"
+"descargado": "2026-11-02",
+"alcaraz": [
+{
+"torneo": "Kinoshita Group Japan Open Tennis Championships",
+"utc": "2026-10-01T07:40Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Round 1",
+"pista": "Colosseum",
+"rival": "Alex Michelsen",
+"descanso": false,
+"gano": true,
+"sets": [
+[
+7,
+6
+],
+[
+4,
+6
+],
+[
+6,
+1
+]
+]
+},
+{
+"torneo": "Kinoshita Group Japan Open Tennis Championships",
+"utc": "2026-10-03T04:35Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Round 2",
+"pista": "Colosseum",
+"rival": "Matteo Arnaldi",
+"descanso": false,
+"gano": true,
+"sets": [
+[
+7,
+6
+],
+[
+6,
+1
+]
+]
+},
+{
+"torneo": "Kinoshita Group Japan Open Tennis Championships",
+"utc": "2026-10-04T04:05Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Quarterfinal",
+"pista": "Colosseum",
+"rival": "Denis Shapovalov",
+"descanso": false,
+"gano": true,
+"sets": [
+[
+7,
+6
+],
+[
+2,
+1
+]
+]
+},
+{
+"torneo": "Kinoshita Group Japan Open Tennis Championships",
+"utc": "2026-10-05T07:25Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Semifinal",
+"pista": "Colosseum",
+"rival": "Jaume Munar",
+"descanso": false,
+"gano": true,
+"sets": [
+[
+5,
+7
+],
+[
+6,
+3
+],
+[
+6,
+1
+]
+]
+},
+{
+"torneo": "Kinoshita Group Japan Open Tennis Championships",
+"utc": "2026-10-06T09:10Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Final",
+"pista": "Colosseum",
+"rival": "Jiri Lehecka",
+"descanso": false,
+"gano": true,
+"sets": [
+[
+7,
+6
+],
+[
+6,
+4
+]
+]
+},
+{
+"torneo": "Rolex Shanghai Masters",
+"utc": "2026-10-10T11:15Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Round 2",
+"pista": "Stadium Court",
+"rival": "Juan Manuel Cerundolo",
+"descanso": false,
+"gano": true,
+"sets": [
+[
+6,
+3
+],
+[
+6,
+3
+]
+]
+},
+{
+"torneo": "Rolex Shanghai Masters",
+"utc": "2026-10-12T10:10Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Round 3",
+"pista": "Stadium Court",
+"rival": "Zizou Bergs",
+"descanso": false,
+"gano": false,
+"sets": [
+[
+5,
+7
+],
+[
+6,
+7
+]
+]
+},
+{
+"torneo": "Erste Bank Open",
+"utc": "2026-10-27T14:30Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Round 1",
+"pista": "Centre Court",
+"rival": "Karen Khachanov",
+"descanso": false,
+"gano": true,
+"sets": [
+[
+6,
+4
+],
+[
+7,
+6
+]
+]
+},
+{
+"torneo": "Erste Bank Open",
+"utc": "2026-10-29T15:35Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Round 2",
+"pista": "Centre Court",
+"rival": "Nikoloz Basilashvili",
+"descanso": false,
+"gano": true,
+"sets": [
+[
+6,
+1
+],
+[
+7,
+6
+]
+]
+},
+{
+"torneo": "Erste Bank Open",
+"utc": "2026-10-30T14:35Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Quarterfinal",
+"pista": "Centre Court",
+"rival": "Tommy Paul",
+"descanso": false,
+"gano": true,
+"sets": [
+[
+6,
+4
+],
+[
+7,
+6
+]
+]
+},
+{
+"torneo": "Erste Bank Open",
+"utc": "2026-10-31T14:10Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Semifinal",
+"pista": "Centre Court",
+"rival": "Daniil Medvedev",
+"descanso": false,
+"gano": true,
+"sets": [
+[
+6,
+4
+],
+[
+7,
+6
+]
+]
+},
+{
+"torneo": "Erste Bank Open",
+"utc": "2026-11-01T13:10Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Final",
+"pista": "Centre Court",
+"rival": "Alex de Minaur",
+"descanso": false,
+"gano": true,
+"sets": [
+[
+6,
+1
+],
+[
+6,
+4
+]
+]
+},
+{
+"torneo": "Rolex Paris Masters",
+"utc": "2026-11-04T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"rival": "",
+"descanso": false,
+"gano": null,
+"sets": []
+}
+],
+"madrid": [
+{
+"id": "401898187",
+"utc": "2026-07-28T16:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistoso",
+"local": "Real Madrid",
+"visitante": "Leganés",
+"en_casa": true,
+"estadio": "",
+"goles": [
+"4",
+"1"
+]
+},
+{
+"id": "401888842",
+"utc": "2026-08-01T16:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistoso",
+"local": "Real Madrid",
+"visitante": "Fiorentina",
+"en_casa": true,
+"estadio": "",
+"goles": [
+"2",
+"2"
+]
+},
+{
+"id": "401900356",
+"utc": "2026-08-08T17:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistoso",
+"local": "Ferencvaros",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Groupama Arena",
+"goles": [
+"1",
+"2"
+]
+},
+{
+"id": "401887955",
+"utc": "2026-08-12T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistoso",
+"local": "Deportivo La Coruña",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Riazor",
+"goles": [
+"0",
+"1"
+]
+},
+{
+"id": "401902578",
+"utc": "2026-08-16T15:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistoso",
+"local": "Schalke 04",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Veltins Arena",
+"goles": [
+"0",
+"3"
+]
+},
+{
+"id": "401882912",
+"utc": "2026-08-22T19:30Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Espanyol",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "RCDE Stadium",
+"goles": [
+"1",
+"2"
+]
+},
+{
+"id": "401882919",
+"utc": "2026-08-26T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Real Sociedad",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+"4",
+"1"
+]
+},
+{
+"id": "401882899",
+"utc": "2026-08-30T15:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Málaga",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+"4",
+"0"
+]
+},
+{
+"id": "401882894",
+"utc": "2026-09-04T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Real Betis",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Estadio La Cartuja",
+"goles": [
+"1",
+"0"
+]
+},
+{
+"id": "401915451",
+"utc": "2026-09-08T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Champions League",
+"local": "Real Madrid",
+"visitante": "Internazionale",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+"2",
+"1"
+]
+},
+{
+"id": "401882880",
+"utc": "2026-09-12T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Rayo Vallecano",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+"4",
+"1"
+]
+},
+{
+"id": "401882872",
+"utc": "2026-09-15T19:30Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Elche",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Estadio Martínez Valero",
+"goles": [
+"2",
+"3"
+]
+},
+{
+"id": "401882865",
+"utc": "2026-09-20T14:15Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+"2",
+"1"
+]
+},
+{
+"id": "401882848",
+"utc": "2026-10-10T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Villarreal",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+"1",
+"0"
+]
+},
+{
+"id": "401915414",
+"utc": "2026-10-14T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Champions League",
+"local": "AS Roma",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Olimpico",
+"goles": [
+"3",
+"4"
+]
+},
+{
+"id": "401882839",
+"utc": "2026-10-18T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Sevilla FC",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+"4",
+"1"
+]
+},
+{
+"id": "401915313",
+"utc": "2026-10-21T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Champions League",
+"local": "Real Madrid",
+"visitante": "RB Leipzig",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+"4",
+"1"
+]
+},
+{
+"id": "401882832",
+"utc": "2026-10-25T20:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Spotify Camp Nou",
+"goles": [
+"1",
+"2"
+]
+},
+{
+"id": "401882819",
+"utc": "2026-11-01T15:15Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Racing Santander",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "El Sardineros",
+"goles": [
+"0",
+"3"
+]
+},
+{
+"id": "401915383",
+"utc": "2026-11-04T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "AEK Athens",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "OPAP Arena",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882808",
+"utc": "2026-11-07T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Valencia",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Mestalla Stadium",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882798",
+"utc": "2026-11-21T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Celta Vigo",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401915298",
+"utc": "2026-11-24T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "Real Madrid",
+"visitante": "PSV Eindhoven",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882789",
+"utc": "2026-11-29T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Alavés",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882785",
+"utc": "2026-12-06T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Athletic Club",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "San Mamés",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401915367",
+"utc": "2026-12-09T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "Arsenal",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Emirates Stadium",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882769",
+"utc": "2026-12-13T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Osasuna",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882763",
+"utc": "2026-12-20T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Deportivo La Coruña",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Riazor",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882749",
+"utc": "2027-01-03T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Getafe",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882739",
+"utc": "2027-01-10T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Levante",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882730",
+"utc": "2027-01-17T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Málaga",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "La Rosaleda",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401915280",
+"utc": "2027-01-19T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "Real Madrid",
+"visitante": "LASK Linz",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882719",
+"utc": "2027-01-24T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Real Betis",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401915270",
+"utc": "2027-01-27T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "Shakhtar Donetsk",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Stamford Bridge",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882709",
+"utc": "2027-01-31T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Rayo Vallecano",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Estadio de Vallecas",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401892164",
+"utc": "2027-02-03T19:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "Supercopa Española",
+"local": "Real Sociedad",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Vodafone Park",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882698",
+"utc": "2027-02-07T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Sociedad",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Reale Arena",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882691",
+"utc": "2027-02-14T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Athletic Club",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882678",
+"utc": "2027-02-21T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Sevilla FC",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Ramón Sánchez Pizjuán Stadium",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882668",
+"utc": "2027-02-28T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Valencia",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882657",
+"utc": "2027-03-07T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Villarreal",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Estadio de la Cerámica",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882647",
+"utc": "2027-03-14T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Espanyol",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882645",
+"utc": "2027-03-21T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Celta Vigo",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Balaidos",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882628",
+"utc": "2027-04-04T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Atlético de Madrid",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882622",
+"utc": "2027-04-11T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Osasuna",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "El Sadar",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882610",
+"utc": "2027-04-18T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Getafe",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Estadio Coliseum",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882600",
+"utc": "2027-04-21T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Elche",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882590",
+"utc": "2027-05-02T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Levante",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Estadi Ciutat de València",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882579",
+"utc": "2027-05-09T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Barcelona",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882569",
+"utc": "2027-05-16T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Racing Santander",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882566",
+"utc": "2027-05-23T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Alavés",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Mendizorrotza",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882548",
+"utc": "2027-05-30T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Deportivo La Coruña",
+"en_casa": true,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+}
+],
+"barca": [
+{
+"id": "401886550",
+"utc": "2026-07-31T18:45Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistoso",
+"local": "Birmingham City",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "St. Andrew's Stadium",
+"goles": [
+"2",
+"2"
+]
+},
+{
+"id": "401906710",
+"utc": "2026-08-16T14:30Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistoso",
+"local": "FC Basel",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "St. Jakob Park",
+"goles": [
+"2",
+"5"
+]
+},
+{
+"id": "401900551",
+"utc": "2026-08-19T18:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Trofeo Joan Gamper",
+"local": "Barcelona",
+"visitante": "Al Ahly",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+"2",
+"1"
+]
+},
+{
+"id": "401882913",
+"utc": "2026-08-23T19:30Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Elche",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Estadio Martínez Valero",
+"goles": [
+"0",
+"5"
+]
+},
+{
+"id": "401882921",
+"utc": "2026-08-27T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Athletic Club",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+"2",
+"0"
+]
+},
+{
+"id": "401882903",
+"utc": "2026-08-31T19:30Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Rayo Vallecano",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+"5",
+"2"
+]
+},
+{
+"id": "401882888",
+"utc": "2026-09-06T14:15Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Valencia",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Mestalla Stadium",
+"goles": [
+"0",
+"5"
+]
+},
+{
+"id": "401915424",
+"utc": "2026-09-09T16:45Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Champions League",
+"local": "Barcelona",
+"visitante": "Feyenoord Rotterdam",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+"5",
+"1"
+]
+},
+{
+"id": "401882883",
+"utc": "2026-09-13T14:15Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Levante",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Estadi Ciutat de València",
+"goles": [
+"2",
+"4"
+]
+},
+{
+"id": "401882871",
+"utc": "2026-09-16T19:30Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Racing Santander",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+"7",
+"2"
+]
+},
+{
+"id": "401882859",
+"utc": "2026-09-19T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Sevilla FC",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Ramón Sánchez Pizjuán Stadium",
+"goles": [
+"1",
+"3"
+]
+},
+{
+"id": "401882853",
+"utc": "2026-10-10T16:30Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Getafe",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+"3",
+"0"
+]
+},
+{
+"id": "401915435",
+"utc": "2026-10-13T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Champions League",
+"local": "Galatasaray",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "RAMS Park",
+"goles": [
+"1",
+"4"
+]
+},
+{
+"id": "401882846",
+"utc": "2026-10-17T16:30Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Real Betis",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Estadio La Cartuja",
+"goles": [
+"2",
+"5"
+]
+},
+{
+"id": "401915399",
+"utc": "2026-10-20T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Champions League",
+"local": "Paris Saint-Germain",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Parc des Princes",
+"goles": [
+"4",
+"2"
+]
+},
+{
+"id": "401882832",
+"utc": "2026-10-25T20:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Real Madrid",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+"1",
+"2"
+]
+},
+{
+"id": "401882822",
+"utc": "2026-10-31T20:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Alavés",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+"6",
+"1"
+]
+},
+{
+"id": "401915387",
+"utc": "2026-11-03T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "Barcelona",
+"visitante": "Aston Villa",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882816",
+"utc": "2026-11-08T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882804",
+"utc": "2026-11-22T13:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Villarreal",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401915378",
+"utc": "2026-11-25T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "Sabah FK",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Baku Olympic Stadium",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882794",
+"utc": "2026-11-29T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Deportivo La Coruña",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Riazor",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882783",
+"utc": "2026-12-06T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Celta Vigo",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401915285",
+"utc": "2026-12-08T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "Barcelona",
+"visitante": "Manchester City",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882770",
+"utc": "2026-12-13T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Málaga",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "La Rosaleda",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882762",
+"utc": "2026-12-20T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Real Sociedad",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882754",
+"utc": "2027-01-03T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Espanyol",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "RCDE Stadium",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882740",
+"utc": "2027-01-10T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Osasuna",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "El Sadar",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882733",
+"utc": "2027-01-17T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Elche",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401915356",
+"utc": "2027-01-20T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "Sporting CP",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Estádio José Alvalade",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882726",
+"utc": "2027-01-24T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Alavés",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Mendizorrotza",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401915264",
+"utc": "2027-01-27T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "Barcelona",
+"visitante": "Como",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882713",
+"utc": "2027-01-31T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Valencia",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401892163",
+"utc": "2027-02-02T19:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "Supercopa Española",
+"local": "Barcelona",
+"visitante": "Atlético de Madrid",
+"en_casa": true,
+"estadio": "Şükrü Saracoğlu Stadium",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882700",
+"utc": "2027-02-07T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Atlético de Madrid",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882687",
+"utc": "2027-02-14T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Villarreal",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Estadio de la Cerámica",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882681",
+"utc": "2027-02-21T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Levante",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882676",
+"utc": "2027-02-28T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Athletic Club",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "San Mamés",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882661",
+"utc": "2027-03-07T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Real Betis",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882652",
+"utc": "2027-03-14T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Deportivo La Coruña",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882641",
+"utc": "2027-03-21T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Rayo Vallecano",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Estadio de Vallecas",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882632",
+"utc": "2027-04-04T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Sevilla FC",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882621",
+"utc": "2027-04-11T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Racing Santander",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "El Sardineros",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882611",
+"utc": "2027-04-18T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Espanyol",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882605",
+"utc": "2027-04-21T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Celta Vigo",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Balaidos",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882591",
+"utc": "2027-05-02T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Osasuna",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882579",
+"utc": "2027-05-09T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882568",
+"utc": "2027-05-16T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Sociedad",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Reale Arena",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882562",
+"utc": "2027-05-23T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Málaga",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882552",
+"utc": "2027-05-30T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Getafe",
+"visitante": "Barcelona",
+"en_casa": false,
+"estadio": "Estadio Coliseum",
+"goles": [
+null,
+null
+]
+}
+]
 }

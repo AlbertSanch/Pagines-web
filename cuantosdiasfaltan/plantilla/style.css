@@ -116,3 +116,8 @@ h2 a { color: inherit; text-decoration: none; }
   .tabla-horario th, .tabla-horario td { padding: 8px 6px; }
   .tabla-horario td:first-child { white-space: nowrap; }
 }
+.vivo { background: var(--panel); border: 1px solid var(--linea); border-left: 4px solid var(--acento); border-radius: 12px; padding: 10px 14px; margin: 10px 0; }
+.vivo p { margin: 0; }
+.vivo-ya { color: #b91c1c; }
+.tabla-horario small { color: var(--suave); }
+.vivo-nota { color: var(--suave); font-size: .8rem; }
