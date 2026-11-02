@@ -15,9 +15,11 @@ import re
 import sys
 import urllib.request
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 RAIZ = Path(__file__).resolve().parent.parent
 SALIDA = RAIZ / "horarios.json"
+ZONA = ZoneInfo("Europe/Madrid")
 UA = {"User-Agent": "cuantosdiasfaltan.es (horarios; contacto en la web)", "Accept": "application/json"}
 
 PAISES = {  # nombre en español del GP según el país (o la ciudad, si en el país hay más de uno)
@@ -97,32 +99,60 @@ def motogp(anio):
 
 
 ESPN = "https://site.api.espn.com/apis/site/v2/sports"
-ALCARAZ = "3782"  # id de Carlos Alcaraz en ESPN
+TENISTAS = {"alcaraz": "3782", "sinner": "3623", "djokovic": "296"}  # ids de ESPN
 EQUIPOS = {"madrid": "86", "barca": "83"}  # Real Madrid y FC Barcelona en ESPN
 
 
-def alcaraz():
-    """Partidos individuales de Alcaraz de las últimas seis semanas y las tres siguientes."""
+def tenistas():
+    """Partidos individuales de cada tenista de los últimos cuatro meses y las tres semanas siguientes (una sola consulta)."""
     hoy = dt.date.today()
-    rango = f"{(hoy - dt.timedelta(days=45)):%Y%m%d}-{(hoy + dt.timedelta(days=21)):%Y%m%d}"
-    partidos = []
+    rango = f"{(hoy - dt.timedelta(days=120)):%Y%m%d}-{(hoy + dt.timedelta(days=21)):%Y%m%d}"
+    salida = {clave: [] for clave in TENISTAS}
     for ev in bajar(f"{ESPN}/tennis/atp/scoreboard?dates={rango}&lang=es&region=es").get("events", []):
         for g in ev.get("groupings") or []:
             for c in g.get("competitions", []):
                 if (c.get("type") or {}).get("slug") != "mens-singles":
                     continue
                 jugadores = c.get("competitors", [])
-                yo = next((x for x in jugadores if x.get("id") == ALCARAZ), None)
-                if not yo:
-                    continue
-                rival = next((x for x in jugadores if x is not yo), {})
-                nombre = (rival.get("athlete") or {}).get("displayName") or ""
-                partidos.append({"torneo": ev.get("name"), "utc": c["date"], "hora_valida": bool(c.get("timeValid")),
-                                 "estado": c["status"]["type"]["state"], "ronda": (c.get("round") or {}).get("displayName", ""),
-                                 "pista": (c.get("venue") or {}).get("court") or "", "rival": "" if nombre in ("TBD", "Bye") else nombre,
-                                 "descanso": nombre == "Bye", "gano": yo.get("winner"),
-                                 "sets": [[int(a.get("value", 0)), int(b.get("value", 0))] for a, b in zip(yo.get("linescores", []), rival.get("linescores", []))]})
-    return sorted(partidos, key=lambda p: p["utc"])
+                for clave, ident in TENISTAS.items():
+                    yo = next((x for x in jugadores if x.get("id") == ident), None)
+                    if not yo:
+                        continue
+                    rival = next((x for x in jugadores if x is not yo), {})
+                    nombre = (rival.get("athlete") or {}).get("displayName") or ""
+                    salida[clave].append({"torneo": ev.get("name"), "utc": c["date"], "hora_valida": bool(c.get("timeValid")),
+                                          "estado": c["status"]["type"]["state"], "ronda": (c.get("round") or {}).get("displayName", ""),
+                                          "pista": (c.get("venue") or {}).get("court") or "", "rival": "" if nombre in ("TBD", "Bye") else nombre,
+                                          "descanso": nombre == "Bye", "gano": yo.get("winner"),
+                                          "sets": [[int(a.get("value", 0)), int(b.get("value", 0))] for a, b in zip(yo.get("linescores", []), rival.get("linescores", []))]})
+    return {clave: sorted(L, key=lambda p: p["utc"]) for clave, L in salida.items()}
+
+
+def tenis_hoy():
+    """Partidos individuales de la ATP y la WTA de hoy y de mañana (hora de España)."""
+    hoy = dt.datetime.now(dt.timezone.utc).astimezone(ZONA).date()
+    partidos = []
+    for gira in ("atp", "wta"):
+        for d in (hoy, hoy + dt.timedelta(days=1)):
+            for ev in bajar(f"{ESPN}/tennis/{gira}/scoreboard?dates={d:%Y%m%d}&lang=es&region=es").get("events", []):
+                for g in ev.get("groupings") or []:
+                    for c in g.get("competitions", []):
+                        if (c.get("type") or {}).get("slug") not in ("mens-singles", "womens-singles"):
+                            continue
+                        if dt.datetime.fromisoformat(c["date"].replace("Z", "+00:00")).astimezone(ZONA).date() != d:
+                            continue
+                        js = []
+                        for x in c.get("competitors", []):
+                            a = x.get("athlete") or {}
+                            js.append({"id": x.get("id"), "n": a.get("displayName") or "", "pais": (a.get("flag") or {}).get("alt") or "",
+                                       "gano": x.get("winner"), "sets": [int(l.get("value", 0)) for l in x.get("linescores", [])]})
+                        if len(js) != 2 or any(j["n"] in ("Bye",) for j in js):
+                            continue
+                        partidos.append({"id": c["id"], "gira": gira.upper(), "torneo": ev.get("name"), "utc": c["date"], "hora_valida": bool(c.get("timeValid")),
+                                         "estado": c["status"]["type"]["state"], "ronda": (c.get("round") or {}).get("displayName", ""),
+                                         "pista": (c.get("venue") or {}).get("court") or "", "jugadores": js})
+    unicos = {p["id"]: p for p in partidos}
+    return sorted(unicos.values(), key=lambda p: p["utc"])
 
 
 def equipo(ident):
@@ -155,7 +185,8 @@ def main():
             if carreras or str(a) not in datos.get(serie, {}):
                 datos.setdefault(serie, {})[str(a)] = carreras
             print(f"{serie} {a}: {len(carreras)} carreras con horario")
-    for clave, lector in [("alcaraz", alcaraz)] + [(k, lambda i=i: equipo(i)) for k, i in EQUIPOS.items()]:
+    datos.pop("alcaraz", None)  # ahora va dentro de «tenistas»
+    for clave, lector in [("tenistas", tenistas), ("tenis_hoy", tenis_hoy)] + [(k, lambda i=i: equipo(i)) for k, i in EQUIPOS.items()]:
         try:
             datos[clave] = lector()
             print(f"{clave}: {len(datos[clave])} partidos")
