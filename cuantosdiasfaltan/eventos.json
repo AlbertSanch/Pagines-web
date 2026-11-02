@@ -204,7 +204,7 @@
   "fuente_url": "https://vandal.elespanol.com/noticia/r41992/ya-es-oficial-los-anillos-de-poder-ya-tiene-fecha-de-estreno-para-su-temporada-3-en-prime-video-y-desvela-su-primera-imagen",
   "fuente_nombre": "Vandal (anuncio de Prime Video)",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "plataformas": "Prime Video"
  },
  {
@@ -216,7 +216,7 @@
   "fuente_url": "https://www.sensacine.com/noticias/series/noticia-1000214823/",
   "fuente_nombre": "SensaCine (anuncio de Disney+)",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "plataformas": "Disney+"
  },
  {
@@ -707,7 +707,7 @@
   "fuente_url": "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
   "fuente_nombre": "Rockstar Games",
   "fuente_tipo": "oficial",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "plataformas": "PS5 y Xbox Series X|S",
   "retrasos": [
    "2025",
@@ -1093,11 +1093,35 @@
   "fuente_url": "https://turismotorino.org/en/visit/events/nitto-atp-finals-2026",
   "fuente_nombre": "Turismo Torino",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "lugar": "Inalpi Arena, Turín",
   "en_frase": "las ATP Finals 2026",
   "serie": "atp-finals",
   "fin": "2026-11-22",
+  "organizador": {
+   "nombre": "ATP",
+   "url": "https://www.atptour.com"
+  }
+ },
+ {
+  "titulo": "ATP Finals 2027",
+  "slug": "atp-finals-2027",
+  "categoria": "deportes",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://www.atptour.com/en/news/nitto-atp-finals-2027-turin-extension",
+  "fuente_nombre": "ATP (Turín, sede en 2027)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-11-02",
+  "lugar": "Inalpi Arena, Turín",
+  "en_frase": "las ATP Finals 2027",
+  "ventana": "noviembre de 2027",
+  "rango": [
+   "2027-11-07",
+   "2027-11-28"
+  ],
+  "estimacion": "Se juegan cada noviembre, la semana después del Masters de París; la ATP ha confirmado Turín como sede en 2027, pero aún no las fechas",
+  "serie": "atp-finals",
   "organizador": {
    "nombre": "ATP",
    "url": "https://www.atptour.com"
@@ -1242,12 +1266,36 @@
   "fuente_url": "https://www.daviscup.com/es/calendario_2026",
   "fuente_nombre": "Copa Davis (ITF)",
   "fuente_tipo": "oficial",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "lugar": "Bolonia (Italia)",
   "en_frase": "la final de la Copa Davis 2026",
   "serie": "final-copa-davis",
   "hora": "15:00",
   "hora_que": "la final",
+  "organizador": {
+   "nombre": "ITF (Copa Davis)",
+   "url": "https://www.daviscup.com"
+  }
+ },
+ {
+  "titulo": "Final de la Copa Davis 2027",
+  "slug": "final-copa-davis-2027",
+  "categoria": "deportes",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://www.sportcal.com/newsletters/italy-in-as-host-for-davis-cup-final-8-through-2027",
+  "fuente_nombre": "Sportcal (Italia, sede hasta 2027)",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-11-02",
+  "lugar": "Italia (ciudad por confirmar)",
+  "en_frase": "la final de la Copa Davis 2027",
+  "ventana": "finales de noviembre de 2027",
+  "rango": [
+   "2027-11-16",
+   "2027-11-30"
+  ],
+  "estimacion": "La fase final se juega cada año en la segunda mitad de noviembre; la ITF confirmó Italia como sede hasta 2027, pero aún no la ciudad ni las fechas",
+  "serie": "final-copa-davis",
   "organizador": {
    "nombre": "ITF (Copa Davis)",
    "url": "https://www.daviscup.com"
@@ -1262,12 +1310,29 @@
   "fuente_url": "https://www.visitvalencia.com/agenda-valencia/disfruta-del-maraton-trinidad-alfonso-zurich",
   "fuente_nombre": "Visit València",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "lugar": "València",
   "en_frase": "el Maratón de Valencia 2026",
   "serie": "maraton-valencia",
   "hora": "08:15",
   "hora_que": "la salida"
+ },
+ {
+  "titulo": "Maratón de Valencia 2027",
+  "slug": "maraton-valencia-2027",
+  "categoria": "deportes",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://www.visitvalencia.com/agenda-valencia/calendario-de-carreras-y-maratones-en-valencia",
+  "fuente_nombre": "Visit València",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-11-02",
+  "lugar": "València",
+  "en_frase": "el Maratón de Valencia 2027",
+  "ventana": "5 de diciembre de 2027 (estimación)",
+  "estimada": "2027-12-05",
+  "estimacion": "Se corre cada año el primer domingo de diciembre, que en 2027 es el día 5; la organización aún no ha anunciado la fecha",
+  "serie": "maraton-valencia"
  },
  {
   "titulo": "GP de Abu Dabi de F1 2026",
@@ -2393,6 +2458,20 @@
   "serie": "leonidas"
  },
  {
+  "titulo": "Lluvia de estrellas Leónidas 2027",
+  "slug": "leonidas-2027",
+  "categoria": "espacio",
+  "fecha": "2027-11-17",
+  "precision": "dia",
+  "fuente_url": "https://www.imo.net/meteor-shower-calendar-2027/",
+  "fuente_nombre": "Organización Internacional de Meteoros (calendario 2027)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-11-02",
+  "lugar": "Noche del 17 al 18 de noviembre, mejor de madrugada",
+  "en_frase": "las Leónidas 2027",
+  "serie": "leonidas"
+ },
+ {
   "titulo": "BepiColombo llega a Mercurio",
   "slug": "bepicolombo-mercurio",
   "categoria": "espacio",
@@ -2448,6 +2527,20 @@
   "comprobado": "2026-10-25",
   "lugar": "Noches del 13 al 14 y del 14 al 15 de diciembre",
   "en_frase": "las Gemínidas 2026",
+  "serie": "geminidas"
+ },
+ {
+  "titulo": "Lluvia de estrellas Gemínidas 2027",
+  "slug": "geminidas-2027",
+  "categoria": "espacio",
+  "fecha": "2027-12-14",
+  "precision": "dia",
+  "fuente_url": "https://www.imo.net/meteor-shower-calendar-2027/",
+  "fuente_nombre": "Organización Internacional de Meteoros (calendario 2027)",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-11-02",
+  "lugar": "Noche del 14 al 15 de diciembre (máximo hacia las 21:00, con luna llena)",
+  "en_frase": "las Gemínidas 2027",
   "serie": "geminidas"
  },
  {
@@ -2942,7 +3035,7 @@
   "fuente_url": "https://www.techradar.com/streaming/hbo-max/hbo-max-dropped-the-harry-potter-tv-show-trailer-after-its-uk-launch-and-the-shows-magical-release-date-will-delight-potterheads",
   "fuente_nombre": "TechRadar (HBO)",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "plataformas": "HBO Max",
   "en_frase": "la serie de Harry Potter"
  },
@@ -3027,7 +3120,7 @@
   "fuente_url": "https://vandal.elespanol.com/noticia/r44310/vengadores-doomsday-cambia-su-estreno-hace-una-mencion-a-tony-stark-y-deslumbra-en-la-san-diego-comiccon-malaga",
   "fuente_nombre": "Vandal (anuncio de Marvel en la Comic-Con de Málaga)",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "plataformas": "cines",
   "ambito": "España",
   "en_frase": "Vengadores: Doomsday",
@@ -3163,7 +3256,7 @@
   "fuente_url": "http://about.netflix.com/en/news/sakamoto-days-season-2-returns-january-2027",
   "fuente_nombre": "Netflix",
   "fuente_tipo": "oficial",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "plataformas": "Netflix",
   "ventana": "enero de 2027",
   "rango": [
@@ -3295,7 +3388,7 @@
   "fuente_url": "https://en.wikipedia.org/wiki/One-Punch_Man_season_3",
   "fuente_nombre": "Wikipedia",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "plataformas": "por confirmar en España",
   "ventana": "enero de 2027",
   "rango": [
@@ -3389,9 +3482,13 @@
   "fuente_url": "https://myanimelist.net/anime/61338/",
   "fuente_nombre": "MyAnimeList (fecha de estreno en Japón)",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "plataformas": "Crunchyroll",
-  "ambito": "Japón"
+  "ambito": "Japón",
+  "hora": "09:00",
+  "hora_que": "la emisión en Japón",
+  "hora_aprox": true,
+  "hora_fuente": "https://myanimelist.net/anime/61338/"
  },
  {
   "titulo": "Mashle temporada 3",
@@ -3402,7 +3499,7 @@
   "fuente_url": "https://offmodel.media/articles/2027-anime-confirmed-releases/",
   "fuente_nombre": "OffModel",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "plataformas": "Crunchyroll",
   "ventana": "enero de 2027",
   "rango": [
@@ -3420,7 +3517,7 @@
   "fuente_url": "https://www.whats-on-netflix.com/news/anime/new-anime-coming-to-netflix-in-2027/",
   "fuente_nombre": "What's on Netflix",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "plataformas": "Netflix",
   "en_frase": "el remake de One Piece (The One Piece)",
   "ventana": "febrero de 2027",
@@ -3509,7 +3606,7 @@
   "fuente_url": "https://myanimelist.net/anime/56732/",
   "fuente_nombre": "MyAnimeList",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-02",
   "plataformas": "Crunchyroll",
   "en_frase": "The World's Finest Assassin temporada 2",
   "ventana": "enero de 2027",
