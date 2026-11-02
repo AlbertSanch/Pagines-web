@@ -20,7 +20,7 @@ from zoneinfo import ZoneInfo
 RAIZ = Path(__file__).resolve().parent.parent
 SALIDA = RAIZ / "horarios.json"
 ZONA = ZoneInfo("Europe/Madrid")
-UA = {"User-Agent": "cuantosdiasfaltan.es (horarios; contacto en la web)", "Accept": "application/json"}
+UA = {"User-Agent": "cuantosdiasfaltan.es (horarios; contacto en la web)", "Accept": "application/json", "Accept-Encoding": "identity"}
 
 PAISES = {  # nombre en español del GP según el país (o la ciudad, si en el país hay más de uno)
     "Australia": "Australia", "China": "China", "Japan": "Japón", "Bahrain": "Baréin", "Saudi Arabia": "Arabia Saudí",
@@ -100,7 +100,13 @@ def motogp(anio):
 
 ESPN = "https://site.api.espn.com/apis/site/v2/sports"
 TENISTAS = {"alcaraz": "3782", "sinner": "3623", "djokovic": "296"}  # ids de ESPN
-EQUIPOS = {"madrid": "86", "barca": "83", "atletico": "1068", "espana": "164"}  # Madrid, Barça, Atlético y selección en ESPN
+EQUIPOS = {"madrid": "86", "barca": "83", "atletico": "1068", "espana": "164", "betis": "244", "athletic": "93",
+           "sevilla": "243", "valencia": "94", "malaga": "99", "celta": "85"}  # ids de ESPN
+# competiciones de /futbol-hoy/, por orden de importancia para quien busca desde España
+LIGAS = [("esp.1", "LaLiga"), ("uefa.champions", "Champions League"), ("esp.copa_del_rey", "Copa del Rey"), ("uefa.europa", "Europa League"),
+         ("uefa.europa.conf", "Conference League"), ("uefa.nations", "Nations League"), ("uefa.worldq", "Clasificación para el Mundial"),
+         ("fifa.friendly", "Amistosos internacionales"), ("esp.2", "Segunda División"), ("esp.w.1", "Liga F"), ("eng.1", "Premier League"),
+         ("ita.1", "Serie A"), ("ger.1", "Bundesliga"), ("fra.1", "Ligue 1"), ("por.1", "Liga Portugal")]
 
 
 def tenistas():
@@ -155,6 +161,36 @@ def tenis_hoy():
     return sorted(unicos.values(), key=lambda p: p["utc"])
 
 
+def futbol_hoy():
+    """Partidos de hoy y de mañana (hora de España) de las competiciones de LIGAS. «es» marca los de equipos españoles."""
+    hoy = dt.datetime.now(dt.timezone.utc).astimezone(ZONA).date()
+    espanoles = {t["team"]["id"] for t in bajar(f"{ESPN}/soccer/esp.1/teams")["sports"][0]["leagues"][0]["teams"]}
+    espanoles |= {t["team"]["id"] for t in bajar(f"{ESPN}/soccer/esp.2/teams")["sports"][0]["leagues"][0]["teams"]}
+    espanoles.add("164")  # la selección
+    partidos = {}
+    for liga, nombre in LIGAS:
+        for d in (hoy - dt.timedelta(days=1), hoy, hoy + dt.timedelta(days=1)):  # el día anterior en UTC trae partidos de madrugada
+            try:
+                eventos = bajar(f"{ESPN}/soccer/{liga}/scoreboard?dates={d:%Y%m%d}&lang=es&region=es").get("events", [])
+            except Exception as e:
+                print(f"AVISO fútbol {liga} {d}: {e}")
+                continue
+            for e in eventos:
+                c = e["competitions"][0]
+                dia = dt.datetime.fromisoformat(e["date"].replace("Z", "+00:00")).astimezone(ZONA).date()
+                if dia not in (hoy, hoy + dt.timedelta(days=1)):
+                    continue
+                local = next(x for x in c["competitors"] if x.get("homeAway") == "home")
+                fuera = next(x for x in c["competitors"] if x.get("homeAway") == "away")
+                goles = lambda x: (x.get("score") or {}).get("displayValue") if isinstance(x.get("score"), dict) else x.get("score")
+                es = c["status"]["type"]
+                partidos[e["id"]] = {"id": e["id"], "liga": liga, "competicion": nombre, "utc": e["date"], "hora_valida": bool(c.get("timeValid")),
+                                     "estado": es["state"], "detalle": es.get("shortDetail") or "", "local": local["team"]["displayName"],
+                                     "visitante": fuera["team"]["displayName"], "ids": [local["team"]["id"], fuera["team"]["id"]],
+                                     "goles": [goles(local), goles(fuera)], "es": liga.startswith("esp.") or bool({local["team"]["id"], fuera["team"]["id"]} & espanoles)}
+    return sorted(partidos.values(), key=lambda p: p["utc"])
+
+
 def equipo(ident):
     """Próximos partidos (todas las competiciones) y últimos resultados de un equipo."""
     partidos = []
@@ -186,7 +222,7 @@ def main():
                 datos.setdefault(serie, {})[str(a)] = carreras
             print(f"{serie} {a}: {len(carreras)} carreras con horario")
     datos.pop("alcaraz", None)  # ahora va dentro de «tenistas»
-    for clave, lector in [("tenistas", tenistas), ("tenis_hoy", tenis_hoy)] + [(k, lambda i=i: equipo(i)) for k, i in EQUIPOS.items()]:
+    for clave, lector in [("tenistas", tenistas), ("tenis_hoy", tenis_hoy), ("futbol_hoy", futbol_hoy)] + [(k, lambda i=i: equipo(i)) for k, i in EQUIPOS.items()]:
         try:
             datos[clave] = lector()
             print(f"{clave}: {len(datos[clave])} partidos")
