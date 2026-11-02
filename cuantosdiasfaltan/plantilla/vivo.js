@@ -73,6 +73,41 @@
     }).catch(function () {});
   }
 
+  function tenisHoy() {
+    // la sección del día de quien mira (la página se genera por la mañana: pasada la medianoche ya vale la de «mañana»)
+    var hoy = fmt(new Date(), "Europe/Madrid", { year: "numeric", month: "2-digit", day: "2-digit" }).split("/").reverse().join("-");
+    var dias = document.querySelectorAll(".tenis-dia");
+    var hay = false;
+    for (var i = 0; i < dias.length; i++) if (dias[i].dataset.dia === hoy) hay = true;
+    if (hay) for (var j = 0; j < dias.length; j++) {
+      dias[j].hidden = dias[j].dataset.dia !== hoy;
+      var h2 = dias[j].querySelector("h2");
+      if (h2 && dias[j].dataset.dia === hoy) h2.textContent = h2.textContent.replace(/^Mañana/, "Hoy");
+    }
+    function acabado(a, b) { return (Math.max(a, b) >= 6 && Math.abs(a - b) >= 2) || (Math.max(a, b) === 7 && Math.min(a, b) >= 5); }
+    ["atp", "wta"].forEach(function (gira) {
+      fetch(ESPN + "/tennis/" + gira + "/scoreboard?lang=es&region=es").then(function (r) { return r.json(); }).then(function (d) {
+        (d.events || []).forEach(function (ev) {
+          (ev.groupings || []).forEach(function (g) {
+            (g.competitions || []).forEach(function (c) {
+              var filas = document.querySelectorAll('tr[data-id="' + c.id + '"] .t-hora');
+              if (!filas.length) return;
+              var a = c.competitors[0] || {}, b = c.competitors[1] || {};
+              var sets = (a.linescores || []).map(function (l, k) { return [l.value, ((b.linescores || [])[k] || {}).value || 0]; });
+              var texto = sets.map(function (x) { return x[0] + "-" + x[1]; }).join(" ");
+              var estado = c.status.type.state, html;
+              if (estado === "in") html = '<span class="vivo-ya">🔴 ' + esc(texto || "En juego") + "</span>";
+              else if (estado === "post") html = esc(texto + (sets.length && !acabado(sets[sets.length - 1][0], sets[sets.length - 1][1]) ? " (abandono)" : "")) || "Terminado";
+              else html = c.timeValid ? hora(new Date(c.date), "Europe/Madrid") : "Por confirmar";
+              for (var k = 0; k < filas.length; k++) filas[k].innerHTML = html;
+            });
+          });
+        });
+      }).catch(function () {});
+    });
+  }
+
   if (caja.dataset.tipo === "tenis") tenis(caja.dataset.id);
+  else if (caja.dataset.tipo === "tenis-hoy") tenisHoy();
   else if (caja.dataset.tipo === "equipo") equipo(caja.dataset.id);
 })();
