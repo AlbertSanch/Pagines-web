@@ -4218,44 +4218,12 @@ null
 },
 "tenis_hoy": [
 {
-"id": "186625",
-"gira": "WTA",
-"torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-02T06:05Z",
-"hora_valida": true,
-"estado": "in",
-"ronda": "Round 1",
-"pista": "Court 1",
-"jugadores": [
-{
-"id": "12846",
-"n": "Tatiana Prozorova",
-"pais": "Rusia",
-"gano": null,
-"sets": [
-2,
-3
-]
-},
-{
-"id": "2980",
-"n": "Claire Liu",
-"pais": "USA",
-"gano": null,
-"sets": [
-6,
-4
-]
-}
-]
-},
-{
 "id": "186624",
 "gira": "WTA",
 "torneo": "Prudential Hong Kong Tennis Open",
 "utc": "2026-11-02T06:05Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Round 1",
 "pista": "Centre Court",
 "jugadores": [
@@ -4263,20 +4231,52 @@ null
 "id": "2054",
 "n": "Katie Boulter",
 "pais": "Gran Bretaña",
-"gano": null,
+"gano": true,
 "sets": [
 6,
-5
+7
 ]
 },
 {
 "id": "2458",
 "n": "Viktorija Golubic",
 "pais": "Suiza",
-"gano": null,
+"gano": false,
 "sets": [
 2,
-3
+6
+]
+}
+]
+},
+{
+"id": "186625",
+"gira": "WTA",
+"torneo": "Prudential Hong Kong Tennis Open",
+"utc": "2026-11-02T06:05Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Round 1",
+"pista": "Court 1",
+"jugadores": [
+{
+"id": "12846",
+"n": "Tatiana Prozorova",
+"pais": "Rusia",
+"gano": false,
+"sets": [
+2,
+4
+]
+},
+{
+"id": "2980",
+"n": "Claire Liu",
+"pais": "USA",
+"gano": true,
+"sets": [
+6,
+6
 ]
 }
 ]
@@ -4285,9 +4285,9 @@ null
 "id": "186622",
 "gira": "WTA",
 "torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-02T07:30Z",
+"utc": "2026-11-02T07:50Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 1",
 "pista": "Court 1",
 "jugadores": [
@@ -4296,14 +4296,20 @@ null
 "n": "Aliaksandra Sasnovich",
 "pais": "Bielorrusia",
 "gano": null,
-"sets": []
+"sets": [
+6,
+5
+]
 },
 {
 "id": "3746",
 "n": "Katie Volynets",
 "pais": "USA",
 "gano": null,
-"sets": []
+"sets": [
+3,
+2
+]
 }
 ]
 },
@@ -4311,9 +4317,9 @@ null
 "id": "186620",
 "gira": "WTA",
 "torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-02T07:30Z",
+"utc": "2026-11-02T08:10Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 1",
 "pista": "Centre Court",
 "jugadores": [
@@ -4322,14 +4328,20 @@ null
 "n": "Maria Sakkari",
 "pais": "Grecia",
 "gano": null,
-"sets": []
+"sets": [
+6,
+3
+]
 },
 {
 "id": "17105",
 "n": "Carol Young Suh Lee",
 "pais": "USA",
 "gano": null,
-"sets": []
+"sets": [
+1,
+3
+]
 }
 ]
 },
@@ -4337,9 +4349,9 @@ null
 "id": "187366",
 "gira": "WTA",
 "torneo": "Angola Ladies Open",
-"utc": "2026-11-02T09:00Z",
+"utc": "2026-11-02T09:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Qualifying Final",
 "pista": "Lwena Court",
 "jugadores": [
@@ -4348,14 +4360,18 @@ null
 "n": "Abigayel Vosloo",
 "pais": "Sudáfrica",
 "gano": null,
-"sets": []
+"sets": [
+0
+]
 },
 {
 "id": "4224",
 "n": "Ana Sofia Sanchez",
 "pais": "México",
 "gano": null,
-"sets": []
+"sets": [
+5
+]
 }
 ]
 },
@@ -4363,9 +4379,9 @@ null
 "id": "187365",
 "gira": "WTA",
 "torneo": "Angola Ladies Open",
-"utc": "2026-11-02T09:00Z",
+"utc": "2026-11-02T09:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Qualifying Final",
 "pista": "Court 1",
 "jugadores": [
@@ -4374,92 +4390,18 @@ null
 "n": "Madhurima Sawant",
 "pais": "India",
 "gano": null,
-"sets": []
+"sets": [
+1
+]
 },
 {
 "id": "18677",
 "n": "Franziska Sziedat",
 "pais": "Alemania",
 "gano": null,
-"sets": []
-}
+"sets": [
+2
 ]
-},
-{
-"id": "186569",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-02T09:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Court 2",
-"jugadores": [
-{
-"id": "3153",
-"n": "Mai Hontama",
-"pais": "Japón",
-"gano": null,
-"sets": []
-},
-{
-"id": "5613",
-"n": "Mananchaya Sawangkaew",
-"pais": "Tailandia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186587",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-02T09:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Centre Court",
-"jugadores": [
-{
-"id": "1649",
-"n": "Magda Linette",
-"pais": "Polonia",
-"gano": null,
-"sets": []
-},
-{
-"id": "14566",
-"n": "Aliona Falei",
-"pais": "Bielorrusia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186575",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-02T09:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Court 1",
-"jugadores": [
-{
-"id": "2431",
-"n": "Kyoka Okamura",
-"pais": "Japón",
-"gano": null,
-"sets": []
-},
-{
-"id": "15755",
-"n": "Jeline Vandromme",
-"pais": "Bélgica",
-"gano": null,
-"sets": []
 }
 ]
 },
@@ -4568,7 +4510,7 @@ null
 ]
 },
 {
-"id": "186568",
+"id": "186569",
 "gira": "WTA",
 "torneo": "Chennai Open",
 "utc": "2026-11-02T10:30Z",
@@ -4578,16 +4520,68 @@ null
 "pista": "Court 2",
 "jugadores": [
 {
-"id": "4926",
-"n": "Zhibek Kulambayeva",
-"pais": "Kazajistán",
+"id": "3153",
+"n": "Mai Hontama",
+"pais": "Japón",
 "gano": null,
 "sets": []
 },
 {
-"id": "13738",
-"n": "Mei Yamaguchi",
+"id": "5613",
+"n": "Mananchaya Sawangkaew",
+"pais": "Tailandia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186587",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-02T10:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Centre Court",
+"jugadores": [
+{
+"id": "1649",
+"n": "Magda Linette",
+"pais": "Polonia",
+"gano": null,
+"sets": []
+},
+{
+"id": "14566",
+"n": "Aliona Falei",
+"pais": "Bielorrusia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186575",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-02T10:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Court 1",
+"jugadores": [
+{
+"id": "2431",
+"n": "Kyoka Okamura",
 "pais": "Japón",
+"gano": null,
+"sets": []
+},
+{
+"id": "15755",
+"n": "Jeline Vandromme",
+"pais": "Bélgica",
 "gano": null,
 "sets": []
 }
@@ -4614,58 +4608,6 @@ null
 "id": "18286",
 "n": "Laura Bohner",
 "pais": "Alemania",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186573",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-02T11:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Centre Court",
-"jugadores": [
-{
-"id": "8681",
-"n": "Weronika Falkowska",
-"pais": "Polonia",
-"gano": null,
-"sets": []
-},
-{
-"id": "6929",
-"n": "Linda Fruhvirtova",
-"pais": "Chequia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186589",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-02T11:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Court 1",
-"jugadores": [
-{
-"id": "2738",
-"n": "Rebecca Sramkova",
-"pais": "Eslovaquia",
-"gano": null,
-"sets": []
-},
-{
-"id": "5734",
-"n": "Moyuka Uchijima",
-"pais": "Japón",
 "gano": null,
 "sets": []
 }
@@ -4776,6 +4718,84 @@ null
 ]
 },
 {
+"id": "186568",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-02T12:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Court 2",
+"jugadores": [
+{
+"id": "4926",
+"n": "Zhibek Kulambayeva",
+"pais": "Kazajistán",
+"gano": null,
+"sets": []
+},
+{
+"id": "13738",
+"n": "Mei Yamaguchi",
+"pais": "Japón",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186573",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-02T12:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Centre Court",
+"jugadores": [
+{
+"id": "8681",
+"n": "Weronika Falkowska",
+"pais": "Polonia",
+"gano": null,
+"sets": []
+},
+{
+"id": "6929",
+"n": "Linda Fruhvirtova",
+"pais": "Chequia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186589",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-02T12:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Court 1",
+"jugadores": [
+{
+"id": "2738",
+"n": "Rebecca Sramkova",
+"pais": "Eslovaquia",
+"gano": null,
+"sets": []
+},
+{
+"id": "5734",
+"n": "Moyuka Uchijima",
+"pais": "Japón",
+"gano": null,
+"sets": []
+}
+]
+},
+{
 "id": "186672",
 "gira": "WTA",
 "torneo": "Angola Ladies Open",
@@ -4796,32 +4816,6 @@ null
 "id": "17754",
 "n": "Warona Mdlulwa",
 "pais": "Sudáfrica",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186580",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-02T12:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Centre Court",
-"jugadores": [
-{
-"id": "3388",
-"n": "Simona Waltert",
-"pais": "Suiza",
-"gano": null,
-"sets": []
-},
-{
-"id": "14252",
-"n": "Sahaja Yamalapalli",
-"pais": "India",
 "gano": null,
 "sets": []
 }
@@ -4926,6 +4920,32 @@ null
 "id": "2989",
 "n": "Casper Ruud",
 "pais": "Noruega",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186580",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-02T13:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Centre Court",
+"jugadores": [
+{
+"id": "3388",
+"n": "Simona Waltert",
+"pais": "Suiza",
+"gano": null,
+"sets": []
+},
+{
+"id": "14252",
+"n": "Sahaja Yamalapalli",
+"pais": "India",
 "gano": null,
 "sets": []
 }
@@ -5524,266 +5544,6 @@ null
 "id": "2362",
 "n": "Quentin Halys",
 "pais": "Francia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186615",
-"gira": "WTA",
-"torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-03T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "2731",
-"n": "Paula Badosa",
-"pais": "España",
-"gano": null,
-"sets": []
-},
-{
-"id": "14946",
-"n": "Elena Pridankina",
-"pais": "Rusia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186614",
-"gira": "WTA",
-"torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-03T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "3840",
-"n": "Liudmila Samsonova",
-"pais": "Rusia",
-"gano": null,
-"sets": []
-},
-{
-"id": "10858",
-"n": "Alexandra Shubladze",
-"pais": "Rusia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186616",
-"gira": "WTA",
-"torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-03T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "6570",
-"n": "Alina Charaeva",
-"pais": "Armenia",
-"gano": null,
-"sets": []
-},
-{
-"id": "6816",
-"n": "Antonia Ruzic",
-"pais": "Croacia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186619",
-"gira": "WTA",
-"torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-03T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "10501",
-"n": "Maria Timofeeva",
-"pais": "Uzbekistán",
-"gano": null,
-"sets": []
-},
-{
-"id": "1774",
-"n": "Sorana Cirstea",
-"pais": "Rumania",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186621",
-"gira": "WTA",
-"torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-03T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "14146",
-"n": "Maya Joint",
-"pais": "Australia",
-"gano": null,
-"sets": []
-},
-{
-"id": "2584",
-"n": "Maddison Inglis",
-"pais": "Australia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186629",
-"gira": "WTA",
-"torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-03T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "8419",
-"n": "Tereza Valentova",
-"pais": "Chequia",
-"gano": null,
-"sets": []
-},
-{
-"id": "11317",
-"n": "Himeno Sakatsume",
-"pais": "Japón",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186628",
-"gira": "WTA",
-"torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-03T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "7759",
-"n": "Alexandra Eala",
-"pais": "Filipinas",
-"gano": null,
-"sets": []
-},
-{
-"id": "5309",
-"n": "Alycia Parks",
-"pais": "USA",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186627",
-"gira": "WTA",
-"torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-03T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "2746",
-"n": "Sofia Kenin",
-"pais": "USA",
-"gano": null,
-"sets": []
-},
-{
-"id": "3641",
-"n": "Leylah Fernandez",
-"pais": "Canadá",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186623",
-"gira": "WTA",
-"torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-03T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "5705",
-"n": "Oleksandra Oliynykova",
-"pais": "Ucrania",
-"gano": null,
-"sets": []
-},
-{
-"id": "6708",
-"n": "Talia Gibson",
-"pais": "Australia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186626",
-"gira": "WTA",
-"torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-03T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "5604",
-"n": "Zeynep Sonmez",
-"pais": "Turquía",
-"gano": null,
-"sets": []
-},
-{
-"id": "3142",
-"n": "Dayana Yastremska",
-"pais": "Ucrania",
 "gano": null,
 "sets": []
 }
@@ -6593,6 +6353,1403 @@ null
 "gano": null,
 "sets": []
 }
+]
+},
+{
+"id": "186626",
+"gira": "WTA",
+"torneo": "Prudential Hong Kong Tennis Open",
+"utc": "2026-11-03T06:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Court 1",
+"jugadores": [
+{
+"id": "5604",
+"n": "Zeynep Sonmez",
+"pais": "Turquía",
+"gano": null,
+"sets": []
+},
+{
+"id": "3142",
+"n": "Dayana Yastremska",
+"pais": "Ucrania",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186623",
+"gira": "WTA",
+"torneo": "Prudential Hong Kong Tennis Open",
+"utc": "2026-11-03T06:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Centre Court",
+"jugadores": [
+{
+"id": "5705",
+"n": "Oleksandra Oliynykova",
+"pais": "Ucrania",
+"gano": null,
+"sets": []
+},
+{
+"id": "6708",
+"n": "Talia Gibson",
+"pais": "Australia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186621",
+"gira": "WTA",
+"torneo": "Prudential Hong Kong Tennis Open",
+"utc": "2026-11-03T07:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Court 1",
+"jugadores": [
+{
+"id": "14146",
+"n": "Maya Joint",
+"pais": "Australia",
+"gano": null,
+"sets": []
+},
+{
+"id": "2584",
+"n": "Maddison Inglis",
+"pais": "Australia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186619",
+"gira": "WTA",
+"torneo": "Prudential Hong Kong Tennis Open",
+"utc": "2026-11-03T07:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Centre Court",
+"jugadores": [
+{
+"id": "10501",
+"n": "Maria Timofeeva",
+"pais": "Uzbekistán",
+"gano": null,
+"sets": []
+},
+{
+"id": "1774",
+"n": "Sorana Cirstea",
+"pais": "Rumania",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186629",
+"gira": "WTA",
+"torneo": "Prudential Hong Kong Tennis Open",
+"utc": "2026-11-03T09:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Court 2",
+"jugadores": [
+{
+"id": "8419",
+"n": "Tereza Valentova",
+"pais": "Chequia",
+"gano": null,
+"sets": []
+},
+{
+"id": "11317",
+"n": "Himeno Sakatsume",
+"pais": "Japón",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186614",
+"gira": "WTA",
+"torneo": "Prudential Hong Kong Tennis Open",
+"utc": "2026-11-03T09:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Court 1",
+"jugadores": [
+{
+"id": "3840",
+"n": "Liudmila Samsonova",
+"pais": "Rusia",
+"gano": null,
+"sets": []
+},
+{
+"id": "10858",
+"n": "Alexandra Shubladze",
+"pais": "Rusia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186628",
+"gira": "WTA",
+"torneo": "Prudential Hong Kong Tennis Open",
+"utc": "2026-11-03T10:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Centre Court",
+"jugadores": [
+{
+"id": "7759",
+"n": "Alexandra Eala",
+"pais": "Filipinas",
+"gano": null,
+"sets": []
+},
+{
+"id": "5309",
+"n": "Alycia Parks",
+"pais": "USA",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186615",
+"gira": "WTA",
+"torneo": "Prudential Hong Kong Tennis Open",
+"utc": "2026-11-03T12:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Centre Court",
+"jugadores": [
+{
+"id": "2731",
+"n": "Paula Badosa",
+"pais": "España",
+"gano": null,
+"sets": []
+},
+{
+"id": "14946",
+"n": "Elena Pridankina",
+"pais": "Rusia",
+"gano": null,
+"sets": []
+}
+]
+}
+],
+"atletico": [
+{
+"id": "401896388",
+"utc": "2026-07-29T19:30Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistoso",
+"local": "Atlético de Madrid",
+"visitante": "Getafe",
+"en_casa": true,
+"estadio": "Cerro del Espino",
+"goles": [
+"4",
+"1"
+]
+},
+{
+"id": "401869198",
+"utc": "2026-08-01T13:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistoso",
+"local": "Manchester United",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Friends Arena",
+"goles": [
+"2",
+"1"
+]
+},
+{
+"id": "401886560",
+"utc": "2026-08-09T11:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistoso",
+"local": "Manchester City",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Seoul World Cup Stadium",
+"goles": [
+"3",
+"1"
+]
+},
+{
+"id": "401900330",
+"utc": "2026-08-14T15:30Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistoso",
+"local": "Marseille",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Stade Vélodrome",
+"goles": [
+"1",
+"2"
+]
+},
+{
+"id": "401882925",
+"utc": "2026-08-19T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Málaga",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+"2",
+"0"
+]
+},
+{
+"id": "401882915",
+"utc": "2026-08-23T15:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Villarreal",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+"2",
+"2"
+]
+},
+{
+"id": "401882897",
+"utc": "2026-08-29T19:30Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Sevilla FC",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Ramón Sánchez Pizjuán Stadium",
+"goles": [
+"1",
+"3"
+]
+},
+{
+"id": "401882895",
+"utc": "2026-09-05T14:15Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Athletic Club",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "San Mamés",
+"goles": [
+"3",
+"0"
+]
+},
+{
+"id": "401915446",
+"utc": "2026-09-09T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Champions League",
+"local": "Liverpool",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Anfield",
+"goles": [
+"2",
+"1"
+]
+},
+{
+"id": "401882879",
+"utc": "2026-09-13T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Real Sociedad",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Reale Arena",
+"goles": [
+"0",
+"3"
+]
+},
+{
+"id": "401882875",
+"utc": "2026-09-16T17:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Osasuna",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+"4",
+"0"
+]
+},
+{
+"id": "401882865",
+"utc": "2026-09-20T14:15Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Real Madrid",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+"2",
+"1"
+]
+},
+{
+"id": "401882856",
+"utc": "2026-10-10T14:15Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Alavés",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Mendizorrotza",
+"goles": [
+"1",
+"2"
+]
+},
+{
+"id": "401915412",
+"utc": "2026-10-13T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Champions League",
+"local": "Atlético de Madrid",
+"visitante": "Manchester United",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+"2",
+"0"
+]
+},
+{
+"id": "401882843",
+"utc": "2026-10-17T12:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Espanyol",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "RCDE Stadium",
+"goles": [
+"0",
+"1"
+]
+},
+{
+"id": "401915392",
+"utc": "2026-10-20T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Champions League",
+"local": "VfB Stuttgart",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "MHPArena",
+"goles": [
+"1",
+"1"
+]
+},
+{
+"id": "401882834",
+"utc": "2026-10-24T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Deportivo La Coruña",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+"1",
+"0"
+]
+},
+{
+"id": "401882820",
+"utc": "2026-10-31T13:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "LALIGA",
+"local": "Levante",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Estadi Ciutat de València",
+"goles": [
+"0",
+"2"
+]
+},
+{
+"id": "401915386",
+"utc": "2026-11-03T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "Atlético de Madrid",
+"visitante": "Bayern München",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882816",
+"utc": "2026-11-08T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Barcelona",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882803",
+"utc": "2026-11-22T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Getafe",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Estadio Coliseum",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401915291",
+"utc": "2026-11-25T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "Atlético de Madrid",
+"visitante": "Viking FK",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882793",
+"utc": "2026-11-29T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Elche",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Estadio Martínez Valero",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882784",
+"utc": "2026-12-06T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Real Betis",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401915366",
+"utc": "2026-12-09T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "PSV Eindhoven",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Philips Stadion",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882776",
+"utc": "2026-12-13T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Valencia",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882764",
+"utc": "2026-12-20T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Celta Vigo",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Balaidos",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882750",
+"utc": "2027-01-03T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Rayo Vallecano",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Estadio de Vallecas",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882744",
+"utc": "2027-01-10T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Racing Santander",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882736",
+"utc": "2027-01-17T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Real Sociedad",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401915364",
+"utc": "2027-01-19T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "Bodo/Glimt",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Aspmyra Stadion",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882724",
+"utc": "2027-01-24T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Deportivo La Coruña",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Riazor",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401915347",
+"utc": "2027-01-27T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Champions League",
+"local": "Atlético de Madrid",
+"visitante": "Fenerbahçe",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882716",
+"utc": "2027-01-31T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Espanyol",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401892163",
+"utc": "2027-02-02T19:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "Supercopa Española",
+"local": "Barcelona",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Şükrü Saracoğlu Stadium",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882700",
+"utc": "2027-02-07T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Spotify Camp Nou",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882693",
+"utc": "2027-02-14T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Osasuna",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "El Sadar",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882684",
+"utc": "2027-02-21T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Elche",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882671",
+"utc": "2027-02-28T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Málaga",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "La Rosaleda",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882665",
+"utc": "2027-03-07T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Celta Vigo",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882648",
+"utc": "2027-03-14T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Racing Santander",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "El Sardineros",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882646",
+"utc": "2027-03-21T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Getafe",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882628",
+"utc": "2027-04-04T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Madrid",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882625",
+"utc": "2027-04-11T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Levante",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882615",
+"utc": "2027-04-18T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Sevilla FC",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882597",
+"utc": "2027-04-21T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Villarreal",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Estadio de la Cerámica",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882596",
+"utc": "2027-05-02T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Alavés",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882578",
+"utc": "2027-05-09T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Valencia",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Mestalla Stadium",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882576",
+"utc": "2027-05-16T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Rayo Vallecano",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882565",
+"utc": "2027-05-23T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Atlético de Madrid",
+"visitante": "Athletic Club",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882555",
+"utc": "2027-05-30T18:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Betis",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Estadio La Cartuja",
+"goles": [
+null,
+null
+]
+}
+],
+"espana": [
+{
+"id": "723708",
+"utc": "2025-03-23T19:45Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Nations League",
+"local": "España",
+"visitante": "Países Bajos",
+"en_casa": true,
+"estadio": "Mestalla",
+"goles": [
+"3",
+"3"
+]
+},
+{
+"id": "723736",
+"utc": "2025-06-05T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Nations League",
+"local": "España",
+"visitante": "Francia",
+"en_casa": true,
+"estadio": "MHPArena",
+"goles": [
+"5",
+"4"
+]
+},
+{
+"id": "723738",
+"utc": "2025-06-08T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Nations League",
+"local": "Portugal",
+"visitante": "España",
+"en_casa": false,
+"estadio": "Allianz Arena",
+"goles": [
+"2",
+"2"
+]
+},
+{
+"id": "724973",
+"utc": "2025-09-04T18:45Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Eliminatorias UEFA",
+"local": "Bulgaria",
+"visitante": "España",
+"en_casa": false,
+"estadio": "Vasil Levski National Stadium",
+"goles": [
+"0",
+"3"
+]
+},
+{
+"id": "725002",
+"utc": "2025-09-07T18:45Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Eliminatorias UEFA",
+"local": "Turquía",
+"visitante": "España",
+"en_casa": false,
+"estadio": "Medas Konya Büyüksehir Stadyumu",
+"goles": [
+"0",
+"6"
+]
+},
+{
+"id": "724850",
+"utc": "2025-10-11T18:45Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Eliminatorias UEFA",
+"local": "España",
+"visitante": "Georgia",
+"en_casa": true,
+"estadio": "Estadio Martínez Valero",
+"goles": [
+"2",
+"0"
+]
+},
+{
+"id": "724869",
+"utc": "2025-10-14T18:45Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Eliminatorias UEFA",
+"local": "España",
+"visitante": "Bulgaria",
+"en_casa": true,
+"estadio": "Estadio José Zorrilla",
+"goles": [
+"4",
+"0"
+]
+},
+{
+"id": "724890",
+"utc": "2025-11-15T17:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Eliminatorias UEFA",
+"local": "Georgia",
+"visitante": "España",
+"en_casa": false,
+"estadio": "Boris Paichadze Dinamo Arena",
+"goles": [
+"0",
+"4"
+]
+},
+{
+"id": "724917",
+"utc": "2025-11-18T19:45Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Eliminatorias UEFA",
+"local": "España",
+"visitante": "Turquía",
+"en_casa": true,
+"estadio": "Estadio La Cartuja",
+"goles": [
+"2",
+"2"
+]
+},
+{
+"id": "401865041",
+"utc": "2026-03-27T20:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistosos internacionales",
+"local": "España",
+"visitante": "Serbia",
+"en_casa": true,
+"estadio": "Estadio de la Cerámica",
+"goles": [
+"3",
+"0"
+]
+},
+{
+"id": "401851847",
+"utc": "2026-03-31T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistosos internacionales",
+"local": "España",
+"visitante": "Egipto",
+"en_casa": true,
+"estadio": "RCDE Stadium",
+"goles": [
+"0",
+"0"
+]
+},
+{
+"id": "401871471",
+"utc": "2026-06-04T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistosos internacionales",
+"local": "España",
+"visitante": "Irak",
+"en_casa": true,
+"estadio": "Riazor",
+"goles": [
+"1",
+"1"
+]
+},
+{
+"id": "401867679",
+"utc": "2026-06-09T02:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Amistosos internacionales",
+"local": "Perú",
+"visitante": "España",
+"en_casa": false,
+"estadio": "Estadio Cuauhtémoc",
+"goles": [
+"1",
+"3"
+]
+},
+{
+"id": "760428",
+"utc": "2026-06-15T16:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Copa Mundial FIFA",
+"local": "España",
+"visitante": "Cabo Verde",
+"en_casa": true,
+"estadio": "Mercedes-Benz Stadium",
+"goles": [
+"0",
+"0"
+]
+},
+{
+"id": "760453",
+"utc": "2026-06-21T16:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Copa Mundial FIFA",
+"local": "España",
+"visitante": "Arabia Saudita",
+"en_casa": true,
+"estadio": "Mercedes-Benz Stadium",
+"goles": [
+"4",
+"0"
+]
+},
+{
+"id": "760479",
+"utc": "2026-06-27T00:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Copa Mundial FIFA",
+"local": "Uruguay",
+"visitante": "España",
+"en_casa": false,
+"estadio": "Estadio Akron",
+"goles": [
+"0",
+"1"
+]
+},
+{
+"id": "760497",
+"utc": "2026-07-02T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Copa Mundial FIFA",
+"local": "España",
+"visitante": "Austria",
+"en_casa": true,
+"estadio": "SoFi Stadium",
+"goles": [
+"3",
+"0"
+]
+},
+{
+"id": "760506",
+"utc": "2026-07-06T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Copa Mundial FIFA",
+"local": "Portugal",
+"visitante": "España",
+"en_casa": false,
+"estadio": "AT&T Stadium",
+"goles": [
+"0",
+"1"
+]
+},
+{
+"id": "760511",
+"utc": "2026-07-10T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Copa Mundial FIFA",
+"local": "España",
+"visitante": "Bélgica",
+"en_casa": true,
+"estadio": "SoFi Stadium",
+"goles": [
+"2",
+"1"
+]
+},
+{
+"id": "760514",
+"utc": "2026-07-14T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Copa Mundial FIFA",
+"local": "Francia",
+"visitante": "España",
+"en_casa": false,
+"estadio": "AT&T Stadium",
+"goles": [
+"0",
+"2"
+]
+},
+{
+"id": "760517",
+"utc": "2026-07-19T19:00Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "Copa Mundial FIFA",
+"local": "España",
+"visitante": "Argentina",
+"en_casa": true,
+"estadio": "MetLife Stadium",
+"goles": [
+"1",
+"0"
+]
+},
+{
+"id": "401861066",
+"utc": "2026-09-26T18:45Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Nations League",
+"local": "Inglaterra",
+"visitante": "España",
+"en_casa": false,
+"estadio": "Wembley Stadium",
+"goles": [
+"2",
+"3"
+]
+},
+{
+"id": "401861084",
+"utc": "2026-09-29T18:45Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Nations League",
+"local": "España",
+"visitante": "Croacia",
+"en_casa": true,
+"estadio": "Ramón Sánchez Pizjuán Stadium",
+"goles": [
+"4",
+"1"
+]
+},
+{
+"id": "401861118",
+"utc": "2026-10-03T18:45Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Nations League",
+"local": "España",
+"visitante": "Chequia",
+"en_casa": true,
+"estadio": "Estadio Carlos Tartiere",
+"goles": [
+"3",
+"1"
+]
+},
+{
+"id": "401861137",
+"utc": "2026-10-06T18:45Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Nations League",
+"local": "Croacia",
+"visitante": "España",
+"en_casa": false,
+"estadio": "Stadion Poljud",
+"goles": [
+"1",
+"2"
+]
+},
+{
+"id": "401861148",
+"utc": "2026-11-12T19:45Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Nations League",
+"local": "Chequia",
+"visitante": "España",
+"en_casa": false,
+"estadio": "Generali Arena",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401861175",
+"utc": "2026-11-15T19:45Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Nations League",
+"local": "España",
+"visitante": "Inglaterra",
+"en_casa": true,
+"estadio": "Riyadh Air Metropolitano",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401932719",
+"utc": "2026-11-28T17:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "Amistosos internacionales",
+"local": "España",
+"visitante": "Chile",
+"en_casa": true,
+"estadio": "Estadio Reino de León",
+"goles": [
+null,
+null
 ]
 }
 ]
