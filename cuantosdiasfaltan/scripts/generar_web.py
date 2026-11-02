@@ -380,9 +380,13 @@ def pagina_evento(e, eventos):
             sub += f' · <strong>{escape(texto_hora(e))}</strong>'
         n = (d - HOY).days
         tf = e.get("en_frase") or t
-        desc = (f"¿Cuántos días faltan para {tf}? Faltan {n}: {fecha_larga(d)}. Cuenta atrás en directo en meses, semanas, días y horas."
+        if fuera_de_espana(e):
+            sub += f' en {escape(e["ambito"])}'
+        desc = (f"¿Cuántos días faltan para {tf}? Faltan {n}: {fecha_larga(d)}. Cuenta atrás en directo y fechas de los próximos años."
                 if e["categoria"] == "fechas" else
-                f"Faltan {n} días para {tf}: {fecha_larga(d)}. Cuenta atrás en directo en meses, semanas, días y horas, con la fecha oficial.")
+                f"Faltan {n} días para {tf}: {fecha_larga(d)}{ambito_frase(e)}. Cuenta atrás en directo, al día si cambia la fecha.")
+        if len(desc) < 135:
+            desc += " Añádelo a tu calendario."
     elif d:
         cab = f"¿Cuánto hace de {t}?"
         sub = f'Fue el <strong>{fecha_larga(d)}</strong>'
@@ -420,10 +424,11 @@ def pagina_evento(e, eventos):
                   '<p class="c-dias">Pondremos aquí la cuenta atrás en cuanto se anuncie.</p></div>')
         ventana = f" ({e['ventana']})" if e.get("ventana") else ""
         desc = f"Cuándo sale {t}: todavía no hay fecha oficial{ventana}. Aquí verás la cuenta atrás en cuanto se anuncie."
+    desc = recortar(desc)
     retrasos = ""
     if e.get("retrasos"):
         retrasos = '<p class="retrasos">Fechas anunciadas antes: ' + ", ".join(escape(fecha_simple(r) if len(r) == 10 and r[4] == "-" else r) for r in e["retrasos"]) + ".</p>"
-    nota_ambito = f'<p class="nota">Fecha de estreno en {escape(e["ambito"])}.</p>' if e.get("ambito") and e["ambito"] not in ("España", "mundial") else ""
+    nota_ambito = f'<p class="nota">Fecha de estreno en {escape(e["ambito"].rstrip("."))}. Si se anuncia otra fecha para España, la pondremos aquí.</p>' if fuera_de_espana(e) else ""
     if e.get("hora_fuente"):
         retrasos += f'<p class="fuente">Horario: <a href="{escape(e["hora_fuente"])}" rel="nofollow noopener" target="_blank">{escape(e["hora_fuente"].split("/")[2].removeprefix("www."))}</a>.</p>'
     if e.get("fija"):
@@ -514,6 +519,29 @@ def evento_ld(e, d, url):
 UN_DIA = re.compile(r"^(gp-|final-|super-bowl|eurovision|maraton|oscar|premios-goya|grammy|f1-|motogp-)")
 
 
+def recortar(texto, maximo=160):
+    """Google corta las descripciones hacia los 160 caracteres: se queda con las frases enteras que caben."""
+    if len(texto) <= maximo:
+        return texto
+    frases = re.split(r"(?<=\.) ", texto)
+    salida = frases[0]
+    for f in frases[1:]:
+        if len(salida) + 1 + len(f) > maximo:
+            break
+        salida += " " + f
+    return salida if len(salida) <= maximo else salida[:maximo - 1].rsplit(" ", 1)[0] + "…"
+
+
+def fuera_de_espana(e):
+    """La fecha es la de otro país (p. ej. un estreno en EE. UU.), no la de España ni la mundial."""
+    a = e.get("ambito") or ""
+    return bool(a) and a != "España" and "mund" not in a
+
+
+def ambito_frase(e):
+    return f" (fecha de estreno en {e['ambito']})" if fuera_de_espana(e) else ""
+
+
 def respuesta_directa(e, d, objetivo):
     """Una frase que responde sola a la búsqueda, con la fecha completa (que no caduca aunque Google guarde la página)."""
     tf = e.get("en_frase") or e["titulo"]
@@ -521,7 +549,7 @@ def respuesta_directa(e, d, objetivo):
         n = (objetivo - HOY).days
         cuando = "hoy" if n == 0 else f"{'falta' if n == 1 else 'faltan'} {'unos ' if objetivo != d else ''}<strong>{plural(n, 'día', 'días')}</strong>"
         hora = f", {texto_hora(e, corto=True)} en España" if hora_de(e) and objetivo == d and hora_de(e)[0] == d else ""
-        estimada = " (fecha estimada, aún no oficial)" if objetivo != d else ""
+        estimada = " (fecha estimada, aún no oficial)" if objetivo != d else escape(ambito_frase(e))
         frase = f"Hoy, {fecha_larga(HOY)}, {cuando} para {escape(tf)}: el {fecha_larga(objetivo)}{hora}{estimada}." if n else f"¡Es hoy! {escape(tf[0].upper() + tf[1:])}: {fecha_larga(objetivo)}{hora}."
     elif d:
         verbo = "se estrenó" if e["categoria"] in ("series", "anime", "peliculas") else "salió" if e["categoria"] in ("videojuegos", "tecnologia") else "fue"
