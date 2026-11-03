@@ -50,6 +50,9 @@ CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};
                       'googlefc.callbackQueue.push(function(){googlefc.showRevocationMessage()});return false">Configurar cookies</a>')
 UMBRAL_POR_DEFECTO = 1000
 UMBRAL_APELLIDOS_POR_DEFECTO = 1000  # personas con ese PRIMER apellido para tener página propia
+# Desde el 3 nov 2026 solo van a Google (y al sitemap) los nombres y apellidos de al menos 5.000 personas: tras la caída
+# del 26 oct, el resto (miles de páginas casi iguales con pocas personas) sigue existiendo pero con noindex.
+UMBRAL_INDEXABLE = 5000
 MIN_PAGINAS = 500  # si salen menos, algo ha ido mal: el script falla para no publicar una web rota
 
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
@@ -220,6 +223,7 @@ def construir_indice(nombres, provincias, decadas, bebes, umbral):
 
     for e in idx.values():
         e["pagina"] = e["total"] >= umbral or e["k"] in en_listas
+        e["indexable"] = e["pagina"] and e["total"] >= UMBRAL_INDEXABLE
     return idx
 
 
@@ -490,8 +494,6 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
         cuerpo.append(f'<h2>¿En qué provincias es más común?</h2><p>{escape(X)} no está entre los 50 nombres más frecuentes de ninguna provincia, '
                       f'que es el detalle que publica el INE por provincia. Consulta los <a href="/provincias/">nombres más comunes de cada provincia</a>.</p>')
 
-    cuerpo.append(bloque_regalos(e))
-
     # Décadas
     if e["dec"]:
         cuerpo.append(f'<h2>{escape(X)} por década de nacimiento</h2><p>Personas que se llaman {escape(X)} según la década en que nacieron, '
@@ -541,6 +543,8 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
         f"<details><summary>{escape(q)}</summary><p>{escape(r)}</p></details>" for q, r in faq) + "</div>")
     cuerpo.append(f'<p class="fuente">Fuente: Instituto Nacional de Estadística (INE), estadística de nombres y apellidos a partir de los Censos de población anuales, '
                   f'datos a {referencia}; y estadística de nacimientos. <a href="/sobre-los-datos/">Cómo se calculan estos datos</a>.</p>')
+    if e["indexable"]:  # regalos de Amazon: al final de la página y solo en los nombres frecuentes
+        cuerpo.append(bloque_regalos(e))
 
     total_txt = (f"{n(e['H']['f'])} hombres y {n(e['M']['f'])} mujeres" if len(sexos) == 2 else f"{n(e[sexos[0]]['f'])} {SEXO[sexos[0]][1]}")
     anio_ref = ref[:4]
@@ -561,7 +565,7 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
     desc = f"Mira cuántas personas se llaman {X} en España con el último dato oficial del INE: {lista}."
     ld = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in faq]}]
-    return pagina(f"/nombre/{e['slug']}/", titulo, desc, "\n".join(cuerpo), [(X, None)], ld)
+    return pagina(f"/nombre/{e['slug']}/", titulo, desc, "\n".join(cuerpo), [(X, None)], ld, indexable=e["indexable"])
 
 
 # ------------------------------------------------------------------------------- Rankings e índices
@@ -1117,6 +1121,7 @@ def construir_indice_apellidos(apellidos, umbral):
                     idx[k][clave].append({"cod": cod, "pos": pos, "f": f, "pm": pm[0] if pm else None})
     for e in idx.values():
         e["pagina"] = e["p1"] >= umbral or e["k"] in en_listas
+        e["indexable"] = e["pagina"] and e["p1"] >= UMBRAL_INDEXABLE
         e["total"] = (e["p1"] + e["p2"] - e["ambos"]) if e["p2"] is not None and e["ambos"] is not None else None
     return idx
 
@@ -1287,7 +1292,7 @@ def pagina_apellido(e, idx, por_p1, referencia):
     desc = f"Mira cuántas personas se apellidan {X} en España con el último dato oficial del INE: {lista}."
     ld = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in faq]}]
-    return pagina(f"/apellido/{e['slug']}/", titulo, desc, "\n".join(cuerpo), [("Apellidos", "/apellidos/"), (X, None)], ld)
+    return pagina(f"/apellido/{e['slug']}/", titulo, desc, "\n".join(cuerpo), [("Apellidos", "/apellidos/"), (X, None)], ld, indexable=e["indexable"])
 
 
 def letras_html(base, letras, actual=None):
@@ -1448,13 +1453,14 @@ def main():
     grupos = indices_busqueda(idx)
 
     hoy = date.today().isoformat()
-    urls = (["/"] + rutas + [f"/nombre/{e['slug']}/" for e in sorted(con_pagina, key=lambda x: x["slug"])]
-            + [f"/apellido/{e['slug']}/" for e in sorted(ape_pagina, key=lambda x: x["slug"])])
+    urls = (["/"] + rutas + [f"/nombre/{e['slug']}/" for e in sorted(con_pagina, key=lambda x: x["slug"]) if e["indexable"]]
+            + [f"/apellido/{e['slug']}/" for e in sorted(ape_pagina, key=lambda x: x["slug"]) if e["indexable"]])
     (WEB / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                      + "".join(f"  <url><loc>{DOMINIO}{u}</loc><lastmod>{hoy}</lastmod></url>\n" for u in urls) + "</urlset>\n",
                                      encoding="utf-8")
     (WEB / "ads.txt").write_text(f"google.com, {ADSENSE.replace('ca-', '')}, DIRECT, f08c47fec0942fa0\n", encoding="utf-8")
     (WEB / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /indice/\nDisallow: /indice-apellidos/\n\nSitemap: {DOMINIO}/sitemap.xml\n", encoding="utf-8")
+    print(f"Indexables (≥{UMBRAL_INDEXABLE} personas): {sum(e['indexable'] for e in con_pagina)} nombres y {sum(e['indexable'] for e in ape_pagina)} apellidos.")
     print(f"Web generada: {len(con_pagina)} páginas de nombre (umbral {args.umbral}), "
           f"{len(ape_pagina)} de apellido (umbral {args.umbral_apellidos}), {len(rutas)} páginas más, "
           f"{len(idx)} nombres en el buscador ({len(grupos)} ficheros de índice). Datos a {nombres['referencia']}.")
