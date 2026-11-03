@@ -4385,7 +4385,7 @@ null
 "torneo": "Chennai Open",
 "utc": "2026-11-03T07:35Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Round 1",
 "pista": "Court 1",
 "jugadores": [
@@ -4393,7 +4393,7 @@ null
 "id": "17104",
 "n": "Polina Iatcenko",
 "pais": "Rusia",
-"gano": null,
+"gano": false,
 "sets": [
 6,
 1
@@ -4403,7 +4403,7 @@ null
 "id": "5775",
 "n": "Anastasia Zakharova",
 "pais": "Rusia",
-"gano": null,
+"gano": true,
 "sets": [
 7,
 6
@@ -4449,7 +4449,7 @@ null
 "torneo": "Chennai Open",
 "utc": "2026-11-03T08:00Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Round 1",
 "pista": "Centre Court",
 "jugadores": [
@@ -4457,20 +4457,20 @@ null
 "id": "8681",
 "n": "Weronika Falkowska",
 "pais": "Polonia",
-"gano": null,
+"gano": true,
 "sets": [
 7,
-2
+6
 ]
 },
 {
 "id": "6929",
 "n": "Linda Fruhvirtova",
 "pais": "Chequia",
-"gano": null,
+"gano": false,
 "sets": [
 6,
-1
+4
 ]
 }
 ]
@@ -4513,7 +4513,7 @@ null
 "torneo": "Prudential Hong Kong Tennis Open",
 "utc": "2026-11-03T08:10Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Round 1",
 "pista": "Centre Court",
 "jugadores": [
@@ -4521,22 +4521,22 @@ null
 "id": "10501",
 "n": "Maria Timofeeva",
 "pais": "Uzbekistán",
-"gano": null,
+"gano": false,
 "sets": [
 6,
 6,
-3
+5
 ]
 },
 {
 "id": "1774",
 "n": "Sorana Cirstea",
 "pais": "Rumania",
-"gano": null,
+"gano": true,
 "sets": [
 7,
 1,
-3
+7
 ]
 }
 ]
@@ -4643,7 +4643,7 @@ null
 "torneo": "Prudential Hong Kong Tennis Open",
 "utc": "2026-11-03T09:35Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Round 1",
 "pista": "Court 2",
 "jugadores": [
@@ -4651,20 +4651,20 @@ null
 "id": "8419",
 "n": "Tereza Valentova",
 "pais": "Chequia",
-"gano": null,
+"gano": true,
 "sets": [
 6,
-4
+7
 ]
 },
 {
 "id": "11317",
 "n": "Himeno Sakatsume",
 "pais": "Japón",
-"gano": null,
+"gano": false,
 "sets": [
 3,
-3
+5
 ]
 }
 ]
@@ -4685,7 +4685,9 @@ null
 "pais": "Rusia",
 "gano": null,
 "sets": [
-7
+7,
+1,
+0
 ]
 },
 {
@@ -4694,7 +4696,9 @@ null
 "pais": "Rusia",
 "gano": null,
 "sets": [
-5
+5,
+6,
+1
 ]
 }
 ]
@@ -4716,7 +4720,8 @@ null
 "gano": null,
 "sets": [
 6,
-1
+6,
+0
 ]
 },
 {
@@ -4726,7 +4731,8 @@ null
 "gano": null,
 "sets": [
 3,
-1
+7,
+0
 ]
 }
 ]
@@ -4747,6 +4753,7 @@ null
 "pais": "Argentina",
 "gano": null,
 "sets": [
+6,
 5
 ]
 },
@@ -4756,7 +4763,8 @@ null
 "pais": "Rusia",
 "gano": null,
 "sets": [
-3
+4,
+6
 ]
 }
 ]
@@ -4767,7 +4775,7 @@ null
 "torneo": "Rolex Paris Masters",
 "utc": "2026-11-03T10:10Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Round 1",
 "pista": "Court 1",
 "jugadores": [
@@ -4775,18 +4783,20 @@ null
 "id": "8621",
 "n": "Arthur Fery",
 "pais": "Gran Bretaña",
-"gano": null,
+"gano": false,
 "sets": [
-6
+6,
+5
 ]
 },
 {
 "id": "2362",
 "n": "Quentin Halys",
 "pais": "Francia",
-"gano": null,
+"gano": true,
 "sets": [
-6
+7,
+7
 ]
 }
 ]
@@ -4807,7 +4817,8 @@ null
 "pais": "Burundi",
 "gano": null,
 "sets": [
-2
+6,
+3
 ]
 },
 {
@@ -4816,7 +4827,8 @@ null
 "pais": "Alemania",
 "gano": null,
 "sets": [
-2
+3,
+4
 ]
 }
 ]
@@ -4837,7 +4849,7 @@ null
 "pais": "Polonia",
 "gano": null,
 "sets": [
-0
+6
 ]
 },
 {
@@ -4846,86 +4858,8 @@ null
 "pais": "Polonia",
 "gano": null,
 "sets": [
-3
+6
 ]
-}
-]
-},
-{
-"id": "186582",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-03T10:55Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Centre Court",
-"jugadores": [
-{
-"id": "14253",
-"n": "Vaishnavi Adkar",
-"pais": "India",
-"gano": null,
-"sets": []
-},
-{
-"id": "2747",
-"n": "Jodie Burrage",
-"pais": "Gran Bretaña",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186586",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-03T10:55Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Court 1",
-"jugadores": [
-{
-"id": "13477",
-"n": "Katherine Hui",
-"pais": "USA",
-"gano": null,
-"sets": []
-},
-{
-"id": "6368",
-"n": "Janice Tjen",
-"pais": "Indonesia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186579",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-03T10:55Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Court 2",
-"jugadores": [
-{
-"id": "6413",
-"n": "Polina Kudermetova",
-"pais": "Uzbekistán",
-"gano": null,
-"sets": []
-},
-{
-"id": "4969",
-"n": "Viktoria Morvayova",
-"pais": "Eslovaquia",
-"gano": null,
-"sets": []
 }
 ]
 },
@@ -4935,7 +4869,7 @@ null
 "torneo": "Angola Ladies Open",
 "utc": "2026-11-03T10:55Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 1",
 "pista": "Court 3",
 "jugadores": [
@@ -4944,14 +4878,112 @@ null
 "n": "Madhurima Sawant",
 "pais": "India",
 "gano": null,
-"sets": []
+"sets": [
+4
+]
 },
 {
 "id": "18286",
 "n": "Laura Bohner",
 "pais": "Alemania",
 "gano": null,
-"sets": []
+"sets": [
+5
+]
+}
+]
+},
+{
+"id": "186579",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-03T11:05Z",
+"hora_valida": true,
+"estado": "in",
+"ronda": "Round 1",
+"pista": "Court 2",
+"jugadores": [
+{
+"id": "6413",
+"n": "Polina Kudermetova",
+"pais": "Uzbekistán",
+"gano": null,
+"sets": [
+6,
+2
+]
+},
+{
+"id": "4969",
+"n": "Viktoria Morvayova",
+"pais": "Eslovaquia",
+"gano": null,
+"sets": [
+3,
+1
+]
+}
+]
+},
+{
+"id": "186586",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-03T11:10Z",
+"hora_valida": true,
+"estado": "in",
+"ronda": "Round 1",
+"pista": "Court 1",
+"jugadores": [
+{
+"id": "13477",
+"n": "Katherine Hui",
+"pais": "USA",
+"gano": null,
+"sets": [
+1,
+0
+]
+},
+{
+"id": "6368",
+"n": "Janice Tjen",
+"pais": "Indonesia",
+"gano": null,
+"sets": [
+6,
+2
+]
+}
+]
+},
+{
+"id": "186582",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-03T11:35Z",
+"hora_valida": true,
+"estado": "in",
+"ronda": "Round 1",
+"pista": "Centre Court",
+"jugadores": [
+{
+"id": "14253",
+"n": "Vaishnavi Adkar",
+"pais": "India",
+"gano": null,
+"sets": [
+1
+]
+},
+{
+"id": "2747",
+"n": "Jodie Burrage",
+"pais": "Gran Bretaña",
+"gano": null,
+"sets": [
+2
+]
 }
 ]
 },
@@ -4959,9 +4991,9 @@ null
 "id": "186628",
 "gira": "WTA",
 "torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-03T11:05Z",
+"utc": "2026-11-03T11:40Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 1",
 "pista": "Centre Court",
 "jugadores": [
@@ -4970,14 +5002,18 @@ null
 "n": "Alexandra Eala",
 "pais": "Filipinas",
 "gano": null,
-"sets": []
+"sets": [
+1
+]
 },
 {
 "id": "12287",
 "n": "Emerson Jones",
 "pais": "Australia",
 "gano": null,
-"sets": []
+"sets": [
+0
+]
 }
 ]
 },
@@ -4985,7 +5021,7 @@ null
 "id": "186455",
 "gira": "ATP",
 "torneo": "Rolex Paris Masters",
-"utc": "2026-11-03T11:30Z",
+"utc": "2026-11-03T11:50Z",
 "hora_valida": true,
 "estado": "pre",
 "ronda": "Round 1",
@@ -5011,7 +5047,7 @@ null
 "id": "186467",
 "gira": "ATP",
 "torneo": "Rolex Paris Masters",
-"utc": "2026-11-03T11:30Z",
+"utc": "2026-11-03T11:50Z",
 "hora_valida": true,
 "estado": "pre",
 "ronda": "Round 1",
@@ -5037,7 +5073,7 @@ null
 "id": "186473",
 "gira": "ATP",
 "torneo": "Rolex Paris Masters",
-"utc": "2026-11-03T11:30Z",
+"utc": "2026-11-03T11:50Z",
 "hora_valida": true,
 "estado": "pre",
 "ronda": "Round 1",
@@ -5054,32 +5090,6 @@ null
 "id": "11396",
 "n": "Adolfo Daniel Vallejo",
 "pais": "Paraguay",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186615",
-"gira": "WTA",
-"torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-03T12:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Centre Court",
-"jugadores": [
-{
-"id": "2731",
-"n": "Paula Badosa",
-"pais": "España",
-"gano": null,
-"sets": []
-},
-{
-"id": "14946",
-"n": "Elena Pridankina",
-"pais": "Rusia",
 "gano": null,
 "sets": []
 }
@@ -5262,6 +5272,32 @@ null
 "id": "296",
 "n": "Novak Djokovic",
 "pais": "República Serbia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186615",
+"gira": "WTA",
+"torneo": "Prudential Hong Kong Tennis Open",
+"utc": "2026-11-03T13:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Centre Court",
+"jugadores": [
+{
+"id": "2731",
+"n": "Paula Badosa",
+"pais": "España",
+"gano": null,
+"sets": []
+},
+{
+"id": "14946",
+"n": "Elena Pridankina",
+"pais": "Rusia",
 "gano": null,
 "sets": []
 }
@@ -6039,9 +6075,9 @@ null
 "sets": []
 },
 {
-"id": "-3",
-"n": "TBD",
-"pais": "",
+"id": "2362",
+"n": "Quentin Halys",
+"pais": "Francia",
 "gano": null,
 "sets": []
 }
@@ -6195,9 +6231,9 @@ null
 "sets": []
 },
 {
-"id": "-3",
-"n": "TBD",
-"pais": "",
+"id": "8681",
+"n": "Weronika Falkowska",
+"pais": "Polonia",
 "gano": null,
 "sets": []
 }
@@ -6214,9 +6250,9 @@ null
 "pista": "",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "15755",
+"n": "Jeline Vandromme",
+"pais": "Bélgica",
 "gano": null,
 "sets": []
 },
@@ -6325,9 +6361,9 @@ null
 "sets": []
 },
 {
-"id": "-3",
-"n": "TBD",
-"pais": "",
+"id": "5775",
+"n": "Anastasia Zakharova",
+"pais": "Rusia",
 "gano": null,
 "sets": []
 }
@@ -6708,9 +6744,9 @@ null
 "pista": "",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "13746",
+"n": "Tiphanie Lemaitre",
+"pais": "Francia",
 "gano": null,
 "sets": []
 },
@@ -6734,9 +6770,9 @@ null
 "pista": "",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "6419",
+"n": "Martyna Kubka",
+"pais": "Polonia",
 "gano": null,
 "sets": []
 },
@@ -6767,9 +6803,9 @@ null
 "sets": []
 },
 {
-"id": "-3",
-"n": "TBD",
-"pais": "",
+"id": "3401",
+"n": "Sofya Lansere",
+"pais": "Rusia",
 "gano": null,
 "sets": []
 }
