@@ -16,6 +16,7 @@ on:
       - cuantossellaman/scripts/**
       - cuantossellaman/plantilla/**
       - cuantossellaman/content/**
+      - cuantossellaman/data/santoral.json
       - .github/workflows/datos-nombres.yml
 
 permissions:

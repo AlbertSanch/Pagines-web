@@ -215,3 +215,10 @@ summary { font-weight: 600; cursor: pointer; }
 .buscar-otro .buscar-caja > p { margin: 0 0 14px; color: var(--muted); }
 .buscar-otro .resultado:empty, .buscar-otro .sugerencias:empty { display: none; }
 .buscar-otro .resultado { text-align: left; }
+/* Santoral */
+.santoral-mes { list-style: none; padding: 0; margin: 8px 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 6px; }
+.santoral-mes a { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; text-decoration: none; color: var(--text); }
+.santoral-mes a strong { color: var(--primary); }
+.santoral-az { columns: 3 11rem; padding-left: 1.1em; }
+.santoral-az small { color: var(--muted); }
+.saltos { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; margin: 16px 0; }
