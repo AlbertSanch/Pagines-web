@@ -673,6 +673,18 @@ def ruta_ccaa(nombre_ine):
     return f"/comunidad/{slug(COMUNIDADES[nombre_ine])}/"
 
 
+def nombre_corto(nombre):
+    """«Pozuelo de Alarcón» -> «Pozuelo», «Boadilla del Monte» -> «Boadilla» (para que quepan en el título)."""
+    return re.split(r" (?:de|del|de la|de los|de las) ", nombre)[0] if len(nombre) > 12 else nombre
+
+
+def titulo_ciudades(ciudades, anio):
+    """Las tres primeras del ranking en el título: salen de los datos, así que cambian solas si cambia el orden."""
+    a, b, c = (nombre_corto(m["nombre"]) for m in ciudades[:3])
+    titulo = f"Ciudades más ricas de España {anio}: {a}, {b} y {c}, en cabeza"
+    return titulo if len(titulo) <= 75 else f"Las ciudades más ricas de España: ranking de renta {anio}"
+
+
 def ruta_barrios(m):
     return f"/barrios-mas-ricos-de-{m['slug']}/"
 
@@ -924,10 +936,16 @@ def pagina_municipio(m, T, por_prov, total_es, anios, t):
     # Título y descripción para Google: qué hay en la página, sin dar la cifra (si la da, nadie entra)
     if m["renta"]:
         anio_titulo = HACIENDA["anio_municipios"] if h and h.get("bruta_media") else ultimo
+        texto = "\n".join(cuerpo)
         titulo = f"Renta media y per cápita en {nombre} (datos {anio_titulo})"
         if len(titulo) > 65:
             titulo = f"Renta media en {nombre} (datos {anio_titulo})"
-        texto = "\n".join(cuerpo)
+        if "<h2>Los barrios más ricos de" in texto:  # ciudades con barrios: «renta per cápita» es lo que más se busca
+            por_hogar = "por persona, por hogar y por barrios" if m["hogar"] else "por persona y por barrios"
+            if len(f"Renta per cápita en {nombre} {anio_titulo}: {por_hogar}") > 72:
+                por_hogar = "por persona y por barrios"
+            if len(f"Renta per cápita en {nombre} {anio_titulo}: {por_hogar}") <= 72:
+                titulo = f"Renta per cápita en {nombre} {anio_titulo}: {por_hogar}"
         extras = ["la renta por persona y por hogar del INE" if m["hogar"] else "la renta por persona del INE"]
         if h and h.get("bruta_media"):
             extras.append(f"los datos de Hacienda de {HACIENDA['anio_municipios']}")
@@ -1033,7 +1051,7 @@ def paginas_ranking(con_dato, por_prov, T, anios, todos_municipios=()):
                   f"De las grandes capitales, " + ", ".join(f"{escape(m['nombre'])} ocupa el puesto {m['puesto_ciudad']}" for m in capitales) + ".")]
     cuerpo += f'<div class="content"><h2>Preguntas frecuentes</h2>{faq_html(preguntas)}</div>'
     guardar("/ciudades-mas-ricas-de-espana/", pagina(
-        "/ciudades-mas-ricas-de-espana/", f"Las ciudades más ricas de España: ranking de renta {ultimo}",
+        "/ciudades-mas-ricas-de-espana/", titulo_ciudades(ciudades, ultimo),
         f"Ranking de las {len(ciudades)} ciudades de más de {n(MIN_HAB_CIUDAD)} habitantes por renta media por persona ({ultimo}, INE): cuál es la más rica y en qué puesto está la tuya.",
         cuerpo, [("Ciudades más ricas", None)], [faq_ld(preguntas)]))
     rutas.append("/ciudades-mas-ricas-de-espana/")
