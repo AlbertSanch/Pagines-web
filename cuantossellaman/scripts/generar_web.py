@@ -22,6 +22,7 @@ from urllib.parse import quote
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from tildes import mostrar, mostrar_apellido, normalizar  # noqa: E402
 import articulos  # noqa: E402
+import santoral  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
 DATOS = RAIZ / "data"
@@ -34,6 +35,7 @@ SITIO = "¿Cuántos se llaman?"
 RUTA_COMO_TU = "/cuantos-se-llaman-como-tu/"
 ENLACE_COMO_TU = (f'<p class="ct-enlace">¿Y con tus apellidos? <a href="{RUTA_COMO_TU}">Calcula cuántas personas se llaman '
                   'exactamente como tú</a>.</p>')
+SANTOS = {}  # nombre normalizado -> entrada del santoral (solo confianza «alta»); se carga en main()
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que Ahorrómetro
 # Modo de consentimiento de Google: en el EEE, Reino Unido y Suiza no hay cookies de publicidad hasta
 # que el visitante acepta en el mensaje de Google (AdSense → Privacidad y mensajes); fuera, sí.
@@ -281,6 +283,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
       <a href="/ideas/">Ideas</a>
       <a href="/articulos/">Artículos</a>
       <a href="/juego/">Juego</a>
+      <a href="/santoral/">Santoral</a>
       <a href="/sobre-los-datos/">Sobre los datos</a>
     </nav>
   </div>
@@ -292,7 +295,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="site-footer">
   <div class="container">
     <p><strong>{SITIO}</strong> responde cuántas personas se llaman o se apellidan de cada forma en España con los datos oficiales del Instituto Nacional de Estadística (INE).</p>
-    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/nombres/">Nombres de la A a la Z</a><a href="/apellidos/a/">Apellidos de la A a la Z</a><a href="/ideas/">Ideas para bebé</a><a href="/cuantos-se-llaman-como-tu/">Nombre y apellidos como tú</a><a href="/tu-nombre-el-ano-que-naciste/">Tu nombre el año que naciste</a><a href="/nombres-en-peligro-de-extincion/">Nombres en peligro de extinción</a><a href="/articulos/">Artículos</a><a href="/juego/">Juego diario</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/nombres/">Nombres de la A a la Z</a><a href="/apellidos/a/">Apellidos de la A a la Z</a><a href="/ideas/">Ideas para bebé</a><a href="/cuantos-se-llaman-como-tu/">Nombre y apellidos como tú</a><a href="/tu-nombre-el-ano-que-naciste/">Tu nombre el año que naciste</a><a href="/nombres-en-peligro-de-extincion/">Nombres en peligro de extinción</a><a href="/articulos/">Artículos</a><a href="/juego/">Juego diario</a><a href="/santoral/">Santoral</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Fuente: INE. Datos reutilizados conforme a sus condiciones de uso; esta web no está vinculada al INE.</p>
   </div>
 </footer>
@@ -493,6 +496,33 @@ def pagina_nombre(e, idx, por_total, ref, provincias, decadas, bebes):
     else:
         cuerpo.append(f'<h2>¿En qué provincias es más común?</h2><p>{escape(X)} no está entre los 50 nombres más frecuentes de ninguna provincia, '
                       f'que es el detalle que publica el INE por provincia. Consulta los <a href="/provincias/">nombres más comunes de cada provincia</a>.</p>')
+
+    # Santo (data/santoral.json, solo confianza «alta»)
+    santo = SANTOS.get(e["k"])
+    if santo:
+        S = santo["nombre"]
+        anio = date.today().year
+        if santo.get("fecha"):
+            cuando = f'el <a href="{santoral.ruta_dia(santo["fecha"])}"><strong>{santoral.texto_dia(santo["fecha"])}</strong></a>'
+            cuando_txt = f"el {santoral.texto_dia(santo['fecha'])}"
+            variable = ""
+        else:
+            desc_var = santoral.variable(santo)[1]
+            f1, f2 = santoral.fecha_variable(santo, anio), santoral.fecha_variable(santo, anio + 1)
+            cuando = f"<strong>{desc_var}</strong>"
+            cuando_txt = desc_var
+            variable = (f" La fecha cambia cada año porque depende de la Pascua: en {anio} es el {f1.day} de {MESES[f1.month - 1]} "
+                        f"y en {anio + 1}, el {f2.day} de {MESES[f2.month - 1]}.")
+        otras_html = ""
+        if santo["otras"]:
+            otras_html = " También se celebra " + "; ".join(
+                f'el <a href="{santoral.ruta_dia(d)}">{santoral.texto_dia(d)}</a> ({escape(t)})' for d, t in santo["otras"]) + "."
+        nota = f" {escape(santo['nota'].rstrip('.'))}." if santo.get("nota") and not santoral.variable(santo) else ""
+        cuerpo.append(f'<h2 id="santo">¿Cuándo es el santo de {escape(S)}?</h2><p>El santo de {escape(S)} es {cuando}: '
+                      f'{escape(santo["santo"])}.{escape(variable)}{otras_html}{nota} <a href="/santoral/">Ver el santoral completo</a>.</p>')
+        faq.append((f"¿Cuándo es el santo de {S}?", re.sub("<[^>]+>", "", f"El santo de {S} es {cuando_txt}: {santo['santo']}.{variable}"
+                    + (" También se celebra " + "; ".join(f"el {santoral.texto_dia(d)} ({t})" for d, t in santo["otras"]) + "." if santo["otras"] else "")
+                    + (f" {santo['nota'].rstrip('.')}." if santo.get("nota") and not santoral.variable(santo) else ""))))
 
     # Décadas
     if e["dec"]:
@@ -1397,7 +1427,83 @@ def indices_apellidos(idx):
     return grupos
 
 
-VERSION = "14"
+# ------------------------------------------------------------------------------- Santoral
+DIAS_SEMANA = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
+
+
+def enlace_santo(idx, e):
+    """El nombre del santoral enlazado a su página de nombre si la tiene (bien escrito, como en el JSON)."""
+    x = idx.get(normalizar(e["nombre"]))
+    return f'<a href="/nombre/{x["slug"]}/#santo">{escape(e["nombre"])}</a>' if x and x["pagina"] else escape(e["nombre"])
+
+
+def personas(idx, e):
+    x = idx.get(normalizar(e["nombre"]))
+    return n(x["total"]) if x else "—"
+
+
+def paginas_santoral(idx):
+    """Una página por cada día que tenga algún santo verificado (los días sin datos no se crean: serían páginas vacías)
+    y el índice /santoral/ con los 12 meses y las fechas variables."""
+    dias = santoral.por_dia(SANTOS)
+    if not dias:
+        return []
+    claves = list(dias)
+    rutas = []
+    for i, mmdd in enumerate(claves):
+        lista = dias[mmdd]
+        dia = santoral.texto_dia(mmdd)
+        nombres = list(dict.fromkeys(e["nombre"] for e, _, _ in lista))
+        santos = list(dict.fromkeys(s for _, s, _ in lista))
+        filas = "".join(f'<tr><td>{enlace_santo(idx, e)}</td><td>{escape(s)}{"" if principal else " <small>(otra fecha)</small>"}</td>'
+                        f'<td class="num">{personas(idx, e)}</td></tr>' for e, s, principal in lista)
+        ant, sig = claves[i - 1], claves[(i + 1) % len(claves)]
+        frase_nombres = ", ".join(nombres[:-1]) + " y " + nombres[-1] if len(nombres) > 1 else nombres[0]
+        preguntas = [(f"¿Qué santo es el {dia}?", f"El {dia} se celebra {'; '.join(santos)}."),
+                     (f"¿Quién celebra su santo el {dia}?", f"El {dia} celebran su santo {frase_nombres}.")]
+        cuerpo = f"""<h1>Santos del {dia}</h1>
+<p class="lead">El {dia} celebran su santo <strong>{escape(frase_nombres)}</strong>: {escape('; '.join(santos))}.</p>
+<div class="table-wrap"><table class="data"><thead><tr><th>Nombre</th><th>Santo</th><th class="num">Personas en España</th></tr></thead><tbody>{filas}</tbody></table></div>
+<p class="saltos"><a href="{santoral.ruta_dia(ant)}">← {santoral.texto_dia(ant)}</a> · <a href="/santoral/">Santoral completo</a> · <a href="{santoral.ruta_dia(sig)}">{santoral.texto_dia(sig)} →</a></p>
+<div class="content"><h2>Preguntas frecuentes</h2>{"".join(f"<details><summary>{escape(q)}</summary><p>{escape(r)}</p></details>" for q, r in preguntas)}</div>
+<p class="fuente">Cuántas personas se llaman así: Instituto Nacional de Estadística (INE). El santoral recoge la fecha más habitual en España; algunos nombres se celebran también otros días, que verás en la página de cada nombre.</p>"""
+        ld = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in preguntas]}]
+        ruta = santoral.ruta_dia(mmdd)
+        guardar(ruta, pagina(ruta, f"Santos del {dia}: qué nombres celebran su santo | {SITIO}",
+                             f"El {dia} celebran su santo {frase_nombres}. Qué santo es y cuántas personas se llaman así en España.",
+                             cuerpo, [("Santoral", "/santoral/"), (dia.capitalize(), None)], ld))
+        rutas.append(ruta)
+    # Índice
+    meses = ""
+    for m in range(1, 13):
+        del_mes = [(k, v) for k, v in dias.items() if int(k[:2]) == m]
+        if not del_mes:
+            continue
+        items = "".join(f'<li><a href="{santoral.ruta_dia(k)}"><strong>{int(k[3:])}</strong> · '
+                        f'{escape(", ".join(dict.fromkeys(e["nombre"] for e, _, _ in v)))}</a></li>' for k, v in del_mes)
+        meses += f'<h2>{santoral.MESES[m - 1].capitalize()}</h2><ul class="santoral-mes">{items}</ul>'
+    anio = date.today().year
+    variables = "".join(
+        f'<li>{enlace_santo(idx, e)}: {escape(santoral.variable(e)[1])} ({escape(e["santo"])}). En {anio}, el '
+        f'{santoral.fecha_variable(e, anio).day} de {MESES[santoral.fecha_variable(e, anio).month - 1]}; en {anio + 1}, el '
+        f'{santoral.fecha_variable(e, anio + 1).day} de {MESES[santoral.fecha_variable(e, anio + 1).month - 1]}.</li>'
+        for e in sorted(SANTOS.values(), key=lambda x: x["nombre"]) if not e.get("fecha"))
+    alfabetico = "".join(f'<li>{enlace_santo(idx, e)} <small>{santoral.texto_dia(e["fecha"]) if e.get("fecha") else "variable"}</small></li>'
+                         for e in sorted(SANTOS.values(), key=lambda x: normalizar(x["nombre"])))
+    cuerpo = f"""<h1>Santoral: cuándo es el santo de cada nombre</h1>
+<p class="lead">El día del santo de {n(len(SANTOS))} nombres, ordenado por fecha y de la A a la Z, con cuántas personas se llaman así en España. Pulsa un día para ver quién lo celebra.</p>
+{meses}
+{f'<h2>Fechas variables</h2><p>Algunos santos dependen de la Pascua y cambian de fecha cada año:</p><ul>{variables}</ul>' if variables else ''}
+<h2>Nombres de la A a la Z</h2><ul class="santoral-az">{alfabetico}</ul>
+<p class="fuente">El santoral recoge la fecha más habitual en España. Algunos nombres se celebran también otros días: los verás en la página de cada nombre.</p>"""
+    guardar("/santoral/", pagina("/santoral/", f"Santoral: cuándo es el santo de cada nombre | {SITIO}",
+                                 f"Cuándo es el santo de {n(len(SANTOS))} nombres: el santoral de cada día del año y de la A a la Z, con cuántas personas se llaman así en España.",
+                                 cuerpo, [("Santoral", None)]))
+    return ["/santoral/"] + rutas
+
+
+VERSION = "15"
 
 
 def main():
@@ -1430,6 +1536,7 @@ def main():
     por_total = sorted(idx.values(), key=lambda x: -x["total"])
     idx_ape = construir_indice_apellidos(ape, args.umbral_apellidos)
     CRUCE["nombres"], CRUCE["apellidos"] = idx, idx_ape
+    SANTOS.update(santoral.cargar())
     for e in con_pagina:
         guardar(f"/nombre/{e['slug']}/", pagina_nombre(e, idx, por_total, nombres["referencia"], prov["provincias"], dec["decadas"], beb["anios"]))
     rutas = paginas_ranking(idx, nombres, prov["provincias"], dec["decadas"], beb["anios"],
@@ -1447,6 +1554,7 @@ def main():
         guardar(f"/apellido/{e['slug']}/", pagina_apellido(e, idx_ape, por_p1, ape["referencia"]))
     rutas += paginas_apellidos(idx_ape, ape)
     rutas += pagina_juego(idx, idx_ape, nombres["referencia"])
+    rutas += paginas_santoral(idx)
     rutas += paginas_directorio(idx, idx_ape)
     indices_apellidos(idx_ape)
     guardar("/", portada(idx, nombres, beb["anios"], nombres["referencia"], len(con_pagina)))
