@@ -360,6 +360,8 @@ def preguntas_de(e):
     «cuándo sale GTA 6» 22.200 frente a «cuánto falta» 170; «estreno Dune 3» 720 frente a «cuándo se estrena» 70;
     «cuánto falta para Navidad» 8.100 frente a «cuándo es» 3.600 y «cuántos días faltan» 2.900."""
     t, c = e.get("en_frase") or e["titulo"], e["categoria"]  # en_frase: «el iPhone 18», «la PlayStation 6»
+    if e["slug"] in TITULO_ESPECIAL:
+        return TITULO_ESPECIAL[e["slug"]](t, e["fecha"][:4])
     if c == "fechas":
         return f"¿Cuánto falta para {t}?", f"¿Cuánto falta para {t} {e['fecha'][:4]}? Días, horas y cuenta atrás"
     if c in ("videojuegos", "tecnologia"):
@@ -383,6 +385,77 @@ def preguntas_de(e):
     if c in ("musica", "fiestas", "eventos"):  # «feria de abril 2027 fechas» 260 frente a «cuánto falta para la feria de abril» 10
         return f"¿Cuándo {es} {t}?", f"{e['titulo']}{sep}{fechas} y cuenta atrás"
     return f"¿Cuánto falta para {t}?", f"¿Cuánto falta para {t}? Fecha y cuenta atrás"
+
+
+# Keyword Planner, noviembre de 2026: «cuándo es el black friday 2026» 2.900 (+1.594 % en tres meses);
+# «a qué hora es la lotería de navidad» 880.
+TITULO_ESPECIAL = {
+    "black-friday": lambda t, a: (f"¿Cuándo es el Black Friday {a}?", f"¿Cuándo es el Black Friday {a}? Fecha y cuenta atrás"),
+    "loteria-de-navidad": lambda t, a: (f"¿Cuánto falta para la Lotería de Navidad {a}?", f"Lotería de Navidad {a}: cuándo es, a qué hora empieza y cuenta atrás"),
+}
+ESCOLAR = RAIZ.parent / "festivos" / "data" / "escolar.json"  # calendarios escolares oficiales que ya lee festivosde.es
+CCAA_NOMBRE = {"andalucia": "Andalucía", "aragon": "Aragón", "asturias": "Asturias", "baleares": "Baleares", "canarias": "Canarias",
+               "cantabria": "Cantabria", "castilla-la-mancha": "Castilla-La Mancha", "castilla-y-leon": "Castilla y León",
+               "cataluna": "Cataluña", "extremadura": "Extremadura", "galicia": "Galicia", "madrid": "Comunidad de Madrid",
+               "murcia": "Región de Murcia", "navarra": "Navarra", "pais-vasco": "País Vasco", "la-rioja": "La Rioja",
+               "valenciana": "Comunitat Valenciana", "ceuta": "Ceuta", "melilla": "Melilla"}
+
+
+def lista_y(xs):
+    return xs[0] if len(xs) == 1 else ", ".join(xs[:-1]) + " y " + xs[-1]
+
+
+def vacaciones_navidad(anio):
+    """{comunidad: [(desde, hasta, provincia)]} de las vacaciones escolares de Navidad que empiezan en `anio`."""
+    if not ESCOLAR.exists():
+        return {}
+    salida = {}
+    for t in json.loads(ESCOLAR.read_text(encoding="utf-8"))["territorios"]:
+        for v in t.get("vacaciones", []):
+            if v["nombre"].startswith("Navidad") and v["desde"][:4] == str(anio):
+                salida.setdefault(t["ccaa"], []).append((dt.date.fromisoformat(v["desde"]), dt.date.fromisoformat(v["hasta"]), t.get("provincia")))
+    return salida
+
+
+def extras_temporada(e, d):
+    """Lo que más se busca alrededor de algunas fechas de Navidad: (HTML, preguntas)."""
+    if not d:
+        return "", []
+    if e["slug"] == "black-friday":
+        cyber = d + dt.timedelta(days=3)
+        return "", [(f"¿Cuándo es el Cyber Monday {d.year}?", f"Es el {fecha_larga(cyber)}, el lunes siguiente al Black Friday."),
+                    ("¿Por qué el Black Friday cambia de fecha cada año?",
+                     "Es el viernes siguiente al Día de Acción de Gracias de Estados Unidos, que se celebra el cuarto jueves de noviembre; por eso siempre cae entre el 23 y el 29 de noviembre.")]
+    if e["slug"] == "loteria-de-navidad":
+        return "", [("¿A qué hora empieza la Lotería de Navidad?",
+                     f"En los últimos años el sorteo ha empezado a las 9:00 de la mañana (las 8:00 en Canarias) en el Teatro Real de Madrid y ha durado unas cuatro horas. "
+                     f"Loterías y Apuestas del Estado confirma el horario de {d.year} unos días antes.")]
+    if e["slug"] == "navidad":
+        vac = vacaciones_navidad(d.year)
+        if not vac:
+            return "", []
+        meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+        corto = lambda x: f"{x.day} de {meses[x.month - 1]}"  # noqa: E731
+        filas = []
+        for c in sorted(vac, key=lambda c: CCAA_NOMBRE.get(c, c)):
+            rangos = sorted({(a, b) for a, b, _ in vac[c]})
+            grupos = [(CCAA_NOMBRE.get(c, c), rangos[0][0], rangos[0][1])] if len(rangos) == 1 else \
+                [(f"{CCAA_NOMBRE.get(c, c)} ({p})", a, b) for a, b, p in sorted(vac[c], key=lambda x: x[2] or "")]
+            filas += [f"<tr><td>{escape(n)}</td><td>Del {corto(a)} al {corto(b)}</td></tr>" for n, a, b in grupos]
+        primeros = {}
+        for c, lista in vac.items():
+            primeros.setdefault(min(a for a, _, _ in lista), []).append(CCAA_NOMBRE.get(c, c))
+        comun = max(primeros, key=lambda k: len(primeros[k]))
+        otras = "; ".join(f"el {fecha_larga(k, False)} en {lista_y(sorted(v))}" for k, v in sorted(primeros.items()) if k != comun)
+        respuesta = (f"En la mayoría de comunidades, el {fecha_larga(comun)} es el primer día de vacaciones" + (f"; {otras}" if otras else "")
+                     + ". Las fechas exactas de cada comunidad están en la tabla.")
+        html = (f'<section><h2>Vacaciones escolares de Navidad {d.year}-{d.year + 1}</h2>'
+                '<p>Primer y último día de vacaciones de Navidad en los colegios, según el calendario escolar oficial de cada comunidad:</p>'
+                '<div class="tabla-env"><table class="tabla-horario"><thead><tr><th>Comunidad</th><th>Vacaciones de Navidad</th></tr></thead><tbody>' + "".join(filas) + "</tbody></table></div>"
+                f'<p>¿No está tu comunidad o quieres ver el curso entero? Mira <a href="{FESTIVOSDE}/cuanto-falta/vacaciones-de-navidad/">cuánto falta para las vacaciones de Navidad</a> '
+                f'y el <a href="{FESTIVOSDE}/calendario-escolar/">calendario escolar de cada comunidad</a> en festivosde.es.</p></section>')
+        return html, [("¿Cuándo empiezan las vacaciones de Navidad?", respuesta)]
+    return "", []
 
 
 def pagina_evento(e, eventos):
@@ -470,6 +543,8 @@ def pagina_evento(e, eventos):
     if objetivo:
         botones.append(f'<button class="boton-sec" type="button" data-ics="{objetivo.isoformat()}|{escape(t)}|{url}">📅 Añadir al calendario</button>')
     datos, preguntas = datos_y_preguntas(e, d, objetivo, cab, donde)
+    temporada, mas = extras_temporada(e, d if d and d >= HOY else None)
+    preguntas = (preguntas or []) + mas
     siguientes = ""
     if e.get("siguientes"):
         siguientes = ('<section><h2>Los próximos años</h2><ul class="lista-datos">'
@@ -494,7 +569,7 @@ def pagina_evento(e, eventos):
 {bloque}
 <p class="acciones">{"".join(botones)}</p>
 {nota_ambito}{retrasos}{fuente}
-{sabe}{datos}{siguientes}{faq}
+{sabe}{temporada}{datos}{siguientes}{faq}
 {f'<section><h2>{saga}</h2>{lista_tarjetas(de_saga)}</section>' if de_saga else ''}
 {f'<section><h2>{ico} Más {cat.lower()}</h2>{lista_tarjetas(otros)}<p><a href="/{e["categoria"]}/">Ver todos →</a></p></section>' if otros else ''}
 {f'<section><h2>⏱️ También llega pronto</h2>{lista_tarjetas(proximos)}</section>' if proximos else ''}
