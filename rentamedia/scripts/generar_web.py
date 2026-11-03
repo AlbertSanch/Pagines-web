@@ -15,6 +15,7 @@ Todos los datos son del Atlas de Distribución de Renta de los Hogares del INE. 
 
 Uso: python rentamedia/scripts/generar_web.py
 """
+import hashlib
 import json
 import re
 import shutil
@@ -263,8 +264,38 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 """
 
 
+# lastmod del sitemap: solo cambia cuando cambia la página (si siempre fuera «hoy», Google acabaría ignorándolo)
+ANTES = {}   # ruta -> (huella del HTML publicado, lastmod que tenía)
+HUELLAS = {}  # ruta -> huella del HTML nuevo
+
+
+def fichero(ruta):
+    return WEB / ruta.strip("/") / "index.html" if ruta.endswith("/") else WEB / ruta.lstrip("/")
+
+
+def huella(html):
+    return hashlib.sha256(html.encode("utf-8")).hexdigest()
+
+
+def leer_publicado():
+    """Antes de borrar la web: qué fecha tenía cada página en el sitemap y cómo era su HTML."""
+    mapa = WEB / "sitemap.xml"
+    if not mapa.exists():
+        return
+    for u, fecha in re.findall(r"<loc>" + re.escape(DOMINIO) + r"([^<]*)</loc><lastmod>([^<]*)</lastmod>", mapa.read_text(encoding="utf-8")):
+        f = fichero(u)
+        if f.exists():
+            ANTES[u] = (huella(f.read_text(encoding="utf-8")), fecha)
+
+
+def lastmod(ruta, hoy):
+    antes = ANTES.get(ruta)
+    return antes[1] if antes and antes[0] == HUELLAS.get(ruta) else hoy
+
+
 def guardar(ruta, html):
-    destino = WEB / ruta.strip("/") / "index.html" if ruta.endswith("/") else WEB / ruta.lstrip("/")
+    HUELLAS[ruta] = huella(html)
+    destino = fichero(ruta)
     destino.parent.mkdir(parents=True, exist_ok=True)
     destino.write_text(html, encoding="utf-8")
 
@@ -1395,6 +1426,7 @@ def main():
     if len(municipios) < MIN_PAGINAS:
         sys.exit(f"ERROR: solo {len(municipios)} municipios con datos (mínimo {MIN_PAGINAS}). No se publica.")
     if WEB.exists():
+        leer_publicado()
         shutil.rmtree(WEB)
     (WEB / "assets").mkdir(parents=True)
     for f in ("style.css", "compartir.js", "buscar.js", "comparar.js"):
@@ -1419,7 +1451,7 @@ def main():
     hoy = date.today().isoformat()
     urls = ["/"] + rutas + [ruta_mun(m) for m in sorted(municipios.values(), key=lambda x: x["slug"])]
     (WEB / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-                                     + "".join(f"  <url><loc>{DOMINIO}{u}</loc><lastmod>{hoy}</lastmod></url>\n" for u in urls) + "</urlset>\n",
+                                     + "".join(f"  <url><loc>{DOMINIO}{u}</loc><lastmod>{lastmod(u, hoy)}</lastmod></url>\n" for u in urls) + "</urlset>\n",
                                      encoding="utf-8")
     (WEB / "ads.txt").write_text(f"google.com, {ADSENSE.replace('ca-', '')}, DIRECT, f08c47fec0942fa0\n", encoding="utf-8")
     (WEB / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /indice/\n\nSitemap: {DOMINIO}/sitemap.xml\n", encoding="utf-8")
