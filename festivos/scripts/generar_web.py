@@ -847,7 +847,9 @@ def pagina_es_festivo(datos, idx):
               "function caja(id,et,d){var e=document.getElementById(id);if(!e)return;var r=R[iso(d)],f=D[(d.getDay()+6)%7]+' '+d.getDate()+' de '+M[d.getMonth()];"
               "e.className='tarjeta'+(r?' si':'');e.innerHTML='<span class=\"etq\">'+et+', '+f+'</span><p class=\"gran\">'+(r?(r.indexOf('en ')===0?'Festivo ':'Es ')+r:'No es festivo en ninguna comunidad')+'</p>"
               "<a href=\"/es-festivo/'+d.getDate()+'-de-'+M[d.getMonth()]+'/\">Ver dónde es festivo →</a>'}"
-              "var h=new Date();caja('f-hoy','Hoy',h);caja('f-manana','Mañana',new Date(h.getFullYear(),h.getMonth(),h.getDate()+1))})();</script>")
+              "var p={};try{new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()).forEach(function(x){p[x.type]=+x.value})}catch(e){}"
+              "var h=p.year?new Date(p.year,p.month-1,p.day):new Date();"  # el día de hoy en España, no el del reloj del visitante
+              "caja('f-hoy','Hoy',h);caja('f-manana','Mañana',new Date(h.getFullYear(),h.getMonth(),h.getDate()+1))})();</script>")
     cuerpo = f"""<h1>¿Es festivo hoy?</h1>
 <p class="lead">Mira si hoy o mañana es festivo en España, en tu comunidad o en tu municipio, y elige cualquier día del año para ver dónde es festivo. Con los datos del BOE y de los boletines oficiales de cada comunidad.</p>
 <div class="hoy">{caja_dia("f-hoy", "Hoy", HOY, resumen)}{caja_dia("f-manana", "Mañana", HOY + dt.timedelta(days=1), resumen)}</div>
@@ -856,8 +858,11 @@ def pagina_es_festivo(datos, idx):
 <p class="leyenda"><span><span class="muestra n"></span> Festivo en toda España</span><span><span class="muestra a"></span> Festivo en alguna comunidad</span></p>
 <div class="calendario">{meses}</div></section>
 <section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
-    return pagina("/es-festivo/", "¿Es festivo hoy? Mira si hoy o mañana es festivo en España",
-                  "Comprueba si hoy o mañana es festivo en España, en tu comunidad o en tu municipio, y dónde es festivo cualquier día del año.",
+    # CTR del 0,2 % con 11.800 impresiones en una semana (Search Console, nov. 2026): título y descripción que dicen qué
+    # se encuentra (la respuesta de hoy y mañana, por comunidad y municipio). Sin fecha: Google guarda el título varios días.
+    return pagina("/es-festivo/", "¿Es festivo hoy? La respuesta en tu comunidad y tu municipio",
+                  "Hoy y mañana: si es festivo en toda España, en tu comunidad o solo en algunos municipios, con las fiestas locales "
+                  "de cada municipio según el BOE y los boletines oficiales. Y dónde es festivo cualquier día del año.",
                   cuerpo, [("¿Es festivo hoy?", None)], [faq_ld(preguntas)], scripts=script)
 
 
