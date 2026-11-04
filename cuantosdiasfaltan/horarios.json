@@ -4314,7 +4314,7 @@ null
 "torneo": "Prudential Hong Kong Tennis Open",
 "utc": "2026-11-04T08:30Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Round 2",
 "pista": "Court 1",
 "jugadores": [
@@ -4322,18 +4322,22 @@ null
 "id": "1809",
 "n": "Aliaksandra Sasnovich",
 "pais": "Bielorrusia",
-"gano": null,
+"gano": true,
 "sets": [
-5
+6,
+5,
+7
 ]
 },
 {
 "id": "6708",
 "n": "Talia Gibson",
 "pais": "Australia",
-"gano": null,
+"gano": false,
 "sets": [
-1
+1,
+7,
+6
 ]
 }
 ]
@@ -4344,7 +4348,7 @@ null
 "torneo": "Prudential Hong Kong Tennis Open",
 "utc": "2026-11-04T08:45Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Round 2",
 "pista": "Centre Court",
 "jugadores": [
@@ -4352,18 +4356,20 @@ null
 "id": "2054",
 "n": "Katie Boulter",
 "pais": "Gran Bretaña",
-"gano": null,
+"gano": false,
 "sets": [
-2
+5,
+4
 ]
 },
 {
 "id": "2980",
 "n": "Claire Liu",
 "pais": "USA",
-"gano": null,
+"gano": true,
 "sets": [
-3
+7,
+6
 ]
 }
 ]
@@ -4374,7 +4380,7 @@ null
 "torneo": "Angola Ladies Open",
 "utc": "2026-11-04T09:05Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Round 2",
 "pista": "Lwena Court",
 "jugadores": [
@@ -4382,18 +4388,20 @@ null
 "id": "16776",
 "n": "Kristina Novak",
 "pais": "Eslovenia",
-"gano": null,
+"gano": false,
 "sets": [
-0
+0,
+1
 ]
 },
 {
 "id": "3401",
 "n": "Sofya Lansere",
 "pais": "Rusia",
-"gano": null,
+"gano": true,
 "sets": [
-0
+6,
+6
 ]
 }
 ]
@@ -4402,9 +4410,9 @@ null
 "id": "186572",
 "gira": "WTA",
 "torneo": "Chennai Open",
-"utc": "2026-11-04T09:30Z",
+"utc": "2026-11-04T09:35Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 2",
 "pista": "Centre Court",
 "jugadores": [
@@ -4413,14 +4421,22 @@ null
 "n": "Jeline Vandromme",
 "pais": "Bélgica",
 "gano": null,
-"sets": []
+"sets": [
+4,
+6,
+4
+]
 },
 {
 "id": "6723",
 "n": "Robin Montgomery",
 "pais": "USA",
 "gano": null,
-"sets": []
+"sets": [
+6,
+3,
+2
+]
 }
 ]
 },
@@ -4428,9 +4444,9 @@ null
 "id": "186574",
 "gira": "WTA",
 "torneo": "Chennai Open",
-"utc": "2026-11-04T09:30Z",
+"utc": "2026-11-04T09:35Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 2",
 "pista": "Court 1",
 "jugadores": [
@@ -4438,15 +4454,53 @@ null
 "id": "6413",
 "n": "Polina Kudermetova",
 "pais": "Uzbekistán",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6
+]
 },
 {
 "id": "6571",
 "n": "Oksana Selekhmeteva",
 "pais": "España",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+3,
+0
+]
+}
+]
+},
+{
+"id": "186488",
+"gira": "ATP",
+"torneo": "Rolex Paris Masters",
+"utc": "2026-11-04T10:05Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Round 2",
+"pista": "Court 1",
+"jugadores": [
+{
+"id": "3511",
+"n": "Arthur Rinderknech",
+"pais": "Francia",
+"gano": true,
+"sets": [
+6,
+6
+]
+},
+{
+"id": "10153",
+"n": "Mattia Bellucci",
+"pais": "Italia",
+"gano": false,
+"sets": [
+4,
+1
+]
 }
 ]
 },
@@ -4454,9 +4508,9 @@ null
 "id": "186486",
 "gira": "ATP",
 "torneo": "Rolex Paris Masters",
-"utc": "2026-11-04T10:00Z",
+"utc": "2026-11-04T10:10Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 2",
 "pista": "Court Central",
 "jugadores": [
@@ -4465,66 +4519,54 @@ null
 "n": "Frances Tiafoe",
 "pais": "USA",
 "gano": null,
-"sets": []
+"sets": [
+3,
+6,
+6
+]
 },
 {
 "id": "2362",
 "n": "Quentin Halys",
 "pais": "Francia",
 "gano": null,
-"sets": []
+"sets": [
+6,
+1,
+6
+]
 }
 ]
 },
 {
-"id": "186488",
-"gira": "ATP",
-"torneo": "Rolex Paris Masters",
-"utc": "2026-11-04T10:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 2",
-"pista": "",
-"jugadores": [
-{
-"id": "3511",
-"n": "Arthur Rinderknech",
-"pais": "Francia",
-"gano": null,
-"sets": []
-},
-{
-"id": "10153",
-"n": "Mattia Bellucci",
-"pais": "Italia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186661",
+"id": "186662",
 "gira": "WTA",
 "torneo": "Angola Ladies Open",
-"utc": "2026-11-04T10:00Z",
+"utc": "2026-11-04T10:20Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 1",
-"pista": "Court 3",
+"pista": "Lwena Court",
 "jugadores": [
 {
-"id": "19308",
-"n": "Kristina Kroitor",
-"pais": "Rusia",
-"gano": null,
-"sets": []
+"id": "7849",
+"n": "Noma Noha Akugue",
+"pais": "Alemania",
+"gano": true,
+"sets": [
+6,
+6
+]
 },
 {
-"id": "5057",
-"n": "Suzan Lamens",
-"pais": "Holanda",
-"gano": null,
-"sets": []
+"id": "17755",
+"n": "Wozuko Mdlulwa",
+"pais": "Sudáfrica",
+"gano": false,
+"sets": [
+2,
+0
+]
 }
 ]
 },
@@ -4532,9 +4574,9 @@ null
 "id": "186632",
 "gira": "WTA",
 "torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-04T10:30Z",
+"utc": "2026-11-04T10:50Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 2",
 "pista": "Centre Court",
 "jugadores": [
@@ -4543,66 +4585,52 @@ null
 "n": "Maria Sakkari",
 "pais": "Grecia",
 "gano": null,
-"sets": []
+"sets": [
+4,
+3
+]
 },
 {
 "id": "14146",
 "n": "Maya Joint",
 "pais": "Australia",
 "gano": null,
-"sets": []
+"sets": [
+6,
+1
+]
 }
 ]
 },
 {
-"id": "186662",
+"id": "186661",
 "gira": "WTA",
 "torneo": "Angola Ladies Open",
-"utc": "2026-11-04T10:30Z",
+"utc": "2026-11-04T10:50Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 1",
-"pista": "Lwena Court",
+"pista": "Court 3",
 "jugadores": [
 {
-"id": "7849",
-"n": "Noma Noha Akugue",
-"pais": "Alemania",
+"id": "19308",
+"n": "Kristina Kroitor",
+"pais": "Rusia",
 "gano": null,
-"sets": []
-},
-{
-"id": "17755",
-"n": "Wozuko Mdlulwa",
-"pais": "Sudáfrica",
-"gano": null,
-"sets": []
-}
+"sets": [
+6,
+3
 ]
 },
 {
-"id": "186576",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-04T11:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 2",
-"pista": "Centre Court",
-"jugadores": [
-{
-"id": "3705",
-"n": "Joanna Garland",
-"pais": "Taipei Chino",
+"id": "5057",
+"n": "Suzan Lamens",
+"pais": "Holanda",
 "gano": null,
-"sets": []
-},
-{
-"id": "6368",
-"n": "Janice Tjen",
-"pais": "Indonesia",
-"gano": null,
-"sets": []
+"sets": [
+2,
+4
+]
 }
 ]
 },
@@ -4610,9 +4638,9 @@ null
 "id": "186479",
 "gira": "ATP",
 "torneo": "Rolex Paris Masters",
-"utc": "2026-11-04T11:30Z",
+"utc": "2026-11-04T11:35Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 2",
 "pista": "Court 1",
 "jugadores": [
@@ -4621,14 +4649,48 @@ null
 "n": "Learner Tien",
 "pais": "USA",
 "gano": null,
-"sets": []
+"sets": [
+2
+]
 },
 {
 "id": "8814",
 "n": "Luca Van Assche",
 "pais": "Francia",
 "gano": null,
-"sets": []
+"sets": [
+1
+]
+}
+]
+},
+{
+"id": "186678",
+"gira": "WTA",
+"torneo": "Angola Ladies Open",
+"utc": "2026-11-04T11:35Z",
+"hora_valida": true,
+"estado": "in",
+"ronda": "Round 2",
+"pista": "Lwena Court",
+"jugadores": [
+{
+"id": "6419",
+"n": "Martyna Kubka",
+"pais": "Polonia",
+"gano": null,
+"sets": [
+2
+]
+},
+{
+"id": "18677",
+"n": "Franziska Sziedat",
+"pais": "Alemania",
+"gano": null,
+"sets": [
+2
+]
 }
 ]
 },
@@ -4636,9 +4698,9 @@ null
 "id": "186487",
 "gira": "ATP",
 "torneo": "Rolex Paris Masters",
-"utc": "2026-11-04T11:30Z",
+"utc": "2026-11-04T11:55Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 2",
 "pista": "Court 2",
 "jugadores": [
@@ -4647,40 +4709,18 @@ null
 "n": "Daniel Merida",
 "pais": "España",
 "gano": null,
-"sets": []
+"sets": [
+1
+]
 },
 {
 "id": "2964",
 "n": "Tommy Paul",
 "pais": "USA",
 "gano": null,
-"sets": []
-}
+"sets": [
+0
 ]
-},
-{
-"id": "186570",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-04T11:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 2",
-"pista": "Centre Court",
-"jugadores": [
-{
-"id": "15999",
-"n": "Maaya Rajeshwaran Revathi",
-"pais": "India",
-"gano": null,
-"sets": []
-},
-{
-"id": "8681",
-"n": "Weronika Falkowska",
-"pais": "Polonia",
-"gano": null,
-"sets": []
 }
 ]
 },
@@ -4688,7 +4728,7 @@ null
 "id": "186680",
 "gira": "WTA",
 "torneo": "Angola Ladies Open",
-"utc": "2026-11-04T11:30Z",
+"utc": "2026-11-04T12:00Z",
 "hora_valida": true,
 "estado": "pre",
 "ronda": "Round 2",
@@ -4711,26 +4751,26 @@ null
 ]
 },
 {
-"id": "186678",
+"id": "186576",
 "gira": "WTA",
-"torneo": "Angola Ladies Open",
-"utc": "2026-11-04T12:00Z",
+"torneo": "Chennai Open",
+"utc": "2026-11-04T12:10Z",
 "hora_valida": true,
 "estado": "pre",
 "ronda": "Round 2",
-"pista": "Lwena Court",
+"pista": "Centre Court",
 "jugadores": [
 {
-"id": "6419",
-"n": "Martyna Kubka",
-"pais": "Polonia",
+"id": "3705",
+"n": "Joanna Garland",
+"pais": "Taipei Chino",
 "gano": null,
 "sets": []
 },
 {
-"id": "18677",
-"n": "Franziska Sziedat",
-"pais": "Alemania",
+"id": "6368",
+"n": "Janice Tjen",
+"pais": "Indonesia",
 "gano": null,
 "sets": []
 }
@@ -4809,6 +4849,32 @@ null
 "id": "11226",
 "n": "Ignacio Buse",
 "pais": "Perú",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186570",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-04T13:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "Centre Court",
+"jugadores": [
+{
+"id": "15999",
+"n": "Maaya Rajeshwaran Revathi",
+"pais": "India",
+"gano": null,
+"sets": []
+},
+{
+"id": "8681",
+"n": "Weronika Falkowska",
+"pais": "Polonia",
 "gano": null,
 "sets": []
 }
@@ -5319,9 +5385,9 @@ null
 "pista": "",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "3511",
+"n": "Arthur Rinderknech",
+"pais": "Francia",
 "gano": null,
 "sets": []
 },
@@ -5439,7 +5505,7 @@ null
 ]
 },
 {
-"id": "186585",
+"id": "186588",
 "gira": "WTA",
 "torneo": "Chennai Open",
 "utc": "2026-11-05T05:00Z",
@@ -5449,42 +5515,16 @@ null
 "pista": "",
 "jugadores": [
 {
-"id": "8067",
-"n": "Lucrezia Stefanini",
-"pais": "Italia",
+"id": "14253",
+"n": "Vaishnavi Adkar",
+"pais": "India",
 "gano": null,
 "sets": []
 },
 {
-"id": "3388",
-"n": "Simona Waltert",
-"pais": "Suiza",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186591",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-05T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 2",
-"pista": "",
-"jugadores": [
-{
-"id": "4926",
-"n": "Zhibek Kulambayeva",
-"pais": "Kazajistán",
-"gano": null,
-"sets": []
-},
-{
-"id": "3153",
-"n": "Mai Hontama",
-"pais": "Japón",
+"id": "5775",
+"n": "Anastasia Zakharova",
+"pais": "Rusia",
 "gano": null,
 "sets": []
 }
@@ -5517,7 +5557,7 @@ null
 ]
 },
 {
-"id": "186588",
+"id": "186591",
 "gira": "WTA",
 "torneo": "Chennai Open",
 "utc": "2026-11-05T05:00Z",
@@ -5527,16 +5567,42 @@ null
 "pista": "",
 "jugadores": [
 {
-"id": "14253",
-"n": "Vaishnavi Adkar",
-"pais": "India",
+"id": "4926",
+"n": "Zhibek Kulambayeva",
+"pais": "Kazajistán",
 "gano": null,
 "sets": []
 },
 {
-"id": "5775",
-"n": "Anastasia Zakharova",
-"pais": "Rusia",
+"id": "3153",
+"n": "Mai Hontama",
+"pais": "Japón",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186585",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-05T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "8067",
+"n": "Lucrezia Stefanini",
+"pais": "Italia",
+"gano": null,
+"sets": []
+},
+{
+"id": "3388",
+"n": "Simona Waltert",
+"pais": "Suiza",
 "gano": null,
 "sets": []
 }
@@ -5657,9 +5723,9 @@ null
 "pista": "",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "7849",
+"n": "Noma Noha Akugue",
+"pais": "Alemania",
 "gano": null,
 "sets": []
 },
