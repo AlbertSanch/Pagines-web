@@ -50,7 +50,7 @@ CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};
                       'googlefc.callbackQueue.push(function(){googlefc.showRevocationMessage()});return false">Configurar cookies</a>')
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
            "email": "contacto.ahorrometro@gmail.com"}
-RESERVADOS = {"comunidad", "provincia", "assets", "sobre-los-datos", "aviso-legal", "privacidad", "indice", "datos",
+RESERVADOS = {"comunidad", "provincia", "assets", "sobre-los-datos", "aviso-legal", "privacidad", "sobre-nosotros", "contacto", "indice", "datos",
               "calculadora-dias-laborables", "planificador-vacaciones", "calendario-escolar", "es-festivo", "cuanto-falta"}
 TIPOS = {"nacional": "Nacional", "autonomico": "Autonómica", "local": "Local"}
 # Val d'Aran: el BOE recoge una sustitución solo para este territorio
@@ -252,7 +252,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="pie">
   <div class="contenedor">
     <p><strong>festivosde.es</strong> reúne los días festivos de cada municipio de España a partir del Boletín Oficial del Estado y de los boletines oficiales de cada comunidad autónoma.</p>
-    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/es-festivo/">¿Es festivo hoy?</a><a href="/cuanto-falta/">Cuánto falta para…</a><a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/planificador-vacaciones/">Planificador de vacaciones</a><a href="/calendario-escolar/">Calendario escolar</a><a href="/calendario-laboral-para-imprimir/">Calendario para imprimir</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/es-festivo/">¿Es festivo hoy?</a><a href="/cuanto-falta/">Cuánto falta para…</a><a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/planificador-vacaciones/">Planificador de vacaciones</a><a href="/calendario-escolar/">Calendario escolar</a><a href="/calendario-laboral-para-imprimir/">Calendario para imprimir</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/contacto/">Contacto</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Las fechas se toman de las publicaciones oficiales. Si ves un error, escríbenos a {TITULAR['email']}.</p>
   </div>
 </footer>
@@ -1297,6 +1297,24 @@ def legales():
 <p>No cedemos datos a terceros salvo obligación legal. Google y Cloudflare pueden tratar datos como proveedores del servicio; algunos pueden estar fuera del Espacio Económico Europeo, con las garantías previstas en el RGPD.</p>
 <h2>Tus derechos</h2>
 <p>Puedes ejercer tus derechos de acceso, rectificación, supresión y demás escribiendo a {t['email']}. También puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).</p></div>"""
+    nosotros = f"""<h1>Sobre nosotros</h1><div class="contenido">
+<p>festivosde.es es un proyecto independiente que responde a una pregunta muy concreta: <strong>¿qué días son festivos en mi municipio?</strong></p>
+<p>Las fiestas de cada pueblo y ciudad se publican cada año en el BOE y en los boletines oficiales de las comunidades autónomas, repartidas en resoluciones largas y difíciles de consultar. Aquí las reunimos por municipio, junto con los puentes, el calendario escolar de cada comunidad y herramientas para calcular días laborables o planificar las vacaciones.</p>
+<h2>Cómo trabajamos</h2>
+<ul>
+<li>Solo usamos publicaciones oficiales: el BOE para las fiestas nacionales y autonómicas, y los boletines de cada comunidad o provincia para las fiestas locales y el calendario escolar. Cada página enlaza su fuente.</li>
+<li>Un programa revisa los boletines y actualiza la web cuando se publican fiestas nuevas o correcciones.</li>
+<li>Si las fiestas de un municipio aún no se han publicado, lo decimos: nunca ponemos una fecha que no esté en un boletín oficial. Más detalles en <a href="/sobre-los-datos/">de dónde salen los datos</a>.</li>
+</ul>
+<h2>Contacto</h2>
+<p>¿Has visto un error o falta tu municipio? Escríbenos desde la página de <a href="/contacto/">contacto</a>.</p></div>"""
+    contacto = f"""<h1>Contacto</h1><div class="contenido">
+<p>¿Has encontrado un error, falta alguna fiesta de tu municipio o quieres proponer una mejora? Escríbenos a <a href="mailto:{t['email']}">{t['email']}</a> y te responderemos lo antes posible.</p>
+<p>Si nos avisas de una fecha que crees que está mal, indica el municipio y el año y, si puedes, el boletín donde la has visto. Revisamos cada aviso con la publicación oficial.</p></div>"""
+    guardar("/sobre-nosotros/", pagina("/sobre-nosotros/", "Sobre nosotros | festivosde.es",
+                                       "Qué es festivosde.es, de dónde salen sus datos y cómo trabajamos.", nosotros, [("Sobre nosotros", None)]))
+    guardar("/contacto/", pagina("/contacto/", "Contacto | festivosde.es",
+                                 "Cómo contactar con festivosde.es para avisar de un error o proponer una mejora.", contacto, [("Contacto", None)]))
     guardar("/sobre-los-datos/", pagina("/sobre-los-datos/", "De dónde salen los datos de festivos | festivosde.es",
                                         "Los festivos de cada municipio salen del BOE y de los boletines oficiales de cada comunidad autónoma.",
                                         sobre, [("Sobre los datos", None)]))
@@ -1304,7 +1322,7 @@ def legales():
     guardar("/privacidad/", pagina("/privacidad/", "Política de privacidad | festivosde.es", "Política de privacidad y cookies de festivosde.es.", privacidad, [("Privacidad", None)]))
     guardar("/404.html", pagina("/404.html", "Página no encontrada", "Esta página no existe.",
                                 '<h1>Página no encontrada</h1><p>Busca tu municipio desde la <a href="/">portada</a>.</p>', indexable=False))
-    return ["/sobre-los-datos/", "/aviso-legal/", "/privacidad/"]
+    return ["/sobre-nosotros/", "/contacto/", "/sobre-los-datos/", "/aviso-legal/", "/privacidad/"]
 
 
 # ---------------------------------------------------------------- main
