@@ -35,7 +35,7 @@ FUENTES = PLANTILLA / "fuentes"
 FIJAS = RAIZ.parent / "festivos" / "scripts" / "cuanto_falta.py"  # mismas fechas que festivosde: Pascua, estaciones, Black Friday…
 DOMINIO = os.environ.get("CDF_DOMINIO", "https://cuantosdiasfaltan.es")
 NOMBRE_WEB = DOMINIO.split("//")[1]
-VERSION = "4"
+VERSION = "5"
 HOY = dt.date.fromisoformat(os.environ["CDF_HOY"]) if os.environ.get("CDF_HOY") else dt.date.today()
 ADSENSE = "ca-pub-8810566450749484"
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -243,7 +243,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", buscador=True
 </main>
 <footer class="pie"><div class="cont">
 <p><strong>{NOMBRE_WEB}</strong>: cuántos días faltan para los próximos lanzamientos y eventos, con la fecha oficial y su fuente.</p>
-<p class="enlaces"><a href="/">Inicio</a>{''.join(f'<a href="/{c}/">{n}</a>' for c, (n, _) in CATEGORIAS.items())}<a href="/cuanto-hace/">Cuánto hace</a><a href="/futbol-hoy/">Fútbol hoy</a><a href="/tenis-hoy/">Tenis hoy</a><a href="/horario-f1/">Horario F1</a><a href="/horario-motogp/">Horario MotoGP</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a>{CONFIGURAR_COOKIES}</p>
+<p class="enlaces"><a href="/">Inicio</a>{''.join(f'<a href="/{c}/">{n}</a>' for c, (n, _) in CATEGORIAS.items())}<a href="/cuanto-hace/">Cuánto hace</a><a href="/calculadora-de-fechas/">Calculadora de fechas</a><a href="/futbol-hoy/">Fútbol hoy</a><a href="/tenis-hoy/">Tenis hoy</a><a href="/horario-f1/">Horario F1</a><a href="/horario-motogp/">Horario MotoGP</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a>{CONFIGURAR_COOKIES}</p>
 <p>¿Ha cambiado una fecha? Escríbenos a {TITULAR['email']}.</p>
 </div></footer>
 <script src="/assets/cuenta.js?v={VERSION}" defer></script>
@@ -848,7 +848,8 @@ def pagina_portada(eventos, H=None):
 <input id="c-fecha" type="date" aria-label="Fecha"><label class="check"><input id="c-anual" type="checkbox"> Cada año</label>
 <button class="boton" id="c-crear" type="button">Crear</button></form><div id="c-resultado"></div></section>
 {secciones}
-<section><h2>⌛ ¿Cuánto hace de…?</h2><p>Calcula cuánto tiempo ha pasado desde cualquier fecha: <a href="/cuanto-hace/">cuánto hace de…</a></p></section>"""
+<section><h2>⌛ ¿Cuánto hace de…?</h2><p>Calcula cuánto tiempo ha pasado desde cualquier fecha: <a href="/cuanto-hace/">cuánto hace de…</a></p></section>
+<section><h2>🧮 Calculadora de fechas</h2><p>Días entre dos fechas, sumar o restar días a una fecha y qué día de la semana cae: <a href="/calculadora-de-fechas/">calculadora de fechas</a>.</p></section>"""
     ld = {"@context": "https://schema.org", "@type": "WebSite", "name": NOMBRE_WEB, "url": DOMINIO + "/"}
     return pagina("/", "¿Cuántos días faltan para…? Navidad, estrenos y eventos: cuenta atrás",
                   "Cuántos días faltan para Navidad, Reyes, el verano, GTA 6, los próximos estrenos, partidos y fiestas, con la fecha oficial y una cuenta atrás en directo.",
@@ -863,6 +864,68 @@ def pagina_cuanto_hace(eventos):
 {f'<section><h2>Ya han salido</h2>{lista_tarjetas(pasados)}</section>' if pasados else ''}"""
     return pagina("/cuanto-hace/", "¿Cuánto hace de…? Calcula el tiempo que ha pasado desde una fecha",
                   "Calcula cuántos años, meses, semanas y días han pasado desde cualquier fecha.", cuerpo)
+
+
+def pagina_calculadora():
+    """Calculadora de fechas (Keyword Planner, noviembre de 2026: «calculadora de fechas» 4.400, «calcular días entre fechas» 3.600,
+    «sumar días a una fecha» 1.900). Los cálculos se hacen en el navegador (calculadora.js); los ejemplos, aquí, para que se lean sin JavaScript."""
+    a = HOY.year
+    ini, fin = dt.date(a, 1, 1), dt.date(a, 12, 31)
+    navidad = dt.date(a, 12, 25) if HOY <= dt.date(a, 12, 25) else dt.date(a + 1, 12, 25)
+    semanas_anio = dt.date(a, 12, 28).isocalendar()[1]
+    bisiesto = (a % 4 == 0 and a % 100 != 0) or a % 400 == 0
+    mas_90 = HOY + dt.timedelta(days=90)
+    lab = sum(1 for i in range((fin - ini).days + 1) if (ini + dt.timedelta(days=i)).weekday() < 5)
+    ejemplos = [
+        f"Del {fecha_larga(ini)} al {fecha_larga(fin)} hay {(fin - ini).days} días; {(fin - ini).days + 1} si cuentas los dos.",
+        f"Desde hoy, {fecha_larga(HOY)}, hasta <a href=\"/navidad/\">Navidad</a> ({fecha_larga(navidad)}) faltan {(navidad - HOY).days} días.",
+        f"Hoy más 90 días es el {fecha_larga(mas_90)}.",
+        f"{a} tiene {lab} días de lunes a viernes, antes de descontar festivos.",
+    ]
+    preguntas = [
+        ("¿Cómo se calculan los días entre dos fechas?",
+         "Se cuentan los días que pasan de una fecha a la otra, sin contar el primero: del 1 al 3 de un mes hay 2 días. "
+         "Si necesitas contar los dos extremos (por ejemplo, para unas vacaciones o un plazo que incluye el primer día), suma uno; la calculadora tiene una casilla para eso."),
+        ("¿Cómo sumo días a una fecha?",
+         "Elige la fecha, escribe cuántos días, semanas o meses quieres sumar o restar y la calculadora te dice qué día cae. "
+         "Al sumar meses, si el día no existe en el mes de llegada (por ejemplo, el 31 de un mes de 30 días), se usa el último día de ese mes."),
+        ("¿Cuentan los festivos como días laborables?",
+         "La calculadora cuenta los días de lunes a viernes, pero no descuenta festivos porque cambian según el municipio. "
+         f"Para descontar los de tu pueblo o ciudad, usa la calculadora de días laborables de festivosde.es."),
+        (f"¿Cuántos días tiene {a}?",
+         f"{a} tiene {366 if bisiesto else 365} días{', porque es bisiesto' if bisiesto else ''} y {semanas_anio} semanas según la numeración ISO, la que usan los calendarios en España. "
+         "Un año es bisiesto si es divisible entre 4, salvo los divisibles entre 100 que no lo son entre 400."),
+    ]
+    faq_html = '<section class="faq"><h2>Preguntas frecuentes</h2>' + "".join(f"<h3>{escape(q)}</h3><p>{r}</p>" for q, r in preguntas) + "</section>"
+    hoy_iso = HOY.isoformat()
+    cuerpo = f"""<nav class="migas"><a href="/">Inicio</a> › Calculadora de fechas</nav>
+<h1>Calculadora de fechas</h1>
+<p class="sub">Calcula los días entre dos fechas, suma o resta días a una fecha y descubre qué día de la semana cae cualquier día.</p>
+<section class="herramienta calc" id="entre"><h2>📏 Días entre dos fechas</h2>
+<form onsubmit="return false"><label>Desde<input id="f-desde" type="date" value="{hoy_iso}"></label><label>Hasta<input id="f-hasta" type="date"></label>
+<label class="check"><input id="f-incluir" type="checkbox"> Contar también el último día</label><button class="boton" id="f-entre" type="button">Calcular</button></form>
+<div id="r-entre" class="resultado" aria-live="polite" hidden></div></section>
+<section class="herramienta calc" id="sumar"><h2>➕ Sumar o restar días a una fecha</h2>
+<form onsubmit="return false"><label>Fecha<input id="f-base" type="date" value="{hoy_iso}"></label>
+<label>Operación<select id="f-op"><option value="sumar">Sumar</option><option value="restar">Restar</option></select></label>
+<label>Cantidad<input id="f-n" type="number" min="0" max="100000" value="30" inputmode="numeric"></label>
+<label>Unidad<select id="f-tipo"><option value="naturales">días</option><option value="laborables">días laborables</option><option value="semanas">semanas</option><option value="meses">meses</option></select></label>
+<button class="boton" id="f-sumar" type="button">Calcular</button></form>
+<div id="r-sumar" class="resultado" aria-live="polite" hidden></div></section>
+<section class="herramienta calc" id="dia-semana"><h2>📅 ¿Qué día de la semana cae?</h2>
+<form onsubmit="return false"><label>Fecha<input id="f-dia" type="date" value="{hoy_iso}"></label><button class="boton" id="f-calc-dia" type="button">Ver</button></form>
+<div id="r-dia" class="resultado" aria-live="polite" hidden></div></section>
+<section class="texto"><h2>Algunos ejemplos</h2><ul class="lista-datos">{"".join(f"<li>{x}</li>" for x in ejemplos)}</ul>
+<p>¿Quieres contar solo los días de trabajo de tu municipio, descontando sus festivos? Usa la <a href="{FESTIVOSDE}/calculadora-dias-laborables/">calculadora de días laborables</a> de festivosde.es. Y si lo que buscas es cuánto falta para una fecha concreta, crea <a href="/#tu-cuenta">tu propia cuenta atrás</a> o mira <a href="/cuanto-hace/">cuánto hace de una fecha</a>.</p></section>
+{faq_html}"""
+    ld = [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": DOMINIO + "/"},
+        {"@type": "ListItem", "position": 2, "name": "Calculadora de fechas", "item": DOMINIO + "/calculadora-de-fechas/"}]},
+          {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+              {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", r)}} for q, r in preguntas]}]
+    return pagina("/calculadora-de-fechas/", "Calculadora de fechas: días entre fechas y sumar días",
+                  "Calcula cuántos días hay entre dos fechas, suma o resta días, semanas o meses a una fecha y mira qué día de la semana cae. Gratis y al instante.",
+                  cuerpo, ld, scripts=f'<script src="/assets/calculadora.js?v={VERSION}" defer></script>')
 
 
 def legales():
@@ -1381,7 +1444,7 @@ def main():
     if WEB.exists():
         shutil.rmtree(WEB)
     (WEB / "assets").mkdir(parents=True)
-    for f in ("style.css", "cuenta.js", "vivo.js"):
+    for f in ("style.css", "cuenta.js", "vivo.js", "calculadora.js"):
         shutil.copy(PLANTILLA / f, WEB / "assets" / f)
     for f in ("favicon.svg", "favicon.ico", "apple-touch-icon.png"):
         shutil.copy(PLANTILLA / f, WEB / f)
@@ -1400,6 +1463,8 @@ def main():
     imagenes_compartir(eventos)
     guardar("/cuanto-hace/", pagina_cuanto_hace(eventos))
     rutas.append("/cuanto-hace/")
+    guardar("/calculadora-de-fechas/", pagina_calculadora())
+    rutas.append("/calculadora-de-fechas/")
     rutas += legales()
     if H.get("futbol_hoy") is not None:
         guardar("/futbol-hoy/", pagina_futbol_hoy(H["futbol_hoy"]))

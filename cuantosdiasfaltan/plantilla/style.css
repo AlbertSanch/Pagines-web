@@ -129,3 +129,13 @@ h2 a { color: inherit; text-decoration: none; }
 .lista-deporte .d-cuando { display: inline-block; min-width: 9.5em; font-weight: 700; color: var(--acento2); }
 .lista-deporte small { color: var(--suave); }
 @media (max-width: 700px) { .lista-deporte .d-cuando { display: block; min-width: 0; font-size: .85rem; } }
+/* calculadora de fechas */
+.herramienta.calc { margin: 18px 0; }
+.herramienta.calc form { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; max-width: 640px; align-items: end; }
+.herramienta.calc label { display: grid; gap: 4px; font-size: .9rem; font-weight: 600; }
+.herramienta.calc label.check { display: flex; gap: 8px; align-items: center; grid-column: 1 / -1; font-weight: 400; }
+.herramienta.calc select, .herramienta.calc input[type=number] { width: 100%; font: inherit; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--linea); background: var(--panel); color: var(--texto); }
+.herramienta.calc .boton { grid-column: 1 / -1; justify-self: start; }
+.resultado { margin-top: 14px; }
+.r-grande { font-size: 1.6rem; font-weight: 800; margin: 6px 0; }
+@media (min-width: 720px) { #sumar form { grid-template-columns: 1.3fr 1fr 1fr 1.3fr; } #sumar .boton, #entre .boton { grid-column: auto; } }
