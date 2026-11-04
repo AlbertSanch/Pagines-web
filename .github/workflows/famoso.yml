@@ -1,0 +1,52 @@
+# Famoso del día: regenera la web dos veces al día para publicar los datos de mañana y la ficha del famoso de ayer,
+# y cada vez que cambian los datos (famoso/data) o los scripts. Cloudflare Pages publica cada commit en main.
+name: Famoso del día
+
+on:
+  schedule:
+    - cron: "23 9 * * *"
+    - cron: "47 17 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - famoso/data/**
+      - famoso/scripts/**
+      - famoso/plantilla/**
+      - .github/workflows/famoso.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: famoso
+  cancel-in-progress: false
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generar la web
+        run: python -u famoso/scripts/generar_web.py
+      - name: Comprobar
+        run: |
+          test -f famoso/web/index.html
+          test -f famoso/web/assets/juego.js
+          test -s famoso/web/d/practica.json
+          n=$(grep -c "<loc>" famoso/web/sitemap.xml)
+          echo "Páginas en el sitemap: $n"
+          test "$n" -gt 20
+      - name: Publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add famoso/web
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Famoso del día: actualizar web"
+          for i in 1 2 3; do git pull --rebase origin main && git push && exit 0; sleep 5; done
+          exit 1

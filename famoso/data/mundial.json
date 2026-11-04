@@ -1,0 +1,902 @@
+[
+  {
+    "slug": "albert-einstein",
+    "apartado": "mundial",
+    "fecha": "2026-11-09",
+    "nombre": "Albert Einstein",
+    "alias": ["Einstein"],
+    "ambito": "Ciencia",
+    "pistas": [
+      "Nació en 1879.",
+      "Se dedicó a la ciencia.",
+      "Recibió el Premio Nobel de Física de 1921 por explicar el efecto fotoeléctrico.",
+      "Nació en Ulm, en el sur de Alemania.",
+      "Su fórmula más famosa es E = mc².",
+      "Sus iniciales son A. E."
+    ],
+    "resumen": "Físico nacido en Alemania, autor de la teoría de la relatividad y uno de los científicos más influyentes de la historia.",
+    "biografia": [
+      "Albert Einstein nació el 14 de marzo de 1879 en Ulm, en el antiguo Imperio alemán, y creció en Múnich. Estudió en el Politécnico de Zúrich y, como no encontró plaza en la universidad, empezó a trabajar en la oficina de patentes de Berna. Fue allí, en sus ratos libres, donde preparó los trabajos que cambiarían la física.",
+      "En 1905, su llamado «año milagroso», publicó cuatro artículos: uno sobre el efecto fotoeléctrico, otro sobre el movimiento browniano, la teoría de la relatividad especial y el que contenía la equivalencia entre masa y energía, la famosa E = mc². Diez años después presentó la relatividad general, que explica la gravedad como una curvatura del espacio y el tiempo. Una expedición que observó el eclipse solar de 1919 confirmó sus predicciones y lo convirtió en una celebridad mundial.",
+      "Recibió el Premio Nobel de Física de 1921, aunque no por la relatividad, sino por su explicación del efecto fotoeléctrico. En 1933, con la llegada de los nazis al poder, se instaló en Estados Unidos, donde trabajó en el Instituto de Estudios Avanzados de Princeton hasta su muerte, el 18 de abril de 1955.",
+      "Su nombre se ha convertido en sinónimo de genio, y su imagen con el pelo alborotado es una de las más reconocibles del siglo XX."
+    ],
+    "curiosidades": [
+      "En 1952 le ofrecieron ser presidente de Israel y lo rechazó.",
+      "Tocaba el violín desde niño y decía que la música le ayudaba a pensar.",
+      "No le dieron el Nobel por la relatividad, su trabajo más famoso, sino por el efecto fotoeléctrico."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Albert_Einstein",
+    "comprobar": ["1879", "Ulm", "fotoeléctrico", "1955"]
+  },
+  {
+    "slug": "lionel-messi",
+    "apartado": "mundial",
+    "fecha": "2026-11-10",
+    "nombre": "Lionel Messi",
+    "alias": ["Messi", "Leo Messi", "Lionel Andrés Messi", "Leo"],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1987.",
+      "Es deportista.",
+      "Ha ganado ocho Balones de Oro, más que nadie.",
+      "Nació en Rosario (Argentina).",
+      "Fue campeón del Mundial de Catar 2022 como capitán de su selección.",
+      "Sus iniciales son L. M."
+    ],
+    "resumen": "Futbolista argentino, máximo goleador de la historia del FC Barcelona, ganador de ocho Balones de Oro y campeón del mundo en 2022.",
+    "biografia": [
+      "Lionel Andrés Messi nació el 24 de junio de 1987 en Rosario, Argentina. Empezó a jugar en el club de su barrio y en Newell's Old Boys, y con 13 años se trasladó a Barcelona para formarse en La Masia, la cantera del club azulgrana.",
+      "Debutó con el primer equipo del FC Barcelona en 2004 y allí pasó casi dos décadas. Con el Barça ganó, entre otros títulos, diez Ligas y cuatro Ligas de Campeones, y se convirtió en el máximo goleador de la historia del club, con 672 goles oficiales. En 2012 marcó 91 goles en un solo año natural, un récord que sigue vigente.",
+      "En 2021 dejó el Barcelona para fichar por el Paris Saint-Germain y en 2023 se marchó al Inter Miami de Estados Unidos. Con Argentina ganó el oro olímpico en Pekín 2008, la Copa América en 2021 y 2024 y, sobre todo, el Mundial de Catar 2022, en una final contra Francia que se decidió en los penaltis.",
+      "Ha ganado ocho Balones de Oro, más que ningún otro futbolista, y para muchos aficionados es el mejor jugador de la historia."
+    ],
+    "curiosidades": [
+      "Fue elegido mejor jugador del Mundial dos veces: en 2014 y en 2022.",
+      "Su primer contrato con el Barcelona, según la historia que se cuenta en el club, se firmó en una servilleta de papel.",
+      "Sus 91 goles en 2012 superaron el récord de Gerd Müller, que llevaba 40 años vigente."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Lionel_Messi",
+    "comprobar": ["1987", "Rosario", "672", "Inter Miami"]
+  },
+  {
+    "slug": "michael-jackson",
+    "apartado": "mundial",
+    "fecha": "2026-11-11",
+    "nombre": "Michael Jackson",
+    "alias": ["Jackson", "Michael Joseph Jackson", "MJ"],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1958.",
+      "Se dedicó a la música.",
+      "Su disco «Thriller» es el álbum más vendido de la historia.",
+      "Nació en Gary, en el estado de Indiana (Estados Unidos).",
+      "Le llamaban «el rey del pop» y popularizó el paso del moonwalk.",
+      "Sus iniciales son M. J."
+    ],
+    "resumen": "Cantante y bailarín estadounidense, conocido como «el rey del pop», autor de «Thriller», el álbum más vendido de la historia.",
+    "biografia": [
+      "Michael Jackson nació el 29 de agosto de 1958 en Gary, Indiana, en una familia de nueve hermanos. De niño ya era la voz principal de los Jackson 5, el grupo que formó con sus hermanos y que triunfó a finales de los años sesenta con la discográfica Motown.",
+      "Su carrera en solitario despegó con «Off the Wall» (1979) y alcanzó una dimensión nunca vista con «Thriller» (1982), considerado el álbum más vendido de todos los tiempos. Canciones como «Billie Jean», «Beat It» o «Thriller» y sus videoclips, auténticos cortometrajes, cambiaron la forma de hacer y promocionar la música pop.",
+      "En 1983, durante una actuación en televisión con «Billie Jean», mostró por primera vez el moonwalk, el paso de baile en el que parece caminar hacia delante mientras se desliza hacia atrás. Después llegaron discos como «Bad» (1987) y «Dangerous» (1991) y giras mundiales multitudinarias.",
+      "Murió el 25 de junio de 2009 en Los Ángeles, cuando preparaba una serie de conciertos en Londres. Su influencia en el baile, los videoclips y la música popular sigue muy presente."
+    ],
+    "curiosidades": [
+      "En 1984 ganó ocho premios Grammy en una sola noche, un récord en aquel momento.",
+      "Está dos veces en el Salón de la Fama del Rock and Roll: con los Jackson 5 y en solitario.",
+      "El videoclip de «Thriller» dura casi 14 minutos y lo dirigió el cineasta John Landis."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Michael_Jackson",
+    "comprobar": ["1958", "Gary", "Thriller", "2009"]
+  },
+  {
+    "slug": "marie-curie",
+    "apartado": "mundial",
+    "fecha": "2026-11-12",
+    "nombre": "Marie Curie",
+    "alias": ["Curie", "Madame Curie", "María Curie", "Marie Skłodowska-Curie", "Maria Sklodowska"],
+    "ambito": "Ciencia",
+    "pistas": [
+      "Nació en 1867.",
+      "Se dedicó a la ciencia.",
+      "Es la única persona que ha ganado el Nobel en dos ciencias distintas: Física y Química.",
+      "Nació en Varsovia (Polonia).",
+      "Descubrió el polonio y el radio y estudió la radiactividad.",
+      "Sus iniciales son M. C."
+    ],
+    "resumen": "Científica polaca nacionalizada francesa, pionera de la radiactividad y primera mujer en ganar un Premio Nobel.",
+    "biografia": [
+      "Maria Skłodowska nació el 7 de noviembre de 1867 en Varsovia, entonces parte del Imperio ruso. Como en su país las mujeres no podían ir a la universidad, se trasladó a París en 1891 para estudiar Física y Matemáticas en la Sorbona. Allí conoció a Pierre Curie, con quien se casó en 1895.",
+      "Juntos investigaron la radiactividad, un fenómeno recién descubierto por Henri Becquerel, y en 1898 anunciaron el descubrimiento de dos nuevos elementos químicos: el polonio, llamado así en honor a Polonia, y el radio. En 1903 los tres compartieron el Premio Nobel de Física, y ella se convirtió en la primera mujer en recibir un Nobel.",
+      "Tras la muerte de Pierre en 1906, ocupó su cátedra y fue la primera mujer profesora de la Sorbona. En 1911 ganó un segundo Nobel, esta vez de Química. Durante la Primera Guerra Mundial organizó unidades móviles de rayos X, conocidas como «petites Curies», para atender a los soldados heridos cerca del frente.",
+      "Murió el 4 de julio de 1934 en Francia. En 1995 sus restos fueron trasladados al Panteón de París, donde fue la primera mujer enterrada por méritos propios."
+    ],
+    "curiosidades": [
+      "Su hija Irène Joliot-Curie también ganó el Nobel de Química, en 1935.",
+      "Sus cuadernos de laboratorio todavía conservan radiactividad y se guardan en cajas protegidas.",
+      "El elemento químico curio lleva su nombre y el de Pierre."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Marie_Curie",
+    "comprobar": ["1867", "Varsovia", "polonio", "1934"]
+  },
+  {
+    "slug": "leonardo-da-vinci",
+    "apartado": "mundial",
+    "fecha": "2026-11-13",
+    "nombre": "Leonardo da Vinci",
+    "alias": ["Leonardo", "Da Vinci", "Leonardo di ser Piero da Vinci"],
+    "ambito": "Arte y ciencia",
+    "pistas": [
+      "Nació en 1452.",
+      "Fue artista, pero también inventor e ingeniero.",
+      "Pintó «La última cena» en un convento de Milán.",
+      "Nació en Vinci, cerca de Florencia (Italia).",
+      "Es el autor de «La Gioconda» («Mona Lisa»).",
+      "Sus iniciales son L. d. V."
+    ],
+    "resumen": "Pintor, inventor y científico italiano del Renacimiento, autor de «La Gioconda» y «La última cena».",
+    "biografia": [
+      "Leonardo da Vinci nació el 15 de abril de 1452 en Vinci, un pueblo cercano a Florencia. Se formó en el taller del escultor y pintor Andrea del Verrocchio, en Florencia, donde aprendió pintura, escultura y técnicas de ingeniería.",
+      "Trabajó durante años en Milán al servicio de Ludovico Sforza, y allí pintó «La última cena» en el refectorio del convento de Santa Maria delle Grazie. A principios del siglo XVI empezó «La Gioconda», el retrato que hoy se expone en el Museo del Louvre de París y que es probablemente el cuadro más famoso del mundo.",
+      "Leonardo fue mucho más que pintor. En sus cuadernos dejó miles de páginas con estudios de anatomía, botánica y óptica, y diseños de máquinas voladoras, puentes o armas, muchos de ellos adelantados a su tiempo. Su dibujo del «Hombre de Vitruvio», con las proporciones ideales del cuerpo humano, se ha convertido en un símbolo del Renacimiento.",
+      "En sus últimos años se trasladó a Francia invitado por el rey Francisco I y murió en Amboise el 2 de mayo de 1519. Es el ejemplo clásico de «hombre del Renacimiento», interesado por todas las ramas del saber."
+    ],
+    "curiosidades": [
+      "Escribía muchas de sus notas al revés, de derecha a izquierda, y se leen con un espejo.",
+      "«La Gioconda» fue robada del Louvre en 1911 y no se recuperó hasta 1913.",
+      "Un cuadro que se le atribuye, el «Salvator Mundi», se vendió en 2017 por unos 450 millones de dólares."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Leonardo_da_Vinci",
+    "comprobar": ["1452", "Vinci", "Amboise", "1519"]
+  },
+  {
+    "slug": "usain-bolt",
+    "apartado": "mundial",
+    "fecha": "2026-11-14",
+    "nombre": "Usain Bolt",
+    "alias": ["Bolt", "Usain St. Leo Bolt"],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1986.",
+      "Es deportista.",
+      "Tiene el récord del mundo de los 100 metros lisos: 9,58 segundos.",
+      "Nació en Jamaica.",
+      "Celebraba sus victorias señalando al cielo con el gesto de un rayo.",
+      "Sus iniciales son U. B."
+    ],
+    "resumen": "Atleta jamaicano, el velocista más rápido de la historia y plusmarquista mundial de los 100 y 200 metros.",
+    "biografia": [
+      "Usain Bolt nació el 21 de agosto de 1986 en Sherwood Content, en la parroquia de Trelawny (Jamaica). De niño jugaba al críquet y al fútbol, hasta que sus profesores se fijaron en su velocidad y lo animaron a dedicarse al atletismo.",
+      "Se dio a conocer al mundo en los Juegos Olímpicos de Pekín 2008, donde ganó los 100 y los 200 metros con récords del mundo. Un año después, en el Mundial de Berlín 2009, rebajó sus propias marcas hasta los 9,58 segundos en 100 metros y los 19,19 en 200, dos récords que siguen vigentes.",
+      "Repitió las victorias en 100 y 200 metros en Londres 2012 y Río 2016, y es el único atleta que ha ganado ambas pruebas en tres Juegos Olímpicos seguidos. Tiene ocho medallas de oro olímpicas y once títulos mundiales.",
+      "Se retiró del atletismo en 2017. Su carisma, sus bromas antes de las carreras y su gesto del rayo lo convirtieron en una de las grandes estrellas del deporte de su tiempo."
+    ],
+    "curiosidades": [
+      "Tras retirarse, entrenó con un equipo de fútbol profesional de Australia, el Central Coast Mariners.",
+      "Mide 1,95 metros, mucho más que la mayoría de los velocistas.",
+      "Perdió una de sus medallas de oro olímpicas, la de relevos de Pekín 2008, por el dopaje de un compañero de equipo."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Usain_Bolt",
+    "comprobar": ["1986", "Trelawny", "9,58", "19,19"]
+  },
+  {
+    "slug": "wolfgang-amadeus-mozart",
+    "apartado": "mundial",
+    "fecha": "2026-11-15",
+    "nombre": "Wolfgang Amadeus Mozart",
+    "alias": ["Mozart", "Amadeus Mozart", "Wolfgang Mozart"],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1756.",
+      "Se dedicó a la música.",
+      "Compuso la ópera «La flauta mágica».",
+      "Nació en Salzburgo (actual Austria).",
+      "Fue un niño prodigio que componía desde los cinco años.",
+      "Sus iniciales son W. A. M."
+    ],
+    "resumen": "Compositor austriaco del Clasicismo, niño prodigio y autor de óperas como «La flauta mágica» y «Las bodas de Fígaro».",
+    "biografia": [
+      "Wolfgang Amadeus Mozart nació el 27 de enero de 1756 en Salzburgo, en la actual Austria. Su padre, Leopold, músico de la corte, descubrió muy pronto su talento: con cinco años ya componía pequeñas piezas y con seis recorría Europa junto a su hermana Nannerl, tocando ante reyes y nobles.",
+      "En 1781 se instaló en Viena, donde vivió como músico independiente, algo poco habitual en su época. Allí compuso algunas de sus obras más famosas: las óperas «Las bodas de Fígaro», «Don Giovanni», «Così fan tutte» y «La flauta mágica», además de sinfonías, conciertos para piano y música de cámara.",
+      "Escribió más de 600 obras, que hoy se identifican por el catálogo Köchel (de ahí la «K.» que acompaña a sus títulos). Murió el 5 de diciembre de 1791 en Viena, con solo 35 años, mientras trabajaba en su «Réquiem», que dejó sin terminar y completó su alumno Franz Xaver Süssmayr.",
+      "Junto a Haydn y Beethoven, es uno de los grandes nombres del Clasicismo, y piezas como «Pequeña serenata nocturna» o la «Marcha turca» siguen sonando en todo el mundo."
+    ],
+    "curiosidades": [
+      "Según la tradición, con 14 años escribió de memoria el «Miserere» de Allegri tras escucharlo en la Capilla Sixtina.",
+      "Su nombre de bautismo era Joannes Chrysostomus Wolfgangus Theophilus Mozart.",
+      "Amadeus es la forma latina de Theophilus: «amado por Dios»."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart",
+    "comprobar": ["1756", "Salzburgo", "flauta mágica", "1791"]
+  },
+  {
+    "slug": "frida-kahlo",
+    "apartado": "mundial",
+    "fecha": "2026-11-16",
+    "nombre": "Frida Kahlo",
+    "alias": ["Frida", "Kahlo", "Magdalena Carmen Frida Kahlo"],
+    "ambito": "Arte",
+    "pistas": [
+      "Nació en 1907.",
+      "Fue artista.",
+      "Una buena parte de su obra son autorretratos.",
+      "Nació en Coyoacán, en Ciudad de México.",
+      "Su casa, la Casa Azul, es hoy un museo; estuvo casada con el muralista Diego Rivera.",
+      "Sus iniciales son F. K."
+    ],
+    "resumen": "Pintora mexicana famosa por sus autorretratos y convertida en un icono de la cultura de su país.",
+    "biografia": [
+      "Frida Kahlo nació el 6 de julio de 1907 en Coyoacán, hoy un barrio de Ciudad de México, en la casa que más tarde sería conocida como la Casa Azul. De joven quería estudiar Medicina, pero un grave accidente de autobús a los 18 años la obligó a pasar meses en cama, y fue entonces cuando empezó a pintar.",
+      "Su obra mezcla el arte popular mexicano con elementos que muchos críticos relacionan con el surrealismo, aunque ella decía que no pintaba sueños, sino su propia realidad. Una gran parte de sus cuadros son autorretratos en los que aparece con trajes tradicionales, flores en el pelo y sus característicos rasgos.",
+      "En 1929 se casó con el muralista Diego Rivera, con quien tuvo una relación muy intensa durante toda su vida. Expuso en Nueva York y en París, donde el Museo del Louvre compró su cuadro «El marco» en 1939.",
+      "Murió el 13 de julio de 1954 en Coyoacán. Desde 1958 la Casa Azul es el Museo Frida Kahlo, uno de los más visitados de México, y su imagen se ha convertido en un símbolo mundial."
+    ],
+    "curiosidades": [
+      "Decía que había nacido en 1910 para hacer coincidir su nacimiento con el de la Revolución mexicana.",
+      "«El marco» fue la primera obra de un artista mexicano del siglo XX que compró el Louvre.",
+      "Ella y Diego Rivera aparecen juntos en el billete mexicano de 500 pesos de la serie de 2010."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Frida_Kahlo",
+    "comprobar": ["1907", "Coyoacán", "Diego Rivera", "1954"]
+  },
+  {
+    "slug": "charles-darwin",
+    "apartado": "mundial",
+    "fecha": "2026-11-17",
+    "nombre": "Charles Darwin",
+    "alias": ["Darwin", "Charles Robert Darwin"],
+    "ambito": "Ciencia",
+    "pistas": [
+      "Nació en 1809.",
+      "Se dedicó a la ciencia.",
+      "Publicó «El origen de las especies» en 1859.",
+      "Nació en Shrewsbury (Inglaterra).",
+      "Su viaje en el barco Beagle lo llevó a las islas Galápagos, y es el padre de la teoría de la evolución.",
+      "Sus iniciales son C. D."
+    ],
+    "resumen": "Naturalista inglés que formuló la teoría de la evolución por selección natural en «El origen de las especies».",
+    "biografia": [
+      "Charles Robert Darwin nació el 12 de febrero de 1809 en Shrewsbury, Inglaterra. Empezó a estudiar Medicina en Edimburgo, pero no le gustaba, y acabó estudiando en Cambridge, donde se apasionó por la historia natural.",
+      "En 1831 se embarcó como naturalista en el HMS Beagle, un barco que dio la vuelta al mundo durante casi cinco años. En las islas Galápagos observó que los pinzones y las tortugas eran distintos según la isla, una de las pistas que le llevaron a pensar que las especies cambian con el tiempo.",
+      "Durante más de veinte años reunió pruebas y, en 1859, publicó «El origen de las especies». En él explicaba que los seres vivos evolucionan por selección natural: los individuos mejor adaptados a su entorno sobreviven y se reproducen más. Alfred Russel Wallace había llegado de forma independiente a una idea parecida, y ambos la presentaron juntos en 1858.",
+      "Murió el 19 de abril de 1882 en su casa de Down, en el condado de Kent, y fue enterrado en la abadía de Westminster. Su teoría es la base de la biología moderna."
+    ],
+    "curiosidades": [
+      "La primera edición de «El origen de las especies» se agotó el mismo día en que salió a la venta.",
+      "Su retrato apareció en el billete de 10 libras del Reino Unido.",
+      "Antes de decidirse por la ciencia, su familia pensó que sería clérigo."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Charles_Darwin",
+    "comprobar": ["1809", "Shrewsbury", "Beagle", "1882"]
+  },
+  {
+    "slug": "michael-jordan",
+    "apartado": "mundial",
+    "fecha": "2026-11-18",
+    "nombre": "Michael Jordan",
+    "alias": ["Jordan", "Michael Jeffrey Jordan", "Air Jordan"],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1963.",
+      "Es deportista.",
+      "Ganó seis anillos de la NBA, todos con el mismo equipo.",
+      "Nació en Brooklyn, en Nueva York.",
+      "Jugaba con el número 23 en los Chicago Bulls y tiene unas zapatillas con su nombre.",
+      "Sus iniciales son M. J."
+    ],
+    "resumen": "Jugador de baloncesto estadounidense, seis veces campeón de la NBA con los Chicago Bulls y considerado por muchos el mejor de la historia.",
+    "biografia": [
+      "Michael Jordan nació el 17 de febrero de 1963 en Brooklyn, Nueva York, aunque creció en Wilmington, Carolina del Norte. En la Universidad de Carolina del Norte ya se hizo famoso al anotar la canasta decisiva de la final universitaria de 1982.",
+      "En 1984 llegó a los Chicago Bulls, con los que ganó seis campeonatos de la NBA en dos tandas de tres seguidos: de 1991 a 1993 y de 1996 a 1998. Fue elegido mejor jugador de las finales las seis veces, cinco veces mejor jugador de la temporada y máximo anotador de la liga en diez ocasiones.",
+      "En 1993 se retiró por primera vez y probó suerte en el béisbol, en un equipo de ligas menores. Volvió a los Bulls en 1995 y, tras una segunda retirada, jugó sus últimas temporadas con los Washington Wizards, hasta 2003.",
+      "Ganó dos oros olímpicos, en Los Ángeles 1984 y en Barcelona 1992 con el famoso Dream Team. Sus zapatillas Air Jordan, lanzadas por Nike en 1985, convirtieron su nombre en una de las marcas deportivas más conocidas del mundo."
+    ],
+    "curiosidades": [
+      "En el instituto no lo seleccionaron para el equipo principal en su segundo año y eso, según contaba, le motivó a entrenar más.",
+      "Al volver al baloncesto en 1995 jugó unos partidos con el número 45 antes de recuperar el 23.",
+      "Formó parte del Dream Team de Barcelona 92, considerado el mejor equipo de baloncesto de la historia."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Michael_Jordan",
+    "comprobar": ["1963", "Brooklyn", "Chicago Bulls", "Wizards"]
+  },
+  {
+    "slug": "cristiano-ronaldo",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Cristiano Ronaldo",
+    "alias": ["Cristiano", "CR7", "Ronaldo", "Cristiano Ronaldo dos Santos Aveiro"],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1985.",
+      "Es deportista.",
+      "Es el máximo goleador de la historia del Real Madrid.",
+      "Nació en Funchal, en la isla de Madeira (Portugal).",
+      "Su celebración más famosa acaba con un salto y el grito «¡Siuuu!».",
+      "Sus iniciales son C. R."
+    ],
+    "resumen": "Futbolista portugués, ganador de cinco Balones de Oro y máximo goleador de la historia del Real Madrid y de las selecciones nacionales.",
+    "biografia": [
+      "Cristiano Ronaldo dos Santos Aveiro nació el 5 de febrero de 1985 en Funchal, en la isla portuguesa de Madeira. Se formó en el Sporting de Lisboa y en 2003 fichó por el Manchester United, donde se convirtió en una estrella mundial y ganó su primera Liga de Campeones y su primer Balón de Oro.",
+      "En 2009 llegó al Real Madrid, con el que vivió su mejor etapa: ganó cuatro Ligas de Campeones y se convirtió en el máximo goleador de la historia del club, con 450 goles. Después jugó en la Juventus, volvió al Manchester United y en 2023 fichó por el Al-Nassr de Arabia Saudí.",
+      "Con Portugal ganó la Eurocopa de 2016 y dos Ligas de Naciones, y es el máximo goleador de la historia del fútbol de selecciones. Ha ganado cinco Balones de Oro.",
+      "Es famoso por su enorme disciplina física, su capacidad goleadora con las dos piernas y de cabeza, y por ser uno de los deportistas con más seguidores en las redes sociales."
+    ],
+    "curiosidades": [
+      "Su nombre, Ronaldo, se lo pusieron en honor al presidente de Estados Unidos Ronald Reagan, del que su padre era admirador.",
+      "El aeropuerto de Madeira se llama Aeropuerto Internacional Cristiano Ronaldo.",
+      "Ha ganado la Liga de Campeones cinco veces: una con el Manchester United y cuatro con el Real Madrid."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Cristiano_Ronaldo",
+    "comprobar": ["1985", "Funchal", "450", "Al-Nassr"]
+  },
+  {
+    "slug": "ludwig-van-beethoven",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Ludwig van Beethoven",
+    "alias": ["Beethoven", "Ludwig Beethoven"],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1770.",
+      "Se dedicó a la música.",
+      "Compuso nueve sinfonías y una sola ópera, «Fidelio».",
+      "Nació en Bonn (Alemania).",
+      "Su Novena Sinfonía incluye la «Oda a la alegría», el himno de la Unión Europea, y la compuso cuando ya estaba sordo.",
+      "Sus iniciales son L. v. B."
+    ],
+    "resumen": "Compositor alemán, puente entre el Clasicismo y el Romanticismo, autor de la Novena Sinfonía y de «Para Elisa».",
+    "biografia": [
+      "Ludwig van Beethoven nació en Bonn, en la actual Alemania, en diciembre de 1770; fue bautizado el día 17. Su padre, cantante de la corte, quiso convertirlo en un niño prodigio como Mozart y lo sometió a una formación muy dura.",
+      "En 1792 se trasladó a Viena, donde estudió con Joseph Haydn y se hizo famoso como pianista y compositor. Allí vivió el resto de su vida. Hacia los 30 años empezó a perder el oído, un problema que fue empeorando hasta dejarlo completamente sordo, pero siguió componiendo.",
+      "Escribió nueve sinfonías, entre ellas la Quinta, con su famoso comienzo, y la Novena, estrenada en 1824, cuyo último movimiento incluye la «Oda a la alegría» sobre un poema de Schiller. Compuso también 32 sonatas para piano, conciertos, cuartetos de cuerda y una única ópera, «Fidelio».",
+      "Murió en Viena el 26 de marzo de 1827. Se le considera el puente entre el Clasicismo de Haydn y Mozart y el Romanticismo del siglo XIX."
+    ],
+    "curiosidades": [
+      "La «Oda a la alegría» es el himno oficial de la Unión Europea.",
+      "En el estreno de la Novena, como no oía, una de las cantantes tuvo que girarlo para que viera los aplausos del público.",
+      "La famosa pieza para piano «Para Elisa» no se publicó hasta 40 años después de su muerte."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Ludwig_van_Beethoven",
+    "comprobar": ["1770", "Bonn", "Fidelio", "1827"]
+  },
+  {
+    "slug": "napoleon-bonaparte",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Napoleón Bonaparte",
+    "alias": ["Napoleón", "Napoleon", "Bonaparte", "Napoleón I"],
+    "ambito": "Historia",
+    "pistas": [
+      "Nació en 1769.",
+      "Fue militar y gobernante.",
+      "En 1804 se coronó a sí mismo emperador.",
+      "Nació en Ajaccio, en la isla de Córcega.",
+      "Fue derrotado en la batalla de Waterloo en 1815.",
+      "Sus iniciales son N. B."
+    ],
+    "resumen": "Militar y emperador de Francia que dominó buena parte de Europa a principios del siglo XIX y fue derrotado en Waterloo.",
+    "biografia": [
+      "Napoleón Bonaparte nació el 15 de agosto de 1769 en Ajaccio, en la isla de Córcega, que acababa de pasar a manos de Francia. Estudió en academias militares francesas y ascendió rápidamente durante las guerras que siguieron a la Revolución francesa.",
+      "En 1799 dio un golpe de Estado y se convirtió en el hombre fuerte de Francia. En 1804 se proclamó emperador y, en la catedral de Notre-Dame, se colocó él mismo la corona. Ese mismo año aprobó el Código Civil, que inspiró las leyes de muchos países, también de España.",
+      "Sus ejércitos dominaron buena parte de Europa tras victorias como la de Austerlitz (1805). En 1808 invadió España, lo que provocó la Guerra de la Independencia, y en 1812 fracasó en su invasión de Rusia. Tras una primera abdicación y su destierro en la isla de Elba, volvió al poder, pero fue derrotado definitivamente en Waterloo en 1815.",
+      "Pasó sus últimos años desterrado en la isla de Santa Elena, en el Atlántico Sur, donde murió el 5 de mayo de 1821."
+    ],
+    "curiosidades": [
+      "La idea de que era muy bajo es un mito: medía alrededor de 1,69 metros, lo normal en su época.",
+      "Su hermano José Bonaparte fue rey de España entre 1808 y 1813.",
+      "Su regreso de Elba y su último periodo en el poder se conocen como «los Cien Días»."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Napoleón_Bonaparte",
+    "comprobar": ["1769", "Ajaccio", "Waterloo", "1821"]
+  },
+  {
+    "slug": "cleopatra",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Cleopatra",
+    "alias": ["Cleopatra VII", "Cleopatra de Egipto"],
+    "ambito": "Historia",
+    "pistas": [
+      "Nació en el año 69 antes de Cristo.",
+      "Fue gobernante.",
+      "Fue la última soberana de la dinastía ptolemaica.",
+      "Nació en Alejandría.",
+      "Fue reina de Egipto y se alió con Julio César y Marco Antonio.",
+      "Su nombre empieza por C y tiene nueve letras."
+    ],
+    "resumen": "Última reina del Egipto ptolemaico, aliada de Julio César y Marco Antonio y una de las mujeres más famosas de la Antigüedad.",
+    "biografia": [
+      "Cleopatra VII nació en el año 69 antes de Cristo en Alejandría, la gran capital de Egipto. Pertenecía a la dinastía ptolemaica, de origen macedonio, que gobernaba Egipto desde la muerte de Alejandro Magno.",
+      "Llegó al trono hacia el año 51 a. C. y tuvo que enfrentarse a su propio hermano por el poder. Para conservar el reino buscó el apoyo de Roma, la gran potencia de la época: primero se alió con Julio César y, tras su asesinato, con Marco Antonio, con quien formó una alianza política y personal.",
+      "Su enfrentamiento con Octavio, el futuro emperador Augusto, terminó con la derrota de Cleopatra y Marco Antonio en la batalla naval de Accio, en el año 31 a. C. Cleopatra murió en Alejandría en el año 30 a. C. y, según la tradición, se quitó la vida. Tras su muerte, Egipto pasó a ser una provincia romana.",
+      "Su historia ha inspirado obras de teatro, novelas y películas, desde Shakespeare hasta Hollywood."
+    ],
+    "curiosidades": [
+      "Según el historiador Plutarco, hablaba varios idiomas y fue la primera de su dinastía en aprender egipcio.",
+      "Aunque era reina de Egipto, su familia era de origen griego macedonio.",
+      "Vivió más cerca en el tiempo de la llegada del hombre a la Luna que de la construcción de la Gran Pirámide de Guiza."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Cleopatra",
+    "comprobar": ["69", "Alejandría", "Accio", "Marco Antonio"]
+  },
+  {
+    "slug": "william-shakespeare",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "William Shakespeare",
+    "alias": ["Shakespeare"],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1564.",
+      "Fue escritor.",
+      "Escribió unas 39 obras de teatro y 154 sonetos.",
+      "Nació en Stratford-upon-Avon (Inglaterra).",
+      "Es el autor de «Romeo y Julieta» y «Hamlet» («Ser o no ser»).",
+      "Sus iniciales son W. S."
+    ],
+    "resumen": "Dramaturgo y poeta inglés, autor de «Hamlet», «Romeo y Julieta» y «Macbeth», considerado el mayor escritor en lengua inglesa.",
+    "biografia": [
+      "William Shakespeare fue bautizado el 26 de abril de 1564 en Stratford-upon-Avon, Inglaterra. Se sabe poco de su juventud; hacia 1590 ya trabajaba en Londres como actor y autor teatral.",
+      "Formó parte de la compañía de los Lord Chamberlain's Men, más tarde llamada King's Men, y fue uno de los socios del teatro The Globe. Escribió unas 39 obras: comedias como «Sueño de una noche de verano», dramas históricos como «Ricardo III» y grandes tragedias como «Hamlet», «Otelo», «El rey Lear», «Macbeth» y «Romeo y Julieta».",
+      "Además de teatro, escribió 154 sonetos y varios poemas largos. Su forma de retratar los sentimientos humanos y su enorme riqueza de vocabulario han influido en la literatura de todo el mundo, y muchas de sus frases forman parte del inglés de todos los días.",
+      "Murió en Stratford en 1616. Su obra se sigue representando, adaptando al cine y estudiando más de cuatro siglos después."
+    ],
+    "curiosidades": [
+      "Su muerte y la de Cervantes se recuerdan el 23 de abril de 1616, Día del Libro, aunque no murieron el mismo día: Inglaterra usaba otro calendario.",
+      "Se le atribuye la invención o el primer uso escrito de cientos de palabras inglesas.",
+      "El teatro The Globe original se quemó en 1613 durante una representación; hoy existe una reconstrucción en Londres."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/William_Shakespeare",
+    "comprobar": ["1564", "Stratford", "1616", "Hamlet"]
+  },
+  {
+    "slug": "isaac-newton",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Isaac Newton",
+    "alias": ["Newton"],
+    "ambito": "Ciencia",
+    "pistas": [
+      "Nació en la Navidad de 1642, según el calendario que se usaba entonces en Inglaterra.",
+      "Se dedicó a la ciencia.",
+      "Formuló las tres leyes del movimiento y la ley de la gravitación universal.",
+      "Nació en Woolsthorpe, en el condado de Lincoln (Inglaterra).",
+      "Se cuenta que la caída de una manzana le hizo pensar en la gravedad.",
+      "Sus iniciales son I. N."
+    ],
+    "resumen": "Físico y matemático inglés que formuló las leyes del movimiento y la gravitación universal.",
+    "biografia": [
+      "Isaac Newton nació en Woolsthorpe, Inglaterra, el día de Navidad de 1642 según el calendario juliano que usaban entonces los ingleses (el 4 de enero de 1643 en el calendario actual). Estudió en la Universidad de Cambridge, donde más tarde fue profesor.",
+      "Cuando la universidad cerró por una epidemia de peste, entre 1665 y 1667, volvió a su pueblo y desarrolló allí muchas de sus grandes ideas: los fundamentos del cálculo, sus estudios sobre la luz y los primeros pasos de su teoría de la gravedad. De esa época procede la famosa historia de la manzana.",
+      "En 1687 publicó los «Principia», donde explicaba las tres leyes del movimiento y la ley de la gravitación universal, que describía igual la caída de una manzana que el movimiento de los planetas. También demostró con un prisma que la luz blanca está formada por colores y construyó un telescopio de espejo.",
+      "Fue presidente de la Royal Society y dirigió la Casa de la Moneda de Inglaterra. Murió en 1727 y está enterrado en la abadía de Westminster."
+    ],
+    "curiosidades": [
+      "Tuvo una larga disputa con el alemán Leibniz sobre quién había inventado primero el cálculo.",
+      "Como director de la Casa de la Moneda persiguió a falsificadores de monedas.",
+      "La unidad de fuerza del sistema internacional, el newton, lleva su nombre."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Isaac_Newton",
+    "comprobar": ["1642", "Woolsthorpe", "Principia", "1727"]
+  },
+  {
+    "slug": "elvis-presley",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Elvis Presley",
+    "alias": ["Elvis", "Presley", "Elvis Aaron Presley"],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1935.",
+      "Se dedicó a la música.",
+      "Su casa de Memphis, Graceland, es hoy un museo visitado por millones de personas.",
+      "Nació en Tupelo, en el estado de Misisipi (Estados Unidos).",
+      "Le llamaban «el rey del rock and roll».",
+      "Sus iniciales son E. P."
+    ],
+    "resumen": "Cantante y actor estadounidense, «el rey del rock and roll», una de las figuras más influyentes de la música popular.",
+    "biografia": [
+      "Elvis Aaron Presley nació el 8 de enero de 1935 en Tupelo, Misisipi, en una familia humilde que se trasladó a Memphis, Tennessee, cuando él era adolescente. Allí creció escuchando música góspel, country y blues.",
+      "En 1954 grabó sus primeras canciones en el pequeño sello Sun Records y en 1956 se convirtió en un fenómeno nacional con «Heartbreak Hotel». Su forma de cantar y de moverse en el escenario, mezclando la música negra y la blanca, escandalizó a parte del público adulto y entusiasmó a los jóvenes.",
+      "Entre 1958 y 1960 hizo el servicio militar en Alemania. A su vuelta protagonizó decenas de películas y, tras unos años alejado de los escenarios, regresó con fuerza en 1968 con un especial de televisión, al que siguieron años de conciertos en Las Vegas.",
+      "Murió el 16 de agosto de 1977 en Graceland, su casa de Memphis, con solo 42 años. Canciones como «Love Me Tender», «Jailhouse Rock» o «Suspicious Minds» siguen siendo clásicos del rock."
+    ],
+    "curiosidades": [
+      "Tenía un hermano gemelo, Jesse Garon, que murió al nacer.",
+      "Graceland es una de las casas más visitadas de Estados Unidos, solo por detrás de la Casa Blanca, según sus gestores.",
+      "Nunca dio un concierto fuera de Norteamérica."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Elvis_Presley",
+    "comprobar": ["1935", "Tupelo", "Graceland", "1977"]
+  },
+  {
+    "slug": "freddie-mercury",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Freddie Mercury",
+    "alias": ["Mercury", "Freddie", "Farrokh Bulsara"],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1946.",
+      "Se dedicó a la música.",
+      "Grabó la canción «Barcelona» con la soprano Montserrat Caballé.",
+      "Nació en Zanzíbar, en la costa de África oriental.",
+      "Fue el cantante de Queen y escribió «Bohemian Rhapsody».",
+      "Sus iniciales son F. M."
+    ],
+    "resumen": "Cantante y compositor británico, voz de Queen y autor de «Bohemian Rhapsody», uno de los grandes de la historia del rock.",
+    "biografia": [
+      "Freddie Mercury nació con el nombre de Farrokh Bulsara el 5 de septiembre de 1946 en Stone Town, en la isla de Zanzíbar, hoy parte de Tanzania. Pasó parte de su infancia en un internado de la India y en 1964 su familia se trasladó a Inglaterra.",
+      "En 1970 formó Queen junto al guitarrista Brian May y el batería Roger Taylor; poco después se incorporó el bajista John Deacon. Mercury, que también diseñó el logotipo del grupo, escribió algunas de sus canciones más conocidas, como «Bohemian Rhapsody» (1975), «Somebody to Love» o «We Are the Champions».",
+      "Su actuación con Queen en el concierto benéfico Live Aid, en el estadio de Wembley en 1985, está considerada una de las mejores de la historia del rock. En 1987 grabó con Montserrat Caballé la canción «Barcelona», que sonó en los Juegos Olímpicos de 1992.",
+      "Murió el 24 de noviembre de 1991 en Londres. Su voz, con un registro de varias octavas, y su presencia en el escenario lo convierten en uno de los cantantes más admirados de todos los tiempos."
+    ],
+    "curiosidades": [
+      "El apellido Mercury lo tomó de un verso de una canción suya, «My Fairy King»: «Mother Mercury».",
+      "Diseñó el escudo de Queen, que combina los signos del zodiaco de los cuatro miembros.",
+      "La película «Bohemian Rhapsody» (2018), sobre su vida, ganó cuatro premios Óscar."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Freddie_Mercury",
+    "comprobar": ["1946", "Zanzíbar", "Bulsara", "1991"]
+  },
+  {
+    "slug": "nelson-mandela",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Nelson Mandela",
+    "alias": ["Mandela", "Madiba", "Nelson Rolihlahla Mandela"],
+    "ambito": "Política",
+    "pistas": [
+      "Nació en 1918.",
+      "Se dedicó a la política.",
+      "Pasó 27 años en prisión por su lucha contra el apartheid.",
+      "Nació en Mvezo, en Sudáfrica.",
+      "Fue el primer presidente negro de su país y ganó el Nobel de la Paz en 1993.",
+      "Sus iniciales son N. M."
+    ],
+    "resumen": "Político sudafricano que luchó contra el apartheid, pasó 27 años en prisión y fue el primer presidente negro de Sudáfrica.",
+    "biografia": [
+      "Nelson Rolihlahla Mandela nació el 18 de julio de 1918 en Mvezo, Sudáfrica, en una familia de la etnia xhosa. Estudió Derecho y se unió al Congreso Nacional Africano (CNA), que luchaba contra el apartheid, el sistema de segregación racial impuesto por el gobierno sudafricano.",
+      "Fue detenido en 1962 y en 1964 lo condenaron a cadena perpetua. Pasó 27 años en prisión, la mayor parte en la isla de Robben, frente a Ciudad del Cabo. Durante ese tiempo se convirtió en un símbolo mundial de la lucha por la igualdad.",
+      "Salió en libertad el 11 de febrero de 1990 y negoció con el presidente Frederik de Klerk el fin del apartheid. Ambos recibieron el Premio Nobel de la Paz en 1993. En 1994, en las primeras elecciones en las que pudieron votar todos los sudafricanos, fue elegido presidente, cargo que ocupó hasta 1999.",
+      "Murió el 5 de diciembre de 2013 en Johannesburgo. En Sudáfrica se le conoce cariñosamente como Madiba, el nombre de su clan."
+    ],
+    "curiosidades": [
+      "La ONU declaró el 18 de julio, día de su cumpleaños, Día Internacional de Nelson Mandela.",
+      "Su nombre xhosa, Rolihlahla, significa de forma coloquial «el que trae problemas».",
+      "Usó el Mundial de rugby de 1995 en Sudáfrica para unir al país, una historia que contó la película «Invictus»."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Nelson_Mandela",
+    "comprobar": ["1918", "Mvezo", "Robben", "2013"]
+  },
+  {
+    "slug": "mahatma-gandhi",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Mahatma Gandhi",
+    "alias": ["Gandhi", "Mohandas Gandhi", "Mohandas Karamchand Gandhi", "Mahatma"],
+    "ambito": "Política",
+    "pistas": [
+      "Nació en 1869.",
+      "Se dedicó a la política y al activismo.",
+      "En 1930 encabezó la Marcha de la Sal, de unos 390 kilómetros.",
+      "Nació en Porbandar, en la India.",
+      "Lideró la independencia de la India con la resistencia no violenta.",
+      "Sus iniciales son M. G."
+    ],
+    "resumen": "Abogado y líder político indio que encabezó la independencia de la India mediante la resistencia no violenta.",
+    "biografia": [
+      "Mohandas Karamchand Gandhi nació el 2 de octubre de 1869 en Porbandar, en la India, entonces bajo dominio británico. Estudió Derecho en Londres y después trabajó durante unos veinte años en Sudáfrica, donde empezó a luchar contra la discriminación de la población india.",
+      "Allí desarrolló su método de resistencia no violenta, llamado satyagraha («la fuerza de la verdad»): desobedecer pacíficamente las leyes injustas y aceptar las consecuencias. De vuelta en la India, en 1915, se convirtió en el principal líder del movimiento por la independencia.",
+      "Su acción más famosa fue la Marcha de la Sal de 1930: caminó unos 390 kilómetros hasta el mar para producir sal y desafiar el monopolio británico. Fue encarcelado varias veces, pero su movimiento ganó apoyos en todo el mundo. La India se independizó en 1947.",
+      "Gandhi fue asesinado en Nueva Delhi el 30 de enero de 1948. Su ejemplo inspiró a líderes como Martin Luther King y Nelson Mandela."
+    ],
+    "curiosidades": [
+      "«Mahatma» no es su nombre, sino un título que significa «gran alma».",
+      "Fue propuesto varias veces para el Nobel de la Paz, pero nunca lo recibió.",
+      "El 2 de octubre, día de su nacimiento, es el Día Internacional de la No Violencia."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Mahatma_Gandhi",
+    "comprobar": ["1869", "Porbandar", "sal", "1948"]
+  },
+  {
+    "slug": "walt-disney",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Walt Disney",
+    "alias": ["Disney", "Walter Elias Disney"],
+    "ambito": "Cine",
+    "pistas": [
+      "Nació en 1901.",
+      "Se dedicó al cine y al entretenimiento.",
+      "Es la persona que más premios Óscar ha ganado en la historia.",
+      "Nació en Chicago (Estados Unidos).",
+      "Creó a Mickey Mouse, al que él mismo puso voz.",
+      "Sus iniciales son W. D."
+    ],
+    "resumen": "Productor y empresario estadounidense, creador de Mickey Mouse y fundador del imperio de animación y parques que lleva su nombre.",
+    "biografia": [
+      "Walter Elias Disney nació el 5 de diciembre de 1901 en Chicago. Desde joven le apasionaba el dibujo y, tras trabajar en publicidad, fundó con su hermano Roy un pequeño estudio de animación en Hollywood en 1923.",
+      "En 1928 presentó a Mickey Mouse en «Steamboat Willie», uno de los primeros dibujos animados con sonido sincronizado. El éxito fue enorme, y al ratón le siguieron personajes como el pato Donald o Goofy.",
+      "En 1937 estrenó «Blancanieves y los siete enanitos», el primer largometraje de animación de su estudio y uno de los primeros de la historia. Le siguieron clásicos como «Pinocho», «Fantasía», «Dumbo» o «Bambi». En 1955 abrió Disneyland, en California, el primer parque temático de su compañía.",
+      "Murió el 15 de diciembre de 1966. Ganó 22 premios Óscar competitivos, más que ninguna otra persona, y su empresa es hoy uno de los grupos de entretenimiento más grandes del mundo."
+    ],
+    "curiosidades": [
+      "Él mismo puso la voz a Mickey Mouse durante casi veinte años.",
+      "Por «Blancanieves» recibió un Óscar honorífico especial: una estatuilla normal y siete pequeñas.",
+      "Antes de Mickey creó a Oswald, el conejo afortunado, cuyos derechos perdió."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Walt_Disney",
+    "comprobar": ["1901", "Chicago", "Steamboat Willie", "1966"]
+  },
+  {
+    "slug": "charles-chaplin",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Charles Chaplin",
+    "alias": ["Charlie Chaplin", "Chaplin", "Charlot", "Charles Spencer Chaplin"],
+    "ambito": "Cine",
+    "pistas": [
+      "Nació en 1889.",
+      "Se dedicó al cine.",
+      "Dirigió y protagonizó «Tiempos modernos» y «El gran dictador».",
+      "Nació en Londres.",
+      "Su personaje más famoso, Charlot, llevaba bombín, bastón y un pequeño bigote.",
+      "Sus iniciales son C. C."
+    ],
+    "resumen": "Actor y director británico, creador de Charlot y gran figura del cine mudo, autor de «Tiempos modernos» y «El gran dictador».",
+    "biografia": [
+      "Charles Spencer Chaplin nació el 16 de abril de 1889 en Londres. Tuvo una infancia muy pobre, con periodos en orfanatos, y empezó a actuar de niño en espectáculos de variedades.",
+      "En 1913 viajó a Estados Unidos con una compañía de teatro y entró en el cine. Al año siguiente creó a Charlot, el vagabundo con bombín, bastón, pantalones anchos y bigote, que lo convirtió en la gran estrella del cine mudo.",
+      "Escribía, dirigía, producía y hasta componía la música de sus películas. Entre sus obras maestras están «La quimera del oro» (1925), «Luces de la ciudad» (1931), «Tiempos modernos» (1936), una sátira de la vida en las fábricas, y «El gran dictador» (1940), su primera película hablada, en la que se burlaba de Hitler. En 1919 fue uno de los fundadores de la productora United Artists.",
+      "En 1952 dejó Estados Unidos y se instaló en Suiza, donde murió el 25 de diciembre de 1977. En 1972 recibió un Óscar honorífico y en 1975 fue nombrado caballero por la reina de Inglaterra."
+    ],
+    "curiosidades": [
+      "Según una anécdota muy repetida, una vez participó en un concurso de imitadores de Charlot y no ganó.",
+      "Compuso la música de «Candilejas», que ganó un Óscar a la mejor banda sonora en 1973.",
+      "«El gran dictador» se estrenó en 1940, en plena Segunda Guerra Mundial."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Charles_Chaplin",
+    "comprobar": ["1889", "Londres", "United Artists", "1977"]
+  },
+  {
+    "slug": "shakira",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Shakira",
+    "alias": ["Shakira Isabel Mebarak Ripoll", "Shakira Mebarak"],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1977.",
+      "Se dedica a la música.",
+      "Cantó «Waka Waka», la canción del Mundial de Sudáfrica 2010.",
+      "Nació en Barranquilla (Colombia).",
+      "Es famosa por canciones como «Hips Don't Lie» y «Pies descalzos» y por su forma de bailar.",
+      "Su nombre artístico empieza por S y tiene siete letras."
+    ],
+    "resumen": "Cantante y compositora colombiana, una de las artistas latinas más famosas del mundo, autora de «Hips Don't Lie» y «Waka Waka».",
+    "biografia": [
+      "Shakira Isabel Mebarak Ripoll nació el 2 de febrero de 1977 en Barranquilla, Colombia. Escribió su primera canción con ocho años y grabó su primer disco siendo todavía una adolescente.",
+      "El éxito le llegó con «Pies descalzos» (1995) y «¿Dónde están los ladrones?» (1998), que la hicieron famosa en toda Latinoamérica y en España. Con «Laundry Service» (2001) y la canción «Whenever, Wherever» triunfó también en inglés.",
+      "«Hips Don't Lie» (2006) fue uno de los mayores éxitos de la década, y «Waka Waka», la canción oficial del Mundial de Sudáfrica 2010, se convirtió en uno de los vídeos más vistos de la historia de internet. En 2020 protagonizó, junto a Jennifer Lopez, el espectáculo del descanso de la Super Bowl.",
+      "Ha ganado numerosos premios Grammy y Grammy Latinos y es famosa por su estilo de baile, que mezcla influencias latinas y de la danza del vientre de origen libanés, la tierra de su familia paterna."
+    ],
+    "curiosidades": [
+      "En 1997 creó la Fundación Pies Descalzos, que construye escuelas en Colombia.",
+      "Publicó su primer disco, «Magia», en 1991, con solo 14 años.",
+      "Su nombre es de origen árabe y significa «agradecida»."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Shakira",
+    "comprobar": ["1977", "Barranquilla", "Waka Waka", "Pies descalzos"]
+  },
+  {
+    "slug": "serena-williams",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Serena Williams",
+    "alias": ["Serena", "Williams", "Serena Jameka Williams"],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1981.",
+      "Es deportista.",
+      "Ganó 23 torneos de Grand Slam individuales, un récord en la era profesional.",
+      "Nació en Saginaw, en el estado de Míchigan (Estados Unidos).",
+      "Es tenista y su hermana mayor, Venus, también fue número uno del mundo.",
+      "Sus iniciales son S. W."
+    ],
+    "resumen": "Tenista estadounidense, ganadora de 23 Grand Slams individuales y una de las mejores deportistas de todos los tiempos.",
+    "biografia": [
+      "Serena Williams nació el 26 de septiembre de 1981 en Saginaw, Míchigan, y creció en Compton, California. Su padre, Richard, entrenó desde muy pequeñas a ella y a su hermana Venus en pistas públicas, con el objetivo de convertirlas en campeonas.",
+      "Ganó su primer Grand Slam en el Abierto de Estados Unidos de 1999, con 17 años. En las dos décadas siguientes acumuló 23 títulos de Grand Slam individuales, el récord de la era profesional, con siete Abiertos de Australia, siete Wimbledon, seis Abiertos de Estados Unidos y tres Roland Garros.",
+      "Con Venus formó una de las mejores parejas de dobles de la historia: ganaron 14 Grand Slams y tres oros olímpicos. Serena sumó además el oro individual en Londres 2012. Su potencia, sobre todo con el saque, cambió el tenis femenino.",
+      "Se retiró en 2022, tras el Abierto de Estados Unidos. Fuera de la pista ha destacado como empresaria y por su defensa de la igualdad en el deporte."
+    ],
+    "curiosidades": [
+      "Ganó el Abierto de Australia de 2017 estando embarazada de su hija.",
+      "Venus y ella se enfrentaron en nueve finales de Grand Slam.",
+      "Tiene cuatro medallas de oro olímpicas: una individual y tres en dobles con Venus."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Serena_Williams",
+    "comprobar": ["1981", "Saginaw", "23", "Venus"]
+  },
+  {
+    "slug": "pele",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Pelé",
+    "alias": ["Pele", "Edson Arantes do Nascimento", "O Rei"],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1940.",
+      "Fue deportista.",
+      "Es el único futbolista que ha ganado tres Mundiales: 1958, 1962 y 1970.",
+      "Nació en Três Corações (Brasil).",
+      "Jugó casi toda su carrera en el Santos y le llamaban «O Rei».",
+      "Su apodo tiene cuatro letras y empieza por P."
+    ],
+    "resumen": "Futbolista brasileño, único ganador de tres Mundiales y considerado uno de los mejores jugadores de la historia.",
+    "biografia": [
+      "Edson Arantes do Nascimento, conocido como Pelé, nació el 23 de octubre de 1940 en Três Corações, Brasil. Creció en un ambiente humilde y empezó a jugar al fútbol en la calle, a veces con un calcetín relleno de papel como balón.",
+      "Con 15 años fichó por el Santos, el club de su vida, y con 17 deslumbró al mundo en el Mundial de Suecia 1958, en el que marcó dos goles en la final. Volvió a ser campeón del mundo en Chile 1962, aunque se lesionó al principio del torneo, y en México 1970, con una de las mejores selecciones de todos los tiempos.",
+      "Marcó más de mil goles en su carrera, contando partidos oficiales y amistosos. Su gol número mil, de penalti en el estadio de Maracaná en 1969, fue un acontecimiento nacional. Al final de su carrera jugó en el New York Cosmos, contribuyendo a popularizar el fútbol en Estados Unidos.",
+      "Murió el 29 de diciembre de 2022 en São Paulo. En Brasil es un héroe nacional, y la FIFA lo eligió como uno de los mejores futbolistas del siglo XX."
+    ],
+    "curiosidades": [
+      "Es el jugador más joven en marcar en una final del Mundial: tenía 17 años.",
+      "Su apodo no tiene un origen claro; él mismo contaba que de niño no le gustaba.",
+      "Fue ministro de Deporte de Brasil entre 1995 y 1998."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Pelé",
+    "comprobar": ["1940", "Três Corações", "Santos", "2022"]
+  },
+  {
+    "slug": "vincent-van-gogh",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Vincent van Gogh",
+    "alias": ["Van Gogh", "Vincent Willem van Gogh"],
+    "ambito": "Arte",
+    "pistas": [
+      "Nació en 1853.",
+      "Fue artista.",
+      "Pintó unos 900 cuadros en apenas diez años y casi no vendió obras en vida.",
+      "Nació en Zundert (Países Bajos).",
+      "Es el autor de «La noche estrellada» y de la serie de «Los girasoles».",
+      "Sus iniciales son V. v. G."
+    ],
+    "resumen": "Pintor neerlandés del postimpresionismo, autor de «La noche estrellada» y «Los girasoles», hoy uno de los artistas más admirados.",
+    "biografia": [
+      "Vincent van Gogh nació el 30 de marzo de 1853 en Zundert, Países Bajos, hijo de un pastor protestante. Antes de dedicarse al arte trabajó en una galería de arte, fue profesor y predicador, y no empezó a pintar en serio hasta los 27 años.",
+      "Sus primeras obras, como «Los comedores de patatas», tienen colores oscuros y retratan la vida de los campesinos. Al trasladarse a París en 1886 conoció a los impresionistas y su paleta se llenó de color. En 1888 se fue a Arlés, en el sur de Francia, donde pintó con una intensidad enorme: «Los girasoles», «La casa amarilla» o «La habitación».",
+      "En 1889 pintó «La noche estrellada», con su cielo lleno de remolinos, que hoy está en el Museo de Arte Moderno de Nueva York. En unos diez años realizó unos 900 cuadros y más de mil dibujos.",
+      "Murió el 29 de julio de 1890 en Auvers-sur-Oise, Francia, con 37 años. Las cartas que escribió a su hermano Theo, que lo apoyó siempre, son una fuente muy valiosa para conocer su vida y su forma de entender el arte."
+    ],
+    "curiosidades": [
+      "En vida apenas vendió cuadros; hoy sus obras están entre las más caras del mundo.",
+      "Se conservan más de 800 cartas suyas, la mayoría dirigidas a su hermano Theo.",
+      "El Museo Van Gogh de Ámsterdam tiene la mayor colección de sus obras."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Vincent_van_Gogh",
+    "comprobar": ["1853", "Zundert", "Theo", "1890"]
+  },
+  {
+    "slug": "neil-armstrong",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Neil Armstrong",
+    "alias": ["Armstrong", "Neil Alden Armstrong"],
+    "ambito": "Ciencia y exploración",
+    "pistas": [
+      "Nació en 1930.",
+      "Fue piloto e ingeniero.",
+      "Fue el comandante de la misión Apolo 11.",
+      "Nació en Wapakoneta, en el estado de Ohio (Estados Unidos).",
+      "Fue el primer ser humano en pisar la Luna, en 1969.",
+      "Sus iniciales son N. A."
+    ],
+    "resumen": "Astronauta estadounidense, comandante del Apolo 11 y primer ser humano en caminar sobre la Luna.",
+    "biografia": [
+      "Neil Alden Armstrong nació el 5 de agosto de 1930 en Wapakoneta, Ohio. Se sacó la licencia de piloto antes que el carné de conducir, estudió Ingeniería Aeronáutica y fue piloto de la Marina de Estados Unidos en la guerra de Corea.",
+      "Después trabajó como piloto de pruebas de aviones experimentales y en 1962 fue seleccionado como astronauta de la NASA. En 1966, al mando de la misión Gemini 8, logró el primer acoplamiento entre dos naves en el espacio.",
+      "Fue el comandante del Apolo 11. El 20 de julio de 1969 (ya 21 de julio en Europa) bajó del módulo lunar Eagle y se convirtió en el primer ser humano en pisar la Luna, mientras cientos de millones de personas lo seguían por televisión. Lo acompañó Buzz Aldrin, mientras Michael Collins esperaba en órbita.",
+      "Tras dejar la NASA fue profesor universitario y mantuvo un perfil discreto. Murió el 25 de agosto de 2012."
+    ],
+    "curiosidades": [
+      "Al pisar la Luna dijo: «Es un pequeño paso para el hombre, pero un gran salto para la humanidad».",
+      "Sus huellas siguen en la Luna, porque allí no hay viento que las borre.",
+      "Llevó a la Luna un trozo de madera y tela del avión de los hermanos Wright."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Neil_Armstrong",
+    "comprobar": ["1930", "Wapakoneta", "Gemini 8", "2012"]
+  },
+  {
+    "slug": "gabriel-garcia-marquez",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Gabriel García Márquez",
+    "alias": ["García Márquez", "Gabo", "Gabriel José García Márquez", "Gabriel Garcia Marquez"],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1927.",
+      "Fue escritor y periodista.",
+      "Ganó el Premio Nobel de Literatura en 1982.",
+      "Nació en Aracataca (Colombia).",
+      "Escribió «Cien años de soledad», ambientada en el pueblo imaginario de Macondo.",
+      "Sus iniciales son G. G. M."
+    ],
+    "resumen": "Escritor colombiano, autor de «Cien años de soledad», premio Nobel de Literatura y gran figura del realismo mágico.",
+    "biografia": [
+      "Gabriel García Márquez nació el 6 de marzo de 1927 en Aracataca, Colombia, y pasó sus primeros años con sus abuelos, cuyas historias inspiraron buena parte de su obra. Estudió Derecho, pero lo dejó para dedicarse al periodismo, oficio que nunca abandonó.",
+      "En 1967 publicó «Cien años de soledad», la historia de la familia Buendía en el pueblo imaginario de Macondo. La novela, en la que lo extraordinario se cuenta como algo cotidiano, se convirtió en un fenómeno mundial y en la obra más representativa del realismo mágico.",
+      "Escribió también «El otoño del patriarca», «Crónica de una muerte anunciada», «El amor en los tiempos del cólera» y «El coronel no tiene quien le escriba», además de cuentos y reportajes. En 1982 recibió el Premio Nobel de Literatura.",
+      "Vivió en distintos países, entre ellos España, y pasó sus últimos años en Ciudad de México, donde murió el 17 de abril de 2014. En todo el mundo hispano se le conoce cariñosamente como Gabo."
+    ],
+    "curiosidades": [
+      "Vivió en Barcelona entre 1967 y 1975, en pleno «boom» latinoamericano.",
+      "«Cien años de soledad» se publicó por primera vez en Buenos Aires.",
+      "Fundó una escuela de cine en Cuba y una fundación de periodismo en Cartagena de Indias."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Gabriel_García_Márquez",
+    "comprobar": ["1927", "Aracataca", "1982", "2014"]
+  },
+  {
+    "slug": "steve-jobs",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Steve Jobs",
+    "alias": ["Jobs", "Steven Paul Jobs"],
+    "ambito": "Tecnología",
+    "pistas": [
+      "Nació en 1955.",
+      "Fue empresario e inventor.",
+      "También dirigió Pixar, el estudio de «Toy Story».",
+      "Nació en San Francisco (Estados Unidos).",
+      "Cofundó Apple y presentó el iPhone en 2007.",
+      "Sus iniciales son S. J."
+    ],
+    "resumen": "Empresario estadounidense, cofundador de Apple, impulsor del Macintosh, el iPod y el iPhone, y dueño de Pixar.",
+    "biografia": [
+      "Steven Paul Jobs nació el 24 de febrero de 1955 en San Francisco y fue adoptado de bebé. Creció en California, en la zona que después se conocería como Silicon Valley, y dejó la universidad tras un solo semestre.",
+      "En 1976 fundó Apple junto a Steve Wozniak, en el garaje de la casa familiar. Su Apple II fue uno de los primeros ordenadores personales de éxito y en 1984 lanzaron el Macintosh. Al año siguiente, tras perder una lucha de poder, tuvo que dejar la empresa.",
+      "Fundó entonces NeXT y compró a Lucasfilm la división que se convertiría en Pixar, el estudio que en 1995 estrenó «Toy Story», el primer largometraje hecho totalmente por ordenador. En 1997 volvió a Apple, entonces en crisis, y la convirtió en una de las empresas más valiosas del mundo con el iMac, el iPod (2001), el iPhone (2007) y el iPad (2010).",
+      "Murió el 5 de octubre de 2011 en Palo Alto, California. Sus presentaciones de producto, siempre con jersey negro de cuello alto y vaqueros, se hicieron legendarias."
+    ],
+    "curiosidades": [
+      "En un discurso en la Universidad de Stanford en 2005 acuñó el consejo «Stay hungry, stay foolish».",
+      "Asistió a clases de caligrafía, que según él inspiraron las tipografías del Macintosh.",
+      "Llevaba casi siempre la misma ropa para no perder tiempo decidiendo qué ponerse."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Steve_Jobs",
+    "comprobar": ["1955", "San Francisco", "Pixar", "2011"]
+  },
+  {
+    "slug": "galileo-galilei",
+    "apartado": "mundial",
+    "practica": true,
+    "nombre": "Galileo Galilei",
+    "alias": ["Galileo", "Galilei"],
+    "ambito": "Ciencia",
+    "pistas": [
+      "Nació en 1564.",
+      "Se dedicó a la ciencia.",
+      "Descubrió las cuatro lunas más grandes de Júpiter.",
+      "Nació en Pisa (Italia).",
+      "Fue juzgado por la Inquisición por defender que la Tierra gira alrededor del Sol.",
+      "Sus iniciales son G. G."
+    ],
+    "resumen": "Astrónomo y físico italiano, pionero del telescopio y del método científico, juzgado por defender el heliocentrismo.",
+    "biografia": [
+      "Galileo Galilei nació el 15 de febrero de 1564 en Pisa, Italia. Estudió Medicina, pero acabó dedicándose a las matemáticas y la física, y fue profesor en las universidades de Pisa y Padua.",
+      "Estudió el movimiento de los cuerpos con experimentos y mediciones, algo novedoso en su época, y por eso se le considera uno de los padres del método científico. En 1609 construyó un telescopio mejorado y lo apuntó al cielo: vio montañas en la Luna, las fases de Venus, manchas en el Sol y cuatro lunas alrededor de Júpiter, que hoy se llaman satélites galileanos.",
+      "Sus observaciones apoyaban la teoría de Copérnico, según la cual la Tierra gira alrededor del Sol, y no al revés. En 1633 la Inquisición lo juzgó, lo obligó a retractarse y lo condenó a arresto domiciliario, que cumplió el resto de su vida en su casa de Arcetri, cerca de Florencia.",
+      "Murió el 8 de enero de 1642. En 1992, el papa Juan Pablo II reconoció los errores cometidos en su condena."
+    ],
+    "curiosidades": [
+      "Se le atribuye la frase «Eppur si muove» («Y sin embargo, se mueve»), aunque probablemente nunca la dijo.",
+      "Murió el mismo año en que nació Isaac Newton.",
+      "La sonda que la NASA envió a Júpiter en 1989 se llamó Galileo en su honor."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Galileo_Galilei",
+    "comprobar": ["1564", "Pisa", "Arcetri", "1642"]
+  }
+]
