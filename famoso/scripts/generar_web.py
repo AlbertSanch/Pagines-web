@@ -35,9 +35,12 @@ DOMINIO = "https://famosodeldia.es"
 SITIO = "Famoso del día"
 LANZAMIENTO = dt.date(2026, 11, 9)  # día #1; cambia esta fecha si se lanza otro día
 SAL = "fdd-7c1e"  # la misma en plantilla/juego.js: nombre y codificación de los archivos de cada día
-VERSION = "2"
+VERSION = "3"
 HOY = dt.date.fromisoformat(os.environ["FDD_HOY"]) if os.environ.get("FDD_HOY") else dt.datetime.now(ZoneInfo("Europe/Madrid")).date()  # FDD_HOY: solo para pruebas
-APARTADOS = {"mundial": ("Famoso mundial", "🌍"), "espana": ("Famoso español", "🇪🇸")}
+# la bandera, dibujada: Windows no muestra los emojis de banderas (sale «ES»)
+BANDERA = ('<svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#c60b1e"/>'
+           '<rect y=".5" width="3" height="1" fill="#ffc400"/></svg>')
+APARTADOS = {"mundial": ("Famoso mundial", "🌍"), "espana": ("Famoso español", BANDERA)}
 
 ADSENSE = "ca-pub-8810566450749484"
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -161,7 +164,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", indexable=Tru
 <body class="{clase}">
 <header class="cab"><div class="cont">
 <a class="logo" href="/"><span class="logo-ico">⭐</span> Famoso <b>del día</b></a>
-<nav class="menu"><a href="/mundial/">🌍 Mundial</a><a href="/espana/">🇪🇸 España</a><a href="/practica/">🎯 Práctica</a><a href="/archivo/">📚 Archivo</a></nav>
+<nav class="menu"><a href="/mundial/">🌍 Mundial</a><a href="/espana/">{BANDERA} España</a><a href="/practica/">🎯 Práctica</a><a href="/archivo/">📚 Archivo</a></nav>
 </div></header>
 <main class="cont">
 {cuerpo}
