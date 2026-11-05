@@ -3,7 +3,9 @@
 (function () {
   'use strict';
   var SAL = 'fdd-7c1e';  // la misma que en scripts/generar_web.py
-  var APARTADOS = { mundial: { nombre: 'Famoso mundial', ico: '🌍' }, espana: { nombre: 'Famoso español', ico: '🇪🇸' } };
+  var BANDERA = '<svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#c60b1e"/><rect y=".5" width="3" height="1" fill="#ffc400"/></svg>';
+  // ico: lo que se ve en la web (la bandera dibujada, porque Windows no pinta los emojis de banderas); emoji: el texto para compartir
+  var APARTADOS = { mundial: { nombre: 'Famoso mundial', ico: '🌍', emoji: '🌍' }, espana: { nombre: 'Famoso español', ico: BANDERA, emoji: '🇪🇸' } };
   var MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
   var raiz = document.getElementById('juego');
   if (!raiz) return;
@@ -92,7 +94,7 @@
     var lineas = ['Famoso del día #' + n];
     Object.keys(APARTADOS).forEach(function (ap) {
       var st = leer('fdd:' + hoy + ':' + ap, null);
-      if (st && st.fin) lineas.push(APARTADOS[ap].ico + ' ' + cuadros(st));
+      if (st && st.fin) lineas.push(APARTADOS[ap].emoji + ' ' + cuadros(st));
     });
     lineas.push(location.host || 'famosodeldia.es');
     return lineas.join('\n');
@@ -112,6 +114,7 @@
   function pintar(celebrar) {
     var f = famosoActual(apartado);
     raiz.querySelectorAll('.pestana').forEach(function (b) { b.setAttribute('aria-selected', b.dataset.apartado === apartado ? 'true' : 'false'); });
+    if (modo === 'diario' && hoy < lanzamiento) { avisoLanzamiento(); return; }
     if (!f) {
       tablero.innerHTML = '<p class="aviso">Hoy no hay ' + APARTADOS[apartado].nombre.toLowerCase() + '. Mientras tanto, prueba el <a href="/practica/">modo práctica</a>.</p>';
       pintarStats();
@@ -243,6 +246,11 @@
     guardar('fdd:practica:actual:' + apartado, actualPractica.s);
   }
 
+  function avisoLanzamiento() {
+    tablero.innerHTML = '<p class="aviso">El primer famoso del día llega el <strong>' + larga(lanzamiento) + '</strong>. Mientras tanto, entrena en el <a href="/practica/">modo práctica</a>.</p>';
+    raiz.parentNode.querySelectorAll('.js-numero').forEach(function (x) { x.textContent = '#1 el ' + larga(lanzamiento); });
+  }
+
   // ---------- arranque
   raiz.querySelectorAll('.pestana').forEach(function (b) {
     b.addEventListener('click', function () { cambiar(b.dataset.apartado); });
@@ -257,10 +265,7 @@
     return;
   }
 
-  if (hoy < lanzamiento) {
-    tablero.innerHTML = '<p class="aviso">El primer famoso del día llega el <strong>' + larga(lanzamiento) + '</strong>. Mientras tanto, entrena en el <a href="/practica/">modo práctica</a>.</p>';
-    return;
-  }
+  if (hoy < lanzamiento) { avisoLanzamiento(); return; }
   sha256(SAL + hoy).then(function (h) {
     return fetch('/d/' + h.slice(0, 20) + '.json', { cache: 'no-cache' });
   }).then(function (r) {

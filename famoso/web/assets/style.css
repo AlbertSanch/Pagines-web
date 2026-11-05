@@ -90,3 +90,5 @@ h2 { font-size: 1.25rem; margin: 28px 0 10px; }
 .tabla th, .tabla td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--linea); }
 pre.ejemplo { background: var(--panel); border: 1px solid var(--linea); border-radius: 12px; padding: 12px; font: inherit; }
 @media (min-width: 720px) { h1 { font-size: 2.1rem; } .juego { padding: 18px; } }
+
+.bandera { width: 1.2em; height: .8em; vertical-align: -.05em; border-radius: 2px; }
