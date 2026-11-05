@@ -34,7 +34,7 @@ WEB = RAIZ / "web"
 DOMINIO = "https://famosodeldia.es"
 SITIO = "Famoso del día"
 LANZAMIENTO = dt.date(2026, 11, 6)  # día #1; cambia esta fecha si se lanza otro día
-DOMINIO_ACTIVO = False  # ponlo en True cuando famosodeldia.es funcione: la dirección provisional .pages.dev redirigirá al dominio
+DOMINIO_ACTIVO = True  # ponlo en True cuando famosodeldia.es funcione: la dirección provisional .pages.dev redirigirá al dominio
 SAL = "fdd-7c1e"  # la misma en plantilla/juego.js: nombre y codificación de los archivos de cada día
 VERSION = "4"
 HOY = dt.date.fromisoformat(os.environ["FDD_HOY"]) if os.environ.get("FDD_HOY") else dt.datetime.now(ZoneInfo("Europe/Madrid")).date()  # FDD_HOY: solo para pruebas
@@ -137,7 +137,7 @@ def token(fecha):
 
 # ---------------------------------------------------------------- plantilla
 
-REDIRIGIR = ('\n<script>if(/\\.pages\\.dev$/.test(location.hostname))location.replace("' + DOMINIO + '"+location.pathname+location.search)</script>'
+REDIRIGIR = ('\n<script>if(/\\.pages\\.dev$|^www\\./.test(location.hostname))location.replace("' + DOMINIO + '"+location.pathname+location.search)</script>'
              if DOMINIO_ACTIVO else "")
 
 
