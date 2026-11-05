@@ -4,7 +4,9 @@
     "apartado": "mundial",
     "fecha": "2026-11-09",
     "nombre": "Albert Einstein",
-    "alias": ["Einstein"],
+    "alias": [
+      "Einstein"
+    ],
     "ambito": "Ciencia",
     "pistas": [
       "Nació en 1879.",
@@ -27,14 +29,24 @@
       "No le dieron el Nobel por la relatividad, su trabajo más famoso, sino por el efecto fotoeléctrico."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Albert_Einstein",
-    "comprobar": ["1879", "Ulm", "fotoeléctrico", "1955"]
+    "comprobar": [
+      "1879",
+      "Ulm",
+      "fotoeléctrico",
+      "1955"
+    ]
   },
   {
     "slug": "lionel-messi",
     "apartado": "mundial",
     "fecha": "2026-11-10",
     "nombre": "Lionel Messi",
-    "alias": ["Messi", "Leo Messi", "Lionel Andrés Messi", "Leo"],
+    "alias": [
+      "Messi",
+      "Leo Messi",
+      "Lionel Andrés Messi",
+      "Leo"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1987.",
@@ -57,14 +69,23 @@
       "Sus 91 goles en 2012 superaron el récord de Gerd Müller, que llevaba 40 años vigente."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Lionel_Messi",
-    "comprobar": ["1987", "Rosario", "672", "Inter Miami"]
+    "comprobar": [
+      "1987",
+      "Rosario",
+      "672",
+      "Inter Miami"
+    ]
   },
   {
     "slug": "michael-jackson",
     "apartado": "mundial",
     "fecha": "2026-11-11",
     "nombre": "Michael Jackson",
-    "alias": ["Jackson", "Michael Joseph Jackson", "MJ"],
+    "alias": [
+      "Jackson",
+      "Michael Joseph Jackson",
+      "MJ"
+    ],
     "ambito": "Música",
     "pistas": [
       "Nació en 1958.",
@@ -87,14 +108,25 @@
       "El videoclip de «Thriller» dura casi 14 minutos y lo dirigió el cineasta John Landis."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Michael_Jackson",
-    "comprobar": ["1958", "Gary", "Thriller", "2009"]
+    "comprobar": [
+      "1958",
+      "Gary",
+      "Thriller",
+      "2009"
+    ]
   },
   {
     "slug": "marie-curie",
     "apartado": "mundial",
     "fecha": "2026-11-12",
     "nombre": "Marie Curie",
-    "alias": ["Curie", "Madame Curie", "María Curie", "Marie Skłodowska-Curie", "Maria Sklodowska"],
+    "alias": [
+      "Curie",
+      "Madame Curie",
+      "María Curie",
+      "Marie Skłodowska-Curie",
+      "Maria Sklodowska"
+    ],
     "ambito": "Ciencia",
     "pistas": [
       "Nació en 1867.",
@@ -117,14 +149,23 @@
       "El elemento químico curio lleva su nombre y el de Pierre."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Marie_Curie",
-    "comprobar": ["1867", "Varsovia", "polonio", "1934"]
+    "comprobar": [
+      "1867",
+      "Varsovia",
+      "polonio",
+      "1934"
+    ]
   },
   {
     "slug": "leonardo-da-vinci",
     "apartado": "mundial",
     "fecha": "2026-11-13",
     "nombre": "Leonardo da Vinci",
-    "alias": ["Leonardo", "Da Vinci", "Leonardo di ser Piero da Vinci"],
+    "alias": [
+      "Leonardo",
+      "Da Vinci",
+      "Leonardo di ser Piero da Vinci"
+    ],
     "ambito": "Arte y ciencia",
     "pistas": [
       "Nació en 1452.",
@@ -147,14 +188,22 @@
       "Un cuadro que se le atribuye, el «Salvator Mundi», se vendió en 2017 por unos 450 millones de dólares."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Leonardo_da_Vinci",
-    "comprobar": ["1452", "Vinci", "Amboise", "1519"]
+    "comprobar": [
+      "1452",
+      "Vinci",
+      "Amboise",
+      "1519"
+    ]
   },
   {
     "slug": "usain-bolt",
     "apartado": "mundial",
     "fecha": "2026-11-14",
     "nombre": "Usain Bolt",
-    "alias": ["Bolt", "Usain St. Leo Bolt"],
+    "alias": [
+      "Bolt",
+      "Usain St. Leo Bolt"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1986.",
@@ -177,14 +226,23 @@
       "Perdió una de sus medallas de oro olímpicas, la de relevos de Pekín 2008, por el dopaje de un compañero de equipo."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Usain_Bolt",
-    "comprobar": ["1986", "Trelawny", "9,58", "19,19"]
+    "comprobar": [
+      "1986",
+      "Trelawny",
+      "9,58",
+      "19,19"
+    ]
   },
   {
     "slug": "wolfgang-amadeus-mozart",
     "apartado": "mundial",
     "fecha": "2026-11-15",
     "nombre": "Wolfgang Amadeus Mozart",
-    "alias": ["Mozart", "Amadeus Mozart", "Wolfgang Mozart"],
+    "alias": [
+      "Mozart",
+      "Amadeus Mozart",
+      "Wolfgang Mozart"
+    ],
     "ambito": "Música",
     "pistas": [
       "Nació en 1756.",
@@ -207,14 +265,23 @@
       "Amadeus es la forma latina de Theophilus: «amado por Dios»."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart",
-    "comprobar": ["1756", "Salzburgo", "flauta mágica", "1791"]
+    "comprobar": [
+      "1756",
+      "Salzburgo",
+      "flauta mágica",
+      "1791"
+    ]
   },
   {
     "slug": "frida-kahlo",
     "apartado": "mundial",
     "fecha": "2026-11-16",
     "nombre": "Frida Kahlo",
-    "alias": ["Frida", "Kahlo", "Magdalena Carmen Frida Kahlo"],
+    "alias": [
+      "Frida",
+      "Kahlo",
+      "Magdalena Carmen Frida Kahlo"
+    ],
     "ambito": "Arte",
     "pistas": [
       "Nació en 1907.",
@@ -237,14 +304,22 @@
       "Ella y Diego Rivera aparecen juntos en el billete mexicano de 500 pesos de la serie de 2010."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Frida_Kahlo",
-    "comprobar": ["1907", "Coyoacán", "Diego Rivera", "1954"]
+    "comprobar": [
+      "1907",
+      "Coyoacán",
+      "Diego Rivera",
+      "1954"
+    ]
   },
   {
     "slug": "charles-darwin",
     "apartado": "mundial",
     "fecha": "2026-11-17",
     "nombre": "Charles Darwin",
-    "alias": ["Darwin", "Charles Robert Darwin"],
+    "alias": [
+      "Darwin",
+      "Charles Robert Darwin"
+    ],
     "ambito": "Ciencia",
     "pistas": [
       "Nació en 1809.",
@@ -267,14 +342,23 @@
       "Antes de decidirse por la ciencia, su familia pensó que sería clérigo."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Charles_Darwin",
-    "comprobar": ["1809", "Shrewsbury", "Beagle", "1882"]
+    "comprobar": [
+      "1809",
+      "Shrewsbury",
+      "Beagle",
+      "1882"
+    ]
   },
   {
     "slug": "michael-jordan",
     "apartado": "mundial",
     "fecha": "2026-11-18",
     "nombre": "Michael Jordan",
-    "alias": ["Jordan", "Michael Jeffrey Jordan", "Air Jordan"],
+    "alias": [
+      "Jordan",
+      "Michael Jeffrey Jordan",
+      "Air Jordan"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1963.",
@@ -297,14 +381,24 @@
       "Formó parte del Dream Team de Barcelona 92, considerado el mejor equipo de baloncesto de la historia."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Michael_Jordan",
-    "comprobar": ["1963", "Brooklyn", "Chicago Bulls", "Wizards"]
+    "comprobar": [
+      "1963",
+      "Brooklyn",
+      "Chicago Bulls",
+      "Wizards"
+    ]
   },
   {
     "slug": "cristiano-ronaldo",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Cristiano Ronaldo",
-    "alias": ["Cristiano", "CR7", "Ronaldo", "Cristiano Ronaldo dos Santos Aveiro"],
+    "alias": [
+      "Cristiano",
+      "CR7",
+      "Ronaldo",
+      "Cristiano Ronaldo dos Santos Aveiro"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1985.",
@@ -327,14 +421,22 @@
       "Ha ganado la Liga de Campeones cinco veces: una con el Manchester United y cuatro con el Real Madrid."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Cristiano_Ronaldo",
-    "comprobar": ["1985", "Funchal", "450", "Al-Nassr"]
+    "comprobar": [
+      "1985",
+      "Funchal",
+      "450",
+      "Al-Nassr"
+    ]
   },
   {
     "slug": "ludwig-van-beethoven",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Ludwig van Beethoven",
-    "alias": ["Beethoven", "Ludwig Beethoven"],
+    "alias": [
+      "Beethoven",
+      "Ludwig Beethoven"
+    ],
     "ambito": "Música",
     "pistas": [
       "Nació en 1770.",
@@ -357,14 +459,24 @@
       "La famosa pieza para piano «Para Elisa» no se publicó hasta 40 años después de su muerte."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Ludwig_van_Beethoven",
-    "comprobar": ["1770", "Bonn", "Fidelio", "1827"]
+    "comprobar": [
+      "1770",
+      "Bonn",
+      "Fidelio",
+      "1827"
+    ]
   },
   {
     "slug": "napoleon-bonaparte",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Napoleón Bonaparte",
-    "alias": ["Napoleón", "Napoleon", "Bonaparte", "Napoleón I"],
+    "alias": [
+      "Napoleón",
+      "Napoleon",
+      "Bonaparte",
+      "Napoleón I"
+    ],
     "ambito": "Historia",
     "pistas": [
       "Nació en 1769.",
@@ -387,14 +499,22 @@
       "Su regreso de Elba y su último periodo en el poder se conocen como «los Cien Días»."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Napoleón_Bonaparte",
-    "comprobar": ["1769", "Ajaccio", "Waterloo", "1821"]
+    "comprobar": [
+      "1769",
+      "Ajaccio",
+      "Waterloo",
+      "1821"
+    ]
   },
   {
     "slug": "cleopatra",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Cleopatra",
-    "alias": ["Cleopatra VII", "Cleopatra de Egipto"],
+    "alias": [
+      "Cleopatra VII",
+      "Cleopatra de Egipto"
+    ],
     "ambito": "Historia",
     "pistas": [
       "Nació en el año 69 antes de Cristo.",
@@ -417,14 +537,21 @@
       "Vivió más cerca en el tiempo de la llegada del hombre a la Luna que de la construcción de la Gran Pirámide de Guiza."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Cleopatra",
-    "comprobar": ["69", "Alejandría", "Accio", "Marco Antonio"]
+    "comprobar": [
+      "69",
+      "Alejandría",
+      "Accio",
+      "Marco Antonio"
+    ]
   },
   {
     "slug": "william-shakespeare",
     "apartado": "mundial",
     "practica": true,
     "nombre": "William Shakespeare",
-    "alias": ["Shakespeare"],
+    "alias": [
+      "Shakespeare"
+    ],
     "ambito": "Literatura",
     "pistas": [
       "Nació en 1564.",
@@ -447,14 +574,21 @@
       "El teatro The Globe original se quemó en 1613 durante una representación; hoy existe una reconstrucción en Londres."
     ],
     "fuente": "https://es.wikipedia.org/wiki/William_Shakespeare",
-    "comprobar": ["1564", "Stratford", "1616", "Hamlet"]
+    "comprobar": [
+      "1564",
+      "Stratford",
+      "1616",
+      "Hamlet"
+    ]
   },
   {
     "slug": "isaac-newton",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Isaac Newton",
-    "alias": ["Newton"],
+    "alias": [
+      "Newton"
+    ],
     "ambito": "Ciencia",
     "pistas": [
       "Nació en la Navidad de 1642, según el calendario que se usaba entonces en Inglaterra.",
@@ -477,14 +611,23 @@
       "La unidad de fuerza del sistema internacional, el newton, lleva su nombre."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Isaac_Newton",
-    "comprobar": ["1642", "Woolsthorpe", "Principia", "1727"]
+    "comprobar": [
+      "1642",
+      "Woolsthorpe",
+      "Principia",
+      "1727"
+    ]
   },
   {
     "slug": "elvis-presley",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Elvis Presley",
-    "alias": ["Elvis", "Presley", "Elvis Aaron Presley"],
+    "alias": [
+      "Elvis",
+      "Presley",
+      "Elvis Aaron Presley"
+    ],
     "ambito": "Música",
     "pistas": [
       "Nació en 1935.",
@@ -507,14 +650,23 @@
       "Nunca dio un concierto fuera de Norteamérica."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Elvis_Presley",
-    "comprobar": ["1935", "Tupelo", "Graceland", "1977"]
+    "comprobar": [
+      "1935",
+      "Tupelo",
+      "Graceland",
+      "1977"
+    ]
   },
   {
     "slug": "freddie-mercury",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Freddie Mercury",
-    "alias": ["Mercury", "Freddie", "Farrokh Bulsara"],
+    "alias": [
+      "Mercury",
+      "Freddie",
+      "Farrokh Bulsara"
+    ],
     "ambito": "Música",
     "pistas": [
       "Nació en 1946.",
@@ -537,14 +689,23 @@
       "La película «Bohemian Rhapsody» (2018), sobre su vida, ganó cuatro premios Óscar."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Freddie_Mercury",
-    "comprobar": ["1946", "Zanzíbar", "Bulsara", "1991"]
+    "comprobar": [
+      "1946",
+      "Zanzíbar",
+      "Bulsara",
+      "1991"
+    ]
   },
   {
     "slug": "nelson-mandela",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Nelson Mandela",
-    "alias": ["Mandela", "Madiba", "Nelson Rolihlahla Mandela"],
+    "alias": [
+      "Mandela",
+      "Madiba",
+      "Nelson Rolihlahla Mandela"
+    ],
     "ambito": "Política",
     "pistas": [
       "Nació en 1918.",
@@ -567,14 +728,24 @@
       "Usó el Mundial de rugby de 1995 en Sudáfrica para unir al país, una historia que contó la película «Invictus»."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Nelson_Mandela",
-    "comprobar": ["1918", "Mvezo", "Robben", "2013"]
+    "comprobar": [
+      "1918",
+      "Mvezo",
+      "Robben",
+      "2013"
+    ]
   },
   {
     "slug": "mahatma-gandhi",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Mahatma Gandhi",
-    "alias": ["Gandhi", "Mohandas Gandhi", "Mohandas Karamchand Gandhi", "Mahatma"],
+    "alias": [
+      "Gandhi",
+      "Mohandas Gandhi",
+      "Mohandas Karamchand Gandhi",
+      "Mahatma"
+    ],
     "ambito": "Política",
     "pistas": [
       "Nació en 1869.",
@@ -597,14 +768,22 @@
       "El 2 de octubre, día de su nacimiento, es el Día Internacional de la No Violencia."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Mahatma_Gandhi",
-    "comprobar": ["1869", "Porbandar", "sal", "1948"]
+    "comprobar": [
+      "1869",
+      "Porbandar",
+      "sal",
+      "1948"
+    ]
   },
   {
     "slug": "walt-disney",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Walt Disney",
-    "alias": ["Disney", "Walter Elias Disney"],
+    "alias": [
+      "Disney",
+      "Walter Elias Disney"
+    ],
     "ambito": "Cine",
     "pistas": [
       "Nació en 1901.",
@@ -627,14 +806,24 @@
       "Antes de Mickey creó a Oswald, el conejo afortunado, cuyos derechos perdió."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Walt_Disney",
-    "comprobar": ["1901", "Chicago", "Steamboat Willie", "1966"]
+    "comprobar": [
+      "1901",
+      "Chicago",
+      "Steamboat Willie",
+      "1966"
+    ]
   },
   {
     "slug": "charles-chaplin",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Charles Chaplin",
-    "alias": ["Charlie Chaplin", "Chaplin", "Charlot", "Charles Spencer Chaplin"],
+    "alias": [
+      "Charlie Chaplin",
+      "Chaplin",
+      "Charlot",
+      "Charles Spencer Chaplin"
+    ],
     "ambito": "Cine",
     "pistas": [
       "Nació en 1889.",
@@ -657,14 +846,22 @@
       "«El gran dictador» se estrenó en 1940, en plena Segunda Guerra Mundial."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Charles_Chaplin",
-    "comprobar": ["1889", "Londres", "United Artists", "1977"]
+    "comprobar": [
+      "1889",
+      "Londres",
+      "United Artists",
+      "1977"
+    ]
   },
   {
     "slug": "shakira",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Shakira",
-    "alias": ["Shakira Isabel Mebarak Ripoll", "Shakira Mebarak"],
+    "alias": [
+      "Shakira Isabel Mebarak Ripoll",
+      "Shakira Mebarak"
+    ],
     "ambito": "Música",
     "pistas": [
       "Nació en 1977.",
@@ -687,14 +884,23 @@
       "Su nombre es de origen árabe y significa «agradecida»."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Shakira",
-    "comprobar": ["1977", "Barranquilla", "Waka Waka", "Pies descalzos"]
+    "comprobar": [
+      "1977",
+      "Barranquilla",
+      "Waka Waka",
+      "Pies descalzos"
+    ]
   },
   {
     "slug": "serena-williams",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Serena Williams",
-    "alias": ["Serena", "Williams", "Serena Jameka Williams"],
+    "alias": [
+      "Serena",
+      "Williams",
+      "Serena Jameka Williams"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1981.",
@@ -717,14 +923,23 @@
       "Tiene cuatro medallas de oro olímpicas: una individual y tres en dobles con Venus."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Serena_Williams",
-    "comprobar": ["1981", "Saginaw", "23", "Venus"]
+    "comprobar": [
+      "1981",
+      "Saginaw",
+      "23",
+      "Venus"
+    ]
   },
   {
     "slug": "pele",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Pelé",
-    "alias": ["Pele", "Edson Arantes do Nascimento", "O Rei"],
+    "alias": [
+      "Pele",
+      "Edson Arantes do Nascimento",
+      "O Rei"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1940.",
@@ -747,14 +962,22 @@
       "Fue ministro de Deporte de Brasil entre 1995 y 1998."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Pelé",
-    "comprobar": ["1940", "Três Corações", "Santos", "2022"]
+    "comprobar": [
+      "1940",
+      "Três Corações",
+      "Santos",
+      "2022"
+    ]
   },
   {
     "slug": "vincent-van-gogh",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Vincent van Gogh",
-    "alias": ["Van Gogh", "Vincent Willem van Gogh"],
+    "alias": [
+      "Van Gogh",
+      "Vincent Willem van Gogh"
+    ],
     "ambito": "Arte",
     "pistas": [
       "Nació en 1853.",
@@ -777,14 +1000,22 @@
       "El Museo Van Gogh de Ámsterdam tiene la mayor colección de sus obras."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Vincent_van_Gogh",
-    "comprobar": ["1853", "Zundert", "Theo", "1890"]
+    "comprobar": [
+      "1853",
+      "Zundert",
+      "Theo",
+      "1890"
+    ]
   },
   {
     "slug": "neil-armstrong",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Neil Armstrong",
-    "alias": ["Armstrong", "Neil Alden Armstrong"],
+    "alias": [
+      "Armstrong",
+      "Neil Alden Armstrong"
+    ],
     "ambito": "Ciencia y exploración",
     "pistas": [
       "Nació en 1930.",
@@ -807,14 +1038,24 @@
       "Llevó a la Luna un trozo de madera y tela del avión de los hermanos Wright."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Neil_Armstrong",
-    "comprobar": ["1930", "Wapakoneta", "Gemini 8", "2012"]
+    "comprobar": [
+      "1930",
+      "Wapakoneta",
+      "Gemini 8",
+      "2012"
+    ]
   },
   {
     "slug": "gabriel-garcia-marquez",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Gabriel García Márquez",
-    "alias": ["García Márquez", "Gabo", "Gabriel José García Márquez", "Gabriel Garcia Marquez"],
+    "alias": [
+      "García Márquez",
+      "Gabo",
+      "Gabriel José García Márquez",
+      "Gabriel Garcia Marquez"
+    ],
     "ambito": "Literatura",
     "pistas": [
       "Nació en 1927.",
@@ -837,14 +1078,22 @@
       "Fundó una escuela de cine en Cuba y una fundación de periodismo en Cartagena de Indias."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Gabriel_García_Márquez",
-    "comprobar": ["1927", "Aracataca", "1982", "2014"]
+    "comprobar": [
+      "1927",
+      "Aracataca",
+      "1982",
+      "2014"
+    ]
   },
   {
     "slug": "steve-jobs",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Steve Jobs",
-    "alias": ["Jobs", "Steven Paul Jobs"],
+    "alias": [
+      "Jobs",
+      "Steven Paul Jobs"
+    ],
     "ambito": "Tecnología",
     "pistas": [
       "Nació en 1955.",
@@ -867,14 +1116,22 @@
       "Llevaba casi siempre la misma ropa para no perder tiempo decidiendo qué ponerse."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Steve_Jobs",
-    "comprobar": ["1955", "San Francisco", "Pixar", "2011"]
+    "comprobar": [
+      "1955",
+      "San Francisco",
+      "Pixar",
+      "2011"
+    ]
   },
   {
     "slug": "galileo-galilei",
     "apartado": "mundial",
     "practica": true,
     "nombre": "Galileo Galilei",
-    "alias": ["Galileo", "Galilei"],
+    "alias": [
+      "Galileo",
+      "Galilei"
+    ],
     "ambito": "Ciencia",
     "pistas": [
       "Nació en 1564.",
@@ -897,6 +1154,1130 @@
       "La sonda que la NASA envió a Júpiter en 1989 se llamó Galileo en su honor."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Galileo_Galilei",
-    "comprobar": ["1564", "Pisa", "Arcetri", "1642"]
+    "comprobar": [
+      "1564",
+      "Pisa",
+      "Arcetri",
+      "1642"
+    ]
+  },
+  {
+    "slug": "taylor-swift",
+    "apartado": "mundial",
+    "fecha": "2026-11-19",
+    "nombre": "Taylor Swift",
+    "alias": [
+      "Taylor",
+      "Swift",
+      "Taylor Alison Swift"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1989.",
+      "Se dedica a la música.",
+      "Es la única artista que ha ganado cuatro veces el Grammy al álbum del año.",
+      "Nació en West Reading, en Pensilvania (Estados Unidos).",
+      "Su gira «The Eras Tour» es la más taquillera de la historia.",
+      "Sus iniciales son T. S."
+    ],
+    "resumen": "Cantante y compositora estadounidense, la única artista con cuatro Grammy al álbum del año y protagonista de la gira más taquillera de la historia.",
+    "biografia": [
+      "Taylor Alison Swift nació el 13 de diciembre de 1989 en West Reading, Pensilvania. Con 14 años su familia se mudó a Tennessee para que ella pudiera abrirse camino en Nashville, la capital de la música country.",
+      "Empezó como cantante de country y dio el salto al pop con discos como «1989» (2014). Escribe o coescribe todas sus canciones, muchas de ellas inspiradas en su propia vida. Ha ganado cuatro veces el Grammy al álbum del año, con «Fearless», «1989», «Folklore» y «Midnights», algo que ningún otro artista ha conseguido.",
+      "Entre 2023 y 2024 recorrió el mundo con «The Eras Tour», un repaso a todas las etapas de su carrera que se convirtió en la gira más taquillera de la historia y pasó por Madrid en 2024."
+    ],
+    "curiosidades": [
+      "Volvió a grabar sus primeros discos, con el añadido «Taylor's Version», para ser dueña de sus grabaciones.",
+      "Sus seguidores se llaman a sí mismos «swifties».",
+      "Su número de la suerte es el 13, el día en que nació."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Taylor_Swift",
+    "comprobar": [
+      "1989",
+      "West Reading",
+      "Eras Tour",
+      "Midnights"
+    ]
+  },
+  {
+    "slug": "abraham-lincoln",
+    "apartado": "mundial",
+    "fecha": "2026-11-20",
+    "nombre": "Abraham Lincoln",
+    "alias": [
+      "Lincoln"
+    ],
+    "ambito": "Historia",
+    "pistas": [
+      "Nació en 1809.",
+      "Fue político.",
+      "Durante su mandato se aprobó la abolición de la esclavitud en su país.",
+      "Nació en una cabaña de madera en Kentucky (Estados Unidos).",
+      "Fue el presidente de Estados Unidos durante la guerra de Secesión.",
+      "Sus iniciales son A. L."
+    ],
+    "resumen": "Decimosexto presidente de Estados Unidos, que dirigió el país durante la guerra de Secesión e impulsó la abolición de la esclavitud.",
+    "biografia": [
+      "Abraham Lincoln nació el 12 de febrero de 1809 en una cabaña de madera de Kentucky, en una familia humilde. Apenas fue a la escuela, aprendió casi todo leyendo por su cuenta y llegó a ser abogado en Illinois.",
+      "En 1860 fue elegido presidente de Estados Unidos. Poco después estalló la guerra de Secesión entre los estados del norte y los del sur, que querían mantener la esclavitud. En 1863 firmó la Proclamación de Emancipación y pronunció el discurso de Gettysburg, uno de los más famosos de la historia, con su defensa del «gobierno del pueblo, por el pueblo y para el pueblo».",
+      "Ganó la guerra y defendió la Decimotercera Enmienda, que abolió la esclavitud en todo el país. El 14 de abril de 1865, pocos días después del final de la guerra, recibió un disparo en el teatro Ford de Washington y murió al día siguiente."
+    ],
+    "curiosidades": [
+      "Nació el mismo día que Charles Darwin: el 12 de febrero de 1809.",
+      "Medía 1,93 metros y es el presidente más alto de la historia de Estados Unidos.",
+      "Su rostro está esculpido en el monte Rushmore."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Abraham_Lincoln",
+    "comprobar": [
+      "1809",
+      "Kentucky",
+      "Gettysburg",
+      "1865"
+    ]
+  },
+  {
+    "slug": "diego-maradona",
+    "apartado": "mundial",
+    "fecha": "2026-11-21",
+    "nombre": "Diego Maradona",
+    "alias": [
+      "Maradona",
+      "Diego Armando Maradona",
+      "El Pelusa",
+      "D10S"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1960.",
+      "Fue deportista.",
+      "Llevó al Nápoles a ganar sus primeras Ligas italianas.",
+      "Nació en Lanús, en la provincia de Buenos Aires (Argentina).",
+      "En el Mundial de 1986 marcó a Inglaterra «la mano de Dios» y «el gol del siglo».",
+      "Sus iniciales son D. M."
+    ],
+    "resumen": "Futbolista argentino, campeón del mundo en 1986 e ídolo del Nápoles, considerado uno de los mejores jugadores de todos los tiempos.",
+    "biografia": [
+      "Diego Armando Maradona nació el 30 de octubre de 1960 en Lanús, Argentina, y creció en Villa Fiorito, un barrio muy humilde. Debutó como profesional en Argentinos Juniors con 15 años y después jugó en Boca Juniors.",
+      "En 1982 fichó por el FC Barcelona y en 1984 por el Nápoles, un equipo modesto al que llevó a ganar dos Ligas italianas y una Copa de la UEFA, y donde todavía hoy es venerado. En el Mundial de México 1986 fue el líder de Argentina, que se proclamó campeona. En los cuartos de final contra Inglaterra marcó dos goles históricos: uno con la mano, que él llamó «la mano de Dios», y otro tras regatear a medio equipo rival, elegido el gol del siglo.",
+      "Después fue entrenador, entre otros, de la selección argentina. Murió el 25 de noviembre de 2020."
+    ],
+    "curiosidades": [
+      "El estadio del Nápoles se llama desde 2020 Estadio Diego Armando Maradona.",
+      "Sus seguidores escriben su apodo como «D10S», mezclando «Dios» con su número, el 10.",
+      "Jugó dos temporadas en el FC Barcelona."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Diego_Maradona",
+    "comprobar": [
+      "1960",
+      "Lanús",
+      "mano de Dios",
+      "2020"
+    ]
+  },
+  {
+    "slug": "agatha-christie",
+    "apartado": "mundial",
+    "fecha": "2026-11-22",
+    "nombre": "Agatha Christie",
+    "alias": [
+      "Christie",
+      "Agatha Mary Clarissa Christie"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1890.",
+      "Fue escritora.",
+      "Es la novelista más vendida de la historia, según el Libro Guinness de los récords.",
+      "Nació en Torquay (Inglaterra).",
+      "Creó a los detectives Hércules Poirot y Miss Marple.",
+      "Sus iniciales son A. C."
+    ],
+    "resumen": "Escritora británica de novela policiaca, creadora de Hércules Poirot y Miss Marple y la novelista más vendida de la historia.",
+    "biografia": [
+      "Agatha Mary Clarissa Miller nació el 15 de septiembre de 1890 en Torquay, Inglaterra. Durante la Primera Guerra Mundial trabajó en la farmacia de un hospital, donde aprendió mucho sobre venenos, que después usaría en sus novelas.",
+      "En 1920 publicó su primera novela, «El misterioso caso de Styles», protagonizada por el detective belga Hércules Poirot. Después llegarían clásicos como «El asesinato de Roger Ackroyd», «Asesinato en el Orient Express», «Muerte en el Nilo» y «Y no quedó ninguno», la novela de misterio más vendida de todos los tiempos. También creó a Miss Marple, una anciana muy observadora que resuelve crímenes en su pueblo.",
+      "Escribió más de 60 novelas policiacas y varias obras de teatro. Murió el 12 de enero de 1976."
+    ],
+    "curiosidades": [
+      "Su obra de teatro «La ratonera» se representa en Londres sin interrupción desde 1952.",
+      "En 1926 desapareció durante once días, un misterio que nunca explicó del todo.",
+      "Es una de las autoras más traducidas del mundo."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Agatha_Christie",
+    "comprobar": [
+      "1890",
+      "Torquay",
+      "Poirot",
+      "1976"
+    ]
+  },
+  {
+    "slug": "bob-marley",
+    "apartado": "mundial",
+    "fecha": "2026-11-23",
+    "nombre": "Bob Marley",
+    "alias": [
+      "Marley",
+      "Robert Nesta Marley"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1945.",
+      "Se dedicó a la música.",
+      "Su recopilatorio «Legend» es el disco de reggae más vendido de la historia.",
+      "Nació en Nine Mile (Jamaica).",
+      "Cantó «No Woman, No Cry» y «One Love» y llevó el reggae a todo el mundo.",
+      "Sus iniciales son B. M."
+    ],
+    "resumen": "Cantante y compositor jamaicano que llevó el reggae a todo el mundo con canciones como «No Woman, No Cry» y «One Love».",
+    "biografia": [
+      "Robert Nesta Marley nació el 6 de febrero de 1945 en Nine Mile, un pueblo del interior de Jamaica, y creció en Trenchtown, un barrio pobre de Kingston. Allí formó en los años sesenta el grupo The Wailers.",
+      "En los setenta, con discos como «Catch a Fire», «Natty Dread» y «Exodus», convirtió el reggae en un fenómeno internacional. Sus canciones, como «No Woman, No Cry», «Get Up, Stand Up», «Redemption Song» o «One Love», hablan de paz, de justicia y de la fe rastafari, que profesaba.",
+      "En 1978, en plena violencia política en Jamaica, consiguió que los líderes de los dos partidos rivales se dieran la mano en el escenario del One Love Peace Concert. Murió el 11 de mayo de 1981 en Miami, con 36 años."
+    ],
+    "curiosidades": [
+      "«Legend», publicado tras su muerte, es el disco de reggae más vendido de todos los tiempos.",
+      "Su cumpleaños, el 6 de febrero, se celebra en Jamaica.",
+      "Era un gran aficionado al fútbol."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Bob_Marley",
+    "comprobar": [
+      "1945",
+      "Nine Mile",
+      "Wailers",
+      "1981"
+    ]
+  },
+  {
+    "slug": "roger-federer",
+    "apartado": "mundial",
+    "fecha": "2026-11-24",
+    "nombre": "Roger Federer",
+    "alias": [
+      "Federer"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1981.",
+      "Es deportista.",
+      "Ganó Wimbledon ocho veces, el récord masculino.",
+      "Nació en Basilea (Suiza).",
+      "Es un tenista suizo que ganó 20 Grand Slams y tuvo una gran rivalidad con Nadal.",
+      "Sus iniciales son R. F."
+    ],
+    "resumen": "Tenista suizo, ganador de 20 Grand Slams y ocho Wimbledon, famoso por su elegancia en la pista.",
+    "biografia": [
+      "Roger Federer nació el 8 de agosto de 1981 en Basilea, Suiza. De niño fue recogepelotas en el torneo de su ciudad, que años después ganaría diez veces.",
+      "En 2003 ganó su primer Wimbledon y a partir de ahí dominó el tenis durante años: fue número uno del mundo durante 237 semanas seguidas, un récord. Ganó 20 títulos de Grand Slam, entre ellos ocho Wimbledon, el récord masculino del torneo. Su rivalidad con Rafa Nadal, y después con Novak Djokovic, marcó una de las mejores épocas del tenis.",
+      "Era famoso por su estilo elegante y su revés a una mano. Se retiró en septiembre de 2022 en la Laver Cup de Londres, jugando un partido de dobles junto a Nadal que hizo llorar a ambos."
+    ],
+    "curiosidades": [
+      "Fue recogepelotas en el torneo de Basilea, que después ganó diez veces.",
+      "Suiza le dedicó una moneda conmemorativa cuando aún estaba en activo.",
+      "Su último partido lo jugó en pareja con su gran rival, Rafa Nadal."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Roger_Federer",
+    "comprobar": [
+      "1981",
+      "Basilea",
+      "Wimbledon",
+      "2022"
+    ]
+  },
+  {
+    "slug": "julio-cesar",
+    "apartado": "mundial",
+    "fecha": "2026-11-25",
+    "nombre": "Julio César",
+    "alias": [
+      "Cayo Julio César",
+      "César",
+      "Julio Cesar"
+    ],
+    "ambito": "Historia",
+    "pistas": [
+      "Nació en el año 100 antes de Cristo.",
+      "Fue militar y político.",
+      "Conquistó la Galia, la actual Francia.",
+      "Nació en Roma.",
+      "Al cruzar el río Rubicón dijo «Alea iacta est» («La suerte está echada»).",
+      "Sus iniciales son J. C."
+    ],
+    "resumen": "General y político romano que conquistó la Galia, se hizo con el poder en Roma y fue asesinado en los idus de marzo del año 44 a. C.",
+    "biografia": [
+      "Cayo Julio César nació en Roma en el año 100 antes de Cristo, en una familia patricia. Hizo carrera política y militar y entre los años 58 y 50 a. C. conquistó la Galia, un territorio que corresponde a la actual Francia, y lo contó en sus «Comentarios».",
+      "En el año 49 a. C. cruzó con su ejército el río Rubicón, el límite que un general no podía atravesar armado, y empezó una guerra civil contra Pompeyo. Tras ganarla se convirtió en dictador. Vivió una relación con Cleopatra, reina de Egipto, y reformó el calendario: el calendario juliano, base del que usamos hoy.",
+      "El 15 de marzo del año 44 a. C., los idus de marzo, un grupo de senadores, entre ellos Bruto, lo asesinó en el Senado."
+    ],
+    "curiosidades": [
+      "El mes de julio lleva su nombre.",
+      "Su apellido acabó siendo un título: de «César» vienen «káiser» y «zar».",
+      "Tras una victoria fulgurante resumió: «Veni, vidi, vici» («Llegué, vi, vencí»)."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Julio_César",
+    "comprobar": [
+      "Rubicón",
+      "Galia",
+      "idus de marzo",
+      "Pompeyo"
+    ]
+  },
+  {
+    "slug": "nikola-tesla",
+    "apartado": "mundial",
+    "fecha": "2026-11-26",
+    "nombre": "Nikola Tesla",
+    "alias": [
+      "Tesla"
+    ],
+    "ambito": "Ciencia",
+    "pistas": [
+      "Nació en 1856.",
+      "Fue inventor e ingeniero.",
+      "Trabajó brevemente para Thomas Edison, con quien después rivalizó.",
+      "Nació en Smiljan, en la actual Croacia.",
+      "Impulsó la corriente alterna, la que llega hoy a los enchufes de casi todo el mundo.",
+      "Sus iniciales son N. T."
+    ],
+    "resumen": "Inventor e ingeniero de origen serbio, pionero de la corriente alterna, que da nombre a la unidad de campo magnético y a una marca de coches.",
+    "biografia": [
+      "Nikola Tesla nació el 10 de julio de 1856 en Smiljan, en la actual Croacia, en una familia serbia. Estudió ingeniería en Graz y Praga y en 1884 emigró a Estados Unidos, donde trabajó un tiempo para Thomas Edison.",
+      "Edison defendía la corriente continua; Tesla, la corriente alterna, que permitía llevar la electricidad mucho más lejos. Con el apoyo del empresario George Westinghouse, la corriente alterna ganó la llamada «guerra de las corrientes», y en 1895 se usó en la central hidroeléctrica de las cataratas del Niágara.",
+      "Patentó cientos de inventos, como el motor de inducción, y experimentó con la transmisión inalámbrica de energía y con la radio. Murió solo y con pocos recursos el 7 de enero de 1943 en un hotel de Nueva York."
+    ],
+    "curiosidades": [
+      "La unidad de densidad de campo magnético, el tesla, lleva su nombre.",
+      "La marca de coches eléctricos Tesla se llama así en su honor.",
+      "El aeropuerto de Belgrado se llama Aeropuerto Nikola Tesla."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Nikola_Tesla",
+    "comprobar": [
+      "1856",
+      "Smiljan",
+      "Westinghouse",
+      "1943"
+    ]
+  },
+  {
+    "slug": "ernest-hemingway",
+    "apartado": "mundial",
+    "fecha": "2026-11-27",
+    "nombre": "Ernest Hemingway",
+    "alias": [
+      "Hemingway",
+      "Ernest Miller Hemingway"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1899.",
+      "Fue escritor y periodista.",
+      "Ganó el Premio Nobel de Literatura en 1954.",
+      "Nació en Oak Park, cerca de Chicago (Estados Unidos).",
+      "Escribió «El viejo y el mar» y popularizó los Sanfermines de Pamplona.",
+      "Sus iniciales son E. H."
+    ],
+    "resumen": "Escritor estadounidense, autor de «El viejo y el mar» y «Por quién doblan las campanas», premio Nobel y gran enamorado de España.",
+    "biografia": [
+      "Ernest Hemingway nació el 21 de julio de 1899 en Oak Park, Illinois. Trabajó como periodista y en la Primera Guerra Mundial fue conductor de ambulancias en Italia, donde resultó herido.",
+      "En los años veinte vivió en París y en 1926 publicó «Fiesta», que transcurre en los Sanfermines de Pamplona y los dio a conocer en todo el mundo. Cubrió como corresponsal la Guerra Civil española, que inspiró «Por quién doblan las campanas» (1940). Su estilo, con frases cortas y directas, influyó en generaciones de escritores.",
+      "Vivió muchos años en Cuba, donde escribió «El viejo y el mar», que ganó el Premio Pulitzer en 1953. Al año siguiente recibió el Premio Nobel de Literatura. Murió el 2 de julio de 1961 en Ketchum, Idaho."
+    ],
+    "curiosidades": [
+      "Tiene una estatua junto a la plaza de toros de Pamplona.",
+      "Su casa de Cuba, la Finca Vigía, es hoy un museo.",
+      "Era un gran aficionado a la pesca, la caza y los toros."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Ernest_Hemingway",
+    "comprobar": [
+      "1899",
+      "Oak Park",
+      "1954",
+      "1961"
+    ]
+  },
+  {
+    "slug": "muhammad-ali",
+    "apartado": "mundial",
+    "fecha": "2026-11-28",
+    "nombre": "Muhammad Ali",
+    "alias": [
+      "Ali",
+      "Mohamed Alí",
+      "Muhammad Alí",
+      "Cassius Clay"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1942.",
+      "Fue deportista.",
+      "Ganó el oro olímpico en Roma 1960 con su nombre de nacimiento, Cassius Clay.",
+      "Nació en Louisville, en el estado de Kentucky (Estados Unidos).",
+      "Fue boxeador y su lema era «Flota como una mariposa, pica como una abeja».",
+      "Sus iniciales son M. A."
+    ],
+    "resumen": "Boxeador estadounidense, tres veces campeón mundial de los pesos pesados y uno de los deportistas más famosos del siglo XX.",
+    "biografia": [
+      "Muhammad Ali nació como Cassius Clay el 17 de enero de 1942 en Louisville, Kentucky. Empezó a boxear con 12 años, después de que le robaran la bicicleta y quisiera aprender a pelear. Con 18 años ganó el oro olímpico en Roma 1960.",
+      "En 1964 se proclamó campeón del mundo de los pesos pesados al vencer a Sonny Liston y poco después cambió su nombre por el de Muhammad Ali. En 1967 se negó a ir a la guerra de Vietnam, le retiraron el título y no pudo boxear durante más de tres años.",
+      "Recuperó el título en 1974 ante George Foreman en Kinsasa, en el famoso combate «Rumble in the Jungle». Su rapidez, su desparpajo ante la prensa y su compromiso con los derechos civiles lo convirtieron en un icono mundial. Murió el 3 de junio de 2016."
+    ],
+    "curiosidades": [
+      "Encendió el pebetero de los Juegos Olímpicos de Atlanta 1996.",
+      "Se llamaba a sí mismo «el más grande».",
+      "Fue campeón del mundo de los pesos pesados en tres ocasiones."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Muhammad_Ali",
+    "comprobar": [
+      "1942",
+      "Louisville",
+      "Liston",
+      "2016"
+    ]
+  },
+  {
+    "slug": "audrey-hepburn",
+    "apartado": "mundial",
+    "fecha": "2026-11-29",
+    "nombre": "Audrey Hepburn",
+    "alias": [
+      "Hepburn"
+    ],
+    "ambito": "Cine",
+    "pistas": [
+      "Nació en 1929.",
+      "Fue actriz.",
+      "Ganó el Óscar por «Vacaciones en Roma».",
+      "Nació en Ixelles, junto a Bruselas (Bélgica).",
+      "Protagonizó «Desayuno con diamantes» con un famoso vestido negro.",
+      "Sus iniciales son A. H."
+    ],
+    "resumen": "Actriz británica nacida en Bélgica, estrella de «Vacaciones en Roma» y «Desayuno con diamantes» y embajadora de UNICEF.",
+    "biografia": [
+      "Audrey Hepburn nació el 4 de mayo de 1929 en Ixelles, Bélgica. Pasó la Segunda Guerra Mundial en los Países Bajos, ocupados por los nazis, donde estudió ballet y pasó grandes penurias.",
+      "Tras trabajar como bailarina y modelo, saltó al cine y en 1953 protagonizó «Vacaciones en Roma», con Gregory Peck, por la que ganó el Óscar a la mejor actriz. Después llegaron «Sabrina», «Desayuno con diamantes» (1961), con su famoso vestido negro, y «My Fair Lady». Su estilo sencillo y elegante la convirtió en un icono de la moda.",
+      "En los últimos años de su vida se dedicó a ayudar a la infancia como embajadora de buena voluntad de UNICEF. Murió el 20 de enero de 1993 en Suiza."
+    ],
+    "curiosidades": [
+      "Es una de las pocas personas que han ganado un Emmy, un Grammy, un Óscar y un Tony.",
+      "El vestido negro de «Desayuno con diamantes» lo diseñó Hubert de Givenchy.",
+      "Durante la guerra ayudó a la resistencia neerlandesa dando recitales de ballet."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Audrey_Hepburn",
+    "comprobar": [
+      "1929",
+      "Ixelles",
+      "UNICEF",
+      "1993"
+    ]
+  },
+  {
+    "slug": "jane-austen",
+    "apartado": "mundial",
+    "fecha": "2026-11-30",
+    "nombre": "Jane Austen",
+    "alias": [
+      "Austen"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1775.",
+      "Fue escritora.",
+      "Su primera novela se publicó sin su nombre, firmada solo como «una dama».",
+      "Nació en Steventon (Inglaterra).",
+      "Escribió «Orgullo y prejuicio».",
+      "Sus iniciales son J. A."
+    ],
+    "resumen": "Novelista inglesa, autora de «Orgullo y prejuicio» y «Sentido y sensibilidad», maestra de la ironía y del retrato social.",
+    "biografia": [
+      "Jane Austen nació el 16 de diciembre de 1775 en Steventon, Inglaterra, hija de un clérigo. Creció en una familia numerosa y aficionada a la lectura, y desde adolescente escribía relatos para entretener a sus hermanos.",
+      "Sus novelas se publicaron de forma anónima: «Sentido y sensibilidad» (1811) apareció firmada por «una dama». Después llegaron «Orgullo y prejuicio» (1813), con Elizabeth Bennet y el señor Darcy, «Mansfield Park» y «Emma». En ellas retrata con humor e ironía la vida de la pequeña nobleza rural y la presión sobre las mujeres para casarse bien.",
+      "Murió el 18 de julio de 1817 en Winchester, con 41 años, y está enterrada en su catedral. Sus novelas se han adaptado muchas veces al cine y a la televisión."
+    ],
+    "curiosidades": [
+      "Aparece en el billete de 10 libras del Reino Unido desde 2017.",
+      "En vida casi nadie supo que era la autora de sus novelas.",
+      "Nunca se casó."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Jane_Austen",
+    "comprobar": [
+      "1775",
+      "Steventon",
+      "Winchester",
+      "1817"
+    ]
+  },
+  {
+    "slug": "bruce-lee",
+    "apartado": "mundial",
+    "fecha": "2026-12-01",
+    "nombre": "Bruce Lee",
+    "alias": [
+      "Lee",
+      "Lee Jun-fan"
+    ],
+    "ambito": "Cine",
+    "pistas": [
+      "Nació en 1940.",
+      "Fue actor y artista marcial.",
+      "Creó su propio estilo de lucha, el jeet kune do.",
+      "Nació en San Francisco (Estados Unidos), aunque creció en Hong Kong.",
+      "Protagonizó «Operación Dragón» y popularizó las artes marciales en el cine.",
+      "Sus iniciales son B. L."
+    ],
+    "resumen": "Actor y maestro de artes marciales, creador del jeet kune do y estrella de «Operación Dragón».",
+    "biografia": [
+      "Bruce Lee nació el 27 de noviembre de 1940 en San Francisco, donde sus padres estaban de gira, y creció en Hong Kong. De niño ya actuaba en películas y de joven aprendió kung-fu con el maestro Ip Man.",
+      "A los 18 años volvió a Estados Unidos, donde estudió Filosofía y abrió escuelas de artes marciales. Se hizo popular como Kato en la serie «El Avispón Verde» y desarrolló su propio estilo, el jeet kune do, basado en la sencillez y la adaptación.",
+      "En Hong Kong protagonizó películas de enorme éxito como «Furia oriental» y «El furor del dragón». Murió el 20 de julio de 1973, con 32 años, poco antes del estreno de «Operación Dragón», que lo convirtió en un mito mundial."
+    ],
+    "curiosidades": [
+      "Su frase «Be water, my friend» («Sé agua, amigo mío») se ha hecho famosa en todo el mundo.",
+      "El mono amarillo de «Kill Bill» es un homenaje al que llevaba en «Juego con la muerte».",
+      "Su hijo Brandon Lee también fue actor."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Bruce_Lee",
+    "comprobar": [
+      "1940",
+      "San Francisco",
+      "jeet kune do",
+      "1973"
+    ]
+  },
+  {
+    "slug": "marilyn-monroe",
+    "apartado": "mundial",
+    "fecha": "2026-12-02",
+    "nombre": "Marilyn Monroe",
+    "alias": [
+      "Marilyn",
+      "Monroe",
+      "Norma Jeane"
+    ],
+    "ambito": "Cine",
+    "pistas": [
+      "Nació en 1926.",
+      "Fue actriz.",
+      "Ganó un Globo de Oro por «Con faldas y a lo loco».",
+      "Nació en Los Ángeles (Estados Unidos).",
+      "Su vestido blanco levantado por el aire del metro en «La tentación vive arriba» es una imagen mítica.",
+      "Sus iniciales artísticas son M. M."
+    ],
+    "resumen": "Actriz estadounidense, estrella de «Los caballeros las prefieren rubias» y «Con faldas y a lo loco» y gran icono de Hollywood.",
+    "biografia": [
+      "Marilyn Monroe nació como Norma Jeane Mortenson el 1 de junio de 1926 en Los Ángeles. Tuvo una infancia difícil, en casas de acogida y un orfanato, y empezó a trabajar como modelo durante la Segunda Guerra Mundial.",
+      "En los años cincuenta se convirtió en la gran estrella de Hollywood con películas como «Niágara», «Los caballeros las prefieren rubias», donde cantaba «Diamonds Are a Girl's Best Friend», «La tentación vive arriba» y «Con faldas y a lo loco», por la que ganó un Globo de Oro. Estudió interpretación en el Actors Studio de Nueva York y llegó a fundar su propia productora.",
+      "Murió el 4 de agosto de 1962 en Los Ángeles, con 36 años. Su imagen sigue siendo una de las más reconocibles del siglo XX."
+    ],
+    "curiosidades": [
+      "En 1962 cantó un famoso «Feliz cumpleaños, señor presidente» a John F. Kennedy.",
+      "Andy Warhol la retrató en una de sus obras más conocidas.",
+      "Su nombre artístico lo eligió tomando el apellido de soltera de su madre, Monroe."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Marilyn_Monroe",
+    "comprobar": [
+      "1926",
+      "Los Ángeles",
+      "Norma Jeane",
+      "1962"
+    ]
+  },
+  {
+    "slug": "stephen-hawking",
+    "apartado": "mundial",
+    "fecha": "2026-12-03",
+    "nombre": "Stephen Hawking",
+    "alias": [
+      "Hawking",
+      "Stephen William Hawking"
+    ],
+    "ambito": "Ciencia",
+    "pistas": [
+      "Nació en 1942.",
+      "Se dedicó a la ciencia.",
+      "Ocupó en Cambridge la misma cátedra que había tenido Isaac Newton.",
+      "Nació en Oxford (Inglaterra).",
+      "Escribió «Breve historia del tiempo» y hablaba con una voz sintetizada por ordenador.",
+      "Sus iniciales son S. H."
+    ],
+    "resumen": "Físico británico que estudió los agujeros negros y el origen del universo, autor de «Breve historia del tiempo».",
+    "biografia": [
+      "Stephen Hawking nació el 8 de enero de 1942 en Oxford, justo 300 años después de la muerte de Galileo. Estudió Física en Oxford y se doctoró en Cambridge. Con 21 años le diagnosticaron una enfermedad de las neuronas motoras (ELA) que poco a poco lo dejó casi completamente paralizado.",
+      "A pesar de ello, se convirtió en uno de los físicos más importantes de su tiempo. En 1974 propuso que los agujeros negros emiten una radiación, hoy llamada radiación de Hawking. Entre 1979 y 2009 ocupó en Cambridge la cátedra Lucasiana de Matemáticas, la misma que había tenido Isaac Newton.",
+      "En 1988 publicó «Breve historia del tiempo», que acercó la cosmología al gran público y fue un enorme éxito de ventas. Murió el 14 de marzo de 2018 en Cambridge."
+    ],
+    "curiosidades": [
+      "Murió el 14 de marzo, el día en que había nacido Albert Einstein.",
+      "Está enterrado en la abadía de Westminster, cerca de Newton y Darwin.",
+      "Apareció como él mismo en «Los Simpson» y en «The Big Bang Theory»."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Stephen_Hawking",
+    "comprobar": [
+      "1942",
+      "Oxford",
+      "Lucasiana",
+      "2018"
+    ]
+  },
+  {
+    "slug": "simon-bolivar",
+    "apartado": "mundial",
+    "fecha": "2026-12-04",
+    "nombre": "Simón Bolívar",
+    "alias": [
+      "Bolívar",
+      "Bolivar",
+      "Simon Bolivar",
+      "El Libertador"
+    ],
+    "ambito": "Historia",
+    "pistas": [
+      "Nació en 1783.",
+      "Fue militar y político.",
+      "Fue presidente de la Gran Colombia.",
+      "Nació en Caracas (Venezuela).",
+      "Le llaman «el Libertador» y un país lleva su nombre.",
+      "Sus iniciales son S. B."
+    ],
+    "resumen": "Militar y político venezolano, «el Libertador», que dirigió la independencia de buena parte de Sudamérica.",
+    "biografia": [
+      "Simón Bolívar nació el 24 de julio de 1783 en Caracas, en una familia criolla muy rica. Se quedó huérfano de niño y estudió en Caracas, Madrid y París. En 1805, en el Monte Sacro de Roma, juró dedicar su vida a la independencia de América.",
+      "Desde 1810 encabezó la lucha contra el dominio español. Tras muchas derrotas y victorias, sus campañas llevaron a la independencia de Venezuela, Colombia, Ecuador, Perú y Bolivia, el país que recibió su nombre. Soñaba con una gran nación sudamericana unida y fue presidente de la Gran Colombia.",
+      "Las divisiones entre los nuevos países acabaron con ese sueño. Murió el 17 de diciembre de 1830 en Santa Marta, Colombia, cuando se preparaba para marcharse a Europa."
+    ],
+    "curiosidades": [
+      "La moneda de Venezuela se llama bolívar.",
+      "Bolivia se llama así en su honor.",
+      "En casi todas las ciudades de Venezuela la plaza principal se llama Plaza Bolívar."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Simón_Bolívar",
+    "comprobar": [
+      "1783",
+      "Caracas",
+      "Gran Colombia",
+      "1830"
+    ]
+  },
+  {
+    "slug": "elton-john",
+    "apartado": "mundial",
+    "fecha": "2026-12-05",
+    "nombre": "Elton John",
+    "alias": [
+      "Elton",
+      "Reginald Dwight",
+      "Reginald Kenneth Dwight"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1947.",
+      "Se dedica a la música.",
+      "Su versión de «Candle in the Wind» de 1997 es uno de los sencillos más vendidos de la historia.",
+      "Nació en Pinner, cerca de Londres (Inglaterra).",
+      "Compuso las canciones de «El rey león» y es famoso por sus gafas y su piano.",
+      "Sus iniciales artísticas son E. J."
+    ],
+    "resumen": "Cantante, pianista y compositor británico, autor de «Your Song» y de las canciones de «El rey león».",
+    "biografia": [
+      "Elton John nació como Reginald Kenneth Dwight el 25 de marzo de 1947 en Pinner, cerca de Londres. Con 11 años consiguió una beca para la Real Academia de Música. En 1967 conoció al letrista Bernie Taupin, con quien ha escrito la mayoría de sus canciones.",
+      "Saltó a la fama con «Your Song» (1970) y en los setenta encadenó éxitos como «Rocket Man», «Tiny Dancer» o «Goodbye Yellow Brick Road». Sus trajes extravagantes y sus enormes gafas fueron parte de su espectáculo. En 1997 cantó una nueva versión de «Candle in the Wind» en el funeral de Diana de Gales.",
+      "Ganó el Óscar a la mejor canción por «Can You Feel the Love Tonight», de «El rey león», y otro en 2020 por una canción de la película sobre su vida, «Rocketman»."
+    ],
+    "curiosidades": [
+      "Fue nombrado caballero en 1998: es sir Elton John.",
+      "En 1992 creó una fundación para luchar contra el sida.",
+      "Se despidió de las giras con «Farewell Yellow Brick Road», que terminó en 2023."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Elton_John",
+    "comprobar": [
+      "1947",
+      "Pinner",
+      "Taupin",
+      "Rocketman"
+    ]
+  },
+  {
+    "slug": "ayrton-senna",
+    "apartado": "mundial",
+    "fecha": "2026-12-06",
+    "nombre": "Ayrton Senna",
+    "alias": [
+      "Senna",
+      "Ayrton Senna da Silva"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1960.",
+      "Fue deportista.",
+      "Ganó seis veces el Gran Premio de Mónaco, un récord.",
+      "Nació en São Paulo (Brasil).",
+      "Fue tres veces campeón del mundo de Fórmula 1 con McLaren.",
+      "Sus iniciales son A. S."
+    ],
+    "resumen": "Piloto brasileño, tres veces campeón del mundo de Fórmula 1 y considerado uno de los mejores de la historia.",
+    "biografia": [
+      "Ayrton Senna da Silva nació el 21 de marzo de 1960 en São Paulo, Brasil. Empezó en el karting de niño y, tras ganar en las categorías inferiores en Inglaterra, debutó en la Fórmula 1 en 1984 con el modesto equipo Toleman.",
+      "Ganó su primera carrera en 1985 bajo una lluvia torrencial en Portugal. Con McLaren fue campeón del mundo en 1988, 1990 y 1991, y protagonizó una rivalidad legendaria con su compañero Alain Prost. Era especialmente rápido en las vueltas de clasificación y bajo la lluvia.",
+      "Murió el 1 de mayo de 1994 tras sufrir un accidente en el Gran Premio de San Marino, en el circuito de Imola. En Brasil es un héroe nacional."
+    ],
+    "curiosidades": [
+      "Ganó seis veces el Gran Premio de Mónaco, más que ningún otro piloto.",
+      "Su familia creó el Instituto Ayrton Senna, dedicado a la educación de niños brasileños.",
+      "Su casco amarillo con franjas verde y azul se inspiraba en la bandera de Brasil."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Ayrton_Senna",
+    "comprobar": [
+      "1960",
+      "São Paulo",
+      "McLaren",
+      "1994"
+    ]
+  },
+  {
+    "slug": "coco-chanel",
+    "apartado": "mundial",
+    "fecha": "2026-12-07",
+    "nombre": "Coco Chanel",
+    "alias": [
+      "Chanel",
+      "Gabrielle Chanel",
+      "Gabrielle Bonheur Chanel"
+    ],
+    "ambito": "Moda",
+    "pistas": [
+      "Nació en 1883.",
+      "Se dedicó a la moda.",
+      "Su perfume más famoso se lanzó en 1921 con un número como nombre.",
+      "Nació en Saumur (Francia).",
+      "Popularizó el «pequeño vestido negro» y creó el perfume Nº 5.",
+      "Sus iniciales son C. C."
+    ],
+    "resumen": "Diseñadora francesa que revolucionó la moda femenina, creadora del perfume Chanel Nº 5 y del «pequeño vestido negro».",
+    "biografia": [
+      "Gabrielle Chanel nació el 19 de agosto de 1883 en Saumur, Francia. Tras la muerte de su madre pasó parte de su infancia en un orfanato, donde aprendió a coser. De joven cantaba en cafés, y de ahí viene su apodo, Coco.",
+      "Empezó diseñando sombreros y en 1910 abrió una tienda en la rue Cambon de París. Frente a los corsés y los vestidos recargados de la época, propuso una moda cómoda y elegante, con tejidos como el punto y el tweed. En 1921 lanzó el perfume Chanel Nº 5 y en 1926 popularizó el «pequeño vestido negro».",
+      "Cerró su casa de moda durante la Segunda Guerra Mundial y volvió a abrirla en 1954, ya con más de 70 años. Murió el 10 de enero de 1971 en el hotel Ritz de París."
+    ],
+    "curiosidades": [
+      "Su logotipo, dos letras C entrelazadas, es uno de los más reconocibles del mundo.",
+      "Vivió más de treinta años en el hotel Ritz de París.",
+      "Popularizó que las mujeres llevaran pantalones y el pelo corto."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Coco_Chanel",
+    "comprobar": [
+      "1883",
+      "Saumur",
+      "1921",
+      "1971"
+    ]
+  },
+  {
+    "slug": "juana-de-arco",
+    "apartado": "mundial",
+    "fecha": "2026-12-08",
+    "nombre": "Juana de Arco",
+    "alias": [
+      "Juana",
+      "La doncella de Orleans",
+      "Jeanne d'Arc"
+    ],
+    "ambito": "Historia",
+    "pistas": [
+      "Nació hacia el año 1412.",
+      "Fue una líder militar.",
+      "Murió en la hoguera en Ruan con unos 19 años.",
+      "Nació en Domrémy, en el este de Francia.",
+      "Dirigió al ejército francés en la guerra de los Cien Años y le llaman «la doncella de Orleans».",
+      "Sus iniciales son J. de A."
+    ],
+    "resumen": "Joven campesina francesa que dirigió al ejército de su país en la guerra de los Cien Años, murió en la hoguera y fue declarada santa.",
+    "biografia": [
+      "Juana de Arco nació hacia 1412 en Domrémy, Francia, en una familia de campesinos, en plena guerra de los Cien Años entre Francia e Inglaterra. Decía que desde los 13 años oía voces de santos que le pedían ayudar al heredero del trono francés, Carlos.",
+      "En 1429 convenció a Carlos de que le diera tropas y, vestida con armadura, levantó el asedio de la ciudad de Orleans, lo que le valió el apodo de «la doncella de Orleans». Poco después Carlos fue coronado rey en Reims, como ella había anunciado.",
+      "En 1430 fue capturada y entregada a los ingleses. Tras un juicio por herejía fue quemada en la hoguera en Ruan el 30 de mayo de 1431. Años después un nuevo proceso la declaró inocente y en 1920 fue proclamada santa."
+    ],
+    "curiosidades": [
+      "Es la patrona de Francia.",
+      "Tenía unos 17 años cuando dirigió al ejército en Orleans.",
+      "Su historia ha inspirado obras de teatro, óperas y decenas de películas."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Juana_de_Arco",
+    "comprobar": [
+      "1412",
+      "Domrémy",
+      "Orleans",
+      "1431"
+    ]
+  },
+  {
+    "slug": "michael-phelps",
+    "apartado": "mundial",
+    "fecha": "2026-12-09",
+    "nombre": "Michael Phelps",
+    "alias": [
+      "Phelps",
+      "Michael Fred Phelps"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1985.",
+      "Es deportista.",
+      "Ganó ocho medallas de oro en unos mismos Juegos Olímpicos, en Pekín 2008.",
+      "Nació en Baltimore (Estados Unidos).",
+      "Es el deportista con más medallas olímpicas de la historia: 28, de ellas 23 de oro.",
+      "Sus iniciales son M. P."
+    ],
+    "resumen": "Nadador estadounidense, el deportista con más medallas olímpicas de la historia: 28, de ellas 23 de oro.",
+    "biografia": [
+      "Michael Phelps nació el 30 de junio de 1985 en Baltimore, Estados Unidos. Empezó a nadar de niño, animado por sus hermanas, y con solo 15 años participó en los Juegos Olímpicos de Sídney 2000.",
+      "En Atenas 2004 ganó seis medallas de oro, y en Pekín 2008 logró algo histórico: ocho oros en unos mismos Juegos, superando el récord de siete de Mark Spitz. Dominaba sobre todo las pruebas de mariposa y de estilos.",
+      "Siguió ganando medallas en Londres 2012 y, tras una primera retirada, volvió para los Juegos de Río 2016, donde sumó cinco oros más. Terminó su carrera con 28 medallas olímpicas, 23 de ellas de oro, un récord que parece casi imposible de superar."
+    ],
+    "curiosidades": [
+      "Le apodaban «el tiburón de Baltimore».",
+      "Su envergadura, de unos dos metros, es mayor que su altura.",
+      "Tras retirarse ha hablado abiertamente de la importancia de la salud mental."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Michael_Phelps",
+    "comprobar": [
+      "1985",
+      "Baltimore",
+      "Pekín",
+      "28"
+    ]
+  },
+  {
+    "slug": "beyonce",
+    "apartado": "mundial",
+    "fecha": "2026-12-10",
+    "nombre": "Beyoncé",
+    "alias": [
+      "Beyonce",
+      "Beyoncé Knowles",
+      "Queen B"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1981.",
+      "Se dedica a la música.",
+      "Es la artista con más premios Grammy de la historia.",
+      "Nació en Houston, en Texas (Estados Unidos).",
+      "Empezó en el grupo Destiny's Child y cantó «Crazy in Love» y «Single Ladies».",
+      "Su nombre artístico empieza por B y tiene siete letras."
+    ],
+    "resumen": "Cantante estadounidense, exvocalista de Destiny's Child y la artista con más premios Grammy de la historia.",
+    "biografia": [
+      "Beyoncé Giselle Knowles nació el 4 de septiembre de 1981 en Houston, Texas. De niña ganaba concursos de canto y baile, y en los años noventa formó parte de Destiny's Child, uno de los grupos femeninos más vendidos de la historia.",
+      "En 2003 empezó su carrera en solitario con «Crazy in Love», a la que siguieron éxitos como «Single Ladies», «Halo» o «Formation». Con «Lemonade» (2016) presentó un álbum visual que mezclaba música y cine, y con «Cowboy Carter» se acercó al country.",
+      "En 2025 ganó por fin el Grammy al álbum del año con «Cowboy Carter». Es la artista con más premios Grammy de la historia y una de las figuras más influyentes de la música actual."
+    ],
+    "curiosidades": [
+      "Su actuación en el festival de Coachella de 2018 se conoce como «Beychella».",
+      "También es actriz: protagonizó «Dreamgirls» y puso voz a Nala en «El rey león» de 2019.",
+      "Sus seguidores forman la «BeyHive», la colmena de Beyoncé."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Beyoncé",
+    "comprobar": [
+      "1981",
+      "Houston",
+      "Destiny's Child",
+      "Cowboy Carter"
+    ]
+  },
+  {
+    "slug": "alexander-fleming",
+    "apartado": "mundial",
+    "fecha": "2026-12-11",
+    "nombre": "Alexander Fleming",
+    "alias": [
+      "Fleming"
+    ],
+    "ambito": "Ciencia",
+    "pistas": [
+      "Nació en 1881.",
+      "Se dedicó a la ciencia y a la medicina.",
+      "Ganó el Premio Nobel de Medicina en 1945.",
+      "Nació en Darvel (Escocia).",
+      "Descubrió la penicilina, el primer antibiótico.",
+      "Sus iniciales son A. F."
+    ],
+    "resumen": "Médico y científico escocés que descubrió la penicilina en 1928, el primer antibiótico, que ha salvado millones de vidas.",
+    "biografia": [
+      "Alexander Fleming nació el 6 de agosto de 1881 en Darvel, Escocia, en una familia de granjeros. Se trasladó a Londres, estudió Medicina y trabajó casi toda su vida en el Hospital St Mary's.",
+      "En 1928, al volver de vacaciones, vio que en una de sus placas de cultivo de bacterias había crecido un moho y que alrededor de él las bacterias habían muerto. Ese moho producía una sustancia a la que llamó penicilina. Años después, los científicos Howard Florey y Ernst Chain consiguieron producirla en cantidad, y durante la Segunda Guerra Mundial salvó la vida de miles de soldados.",
+      "En 1945 los tres compartieron el Premio Nobel de Medicina. Fleming murió en Londres el 11 de marzo de 1955 y está enterrado en la catedral de San Pablo."
+    ],
+    "curiosidades": [
+      "Los toreros españoles, agradecidos por la penicilina, le dedicaron un monumento junto a la plaza de Las Ventas de Madrid.",
+      "Antes de la penicilina ya había descubierto la lisozima, una sustancia que está en las lágrimas.",
+      "Su descubrimiento fue en parte fruto de la casualidad y del desorden de su laboratorio."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Alexander_Fleming",
+    "comprobar": [
+      "1881",
+      "Darvel",
+      "penicilina",
+      "1955"
+    ]
+  },
+  {
+    "slug": "mario-vargas-llosa",
+    "apartado": "mundial",
+    "fecha": "2026-12-12",
+    "nombre": "Mario Vargas Llosa",
+    "alias": [
+      "Vargas Llosa",
+      "Jorge Mario Pedro Vargas Llosa"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1936.",
+      "Fue escritor.",
+      "Ganó el Premio Nobel de Literatura en 2010.",
+      "Nació en Arequipa (Perú).",
+      "Escribió «La ciudad y los perros» y «La fiesta del Chivo», y también tenía la nacionalidad española.",
+      "Sus iniciales son M. V. Ll."
+    ],
+    "resumen": "Escritor peruano y español, autor de «La ciudad y los perros» y «Conversación en La Catedral», premio Nobel de Literatura en 2010.",
+    "biografia": [
+      "Mario Vargas Llosa nació el 28 de marzo de 1936 en Arequipa, Perú, y pasó parte de su infancia en Bolivia. Estudió en un colegio militar de Lima, una experiencia que inspiró su primera novela.",
+      "«La ciudad y los perros» (1963), publicada en Barcelona, lo convirtió en una de las figuras del «boom» latinoamericano. Después llegaron «La casa verde», «Conversación en La Catedral», «La tía Julia y el escribidor» y «La fiesta del Chivo», sobre la dictadura de Trujillo en la República Dominicana. También fue un activo ensayista y periodista.",
+      "En 1990 se presentó a las elecciones presidenciales de Perú y perdió. En 1993 obtuvo la nacionalidad española. Ganó el Premio Cervantes en 1994 y el Nobel de Literatura en 2010. Murió en Lima el 13 de abril de 2025."
+    ],
+    "curiosidades": [
+      "Fue miembro de la Real Academia Española y de la Academia Francesa, aunque nunca escribió en francés.",
+      "Vivió muchos años en Barcelona, Londres, París y Madrid.",
+      "Su relación con Gabriel García Márquez, primero amigos y después enemigos, es una de las más comentadas de la literatura."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Mario_Vargas_Llosa",
+    "comprobar": [
+      "1936",
+      "Arequipa",
+      "2010",
+      "2025"
+    ]
+  },
+  {
+    "slug": "barack-obama",
+    "apartado": "mundial",
+    "fecha": "2026-12-13",
+    "nombre": "Barack Obama",
+    "alias": [
+      "Obama",
+      "Barack Hussein Obama"
+    ],
+    "ambito": "Política",
+    "pistas": [
+      "Nació en 1961.",
+      "Se dedica a la política.",
+      "Ganó el Premio Nobel de la Paz en 2009.",
+      "Nació en Honolulu, en Hawái (Estados Unidos).",
+      "Fue el primer presidente afroamericano de Estados Unidos y su lema era «Yes we can».",
+      "Sus iniciales son B. O."
+    ],
+    "resumen": "Político estadounidense, primer presidente afroamericano de Estados Unidos (2009-2017) y premio Nobel de la Paz.",
+    "biografia": [
+      "Barack Obama nació el 4 de agosto de 1961 en Honolulu, Hawái, hijo de una madre estadounidense y un padre keniano. Pasó parte de su infancia en Indonesia y estudió Derecho en Harvard, donde fue el primer presidente afroamericano de la revista jurídica de la universidad.",
+      "Trabajó en barrios de Chicago, fue senador en Illinois y en 2004 llegó al Senado de Estados Unidos. En 2008 ganó las elecciones presidenciales con el lema «Yes we can» y se convirtió en el primer presidente afroamericano del país. Fue reelegido en 2012.",
+      "Durante su mandato aprobó una gran reforma sanitaria, conocida como «Obamacare». En 2009, en su primer año como presidente, recibió el Premio Nobel de la Paz."
+    ],
+    "curiosidades": [
+      "Ha ganado dos premios Grammy por las versiones en audio de sus libros.",
+      "De joven jugaba al baloncesto y lo siguió practicando en la Casa Blanca.",
+      "Su nombre, Barack, significa «bendecido» en suajili."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Barack_Obama",
+    "comprobar": [
+      "1961",
+      "Honolulu",
+      "2009",
+      "Harvard"
+    ]
+  },
+  {
+    "slug": "julio-verne",
+    "apartado": "mundial",
+    "fecha": "2026-12-14",
+    "nombre": "Julio Verne",
+    "alias": [
+      "Verne",
+      "Jules Verne"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1828.",
+      "Fue escritor.",
+      "Es uno de los autores más traducidos del mundo, solo por detrás de Agatha Christie.",
+      "Nació en Nantes (Francia).",
+      "Escribió «Veinte mil leguas de viaje submarino» y «La vuelta al mundo en ochenta días».",
+      "Sus iniciales son J. V."
+    ],
+    "resumen": "Escritor francés, pionero de la ciencia ficción, autor de «Viaje al centro de la Tierra» y «La vuelta al mundo en ochenta días».",
+    "biografia": [
+      "Julio Verne nació el 8 de febrero de 1828 en Nantes, Francia, una ciudad portuaria que despertó su pasión por los viajes. Estudió Derecho en París, pero prefirió el teatro y la literatura.",
+      "En 1863 publicó «Cinco semanas en globo», el primero de sus «Viajes extraordinarios», una serie de novelas de aventuras llenas de inventos y descubrimientos científicos. Le siguieron «Viaje al centro de la Tierra», «De la Tierra a la Luna», «Veinte mil leguas de viaje submarino», con el capitán Nemo y el submarino Nautilus, y «La vuelta al mundo en ochenta días».",
+      "Muchas de sus ideas, como los viajes a la Luna o los submarinos eléctricos, se adelantaron a su tiempo. Murió en Amiens el 24 de marzo de 1905."
+    ],
+    "curiosidades": [
+      "Según la UNESCO, es el segundo autor más traducido del mundo.",
+      "Su casa de Amiens es hoy un museo.",
+      "Se le considera, junto a H. G. Wells, uno de los padres de la ciencia ficción."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Julio_Verne",
+    "comprobar": [
+      "1828",
+      "Nantes",
+      "Nautilus",
+      "1905"
+    ]
+  },
+  {
+    "slug": "alejandro-magno",
+    "apartado": "mundial",
+    "fecha": "2026-12-15",
+    "nombre": "Alejandro Magno",
+    "alias": [
+      "Alejandro",
+      "Alejandro III de Macedonia",
+      "Alejandro el Grande"
+    ],
+    "ambito": "Historia",
+    "pistas": [
+      "Nació en el año 356 antes de Cristo.",
+      "Fue rey y militar.",
+      "Su maestro fue el filósofo Aristóteles.",
+      "Nació en Pela, en Macedonia.",
+      "Creó un enorme imperio que llegaba hasta la India y fundó la ciudad de Alejandría.",
+      "Su nombre empieza por A y su sobrenombre por M."
+    ],
+    "resumen": "Rey de Macedonia que en pocos años conquistó un imperio desde Grecia hasta la India; nunca perdió una batalla.",
+    "biografia": [
+      "Alejandro nació en el año 356 a. C. en Pela, la capital de Macedonia, hijo del rey Filipo II. Tuvo como maestro al filósofo Aristóteles y con solo 20 años, tras el asesinato de su padre, se convirtió en rey.",
+      "Emprendió entonces la conquista del gran Imperio persa. Venció al rey Darío III en batallas como Isos y Gaugamela, conquistó Egipto, donde fundó Alejandría, y siguió avanzando hacia el este hasta llegar a la India. En unos diez años creó uno de los mayores imperios de la Antigüedad.",
+      "Murió en Babilonia en el año 323 a. C., con solo 32 años. Tras su muerte, sus generales se repartieron el imperio; uno de ellos, Ptolomeo, fundó la dinastía a la que pertenecería Cleopatra."
+    ],
+    "curiosidades": [
+      "Su caballo, Bucéfalo, es casi tan famoso como él.",
+      "Según la leyenda, cortó con su espada el nudo gordiano que nadie podía desatar.",
+      "Fundó o refundó varias ciudades con el nombre de Alejandría."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Alejandro_Magno",
+    "comprobar": [
+      "356",
+      "Pela",
+      "Aristóteles",
+      "Gaugamela"
+    ]
+  },
+  {
+    "slug": "john-lennon",
+    "apartado": "mundial",
+    "fecha": "2026-12-16",
+    "nombre": "John Lennon",
+    "alias": [
+      "Lennon",
+      "John Winston Lennon"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1940.",
+      "Se dedicó a la música.",
+      "En solitario compuso «Imagine».",
+      "Nació en Liverpool (Inglaterra).",
+      "Fue uno de los fundadores de los Beatles junto a Paul McCartney.",
+      "Sus iniciales son J. L."
+    ],
+    "resumen": "Músico británico, cofundador de los Beatles junto a Paul McCartney y autor de «Imagine».",
+    "biografia": [
+      "John Lennon nació el 9 de octubre de 1940 en Liverpool, Inglaterra, en plena Segunda Guerra Mundial. Fue criado en gran parte por su tía Mimi. En 1957, en una fiesta parroquial, conoció a Paul McCartney, con quien formaría una de las parejas de compositores más importantes de la historia.",
+      "Con George Harrison y Ringo Starr formaron los Beatles, que en los años sesenta revolucionaron la música pop con canciones como «She Loves You», «Help!», «Strawberry Fields Forever» o «All You Need Is Love». El grupo se separó en 1970.",
+      "En solitario, Lennon publicó «Imagine» (1971), un himno a la paz. Vivió en Nueva York con su esposa, la artista Yoko Ono, y fue un activista contra la guerra. Fue asesinado frente a su casa de Nueva York el 8 de diciembre de 1980."
+    ],
+    "curiosidades": [
+      "El aeropuerto de Liverpool se llama Liverpool John Lennon.",
+      "En Central Park de Nueva York hay un memorial, Strawberry Fields, con la palabra «Imagine».",
+      "Su segundo nombre, Winston, se lo pusieron en honor a Winston Churchill."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/John_Lennon",
+    "comprobar": [
+      "1940",
+      "Liverpool",
+      "McCartney",
+      "1980"
+    ]
+  },
+  {
+    "slug": "pablo-neruda",
+    "apartado": "mundial",
+    "fecha": "2026-12-17",
+    "nombre": "Pablo Neruda",
+    "alias": [
+      "Neruda",
+      "Ricardo Eliécer Neftalí Reyes Basoalto"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1904.",
+      "Fue escritor y diplomático.",
+      "Ganó el Premio Nobel de Literatura en 1971.",
+      "Nació en Parral (Chile).",
+      "Escribió «Veinte poemas de amor y una canción desesperada».",
+      "Sus iniciales artísticas son P. N."
+    ],
+    "resumen": "Poeta chileno, autor de «Veinte poemas de amor y una canción desesperada» y «Canto general», premio Nobel en 1971.",
+    "biografia": [
+      "Pablo Neruda, cuyo nombre real era Ricardo Eliécer Neftalí Reyes Basoalto, nació el 12 de julio de 1904 en Parral, Chile. Firmaba con seudónimo porque a su padre no le gustaba que escribiera poesía.",
+      "Con solo 19 años publicó «Veinte poemas de amor y una canción desesperada» (1924), uno de los libros de poesía más leídos en español. Fue cónsul en varios países y en 1934 llegó a España, donde se hizo amigo de Federico García Lorca y de los poetas de la Generación del 27. La Guerra Civil le inspiró «España en el corazón».",
+      "Su gran obra es «Canto general» (1950), un poema épico sobre la historia de América. Recibió el Premio Nobel de Literatura en 1971 y murió en Santiago de Chile el 23 de septiembre de 1973, pocos días después del golpe de Estado de Pinochet."
+    ],
+    "curiosidades": [
+      "Sus tres casas en Chile, Isla Negra, La Chascona y La Sebastiana, son hoy museos.",
+      "Tomó su seudónimo, al parecer, del escritor checo Jan Neruda.",
+      "Le apasionaba coleccionar caracolas, mascarones de proa y botellas."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Pablo_Neruda",
+    "comprobar": [
+      "1904",
+      "Parral",
+      "1971",
+      "Canto general"
+    ]
+  },
+  {
+    "slug": "martin-luther-king",
+    "apartado": "mundial",
+    "fecha": "2026-12-18",
+    "nombre": "Martin Luther King",
+    "alias": [
+      "Luther King",
+      "Martin Luther King Jr.",
+      "MLK"
+    ],
+    "ambito": "Política",
+    "pistas": [
+      "Nació en 1929.",
+      "Fue pastor y activista.",
+      "Ganó el Premio Nobel de la Paz en 1964.",
+      "Nació en Atlanta, en el estado de Georgia (Estados Unidos).",
+      "Pronunció el famoso discurso «I have a dream» («Tengo un sueño»).",
+      "Sus iniciales son M. L. K."
+    ],
+    "resumen": "Pastor y activista estadounidense, líder del movimiento por los derechos civiles y autor del discurso «Tengo un sueño».",
+    "biografia": [
+      "Martin Luther King Jr. nació el 15 de enero de 1929 en Atlanta, Georgia, hijo de un pastor bautista. Estudió Teología y, como su padre, se hizo pastor.",
+      "En 1955 encabezó el boicot a los autobuses de Montgomery, que empezó cuando Rosa Parks se negó a ceder su asiento a un pasajero blanco. Inspirado por Gandhi, defendió la lucha no violenta contra la segregación racial. El 28 de agosto de 1963, ante más de 250.000 personas en Washington, pronunció su discurso «I have a dream».",
+      "En 1964 recibió el Premio Nobel de la Paz, y ese mismo año se aprobó la Ley de Derechos Civiles. Fue asesinado en Memphis el 4 de abril de 1968, con 39 años."
+    ],
+    "curiosidades": [
+      "En Estados Unidos se le recuerda cada año con un día festivo, el tercer lunes de enero.",
+      "Cuando recibió el Nobel de la Paz tenía 35 años, el más joven hasta entonces.",
+      "Su padre le cambió el nombre en honor al reformador alemán Martín Lutero."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Martin_Luther_King",
+    "comprobar": [
+      "1929",
+      "Atlanta",
+      "1964",
+      "1968"
+    ]
   }
 ]

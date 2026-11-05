@@ -4,7 +4,12 @@
     "apartado": "espana",
     "fecha": "2026-11-09",
     "nombre": "Rafa Nadal",
-    "alias": ["Rafael Nadal", "Nadal", "Rafa", "Rafael Nadal Parera"],
+    "alias": [
+      "Rafael Nadal",
+      "Nadal",
+      "Rafa",
+      "Rafael Nadal Parera"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1986.",
@@ -27,14 +32,22 @@
       "Ganó el oro olímpico de dobles en Río 2016 junto a Marc López."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Rafael_Nadal",
-    "comprobar": ["1986", "Manacor", "Roland Garros", "2024"]
+    "comprobar": [
+      "1986",
+      "Manacor",
+      "Roland Garros",
+      "2024"
+    ]
   },
   {
     "slug": "pablo-picasso",
     "apartado": "espana",
     "fecha": "2026-11-10",
     "nombre": "Pablo Picasso",
-    "alias": ["Picasso", "Pablo Ruiz Picasso"],
+    "alias": [
+      "Picasso",
+      "Pablo Ruiz Picasso"
+    ],
     "ambito": "Arte",
     "pistas": [
       "Nació en 1881.",
@@ -57,14 +70,23 @@
       "Hay museos dedicados a él en Málaga, Barcelona y París."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Pablo_Picasso",
-    "comprobar": ["1881", "Málaga", "Braque", "1973"]
+    "comprobar": [
+      "1881",
+      "Málaga",
+      "Braque",
+      "1973"
+    ]
   },
   {
     "slug": "miguel-de-cervantes",
     "apartado": "espana",
     "fecha": "2026-11-11",
     "nombre": "Miguel de Cervantes",
-    "alias": ["Cervantes", "Miguel de Cervantes Saavedra", "El manco de Lepanto"],
+    "alias": [
+      "Cervantes",
+      "Miguel de Cervantes Saavedra",
+      "El manco de Lepanto"
+    ],
     "ambito": "Literatura",
     "pistas": [
       "Nació en 1547.",
@@ -87,14 +109,23 @@
       "Al español se le llama a menudo «la lengua de Cervantes»."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Miguel_de_Cervantes",
-    "comprobar": ["1547", "Alcalá de Henares", "Lepanto", "1616"]
+    "comprobar": [
+      "1547",
+      "Alcalá de Henares",
+      "Lepanto",
+      "1616"
+    ]
   },
   {
     "slug": "rosalia",
     "apartado": "espana",
     "fecha": "2026-11-12",
     "nombre": "Rosalía",
-    "alias": ["Rosalia", "Rosalía Vila Tobella", "La Rosalía"],
+    "alias": [
+      "Rosalia",
+      "Rosalía Vila Tobella",
+      "La Rosalía"
+    ],
     "ambito": "Música",
     "pistas": [
       "Nació en 1992.",
@@ -117,14 +148,22 @@
       "Su tesis de fin de estudios fue el disco «El mal querer»."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Rosalía_(cantante)",
-    "comprobar": ["1992", "Sant Esteve Sesrovires", "El mal querer", "Motomami"]
+    "comprobar": [
+      "1992",
+      "Sant Esteve Sesrovires",
+      "El mal querer",
+      "Motomami"
+    ]
   },
   {
     "slug": "pau-gasol",
     "apartado": "espana",
     "fecha": "2026-11-13",
     "nombre": "Pau Gasol",
-    "alias": ["Gasol", "Pau Gasol Sáez"],
+    "alias": [
+      "Gasol",
+      "Pau Gasol Sáez"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1980.",
@@ -147,14 +186,22 @@
       "Los Lakers retiraron su dorsal, el 16, en 2023."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Pau_Gasol",
-    "comprobar": ["1980", "Barcelona", "Lakers", "Grizzlies"]
+    "comprobar": [
+      "1980",
+      "Barcelona",
+      "Lakers",
+      "Grizzlies"
+    ]
   },
   {
     "slug": "antonio-banderas",
     "apartado": "espana",
     "fecha": "2026-11-14",
     "nombre": "Antonio Banderas",
-    "alias": ["Banderas", "José Antonio Domínguez Bandera"],
+    "alias": [
+      "Banderas",
+      "José Antonio Domínguez Bandera"
+    ],
     "ambito": "Cine",
     "pistas": [
       "Nació en 1960.",
@@ -177,14 +224,24 @@
       "Recibió el Premio Nacional de Cinematografía en 2017."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Antonio_Banderas",
-    "comprobar": ["1960", "Málaga", "Dolor y gloria", "Zorro"]
+    "comprobar": [
+      "1960",
+      "Málaga",
+      "Dolor y gloria",
+      "Zorro"
+    ]
   },
   {
     "slug": "salvador-dali",
     "apartado": "espana",
     "fecha": "2026-11-15",
     "nombre": "Salvador Dalí",
-    "alias": ["Dalí", "Dali", "Salvador Dali", "Salvador Domingo Felipe Jacinto Dalí"],
+    "alias": [
+      "Dalí",
+      "Dali",
+      "Salvador Dali",
+      "Salvador Domingo Felipe Jacinto Dalí"
+    ],
     "ambito": "Arte",
     "pistas": [
       "Nació en 1904.",
@@ -207,14 +264,23 @@
       "El Castillo de Púbol, que regaló a Gala, también es hoy un museo."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Salvador_Dalí",
-    "comprobar": ["1904", "Figueres", "persistencia de la memoria", "1989"]
+    "comprobar": [
+      "1904",
+      "Figueres",
+      "persistencia de la memoria",
+      "1989"
+    ]
   },
   {
     "slug": "fernando-alonso",
     "apartado": "espana",
     "fecha": "2026-11-16",
     "nombre": "Fernando Alonso",
-    "alias": ["Alonso", "Fernando Alonso Díaz", "Nano"],
+    "alias": [
+      "Alonso",
+      "Fernando Alonso Díaz",
+      "Nano"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1981.",
@@ -237,14 +303,23 @@
       "Ganó el Gran Premio de Mónaco en 2006 y en 2007."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Fernando_Alonso",
-    "comprobar": ["1981", "Oviedo", "Le Mans", "Aston Martin"]
+    "comprobar": [
+      "1981",
+      "Oviedo",
+      "Le Mans",
+      "Aston Martin"
+    ]
   },
   {
     "slug": "penelope-cruz",
     "apartado": "espana",
     "fecha": "2026-11-17",
     "nombre": "Penélope Cruz",
-    "alias": ["Penelope Cruz", "Penélope Cruz Sánchez", "Pe"],
+    "alias": [
+      "Penelope Cruz",
+      "Penélope Cruz Sánchez",
+      "Pe"
+    ],
     "ambito": "Cine",
     "pistas": [
       "Nació en 1974.",
@@ -267,14 +342,23 @@
       "Antes de ser actriz estudió ballet clásico durante nueve años."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Penélope_Cruz",
-    "comprobar": ["1974", "Alcobendas", "Vicky Cristina Barcelona", "Volver"]
+    "comprobar": [
+      "1974",
+      "Alcobendas",
+      "Vicky Cristina Barcelona",
+      "Volver"
+    ]
   },
   {
     "slug": "federico-garcia-lorca",
     "apartado": "espana",
     "fecha": "2026-11-18",
     "nombre": "Federico García Lorca",
-    "alias": ["García Lorca", "Lorca", "Federico Garcia Lorca"],
+    "alias": [
+      "García Lorca",
+      "Lorca",
+      "Federico Garcia Lorca"
+    ],
     "ambito": "Literatura",
     "pistas": [
       "Nació en 1898.",
@@ -297,14 +381,23 @@
       "Además de escribir, dibujaba y tocaba el piano."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Federico_García_Lorca",
-    "comprobar": ["1898", "Fuente Vaqueros", "Romancero gitano", "1936"]
+    "comprobar": [
+      "1898",
+      "Fuente Vaqueros",
+      "Romancero gitano",
+      "1936"
+    ]
   },
   {
     "slug": "diego-velazquez",
     "apartado": "espana",
     "practica": true,
     "nombre": "Diego Velázquez",
-    "alias": ["Velázquez", "Velazquez", "Diego Rodríguez de Silva y Velázquez"],
+    "alias": [
+      "Velázquez",
+      "Velazquez",
+      "Diego Rodríguez de Silva y Velázquez"
+    ],
     "ambito": "Arte",
     "pistas": [
       "Nació en 1599.",
@@ -327,14 +420,23 @@
       "La mayor parte de su obra se conserva en el Museo del Prado."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Diego_Velázquez",
-    "comprobar": ["1599", "Sevilla", "Felipe IV", "1660"]
+    "comprobar": [
+      "1599",
+      "Sevilla",
+      "Felipe IV",
+      "1660"
+    ]
   },
   {
     "slug": "francisco-de-goya",
     "apartado": "espana",
     "practica": true,
     "nombre": "Francisco de Goya",
-    "alias": ["Goya", "Francisco de Goya y Lucientes", "Francisco Goya"],
+    "alias": [
+      "Goya",
+      "Francisco de Goya y Lucientes",
+      "Francisco Goya"
+    ],
     "ambito": "Arte",
     "pistas": [
       "Nació en 1746.",
@@ -357,14 +459,24 @@
       "Su cráneo desapareció cuando sus restos fueron exhumados en Burdeos."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Francisco_de_Goya",
-    "comprobar": ["1746", "Fuendetodos", "Burdeos", "1828"]
+    "comprobar": [
+      "1746",
+      "Fuendetodos",
+      "Burdeos",
+      "1828"
+    ]
   },
   {
     "slug": "antoni-gaudi",
     "apartado": "espana",
     "practica": true,
     "nombre": "Antoni Gaudí",
-    "alias": ["Gaudí", "Gaudi", "Antonio Gaudí", "Antoni Gaudi"],
+    "alias": [
+      "Gaudí",
+      "Gaudi",
+      "Antonio Gaudí",
+      "Antoni Gaudi"
+    ],
     "ambito": "Arquitectura",
     "pistas": [
       "Nació en 1852.",
@@ -387,14 +499,23 @@
       "La Sagrada Familia es una de las obras en construcción más visitadas del mundo."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Antoni_Gaudí",
-    "comprobar": ["1852", "Reus", "Sagrada Familia", "1926"]
+    "comprobar": [
+      "1852",
+      "Reus",
+      "Sagrada Familia",
+      "1926"
+    ]
   },
   {
     "slug": "pedro-almodovar",
     "apartado": "espana",
     "practica": true,
     "nombre": "Pedro Almodóvar",
-    "alias": ["Almodóvar", "Almodovar", "Pedro Almodovar"],
+    "alias": [
+      "Almodóvar",
+      "Almodovar",
+      "Pedro Almodovar"
+    ],
     "ambito": "Cine",
     "pistas": [
       "Nació en 1949.",
@@ -417,14 +538,22 @@
       "Actrices como Carmen Maura, Penélope Cruz o Rossy de Palma se conocen como «chicas Almodóvar»."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Pedro_Almodóvar",
-    "comprobar": ["Calzada de Calatrava", "Todo sobre mi madre", "Hable con ella", "habitación de al lado"]
+    "comprobar": [
+      "Calzada de Calatrava",
+      "Todo sobre mi madre",
+      "Hable con ella",
+      "habitación de al lado"
+    ]
   },
   {
     "slug": "julio-iglesias",
     "apartado": "espana",
     "practica": true,
     "nombre": "Julio Iglesias",
-    "alias": ["Julio Iglesias de la Cueva", "Julio"],
+    "alias": [
+      "Julio Iglesias de la Cueva",
+      "Julio"
+    ],
     "ambito": "Música",
     "pistas": [
       "Nació en 1943.",
@@ -447,14 +576,23 @@
       "Es licenciado en Derecho."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Julio_Iglesias",
-    "comprobar": ["1943", "Madrid", "Gwendolyne", "Real Madrid"]
+    "comprobar": [
+      "1943",
+      "Madrid",
+      "Gwendolyne",
+      "Real Madrid"
+    ]
   },
   {
     "slug": "lola-flores",
     "apartado": "espana",
     "practica": true,
     "nombre": "Lola Flores",
-    "alias": ["La Faraona", "Lola", "María Dolores Flores Ruiz"],
+    "alias": [
+      "La Faraona",
+      "Lola",
+      "María Dolores Flores Ruiz"
+    ],
     "ambito": "Música",
     "pistas": [
       "Nació en 1923.",
@@ -477,14 +615,23 @@
       "Jerez de la Frontera le dedicó una estatua en el barrio de San Miguel, donde nació."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Lola_Flores",
-    "comprobar": ["1923", "Jerez de la Frontera", "Faraona", "1995"]
+    "comprobar": [
+      "1923",
+      "Jerez de la Frontera",
+      "Faraona",
+      "1995"
+    ]
   },
   {
     "slug": "santiago-ramon-y-cajal",
     "apartado": "espana",
     "practica": true,
     "nombre": "Santiago Ramón y Cajal",
-    "alias": ["Ramón y Cajal", "Cajal", "Santiago Ramon y Cajal"],
+    "alias": [
+      "Ramón y Cajal",
+      "Cajal",
+      "Santiago Ramon y Cajal"
+    ],
     "ambito": "Ciencia",
     "pistas": [
       "Nació en 1852.",
@@ -507,14 +654,22 @@
       "Además de científico fue un gran aficionado a la fotografía."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Santiago_Ramón_y_Cajal",
-    "comprobar": ["1852", "Petilla de Aragón", "Golgi", "1934"]
+    "comprobar": [
+      "1852",
+      "Petilla de Aragón",
+      "Golgi",
+      "1934"
+    ]
   },
   {
     "slug": "severo-ochoa",
     "apartado": "espana",
     "practica": true,
     "nombre": "Severo Ochoa",
-    "alias": ["Ochoa", "Severo Ochoa de Albornoz"],
+    "alias": [
+      "Ochoa",
+      "Severo Ochoa de Albornoz"
+    ],
     "ambito": "Ciencia",
     "pistas": [
       "Nació en 1905.",
@@ -537,14 +692,23 @@
       "Está enterrado en Luarca, su pueblo natal."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Severo_Ochoa",
-    "comprobar": ["1905", "Luarca", "Kornberg", "1993"]
+    "comprobar": [
+      "1905",
+      "Luarca",
+      "Kornberg",
+      "1993"
+    ]
   },
   {
     "slug": "andres-iniesta",
     "apartado": "espana",
     "practica": true,
     "nombre": "Andrés Iniesta",
-    "alias": ["Iniesta", "Andrés Iniesta Luján", "Andres Iniesta"],
+    "alias": [
+      "Iniesta",
+      "Andrés Iniesta Luján",
+      "Andres Iniesta"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1984.",
@@ -567,14 +731,22 @@
       "Tiene una bodega en su pueblo, Fuentealbilla."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Andrés_Iniesta",
-    "comprobar": ["1984", "Fuentealbilla", "Vissel Kobe", "Jarque"]
+    "comprobar": [
+      "1984",
+      "Fuentealbilla",
+      "Vissel Kobe",
+      "Jarque"
+    ]
   },
   {
     "slug": "carolina-marin",
     "apartado": "espana",
     "practica": true,
     "nombre": "Carolina Marín",
-    "alias": ["Carolina Marin", "Carolina María Marín Martín"],
+    "alias": [
+      "Carolina Marin",
+      "Carolina María Marín Martín"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1993.",
@@ -597,14 +769,22 @@
       "Es la primera europea en ser campeona del mundo de bádminton tres veces."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Carolina_Marín",
-    "comprobar": ["1993", "Huelva", "Río", "bádminton"]
+    "comprobar": [
+      "1993",
+      "Huelva",
+      "Río",
+      "bádminton"
+    ]
   },
   {
     "slug": "javier-bardem",
     "apartado": "espana",
     "practica": true,
     "nombre": "Javier Bardem",
-    "alias": ["Bardem", "Javier Ángel Encinas Bardem"],
+    "alias": [
+      "Bardem",
+      "Javier Ángel Encinas Bardem"
+    ],
     "ambito": "Cine",
     "pistas": [
       "Nació en 1969.",
@@ -627,14 +807,22 @@
       "Su peinado en «No es país para viejos» se hizo tan famoso como el personaje."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Javier_Bardem",
-    "comprobar": ["1969", "Las Palmas", "No es país para viejos", "Skyfall"]
+    "comprobar": [
+      "1969",
+      "Las Palmas",
+      "No es país para viejos",
+      "Skyfall"
+    ]
   },
   {
     "slug": "alejandro-sanz",
     "apartado": "espana",
     "practica": true,
     "nombre": "Alejandro Sanz",
-    "alias": ["Sanz", "Alejandro Sánchez Pizarro"],
+    "alias": [
+      "Sanz",
+      "Alejandro Sánchez Pizarro"
+    ],
     "ambito": "Música",
     "pistas": [
       "Nació en 1968.",
@@ -657,14 +845,24 @@
       "Sus raíces familiares están en Algeciras (Cádiz)."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Alejandro_Sanz",
-    "comprobar": ["1968", "Madrid", "Corazón partío", "La tortura"]
+    "comprobar": [
+      "1968",
+      "Madrid",
+      "Corazón partío",
+      "La tortura"
+    ]
   },
   {
     "slug": "miguel-indurain",
     "apartado": "espana",
     "practica": true,
     "nombre": "Miguel Induráin",
-    "alias": ["Induráin", "Indurain", "Miguel Indurain", "Miguelón"],
+    "alias": [
+      "Induráin",
+      "Indurain",
+      "Miguel Indurain",
+      "Miguelón"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1964.",
@@ -687,14 +885,23 @@
       "Recibió el Premio Príncipe de Asturias de los Deportes en 1992."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Miguel_Induráin",
-    "comprobar": ["1964", "Villava", "Banesto", "Atlanta"]
+    "comprobar": [
+      "1964",
+      "Villava",
+      "Banesto",
+      "Atlanta"
+    ]
   },
   {
     "slug": "seve-ballesteros",
     "apartado": "espana",
     "practica": true,
     "nombre": "Seve Ballesteros",
-    "alias": ["Severiano Ballesteros", "Ballesteros", "Seve"],
+    "alias": [
+      "Severiano Ballesteros",
+      "Ballesteros",
+      "Seve"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1957.",
@@ -717,14 +924,22 @@
       "El aeropuerto de Santander lleva su nombre."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Severiano_Ballesteros",
-    "comprobar": ["1957", "Pedreña", "Augusta", "2011"]
+    "comprobar": [
+      "1957",
+      "Pedreña",
+      "Augusta",
+      "2011"
+    ]
   },
   {
     "slug": "clara-campoamor",
     "apartado": "espana",
     "practica": true,
     "nombre": "Clara Campoamor",
-    "alias": ["Campoamor", "Clara Campoamor Rodríguez"],
+    "alias": [
+      "Campoamor",
+      "Clara Campoamor Rodríguez"
+    ],
     "ambito": "Política",
     "pistas": [
       "Nació en 1888.",
@@ -747,14 +962,22 @@
       "Sus restos descansan en San Sebastián."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Clara_Campoamor",
-    "comprobar": ["1888", "Madrid", "Victoria Kent", "Lausana"]
+    "comprobar": [
+      "1888",
+      "Madrid",
+      "Victoria Kent",
+      "Lausana"
+    ]
   },
   {
     "slug": "antonio-machado",
     "apartado": "espana",
     "practica": true,
     "nombre": "Antonio Machado",
-    "alias": ["Machado", "Antonio Machado Ruiz"],
+    "alias": [
+      "Machado",
+      "Antonio Machado Ruiz"
+    ],
     "ambito": "Literatura",
     "pistas": [
       "Nació en 1875.",
@@ -777,14 +1000,23 @@
       "Se le asocia con la Generación del 98, aunque su obra va más allá de ese grupo."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Antonio_Machado",
-    "comprobar": ["1875", "Sevilla", "Campos de Castilla", "Colliure"]
+    "comprobar": [
+      "1875",
+      "Sevilla",
+      "Campos de Castilla",
+      "Colliure"
+    ]
   },
   {
     "slug": "montserrat-caballe",
     "apartado": "espana",
     "practica": true,
     "nombre": "Montserrat Caballé",
-    "alias": ["Caballé", "Caballe", "Montserrat Caballe"],
+    "alias": [
+      "Caballé",
+      "Caballe",
+      "Montserrat Caballe"
+    ],
     "ambito": "Música",
     "pistas": [
       "Nació en 1933.",
@@ -807,14 +1039,23 @@
       "Su hija, Montserrat Martí, también es soprano."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Montserrat_Caballé",
-    "comprobar": ["1933", "Barcelona", "Carnegie Hall", "2018"]
+    "comprobar": [
+      "1933",
+      "Barcelona",
+      "Carnegie Hall",
+      "2018"
+    ]
   },
   {
     "slug": "joan-miro",
     "apartado": "espana",
     "practica": true,
     "nombre": "Joan Miró",
-    "alias": ["Miró", "Miro", "Joan Miro"],
+    "alias": [
+      "Miró",
+      "Miro",
+      "Joan Miro"
+    ],
     "ambito": "Arte",
     "pistas": [
       "Nació en 1893.",
@@ -837,14 +1078,24 @@
       "Su cuadro «La masía» lo compró el escritor Ernest Hemingway."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Joan_Miró",
-    "comprobar": ["1893", "Barcelona", "Mont-roig", "1983"]
+    "comprobar": [
+      "1893",
+      "Barcelona",
+      "Mont-roig",
+      "1983"
+    ]
   },
   {
     "slug": "isabel-la-catolica",
     "apartado": "espana",
     "practica": true,
     "nombre": "Isabel la Católica",
-    "alias": ["Isabel I de Castilla", "Isabel I", "Isabel de Castilla", "Isabel la Catolica"],
+    "alias": [
+      "Isabel I de Castilla",
+      "Isabel I",
+      "Isabel de Castilla",
+      "Isabel la Catolica"
+    ],
     "ambito": "Historia",
     "pistas": [
       "Nació en 1451.",
@@ -867,14 +1118,24 @@
       "La gramática de Nebrija, la primera de la lengua castellana, se le dedicó en 1492."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Isabel_I_de_Castilla",
-    "comprobar": ["1451", "Madrigal de las Altas Torres", "Medina del Campo", "1504"]
+    "comprobar": [
+      "1451",
+      "Madrigal de las Altas Torres",
+      "Medina del Campo",
+      "1504"
+    ]
   },
   {
     "slug": "marc-marquez",
     "apartado": "espana",
     "practica": true,
     "nombre": "Marc Márquez",
-    "alias": ["Márquez", "Marquez", "Marc Marquez", "Marc Márquez Alentà"],
+    "alias": [
+      "Márquez",
+      "Marquez",
+      "Marc Marquez",
+      "Marc Márquez Alentà"
+    ],
     "ambito": "Deporte",
     "pistas": [
       "Nació en 1993.",
@@ -897,6 +1158,1144 @@
       "Tiene un museo en su ciudad natal, Cervera."
     ],
     "fuente": "https://es.wikipedia.org/wiki/Marc_Márquez",
-    "comprobar": ["1993", "Cervera", "2013", "2025"]
+    "comprobar": [
+      "1993",
+      "Cervera",
+      "2013",
+      "2025"
+    ]
+  },
+  {
+    "slug": "carlos-alcaraz",
+    "apartado": "espana",
+    "fecha": "2026-11-19",
+    "nombre": "Carlos Alcaraz",
+    "alias": [
+      "Alcaraz",
+      "Carlitos",
+      "Carlos Alcaraz Garfia"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 2003.",
+      "Es deportista.",
+      "Con 19 años se convirtió en el número uno del mundo más joven de la historia de su deporte.",
+      "Nació en El Palmar (Murcia).",
+      "Es tenista y ganó Wimbledon en 2023 ante Novak Djokovic.",
+      "Sus iniciales son C. A."
+    ],
+    "resumen": "Tenista murciano, número uno del mundo más joven de la historia y ganador de varios Grand Slams, entre ellos Wimbledon y Roland Garros.",
+    "biografia": [
+      "Carlos Alcaraz Garfia nació el 5 de mayo de 2003 en El Palmar, Murcia. Empezó a jugar al tenis de niño en el club donde trabajaba su padre y con 15 años entró en la academia de Juan Carlos Ferrero, extenista y número uno del mundo, que fue su entrenador durante años.",
+      "En 2022, con 19 años, ganó el Abierto de Estados Unidos y se convirtió en el número uno del mundo más joven desde que existe la clasificación ATP. En 2023 ganó Wimbledon tras una gran final contra Novak Djokovic, y en 2024 sumó Roland Garros y un segundo Wimbledon.",
+      "Es famoso por su variedad de golpes, sus dejadas y su energía en la pista. En los Juegos Olímpicos de París 2024 ganó la medalla de plata."
+    ],
+    "curiosidades": [
+      "Su abuelo, también llamado Carlos, le inculcó la frase «cabeza, corazón y cojones».",
+      "En 2024 ganó Roland Garros y Wimbledon el mismo año, como habían hecho muy pocos.",
+      "Se le compara a menudo con Rafa Nadal, su ídolo de la infancia."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Carlos_Alcaraz",
+    "comprobar": [
+      "2003",
+      "El Palmar",
+      "Ferrero",
+      "Wimbledon"
+    ]
+  },
+  {
+    "slug": "lope-de-vega",
+    "apartado": "espana",
+    "fecha": "2026-11-20",
+    "nombre": "Lope de Vega",
+    "alias": [
+      "Lope",
+      "Félix Lope de Vega",
+      "Félix Lope de Vega y Carpio"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1562.",
+      "Fue escritor.",
+      "Cervantes lo llamó «monstruo de naturaleza» por lo mucho que escribía.",
+      "Nació en Madrid.",
+      "Escribió «Fuenteovejuna» y «El perro del hortelano».",
+      "Sus iniciales son L. de V."
+    ],
+    "resumen": "Dramaturgo y poeta madrileño del Siglo de Oro, creador del teatro español moderno y autor de «Fuenteovejuna».",
+    "biografia": [
+      "Félix Lope de Vega y Carpio nació el 25 de noviembre de 1562 en Madrid. Fue un niño precoz que, según contaba, ya escribía comedias a los 12 años. Tuvo una vida agitada: fue soldado, se embarcó en la Armada Invencible en 1588 y vivió numerosos amores que reflejó en su obra.",
+      "Fue el gran creador de la comedia nueva, el teatro que triunfaba en los corrales del Siglo de Oro, y explicó sus reglas en «Arte nuevo de hacer comedias». Escribió cientos de obras de teatro, entre ellas «Fuenteovejuna», «El perro del hortelano», «El caballero de Olmedo» y «Peribáñez», además de muchísima poesía.",
+      "En 1614 se ordenó sacerdote. Murió en Madrid el 27 de agosto de 1635 y su entierro fue multitudinario."
+    ],
+    "curiosidades": [
+      "Le llamaban «el Fénix de los ingenios».",
+      "Su casa de Madrid, hoy museo, está en la calle de Cervantes, su gran rival.",
+      "Se le atribuyen más de mil comedias, aunque se conservan unas 400."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Lope_de_Vega",
+    "comprobar": [
+      "1562",
+      "Madrid",
+      "Fuenteovejuna",
+      "1635"
+    ]
+  },
+  {
+    "slug": "paco-de-lucia",
+    "apartado": "espana",
+    "fecha": "2026-11-21",
+    "nombre": "Paco de Lucía",
+    "alias": [
+      "Paco de Lucia",
+      "Francisco Sánchez Gómez"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1947.",
+      "Se dedicó a la música.",
+      "Ganó el Premio Príncipe de Asturias de las Artes en 2004.",
+      "Nació en Algeciras (Cádiz).",
+      "Fue un guitarrista flamenco y su rumba «Entre dos aguas» es mundialmente famosa.",
+      "Sus iniciales artísticas son P. de L."
+    ],
+    "resumen": "Guitarrista flamenco gaditano que revolucionó el flamenco y lo llevó a todo el mundo; autor de «Entre dos aguas».",
+    "biografia": [
+      "Francisco Sánchez Gómez nació el 21 de diciembre de 1947 en Algeciras, Cádiz. Tomó su nombre artístico de su madre, Lucía, y aprendió a tocar la guitarra con su padre, que le hacía practicar durante horas.",
+      "Con «Entre dos aguas» (1973) llegó a un público enorme. Grabó una decena de discos con el cantaor Camarón de la Isla, renovó el flamenco con armonías nuevas y lo mezcló con el jazz y otras músicas. Fue él quien incorporó al flamenco el cajón peruano.",
+      "En 1981 grabó con los guitarristas Al Di Meola y John McLaughlin el disco «Friday Night in San Francisco», un éxito mundial. Murió el 25 de febrero de 2014 en Playa del Carmen, México."
+    ],
+    "curiosidades": [
+      "Introdujo en el flamenco el cajón, un instrumento de percusión de origen peruano.",
+      "Su último disco, «Canción andaluza», ganó un Grammy Latino tras su muerte.",
+      "Está considerado uno de los mejores guitarristas de todos los tiempos."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Paco_de_Lucía",
+    "comprobar": [
+      "1947",
+      "Algeciras",
+      "Entre dos aguas",
+      "2014"
+    ]
+  },
+  {
+    "slug": "iker-casillas",
+    "apartado": "espana",
+    "fecha": "2026-11-22",
+    "nombre": "Iker Casillas",
+    "alias": [
+      "Casillas",
+      "Iker",
+      "San Iker"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1981.",
+      "Es deportista.",
+      "Levantó como capitán la Copa del Mundo de 2010.",
+      "Nació en Móstoles (Madrid).",
+      "Fue portero del Real Madrid y le llamaban «San Iker».",
+      "Sus iniciales son I. C."
+    ],
+    "resumen": "Portero madrileño, capitán de la selección española campeona del mundo en 2010 y leyenda del Real Madrid.",
+    "biografia": [
+      "Iker Casillas nació el 20 de mayo de 1981 en Móstoles, Madrid. Entró de niño en la cantera del Real Madrid y debutó con el primer equipo en 1999, con 18 años.",
+      "Con el Real Madrid ganó tres Ligas de Campeones (2000, 2002 y 2014) y cinco Ligas. Sus paradas imposibles le valieron el apodo de «San Iker». Como capitán de la selección española levantó la Eurocopa de 2008, el Mundial de 2010 y la Eurocopa de 2012. En la final del Mundial hizo una parada decisiva ante el neerlandés Arjen Robben.",
+      "En 2015 se marchó al Oporto, donde jugó hasta su retirada en 2020."
+    ],
+    "curiosidades": [
+      "En la final de la Champions de 2002 salió desde el banquillo y fue clave en la victoria.",
+      "Recibió el Premio Príncipe de Asturias de los Deportes en 2012, junto a Xavi Hernández.",
+      "Su gesto de besar la Copa del Mundo es una de las imágenes más famosas del deporte español."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Iker_Casillas",
+    "comprobar": [
+      "1981",
+      "Móstoles",
+      "Oporto",
+      "Robben"
+    ]
+  },
+  {
+    "slug": "camilo-jose-cela",
+    "apartado": "espana",
+    "fecha": "2026-11-23",
+    "nombre": "Camilo José Cela",
+    "alias": [
+      "Cela",
+      "Camilo Jose Cela"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1916.",
+      "Fue escritor.",
+      "Ganó el Premio Nobel de Literatura en 1989.",
+      "Nació en Iria Flavia, en Padrón (A Coruña).",
+      "Escribió «La familia de Pascual Duarte» y «La colmena».",
+      "Sus iniciales son C. J. C."
+    ],
+    "resumen": "Escritor gallego, autor de «La familia de Pascual Duarte» y «La colmena», premio Nobel de Literatura en 1989.",
+    "biografia": [
+      "Camilo José Cela nació el 11 de mayo de 1916 en Iria Flavia, en el municipio de Padrón (A Coruña). Pasó la mayor parte de su vida en Madrid, donde empezó a estudiar Medicina y Derecho sin terminar ninguna de las dos carreras.",
+      "En 1942 publicó «La familia de Pascual Duarte», una novela dura y violenta que inauguró el llamado tremendismo. Su obra más ambiciosa, «La colmena», retrata la vida de decenas de personajes en el Madrid de la posguerra; por la censura se publicó primero en Buenos Aires, en 1951. También escribió libros de viajes como «Viaje a la Alcarria».",
+      "Recibió el Premio Príncipe de Asturias en 1987, el Nobel de Literatura en 1989 y el Premio Cervantes en 1995. Murió en Madrid el 17 de enero de 2002."
+    ],
+    "curiosidades": [
+      "Fue senador por designación real en las primeras Cortes de la democracia.",
+      "En 1996 el rey le concedió el título de marqués de Iria Flavia.",
+      "Era famoso por su humor y sus salidas provocadoras en televisión."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Camilo_José_Cela",
+    "comprobar": [
+      "1916",
+      "Iria Flavia",
+      "La colmena",
+      "2002"
+    ]
+  },
+  {
+    "slug": "rocio-jurado",
+    "apartado": "espana",
+    "fecha": "2026-11-24",
+    "nombre": "Rocío Jurado",
+    "alias": [
+      "Rocio Jurado",
+      "La más grande",
+      "María del Rocío Mohedano Jurado"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1944.",
+      "Se dedicó a la música.",
+      "Protagonizó la película «El amor brujo», de Carlos Saura.",
+      "Nació en Chipiona (Cádiz).",
+      "Cantó «Como una ola» y «Se nos rompió el amor» y la llamaban «la más grande».",
+      "Sus iniciales artísticas son R. J."
+    ],
+    "resumen": "Cantante gaditana de copla y canción española, conocida como «la más grande», intérprete de «Como una ola».",
+    "biografia": [
+      "María del Rocío Mohedano Jurado nació el 18 de septiembre de 1944 en Chipiona, Cádiz. Desde niña cantaba en festivales y concursos, y con 16 años se trasladó a Madrid para trabajar en tablaos flamencos.",
+      "Empezó cantando copla y flamenco y, con los años, se convirtió en una de las grandes voces de la canción española. Canciones como «Como una ola», «Se nos rompió el amor», «Señora» o «Muera el amor» fueron enormes éxitos en España y Latinoamérica. Su potente voz y su presencia en el escenario le valieron el apodo de «la más grande».",
+      "También fue actriz y protagonizó películas como «El amor brujo» (1986), de Carlos Saura. Murió el 1 de junio de 2006."
+    ],
+    "curiosidades": [
+      "En Chipiona, su pueblo, tiene una estatua.",
+      "Su nombre artístico une su nombre de pila y el apellido de su madre.",
+      "Llevó la copla a programas de televisión de todo el mundo hispano."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Rocío_Jurado",
+    "comprobar": [
+      "1944",
+      "Chipiona",
+      "El amor brujo",
+      "2006"
+    ]
+  },
+  {
+    "slug": "pedro-duque",
+    "apartado": "espana",
+    "fecha": "2026-11-25",
+    "nombre": "Pedro Duque",
+    "alias": [
+      "Duque",
+      "Pedro Francisco Duque Duque"
+    ],
+    "ambito": "Ciencia y exploración",
+    "pistas": [
+      "Nació en 1963.",
+      "Es ingeniero.",
+      "Fue ministro de Ciencia del Gobierno de España.",
+      "Nació en Madrid.",
+      "Fue el primer astronauta español y viajó al espacio en 1998.",
+      "Sus iniciales son P. D."
+    ],
+    "resumen": "Ingeniero madrileño, primer astronauta español, que viajó al espacio en el transbordador Discovery y a la Estación Espacial Internacional.",
+    "biografia": [
+      "Pedro Duque nació el 14 de marzo de 1963 en Madrid. Estudió Ingeniería Aeronáutica en la Universidad Politécnica de Madrid y trabajó en el centro de control de satélites de la Agencia Espacial Europea en Alemania.",
+      "En 1992 fue seleccionado como astronauta de la Agencia Espacial Europea. En octubre de 1998 viajó al espacio a bordo del transbordador Discovery, en una misión en la que también participaba el veterano John Glenn, y se convirtió en el primer español en ir al espacio. En 2003 volvió, esta vez en una nave rusa Soyuz, para pasar unos días en la Estación Espacial Internacional en la misión Cervantes.",
+      "Entre 2018 y 2021 fue ministro de Ciencia, Innovación y Universidades."
+    ],
+    "curiosidades": [
+      "En su primer viaje dio más de 130 vueltas a la Tierra.",
+      "Su misión de 2003 se llamó «Cervantes».",
+      "Recibió el Premio Príncipe de Asturias de Cooperación Internacional en 1999, junto a otros astronautas."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Pedro_Duque",
+    "comprobar": [
+      "1963",
+      "Madrid",
+      "Discovery",
+      "Soyuz"
+    ]
+  },
+  {
+    "slug": "gloria-fuertes",
+    "apartado": "espana",
+    "fecha": "2026-11-26",
+    "nombre": "Gloria Fuertes",
+    "alias": [
+      "Fuertes",
+      "Gloria Fuertes García"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1917.",
+      "Fue escritora.",
+      "Escribió sobre todo poesía para niños, aunque también para adultos.",
+      "Nació en Madrid, en el barrio de Lavapiés.",
+      "Se hizo muy popular en programas infantiles de televisión como «Un globo, dos globos, tres globos».",
+      "Sus iniciales son G. F."
+    ],
+    "resumen": "Poeta madrileña, muy querida por sus versos para niños y sus apariciones en la televisión de los años setenta y ochenta.",
+    "biografia": [
+      "Gloria Fuertes nació el 28 de julio de 1917 en Madrid, en el barrio de Lavapiés, en una familia humilde. Desde niña escribía versos y publicó su primer poema con 14 años. Trabajó como contable en una fábrica, como secretaria y en revistas infantiles.",
+      "Escribió poesía para adultos, con humor, ternura y mucha ironía, en libros como «Poeta de guardia», y sobre todo para niños. En 1961 recibió una beca para enseñar literatura española en universidades de Estados Unidos.",
+      "En los años setenta y ochenta se hizo enormemente popular en programas infantiles de Televisión Española como «Un globo, dos globos, tres globos» y «La cometa blanca», con sus corbatas y su voz inconfundible. Murió en Madrid el 27 de noviembre de 1998."
+    ],
+    "curiosidades": [
+      "En 2017, centenario de su nacimiento, se le dedicaron numerosos homenajes en toda España.",
+      "Llevaba casi siempre corbata, algo poco habitual en las mujeres de su época."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Gloria_Fuertes",
+    "comprobar": [
+      "1917",
+      "Madrid",
+      "Un globo, dos globos",
+      "1998"
+    ]
+  },
+  {
+    "slug": "joaquin-sabina",
+    "apartado": "espana",
+    "fecha": "2026-11-27",
+    "nombre": "Joaquín Sabina",
+    "alias": [
+      "Sabina",
+      "Joaquin Sabina",
+      "Joaquín Ramón Martínez Sabina"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1949.",
+      "Se dedica a la música.",
+      "En los años setenta vivió exiliado en Londres.",
+      "Nació en Úbeda (Jaén).",
+      "Es el cantautor de «19 días y 500 noches» y suele llevar bombín.",
+      "Sus iniciales artísticas son J. S."
+    ],
+    "resumen": "Cantautor jienense, autor de «19 días y 500 noches» y «Y nos dieron las diez», uno de los grandes de la canción en español.",
+    "biografia": [
+      "Joaquín Ramón Martínez Sabina nació el 12 de febrero de 1949 en Úbeda, Jaén. En plena dictadura, tras lanzar un cóctel molotov contra una sucursal bancaria como protesta, huyó a Londres, donde vivió varios años y empezó a cantar en bares.",
+      "De vuelta en Madrid, actuó en el local La Mandrágora y en los años ochenta y noventa se convirtió en uno de los cantautores más populares de España y Latinoamérica, con canciones como «Pongamos que hablo de Madrid», «Y nos dieron las diez» o «Y sin embargo». Su disco «19 días y 500 noches» (1999) es uno de los más vendidos de su carrera.",
+      "Sus letras, llenas de ironía y de personajes de la noche, y su bombín son sus señas de identidad. En 2025 se despidió de los escenarios con la gira «Hola y adiós»."
+    ],
+    "curiosidades": [
+      "Compartió disco y gira con Joan Manuel Serrat bajo el título «Dos pájaros de un tiro».",
+      "«Pongamos que hablo de Madrid» se hizo muy popular en la voz de Antonio Flores.",
+      "Además de canciones, ha publicado varios libros de poemas y sonetos."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Joaquín_Sabina",
+    "comprobar": [
+      "1949",
+      "Úbeda",
+      "19 días y 500 noches",
+      "Mandrágora"
+    ]
+  },
+  {
+    "slug": "emilia-pardo-bazan",
+    "apartado": "espana",
+    "fecha": "2026-11-28",
+    "nombre": "Emilia Pardo Bazán",
+    "alias": [
+      "Pardo Bazán",
+      "Pardo Bazan",
+      "Emilia Pardo Bazan"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1851.",
+      "Fue escritora.",
+      "Fue la primera mujer catedrática de la Universidad Central de Madrid.",
+      "Nació en A Coruña.",
+      "Escribió «Los pazos de Ulloa» y defendió el naturalismo.",
+      "Sus iniciales son E. P. B."
+    ],
+    "resumen": "Novelista y periodista gallega, autora de «Los pazos de Ulloa», gran defensora del naturalismo y de los derechos de las mujeres.",
+    "biografia": [
+      "Emilia Pardo Bazán nació el 16 de septiembre de 1851 en A Coruña, en una familia noble. Recibió una educación excepcional para una mujer de la época y se formó leyendo todo lo que caía en sus manos.",
+      "En 1883 publicó «La cuestión palpitante», un ensayo que dio a conocer en España el naturalismo, la corriente literaria del francés Émile Zola. Su novela más famosa, «Los pazos de Ulloa» (1886), retrata la decadencia de la nobleza rural gallega. Escribió también cientos de cuentos y numerosos artículos.",
+      "Defendió el acceso de las mujeres a la educación y a la vida pública. La Real Academia Española rechazó su candidatura, pero en 1916 se convirtió en la primera mujer catedrática de la Universidad Central de Madrid. Murió en Madrid el 12 de mayo de 1921."
+    ],
+    "curiosidades": [
+      "Escribió alrededor de 600 cuentos.",
+      "Su casa de A Coruña es hoy la sede de la Real Academia Galega.",
+      "Tenía el título de condesa de Pardo Bazán."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Emilia_Pardo_Bazán",
+    "comprobar": [
+      "1851",
+      "Coruña",
+      "Los pazos de Ulloa",
+      "1921"
+    ]
+  },
+  {
+    "slug": "raphael",
+    "apartado": "espana",
+    "fecha": "2026-11-29",
+    "nombre": "Raphael",
+    "alias": [
+      "Rafael",
+      "Miguel Rafael Martos Sánchez",
+      "Raphael de Linares"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1943.",
+      "Se dedica a la música.",
+      "Representó a España en Eurovisión dos años seguidos, en 1966 y 1967.",
+      "Nació en Linares (Jaén).",
+      "Es famoso por «Escándalo», «Mi gran noche» y «Yo soy aquel».",
+      "Su nombre artístico empieza por R y se escribe con «ph»."
+    ],
+    "resumen": "Cantante jienense, una de las grandes figuras de la canción melódica en español, con éxitos como «Mi gran noche» y «Escándalo».",
+    "biografia": [
+      "Miguel Rafael Martos Sánchez nació el 5 de mayo de 1943 en Linares, Jaén, y se crio en Madrid. Cantaba desde niño en el coro de su parroquia y con nueve años ganó un premio como mejor voz infantil en un festival en Salzburgo, Austria.",
+      "Se dio a conocer en el Festival de Benidorm de 1962 y representó a España en Eurovisión en 1966 con «Yo soy aquel» y en 1967 con «Hablemos del amor». Desde entonces ha encadenado éxitos como «Mi gran noche», «Escándalo», «Como yo te amo» o «Qué sabe nadie».",
+      "Su forma de interpretar, muy teatral, y su longevidad en los escenarios lo han convertido en un mito de la música en español, admirado por varias generaciones."
+    ],
+    "curiosidades": [
+      "Eligió escribir su nombre con «ph» para que fuera igual en todos los idiomas.",
+      "Es uno de los pocos artistas que ha recibido un «disco de uranio» por sus ventas.",
+      "Ha actuado durante más de seis décadas."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Raphael_(cantante)",
+    "comprobar": [
+      "1943",
+      "Linares",
+      "Yo soy aquel",
+      "Escándalo"
+    ]
+  },
+  {
+    "slug": "benito-perez-galdos",
+    "apartado": "espana",
+    "fecha": "2026-11-30",
+    "nombre": "Benito Pérez Galdós",
+    "alias": [
+      "Galdós",
+      "Galdos",
+      "Pérez Galdós",
+      "Benito Perez Galdos"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1843.",
+      "Fue escritor.",
+      "Escribió 46 novelas de historia de España, los «Episodios nacionales».",
+      "Nació en Las Palmas de Gran Canaria.",
+      "Es el autor de «Fortunata y Jacinta».",
+      "Sus iniciales son B. P. G."
+    ],
+    "resumen": "Novelista canario, gran retratista del Madrid del siglo XIX, autor de «Fortunata y Jacinta» y los «Episodios nacionales».",
+    "biografia": [
+      "Benito Pérez Galdós nació el 10 de mayo de 1843 en Las Palmas de Gran Canaria. En 1862 se trasladó a Madrid para estudiar Derecho, pero pronto se dedicó al periodismo y a la literatura, y la ciudad se convirtió en el gran escenario de su obra.",
+      "Entre 1873 y 1912 escribió los «Episodios nacionales», 46 novelas que recorren la historia de España del siglo XIX, desde Trafalgar. Sus novelas, como «Doña Perfecta», «Marianela», «Fortunata y Jacinta» o «Misericordia», retratan con detalle la sociedad de su tiempo y lo convierten en el gran novelista del realismo español.",
+      "Fue diputado y miembro de la Real Academia Española, y fue propuesto varias veces para el Nobel. En sus últimos años se quedó ciego, pero siguió dictando sus obras. Murió en Madrid el 4 de enero de 1920."
+    ],
+    "curiosidades": [
+      "Su casa natal en Las Palmas es hoy la Casa-Museo Pérez Galdós.",
+      "Miles de personas acompañaron su entierro en Madrid.",
+      "Escribió también teatro, como «Electra», que causó un gran escándalo en su estreno."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Benito_Pérez_Galdós",
+    "comprobar": [
+      "1843",
+      "Las Palmas",
+      "Episodios nacionales",
+      "1920"
+    ]
+  },
+  {
+    "slug": "alexia-putellas",
+    "apartado": "espana",
+    "fecha": "2026-12-01",
+    "nombre": "Alexia Putellas",
+    "alias": [
+      "Alexia",
+      "Putellas",
+      "Alèxia Putellas"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1994.",
+      "Es deportista.",
+      "Ganó el Balón de Oro en 2021 y en 2022.",
+      "Nació en Mollet del Vallès (Barcelona).",
+      "Es futbolista del FC Barcelona y fue campeona del mundo con España en 2023.",
+      "Sus iniciales son A. P."
+    ],
+    "resumen": "Futbolista catalana del FC Barcelona, ganadora de dos Balones de Oro y campeona del mundo con España en 2023.",
+    "biografia": [
+      "Alexia Putellas nació el 4 de febrero de 1994 en Mollet del Vallès, Barcelona. Empezó a jugar al fútbol en el patio del colegio con los niños y pasó por la cantera del FC Barcelona y del Espanyol.",
+      "En 2012 volvió al Barcelona, donde se convirtió en capitana y en la gran figura del equipo que dominó el fútbol europeo, con varias Ligas de Campeones. En 2021 y 2022 ganó el Balón de Oro y el premio The Best de la FIFA a la mejor jugadora del mundo.",
+      "Con la selección española ganó el Mundial de 2023 en Australia y Nueva Zelanda. Es una de las deportistas que más han contribuido al crecimiento del fútbol femenino en España."
+    ],
+    "curiosidades": [
+      "Fue la primera española en ganar el Balón de Oro.",
+      "Su nombre se escribe a menudo Alèxia, en catalán.",
+      "Es una de las jugadoras con más partidos en la historia del Barça femenino."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Alexia_Putellas",
+    "comprobar": [
+      "1994",
+      "Mollet del Vallès",
+      "Balón de Oro",
+      "2023"
+    ]
+  },
+  {
+    "slug": "gustavo-adolfo-becquer",
+    "apartado": "espana",
+    "fecha": "2026-12-02",
+    "nombre": "Gustavo Adolfo Bécquer",
+    "alias": [
+      "Bécquer",
+      "Becquer",
+      "Gustavo Adolfo Becquer"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1836.",
+      "Fue escritor.",
+      "Sus «Rimas» se publicaron después de su muerte, gracias a sus amigos.",
+      "Nació en Sevilla.",
+      "Escribió «Volverán las oscuras golondrinas» y «¿Qué es poesía? Poesía eres tú».",
+      "Sus iniciales son G. A. B."
+    ],
+    "resumen": "Poeta y narrador sevillano del Romanticismo, autor de las «Rimas» y las «Leyendas».",
+    "biografia": [
+      "Gustavo Adolfo Claudio Domínguez Bastida nació el 17 de febrero de 1836 en Sevilla. Su padre, pintor, firmaba como Bécquer, apellido de unos antepasados flamencos, y él lo adoptó también. Se quedó huérfano muy joven.",
+      "Con 18 años se fue a Madrid a probar suerte como escritor y trabajó como periodista. Escribió las «Leyendas», relatos de misterio como «El monte de las ánimas» o «Los ojos verdes», y las «Rimas», breves poemas sobre el amor, la soledad y la propia poesía. Pasó una temporada en el monasterio de Veruela, en Aragón, donde escribió las «Cartas desde mi celda».",
+      "Murió en Madrid el 22 de diciembre de 1870, con 34 años, poco después que su hermano Valeriano. Sus amigos reunieron y publicaron sus poemas al año siguiente."
+    ],
+    "curiosidades": [
+      "Su hermano Valeriano Bécquer fue un pintor importante.",
+      "En el parque de María Luisa de Sevilla hay una glorieta dedicada a él.",
+      "Se le considera el precursor de la poesía española moderna."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Gustavo_Adolfo_Bécquer",
+    "comprobar": [
+      "1836",
+      "Sevilla",
+      "Rimas",
+      "1870"
+    ]
+  },
+  {
+    "slug": "joaquin-sorolla",
+    "apartado": "espana",
+    "fecha": "2026-12-03",
+    "nombre": "Joaquín Sorolla",
+    "alias": [
+      "Sorolla",
+      "Joaquin Sorolla",
+      "Joaquín Sorolla y Bastida"
+    ],
+    "ambito": "Arte",
+    "pistas": [
+      "Nació en 1863.",
+      "Fue artista.",
+      "Pintó para la Hispanic Society de Nueva York una gran serie de murales llamada «Visión de España».",
+      "Nació en Valencia.",
+      "Le llaman «el pintor de la luz» por sus escenas de playa.",
+      "Sus iniciales son J. S."
+    ],
+    "resumen": "Pintor valenciano, «el pintor de la luz», famoso por sus escenas luminosas del Mediterráneo.",
+    "biografia": [
+      "Joaquín Sorolla y Bastida nació el 27 de febrero de 1863 en Valencia. Se quedó huérfano a los dos años y lo criaron sus tíos. Estudió en la Escuela de Bellas Artes de Valencia y amplió su formación en Roma y París.",
+      "Sus primeras obras de éxito tenían temas sociales, como «¡Aún dicen que el pescado es caro!», pero se hizo famoso por sus escenas de playa, llenas de luz y de color, como «Paseo a orillas del mar» o «Niños en la playa». En 1900 ganó el gran premio de la Exposición Universal de París.",
+      "Entre 1911 y 1919 pintó para la Hispanic Society de Nueva York «Visión de España», una serie de grandes murales sobre las regiones españolas. Murió en Cercedilla, Madrid, el 10 de agosto de 1923."
+    ],
+    "curiosidades": [
+      "Su casa de Madrid es hoy el Museo Sorolla.",
+      "Pintaba muchas veces al aire libre, directamente en la playa.",
+      "Es uno de los pintores españoles más cotizados en las subastas."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Joaquín_Sorolla",
+    "comprobar": [
+      "1863",
+      "Valencia",
+      "Hispanic Society",
+      "1923"
+    ]
+  },
+  {
+    "slug": "luis-bunuel",
+    "apartado": "espana",
+    "fecha": "2026-12-04",
+    "nombre": "Luis Buñuel",
+    "alias": [
+      "Buñuel",
+      "Bunuel",
+      "Luis Bunuel"
+    ],
+    "ambito": "Cine",
+    "pistas": [
+      "Nació en 1900.",
+      "Se dedicó al cine.",
+      "Ganó la Palma de Oro de Cannes con «Viridiana».",
+      "Nació en Calanda (Teruel).",
+      "Rodó con Salvador Dalí «Un perro andaluz» y ganó el Óscar con «El discreto encanto de la burguesía».",
+      "Sus iniciales son L. B."
+    ],
+    "resumen": "Director de cine aragonés, maestro del surrealismo, autor de «Un perro andaluz», «Viridiana» y «El discreto encanto de la burguesía».",
+    "biografia": [
+      "Luis Buñuel nació el 22 de febrero de 1900 en Calanda, Teruel. Estudió en Madrid, donde vivió en la Residencia de Estudiantes y se hizo amigo de Salvador Dalí y Federico García Lorca.",
+      "En 1929 rodó con Dalí «Un perro andaluz», un cortometraje surrealista con una de las escenas más impactantes de la historia del cine. Tras la Guerra Civil se instaló en México, donde rodó películas como «Los olvidados» (1950). En 1961 volvió a España para filmar «Viridiana», que ganó la Palma de Oro de Cannes y fue prohibida por la censura franquista.",
+      "En Francia rodó sus últimas películas, como «Belle de jour», «El discreto encanto de la burguesía», que ganó el Óscar a la mejor película extranjera, y «Ese oscuro objeto del deseo». Murió en Ciudad de México el 29 de julio de 1983."
+    ],
+    "curiosidades": [
+      "Sus memorias se titulan «Mi último suspiro».",
+      "«Los olvidados» forma parte del registro Memoria del Mundo de la UNESCO.",
+      "En su pueblo, Calanda, se celebra la famosa tamborrada de Semana Santa, que él adoraba."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Luis_Buñuel",
+    "comprobar": [
+      "1900",
+      "Calanda",
+      "Viridiana",
+      "1983"
+    ]
+  },
+  {
+    "slug": "mireia-belmonte",
+    "apartado": "espana",
+    "fecha": "2026-12-05",
+    "nombre": "Mireia Belmonte",
+    "alias": [
+      "Belmonte",
+      "Mireia Belmonte García"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1990.",
+      "Es deportista.",
+      "Fue la primera española en ganar un oro olímpico en natación.",
+      "Nació en Badalona (Barcelona).",
+      "Ganó el oro en 200 metros mariposa en los Juegos de Río 2016.",
+      "Sus iniciales son M. B."
+    ],
+    "resumen": "Nadadora catalana, campeona olímpica en Río 2016 y la deportista española con más medallas olímpicas en natación.",
+    "biografia": [
+      "Mireia Belmonte nació el 10 de noviembre de 1990 en Badalona, Barcelona. Empezó a nadar de pequeña por recomendación médica, para mejorar un problema de espalda, y pronto destacó en las piscinas.",
+      "En los Juegos Olímpicos de Londres 2012 ganó dos medallas de plata, en 200 metros mariposa y 800 metros libre. En Río 2016 logró el oro en 200 metros mariposa y el bronce en 400 metros estilos, y se convirtió en la primera mujer española campeona olímpica de natación.",
+      "Ha sido también campeona del mundo y de Europa en varias pruebas y ha batido récords mundiales en piscina corta. Es una de las deportistas españolas más laureadas."
+    ],
+    "curiosidades": [
+      "Tiene cuatro medallas olímpicas.",
+      "Empezó a nadar para corregir un problema de espalda.",
+      "Es una de las nadadoras españolas con más medallas en grandes campeonatos internacionales."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Mireia_Belmonte",
+    "comprobar": [
+      "1990",
+      "Badalona",
+      "Río",
+      "mariposa"
+    ]
+  },
+  {
+    "slug": "juan-sebastian-elcano",
+    "apartado": "espana",
+    "fecha": "2026-12-06",
+    "nombre": "Juan Sebastián Elcano",
+    "alias": [
+      "Elcano",
+      "Juan Sebastián de Elcano",
+      "Juan Sebastian Elcano"
+    ],
+    "ambito": "Historia",
+    "pistas": [
+      "Nació hacia 1486; la fecha exacta no se conoce.",
+      "Fue marino y explorador.",
+      "Volvió a España en 1522 con solo 18 supervivientes.",
+      "Nació en Getaria (Guipúzcoa).",
+      "Completó la primera vuelta al mundo tras la muerte de Magallanes.",
+      "Sus iniciales son J. S. E."
+    ],
+    "resumen": "Marino guipuzcoano que completó en 1522 la primera vuelta al mundo, tras la muerte de Magallanes.",
+    "biografia": [
+      "Juan Sebastián Elcano nació hacia 1486 en Getaria, Guipúzcoa, en una familia de marinos. Desde joven navegó por el Mediterráneo y en 1519 se unió como maestre a la expedición de Fernando de Magallanes, que buscaba una ruta hacia las islas de las Especias navegando hacia el oeste.",
+      "La expedición salió de Sanlúcar de Barrameda en septiembre de 1519 con cinco naves. Cruzó el estrecho que hoy lleva el nombre de Magallanes y el océano Pacífico. En 1521 Magallanes murió en una batalla en Filipinas. Elcano tomó el mando de la nao Victoria y, tras cargar especias en las Molucas, volvió a España rodeando África.",
+      "El 6 de septiembre de 1522 llegó a Sanlúcar con solo 18 hombres: era la primera vuelta al mundo. Murió en 1526 en el Pacífico, durante una segunda expedición."
+    ],
+    "curiosidades": [
+      "El rey Carlos I le dio un escudo con un globo terráqueo y el lema «Primus circumdedisti me» («Fuiste el primero que me diste la vuelta»).",
+      "El buque escuela de la Armada española se llama Juan Sebastián de Elcano.",
+      "De las cinco naves que salieron, solo volvió la Victoria."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Juan_Sebastián_Elcano",
+    "comprobar": [
+      "1486",
+      "Guetaria",
+      "Victoria",
+      "1522"
+    ]
+  },
+  {
+    "slug": "concepcion-arenal",
+    "apartado": "espana",
+    "fecha": "2026-12-07",
+    "nombre": "Concepción Arenal",
+    "alias": [
+      "Concepcion Arenal",
+      "Arenal",
+      "Concepción Arenal Ponte"
+    ],
+    "ambito": "Sociedad",
+    "pistas": [
+      "Nació en 1820.",
+      "Fue escritora y reformadora social.",
+      "Asistió a clases de Derecho en la universidad vestida de hombre.",
+      "Nació en Ferrol (A Coruña).",
+      "Es autora de la frase «Odia el delito y compadece al delincuente».",
+      "Sus iniciales son C. A."
+    ],
+    "resumen": "Escritora y reformadora gallega, pionera del feminismo y de la reforma de las cárceles en España.",
+    "biografia": [
+      "Concepción Arenal nació el 31 de enero de 1820 en Ferrol, A Coruña. En una época en que las mujeres no podían ir a la universidad, asistió como oyente a las clases de Derecho de la Universidad Central de Madrid vestida de hombre.",
+      "Dedicó su vida a defender a los más débiles: los pobres, los presos y las mujeres. En 1864 fue nombrada visitadora de prisiones de mujeres, y escribió numerosas obras sobre la reforma de las cárceles, la beneficencia y la educación de la mujer, como «La mujer del porvenir».",
+      "Su lema, «Odia el delito y compadece al delincuente», resume su idea de que las cárceles debían servir para reformar a los presos. Murió en Vigo el 4 de febrero de 1893."
+    ],
+    "curiosidades": [
+      "En 1860 ganó un premio de la Real Academia de Ciencias Morales y Políticas presentando su obra con el nombre de su hijo de diez años.",
+      "Muchas calles, colegios y una universidad de España llevan su nombre.",
+      "Fundó un periódico, «La Voz de la Caridad»."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Concepción_Arenal",
+    "comprobar": [
+      "1820",
+      "Ferrol",
+      "delincuente",
+      "1893"
+    ]
+  },
+  {
+    "slug": "margarita-salas",
+    "apartado": "espana",
+    "fecha": "2026-12-08",
+    "nombre": "Margarita Salas",
+    "alias": [
+      "Salas",
+      "Margarita Salas Falgueras"
+    ],
+    "ambito": "Ciencia",
+    "pistas": [
+      "Nació en 1938.",
+      "Se dedicó a la ciencia.",
+      "Su patente sobre una enzima de un virus fue la más rentable de la historia del CSIC.",
+      "Nació en Canero, en el concejo de Valdés (Asturias).",
+      "Fue discípula de Severo Ochoa y una pionera de la biología molecular en España.",
+      "Sus iniciales son M. S."
+    ],
+    "resumen": "Bioquímica asturiana, discípula de Severo Ochoa y pionera de la biología molecular en España.",
+    "biografia": [
+      "Margarita Salas nació el 30 de noviembre de 1938 en Canero, en el concejo de Valdés, Asturias. Estudió Química en Madrid y, por consejo de Severo Ochoa, amigo de la familia, se dedicó a la bioquímica.",
+      "Tras doctorarse, trabajó con Ochoa en la Universidad de Nueva York. De vuelta en España, en el Centro de Biología Molecular Severo Ochoa, estudió durante décadas un virus llamado phi29. Descubrió una enzima, la ADN polimerasa del phi29, que permite copiar ADN de forma muy eficaz y se usa en todo el mundo.",
+      "La patente de ese descubrimiento fue la más rentable de la historia del Consejo Superior de Investigaciones Científicas (CSIC). Fue miembro de la Real Academia Española y murió en Madrid el 7 de noviembre de 2019."
+    ],
+    "curiosidades": [
+      "Fue la primera española en la Academia Nacional de Ciencias de Estados Unidos.",
+      "En 2019 recibió el Premio Inventor Europeo por toda su carrera.",
+      "En sus inicios tuvo que luchar contra los prejuicios hacia las mujeres científicas."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Margarita_Salas",
+    "comprobar": [
+      "1938",
+      "Canero",
+      "phi29",
+      "2019"
+    ]
+  },
+  {
+    "slug": "sara-montiel",
+    "apartado": "espana",
+    "fecha": "2026-12-09",
+    "nombre": "Sara Montiel",
+    "alias": [
+      "Sarita Montiel",
+      "Montiel",
+      "María Antonia Abad"
+    ],
+    "ambito": "Cine",
+    "pistas": [
+      "Nació en 1928.",
+      "Fue actriz y cantante.",
+      "Trabajó en Hollywood junto a Gary Cooper en «Veracruz».",
+      "Nació en Campo de Criptana (Ciudad Real).",
+      "Protagonizó «El último cuplé» y cantaba «Fumando espero».",
+      "Sus iniciales artísticas son S. M."
+    ],
+    "resumen": "Actriz y cantante manchega, estrella de «El último cuplé» y una de las primeras españolas en triunfar en Hollywood.",
+    "biografia": [
+      "María Antonia Abad Fernández nació el 10 de marzo de 1928 en Campo de Criptana, Ciudad Real. Empezó en el cine muy joven, en los años cuarenta, y adoptó el nombre artístico de Sara Montiel.",
+      "En los años cincuenta trabajó en México y en Hollywood, donde rodó «Veracruz» (1954) junto a Gary Cooper y Burt Lancaster. De vuelta en España protagonizó «El último cuplé» (1957), en la que cantaba canciones como «Fumando espero» o «El relicario». La película fue un éxito enorme y la convirtió en la gran estrella del cine español.",
+      "Le siguió «La violetera» (1958) y muchas otras películas musicales. Murió en Madrid el 8 de abril de 2013."
+    ],
+    "curiosidades": [
+      "Se dice que «El último cuplé» estuvo más de un año en cartel en algunos cines.",
+      "Era una de las actrices mejor pagadas de su época.",
+      "Su verdadero nombre era María Antonia Abad Fernández."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Sara_Montiel",
+    "comprobar": [
+      "1928",
+      "Campo de Criptana",
+      "El último cuplé",
+      "2013"
+    ]
+  },
+  {
+    "slug": "massiel",
+    "apartado": "espana",
+    "fecha": "2026-12-10",
+    "nombre": "Massiel",
+    "alias": [
+      "María de los Ángeles Santamaría",
+      "Massiel Santamaría"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1947.",
+      "Se dedica a la música.",
+      "Sustituyó a Joan Manuel Serrat en Eurovisión a pocos días del festival.",
+      "Nació en Madrid.",
+      "Fue la primera artista que ganó Eurovisión para España, con «La, la, la» en 1968.",
+      "Su nombre artístico empieza por M y tiene siete letras."
+    ],
+    "resumen": "Cantante madrileña que dio a España su primera victoria en Eurovisión, con «La, la, la» en 1968.",
+    "biografia": [
+      "María de los Ángeles Santamaría Espinosa nació el 2 de agosto de 1947 en Madrid. Su padre era representante artístico y ella empezó a cantar muy joven, con el nombre artístico de Massiel.",
+      "En 1968 España iba a enviar a Eurovisión a Joan Manuel Serrat con la canción «La, la, la», pero Serrat quiso cantarla en catalán y fue sustituido a pocos días del festival. Massiel aprendió la canción a toda prisa y, el 6 de abril de 1968, en el Royal Albert Hall de Londres, ganó el festival, la primera victoria de España.",
+      "Después siguió una larga carrera como cantante, con canciones como «Rosas en el mar», y como actriz de teatro y personaje habitual de la televisión."
+    ],
+    "curiosidades": [
+      "España volvió a ganar Eurovisión al año siguiente, en 1969, con Salomé.",
+      "«La, la, la» se cantaba en castellano y se compuso con estribillo fácil para cualquier idioma.",
+      "Grabó «La, la, la» en varios idiomas para venderla en toda Europa."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Massiel",
+    "comprobar": [
+      "1947",
+      "Madrid",
+      "La, la, la",
+      "1968"
+    ]
+  },
+  {
+    "slug": "ferran-adria",
+    "apartado": "espana",
+    "fecha": "2026-12-11",
+    "nombre": "Ferran Adrià",
+    "alias": [
+      "Ferran Adria",
+      "Adrià",
+      "Fernando Adrià"
+    ],
+    "ambito": "Gastronomía",
+    "pistas": [
+      "Nació en 1962.",
+      "Se dedica a la cocina.",
+      "Su restaurante fue elegido cinco veces el mejor del mundo.",
+      "Nació en L'Hospitalet de Llobregat (Barcelona).",
+      "Fue el chef de elBulli, en Roses, e inventó las espumas y las esferificaciones.",
+      "Sus iniciales son F. A."
+    ],
+    "resumen": "Cocinero catalán, chef de elBulli, que revolucionó la gastronomía mundial con la cocina de vanguardia.",
+    "biografia": [
+      "Ferran Adrià nació el 14 de mayo de 1962 en L'Hospitalet de Llobregat, Barcelona. Empezó a trabajar en la cocina casi por casualidad, fregando platos en un hotel de Castelldefels para ganar dinero para un viaje.",
+      "En 1984 entró en elBulli, un restaurante en la cala Montjoi, en Roses (Girona), y pocos años después se convirtió en su jefe de cocina. Allí, con su equipo, revolucionó la cocina con técnicas nuevas como las espumas, las esferificaciones o la deconstrucción de platos tradicionales. Cerraba el restaurante seis meses al año para dedicarse solo a crear.",
+      "ElBulli fue elegido cinco veces el mejor restaurante del mundo por la revista Restaurant. Cerró en 2011 y se transformó en la fundación elBulli, dedicada a la creatividad."
+    ],
+    "curiosidades": [
+      "Fue invitado a la exposición de arte contemporáneo Documenta de Kassel en 2007.",
+      "Muchos de los grandes cocineros actuales se formaron en elBulli.",
+      "Su hermano Albert Adrià también es un reconocido chef."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Ferran_Adrià",
+    "comprobar": [
+      "1962",
+      "Hospitalet",
+      "elBulli",
+      "Roses"
+    ]
+  },
+  {
+    "slug": "angel-nieto",
+    "apartado": "espana",
+    "fecha": "2026-12-12",
+    "nombre": "Ángel Nieto",
+    "alias": [
+      "Angel Nieto",
+      "Nieto"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1947.",
+      "Fue deportista.",
+      "Por superstición, nunca decía que había ganado 13 títulos, sino «12+1».",
+      "Nació en Zamora.",
+      "Fue piloto de motociclismo y campeón del mundo en 50 cc y 125 cc.",
+      "Sus iniciales son Á. N."
+    ],
+    "resumen": "Piloto de motociclismo zamorano, ganador de 13 títulos mundiales, los famosos «12+1», y pionero de este deporte en España.",
+    "biografia": [
+      "Ángel Nieto nació el 25 de enero de 1947 en Zamora, aunque se crio en Vallecas, Madrid. Desde niño le apasionaban las motos y trabajó como aprendiz en talleres antes de empezar a competir.",
+      "En 1969 ganó su primer título mundial, en la categoría de 50 cc, con la marca española Derbi. Durante los años setenta y ochenta acumuló 13 campeonatos del mundo en 50 y 125 cc y 90 victorias en grandes premios. Como era supersticioso, prefería decir que tenía «12+1» títulos.",
+      "Abrió el camino a los grandes pilotos españoles que llegaron después. Murió el 3 de agosto de 2017 en Ibiza."
+    ],
+    "curiosidades": [
+      "El circuito de Jerez lleva su nombre: Circuito de Jerez-Ángel Nieto.",
+      "Tras retirarse fue comentarista de motociclismo en televisión.",
+      "Sus 13 títulos mundiales solo los ha superado Giacomo Agostini."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Ángel_Nieto",
+    "comprobar": [
+      "1947",
+      "Zamora",
+      "12+1",
+      "2017"
+    ]
+  },
+  {
+    "slug": "miguel-de-unamuno",
+    "apartado": "espana",
+    "fecha": "2026-12-13",
+    "nombre": "Miguel de Unamuno",
+    "alias": [
+      "Unamuno",
+      "Miguel de Unamuno y Jugo"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1864.",
+      "Fue escritor y filósofo.",
+      "Fue rector de la Universidad de Salamanca.",
+      "Nació en Bilbao.",
+      "Escribió «Niebla», a la que llamó «nivola», y «San Manuel Bueno, mártir».",
+      "Sus iniciales son M. de U."
+    ],
+    "resumen": "Escritor y filósofo bilbaíno de la Generación del 98, rector de la Universidad de Salamanca y autor de «Niebla».",
+    "biografia": [
+      "Miguel de Unamuno nació el 29 de septiembre de 1864 en Bilbao. Estudió Filosofía y Letras en Madrid y en 1891 obtuvo la cátedra de Griego en la Universidad de Salamanca, de la que fue rector varias veces.",
+      "Fue una de las grandes figuras de la Generación del 98. En «Niebla» (1914), que él llamó «nivola», el protagonista, Augusto Pérez, llega a discutir con su propio autor. En «Del sentimiento trágico de la vida» y «San Manuel Bueno, mártir» reflexionó sobre la fe, la muerte y la existencia.",
+      "Por sus críticas a la dictadura de Primo de Rivera fue desterrado a Fuerteventura y vivió exiliado en Francia. Murió en Salamanca el 31 de diciembre de 1936."
+    ],
+    "curiosidades": [
+      "Se le atribuye la frase «Venceréis, pero no convenceréis», pronunciada en la Universidad de Salamanca en 1936.",
+      "Era un gran aficionado a la papiroflexia, que él llamaba «cocotología».",
+      "Su casa de Salamanca es hoy la Casa-Museo Unamuno."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Miguel_de_Unamuno",
+    "comprobar": [
+      "1864",
+      "Bilbao",
+      "Niebla",
+      "1936"
+    ]
+  },
+  {
+    "slug": "teresa-de-jesus",
+    "apartado": "espana",
+    "fecha": "2026-12-14",
+    "nombre": "Teresa de Jesús",
+    "alias": [
+      "Santa Teresa",
+      "Santa Teresa de Jesús",
+      "Teresa de Ávila",
+      "Santa Teresa de Ávila",
+      "Teresa de Jesus"
+    ],
+    "ambito": "Religión y literatura",
+    "pistas": [
+      "Nació en 1515.",
+      "Fue religiosa y escritora.",
+      "Fue la primera mujer nombrada doctora de la Iglesia, en 1970.",
+      "Nació en Ávila o en el cercano pueblo de Gotarrendura.",
+      "Reformó la orden de las carmelitas y escribió «Vivo sin vivir en mí».",
+      "Sus iniciales son T. de J."
+    ],
+    "resumen": "Monja y escritora abulense del Siglo de Oro, reformadora de las carmelitas, gran mística y santa.",
+    "biografia": [
+      "Teresa de Cepeda y Ahumada nació el 28 de marzo de 1515 en Ávila, o en el cercano pueblo de Gotarrendura. De niña le gustaba leer libros de caballerías y vidas de santos, y con 20 años entró en el convento carmelita de la Encarnación, en Ávila.",
+      "Convencida de que la orden debía volver a una vida más sencilla y austera, en 1562 fundó el convento de San José de Ávila, el primero de las carmelitas descalzas. A partir de entonces viajó por toda Castilla y Andalucía fundando conventos y, con San Juan de la Cruz, extendió la reforma a los frailes.",
+      "Escribió obras como el «Libro de la vida», «Camino de perfección» y «Las moradas», cumbres de la literatura mística. Murió en Alba de Tormes en octubre de 1582 y fue proclamada santa en 1622."
+    ],
+    "curiosidades": [
+      "Murió la noche en que se cambió del calendario juliano al gregoriano, así que la enterraron oficialmente diez días después.",
+      "Fundó 17 conventos de carmelitas descalzas.",
+      "Es la patrona de los escritores españoles."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Teresa_de_Jesús",
+    "comprobar": [
+      "1515",
+      "Ávila",
+      "Alba de Tormes",
+      "1582"
+    ]
+  },
+  {
+    "slug": "jose-carreras",
+    "apartado": "espana",
+    "fecha": "2026-12-15",
+    "nombre": "José Carreras",
+    "alias": [
+      "Carreras",
+      "Josep Carreras",
+      "Jose Carreras"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1946.",
+      "Se dedica a la música.",
+      "Creó una fundación contra la leucemia después de superar la enfermedad.",
+      "Nació en Barcelona.",
+      "Es tenor y formó «Los tres tenores» con Plácido Domingo y Luciano Pavarotti.",
+      "Sus iniciales son J. C."
+    ],
+    "resumen": "Tenor barcelonés, una de las grandes voces de la ópera, famoso por «Los tres tenores» junto a Pavarotti y Domingo.",
+    "biografia": [
+      "José Carreras nació el 5 de diciembre de 1946 en Barcelona. De niño ya cantaba ópera en casa tras ver una película sobre el tenor Enrico Caruso, y debutó en el Gran Teatro del Liceo de Barcelona en 1970, junto a Montserrat Caballé.",
+      "En los años setenta y ochenta cantó en los grandes teatros del mundo, como la Scala de Milán, el Metropolitan de Nueva York o el Covent Garden de Londres. En 1987 le diagnosticaron una leucemia; tras superarla, en 1988 creó la Fundación Josep Carreras contra la Leucemia.",
+      "En 1990 cantó en Roma junto a Plácido Domingo y Luciano Pavarotti en el primer concierto de «Los tres tenores», cuyo disco es uno de los álbumes de música clásica más vendidos de la historia."
+    ],
+    "curiosidades": [
+      "Fue el director musical de las ceremonias de los Juegos Olímpicos de Barcelona 92.",
+      "El primer concierto de «Los tres tenores» se celebró la víspera de la final del Mundial de Italia 90.",
+      "Es un gran aficionado al FC Barcelona."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/José_Carreras",
+    "comprobar": [
+      "1946",
+      "Barcelona",
+      "tres tenores",
+      "leucemia"
+    ]
+  },
+  {
+    "slug": "arantxa-sanchez-vicario",
+    "apartado": "espana",
+    "fecha": "2026-12-16",
+    "nombre": "Arantxa Sánchez Vicario",
+    "alias": [
+      "Arantxa",
+      "Sánchez Vicario",
+      "Arantxa Sanchez Vicario"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1971.",
+      "Fue deportista.",
+      "Ganó Roland Garros con 17 años, venciendo a Steffi Graf.",
+      "Nació en Barcelona.",
+      "Fue tenista y la primera española número uno del mundo.",
+      "Sus iniciales son A. S. V."
+    ],
+    "resumen": "Tenista barcelonesa, ganadora de cuatro Grand Slams individuales y primera española número uno del mundo.",
+    "biografia": [
+      "Arantxa Sánchez Vicario nació el 18 de diciembre de 1971 en Barcelona, en una familia de tenistas: sus hermanos Emilio y Javier también fueron profesionales. Desde muy pequeña destacó por su tenacidad en la pista.",
+      "En 1989, con solo 17 años, ganó Roland Garros al vencer en la final a la alemana Steffi Graf, la número uno del mundo. Volvió a ganar Roland Garros en 1994 y 1998 y ese mismo 1994 se impuso en el Abierto de Estados Unidos. En 1995 llegó a ser número uno del mundo, la primera española en lograrlo.",
+      "Ganó cuatro medallas olímpicas, en Barcelona 92 y Atlanta 96, y varias Copas Federación con España. Se retiró en 2002."
+    ],
+    "curiosidades": [
+      "Fue número uno del mundo tanto en individuales como en dobles.",
+      "Su tenacidad le valió en Estados Unidos el apodo de «el abejorro de Barcelona».",
+      "Ganó cinco Copas Federación con España."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Arantxa_Sánchez_Vicario",
+    "comprobar": [
+      "1971",
+      "Barcelona",
+      "Graf",
+      "Roland Garros"
+    ]
+  },
+  {
+    "slug": "joan-manuel-serrat",
+    "apartado": "espana",
+    "fecha": "2026-12-17",
+    "nombre": "Joan Manuel Serrat",
+    "alias": [
+      "Serrat",
+      "Joan Manuel Serrat Teresa"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1943.",
+      "Se dedica a la música.",
+      "Iba a representar a España en Eurovisión en 1968, pero quería cantar en catalán y le sustituyeron.",
+      "Nació en Barcelona, en el barrio del Poble-sec.",
+      "Compuso «Mediterráneo» y puso música a poemas de Antonio Machado.",
+      "Sus iniciales son J. M. S."
+    ],
+    "resumen": "Cantautor barcelonés, autor de «Mediterráneo», que puso música a los poemas de Machado y Miguel Hernández.",
+    "biografia": [
+      "Joan Manuel Serrat nació el 27 de diciembre de 1943 en Barcelona, en el barrio del Poble-sec. Empezó a cantar en catalán en los años sesenta con el grupo de cantautores Els Setze Jutges, ligado a la Nova Cançó.",
+      "En 1968 fue elegido para representar a España en Eurovisión con «La, la, la», pero quiso cantarla en catalán y fue sustituido por Massiel. En 1969 publicó un disco con poemas de Antonio Machado, que incluía «Cantares» («Caminante, no hay camino»), y en 1971 «Mediterráneo», considerada una de las mejores canciones de la música española. Después dedicó otro disco a Miguel Hernández.",
+      "Se despidió de los escenarios en diciembre de 2022 con la gira «El vicio de cantar». En 2024 recibió el Premio Princesa de Asturias de las Artes."
+    ],
+    "curiosidades": [
+      "Compartió disco y gira con Joaquín Sabina bajo el título «Dos pájaros de un tiro».",
+      "Canta tanto en catalán como en castellano.",
+      "Es muy querido en toda Latinoamérica, donde ha actuado durante décadas."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Joan_Manuel_Serrat",
+    "comprobar": [
+      "1943",
+      "Poble-sec",
+      "Mediterráneo",
+      "Massiel"
+    ]
+  },
+  {
+    "slug": "camaron-de-la-isla",
+    "apartado": "espana",
+    "fecha": "2026-12-18",
+    "nombre": "Camarón de la Isla",
+    "alias": [
+      "Camarón",
+      "Camaron",
+      "Camaron de la Isla",
+      "José Monje Cruz"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1950.",
+      "Se dedicó a la música.",
+      "Su disco «La leyenda del tiempo» incluía poemas de Lorca y revolucionó el flamenco.",
+      "Nació en San Fernando (Cádiz).",
+      "Fue un cantaor flamenco que grabó muchos discos con Paco de Lucía.",
+      "Sus iniciales artísticas son C. de la I."
+    ],
+    "resumen": "Cantaor gaditano, una de las voces más importantes de la historia del flamenco, autor de «La leyenda del tiempo».",
+    "biografia": [
+      "José Monje Cruz nació el 5 de diciembre de 1950 en San Fernando, Cádiz, la ciudad conocida como «la Isla». Su tío le puso el apodo de Camarón porque era rubio y muy delgado. Empezó a cantar de niño en la Venta de Vargas de su ciudad.",
+      "Con el guitarrista Paco de Lucía grabó una decena de discos que renovaron el cante flamenco. En 1979 publicó «La leyenda del tiempo», con poemas de Federico García Lorca y sonidos de rock y jazz; al principio muchos puristas lo rechazaron, pero hoy se considera una obra maestra.",
+      "Su voz, rota y llena de emoción, lo convirtió en un mito. Murió el 2 de julio de 1992 en Badalona, con 41 años, y está enterrado en San Fernando."
+    ],
+    "curiosidades": [
+      "Su apodo se lo puso un tío suyo porque era rubio y delgado como un camarón.",
+      "A su entierro en San Fernando acudieron miles de personas.",
+      "En 2018 se estrenó un documental sobre su vida."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Camarón_de_la_Isla",
+    "comprobar": [
+      "1950",
+      "San Fernando",
+      "La leyenda del tiempo",
+      "1992"
+    ]
   }
 ]
