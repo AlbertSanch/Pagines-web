@@ -35,7 +35,7 @@ DOMINIO = "https://famosodeldia.es"
 SITIO = "Famoso del día"
 LANZAMIENTO = dt.date(2026, 11, 9)  # día #1; cambia esta fecha si se lanza otro día
 SAL = "fdd-7c1e"  # la misma en plantilla/juego.js: nombre y codificación de los archivos de cada día
-VERSION = "1"
+VERSION = "2"
 HOY = dt.date.fromisoformat(os.environ["FDD_HOY"]) if os.environ.get("FDD_HOY") else dt.datetime.now(ZoneInfo("Europe/Madrid")).date()  # FDD_HOY: solo para pruebas
 APARTADOS = {"mundial": ("Famoso mundial", "🌍"), "espana": ("Famoso español", "🇪🇸")}
 
@@ -144,7 +144,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", indexable=Tru
 <title>{escape(titulo)}</title>
 <meta name="description" content="{escape(descripcion)}">
 <link rel="canonical" href="{url}">{'' if indexable else chr(10) + '<meta name="robots" content="noindex, follow">'}
-<meta name="theme-color" content="#1b1440">
+<meta name="theme-color" content="#7a0f1d">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{SITIO}">
 <meta property="og:locale" content="es_ES">
