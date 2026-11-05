@@ -33,9 +33,10 @@ WEB = RAIZ / "web"
 
 DOMINIO = "https://famosodeldia.es"
 SITIO = "Famoso del día"
-LANZAMIENTO = dt.date(2026, 11, 9)  # día #1; cambia esta fecha si se lanza otro día
+LANZAMIENTO = dt.date(2026, 11, 6)  # día #1; cambia esta fecha si se lanza otro día
+DOMINIO_ACTIVO = False  # ponlo en True cuando famosodeldia.es funcione: la dirección provisional .pages.dev redirigirá al dominio
 SAL = "fdd-7c1e"  # la misma en plantilla/juego.js: nombre y codificación de los archivos de cada día
-VERSION = "3"
+VERSION = "4"
 HOY = dt.date.fromisoformat(os.environ["FDD_HOY"]) if os.environ.get("FDD_HOY") else dt.datetime.now(ZoneInfo("Europe/Madrid")).date()  # FDD_HOY: solo para pruebas
 # la bandera, dibujada: Windows no muestra los emojis de banderas (sale «ES»)
 BANDERA = ('<svg class="bandera" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#c60b1e"/>'
@@ -136,6 +137,10 @@ def token(fecha):
 
 # ---------------------------------------------------------------- plantilla
 
+REDIRIGIR = ('\n<script>if(/\\.pages\\.dev$/.test(location.hostname))location.replace("' + DOMINIO + '"+location.pathname+location.search)</script>'
+             if DOMINIO_ACTIVO else "")
+
+
 def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", indexable=True, clase=""):
     url = DOMINIO + ruta
     ld_html = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in (ld or []))
@@ -147,7 +152,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, ld=None, scripts="", indexable=Tru
 <title>{escape(titulo)}</title>
 <meta name="description" content="{escape(descripcion)}">
 <link rel="canonical" href="{url}">{'' if indexable else chr(10) + '<meta name="robots" content="noindex, follow">'}
-<meta name="theme-color" content="#7a0f1d">
+<meta name="theme-color" content="#7a0f1d">{REDIRIGIR}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{SITIO}">
 <meta property="og:locale" content="es_ES">
