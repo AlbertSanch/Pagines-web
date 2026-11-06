@@ -36,20 +36,20 @@
 <h1>Calculadora de fechas</h1>
 <p class="sub">Calcula los días entre dos fechas, suma o resta días a una fecha y descubre qué día de la semana cae cualquier día.</p>
 <section class="herramienta calc" id="entre"><h2>📏 Días entre dos fechas</h2>
-<form onsubmit="return false"><label>Desde<input id="f-desde" type="date" value="2026-11-05"></label><label>Hasta<input id="f-hasta" type="date"></label>
+<form onsubmit="return false"><label>Desde<input id="f-desde" type="date" value="2026-11-06"></label><label>Hasta<input id="f-hasta" type="date"></label>
 <label class="check"><input id="f-incluir" type="checkbox"> Contar también el último día</label><button class="boton" id="f-entre" type="button">Calcular</button></form>
 <div id="r-entre" class="resultado" aria-live="polite" hidden></div></section>
 <section class="herramienta calc" id="sumar"><h2>➕ Sumar o restar días a una fecha</h2>
-<form onsubmit="return false"><label>Fecha<input id="f-base" type="date" value="2026-11-05"></label>
+<form onsubmit="return false"><label>Fecha<input id="f-base" type="date" value="2026-11-06"></label>
 <label>Operación<select id="f-op"><option value="sumar">Sumar</option><option value="restar">Restar</option></select></label>
 <label>Cantidad<input id="f-n" type="number" min="0" max="100000" value="30" inputmode="numeric"></label>
 <label>Unidad<select id="f-tipo"><option value="naturales">días</option><option value="laborables">días laborables</option><option value="semanas">semanas</option><option value="meses">meses</option></select></label>
 <button class="boton" id="f-sumar" type="button">Calcular</button></form>
 <div id="r-sumar" class="resultado" aria-live="polite" hidden></div></section>
 <section class="herramienta calc" id="dia-semana"><h2>📅 ¿Qué día de la semana cae?</h2>
-<form onsubmit="return false"><label>Fecha<input id="f-dia" type="date" value="2026-11-05"></label><button class="boton" id="f-calc-dia" type="button">Ver</button></form>
+<form onsubmit="return false"><label>Fecha<input id="f-dia" type="date" value="2026-11-06"></label><button class="boton" id="f-calc-dia" type="button">Ver</button></form>
 <div id="r-dia" class="resultado" aria-live="polite" hidden></div></section>
-<section class="texto"><h2>Algunos ejemplos</h2><ul class="lista-datos"><li>Del jueves 1 de enero de 2026 al jueves 31 de diciembre de 2026 hay 364 días; 365 si cuentas los dos.</li><li>Desde hoy, jueves 5 de noviembre de 2026, hasta <a href="/navidad/">Navidad</a> (viernes 25 de diciembre de 2026) faltan 50 días.</li><li>Hoy más 90 días es el miércoles 3 de febrero de 2027.</li><li>2026 tiene 261 días de lunes a viernes, antes de descontar festivos.</li></ul>
+<section class="texto"><h2>Algunos ejemplos</h2><ul class="lista-datos"><li>Del jueves 1 de enero de 2026 al jueves 31 de diciembre de 2026 hay 364 días; 365 si cuentas los dos.</li><li>Desde hoy, viernes 6 de noviembre de 2026, hasta <a href="/navidad/">Navidad</a> (viernes 25 de diciembre de 2026) faltan 49 días.</li><li>Hoy más 90 días es el jueves 4 de febrero de 2027.</li><li>2026 tiene 261 días de lunes a viernes, antes de descontar festivos.</li></ul>
 <p>¿Quieres contar solo los días de trabajo de tu municipio, descontando sus festivos? Usa la <a href="https://festivosde.es/calculadora-dias-laborables/">calculadora de días laborables</a> de festivosde.es. Y si lo que buscas es cuánto falta para una fecha concreta, crea <a href="/#tu-cuenta">tu propia cuenta atrás</a> o mira <a href="/cuanto-hace/">cuánto hace de una fecha</a>.</p></section>
 <section class="faq"><h2>Preguntas frecuentes</h2><h3>¿Cómo se calculan los días entre dos fechas?</h3><p>Se cuentan los días que pasan de una fecha a la otra, sin contar el primero: del 1 al 3 de un mes hay 2 días. Si necesitas contar los dos extremos (por ejemplo, para unas vacaciones o un plazo que incluye el primer día), suma uno; la calculadora tiene una casilla para eso.</p><h3>¿Cómo sumo días a una fecha?</h3><p>Elige la fecha, escribe cuántos días, semanas o meses quieres sumar o restar y la calculadora te dice qué día cae. Al sumar meses, si el día no existe en el mes de llegada (por ejemplo, el 31 de un mes de 30 días), se usa el último día de ese mes.</p><h3>¿Cuentan los festivos como días laborables?</h3><p>La calculadora cuenta los días de lunes a viernes, pero no descuenta festivos porque cambian según el municipio. Para descontar los de tu pueblo o ciudad, usa la calculadora de días laborables de festivosde.es.</p><h3>¿Cuántos días tiene 2026?</h3><p>2026 tiene 365 días y 53 semanas según la numeración ISO, la que usan los calendarios en España. Un año es bisiesto si es divisible entre 4, salvo los divisibles entre 100 que no lo son entre 400.</p></section>
 </main>
