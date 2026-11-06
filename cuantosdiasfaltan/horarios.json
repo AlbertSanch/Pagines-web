@@ -2002,14 +2002,29 @@ null
 },
 {
 "id": "401882789",
-"utc": "2026-11-29T20:00Z",
-"hora_valida": false,
+"utc": "2026-11-28T20:00Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Real Madrid",
 "visitante": "Alavés",
 "en_casa": true,
 "estadio": "Santiago Bernabéu",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882698",
+"utc": "2026-12-02T18:00Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Real Sociedad",
+"visitante": "Real Madrid",
+"en_casa": false,
+"estadio": "Reale Arena",
 "goles": [
 null,
 null
@@ -2190,21 +2205,6 @@ null
 "visitante": "Real Madrid",
 "en_casa": false,
 "estadio": "Vodafone Park",
-"goles": [
-null,
-null
-]
-},
-{
-"id": "401882698",
-"utc": "2027-02-07T20:00Z",
-"hora_valida": false,
-"estado": "pre",
-"competicion": "LALIGA",
-"local": "Real Sociedad",
-"visitante": "Real Madrid",
-"en_casa": false,
-"estadio": "Reale Arena",
 "goles": [
 null,
 null
@@ -2754,14 +2754,29 @@ null
 },
 {
 "id": "401882794",
-"utc": "2026-11-29T20:00Z",
-"hora_valida": false,
+"utc": "2026-11-29T15:15Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Deportivo La Coruña",
 "visitante": "Barcelona",
 "en_casa": false,
 "estadio": "Riazor",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882700",
+"utc": "2026-12-02T20:30Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Atlético de Madrid",
+"en_casa": true,
+"estadio": "Spotify Camp Nou",
 "goles": [
 null,
 null
@@ -2942,21 +2957,6 @@ null
 "visitante": "Atlético de Madrid",
 "en_casa": true,
 "estadio": "Şükrü Saracoğlu Stadium",
-"goles": [
-null,
-null
-]
-},
-{
-"id": "401882700",
-"utc": "2027-02-07T20:00Z",
-"hora_valida": false,
-"estado": "pre",
-"competicion": "LALIGA",
-"local": "Barcelona",
-"visitante": "Atlético de Madrid",
-"en_casa": true,
-"estadio": "Spotify Camp Nou",
 "goles": [
 null,
 null
@@ -3622,15 +3622,28 @@ null
 },
 {
 "torneo": "Rolex Paris Masters",
-"utc": "2026-11-06T18:00Z",
+"utc": "2026-11-06T19:00Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Quarterfinal",
 "pista": "Court Central",
 "rival": "Taylor Fritz",
 "descanso": false,
 "gano": null,
-"sets": []
+"sets": [
+[
+6,
+7
+],
+[
+7,
+5
+],
+[
+5,
+2
+]
+]
 }
 ],
 "sinner": [
@@ -4358,7 +4371,7 @@ null
 "torneo": "Chennai Open",
 "utc": "2026-11-06T09:35Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Quarterfinal",
 "pista": "Centre Court",
 "jugadores": [
@@ -4366,7 +4379,7 @@ null
 "id": "6413",
 "n": "Polina Kudermetova",
 "pais": "Uzbekistán",
-"gano": null,
+"gano": false,
 "sets": [
 7,
 4,
@@ -4377,11 +4390,11 @@ null
 "id": "6368",
 "n": "Janice Tjen",
 "pais": "Indonesia",
-"gano": null,
+"gano": true,
 "sets": [
 5,
 6,
-5
+6
 ]
 }
 ]
@@ -4392,7 +4405,7 @@ null
 "torneo": "Prudential Hong Kong Tennis Open",
 "utc": "2026-11-06T10:40Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Quarterfinal",
 "pista": "Centre Court",
 "jugadores": [
@@ -4400,17 +4413,17 @@ null
 "id": "3018",
 "n": "Maria Sakkari",
 "pais": "Grecia",
-"gano": null,
+"gano": true,
 "sets": [
 6,
-4
+6
 ]
 },
 {
 "id": "1809",
 "n": "Aliaksandra Sasnovich",
 "pais": "Bielorrusia",
-"gano": null,
+"gano": false,
 "sets": [
 2,
 3
@@ -4424,7 +4437,7 @@ null
 "torneo": "Angola Ladies Open",
 "utc": "2026-11-06T10:55Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Quarterfinal",
 "pista": "Lwena Court",
 "jugadores": [
@@ -4432,8 +4445,9 @@ null
 "id": "6419",
 "n": "Martyna Kubka",
 "pais": "Polonia",
-"gano": null,
+"gano": false,
 "sets": [
+6,
 5
 ]
 },
@@ -4441,9 +4455,10 @@ null
 "id": "3401",
 "n": "Sofya Lansere",
 "pais": "Rusia",
-"gano": null,
+"gano": true,
 "sets": [
-5
+7,
+7
 ]
 }
 ]
@@ -4454,7 +4469,7 @@ null
 "torneo": "Angola Ladies Open",
 "utc": "2026-11-06T11:10Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Quarterfinal",
 "pista": "Court 3",
 "jugadores": [
@@ -4462,20 +4477,52 @@ null
 "id": "13369",
 "n": "Gina Feistel",
 "pais": "Polonia",
-"gano": null,
+"gano": true,
 "sets": [
 6,
-0
+7
 ]
 },
 {
 "id": "13737",
 "n": "Ksenia Zaytseva",
 "pais": "Rusia",
-"gano": null,
+"gano": false,
 "sets": [
 1,
-1
+5
+]
+}
+]
+},
+{
+"id": "186597",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-06T12:20Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Quarterfinal",
+"pista": "Centre Court",
+"jugadores": [
+{
+"id": "15999",
+"n": "Maaya Rajeshwaran Revathi",
+"pais": "India",
+"gano": false,
+"sets": [
+3,
+3
+]
+},
+{
+"id": "6723",
+"n": "Robin Montgomery",
+"pais": "USA",
+"gano": true,
+"sets": [
+6,
+6
 ]
 }
 ]
@@ -4484,9 +4531,9 @@ null
 "id": "186634",
 "gira": "WTA",
 "torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-06T12:10Z",
+"utc": "2026-11-06T12:35Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Quarterfinal",
 "pista": "Centre Court",
 "jugadores": [
@@ -4494,67 +4541,21 @@ null
 "id": "7759",
 "n": "Alexandra Eala",
 "pais": "Filipinas",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+7,
+7
+]
 },
 {
 "id": "6816",
 "n": "Antonia Ruzic",
 "pais": "Croacia",
-"gano": null,
-"sets": []
-}
+"gano": false,
+"sets": [
+6,
+5
 ]
-},
-{
-"id": "186597",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-06T12:10Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Quarterfinal",
-"pista": "Centre Court",
-"jugadores": [
-{
-"id": "15999",
-"n": "Maaya Rajeshwaran Revathi",
-"pais": "India",
-"gano": null,
-"sets": []
-},
-{
-"id": "6723",
-"n": "Robin Montgomery",
-"pais": "USA",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186686",
-"gira": "WTA",
-"torneo": "Angola Ladies Open",
-"utc": "2026-11-06T12:10Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Quarterfinal",
-"pista": "Lwena Court",
-"jugadores": [
-{
-"id": "7849",
-"n": "Noma Noha Akugue",
-"pais": "Alemania",
-"gano": null,
-"sets": []
-},
-{
-"id": "2441",
-"n": "Justina Mikulskyte",
-"pais": "Lituania",
-"gano": null,
-"sets": []
 }
 ]
 },
@@ -4562,9 +4563,9 @@ null
 "id": "186500",
 "gira": "ATP",
 "torneo": "Rolex Paris Masters",
-"utc": "2026-11-06T13:00Z",
+"utc": "2026-11-06T13:10Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Quarterfinal",
 "pista": "Court Central",
 "jugadores": [
@@ -4572,15 +4573,55 @@ null
 "id": "2964",
 "n": "Tommy Paul",
 "pais": "USA",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+4,
+6,
+3
+]
 },
 {
 "id": "9250",
 "n": "Ben Shelton",
 "pais": "USA",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+4,
+6
+]
+}
+]
+},
+{
+"id": "186686",
+"gira": "WTA",
+"torneo": "Angola Ladies Open",
+"utc": "2026-11-06T13:35Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Quarterfinal",
+"pista": "Lwena Court",
+"jugadores": [
+{
+"id": "7849",
+"n": "Noma Noha Akugue",
+"pais": "Alemania",
+"gano": true,
+"sets": [
+6,
+6
+]
+},
+{
+"id": "2441",
+"n": "Justina Mikulskyte",
+"pais": "Lituania",
+"gano": false,
+"sets": [
+2,
+3
+]
 }
 ]
 },
@@ -4588,9 +4629,9 @@ null
 "id": "186596",
 "gira": "WTA",
 "torneo": "Chennai Open",
-"utc": "2026-11-06T13:00Z",
+"utc": "2026-11-06T13:50Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Quarterfinal",
 "pista": "Centre Court",
 "jugadores": [
@@ -4598,41 +4639,23 @@ null
 "id": "1649",
 "n": "Magda Linette",
 "pais": "Polonia",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+4,
+7,
+6
+]
 },
 {
 "id": "3153",
 "n": "Mai Hontama",
 "pais": "Japón",
-"gano": null,
-"sets": []
-}
+"gano": false,
+"sets": [
+6,
+5,
+4
 ]
-},
-{
-"id": "186595",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-06T14:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Quarterfinal",
-"pista": "Centre Court",
-"jugadores": [
-{
-"id": "8067",
-"n": "Lucrezia Stefanini",
-"pais": "Italia",
-"gano": null,
-"sets": []
-},
-{
-"id": "5775",
-"n": "Anastasia Zakharova",
-"pais": "Rusia",
-"gano": null,
-"sets": []
 }
 ]
 },
@@ -4640,9 +4663,9 @@ null
 "id": "186501",
 "gira": "ATP",
 "torneo": "Rolex Paris Masters",
-"utc": "2026-11-06T14:30Z",
+"utc": "2026-11-06T15:20Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Quarterfinal",
 "pista": "Court Central",
 "jugadores": [
@@ -4650,41 +4673,55 @@ null
 "id": "3716",
 "n": "Rinky Hijikata",
 "pais": "Australia",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+4,
+7,
+5
+]
 },
 {
 "id": "8814",
 "n": "Luca Van Assche",
 "pais": "Francia",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6,
+7
+]
 }
 ]
 },
 {
-"id": "186688",
+"id": "186595",
 "gira": "WTA",
-"torneo": "Angola Ladies Open",
-"utc": "2026-11-06T15:30Z",
+"torneo": "Chennai Open",
+"utc": "2026-11-06T16:45Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Quarterfinal",
-"pista": "Lwena Court",
+"pista": "Centre Court",
 "jugadores": [
 {
-"id": "8318",
-"n": "Yasmine Kabbaj",
-"pais": "Laos",
-"gano": null,
-"sets": []
+"id": "8067",
+"n": "Lucrezia Stefanini",
+"pais": "Italia",
+"gano": false,
+"sets": [
+2,
+2
+]
 },
 {
-"id": "2902",
-"n": "Anna Blinkova",
-"pais": "Francia",
-"gano": null,
-"sets": []
+"id": "5775",
+"n": "Anastasia Zakharova",
+"pais": "Rusia",
+"gano": true,
+"sets": [
+6,
+5
+]
 }
 ]
 },
@@ -4692,9 +4729,9 @@ null
 "id": "186734",
 "gira": "WTA",
 "torneo": "Reto Win Tennis Cali Open",
-"utc": "2026-11-06T17:00Z",
+"utc": "2026-11-06T17:10Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Semifinal",
 "pista": "Campo 1",
 "jugadores": [
@@ -4702,15 +4739,23 @@ null
 "id": "5749",
 "n": "Julia Riera",
 "pais": "Argentina",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+6,
+5,
+4
+]
 },
 {
 "id": "10676",
 "n": "Leyre Romero Gormaz",
 "pais": "España",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+3,
+7,
+6
+]
 }
 ]
 },
@@ -4718,9 +4763,9 @@ null
 "id": "186492",
 "gira": "ATP",
 "torneo": "Rolex Paris Masters",
-"utc": "2026-11-06T18:00Z",
+"utc": "2026-11-06T19:00Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Quarterfinal",
 "pista": "Court Central",
 "jugadores": [
@@ -4729,14 +4774,22 @@ null
 "n": "Carlos Alcaraz",
 "pais": "España",
 "gano": null,
-"sets": []
+"sets": [
+6,
+7,
+5
+]
 },
 {
 "id": "2946",
 "n": "Taylor Fritz",
 "pais": "USA",
 "gano": null,
-"sets": []
+"sets": [
+7,
+5,
+2
+]
 }
 ]
 },
@@ -4744,9 +4797,9 @@ null
 "id": "186735",
 "gira": "WTA",
 "torneo": "Reto Win Tennis Cali Open",
-"utc": "2026-11-06T18:30Z",
+"utc": "2026-11-06T20:10Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Semifinal",
 "pista": "Campo 1",
 "jugadores": [
@@ -4755,14 +4808,20 @@ null
 "n": "Bianca Andreescu",
 "pais": "Canadá",
 "gano": null,
-"sets": []
+"sets": [
+6,
+5
+]
 },
 {
 "id": "5161",
 "n": "Alice Tubello",
 "pais": "Francia",
 "gano": null,
-"sets": []
+"sets": [
+0,
+4
+]
 }
 ]
 },
@@ -4770,7 +4829,7 @@ null
 "id": "186493",
 "gira": "ATP",
 "torneo": "Rolex Paris Masters",
-"utc": "2026-11-06T19:30Z",
+"utc": "2026-11-06T21:50Z",
 "hora_valida": true,
 "estado": "pre",
 "ronda": "Quarterfinal",
@@ -4787,188 +4846,6 @@ null
 "id": "2989",
 "n": "Casper Ruud",
 "pais": "Noruega",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186504",
-"gira": "ATP",
-"torneo": "Rolex Paris Masters",
-"utc": "2026-11-07T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Semifinal",
-"pista": "",
-"jugadores": [
-{
-"id": "-4",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186505",
-"gira": "ATP",
-"torneo": "Rolex Paris Masters",
-"utc": "2026-11-07T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Semifinal",
-"pista": "",
-"jugadores": [
-{
-"id": "-4",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186593",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-07T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Semifinal",
-"pista": "",
-"jugadores": [
-{
-"id": "-4",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186594",
-"gira": "WTA",
-"torneo": "Chennai Open",
-"utc": "2026-11-07T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Semifinal",
-"pista": "",
-"jugadores": [
-{
-"id": "-4",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186741",
-"gira": "WTA",
-"torneo": "Reto Win Tennis Cali Open",
-"utc": "2026-11-07T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Final",
-"pista": "",
-"jugadores": [
-{
-"id": "-4",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186684",
-"gira": "WTA",
-"torneo": "Angola Ladies Open",
-"utc": "2026-11-07T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Semifinal",
-"pista": "",
-"jugadores": [
-{
-"id": "-4",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186685",
-"gira": "WTA",
-"torneo": "Angola Ladies Open",
-"utc": "2026-11-07T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Semifinal",
-"pista": "",
-"jugadores": [
-{
-"id": "-4",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
 "gano": null,
 "sets": []
 }
@@ -5004,16 +4881,436 @@ null
 "id": "186643",
 "gira": "WTA",
 "torneo": "Prudential Hong Kong Tennis Open",
-"utc": "2026-11-07T07:30Z",
+"utc": "2026-11-07T08:00Z",
 "hora_valida": true,
 "estado": "pre",
 "ronda": "Semifinal",
 "pista": "Centre Court",
 "jugadores": [
 {
+"id": "7759",
+"n": "Alexandra Eala",
+"pais": "Filipinas",
+"gano": null,
+"sets": []
+},
+{
+"id": "3018",
+"n": "Maria Sakkari",
+"pais": "Grecia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "187453",
+"gira": "ATP",
+"torneo": "Bybit Stockholm Open",
+"utc": "2026-11-07T10:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Qualifying 1st Round",
+"pista": "Court 1",
+"jugadores": [
+{
+"id": "3449",
+"n": "Borna Gojo",
+"pais": "Croacia",
+"gano": null,
+"sets": []
+},
+{
+"id": "10212",
+"n": "Mika Brunold",
+"pais": "Suiza",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "187452",
+"gira": "ATP",
+"torneo": "Bybit Stockholm Open",
+"utc": "2026-11-07T10:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Qualifying 1st Round",
+"pista": "Center Court",
+"jugadores": [
+{
+"id": "3820",
+"n": "Francesco Passaro",
+"pais": "Italia",
+"gano": null,
+"sets": []
+},
+{
+"id": "2498",
+"n": "Nikoloz Basilashvili",
+"pais": "Georgia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186688",
+"gira": "WTA",
+"torneo": "Angola Ladies Open",
+"utc": "2026-11-07T10:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Quarterfinal",
+"pista": "Lwena Court",
+"jugadores": [
+{
+"id": "8318",
+"n": "Yasmine Kabbaj",
+"pais": "Laos",
+"gano": null,
+"sets": [
+0
+]
+},
+{
+"id": "2902",
+"n": "Anna Blinkova",
+"pais": "Francia",
+"gano": null,
+"sets": [
+2
+]
+}
+]
+},
+{
+"id": "187447",
+"gira": "ATP",
+"torneo": "Bybit Stockholm Open",
+"utc": "2026-11-07T11:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Qualifying 1st Round",
+"pista": "Center Court",
+"jugadores": [
+{
+"id": "3052",
+"n": "Lorenzo Sonego",
+"pais": "Italia",
+"gano": null,
+"sets": []
+},
+{
+"id": "16687",
+"n": "Olle Wallin",
+"pais": "Suecia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "187446",
+"gira": "ATP",
+"torneo": "Bybit Stockholm Open",
+"utc": "2026-11-07T11:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Qualifying 1st Round",
+"pista": "Court 1",
+"jugadores": [
+{
+"id": "9215",
+"n": "Inaki Montes-De La Torre",
+"pais": "España",
+"gano": null,
+"sets": []
+},
+{
+"id": "1842",
+"n": "Damir Dzumhur",
+"pais": "Bosnia y Herzegovina",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186594",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-07T12:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Semifinal",
+"pista": "Centre Court",
+"jugadores": [
+{
+"id": "6723",
+"n": "Robin Montgomery",
+"pais": "USA",
+"gano": null,
+"sets": []
+},
+{
+"id": "6368",
+"n": "Janice Tjen",
+"pais": "Indonesia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186684",
+"gira": "WTA",
+"torneo": "Angola Ladies Open",
+"utc": "2026-11-07T12:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Semifinal",
+"pista": "Lwena Court",
+"jugadores": [
+{
+"id": "7849",
+"n": "Noma Noha Akugue",
+"pais": "Alemania",
+"gano": null,
+"sets": []
+},
+{
+"id": "3401",
+"n": "Sofya Lansere",
+"pais": "Rusia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "187451",
+"gira": "ATP",
+"torneo": "Bybit Stockholm Open",
+"utc": "2026-11-07T13:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Qualifying 1st Round",
+"pista": "Center Court",
+"jugadores": [
+{
+"id": "10645",
+"n": "Toby Samuel",
+"pais": "Gran Bretaña",
+"gano": null,
+"sets": []
+},
+{
+"id": "10946",
+"n": "Karl Friberg",
+"pais": "Suecia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "187449",
+"gira": "ATP",
+"torneo": "Bybit Stockholm Open",
+"utc": "2026-11-07T13:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Qualifying 1st Round",
+"pista": "Court 1",
+"jugadores": [
+{
+"id": "8710",
+"n": "Aleksandr Shevchenko",
+"pais": "Kazajistán",
+"gano": null,
+"sets": []
+},
+{
+"id": "2877",
+"n": "Viktor Durasovic",
+"pais": "Noruega",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186504",
+"gira": "ATP",
+"torneo": "Rolex Paris Masters",
+"utc": "2026-11-07T13:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Semifinal",
+"pista": "Court Central",
+"jugadores": [
+{
+"id": "9250",
+"n": "Ben Shelton",
+"pais": "USA",
+"gano": null,
+"sets": []
+},
+{
+"id": "8814",
+"n": "Luca Van Assche",
+"pais": "Francia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186593",
+"gira": "WTA",
+"torneo": "Chennai Open",
+"utc": "2026-11-07T14:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Semifinal",
+"pista": "Centre Court",
+"jugadores": [
+{
+"id": "5775",
+"n": "Anastasia Zakharova",
+"pais": "Rusia",
+"gano": null,
+"sets": []
+},
+{
+"id": "1649",
+"n": "Magda Linette",
+"pais": "Polonia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186685",
+"gira": "WTA",
+"torneo": "Angola Ladies Open",
+"utc": "2026-11-07T14:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Semifinal",
+"pista": "Lwena Court",
+"jugadores": [
+{
+"id": "13369",
+"n": "Gina Feistel",
+"pais": "Polonia",
+"gano": null,
+"sets": []
+},
+{
+"id": "-3",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "187450",
+"gira": "ATP",
+"torneo": "Bybit Stockholm Open",
+"utc": "2026-11-07T14:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Qualifying 1st Round",
+"pista": "Center Court",
+"jugadores": [
+{
+"id": "19358",
+"n": "Jan Simonsson",
+"pais": "Suecia",
+"gano": null,
+"sets": []
+},
+{
+"id": "1266",
+"n": "Adrian Mannarino",
+"pais": "Francia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "187448",
+"gira": "ATP",
+"torneo": "Bybit Stockholm Open",
+"utc": "2026-11-07T14:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Qualifying 1st Round",
+"pista": "Court 1",
+"jugadores": [
+{
+"id": "16638",
+"n": "Arthur Nagel",
+"pais": "Francia",
+"gano": null,
+"sets": []
+},
+{
+"id": "11685",
+"n": "Jacob Fearnley",
+"pais": "Gran Bretaña",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186505",
+"gira": "ATP",
+"torneo": "Rolex Paris Masters",
+"utc": "2026-11-07T16:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Semifinal",
+"pista": "Court Central",
+"jugadores": [
+{
 "id": "-4",
 "n": "TBD",
 "pais": "",
+"gano": null,
+"sets": []
+},
+{
+"id": "-3",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186741",
+"gira": "WTA",
+"torneo": "Reto Win Tennis Cali Open",
+"utc": "2026-11-07T16:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Final",
+"pista": "Campo 1",
+"jugadores": [
+{
+"id": "10676",
+"n": "Leyre Romero Gormaz",
+"pais": "España",
 "gano": null,
 "sets": []
 },
@@ -5360,14 +5657,29 @@ null
 },
 {
 "id": "401882793",
-"utc": "2026-11-29T20:00Z",
-"hora_valida": false,
+"utc": "2026-11-28T17:30Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Elche",
 "visitante": "Atlético de Madrid",
 "en_casa": false,
 "estadio": "Estadio Martínez Valero",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401882700",
+"utc": "2026-12-02T20:30Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "LALIGA",
+"local": "Barcelona",
+"visitante": "Atlético de Madrid",
+"en_casa": false,
+"estadio": "Spotify Camp Nou",
 "goles": [
 null,
 null
@@ -5548,21 +5860,6 @@ null
 "visitante": "Atlético de Madrid",
 "en_casa": false,
 "estadio": "Şükrü Saracoğlu Stadium",
-"goles": [
-null,
-null
-]
-},
-{
-"id": "401882700",
-"utc": "2027-02-07T20:00Z",
-"hora_valida": false,
-"estado": "pre",
-"competicion": "LALIGA",
-"local": "Barcelona",
-"visitante": "Atlético de Madrid",
-"en_casa": false,
-"estadio": "Spotify Camp Nou",
 "goles": [
 null,
 null
@@ -6223,8 +6520,8 @@ null
 "competicion": "Segunda División",
 "utc": "2026-11-06T19:30Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "Post.",
 "local": "Castellón",
 "visitante": "Eibar",
 "ids": [
@@ -6243,8 +6540,8 @@ null
 "competicion": "Bundesliga",
 "utc": "2026-11-06T19:30Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Hamburg SV",
 "visitante": "Borussia Monchengladbach",
 "ids": [
@@ -6252,8 +6549,8 @@ null
 "268"
 ],
 "goles": [
-"0",
-"0"
+"3",
+"1"
 ],
 "es": false
 },
@@ -6263,8 +6560,8 @@ null
 "competicion": "Serie A",
 "utc": "2026-11-06T19:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Venezia",
 "visitante": "Udinese",
 "ids": [
@@ -6272,8 +6569,8 @@ null
 "118"
 ],
 "goles": [
-"0",
-"0"
+"2",
+"1"
 ],
 "es": false
 },
@@ -6283,8 +6580,8 @@ null
 "competicion": "Ligue 1",
 "utc": "2026-11-06T19:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Toulouse",
 "visitante": "Strasbourg",
 "ids": [
@@ -6292,8 +6589,8 @@ null
 "180"
 ],
 "goles": [
-"0",
-"0"
+"3",
+"1"
 ],
 "es": false
 },
@@ -6303,8 +6600,8 @@ null
 "competicion": "LaLiga",
 "utc": "2026-11-06T20:00Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "in",
+"detalle": "80'",
 "local": "Sevilla FC",
 "visitante": "Alavés",
 "ids": [
@@ -6323,8 +6620,8 @@ null
 "competicion": "Premier League",
 "utc": "2026-11-06T20:00Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "in",
+"detalle": "84'",
 "local": "Everton",
 "visitante": "Coventry City",
 "ids": [
@@ -6332,8 +6629,8 @@ null
 "388"
 ],
 "goles": [
-"0",
-"0"
+"3",
+"1"
 ],
 "es": false
 },
@@ -6343,8 +6640,8 @@ null
 "competicion": "Liga Portugal",
 "utc": "2026-11-06T20:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "in",
+"detalle": "MT",
 "local": "FC Famalicao",
 "visitante": "Arouca",
 "ids": [
@@ -6681,7 +6978,7 @@ null
 "id": "401882463",
 "liga": "esp.w.1",
 "competicion": "Liga F",
-"utc": "2026-11-07T16:15Z",
+"utc": "2026-11-07T16:00Z",
 "hora_valida": true,
 "estado": "pre",
 "detalle": "Scheduled",
@@ -7291,8 +7588,8 @@ null
 },
 {
 "id": "401882796",
-"utc": "2026-11-29T20:00Z",
-"hora_valida": false,
+"utc": "2026-11-28T13:00Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Real Betis",
@@ -7953,8 +8250,8 @@ null
 },
 {
 "id": "401882790",
-"utc": "2026-11-29T20:00Z",
-"hora_valida": false,
+"utc": "2026-11-28T15:15Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Málaga",
@@ -8542,15 +8839,15 @@ null
 "id": "401882809",
 "utc": "2026-11-06T20:00Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "competicion": "LALIGA",
 "local": "Sevilla FC",
 "visitante": "Alavés",
 "en_casa": true,
 "estadio": "Ramón Sánchez Pizjuán Stadium",
 "goles": [
-null,
-null
+"0",
+"0"
 ]
 },
 {
@@ -8571,7 +8868,7 @@ null
 {
 "id": "401882788",
 "utc": "2026-11-29T20:00Z",
-"hora_valida": false,
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Real Sociedad",
@@ -9172,8 +9469,8 @@ null
 },
 {
 "id": "401882787",
-"utc": "2026-11-29T20:00Z",
-"hora_valida": false,
+"utc": "2026-11-29T13:00Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Valencia",
@@ -9804,8 +10101,8 @@ null
 },
 {
 "id": "401882790",
-"utc": "2026-11-29T20:00Z",
-"hora_valida": false,
+"utc": "2026-11-28T15:15Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Málaga",
@@ -10481,8 +10778,8 @@ null
 },
 {
 "id": "401882795",
-"utc": "2026-11-29T20:00Z",
-"hora_valida": false,
+"utc": "2026-11-29T17:30Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Celta Vigo",
