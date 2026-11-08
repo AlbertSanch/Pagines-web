@@ -129,7 +129,9 @@ def nombre_provincia(linea, ccaa):
     return alt.get(t) if t in alt and PROVINCIAS[alt[t]][1] == ccaa else None
 
 
-INICIO = re.compile(r"^(?:[—–-]\s*|\d{1,3}[.)]\s+|[•·]\s*)?([A-Za-zÁÉÍÓÚÑÜáéíóúñüÀÈÒàèòÏïÇç'’ .()/-]{2,70}?)\s*(?::|\.\s*-|,|\.)\s+(\d{1,2}\b.*)$")
+# el nombre puede llevar el artículo detrás: «Prat de Llobregat, El, 25 de mayo…», «Hospitalet de Llobregat, L', 25 de mayo…»
+ARTICULO_DETRAS = r"(?:,\s*(?:[Ee]l|[Ll]a|[Ll]os|[Ll]as|[Ll]es|[Ee]ls|[Ll]o|[Ss]a|[Ss]es|[Ll]['’]|[Ss]['’]))?"
+INICIO = re.compile(r"^(?:[—–-]\s*|\d{1,3}[.)]\s+|[•·]\s*)?([A-Za-zÁÉÍÓÚÑÜáéíóúñüÀÈÒàèòÏïÇç'’ .()/-]{2,70}?" + ARTICULO_DETRAS + r")\s*(?::|\.\s*-|,|\.)\s+(\d{1,2}\b.*)$")
 TABLA = re.compile(r"^(?:\d{1,3}\s+)?([A-ZÁÉÍÓÚÑÜ][A-Za-zÁÉÍÓÚÑÜáéíóúñüÀÈÒàèòÏïÇç'’ ,.()/-]{1,70}?)\s{2,}(\d{1,2}\b.*)$")
 
 
@@ -160,6 +162,8 @@ def leer_general(txt, anio, ccaa):
 
     pendiente_fechas = None
     for idx, linea in enumerate(lineas):
+        # León: «Brazuelo: Para todo el municipio: 24 de julio y 25 de agosto»
+        linea = re.sub(r":\s*Para todo el municipio\s*:", ":", linea)
         s = linea.strip()
         # Versalitas mal extraídas del PDF (Zamora: «alcaÑiceS   3 de julio»): nombre en la primera columna
         if re.match(r"^[a-záéíóúñ][\wÁÉÍÓÚÑáéíóúñü' ()-]+\s{2,}\d", linea):
@@ -192,6 +196,9 @@ def leer_general(txt, anio, ccaa):
             pendiente_fechas = s  # el nombre del municipio viene en la línea siguiente (celda centrada)
         elif re.match(r"^\d{1,2}\s+(?:de\s+)?(" + "|".join(MESES) + r")\b", s, re.I) and entradas and len(fechas_en(entradas[-1][2], anio)) < 2:
             entradas[-1][2] += " ; " + s  # segunda fecha en su propia línea
+        elif (not re.search(r"\d", s) and entradas and len(s.split()) <= 3
+              and re.search(r"\b(?:San|Santa|Santo|Nuestra|Ntra\.?|Sra\.?|Virgen|Bto\.?|de|del|la)\s*$", entradas[-1][2])):
+            entradas[-1][2] += " " + s  # «5 de octubre, San / Froilán»: el nombre de la fiesta sigue en la línea siguiente
         elif not re.search(r"\d", s) and len(s) < 60 and re.match(r"^[A-ZÁÉÍÓÚÑ]", s):
             pendiente = s
         elif entradas and not re.search(r"\d{1,2} de ", s) and len(entradas[-1][2]) < 300 and (
