@@ -17,6 +17,7 @@ on:
       - festivos/scripts/**
       - festivos/plantilla/**
       - festivos/fuentes.json
+      - festivos/transcripciones/**
       - .github/workflows/festivos.yml
 
 permissions:

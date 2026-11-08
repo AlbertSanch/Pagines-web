@@ -129,7 +129,9 @@ def nombre_provincia(linea, ccaa):
     return alt.get(t) if t in alt and PROVINCIAS[alt[t]][1] == ccaa else None
 
 
-INICIO = re.compile(r"^(?:[—–-]\s*|\d{1,3}[.)]\s+|[•·]\s*)?([A-Za-zÁÉÍÓÚÑÜáéíóúñüÀÈÒàèòÏïÇç'’ .()/-]{2,70}?)\s*(?::|\.\s*-|,|\.)\s+(\d{1,2}\b.*)$")
+# el nombre puede llevar el artículo detrás: «Prat de Llobregat, El, 25 de mayo…», «Hospitalet de Llobregat, L', 25 de mayo…»
+ARTICULO_DETRAS = r"(?:,\s*(?:(?i:el|la|los|las|les|els|lo|sa|ses|l['’]|s['’])|A|O|As|Os|Es))?"
+INICIO = re.compile(r"^(?:[—–-]\s*|\d{1,3}[.)]\s+|[•·]\s*)?([A-Za-zÁÉÍÓÚÑÜáéíóúñüÀÈÒàèòÏïÇç'’ .()/-]{2,70}?" + ARTICULO_DETRAS + r")\s*(?::|\.\s*-|,|\.)\s+(\d{1,2}\b.*)$")
 TABLA = re.compile(r"^(?:\d{1,3}\s+)?([A-ZÁÉÍÓÚÑÜ][A-Za-zÁÉÍÓÚÑÜáéíóúñüÀÈÒàèòÏïÇç'’ ,.()/-]{1,70}?)\s{2,}(\d{1,2}\b.*)$")
 
 
@@ -160,6 +162,8 @@ def leer_general(txt, anio, ccaa):
 
     pendiente_fechas = None
     for idx, linea in enumerate(lineas):
+        # León: «Brazuelo: Para todo el municipio: 24 de julio y 25 de agosto»
+        linea = re.sub(r":\s*Para todo el municipio\s*:", ":", linea)
         s = linea.strip()
         # Versalitas mal extraídas del PDF (Zamora: «alcaÑiceS   3 de julio»): nombre en la primera columna
         if re.match(r"^[a-záéíóúñ][\wÁÉÍÓÚÑáéíóúñü' ()-]+\s{2,}\d", linea):
@@ -192,6 +196,9 @@ def leer_general(txt, anio, ccaa):
             pendiente_fechas = s  # el nombre del municipio viene en la línea siguiente (celda centrada)
         elif re.match(r"^\d{1,2}\s+(?:de\s+)?(" + "|".join(MESES) + r")\b", s, re.I) and entradas and len(fechas_en(entradas[-1][2], anio)) < 2:
             entradas[-1][2] += " ; " + s  # segunda fecha en su propia línea
+        elif (not re.search(r"\d", s) and entradas and len(s.split()) <= 3
+              and re.search(r"\b(?:San|Santa|Santo|Nuestra|Ntra\.?|Sra\.?|Virgen|Bto\.?|de|del|la)\s*$", entradas[-1][2])):
+            entradas[-1][2] += " " + s  # «5 de octubre, San / Froilán»: el nombre de la fiesta sigue en la línea siguiente
         elif not re.search(r"\d", s) and len(s) < 60 and re.match(r"^[A-ZÁÉÍÓÚÑ]", s):
             pendiente = s
         elif entradas and not re.search(r"\d{1,2} de ", s) and len(entradas[-1][2]) < 300 and (
@@ -399,12 +406,33 @@ LECTORES = {
 }
 
 
+def leer_transcripcion(ruta):
+    """Tabla transcrita a mano o con OCR revisado (boletines escaneados): ENTIDAD<TAB>DD/MM/AAAA<TAB>FESTIVIDAD."""
+    entradas = {}
+    for linea in ruta.read_text(encoding="utf-8").splitlines():
+        if not linea.strip() or linea.startswith("#"):
+            continue
+        nombre, fecha_txt, fiesta = (linea.split("\t") + ["", ""])[:3]
+        d, m, a = map(int, fecha_txt.strip().split("/"))
+        menores = {"de", "del", "la", "las", "los", "el", "y", "e", "en", "a"}
+        palabras = fiesta.strip().lower().split()
+        fiesta = " ".join(w if i and w in menores else w[:1].upper() + w[1:] for i, w in enumerate(palabras)) or "Fiesta local"
+        if fiesta.upper() == "FIESTA LOCAL":
+            fiesta = "Fiesta local"
+        entradas.setdefault(nombre.strip(), []).append((dt.date(a, m, d), fiesta))
+    return [(n, None, lista) for n, lista in entradas.items()]
+
+
 # ------------------------------------------------------------------ cruce con el INE
 def asignar(ccaa, anio, entradas, fuente, provincia=None):
     idx = indice_nombres(ccaa)
     res, sin_cruce = {}, []
     for nombre, prov, lista in entradas:
         cods = idx.get(clave_nombre(nombre))
+        if not cods and "/" in nombre:  # «MONCADA/ MONTCADA»: las dos formas tienen que ser del mismo municipio
+            partes = [idx.get(clave_nombre(p)) for p in nombre.split("/")]
+            if all(partes) and all(p == partes[0] for p in partes):
+                cods = partes[0]
         if not cods:
             sin_cruce.append(nombre)
             continue
@@ -445,9 +473,14 @@ def main():
         if not (FUENTES / f"boe_{anio}.xml").exists():
             continue
         generales, notas, boe = leer_boe(anio)
-        locales, fuentes, comun = {}, {}, {}
+        locales, fuentes, comun, sin_propuesta = {}, {}, {}, set()
         for f in cfg["locales"]:
             if f["anio"] != anio or f.get("tipo") == "consolidado":
+                continue
+            if f.get("transcripcion"):  # boletín escaneado: se usa la transcripción revisada que hay en el repositorio
+                entradas = leer_transcripcion(FUENTES.parent / f["transcripcion"])
+                locales.update(asignar(f["ccaa"], anio, entradas, f["id"], f.get("provincia")))
+                fuentes.setdefault(f["ccaa"], {"titulo": f.get("titulo", ""), "url": f.get("oficial") or f["descarga"], "publicado": f.get("publicado", "")})
                 continue
             ruta = FUENTES / f"{f['id']}.txt"
             if not ruta.exists():
@@ -467,6 +500,16 @@ def main():
             if f.get("tipo") in ("correccion", "complementaria"):
                 aviso(f"{f['id']}: corrige o añade {len(nuevos)} municipios: " + ", ".join(sorted(municipios()[c] for c in nuevos)[:20]))
             locales.update(nuevos)
+            # «Argentona, propuesta no formulada.»: el ayuntamiento no propuso fiestas locales ese año
+            idx = indice_nombres(f["ccaa"])
+            # «Argentona, propuesta no formulada.» (Cataluña) o «AGUASAL      No comunicada» (Palencia, Valladolid, Madrid)
+            for nombre in (re.findall(r"(?m)^\s*([^\d\n]{2,80}?),\s*propuesta no formulada", txt)
+                           + re.findall(r"(?m)^\s*([A-ZÁÉÍÓÚÑÜ][^\d\n]{1,60}?)\s{2,}No comunicad[oa]", txt)):
+                cods = idx.get(clave_nombre(nombre), set())
+                if f.get("provincia"):
+                    cods = {c for c in cods if c[:2] == f["provincia"]}
+                if len(cods) == 1:
+                    sin_propuesta |= cods
             if f.get("tipo") not in ("correccion", "complementaria"):
                 fuentes.setdefault(f["ccaa"], {"titulo": f.get("titulo", ""), "url": registro.get(f["id"], {}).get("url") or f["descarga"],
                                                "publicado": f.get("publicado", "")})
@@ -478,7 +521,8 @@ def main():
             con = sum(1 for c in locales if PROVINCIAS[c[:2]][1] == ccaa)
             aviso(f"== {anio} {ccaa}: {con} de {total} municipios con fiestas locales")
         salida = {"anio": anio, "boe": boe, "nacionales_autonomicos": generales, "notas": notas,
-                  "locales": dict(sorted(locales.items())), "comunes": comun, "fuentes": fuentes}
+                  "locales": dict(sorted(locales.items())), "comunes": comun, "fuentes": fuentes,
+                  "sin_propuesta": sorted(sin_propuesta - set(locales))}
         (DATA / f"festivos_{anio}.json").write_text(json.dumps(salida, ensure_ascii=False, indent=0), encoding="utf-8")
         print(f"{anio}: {len(locales)} municipios con festivos locales; comunidades: {sorted(fuentes)}")
     (DATA / "informe.txt").write_text("\n".join(AVISOS) + "\n", encoding="utf-8")
