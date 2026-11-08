@@ -130,7 +130,7 @@ def nombre_provincia(linea, ccaa):
 
 
 # el nombre puede llevar el artículo detrás: «Prat de Llobregat, El, 25 de mayo…», «Hospitalet de Llobregat, L', 25 de mayo…»
-ARTICULO_DETRAS = r"(?:,\s*(?:[Ee]l|[Ll]a|[Ll]os|[Ll]as|[Ll]es|[Ee]ls|[Ll]o|[Ss]a|[Ss]es|[Ll]['’]|[Ss]['’]))?"
+ARTICULO_DETRAS = r"(?:,\s*(?:[Ee]l|[Ll]a|[Ll]os|[Ll]as|[Ll]es|[Ee]ls|[Ll]o|[Ss]a|[Ss]es|[Ll]['’]|[Ss]['’]|A|O|As|Os|Es))?"
 INICIO = re.compile(r"^(?:[—–-]\s*|\d{1,3}[.)]\s+|[•·]\s*)?([A-Za-zÁÉÍÓÚÑÜáéíóúñüÀÈÒàèòÏïÇç'’ .()/-]{2,70}?" + ARTICULO_DETRAS + r")\s*(?::|\.\s*-|,|\.)\s+(\d{1,2}\b.*)$")
 TABLA = re.compile(r"^(?:\d{1,3}\s+)?([A-ZÁÉÍÓÚÑÜ][A-Za-zÁÉÍÓÚÑÜáéíóúñüÀÈÒàèòÏïÇç'’ ,.()/-]{1,70}?)\s{2,}(\d{1,2}\b.*)$")
 
@@ -498,7 +498,9 @@ def main():
             locales.update(nuevos)
             # «Argentona, propuesta no formulada.»: el ayuntamiento no propuso fiestas locales ese año
             idx = indice_nombres(f["ccaa"])
-            for nombre in re.findall(r"(?m)^\s*([^\d\n]{2,80}?),\s*propuesta no formulada", txt):
+            # «Argentona, propuesta no formulada.» (Cataluña) o «AGUASAL      No comunicada» (Palencia, Valladolid, Madrid)
+            for nombre in (re.findall(r"(?m)^\s*([^\d\n]{2,80}?),\s*propuesta no formulada", txt)
+                           + re.findall(r"(?m)^\s*([A-ZÁÉÍÓÚÑÜ][^\d\n]{1,60}?)\s{2,}No comunicad[oa]", txt)):
                 cods = idx.get(clave_nombre(nombre), set())
                 if f.get("provincia"):
                     cods = {c for c in cods if c[:2] == f["provincia"]}

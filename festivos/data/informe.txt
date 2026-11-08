@@ -103,7 +103,7 @@ valenciana 2026 valenciana_2026: 4 nombres sin municipio del INE (pedanías o va
 valenciana_2026_c1: corrige o añade 5 municipios: Alcosser, Benissoda, Onil, Penàguila, Villamalur
 valenciana_2026_c2: corrige o añade 1 municipios: Orba
 extremadura 2026 extremadura_2026: 59 nombres sin municipio del INE (pedanías o variantes): ALMORCHÓN, ALONSO DE OJEDA, ARROYO SAN SERVÁN, AZABAL, BARBAÑO, BARQUILLA DE PINARES, BATÁN (EL), BAZANA (LA), BRONCO (EL), BROVALES, CASAR DE MIAJADAS, CORTEGANA, ENTRERRÍOS, ENTRÍN ALTO, GARGÁLIGAS, GARVÍN DE LA JARA, GUADAJIRA, GUADALPERALES (LOS), HELECHAL, HERNÁN CORTÉS, MAJADAS .DE TIETAR, MOHEDA DE GATA (LA), NAVA (LA), NAVATRASIERRA, OBANDO, PALAZUELO, PALLARES, PIZARRO, PRADOCHANO, PUEBLA DE ALCOLLARÍN, PUERTO HURRACO, RETAMAR, RETAMOSA DE CABAÑAS, ROTURA DE CABAÑAS, RUECAS, SAN BENITO DE LA CONTIENDA, SAN FRANCISCO DE OLIVENZA, SAN GIL, SAN JORGE DE ALOR, SAN RAFAEL DE OLIVENZA, SANTA MARÍA, SANTA MARÍA DE LAS LOMAS, SANTO DOMINGO DE GUZMÁN, SOLANA DE CABAÑAS, TORREFRESNEDA, TORVISCAL (EL), TREVEJO, VALDEHORNILLOS, VALDENCÍN, VALDESALOR, VALDEÍÑIGOS, VALDIVIA, VALRÍO, VALUENGO, VEGAS ALTAS, VILLARREAL, VIVARES, YELBES, ZURBARÁN
-galicia 2026 galicia_2026: 1 nombres sin municipio del INE (pedanías o variantes): Guntín de Pallares
+galicia 2026 galicia_2026: 2 nombres sin municipio del INE (pedanías o variantes): Guntín de Pallares, Rúa de Valdeorras, A
 madrid 2026: Valdeolmos-Alalpardo tiene 3 festivos locales en madrid_2026
 madrid 2026 madrid_2026: 7 nombres sin municipio del INE (pedanías o variantes): Berzosa de Lozoya, Braojos de la Sierra, Buitrago de Lozoya, Cerceda, El Espartal, Mataelpino, Moraleja de En medio
 madrid_2026_c1: corrige o añade 9 municipios: Brunete, Cervera de Buitrago, Colmenar de Oreja, Coslada, Lozoyuela-Navas-Sieteiglesias, Talamanca de Jarama, Torrelaguna, Valdelaguna, Villarejo de Salvanés
@@ -138,9 +138,9 @@ cyl_salamanca_2026_c1: corrige o añade 0 municipios:
 == 2026 cantabria: 98 de 102 municipios con fiestas locales
 == 2026 castilla-la-mancha: 893 de 919 municipios con fiestas locales
 == 2026 castilla-y-leon: 1686 de 2248 municipios con fiestas locales
-== 2026 cataluna: 874 de 948 municipios con fiestas locales
+== 2026 cataluna: 875 de 948 municipios con fiestas locales
 == 2026 extremadura: 385 de 388 municipios con fiestas locales
-== 2026 galicia: 268 de 317 municipios con fiestas locales
+== 2026 galicia: 311 de 317 municipios con fiestas locales
 == 2026 madrid: 172 de 179 municipios con fiestas locales
 == 2026 murcia: 45 de 45 municipios con fiestas locales
 == 2026 navarra: 223 de 272 municipios con fiestas locales
