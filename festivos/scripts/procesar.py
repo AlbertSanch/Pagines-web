@@ -399,6 +399,23 @@ LECTORES = {
 }
 
 
+def leer_transcripcion(ruta):
+    """Tabla transcrita a mano o con OCR revisado (boletines escaneados): ENTIDAD<TAB>DD/MM/AAAA<TAB>FESTIVIDAD."""
+    entradas = {}
+    for linea in ruta.read_text(encoding="utf-8").splitlines():
+        if not linea.strip() or linea.startswith("#"):
+            continue
+        nombre, fecha_txt, fiesta = (linea.split("\t") + ["", ""])[:3]
+        d, m, a = map(int, fecha_txt.strip().split("/"))
+        menores = {"de", "del", "la", "las", "los", "el", "y", "e", "en", "a"}
+        palabras = fiesta.strip().lower().split()
+        fiesta = " ".join(w if i and w in menores else w[:1].upper() + w[1:] for i, w in enumerate(palabras)) or "Fiesta local"
+        if fiesta.upper() == "FIESTA LOCAL":
+            fiesta = "Fiesta local"
+        entradas.setdefault(nombre.strip(), []).append((dt.date(a, m, d), fiesta))
+    return [(n, None, lista) for n, lista in entradas.items()]
+
+
 # ------------------------------------------------------------------ cruce con el INE
 def asignar(ccaa, anio, entradas, fuente, provincia=None):
     idx = indice_nombres(ccaa)
@@ -448,6 +465,11 @@ def main():
         locales, fuentes, comun = {}, {}, {}
         for f in cfg["locales"]:
             if f["anio"] != anio or f.get("tipo") == "consolidado":
+                continue
+            if f.get("transcripcion"):  # boletín escaneado: se usa la transcripción revisada que hay en el repositorio
+                entradas = leer_transcripcion(FUENTES.parent / f["transcripcion"])
+                locales.update(asignar(f["ccaa"], anio, entradas, f["id"], f.get("provincia")))
+                fuentes.setdefault(f["ccaa"], {"titulo": f.get("titulo", ""), "url": f.get("oficial") or f["descarga"], "publicado": f.get("publicado", "")})
                 continue
             ruta = FUENTES / f"{f['id']}.txt"
             if not ruta.exists():

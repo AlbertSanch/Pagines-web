@@ -57,7 +57,7 @@ castilla-y-leon 2026 cyl_avila_2026: 31 nombres sin municipio del INE (pedanías
 castilla-y-leon 2026 cyl_avila_2026_c1: 1 nombres sin municipio del INE (pedanías o variantes): Localidad                                     Fiestas
 cyl_avila_2026_c1: corrige o añade 9 municipios: Barraco, El, Blascomillán, Hernansancho, Horcajada, La, Oso, El, Papatrigo, Riocabado, San García de Ingelmos, San Juan de la Encinilla
 cyl_avila_2026_c2: corrige o añade 4 municipios: Adrada, La, Bercial de Zapardiel, Mamblas, San Esteban de los Patos
-castilla-y-leon 2026 cyl_burgos_2026: 1 nombres sin municipio del INE (pedanías o variantes): Delegación TerriTorial De Burgos
+castilla-y-leon 2026 cyl_burgos_2026: 9 nombres sin municipio del INE (pedanías o variantes): CASTRILLO DE MURCIA (SASAMÓN), CÍTORES DEL PÁRAMO (SASAMÓN), OLMILLOS DE SASAMON (SASAMÓN), RIOCEREZO (VALLE DE LAS NAVAS), RIOSERAS (VALLE DE LAS NAVAS), TEMIÑO (VALLE DE LAS NAVAS), VILLANDIEGO (SASAMÓN), VILLASIDRO (SASAMÓN), YUDEGO (SASAMÓN)
 castilla-y-leon 2026: Boñar tiene 3 festivos locales en cyl_leon_2026
 castilla-y-leon 2026 cyl_leon_2026: 381 nombres sin municipio del INE (pedanías o variantes): Acebes del Páramo, Adrián Pobladura de Fontecha, Albares de la Ribera, Albegas de Luna, Albires, Alcaidón, Alcoba de la Ribera, Alcántara Alija de la Ribera, Aldea VIlaestrigo del Páramo, Alejico, Almagarinos, Almázcara, Altobar de la Encomienda, Andrés Valdemorilla, Antoñanes del Páramo, Antoñán del Valle, Apóstol Azares del Páramo, Aralla de Luna, Arcayos, Armellada, Audanzas, Azadón, Banecidas, Bariones de la Vega, Benazolve, Benllera, Bobia, Boeza, Bustillo de Cea, Cabanillas, Cabañeros, Caboalles de Abajo, Caboalles de Arriba, Calamocos, Caldas de Luna, Calzada de la Valdería, Caminayo, Campelo, Campo y Santibáñez, Campohermoso, Camposalinas, Canaleja de Torío, Canales-La Magdalena, Candanedo de Boñar, Canedo, Carande, Carracedo del Monasterio, Carrizal, Carrizal de Luna, Carrizo de la Ribera, Casasuertes, Cascantes, Castellanos, Castrillino, Castrillo de la Ribera, Castroañe, Castroquilame, Castrotierra de la Valduerna, Cazanuecos, Cegoñal
 castilla-y-leon 2026: Matallana de Torío aparece dos veces en cyl_leon_2026_c1; se queda la primera
@@ -135,7 +135,7 @@ cyl_salamanca_2026_c1: corrige o añade 0 municipios:
 == 2026 canarias: 88 de 88 municipios con fiestas locales
 == 2026 cantabria: 98 de 102 municipios con fiestas locales
 == 2026 castilla-la-mancha: 893 de 919 municipios con fiestas locales
-== 2026 castilla-y-leon: 1470 de 2248 municipios con fiestas locales
+== 2026 castilla-y-leon: 1656 de 2248 municipios con fiestas locales
 == 2026 cataluna: 754 de 948 municipios con fiestas locales
 == 2026 extremadura: 385 de 388 municipios con fiestas locales
 == 2026 galicia: 268 de 317 municipios con fiestas locales
