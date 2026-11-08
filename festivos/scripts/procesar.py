@@ -130,7 +130,7 @@ def nombre_provincia(linea, ccaa):
 
 
 # el nombre puede llevar el artículo detrás: «Prat de Llobregat, El, 25 de mayo…», «Hospitalet de Llobregat, L', 25 de mayo…»
-ARTICULO_DETRAS = r"(?:,\s*(?:[Ee]l|[Ll]a|[Ll]os|[Ll]as|[Ll]es|[Ee]ls|[Ll]o|[Ss]a|[Ss]es|[Ll]['’]|[Ss]['’]|A|O|As|Os|Es))?"
+ARTICULO_DETRAS = r"(?:,\s*(?:(?i:el|la|los|las|les|els|lo|sa|ses|l['’]|s['’])|A|O|As|Os|Es))?"
 INICIO = re.compile(r"^(?:[—–-]\s*|\d{1,3}[.)]\s+|[•·]\s*)?([A-Za-zÁÉÍÓÚÑÜáéíóúñüÀÈÒàèòÏïÇç'’ .()/-]{2,70}?" + ARTICULO_DETRAS + r")\s*(?::|\.\s*-|,|\.)\s+(\d{1,2}\b.*)$")
 TABLA = re.compile(r"^(?:\d{1,3}\s+)?([A-ZÁÉÍÓÚÑÜ][A-Za-zÁÉÍÓÚÑÜáéíóúñüÀÈÒàèòÏïÇç'’ ,.()/-]{1,70}?)\s{2,}(\d{1,2}\b.*)$")
 
@@ -429,6 +429,10 @@ def asignar(ccaa, anio, entradas, fuente, provincia=None):
     res, sin_cruce = {}, []
     for nombre, prov, lista in entradas:
         cods = idx.get(clave_nombre(nombre))
+        if not cods and "/" in nombre:  # «MONCADA/ MONTCADA»: las dos formas tienen que ser del mismo municipio
+            partes = [idx.get(clave_nombre(p)) for p in nombre.split("/")]
+            if all(partes) and all(p == partes[0] for p in partes):
+                cods = partes[0]
         if not cods:
             sin_cruce.append(nombre)
             continue
