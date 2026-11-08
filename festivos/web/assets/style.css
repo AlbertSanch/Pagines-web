@@ -309,3 +309,11 @@ table.festivos { width: 100%; border-collapse: collapse; font-size: .97rem; }
 .tarjetas-cuenta span { margin-left: 4px; color: var(--suave); font-weight: 700; font-size: .85rem; }
 .tarjetas-cuenta em { display: block; font-style: normal; font-weight: 800; margin-top: 4px; }
 .tarjetas-cuenta small { color: var(--suave); }
+/* guías */
+.guia { max-width: 46em; }
+.guia h2 { margin-top: 1.6em; }
+.guia .tabla-envoltorio { margin: 12px 0; }
+ul.guias { list-style: none; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+ul.guias a { display: block; height: 100%; background: var(--papel); border-radius: var(--radio); box-shadow: var(--sombra); padding: 16px; text-decoration: none; color: inherit; }
+ul.guias strong { display: block; color: var(--rojo-osc); margin-bottom: 6px; font-size: 1.05rem; }
+ul.guias span { color: var(--suave); font-size: .95rem; }
