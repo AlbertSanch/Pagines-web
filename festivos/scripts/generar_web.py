@@ -35,7 +35,7 @@ PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 CUANTOS_DIAS = "https://cuantosdiasfaltan.es"
 SITIO = "Festivos de"
-VERSION = "10"
+VERSION = "11"
 HOY = dt.date.fromisoformat(os.environ["FESTIVOS_HOY"]) if os.environ.get("FESTIVOS_HOY") else dt.date.today()  # FESTIVOS_HOY: para probar
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -242,6 +242,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
       <a href="/cuanto-falta/">Cuánto falta</a>
       <a href="/calendario-laboral-para-imprimir/">Para imprimir</a>
       <a href="/calculadora-dias-laborables/">Días laborables</a>
+      <a href="/guias/">Guías</a>
     </nav>
   </div>
 </header>
@@ -252,7 +253,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="pie">
   <div class="contenedor">
     <p><strong>festivosde.es</strong> reúne los días festivos de cada municipio de España a partir del Boletín Oficial del Estado y de los boletines oficiales de cada comunidad autónoma.</p>
-    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/es-festivo/">¿Es festivo hoy?</a><a href="/cuanto-falta/">Cuánto falta para…</a><a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/planificador-vacaciones/">Planificador de vacaciones</a><a href="/calendario-escolar/">Calendario escolar</a><a href="/calendario-laboral-para-imprimir/">Calendario para imprimir</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/contacto/">Contacto</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/es-festivo/">¿Es festivo hoy?</a><a href="/cuanto-falta/">Cuánto falta para…</a><a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/planificador-vacaciones/">Planificador de vacaciones</a><a href="/calendario-escolar/">Calendario escolar</a><a href="/calendario-laboral-para-imprimir/">Calendario para imprimir</a><a href="/guias/">Guías</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/contacto/">Contacto</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Las fechas se toman de las publicaciones oficiales. Si ves un error, escríbenos a {TITULAR['email']}.</p>
   </div>
 </footer>
@@ -1414,6 +1415,8 @@ def main():
             html = pagina_dia(datos, idx, mes, dia)
             guardar(f"/es-festivo/{dia}-de-{MESES[mes - 1]}/", html)
             rutas_sitemap.append(f"/es-festivo/{dia}-de-{MESES[mes - 1]}/")
+    import guias  # noqa: E402  (guías con base legal: /guias/…)
+    rutas_sitemap += guias.generar(datos, ANIOS, COMUNIDADES, pagina, guardar, faq_html, faq_ld, de)
     datos_provincias(datos, info)
     guardar("/", portada(datos))
     rutas_sitemap += legales()
