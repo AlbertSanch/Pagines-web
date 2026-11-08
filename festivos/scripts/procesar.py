@@ -469,7 +469,7 @@ def main():
         if not (FUENTES / f"boe_{anio}.xml").exists():
             continue
         generales, notas, boe = leer_boe(anio)
-        locales, fuentes, comun = {}, {}, {}
+        locales, fuentes, comun, sin_propuesta = {}, {}, {}, set()
         for f in cfg["locales"]:
             if f["anio"] != anio or f.get("tipo") == "consolidado":
                 continue
@@ -496,6 +496,14 @@ def main():
             if f.get("tipo") in ("correccion", "complementaria"):
                 aviso(f"{f['id']}: corrige o añade {len(nuevos)} municipios: " + ", ".join(sorted(municipios()[c] for c in nuevos)[:20]))
             locales.update(nuevos)
+            # «Argentona, propuesta no formulada.»: el ayuntamiento no propuso fiestas locales ese año
+            idx = indice_nombres(f["ccaa"])
+            for nombre in re.findall(r"(?m)^\s*([^\d\n]{2,80}?),\s*propuesta no formulada", txt):
+                cods = idx.get(clave_nombre(nombre), set())
+                if f.get("provincia"):
+                    cods = {c for c in cods if c[:2] == f["provincia"]}
+                if len(cods) == 1:
+                    sin_propuesta |= cods
             if f.get("tipo") not in ("correccion", "complementaria"):
                 fuentes.setdefault(f["ccaa"], {"titulo": f.get("titulo", ""), "url": registro.get(f["id"], {}).get("url") or f["descarga"],
                                                "publicado": f.get("publicado", "")})
@@ -507,7 +515,8 @@ def main():
             con = sum(1 for c in locales if PROVINCIAS[c[:2]][1] == ccaa)
             aviso(f"== {anio} {ccaa}: {con} de {total} municipios con fiestas locales")
         salida = {"anio": anio, "boe": boe, "nacionales_autonomicos": generales, "notas": notas,
-                  "locales": dict(sorted(locales.items())), "comunes": comun, "fuentes": fuentes}
+                  "locales": dict(sorted(locales.items())), "comunes": comun, "fuentes": fuentes,
+                  "sin_propuesta": sorted(sin_propuesta - set(locales))}
         (DATA / f"festivos_{anio}.json").write_text(json.dumps(salida, ensure_ascii=False, indent=0), encoding="utf-8")
         print(f"{anio}: {len(locales)} municipios con festivos locales; comunidades: {sorted(fuentes)}")
     (DATA / "informe.txt").write_text("\n".join(AVISOS) + "\n", encoding="utf-8")

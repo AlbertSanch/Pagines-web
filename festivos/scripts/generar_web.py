@@ -345,13 +345,17 @@ def pagina_municipio(datos, cod, m, vecinos):
                               + f". Además, hay {len(lista) - len(locales)} festivos nacionales y {escape(de(ccaa_nombre))}."))
         else:
             resto = datos[anio]["fuentes"].get(ccaa, {}).get("resto")
-            if resto:
+            if cod in datos[anio].get("sin_propuesta", []):
+                pendiente = (f"Según la resolución oficial de fiestas locales {escape(de(ccaa_nombre))} para {anio}, el Ayuntamiento de "
+                             f"{escape(N)} no propuso fiestas locales para ese año, así que en {escape(N)} no hay fiestas locales en {anio}.")
+            elif resto:
                 pendiente = (f"El boletín oficial {escape(de(ccaa_nombre))} no indica fechas concretas para {escape(N)}: dice «{escape(resto)}». "
                              "Consulta las fechas exactas en tu ayuntamiento.")
             else:
                 pendiente = (f"Las dos fiestas locales de {escape(N)} para {anio} todavía no están publicadas en nuestros datos. "
                              f"Las aprueba cada año el boletín oficial {escape(de(ccaa_nombre))} y las añadiremos en cuanto salgan.")
-            resumen = f'<p class="pendiente">{pendiente}</p><p>De momento, estos son los {len(lista)} festivos nacionales y {escape(de(ccaa_nombre))} que también se celebran en {escape(N)}:</p>'
+            intro = "Estos son" if cod in datos[anio].get("sin_propuesta", []) else "De momento, estos son"
+            resumen = f'<p class="pendiente">{pendiente}</p><p>{intro} los {len(lista)} festivos nacionales y {escape(de(ccaa_nombre))} que también se celebran en {escape(N)}:</p>'
         n_puentes = sum(1 for p in calcular_puentes(lista) if p["dias"] >= 3 or p["mejor"])
         cifras = (f'<ul class="cifras"><li><b>{len(lista)}</b><span>festivos en {anio}</span></li>'
                   f'<li><b>{len(locales) if tiene_locales(datos, anio, cod) else "–"}</b><span>fiestas locales</span></li>'
