@@ -4349,7 +4349,7 @@ null
 "torneo": "Chennai Open",
 "utc": "2026-11-09T05:35Z",
 "hora_valida": true,
-"estado": "in",
+"estado": "post",
 "ronda": "Final",
 "pista": "Centre Court",
 "jugadores": [
@@ -4357,22 +4357,22 @@ null
 "id": "1649",
 "n": "Magda Linette",
 "pais": "Polonia",
-"gano": null,
+"gano": true,
 "sets": [
 5,
 6,
-3
+6
 ]
 },
 {
 "id": "6368",
 "n": "Janice Tjen",
 "pais": "Indonesia",
-"gano": null,
+"gano": false,
 "sets": [
 7,
 1,
-2
+4
 ]
 }
 ]
@@ -4381,9 +4381,9 @@ null
 "id": "186535",
 "gira": "ATP",
 "torneo": "Bybit Stockholm Open",
-"utc": "2026-11-09T11:30Z",
+"utc": "2026-11-09T11:50Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 1",
 "pista": "Court 1",
 "jugadores": [
@@ -4392,14 +4392,20 @@ null
 "n": "Yannick Hanfmann",
 "pais": "Alemania",
 "gano": null,
-"sets": []
+"sets": [
+2,
+2
+]
 },
 {
 "id": "11400",
 "n": "Alex Michelsen",
 "pais": "USA",
 "gano": null,
-"sets": []
+"sets": [
+6,
+2
+]
 }
 ]
 },
@@ -4407,9 +4413,9 @@ null
 "id": "186529",
 "gira": "ATP",
 "torneo": "Bybit Stockholm Open",
-"utc": "2026-11-09T12:00Z",
+"utc": "2026-11-09T12:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 1",
 "pista": "Center Court",
 "jugadores": [
@@ -4418,14 +4424,18 @@ null
 "n": "Cameron Norrie",
 "pais": "Gran Bretaña",
 "gano": null,
-"sets": []
+"sets": [
+5
+]
 },
 {
 "id": "1857",
 "n": "James Duckworth",
 "pais": "Australia",
 "gano": null,
-"sets": []
+"sets": [
+5
+]
 }
 ]
 },
@@ -4941,8 +4951,8 @@ null
 "sets": []
 },
 {
-"id": "8814",
-"n": "Luca Van Assche",
+"id": "1266",
+"n": "Adrian Mannarino",
 "pais": "Francia",
 "gano": null,
 "sets": []
