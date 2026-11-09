@@ -35,6 +35,8 @@ POR_PROVINCIA_MARCA = 10  # gasolineras de una marca que se listan en cada provi
 FIJAS = {"gasolineras-baratas-cerca-de-mi", "gasolineras-low-cost"}
 MIN_MUNICIPIO = 2       # gasolineras mínimas para tener página de municipio
 CERCANOS = 8            # municipios cercanos que se enlazan
+MIN_INDEXAR = 10        # por debajo, la ficha del municipio se queda en la web pero con noindex y fuera del sitemap
+                        # (noviembre de 2026: las fichas casi vacías hundían toda la web en Google y AdSense)
 CARPETA_MUNI = "gasolineras"
 GENERICOS = {"", "SIN ROTULO", "SIN ROTULO.", "NO TIENE", "NINGUNO", "INDEPENDIENTE", "GASOLINERA",
              "ESTACION DE SERVICIO", "E.S.", "ES", "SIN MARCA", "BLANCA", "N/A", "OTROS"}
@@ -429,7 +431,8 @@ def pagina_municipio(m, resumen, cercanos, iso, dia, hora):
   </div>"""
     return pagina(f"{CARPETA_MUNI}/{m['slug']}", f"Gasolineras baratas en {nombre}: precio de la gasolina hoy",
                   f"Precio de la gasolina 95 y el diésel hoy en las {len(lista)} gasolineras de {nombre} ({prov['nombre']}), ordenadas de más barata a más cara, con horario y cómo llegar.",
-                  cuerpo, iso, nombre, [faq_ld], '<script src="assets/gasolineras-precios.js?v=1" defer></script>', prefijo="../")
+                  cuerpo, iso, nombre, [faq_ld], '<script src="assets/gasolineras-precios.js?v=1" defer></script>', prefijo="../",
+                  noindex=len(lista) < MIN_INDEXAR)
 
 
 def generar_municipios(resumen, gasolineras, web, iso, dia, hora):
@@ -468,10 +471,10 @@ def generar_municipios(resumen, gasolineras, web, iso, dia, hora):
                 ruta.write_text(nuevo, encoding="utf-8")
     grandes = sorted(munis, key=lambda m: -len(m["gas"]))[:24]
     print(f"municipios: {len(munis)} páginas{' (reescritas)' if toca else ''}")
-    return [f"{CARPETA_MUNI}/{m['slug']}" for m in munis], grandes
+    return [f"{CARPETA_MUNI}/{m['slug']}" for m in munis if len(m["gas"]) >= MIN_INDEXAR], grandes
 
 
-def pagina(ruta, titulo, descripcion, cuerpo, iso, miga, extra_ld=None, scripts="", prefijo=""):
+def pagina(ruta, titulo, descripcion, cuerpo, iso, miga, extra_ld=None, scripts="", prefijo="", noindex=False):
     url = f"{DOMINIO}/{ruta}"
     ld = [{"@context": "https://schema.org", "@type": "WebPage", "name": titulo, "url": url, "inLanguage": "es-ES", "dateModified": iso},
           {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -486,6 +489,8 @@ def pagina(ruta, titulo, descripcion, cuerpo, iso, miga, extra_ld=None, scripts=
     cabeza = re.sub(r'(<meta property="og:description" content=")[^"]*', lambda m: m[1] + escape(descripcion), cabeza)
     cabeza = re.sub(r'(<meta property="og:title" content=")[^"]*', lambda m: m[1] + escape(titulo), cabeza)
     cabeza = cabeza.replace("https://ahorrometro.es/sobre-nosotros", url)
+    if noindex:
+        cabeza = cabeza.replace("</head>", '  <meta name="robots" content="noindex, follow">\n</head>', 1)
     cabeza = cabeza.replace("</head>", f'  <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>\n</head>')
     pie = pie.replace("</body>", f"{scripts}\n</body>")
     aviso = "<!-- Página generada automáticamente por scripts/paginas_gasolineras.py: no la edites a mano. -->\n"
