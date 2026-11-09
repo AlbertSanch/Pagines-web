@@ -317,3 +317,6 @@ ul.guias { list-style: none; padding: 0; display: grid; gap: 12px; grid-template
 ul.guias a { display: block; height: 100%; background: var(--papel); border-radius: var(--radio); box-shadow: var(--sombra); padding: 16px; text-decoration: none; color: inherit; }
 ul.guias strong { display: block; color: var(--rojo-osc); margin-bottom: 6px; font-size: 1.05rem; }
 ul.guias span { color: var(--suave); font-size: .95rem; }
+/* tablas de guías y datos: en el móvil no se oculta ninguna columna */
+.festivos.completa th:nth-child(2), .festivos.completa td:nth-child(2) { display: table-cell; }
+.festivos.completa td, .festivos.completa th { padding: 8px 10px; }
