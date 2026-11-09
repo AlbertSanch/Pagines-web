@@ -35,7 +35,7 @@ PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 CUANTOS_DIAS = "https://cuantosdiasfaltan.es"
 SITIO = "Festivos de"
-VERSION = "11"
+VERSION = "12"
 HOY = dt.date.fromisoformat(os.environ["FESTIVOS_HOY"]) if os.environ.get("FESTIVOS_HOY") else dt.date.today()  # FESTIVOS_HOY: para probar
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -1232,6 +1232,8 @@ def portada(datos):
     tarjetas_ccaa = "".join(
         f'<li><a href="/comunidad/{c}/"><b>{escape(n)}</b><span>{len(d_sig[c])} festivos en {anio_sig}</span></a></li>'
         for c, (n, _) in sorted(COMUNIDADES.items(), key=lambda x: x[1][0]))
+    n_primero = f"{len(datos[min(ANIOS)]['locales']):,}".replace(",", ".")
+    n_ultimo = f"{len(datos[anio_sig]['locales']):,}".replace(",", ".")
     embebido = {"municipio": "España", "festivos": {anio_sig: [[x["f"], x["n"], "n"] for x in nacionales]}, "locales": [], "proximos": todos}
     cuerpo = f"""<section class="portada">
 <div class="portada-texto">
@@ -1260,13 +1262,37 @@ def portada(datos):
 <p>Los {len(nacionales)} festivos nacionales que se celebran en toda España. Busca tu municipio para ver también los de tu comunidad y tus fiestas locales.</p>
 <div class="calendario" data-anio="{anio_sig}"></div></section>
 <section id="comunidades"><h2>Festivos por comunidad autónoma</h2><ul class="tarjetas-ccaa">{tarjetas_ccaa}</ul></section>
+<section><h2>Guías: dudas frecuentes sobre festivos</h2>
+<ul class="guias">
+<li><a href="/guias/festivo-en-domingo/"><strong>¿Qué pasa si un festivo cae en domingo?</strong><span>Cuándo se pasa al lunes y qué comunidades lo aplican.</span></a></li>
+<li><a href="/guias/trabajar-en-festivo/"><strong>¿Cuánto se cobra por trabajar un festivo?</strong><span>El mínimo legal, un ejemplo y qué revisar en tu convenio.</span></a></li>
+<li><a href="/guias/como-se-fijan-los-festivos/"><strong>¿Cómo se deciden los festivos?</strong><span>Nacionales, autonómicos y locales: quién decide cada uno.</span></a></li>
+<li><a href="/guias/dias-laborables-{anio_sig}/"><strong>Días laborables de {anio_sig}</strong><span>Cuántos días de trabajo tiene el año en cada comunidad.</span></a></li>
+</ul><p><a href="/guias/">Ver todas las guías →</a></p></section>
+<section class="contenido"><h2>Datos oficiales, municipio a municipio</h2>
+<p>Recogemos las fiestas de las publicaciones oficiales: la relación de fiestas laborales que publica cada año el BOE y las resoluciones de fiestas locales de cada comunidad autónoma y provincia. Ahora mismo tenemos las fiestas locales de {n_primero} municipios para {min(ANIOS)}{f' y de {n_ultimo} para {anio_sig}, a medida que las comunidades las publican' if anio_sig != min(ANIOS) else ''}.</p>
+<p>Cada página de municipio enlaza el boletín del que salen sus fechas y nunca ponemos una fecha que no esté publicada. Te contamos cómo lo hacemos en <a href="/sobre-los-datos/">de dónde salen los datos</a>.</p></section>
+<section class="faq"><h2>Preguntas frecuentes</h2>{faq_html(PREGUNTAS_PORTADA)}</section>
 <section class="contenido"><h2>¿Cuántos festivos hay al año?</h2>
 <p>En España hay como máximo 14 fiestas laborales al año: 12 las fija el Estado y cada comunidad autónoma, que puede cambiar algunas fiestas nacionales por otras propias, y 2 son locales, elegidas por cada ayuntamiento. Por eso los festivos cambian de un municipio a otro aunque estén en la misma provincia.</p>
 <p>El calendario nacional y autonómico se publica en el BOE en otoño del año anterior. Las fiestas locales las publica cada comunidad en su boletín oficial, normalmente entre el verano y el final del año anterior.</p></section>
 <script type="application/json" id="datos-festivos">{json.dumps(embebido, ensure_ascii=False, separators=(",", ":"))}</script>"""
     return pagina("/", f"Festivos de tu municipio {min(ANIOS)} y {max(ANIOS)}: calendario laboral de España",
                   "Busca tu municipio y consulta sus festivos locales, autonómicos y nacionales, los puentes y el próximo festivo. Datos del BOE y de los boletines oficiales.",
-                  cuerpo, scripts="")
+                  cuerpo, extra_ld=[faq_ld(PREGUNTAS_PORTADA)], scripts="")
+
+
+PREGUNTAS_PORTADA = [
+    ("¿Cuántos días festivos hay al año en España?",
+     "Como máximo 14: doce nacionales y autonómicos y dos locales de cada municipio (artículo 37.2 del Estatuto de los Trabajadores). "
+     "Por eso los festivos cambian de un pueblo a otro aunque estén en la misma provincia."),
+    ("¿Dónde se publican las fiestas locales de mi municipio?",
+     "En el boletín oficial de tu comunidad autónoma o de tu provincia, normalmente entre el verano y el final del año anterior. "
+     "En la página de cada municipio enlazamos la publicación de la que salen sus fechas."),
+    ("¿Qué pasa si un festivo cae en domingo?",
+     "Para las fiestas nacionales, el descanso pasa al lunes siguiente, salvo que la comunidad autónoma lo cambie por otra fiesta propia. "
+     "Lo explicamos en la guía <a href=\"/guias/festivo-en-domingo/\">festivo en domingo</a>."),
+]
 
 
 def legales():
@@ -1420,6 +1446,8 @@ def main():
     datos_provincias(datos, info)
     guardar("/", portada(datos))
     rutas_sitemap += legales()
+    cfg = json.loads((DATA.parent / "fuentes.json").read_text(encoding="utf-8"))
+    guias.sobre_datos(datos, ANIOS, COMUNIDADES, PROVINCIAS, cfg, municipios(), pagina, guardar)  # sustituye a la versión breve
 
     # Índice del buscador: [nombre para buscar, nombre visible, ruta, provincia]
     indice = [[re.sub(r"[^a-z0-9ñ/ ]", " ", m["nombre"].lower()), m["nombre"], m["url"], PROVINCIAS[c[:2]][0], c] for c, m in info.items()]
