@@ -8,7 +8,7 @@
   "fuente_url": "https://www.lahiguera.net/amp/cinemania/pelicula/12546/",
   "fuente_nombre": "Cinemanía",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-09",
   "plataformas": "cines"
  },
  {
@@ -20,7 +20,7 @@
   "fuente_url": "https://www.ecartelera.com/peliculas/los-juegos-del-hambre-amanecer-en-la-cosecha/",
   "fuente_nombre": "eCartelera",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-09",
   "plataformas": "cines"
  },
  {
@@ -32,7 +32,7 @@
   "fuente_url": "https://www.sensacine.com/noticias/cine/noticia-1000227349/",
   "fuente_nombre": "SensaCine",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-09",
   "plataformas": "cines"
  },
  {
@@ -44,7 +44,7 @@
   "fuente_url": "https://www.universalpictures.es/fechasdeestreno/Estrenos-Universal.pdf",
   "fuente_nombre": "Universal Pictures España (calendario de estrenos)",
   "fuente_tipo": "oficial",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-09",
   "plataformas": "cines"
  },
  {
@@ -56,7 +56,7 @@
   "fuente_url": "https://www.lahiguera.net/cinemania/pelicula/12224",
   "fuente_nombre": "Cinemanía",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-09",
   "plataformas": "cines"
  },
  {
@@ -68,7 +68,7 @@
   "fuente_url": "https://www.que.es/2026/07/29/jumanji-3-trailer-navidad-2026/",
   "fuente_nombre": "Que.es",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-09",
   "plataformas": "cines",
   "retrasos": [
    "2026-12-11"
@@ -204,7 +204,7 @@
   "fuente_url": "https://vandal.elespanol.com/noticia/r41992/ya-es-oficial-los-anillos-de-poder-ya-tiene-fecha-de-estreno-para-su-temporada-3-en-prime-video-y-desvela-su-primera-imagen",
   "fuente_nombre": "Vandal (anuncio de Prime Video)",
   "fuente_tipo": "medio",
-  "comprobado": "2026-11-02",
+  "comprobado": "2026-11-09",
   "plataformas": "Prime Video"
  },
  {
@@ -216,7 +216,7 @@
   "fuente_url": "https://www.sensacine.com/noticias/series/noticia-1000214823/",
   "fuente_nombre": "SensaCine (anuncio de Disney+)",
   "fuente_tipo": "medio",
-  "comprobado": "2026-11-02",
+  "comprobado": "2026-11-09",
   "plataformas": "Disney+"
  },
  {
@@ -707,12 +707,34 @@
   "fuente_url": "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
   "fuente_nombre": "Rockstar Games",
   "fuente_tipo": "oficial",
-  "comprobado": "2026-11-02",
+  "comprobado": "2026-11-09",
   "plataformas": "PS5 y Xbox Series X|S",
   "retrasos": [
    "2025",
    "2026-05-26"
   ]
+ },
+ {
+  "titulo": "The Game Awards 2026",
+  "slug": "the-game-awards-2026",
+  "categoria": "videojuegos",
+  "fecha": "2026-12-10",
+  "precision": "dia",
+  "fuente_url": "https://thegameawards.com/",
+  "fuente_nombre": "The Game Awards",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-11-09",
+  "lugar": "Peacock Theater, Los Ángeles (EE. UU.)",
+  "en_frase": "The Game Awards 2026",
+  "serie": "the-game-awards",
+  "hora": "02:00",
+  "hora_dia": "2026-12-11",
+  "hora_que": "la gala",
+  "hora_aprox": true,
+  "organizador": {
+   "nombre": "The Game Awards",
+   "url": "https://thegameawards.com"
+  }
  },
  {
   "titulo": "Dragon Quest Monsters: The Withered World",
@@ -2493,7 +2515,7 @@
   "fuente_url": "https://www.esa.int/Space_Safety/Hera/ESA_s_Hera_targets_early_arrival_at_Didymos_asteroids",
   "fuente_nombre": "ESA",
   "fuente_tipo": "oficial",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-09",
   "ventana": "noviembre de 2026",
   "rango": [
    "2026-11-01",
@@ -2568,6 +2590,23 @@
   "comprobado": "2026-10-25",
   "lugar": "Noche del 3 al 4 de enero, máximo muy corto",
   "en_frase": "las Cuadrántidas 2027",
+  "serie": "cuadrantidas"
+ },
+ {
+  "titulo": "Lluvia de estrellas Cuadrántidas 2028",
+  "slug": "cuadrantidas-2028",
+  "categoria": "espacio",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://earthsky.org/astronomy-essentials/everything-you-need-to-know-quadrantid-meteor-shower/",
+  "fuente_nombre": "EarthSky",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-11-09",
+  "lugar": "Noche del 3 al 4 de enero",
+  "en_frase": "las Cuadrántidas 2028",
+  "ventana": "4 de enero de 2028 (estimación)",
+  "estimada": "2028-01-04",
+  "estimacion": "El máximo de las Cuadrántidas cae cada año hacia el 3 o 4 de enero; la Organización Internacional de Meteoros aún no ha publicado su calendario de 2028",
   "serie": "cuadrantidas"
  },
  {
@@ -3120,7 +3159,7 @@
   "fuente_url": "https://vandal.elespanol.com/noticia/r44310/vengadores-doomsday-cambia-su-estreno-hace-una-mencion-a-tony-stark-y-deslumbra-en-la-san-diego-comiccon-malaga",
   "fuente_nombre": "Vandal (anuncio de Marvel en la Comic-Con de Málaga)",
   "fuente_tipo": "medio",
-  "comprobado": "2026-11-02",
+  "comprobado": "2026-11-09",
   "plataformas": "cines",
   "ambito": "España",
   "en_frase": "Vengadores: Doomsday",
@@ -3137,7 +3176,7 @@
   "fuente_url": "https://www.sensacine.com/noticias/cine/noticia-1000151762/",
   "fuente_nombre": "SensaCine",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-09",
   "plataformas": "cines",
   "ambito": "España"
  },
@@ -3469,7 +3508,7 @@
   "fuente_url": "https://www.espinof.com/anime/pelicula-madoka-magica-fin-tiene-fecha-estreno-final-anime-magical-girls-se-podra-ver-cines-para-colofon-historico",
   "fuente_nombre": "Espinof (anuncio de Selecta Visión)",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-09",
   "plataformas": "cines Yelmo, en versión original subtitulada",
   "ambito": "España"
  },
@@ -3482,7 +3521,7 @@
   "fuente_url": "https://myanimelist.net/anime/61338/",
   "fuente_nombre": "MyAnimeList (fecha de estreno en Japón)",
   "fuente_tipo": "medio",
-  "comprobado": "2026-11-02",
+  "comprobado": "2026-11-09",
   "plataformas": "Crunchyroll",
   "ambito": "Japón",
   "hora": "09:00",
@@ -3606,7 +3645,7 @@
   "fuente_url": "https://myanimelist.net/anime/56732/",
   "fuente_nombre": "MyAnimeList",
   "fuente_tipo": "medio",
-  "comprobado": "2026-11-02",
+  "comprobado": "2026-11-09",
   "plataformas": "Crunchyroll",
   "en_frase": "The World's Finest Assassin temporada 2",
   "ventana": "enero de 2027",
@@ -3625,7 +3664,7 @@
   "fuente_url": "https://myanimelist.net/anime/62841/",
   "fuente_nombre": "MyAnimeList",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-09",
   "plataformas": "Crunchyroll",
   "ventana": "abril de 2027",
   "rango": [
@@ -3643,7 +3682,7 @@
   "fuente_url": "https://myanimelist.net/anime/60548/",
   "fuente_nombre": "MyAnimeList",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-09",
   "plataformas": "Crunchyroll",
   "ventana": "abril de 2027",
   "rango": [
@@ -3775,20 +3814,14 @@
   "titulo": "Kusuriya no Hitorigoto: la película",
   "slug": "kusuriya-no-hitorigoto-pelicula",
   "categoria": "anime",
-  "fecha": null,
-  "precision": "mes",
+  "fecha": "2026-12-11",
+  "precision": "dia",
   "fuente_url": "https://myanimelist.net/anime/62844/",
   "fuente_nombre": "MyAnimeList",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-09",
   "plataformas": "cines (Japón)",
-  "ambito": "Japón",
-  "ventana": "diciembre de 2026",
-  "rango": [
-   "2026-12-01",
-   "2026-12-31"
-  ],
-  "estimacion": "Está anunciada para diciembre de 2026, sin día concreto todavía"
+  "ambito": "Japón"
  },
  {
   "titulo": "The Eminence in Shadow: la película (Kage no Jitsuryokusha)",

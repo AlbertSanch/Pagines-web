@@ -355,6 +355,9 @@ def lista_tarjetas(eventos):
 
 # ---------------------------------------------------------------- páginas
 
+EVENTO = re.compile(r"^(mwc-|the-game-awards)")
+
+
 def preguntas_de(e):
     """(H1, título) con la forma más buscada de cada tipo (Keyword Planner, octubre de 2026):
     «cuándo sale GTA 6» 22.200 frente a «cuánto falta» 170; «estreno Dune 3» 720 frente a «cuándo se estrena» 70;
@@ -364,6 +367,9 @@ def preguntas_de(e):
         return TITULO_ESPECIAL[e["slug"]](t, e["fecha"][:4])
     if c == "fechas":
         return f"¿Cuánto falta para {t}?", f"¿Cuánto falta para {t} {e['fecha'][:4]}? Días, horas y cuenta atrás"
+    if c in ("videojuegos", "tecnologia") and EVENTO.search(e["slug"]):  # ferias y galas no «salen»
+        es = "son" if t.lower().startswith(("las ", "los ")) else "es"
+        return f"¿Cuándo {es} {t}?", f"{e['titulo']}: {'fechas' if e['slug'].startswith('mwc-') else 'fecha'} y cuenta atrás"
     if c in ("videojuegos", "tecnologia"):
         return f"¿Cuándo sale {t}?", f"¿Cuándo sale {t}? Fecha de lanzamiento y cuenta atrás"
     if c == "peliculas":  # «frozen 3 fecha de estreno» 320 frente a «estreno frozen 3» 110 (noviembre de 2026)
