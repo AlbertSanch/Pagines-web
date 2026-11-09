@@ -227,6 +227,10 @@ APARATOS = [
 ]
 
 
+# Aparatos que ya tienen calculadora propia con la misma búsqueda: la ficha apunta a ella y sale del sitemap.
+CANONICA = {"deshumidificador": f"{DOMINIO}/calculadoras/deshumidificador"}
+
+
 def precio_luz():
     try:
         d = json.loads((WEB / "datos" / "luz.json").read_text(encoding="utf-8"))
@@ -324,7 +328,7 @@ def plantilla_base():
 def pagina(a, p, otros, base):
     head_assets, header, footer = base
     e = escape
-    url = f"{DOMINIO}/{CARPETA}/{a['slug']}"
+    url = CANONICA.get(a["slug"], f"{DOMINIO}/{CARPETA}/{a['slug']}")
     mes = kwh_mes(a)
     titulo = a.get("titulo") or f"¿Cuánto {verbo(a)} {a['art']}? Consumo y coste al mes"
     if len(titulo) > 60:
@@ -641,7 +645,8 @@ def main():
     (WEB / "consumo-electrodomesticos.html").write_text(indice(p, desde, hasta, base), encoding="utf-8")
     hoy = date.today().isoformat()
     urls = [f"  <url><loc>{DOMINIO}/consumo-electrodomesticos</loc><lastmod>{hoy}</lastmod><priority>0.9</priority></url>"]
-    urls += [f"  <url><loc>{DOMINIO}/{CARPETA}/{a['slug']}</loc><lastmod>{hoy}</lastmod><priority>0.8</priority></url>" for a in APARATOS]
+    urls += [f"  <url><loc>{DOMINIO}/{CARPETA}/{a['slug']}</loc><lastmod>{hoy}</lastmod><priority>0.8</priority></url>" for a in APARATOS
+             if a["slug"] not in CANONICA]
     reemplazar_bloque(WEB / "sitemap.xml", "\n" + "\n".join(urls) + "\n  ")
     calc = WEB / "calculadoras" / "consumo-electrico.html"
     reemplazar_bloque(calc, bloque_calculadora(p), "CONSUMO-CALC")
