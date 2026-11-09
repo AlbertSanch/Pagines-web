@@ -28,11 +28,11 @@
                                                 la Comunidad Autónoma de Galicia y se regula la evaluación en esa etapa educativa, regu-
                                                 la en el artículo 4 que la incorporación gradual del alumnado se concretará anualmente en
                                                 la normativa que establece el calendario escolar para cada curso académico y en ningún
+
+
+
+
 CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
-
-
-
-
                                                 caso podrá superar el mes de septiembre.
 
                                                   Tanto los decretos que establecen la ordenación y el currículo de cada etapa educativa
@@ -81,11 +81,11 @@ CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
                                                   Artículo 2. Ámbito de aplicación
 
                                                   Esta orden es de aplicación en todos los centros docentes de la Comunidad Autónoma
+
+
+
+
 CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
-
-
-
-
                                                 de Galicia sostenidos con fondos públicos.
 
                                                   Artículo 3. Duración del curso académico
@@ -134,11 +134,11 @@ CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
 
                                                    1. Las actividades lectivas en las enseñanzas de educación infantil, educación primaria,
                                                 educación secundaria obligatoria, bachillerato, primeros cursos de ciclos formativos de gra-
+
+
+
+
 CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
-
-
-
-
                                                 do básico, de grado medio y de grado superior de la formación profesional, en los cursos
                                                 de especialización y en las enseñanzas de régimen especial se realizarán desde el día 9
                                                 de septiembre de 2026 hasta el 21 de junio de 2027, ambos incluidos.
@@ -185,11 +185,11 @@ CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
 
                                                    2. En los centros en que una o las dos fiestas laborales de carácter local a que se re-
                                                 fiere el punto anterior no coincidan con días lectivos, los consejos escolares, los consejos
+
+
+
+
 CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
-
-
-
-
                                                 sociales o, en su defecto, las persoas responsables de los centros de menos de tres uni-
                                                 dades solicitarán, según proceda, uno o dos días no lectivos, que se deberán prever en
                                                 la programación general anual del centro, argumentando razones de tradición, costumbre
@@ -235,11 +235,11 @@ CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
                                                 coincidir con la fecha de la evaluación final en la educación infantil, la educación primaria,
                                                 la educación secundaria obligatoria y con la fecha de la evaluación final ordinaria del bachi-
                                                 llerato y del primer curso de los ciclos formativos de grado básico.
+
+
+
+
 CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
-
-
-
-
                                                    Artículo 11.   Pruebas de evaluación de diagnóstico
 
                                                    Las pruebas de evaluación de diagnóstico correspondientes a cuarto curso de educa-
@@ -285,11 +285,11 @@ CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
                                                    b) Las sesiones de evaluación final ordinaria y final extraordinaria de segundo curso de
                                                 bachillerato deberán realizarse, respectivamente, a partir del 12 de mayo de 2027 y a partir
                                                 del 9 de junio de 2027.
+
+
+
+
 CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
-
-
-
-
                                                    c) La sesión de evaluación final de la educación infantil, de la educación primaria, de
                                                 la educación secundaria obligatoria y del primer curso de los ciclos formativos de grado
                                                 medio y grado superior de la formación profesional, así como la sesión de evaluación final
@@ -337,11 +337,11 @@ CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
                                                    4. Las pruebas de acceso a los grados elemental y profesional de música y de danza se
                                                 desarrollarán a partir del día 7 de junio de 2027, de acuerdo con los calendarios específicos
                                                 elaborados a tal efecto por los centros educativos.
+
+
+
+
 CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
-
-
-
-
                                                    5. En aquellos centros de enseñanzas de régimen especial que prevean la realización
                                                 de pruebas no señaladas en los dos números anteriores, la dirección del centro deberá
                                                 proponer las fechas correspondientes a la dirección territorial para su autorización.
@@ -386,11 +386,11 @@ CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
                                                    4. Durante el mes de junio, las direcciones de los centros públicos de enseñanzas de
                                                 régimen especial podrán adaptar el horario del profesorado a las necesidades específicas
                                                 de cada centro.
+
+
+
+
 CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
-
-
-
-
                                                    5. Durante el curso académico, en los centros pertenecientes a la Red de centros inte-
                                                 grados de formación profesional de Galicia dependientes de la Consellería de Educación,
                                                 Ciencia, Universidades y Formación Profesional, el horario del profesorado se adaptará a
@@ -436,11 +436,11 @@ CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
                                                 didácticas.
 
                                                    Las direcciones de los centros educativos enviarán al Servicio Territorial de Inspección
+
+
+
+
 CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
-
-
-
-
                                                 Educativa correspondiente, antes del 9 de julio de 2027, la memoria anual del centro.
 
                                                    Disposición adicional primera.    Modificación del calendario escolar y los comedores
@@ -487,11 +487,11 @@ CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
 
                                                    2. Asimismo, las funciones de las dinamizaciones de las nuevas tecnologías de la informa-
                                                 ción y de la comunicación, de biblioteca, de programas internacionales y de mejora de la cali-
+
+
+
+
 CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
-
-
-
-
                                                 dad educativa continuarán rigiéndose por lo previsto en la Orden de 17 de julio de 2007 por la
                                                 que se regula la percepción del componente singular del complemento específico por función
                                                 tutorial y otras funciones docentes, hasta que se establezca la regulación correspondiente.
@@ -537,11 +537,11 @@ CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
                                                 regulan los centros plurilingües en la Comunidad Autónoma de Galicia y se establece el
                                                 procedimiento de incorporación de nuevos centros a la Red de centros plurilingües de Ga-
                                                 licia, sin perjuicio de lo establecido en la disposición transitoria única.
+
+
+
+
 CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
-
-
-
-
                                                    6. Quedan derogados los artículos 5.5 y 5.6 de la Orden de 12 de mayo de 2011 por la
                                                 que se regulan las secciones bilingües en centros sostenidos con fondos públicos de en-
                                                 señanza no universitaria, sin perjuicio de lo establecido en la disposición transitoria única.
@@ -587,11 +587,11 @@ CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
 
                                                   – La semana del 6 de diciembre: conmemoración de la Constitución y del Estatuto de
                                                 autonomía de Galicia.
+
+
+
+
 CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
-
-
-
-
                                                   – 10 de diciembre: Día de la Declaración Universal de los Derechos Humanos.
 
                                                   – 24 de enero: Día Internacional de la Educación.
@@ -630,6 +630,10 @@ CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
                                                 cionales relacionadas con la igualdad de trato y la no discriminación de lesbianas, gays,
                                                 transexuales, bisexuales e intersexuales en Galicia: conmemoraciones para favorecer la
                                                 visibilidad e integrar de forma transversal la diversidad afectivo-sexual.
+
+
+
+
 CVE-DOG: 44zrdol2-rmr8-6pg9-28m5-8dv2jcme8pm0
 
 

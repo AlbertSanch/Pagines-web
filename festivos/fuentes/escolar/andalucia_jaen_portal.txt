@@ -2011,6 +2011,38 @@
  
  
  
+ 09 nov 2026 
+ 
+ 
+ Resolución de 5 de noviembre de 2026, por la que se hace público el listado definitivo de aspirantes admitidos/as y excluidos/as para cubrir, con ocasión de vacante y posibles sustituciones, puestos docentes de carácter específico para el curso 2026-2027 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ delegaciones territoriales 
+ general 
+ Jaén 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  30 oct 2026 
  
  
@@ -2300,38 +2332,6 @@
  
  
  
- delegaciones territoriales 
- general 
- Jaén 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 08 oct 2026 
- 
- 
- Resolución de 8 de octubre de 2026, de la Delegación Territorial de Educación en Jaén, por la que se anuncia convocatoria pública de provisión, en régimen de comisión de servicios, para la adscripción de personal funcionario de carrera docente para tareas específicas del ámbito educativo 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -2545,7 +2545,7 @@
 	
 
 
- Nodo: sv0666:8080
+ Nodo: sv0665:8080
  Oculto 
 
 
