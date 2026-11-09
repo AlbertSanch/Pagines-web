@@ -46,7 +46,7 @@ def generar(datos, anios, comunidades, pagina, guardar, faq_html, faq_ld, de):
             filas += (f"<tr><td>{n}</td><td>{f_larga(f)} de {a}</td><td>{len(si)} de {len(lista_cc)}</td>"
                       f"<td>{escape(', '.join(nombre(c) for c in no)) if no and len(no) < len(lista_cc) else ('ninguna' if not no else 'todas')}</td></tr>")
             ejemplos.append((n, f, a, len(si)))
-    tabla = (f'<div class="tabla-envoltorio"><table class="festivos"><thead><tr><th>Fiesta</th><th>Cae en domingo</th><th>Comunidades que dan el lunes</th>'
+    tabla = (f'<div class="tabla-envoltorio"><table class="festivos completa"><thead><tr><th>Fiesta</th><th>Cae en domingo</th><th>Comunidades que dan el lunes</th>'
              f'<th>Comunidades que no</th></tr></thead><tbody>{filas}</tbody></table></div>') if filas else ""
     ej = ""
     if ejemplos:
@@ -139,7 +139,7 @@ def generar(datos, anios, comunidades, pagina, guardar, faq_html, faq_ld, de):
 <section class="contenido"><h2>Las fiestas de cada comunidad autónoma</h2>
 <p>Cada comunidad puede cambiar las fiestas del último grupo (y los lunes de las fiestas que caen en domingo) por otras propias: su día de la comunidad, el Lunes de Pascua, San Juan… Debe comunicarlas al Ministerio de Trabajo antes del 30 de septiembre, y la Dirección General de Trabajo publica cada año en el BOE la relación de fiestas de toda España. La de {a} es la <a href="{boe[a]['url']}" rel="noopener">{escape(boe[a]['titulo'])}</a></p>
 <p>Por eso no todas las comunidades tienen el mismo número de festivos sin contar los locales. En {a}:</p>
-<div class="tabla-envoltorio"><table class="festivos"><thead><tr><th>Comunidad</th><th>Festivos nacionales y autonómicos en {a}</th></tr></thead><tbody>{filas}</tbody></table></div></section>
+<div class="tabla-envoltorio"><table class="festivos completa"><thead><tr><th>Comunidad</th><th>Festivos nacionales y autonómicos en {a}</th></tr></thead><tbody>{filas}</tbody></table></div></section>
 <section class="contenido"><h2>Las dos fiestas locales</h2>
 <p>Según el <a href="{RD}" rel="noopener">artículo 46 del Real Decreto 2001/1983</a>, cada municipio tiene hasta dos fiestas locales «que por tradición le sean propias», que fija la autoridad laboral autonómica a propuesta del pleno del ayuntamiento y que se publican en el boletín oficial de la comunidad y, en su caso, de la provincia. Si un ayuntamiento no las propone, ese año no tiene fiestas locales.</p>
 <p>En festivosde.es recogemos esas publicaciones municipio a municipio: <a href="/">busca el tuyo</a> o consulta el <a href="/calendario-laboral-{a}/">calendario laboral de {a}</a>.</p></section>
@@ -230,7 +230,7 @@ def generar(datos, anios, comunidades, pagina, guardar, faq_html, faq_ld, de):
 <p class="lead">{a} tiene {total} días de lunes a viernes. Según cuántos festivos caigan entre semana en tu comunidad, te quedan entre {menos[0]} y {mas[0]} días laborables, antes de restar las fiestas locales.</p>
 <section class="contenido"><h2>La tabla</h2>
 <p>Días de lunes a viernes de {a}, menos los festivos nacionales y autonómicos que caen entre semana, según la <a href="{boe[a]['url']}" rel="noopener">resolución del BOE</a>:</p>
-<div class="tabla-envoltorio"><table class="festivos"><thead><tr><th>Comunidad</th><th>Días laborables (lunes a viernes)</th><th>Festivos entre semana</th></tr></thead><tbody>{filas}</tbody></table></div>
+<div class="tabla-envoltorio"><table class="festivos completa"><thead><tr><th>Comunidad</th><th>Días laborables (lunes a viernes)</th><th>Festivos entre semana</th></tr></thead><tbody>{filas}</tbody></table></div>
 <p>A estas cifras hay que restar las dos fiestas locales de tu municipio si caen entre semana. Para el cálculo exacto de tu pueblo o ciudad, entre las fechas que quieras, usa la <a href="/calculadora-dias-laborables/">calculadora de días laborables</a>.</p></section>
 <section class="contenido"><h2>Por qué cambia de una comunidad a otra</h2>
 <p>Las comunidades pueden sustituir algunas fiestas nacionales por otras propias y decidir si el lunes siguiente a un festivo que cae en domingo es festivo. Además, si una fiesta cae en sábado o domingo no resta ningún día laborable. Por eso el número de días de trabajo no es igual en todas. Lo explicamos en <a href="/guias/como-se-fijan-los-festivos/">cómo se deciden los festivos</a>.</p></section>
@@ -255,3 +255,68 @@ def generar(datos, anios, comunidades, pagina, guardar, faq_html, faq_ld, de):
                               "Qué pasa si un festivo cae en domingo, cuánto se cobra por trabajar un festivo, cuántos días de vacaciones te corresponden y más.",
                               indice, migas=[("Guías", None)]))
     return ["/guias/"] + rutas
+
+
+def sobre_datos(datos, anios, comunidades, provincias, cfg, municipios, pagina, guardar):
+    """Página de transparencia: fuentes oficiales por comunidad, cobertura real y método. Se recalcula en cada generación."""
+    total = len(municipios)
+    por_cc = {}
+    for cod in municipios:
+        por_cc.setdefault(provincias[cod[:2]][1], []).append(cod)
+    filas = ""
+    for c in sorted(por_cc, key=lambda c: comunidades[c][0]):
+        celdas = ""
+        for a in anios:
+            con = sum(1 for cod in por_cc[c] if cod in datos[a]["locales"])
+            sin = sum(1 for cod in por_cc[c] if cod in set(datos[a].get("sin_propuesta", [])))
+            celdas += f"<td>{con} de {len(por_cc[c])}" + (f"<br><small>{sin} sin fiestas propuestas</small>" if sin else "") + "</td>"
+        enlaces = []
+        for f in cfg["locales"]:
+            if f["ccaa"] != c or f["anio"] not in anios:
+                continue
+            url = f.get("oficial") or f.get("descarga")
+            if not url:
+                continue
+            etq = str(f["anio"])
+            if f.get("provincia"):
+                etq += f", {provincias[f['provincia']][0]}"
+            if f.get("tipo") in ("correccion", "complementaria"):
+                etq += ", corrección" if f["tipo"] == "correccion" else ", complemento"
+            enlaces.append(f'<a href="{escape(url)}" rel="nofollow noopener">{escape(etq)}</a>')
+        filas += (f'<tr><td><a href="/comunidad/{c}/">{escape(comunidades[c][0])}</a></td>{celdas}'
+                  f'<td>{" · ".join(enlaces) if enlaces else "Pendiente de publicación"}</td></tr>')
+    resumen = []
+    for a in anios:
+        con = len(datos[a]["locales"])
+        resumen.append(f"<li><strong>{a}:</strong> {con} de {total} municipios con sus dos fiestas locales publicadas"
+                       + (f"; en {len(datos[a].get('sin_propuesta', []))} la resolución oficial dice que el ayuntamiento no las propuso" if datos[a].get("sin_propuesta") else "")
+                       + f". Fiestas nacionales y autonómicas: <a href=\"{datos[a]['boe']['url']}\" rel=\"noopener\">{escape(datos[a]['boe']['titulo'])}</a></li>")
+    cuerpo = f"""<h1>De dónde salen los datos</h1>
+<p class="lead">Todos los festivos de festivosde.es salen de publicaciones oficiales: el Boletín Oficial del Estado y los boletines de cada comunidad autónoma y provincia. Aquí explicamos cuáles usamos, cómo los procesamos y qué datos tenemos ahora mismo.</p>
+<section class="contenido"><h2>Las fuentes</h2>
+<ul><li><strong>Fiestas nacionales y autonómicas:</strong> la resolución anual de la Dirección General de Trabajo con la relación de fiestas laborales de toda España, publicada en el BOE en otoño del año anterior.</li>
+<li><strong>Fiestas locales:</strong> las resoluciones u órdenes de cada comunidad autónoma (o de cada provincia, en Castilla y León y el País Vasco) con las dos fiestas locales de cada municipio, y sus correcciones posteriores.</li>
+<li><strong>Calendario escolar:</strong> las resoluciones de las consejerías de educación de cada comunidad.</li>
+<li><strong>Municipios:</strong> la relación de municipios del Instituto Nacional de Estadística (INE), con su código oficial.</li></ul></section>
+<section class="contenido"><h2>Qué datos tenemos ahora</h2>
+<ul>{"".join(resumen)}</ul>
+<p>Detalle por comunidad, con el enlace a cada boletín oficial que usamos:</p>
+<div class="tabla-envoltorio"><table class="festivos completa"><thead><tr><th>Comunidad</th>{"".join(f"<th>Fiestas locales {a}</th>" for a in anios)}<th>Boletines oficiales</th></tr></thead><tbody>{filas}</tbody></table></div>
+<p class="fuente">Datos comprobados por última vez el {(lambda h: f"{h.day} de {MESES[h.month - 1]} de {h.year}")(dt.date.today())}.</p></section>
+<section class="contenido"><h2>Cómo lo hacemos</h2>
+<ol><li>Un programa revisa a diario los boletines oficiales y descarga las resoluciones de fiestas en cuanto se publican.</li>
+<li>Extrae de cada resolución el nombre de cada municipio y sus dos fechas, y lo cruza con la relación de municipios del INE para asignar cada fiesta al municipio correcto, también cuando el boletín escribe el nombre de otra forma («Prat de Llobregat, El», «A Coruña», nombres bilingües…).</li>
+<li>Aplica las correcciones que publican después los propios boletines («donde dice…, debe decir…»).</li>
+<li>Cuando un boletín publica la lista como imagen escaneada, la transcribimos y revisamos fila a fila, y dejamos constancia de cualquier errata del original.</li>
+<li>Comprobamos cada actualización comparándola con la anterior para que ningún municipio pierda datos por error.</li></ol>
+<p><strong>Nunca ponemos una fecha que no esté publicada.</strong> Si las fiestas locales de un municipio no aparecen en su resolución, lo decimos en su página en lugar de suponerlas.</p></section>
+<section class="contenido"><h2>Limitaciones</h2>
+<ul><li>Algunas fiestas son solo de una pedanía, una parroquia o un núcleo concreto (por ejemplo, en Navarra, el Valle de Arán o Asturias). Mostramos las del municipio y avisamos cuando hay fiestas que no son para todo el término.</li>
+<li>En Canarias hay fiestas propias de cada isla, que el BOE indica en nota y nosotros también.</li>
+<li>Los convenios colectivos pueden añadir días de descanso propios de un sector o una empresa: no forman parte del calendario oficial y no aparecen aquí.</li>
+<li>Para trámites legales o laborales importantes, consulta siempre la publicación oficial enlazada.</li></ul></section>
+<section class="contenido"><h2>¿Has visto un error?</h2>
+<p>Si una fecha no coincide con lo que ha aprobado tu ayuntamiento o falta tu municipio, escríbenos desde la página de <a href="/contacto/">contacto</a> indicando el municipio y, si puedes, el boletín donde lo has visto. Lo revisamos con la publicación oficial y lo corregimos.</p></section>"""
+    guardar("/sobre-los-datos/", pagina("/sobre-los-datos/", "De dónde salen los datos de festivos | festivosde.es",
+                                        "Las fuentes oficiales de festivosde.es (BOE y boletines de cada comunidad), cómo las procesamos y cuántos municipios tienen ya sus fiestas locales.",
+                                        cuerpo, migas=[("De dónde salen los datos", None)]))
