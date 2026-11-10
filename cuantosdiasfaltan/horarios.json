@@ -3991,7 +3991,7 @@ null
 "torneo": "Bybit Stockholm Open",
 "utc": "2026-11-10T12:00Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 1",
 "pista": "Court 1",
 "jugadores": [
@@ -4000,14 +4000,18 @@ null
 "n": "Aleksandr Shevchenko",
 "pais": "Kazajistán",
 "gano": null,
-"sets": []
+"sets": [
+4
+]
 },
 {
 "id": "1266",
 "n": "Adrian Mannarino",
 "pais": "Francia",
 "gano": null,
-"sets": []
+"sets": [
+1
+]
 }
 ]
 },
@@ -4015,9 +4019,9 @@ null
 "id": "186541",
 "gira": "ATP",
 "torneo": "Bybit Stockholm Open",
-"utc": "2026-11-10T12:00Z",
+"utc": "2026-11-10T12:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 2",
 "pista": "Center Court",
 "jugadores": [
@@ -4026,14 +4030,18 @@ null
 "n": "Juan Manuel Cerundolo",
 "pais": "Argentina",
 "gano": null,
-"sets": []
+"sets": [
+0
+]
 },
 {
 "id": "11400",
 "n": "Alex Michelsen",
 "pais": "USA",
 "gano": null,
-"sets": []
+"sets": [
+1
+]
 }
 ]
 },
@@ -4558,162 +4566,6 @@ null
 ]
 },
 {
-"id": "187379",
-"gira": "WTA",
-"torneo": "FAGE WTA Finals Indian Wells",
-"utc": "2026-11-11T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Group Stage",
-"pista": "",
-"jugadores": [
-{
-"id": "1797",
-"n": "Elina Svitolina",
-"pais": "Ucrania",
-"gano": null,
-"sets": []
-},
-{
-"id": "3038",
-"n": "Aryna Sabalenka",
-"pais": "Bielorrusia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "187371",
-"gira": "WTA",
-"torneo": "FAGE WTA Finals Indian Wells",
-"utc": "2026-11-11T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Group Stage",
-"pista": "",
-"jugadores": [
-{
-"id": "3626",
-"n": "Coco Gauff",
-"pais": "USA",
-"gano": null,
-"sets": []
-},
-{
-"id": "3382",
-"n": "Marta Kostyuk",
-"pais": "Ucrania",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "187376",
-"gira": "WTA",
-"torneo": "FAGE WTA Finals Indian Wells",
-"utc": "2026-11-11T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Group Stage",
-"pista": "",
-"jugadores": [
-{
-"id": "6970",
-"n": "Linda Noskova",
-"pais": "Chequia",
-"gano": null,
-"sets": []
-},
-{
-"id": "2113",
-"n": "Jessica Pegula",
-"pais": "USA",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "187385",
-"gira": "WTA",
-"torneo": "FAGE WTA Finals Indian Wells",
-"utc": "2026-11-11T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Group Stage",
-"pista": "",
-"jugadores": [
-{
-"id": "3039",
-"n": "Karolina Muchova",
-"pais": "Chequia",
-"gano": null,
-"sets": []
-},
-{
-"id": "1797",
-"n": "Elina Svitolina",
-"pais": "Ucrania",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "187384",
-"gira": "WTA",
-"torneo": "FAGE WTA Finals Indian Wells",
-"utc": "2026-11-11T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Group Stage",
-"pista": "",
-"jugadores": [
-{
-"id": "3039",
-"n": "Karolina Muchova",
-"pais": "Chequia",
-"gano": null,
-"sets": []
-},
-{
-"id": "9820",
-"n": "Mirra Andreeva",
-"pais": "Rusia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "187378",
-"gira": "WTA",
-"torneo": "FAGE WTA Finals Indian Wells",
-"utc": "2026-11-11T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Group Stage",
-"pista": "",
-"jugadores": [
-{
-"id": "9820",
-"n": "Mirra Andreeva",
-"pais": "Rusia",
-"gano": null,
-"sets": []
-},
-{
-"id": "3038",
-"n": "Aryna Sabalenka",
-"pais": "Bielorrusia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
 "id": "186761",
 "gira": "WTA",
 "torneo": "DIRECTV Open Presentado por Compesar",
@@ -4809,9 +4661,9 @@ null
 "sets": []
 },
 {
-"id": "-3",
-"n": "TBD",
-"pais": "",
+"id": "4546",
+"n": "Irene Burillo",
+"pais": "España",
 "gano": null,
 "sets": []
 }
@@ -4916,6 +4768,58 @@ null
 "id": "1095",
 "n": "Polona Hercog",
 "pais": "Eslovenia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "187385",
+"gira": "WTA",
+"torneo": "FAGE WTA Finals Indian Wells",
+"utc": "2026-11-11T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Group Stage",
+"pista": "Indian Wells Tennis Garden",
+"jugadores": [
+{
+"id": "3039",
+"n": "Karolina Muchova",
+"pais": "Chequia",
+"gano": null,
+"sets": []
+},
+{
+"id": "1797",
+"n": "Elina Svitolina",
+"pais": "Ucrania",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "187378",
+"gira": "WTA",
+"torneo": "FAGE WTA Finals Indian Wells",
+"utc": "2026-11-11T21:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Group Stage",
+"pista": "Indian Wells Tennis Garden",
+"jugadores": [
+{
+"id": "9820",
+"n": "Mirra Andreeva",
+"pais": "Rusia",
+"gano": null,
+"sets": []
+},
+{
+"id": "3038",
+"n": "Aryna Sabalenka",
+"pais": "Bielorrusia",
 "gano": null,
 "sets": []
 }
