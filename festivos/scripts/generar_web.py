@@ -35,7 +35,7 @@ PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 CUANTOS_DIAS = "https://cuantosdiasfaltan.es"
 SITIO = "Festivos de"
-VERSION = "12"
+VERSION = "13"
 HOY = dt.date.fromisoformat(os.environ["FESTIVOS_HOY"]) if os.environ.get("FESTIVOS_HOY") else dt.date.today()  # FESTIVOS_HOY: para probar
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -49,7 +49,7 @@ CABECERA_ANUNCIOS = (
 CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};googlefc.callbackQueue=googlefc.callbackQueue||[];'
                       'googlefc.callbackQueue.push(function(){googlefc.showRevocationMessage()});return false">Configurar cookies</a>')
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
-           "email": "contacto.ahorrometro@gmail.com"}
+           "email": "contacto@festivosde.es"}
 RESERVADOS = {"comunidad", "provincia", "assets", "sobre-los-datos", "aviso-legal", "privacidad", "sobre-nosotros", "contacto", "indice", "datos",
               "calculadora-dias-laborables", "planificador-vacaciones", "calendario-escolar", "es-festivo", "cuanto-falta"}
 TIPOS = {"nacional": "Nacional", "autonomico": "Autonómica", "local": "Local"}
