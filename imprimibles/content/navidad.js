@@ -37,7 +37,7 @@ module.exports = [
 <li><a href="/navidad/bingo/">Bingo de Navidad</a> con palabras en lugar de números, para jugar en clase o en la sobremesa.</li>
 <li><a href="/navidad/laberinto/">Laberinto con forma de árbol de Navidad</a>, en versión fácil y difícil.</li>
 <li><a href="/navidad/sudoku/">Sudokus de Navidad con dibujos</a>, para niños que todavía no han hecho ninguno.</li>
-<li><a href="/sopas-de-letras/navidad/">Sopa de letras de Navidad</a>, con turrón, zambomba, roscón y cabalgata.</li>
+<li><a href="/sopas-de-letras/navidad/">Sopa de letras de Navidad</a> y <a href="/crucigramas/navidad/">crucigrama de Navidad</a>, con turrón, zambomba, roscón y cabalgata.</li>
 </ul>
 <h2>Ideas para el último día de clase</h2>
 <p>El último día antes de las vacaciones suele ser difícil de llenar: los niños están nerviosos y no es momento de empezar nada nuevo. Una propuesta que funciona en primaria: empezar con la sopa de letras o el laberinto mientras se reparte la merienda, seguir con una partida de bingo para toda la clase y terminar con la carta a los Reyes, que se llevan a casa en la mochila.</p>

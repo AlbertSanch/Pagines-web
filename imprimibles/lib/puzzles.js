@@ -831,16 +831,119 @@
     return { svg: hoja({ alt: 'Carta de los Reyes Magos a los niños' + (carbon ? ' con carbón dulce' : ''), sinPie: true }, s), sol: null };
   }
 
+  // ---------- crucigrama (palabras cruzadas, sin casillas negras) ----------
+  function crucigrama(spec, seed) {
+    var r = rng(seed), N = spec.n || 12, maxC = spec.maxCols || 16, maxR = spec.maxFilas || 14;
+    var mejor = null;
+    for (var intento = 0; intento < 30; intento++) {
+      var res = colocaCruzadas(spec.palabras, N, maxC, maxR, r);
+      if (!mejor || res.puestas.length > mejor.puestas.length || (res.puestas.length === mejor.puestas.length && res.cruces > mejor.cruces)) mejor = res;
+      if (mejor.puestas.length >= N && intento >= 5) break;
+    }
+    var pz = mejor.puestas, minR = Infinity, minC = Infinity, maxRR = -Infinity, maxCC = -Infinity;
+    Object.keys(mejor.celdas).forEach(function (k) {
+      var rc = k.split(',').map(Number);
+      minR = Math.min(minR, rc[0]); maxRR = Math.max(maxRR, rc[0]); minC = Math.min(minC, rc[1]); maxCC = Math.max(maxCC, rc[1]);
+    });
+    var filas = maxRR - minR + 1, cols = maxCC - minC + 1;
+    // numeración: por filas y columnas; horizontal y vertical que empiezan juntas comparten número
+    var inicios = {};
+    pz.forEach(function (p) { var k = (p.r - minR) + ',' + (p.c - minC); (inicios[k] = inicios[k] || []).push(p); });
+    var claves = Object.keys(inicios).sort(function (a, b) { var x = a.split(',').map(Number), y = b.split(',').map(Number); return x[0] - y[0] || x[1] - y[1]; });
+    claves.forEach(function (k, i) { inicios[k].forEach(function (p) { p.num = i + 1; }); });
+    var hor = pz.filter(function (p) { return p.dir === 'h'; }).sort(function (a, b) { return a.num - b.num; });
+    var ver = pz.filter(function (p) { return p.dir === 'v'; }).sort(function (a, b) { return a.num - b.num; });
+
+    var altoMax = spec.altoRejilla || 140;
+    var c = Math.min(180 / cols, altoMax / filas, 12), x0 = (210 - cols * c) / 2, y0 = 46;
+    function dibuja(sol) {
+      var o = '';
+      Object.keys(mejor.celdas).forEach(function (k) {
+        var rc = k.split(',').map(Number), x = x0 + (rc[1] - minC) * c, y = y0 + (rc[0] - minR) * c;
+        o += '<rect x="' + f(x) + '" y="' + f(y) + '" width="' + f(c) + '" height="' + f(c) + '" fill="#fff" stroke="' + TINTA + '" stroke-width=".35"/>';
+        if (sol) o += txt(x + c / 2, y + c * .72, mejor.celdas[k], { size: f(c * .55), anchor: 'middle', bold: true, fill: ROJO });
+      });
+      claves.forEach(function (k, i) {
+        var rc = k.split(',').map(Number);
+        o += txt(x0 + rc[1] * c + c * .08, y0 + rc[0] * c + c * .3, i + 1, { size: f(Math.max(2.2, c * .26)), fill: TINTA });
+      });
+      var yy = y0 + filas * c + 10, tam = spec.tamPista || 3.5, paso = tam * 1.45;
+      [['Horizontales', hor, 15], ['Verticales', ver, 110]].forEach(function (col) {
+        var y = yy;
+        o += txt(col[2], y, col[0], { size: 4.4, titular: true });
+        y += paso + 1.6;
+        col[1].forEach(function (p) {
+          var lineas = parte(p.num + '. ' + p.pista + ' (' + p.w.length + ')', 50);
+          lineas.forEach(function (l, j) { o += txt(col[2] + (j ? 4 : 0), y, l, { size: tam }); y += paso; });
+          y += .8;
+        });
+      });
+      return o;
+    }
+    var o = { titulo: spec.titulo, sub: spec.sub || 'Escribe cada palabra en su sitio, una letra por casilla. Entre paréntesis, el número de letras.', nombre: true, seed: seed };
+    return { svg: hoja(o, dibuja(false)), sol: hoja(Object.assign({}, o, { sol: true }), dibuja(true)) };
+  }
+  function colocaCruzadas(banco, N, maxC, maxR, r) {
+    var lista = shuffle(r, banco).map(function (x) { return { w: normaliza(x[0]), pista: x[1] }; })
+      .filter(function (x) { return x.w.length >= 3 && x.w.length <= Math.min(maxC, maxR); });
+    var celdas = {}, dirs = {}, puestas = [], cruces = 0, b = { r0: 0, r1: 0, c0: 0, c1: 0 };
+    function cabe(w, r0, c0, dir) {
+      var dr = dir === 'v' ? 1 : 0, dc = dir === 'h' ? 1 : 0, n = 0;
+      var r1 = r0 + dr * (w.length - 1), c1 = c0 + dc * (w.length - 1);
+      if (puestas.length && (Math.max(b.r1, r1) - Math.min(b.r0, r0) + 1 > maxR || Math.max(b.c1, c1) - Math.min(b.c0, c0) + 1 > maxC)) return -1;
+      if (celdas[(r0 - dr) + ',' + (c0 - dc)] || celdas[(r1 + dr) + ',' + (c1 + dc)]) return -1;
+      for (var i = 0; i < w.length; i++) {
+        var rr = r0 + dr * i, cc = c0 + dc * i, k = rr + ',' + cc, ya = celdas[k];
+        if (ya) {
+          if (ya !== w[i] || (dirs[k] || '').indexOf(dir) >= 0) return -1;
+          n++;
+        } else if (celdas[(rr + dc) + ',' + (cc + dr)] || celdas[(rr - dc) + ',' + (cc - dr)]) return -1;
+      }
+      return n;
+    }
+    function pon(x, r0, c0, dir, n) {
+      var dr = dir === 'v' ? 1 : 0, dc = dir === 'h' ? 1 : 0;
+      for (var i = 0; i < x.w.length; i++) { var k = (r0 + dr * i) + ',' + (c0 + dc * i); celdas[k] = x.w[i]; dirs[k] = (dirs[k] || '') + dir; }
+      b.r0 = Math.min(b.r0, r0); b.c0 = Math.min(b.c0, c0); b.r1 = Math.max(b.r1, r0 + dr * (x.w.length - 1)); b.c1 = Math.max(b.c1, c0 + dc * (x.w.length - 1));
+      puestas.push({ w: x.w, pista: x.pista, r: r0, c: c0, dir: dir }); cruces += n;
+    }
+    // empieza por una palabra larga en horizontal
+    lista.sort(function (a, b2) { return b2.w.length - a.w.length; });
+    var primera = lista.splice(ri(r, 0, Math.min(3, lista.length - 1)), 1)[0];
+    pon(primera, 0, 0, 'h', 0);
+    lista = shuffle(r, lista);
+    for (var pase = 0; pase < 2 && puestas.length < N; pase++) {
+      lista = lista.filter(function (x) {
+        if (puestas.length >= N) return true;
+        var cand = [];
+        Object.keys(celdas).forEach(function (k) {
+          var rc = k.split(',').map(Number);
+          for (var i = 0; i < x.w.length; i++) if (x.w[i] === celdas[k]) {
+            ['h', 'v'].forEach(function (dir) {
+              var r0 = dir === 'v' ? rc[0] - i : rc[0], c0 = dir === 'h' ? rc[1] - i : rc[1], n = cabe(x.w, r0, c0, dir);
+              if (n > 0) cand.push({ r0: r0, c0: c0, dir: dir, n: n, z: r() });
+            });
+          }
+        });
+        if (!cand.length) return true;
+        cand.sort(function (a, b2) { return b2.n - a.n || a.z - b2.z; });
+        pon(x, cand[0].r0, cand[0].c0, cand[0].dir, cand[0].n);
+        return false;
+      });
+    }
+    return { celdas: celdas, puestas: puestas, cruces: cruces };
+  }
+
   var TIPOS = {
     sopa: sopa, sudoku: sudoku, laberinto: laberinto, bingo90: bingo90, bingo75: bingo75, 'bingo-numeros': bingoNumeros,
     tabla: tabla, 'tablas-todas': tablasTodas, pitagorica: pitagorica, 'mult-practica': multPractica,
     operaciones: operaciones, papel: papel,
     'sudoku-dibujos': sudokuDibujos, 'bingo-palabras': bingoPalabras, 'bingo-palabras-lista': bingoPalabrasLista,
-    'laberinto-arbol': laberintoArbol, carta: carta, sobre: sobre, 'carta-respuesta': cartaRespuesta
+    'laberinto-arbol': laberintoArbol, carta: carta, sobre: sobre, 'carta-respuesta': cartaRespuesta, crucigrama: crucigrama
   };
   // Tipos cuyo contenido cambia con la semilla (tienen botón «Otra distinta»)
   var ALEATORIOS = { sopa: 1, sudoku: 1, laberinto: 1, bingo90: 1, bingo75: 1, 'mult-practica': 1, operaciones: 1,
-    'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1 };
+    'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1, crucigrama: 1 };
 
   function render(spec, seed) {
     var fn = TIPOS[spec.tipo];

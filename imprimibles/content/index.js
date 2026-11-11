@@ -3,6 +3,7 @@ const P = require('../lib/puzzles.js');
 const crudas = [
   ...require('./navidad.js'),
   ...require('./sopas.js'),
+  ...require('./crucigramas.js'),
   ...require('./logica.js'),
   ...require('./escuela.js')
 ];
