@@ -85,11 +85,12 @@
   };
   var TODAS = DIRS.dificil;
   var RELLENO = 'AAAAEEEEOOOIIIUUSSSRRRNNNLLLDDTTTCCMMPPBGVHFYQJZXÑ';
+  var RELLENO_EN = 'EEEEEAAAOOOIIITTTTNNNSSSRRRHHHLLDDCCUUMMWWFGYYPBVK';
 
   function sopa(spec, seed) {
-    var r = rng(seed), N = spec.tam || 12, dirs = DIRS[spec.nivel || 'medio'];
+    var r = rng(seed), N = spec.tam || 12, dirs = DIRS[spec.nivel || 'medio'], RELL = spec.ingles ? RELLENO_EN : RELLENO;
     var max = spec.nPalabras || 12;
-    var cand = shuffle(r, spec.palabras).map(function (p) { return { ver: p.toUpperCase(), w: normaliza(p) }; })
+    var cand = shuffle(r, spec.palabras).map(function (p) { return Array.isArray(p) ? { ver: p[1].toUpperCase(), w: normaliza(p[0]) } : { ver: p.toUpperCase(), w: normaliza(p) }; })
       .filter(function (p) { return p.w.length >= 3 && p.w.length <= N; });
     var g = [], usada = [], i, j;
     for (i = 0; i < N; i++) { g.push(new Array(N).fill('')); usada.push(new Array(N).fill(false)); }
@@ -116,7 +117,7 @@
         ok = true;
       }
     }
-    for (i = 0; i < N; i++) for (j = 0; j < N; j++) if (!g[i][j]) g[i][j] = RELLENO[ri(r, 0, RELLENO.length - 1)];
+    for (i = 0; i < N; i++) for (j = 0; j < N; j++) if (!g[i][j]) g[i][j] = RELL[ri(r, 0, RELL.length - 1)];
 
     // Evita que el relleno forme por azar una segunda copia de alguna palabra
     function esLegitima(p, r0, c0, d) {
@@ -137,7 +138,7 @@
             var rr = a + d[0] * q, cc = b + d[1] * q;
             if (!usada[rr][cc]) {
               var nueva;
-              do { nueva = RELLENO[ri(r, 0, RELLENO.length - 1)]; } while (nueva === g[rr][cc]);
+              do { nueva = RELL[ri(r, 0, RELL.length - 1)]; } while (nueva === g[rr][cc]);
               g[rr][cc] = nueva; cambios++; return;
             }
           }
@@ -162,7 +163,7 @@
       }
       s += '</g>';
       var cols = 4, filas = Math.ceil(puestas.length / cols), ly = y0 + lado + 11;
-      s += txt(15, ly - 1, 'Palabras escondidas (' + puestas.length + ')', { size: 3.6, fill: GRIS });
+      s += txt(15, ly - 1, (spec.rotuloLista || 'Palabras escondidas') + ' (' + puestas.length + ')', { size: 3.6, fill: GRIS });
       puestas.forEach(function (p, n) {
         var col = Math.floor(n / filas), fila = n % filas;
         s += '<rect x="' + f(15 + col * 46) + '" y="' + f(ly + 3.6 + fila * 7) + '" width="3" height="3" fill="none" stroke="' + TINTA + '" stroke-width=".25"/>';
@@ -170,7 +171,7 @@
       });
       return s;
     }
-    var o = { titulo: spec.titulo, sub: spec.sub || SUBS_SOPA[spec.nivel || 'medio'], nombre: spec.nombre !== false, seed: seed };
+    var o = { titulo: spec.titulo, sub: spec.sub || SUBS_SOPA[spec.nivel || 'medio'], nombre: spec.nombre !== false, ingles: !!spec.inglesRotulos, seed: seed };
     return {
       svg: hoja(o, dibuja(false)),
       sol: hoja(Object.assign({}, o, { sol: true }), dibuja(true))

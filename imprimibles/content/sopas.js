@@ -91,6 +91,36 @@ ${comoSeHace}
   amazon: [['Subrayadores de colores', 'subrayadores colores pastel'], ['Libros de sopas de letras', 'libro sopas de letras']]
 }));
 
+const vocabIngles = [
+  ['dog', 'perro'], ['cat', 'gato'], ['horse', 'caballo'], ['bird', 'pájaro'], ['fish', 'pez'], ['rabbit', 'conejo'],
+  ['red', 'rojo'], ['blue', 'azul'], ['green', 'verde'], ['yellow', 'amarillo'], ['black', 'negro'], ['white', 'blanco'],
+  ['apple', 'manzana'], ['bread', 'pan'], ['milk', 'leche'], ['water', 'agua'], ['cheese', 'queso'], ['orange', 'naranja'],
+  ['school', 'colegio'], ['book', 'libro'], ['pencil', 'lápiz'], ['teacher', 'profesor'], ['friend', 'amigo'], ['house', 'casa'],
+  ['mother', 'madre'], ['father', 'padre'], ['sister', 'hermana'], ['brother', 'hermano'], ['window', 'ventana'], ['chair', 'silla'],
+  ['summer', 'verano'], ['winter', 'invierno'], ['happy', 'feliz'], ['seven', 'siete'], ['twelve', 'doce'], ['garden', 'jardín']
+];
+const paginaIngles = {
+  cat: 'sopas-de-letras', slug: 'en-ingles', corto: 'En inglés',
+  title: 'Sopa de letras en inglés para imprimir, con solución',
+  desc: 'Sopas de letras en inglés para primaria en dos niveles: con la lista en inglés y con la lista en español para traducir. Vocabulario básico, con solución.',
+  h1: 'Sopa de letras en inglés para imprimir',
+  entrada: 'Dos sopas de letras para repasar vocabulario de inglés. En la primera la lista está en inglés y solo hay que encontrar las palabras. En la segunda la lista está en español: para saber qué buscar, primero hay que traducir. Las dos con solución.',
+  hojas: [
+    { tipo: 'sopa', ingles: true, inglesRotulos: true, titulo: 'Word search', nivel: 'medio', tam: 13, nPalabras: 14, palabras: vocabIngles.map((p) => p[0]), rotuloLista: 'Find these words', sub: 'Find the words. They go across, down or diagonally, never backwards.' },
+    { tipo: 'sopa', ingles: true, titulo: 'Traduce y busca en inglés', nivel: 'medio', tam: 13, nPalabras: 14, palabras: vocabIngles, rotuloLista: 'Busca en inglés estas palabras', sub: 'Traduce cada palabra de la lista al inglés y búscala. Van en horizontal, vertical o diagonal.' }
+  ],
+  copias: 2,
+  cuerpo: `
+<h2>Dos niveles</h2>
+<p><strong>Lista en inglés.</strong> Es la sopa de letras de siempre, con vocabulario en inglés: el alumno lee la palabra, la reconoce y la busca. Ayuda a fijar la ortografía, porque para encontrar «YELLOW» hay que fijarse en las dos eles. Va bien desde segundo o tercero de primaria.</p>
+<p><strong>Lista en español.</strong> Aquí la lista dice «perro», «ventana» o «invierno», y lo que hay que buscar en la cuadrícula es DOG, WINDOW o WINTER. Es un ejercicio de vocabulario de verdad: si no sabes la palabra en inglés, no la encuentras. Para cuarto de primaria en adelante.</p>
+<h2>El vocabulario</h2>
+<p>En cada hoja salen catorce palabras elegidas al azar entre treinta y seis de los temas que se ven en los primeros cursos: animales, colores, comida, el colegio, la familia, la casa, las estaciones y los números. Todas son palabras de una sola pieza, sin espacios ni guiones, para que quepan en la cuadrícula.</p>
+<p>Al terminar, una actividad que funciona: con la lista ya tachada, el alumno escribe al lado de cada palabra su traducción (en la primera hoja) o la palabra en inglés (en la segunda). Así sale de la sopa de letras con su propia lista de vocabulario.</p>
+<p>Si quieres seguir con el inglés, tienes el <a href="/crucigramas/en-ingles/">crucigrama en inglés</a>, también en dos niveles.</p>
+${comoSeHace.replace('<h2>Cómo se resuelve</h2>', '<h2>Cómo se resuelve una sopa de letras</h2>')}`
+};
+
 module.exports = [
   {
     cat: 'sopas-de-letras', slug: '', corto: 'Sopas de letras', nav: 'Sopas de letras',
@@ -125,6 +155,7 @@ ${comoSeHace}
     amazon: [['Libros de sopas de letras en letra grande', 'sopas de letras letra grande'], ['Subrayadores de colores', 'subrayadores colores pastel']]
   },
   ...paginasTema,
+  paginaIngles,
   {
     cat: 'sopas-de-letras', slug: 'faciles', corto: 'Fáciles para niños',
     title: 'Sopas de letras fáciles para niños, para imprimir',
