@@ -1,0 +1,36 @@
+---
+layout: texto.njk
+permalink: /privacidad/
+title: "Política de privacidad | imprimibles.es"
+titulo: "Política de privacidad"
+description: "Política de privacidad de imprimibles.es: qué datos personales se tratan, con qué finalidad, quién los recibe y cómo ejercer tus derechos."
+---
+<p class="entrada">Esta web se puede usar sin registrarse y sin facilitar ningún dato personal. Aquí se explica qué datos se tratan en los pocos casos en que ocurre.</p>
+<h2>Responsable del tratamiento</h2>
+<ul>
+<li><strong>Responsable:</strong> {{ site.legal.titular | pendiente('nombre y apellidos o razón social') }}</li>
+<li><strong>NIF:</strong> {{ site.legal.nif | pendiente('NIF') }}</li>
+<li><strong>Domicilio:</strong> {{ site.legal.domicilio | pendiente('domicilio') }}</li>
+<li><strong>Contacto:</strong> <a href="mailto:{{ site.legal.email }}">{{ site.legal.email }}</a></li>
+</ul>
+<h2>Qué datos se tratan y para qué</h2>
+<h3>Si escribes por correo electrónico</h3>
+<p>Se tratan tu dirección de correo y el contenido del mensaje con la única finalidad de responderte. La base jurídica es tu consentimiento, que das al enviar el mensaje. Los mensajes se conservan el tiempo necesario para atender la consulta y, como máximo, un año.</p>
+<h3>Datos técnicos de navegación</h3>
+<p>El proveedor de alojamiento registra de forma automática datos técnicos de cada visita (dirección IP, fecha y hora, página solicitada y tipo de navegador) para servir las páginas y proteger el sitio frente a ataques. La base jurídica es el interés legítimo en mantener la seguridad del servicio.</p>
+<h3>Publicidad</h3>
+<p>Los anuncios los sirve Google AdSense. Con tu consentimiento, Google y sus socios publicitarios utilizan cookies e identificadores para mostrar anuncios personalizados y medir su rendimiento; sin él, solo se muestran anuncios no personalizados. Puedes aceptar, rechazar o cambiar tu elección en cualquier momento desde el enlace «Configurar cookies» del pie de página. Tienes más detalle en la <a href="/cookies/">política de cookies</a> y en la página de Google <a href="https://policies.google.com/technologies/partner-sites?hl=es" rel="noopener">Cómo utiliza Google la información de los sitios web o aplicaciones que usan sus servicios</a>.</p>
+<h3>Las fichas</h3>
+<p>Los pasatiempos se generan en tu propio navegador. Lo que escribes o imprimes no se envía a ningún servidor.</p>
+<h2>Quién recibe los datos</h2>
+<ul>
+<li><strong>Cloudflare, Inc.</strong>, como proveedor de alojamiento y red de distribución de contenidos.</li>
+<li><strong>Google Ireland Limited</strong>, como proveedor de publicidad (Google AdSense), si das tu consentimiento.</li>
+<li><strong>Amazon Europe Core S.à r.l.</strong>, solo si haces clic en un enlace de afiliado: a partir de ese momento se aplica la política de privacidad de Amazon.</li>
+</ul>
+<p>Algunos de estos proveedores pueden tratar datos fuera del Espacio Económico Europeo. En ese caso lo hacen al amparo del Marco de Privacidad de Datos UE-EE. UU. o de cláusulas contractuales tipo aprobadas por la Comisión Europea.</p>
+<h2>Menores</h2>
+<p>Muchas fichas están pensadas para niños, pero la web va dirigida a las personas adultas que las imprimen: familias y docentes. No se recogen datos de menores de forma consciente.</p>
+<h2>Tus derechos</h2>
+<p>Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo a <a href="mailto:{{ site.legal.email }}">{{ site.legal.email }}</a>. También puedes retirar en cualquier momento el consentimiento que hayas dado. Si consideras que tus datos no se han tratado correctamente, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" rel="noopener">www.aepd.es</a>).</p>
+<p>Última actualización: {{ site.compilado }}.</p>

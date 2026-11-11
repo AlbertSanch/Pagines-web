@@ -1,0 +1,20 @@
+{
+  "name": "imprimibles",
+  "version": "1.0.0",
+  "description": "imprimibles.es: pasatiempos y fichas para imprimir",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "pdfs": "node scripts/pdfs.js",
+    "comprobar": "node scripts/comprobar.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8",
+    "@fontsource/andika": "^5.3.0",
+    "@fontsource/besley": "^5.3.0"
+  },
+  "private": true
+}

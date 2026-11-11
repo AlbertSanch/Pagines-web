@@ -1,0 +1,55 @@
+---
+layout: base.njk
+title: "Pasatiempos y fichas para imprimir gratis | imprimibles.es"
+description: "Sopas de letras, sudokus, laberintos, cartones de bingo, tablas de multiplicar y papel pautado para imprimir en A4. Gratis, en PDF y con solución."
+---
+<div class="ancho">
+  <main id="contenido">
+    <section class="portada">
+      <div class="portada-texto">
+        <p class="antetitulo">A4 · PDF · con solución</p>
+        <h1>Pasatiempos y fichas para imprimir</h1>
+        <p class="entrada">Sopas de letras, sudokus, laberintos, cartones de bingo, tablas de multiplicar y hojas pautadas. Cada ficha se genera en el momento, así que puedes imprimir la que ves o pedir otra distinta todas las veces que quieras.</p>
+        <p class="portada-enlaces"><a class="boton boton-tinta" href="#indice">Ir al índice</a> <a class="boton" href="/sopas-de-letras/">Empezar por una sopa de letras</a></p>
+      </div>
+      <div class="monton" aria-hidden="true">
+        <a class="monton-hoja h1" href="/laberintos/" tabindex="-1">{{ { tipo: 'laberinto', titulo: 'Laberinto', cols: 14, filas: 17, nombre: false } | ficha(2027) | safe }}</a>
+        <a class="monton-hoja h2" href="/sudokus/" tabindex="-1">{{ { tipo: 'sudoku', n: 9, nivel: 'facil', titulo: 'Sudokus fáciles' } | ficha(41) | safe }}</a>
+        <a class="monton-hoja h3" href="/sopas-de-letras/" tabindex="-1">{{ { tipo: 'sopa', titulo: 'Sopa de letras', nivel: 'medio', tam: 11, nPalabras: 12, nombre: false, palabras: ['lápiz','goma','cuaderno','tijeras','regla','folio','carpeta','estuche','papel','tinta','ficha','hoja','sobre','grapa','sello','clip'] } | ficha(7) | safe }}</a>
+      </div>
+    </section>
+
+    <section class="bloque" id="indice" aria-labelledby="indice-t">
+      <h2 id="indice-t">Índice</h2>
+      <div class="indice-general">
+        {%- for s in secciones %}
+        <article class="capitulo">
+          <p class="capitulo-n" aria-hidden="true">{{ loop.index }}</p>
+          <div>
+            <h3><a href="{{ s.url }}">{{ s.nombre }}</a></h3>
+            <p class="capitulo-resumen">{{ s.resumen }}</p>
+            <ol class="indice indice-corto">
+              {%- for h in s.hijas %}
+              <li><a href="{{ h.url }}">{{ h.corto }}</a><span class="puntos" aria-hidden="true"></span><span class="meta">{{ h.pdfHojas }} {% if h.pdfHojas == 1 %}hoja{% else %}hojas{% endif %}</span></li>
+              {%- endfor %}
+            </ol>
+          </div>
+        </article>
+        {%- endfor %}
+      </div>
+    </section>
+
+    {% set hueco = 'contenido' %}{% include "anuncio.njk" %}
+
+    <section class="bloque prosa" aria-labelledby="como-t">
+      <h2 id="como-t">Cómo funciona</h2>
+      <p>En casi todas las webs de imprimibles hay un número fijo de fichas escaneadas: cuando las has hecho, se acabó. Aquí cada pasatiempo lo construye un programa en el momento. La sopa de letras coloca las palabras y comprueba que ninguna aparezca dos veces por casualidad; el sudoku retira números mientras siga habiendo una única solución; el laberinto garantiza un solo camino entre la entrada y la salida.</p>
+      <p>En la práctica eso significa tres cosas. Hay fichas nuevas siempre que las necesites, con el botón «Otra distinta». Todas tienen solución, que puedes ver en pantalla o imprimir. Y todas están dibujadas para A4 en blanco y negro, sin fondos ni adornos que gasten tinta.</p>
+      <h2>Para quién es</h2>
+      <p>Para familias que buscan una ficha de sumas un martes por la tarde, para docentes que necesitan veinticinco sopas de letras distintas para que nadie copie, para residencias y centros de día que organizan un bingo y para cualquiera que prefiera resolver un sudoku con lápiz antes que en una pantalla.</p>
+      <p>El uso es libre en casa y en el aula: puedes imprimir y fotocopiar lo que quieras. Lo único que pedimos es que no se revendan ni se republiquen las fichas en otras webs.</p>
+      <h2>Antes de imprimir</h2>
+      <p>Los pasatiempos se pueden imprimir con «Ajustar a la página» sin problema. Las plantillas de <a href="/papel/">papel milimetrado, cuadriculado o pautado</a> hay que imprimirlas con <strong>escala 100 %</strong> para que las medidas sean reales. Si quieres guardar una ficha concreta, usa «Imprimir» y elige «Guardar como PDF» como impresora.</p>
+    </section>
+  </main>
+</div>

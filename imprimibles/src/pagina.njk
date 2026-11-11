@@ -1,0 +1,115 @@
+---js
+{
+  pagination: { data: "paginas", size: 1, alias: "p" },
+  layout: "base.njk",
+  eleventyComputed: {
+    permalink: (d) => d.p.url,
+    title: (d) => d.p.title,
+    description: (d) => d.p.desc
+  }
+}
+---
+{#- PLANTILLA DE FICHA. No hace falta tocarla para crear páginas nuevas:
+    basta añadir una entrada en content/*.js (ver README). -#}
+{%- set hub = null -%}
+{%- for s in secciones %}{% if s.cat == p.cat %}{% set hub = s %}{% endif %}{% endfor -%}
+
+<div class="ancho pagina">
+  <main id="contenido">
+    <nav class="migas" aria-label="Migas de pan">
+      {%- for m in migas %}
+      {%- if not loop.last %}<a href="{{ m.url }}">{{ m.nombre }}</a> <span aria-hidden="true">/</span> {% else %}<span aria-current="page">{{ m.nombre }}</span>{% endif %}
+      {%- endfor %}
+    </nav>
+    <h1>{{ p.h1 }}</h1>
+    <p class="entrada">{{ p.entrada | safe }}</p>
+
+    {%- if p.hojas.length %}
+    <section class="mesa" aria-label="Fichas para imprimir">
+      <div class="barra">
+        <button type="button" class="boton boton-tinta" data-accion="imprimir">Imprimir</button>
+        <a class="boton" href="{{ p.pdf }}" download>Descargar PDF</a>
+        {%- if p.aleatoria %}<button type="button" class="boton" data-accion="otra">Otra distinta</button>{% endif %}
+        {%- if p.tieneSol %}<button type="button" class="boton" data-accion="solucion" aria-pressed="false">Ver solución</button>{% endif %}
+      </div>
+      <p class="barra-nota">
+        El PDF trae {{ p.pdfHojas }} {% if p.pdfHojas == 1 %}hoja{% else %}hojas{% endif %}
+        {%- if p.pdfSoluciones %} y {{ p.pdfSoluciones }} de soluciones{% endif %}, en A4.
+        {%- if p.aleatoria %} «Otra distinta» crea una ficha nueva que puedes imprimir desde aquí.{% endif %}
+      </p>
+      <div class="hojas{% if p.hojas.length > 1 %} hojas-varias{% endif %}">
+        {%- for h in p.hojas %}
+        <figure class="hoja" data-spec="{{ h.json }}" data-seed="{{ h.seed }}"{% if h.aleatoria %} data-aleatoria{% endif %}>
+          <div class="papel">{{ h.svg | safe }}</div>
+        </figure>
+        {%- endfor %}
+      </div>
+    </section>
+    {%- endif %}
+
+    {%- if p.esHub and hub.hijas.length %}
+    <section class="bloque" aria-labelledby="indice-seccion">
+      <h2 id="indice-seccion">{{ hub.nombre }}: todas las fichas</h2>
+      <ol class="indice">
+        {%- for h in hub.hijas %}
+        <li><a href="{{ h.url }}">{{ h.corto }}</a><span class="puntos" aria-hidden="true"></span><span class="meta">{{ h.pdfHojas }} {% if h.pdfHojas == 1 %}hoja{% else %}hojas{% endif %} · PDF</span></li>
+        {%- endfor %}
+      </ol>
+    </section>
+    {%- endif %}
+
+    {% set hueco = 'contenido' %}{% include "anuncio.njk" %}
+
+    <div class="prosa">
+      {{ p.cuerpo | safe }}
+
+      {%- if p.faq %}
+      <h2>Preguntas frecuentes</h2>
+      {%- for f in p.faq %}
+      <h3>{{ f[0] }}</h3>
+      <p>{{ f[1] }}</p>
+      {%- endfor %}
+      {%- endif %}
+    </div>
+
+    {%- if site.amazonTag and p.amazon %}
+    <aside class="material" aria-labelledby="material-t">
+      <h2 id="material-t">Material que viene bien</h2>
+      <ul>
+        {%- for a in p.amazon %}
+        <li><a href="{{ a[1] | amazon(site.amazonTag) }}" rel="sponsored nofollow noopener" target="_blank">{{ a[0] }} en Amazon</a></li>
+        {%- endfor %}
+      </ul>
+      <p class="material-aviso">Enlaces de afiliado: si compras a través de ellos, imprimibles.es recibe una pequeña comisión sin coste para ti.</p>
+    </aside>
+    {%- endif %}
+
+    {%- if not p.esHub %}
+    <section class="bloque" aria-labelledby="mas-seccion">
+      <h2 id="mas-seccion">Más en {{ hub.nombre | lower }}</h2>
+      <ol class="indice">
+        {%- for h in hub.hijas %}{% if h.url != p.url %}
+        <li><a href="{{ h.url }}">{{ h.corto }}</a><span class="puntos" aria-hidden="true"></span><span class="meta">{{ h.pdfHojas }} {% if h.pdfHojas == 1 %}hoja{% else %}hojas{% endif %} · PDF</span></li>
+        {%- endif %}{% endfor %}
+      </ol>
+      <p><a href="{{ hub.url }}">Ver todo sobre {{ hub.nombre | lower }}</a></p>
+    </section>
+    {%- endif %}
+
+    {% set hueco = 'final' %}{% include "anuncio.njk" %}
+  </main>
+
+  <aside class="lateral" aria-label="Otras secciones">
+    <h2>Otras secciones</h2>
+    <ul class="lateral-lista">
+      {%- for s in secciones %}{% if s.cat != p.cat %}
+      <li><a href="{{ s.url }}">{{ s.nombre }}</a><span>{{ s.resumen }}</span></li>
+      {%- endif %}{% endfor %}
+    </ul>
+    {% set hueco = 'lateral' %}{% include "anuncio.njk" %}
+  </aside>
+</div>
+{%- if p.hojas.length %}
+<script src="/js/puzzles.js" defer></script>
+<script src="/js/app.js" defer></script>
+{%- endif %}

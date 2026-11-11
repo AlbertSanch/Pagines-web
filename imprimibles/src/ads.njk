@@ -1,0 +1,7 @@
+---js
+{
+  eleventyExcludeFromCollections: true,
+  eleventyComputed: { permalink: (d) => d.site.adsenseId ? '/ads.txt' : false }
+}
+---
+google.com, {{ site.adsenseId | replace('ca-', '') }}, DIRECT, f08c47fec0942fa0
