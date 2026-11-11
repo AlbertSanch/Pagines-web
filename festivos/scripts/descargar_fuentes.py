@@ -114,20 +114,33 @@ def main():
                 continue
             sha = hashlib.sha1(datos).hexdigest()
             if datos[:4] == b"%PDF":
-                pdf = FUENTES / f"{clave}.pdf"
+                pdf = FUENTES / f"{clave}.nuevo.pdf"
                 pdf.write_bytes(datos)
-                subprocess.run(["pdftotext", "-layout", str(pdf), str(FUENTES / f"{clave}.txt")], check=True)
+                subprocess.run(["pdftotext", "-layout", str(pdf), str(FUENTES / f"{clave}.nuevo.txt")], check=True)
                 pdf.unlink()
+                texto = (FUENTES / f"{clave}.nuevo.txt").read_text(encoding="utf-8", errors="replace")
+                (FUENTES / f"{clave}.nuevo.txt").unlink()
             else:  # HTML: se guarda también como texto plano para los lectores
-                (FUENTES / f"{clave}.html").write_bytes(datos)
                 bruto = datos.decode("utf-8", "replace")
                 if bruto.count("\ufffd") > 5:
                     bruto = datos.decode("latin-1")
                 texto = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", bruto, flags=re.S | re.I)
                 texto = re.sub(r"<br\s*/?>|</(p|tr|li|h\d|div)>", "\n", texto, flags=re.I)
                 texto = re.sub(r"<td[^>]*>", "\t", texto, flags=re.I)
-                texto = html.unescape(re.sub(r"<[^>]+>", " ", texto))
-                (FUENTES / f"{clave}.txt").write_text(re.sub(r"[ \xa0]+", " ", texto), encoding="utf-8")
+                texto = re.sub(r"[ \xa0]+", " ", html.unescape(re.sub(r"<[^>]+>", " ", texto)))
+            # Noviembre de 2026: el DOCM devolvió su página de «Acceso al sistema» en lugar de la resolución y se
+            # perdieron las fiestas de 893 municipios. Si lo bajado es mucho más corto que lo que ya teníamos,
+            # se trata como un error y se conserva el boletín anterior.
+            previo = FUENTES / f"{clave}.txt"
+            antes = len(previo.read_text(encoding="utf-8", errors="replace").split()) if previo.exists() else 0
+            if antes and len(texto.split()) < antes * 0.5:
+                errores.append(f"{clave}: lo descargado ({len(texto.split())} palabras) es mucho más corto que el boletín guardado "
+                               f"({antes}); se conserva el anterior")
+                print(f"{clave}: DESCARTADO (parece una página de error)", flush=True)
+                continue
+            if datos[:4] != b"%PDF":
+                (FUENTES / f"{clave}.html").write_bytes(datos)
+            previo.write_text(texto, encoding="utf-8")
             cambio = registro.get(clave, {}).get("sha1") not in (None, sha)
             registro[clave] = {"url": f.get("oficial") or f["descarga"], "descargado_de": usada, "sha1": sha,
                                "descargado": dt.date.today().isoformat()}
