@@ -3989,9 +3989,9 @@ null
 "id": "186540",
 "gira": "ATP",
 "torneo": "Bybit Stockholm Open",
-"utc": "2026-11-11T12:00Z",
+"utc": "2026-11-11T12:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 2",
 "pista": "Center Court",
 "jugadores": [
@@ -3999,41 +3999,23 @@ null
 "id": "2970",
 "n": "Alejandro Tabilo",
 "pais": "Chile",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+7,
+6,
+7
+]
 },
 {
 "id": "3052",
 "n": "Lorenzo Sonego",
 "pais": "Italia",
-"gano": null,
-"sets": []
-}
+"gano": false,
+"sets": [
+6,
+7,
+5
 ]
-},
-{
-"id": "186545",
-"gira": "ATP",
-"torneo": "Bybit Stockholm Open",
-"utc": "2026-11-11T13:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 2",
-"pista": "Center Court",
-"jugadores": [
-{
-"id": "2366",
-"n": "Cameron Norrie",
-"pais": "Gran Bretaña",
-"gano": null,
-"sets": []
-},
-{
-"id": "2946",
-"n": "Taylor Fritz",
-"pais": "USA",
-"gano": null,
-"sets": []
 }
 ]
 },
@@ -4041,9 +4023,9 @@ null
 "id": "186542",
 "gira": "ATP",
 "torneo": "Bybit Stockholm Open",
-"utc": "2026-11-11T15:00Z",
+"utc": "2026-11-11T15:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 2",
 "pista": "Court 1",
 "jugadores": [
@@ -4051,41 +4033,21 @@ null
 "id": "3085",
 "n": "Ugo Humbert",
 "pais": "Francia",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6
+]
 },
 {
 "id": "3449",
 "n": "Borna Gojo",
 "pais": "Croacia",
-"gano": null,
-"sets": []
-}
+"gano": false,
+"sets": [
+2,
+4
 ]
-},
-{
-"id": "186760",
-"gira": "WTA",
-"torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-11T15:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 2",
-"pista": "Court 2",
-"jugadores": [
-{
-"id": "5746",
-"n": "Jazmin Ortenzi",
-"pais": "Argentina",
-"gano": null,
-"sets": []
-},
-{
-"id": "4291",
-"n": "Andrea Lazaro Garcia",
-"pais": "España",
-"gano": null,
-"sets": []
 }
 ]
 },
@@ -4093,9 +4055,9 @@ null
 "id": "186766",
 "gira": "WTA",
 "torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-11T15:00Z",
+"utc": "2026-11-11T15:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 2",
 "pista": "Court 1",
 "jugadores": [
@@ -4103,15 +4065,21 @@ null
 "id": "5299",
 "n": "Carole Monnet",
 "pais": "Francia",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+3,
+0
+]
 },
 {
 "id": "1095",
 "n": "Polona Hercog",
 "pais": "Eslovenia",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6
+]
 }
 ]
 },
@@ -4119,9 +4087,9 @@ null
 "id": "186767",
 "gira": "WTA",
 "torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-11T15:00Z",
+"utc": "2026-11-11T15:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 2",
 "pista": "Main Court",
 "jugadores": [
@@ -4129,67 +4097,87 @@ null
 "id": "5161",
 "n": "Alice Tubello",
 "pais": "Francia",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+7,
+6
+]
 },
 {
 "id": "2346",
 "n": "Tatjana Maria",
 "pais": "Alemania",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+5,
+4
+]
 }
 ]
 },
 {
-"id": "186762",
+"id": "186760",
 "gira": "WTA",
 "torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-11T16:30Z",
+"utc": "2026-11-11T15:10Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 2",
 "pista": "Court 2",
 "jugadores": [
 {
-"id": "2599",
-"n": "Julia Grabher",
-"pais": "Austria",
-"gano": null,
-"sets": []
+"id": "5746",
+"n": "Jazmin Ortenzi",
+"pais": "Argentina",
+"gano": false,
+"sets": [
+6,
+4,
+4
+]
 },
 {
-"id": "4546",
-"n": "Irene Burillo",
+"id": "4291",
+"n": "Andrea Lazaro Garcia",
 "pais": "España",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+2,
+6,
+6
+]
 }
 ]
 },
 {
-"id": "186761",
-"gira": "WTA",
-"torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-11T16:30Z",
+"id": "186545",
+"gira": "ATP",
+"torneo": "Bybit Stockholm Open",
+"utc": "2026-11-11T15:20Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 2",
-"pista": "Main Court",
+"pista": "Center Court",
 "jugadores": [
 {
-"id": "1955",
-"n": "Elizabeth Mandlik",
-"pais": "USA",
-"gano": null,
-"sets": []
+"id": "2366",
+"n": "Cameron Norrie",
+"pais": "Gran Bretaña",
+"gano": false,
+"sets": [
+5,
+3
+]
 },
 {
-"id": "4666",
-"n": "Lucia Bronzetti",
-"pais": "Italia",
-"gano": null,
-"sets": []
+"id": "2946",
+"n": "Taylor Fritz",
+"pais": "USA",
+"gano": true,
+"sets": [
+7,
+6
+]
 }
 ]
 },
@@ -4197,9 +4185,9 @@ null
 "id": "186763",
 "gira": "WTA",
 "torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-11T16:30Z",
+"utc": "2026-11-11T16:25Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 2",
 "pista": "Court 1",
 "jugadores": [
@@ -4207,15 +4195,53 @@ null
 "id": "14562",
 "n": "Sofia Costoulas",
 "pais": "Bélgica",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+2,
+2
+]
 },
 {
 "id": "15069",
 "n": "Laura Samson",
 "pais": "Chequia",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6
+]
+}
+]
+},
+{
+"id": "186761",
+"gira": "WTA",
+"torneo": "DIRECTV Open Presentado por Compesar",
+"utc": "2026-11-11T16:55Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Round 2",
+"pista": "Main Court",
+"jugadores": [
+{
+"id": "1955",
+"n": "Elizabeth Mandlik",
+"pais": "USA",
+"gano": true,
+"sets": [
+7,
+6
+]
+},
+{
+"id": "4666",
+"n": "Lucia Bronzetti",
+"pais": "Italia",
+"gano": false,
+"sets": [
+6,
+3
+]
 }
 ]
 },
@@ -4223,9 +4249,9 @@ null
 "id": "186538",
 "gira": "ATP",
 "torneo": "Bybit Stockholm Open",
-"utc": "2026-11-11T17:00Z",
+"utc": "2026-11-11T17:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 2",
 "pista": "Center Court",
 "jugadores": [
@@ -4233,41 +4259,55 @@ null
 "id": "2989",
 "n": "Casper Ruud",
 "pais": "Noruega",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+7,
+4,
+3
+]
 },
 {
 "id": "8710",
 "n": "Aleksandr Shevchenko",
 "pais": "Kazajistán",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6,
+6
+]
 }
 ]
 },
 {
-"id": "186764",
+"id": "186762",
 "gira": "WTA",
 "torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-11T18:00Z",
+"utc": "2026-11-11T17:35Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 2",
-"pista": "Main Court",
+"pista": "Court 2",
 "jugadores": [
 {
-"id": "8690",
-"n": "Marina Bassols Ribera",
-"pais": "España",
-"gano": null,
-"sets": []
+"id": "2599",
+"n": "Julia Grabher",
+"pais": "Austria",
+"gano": false,
+"sets": [
+5,
+6
+]
 },
 {
-"id": "3220",
-"n": "Maria Lourdes Carle",
-"pais": "Argentina",
-"gano": null,
-"sets": []
+"id": "4546",
+"n": "Irene Burillo",
+"pais": "España",
+"gano": true,
+"sets": [
+7,
+7
+]
 }
 ]
 },
@@ -4275,9 +4315,9 @@ null
 "id": "186765",
 "gira": "WTA",
 "torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-11T18:00Z",
+"utc": "2026-11-11T17:50Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 2",
 "pista": "Court 1",
 "jugadores": [
@@ -4285,15 +4325,53 @@ null
 "id": "2177",
 "n": "Laura Pigossi",
 "pais": "Brasil",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+1,
+5
+]
 },
 {
 "id": "2979",
 "n": "Bianca Andreescu",
 "pais": "Canadá",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+7
+]
+}
+]
+},
+{
+"id": "186764",
+"gira": "WTA",
+"torneo": "DIRECTV Open Presentado por Compesar",
+"utc": "2026-11-11T19:05Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Round 2",
+"pista": "Main Court",
+"jugadores": [
+{
+"id": "8690",
+"n": "Marina Bassols Ribera",
+"pais": "España",
+"gano": true,
+"sets": [
+7,
+6
+]
+},
+{
+"id": "3220",
+"n": "Maria Lourdes Carle",
+"pais": "Argentina",
+"gano": false,
+"sets": [
+5,
+2
+]
 }
 ]
 },
@@ -4301,9 +4379,9 @@ null
 "id": "186544",
 "gira": "ATP",
 "torneo": "Bybit Stockholm Open",
-"utc": "2026-11-11T18:30Z",
+"utc": "2026-11-11T19:45Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 2",
 "pista": "Center Court",
 "jugadores": [
@@ -4312,14 +4390,18 @@ null
 "n": "Holger Rune",
 "pais": "Dinamarca",
 "gano": null,
-"sets": []
+"sets": [
+2
+]
 },
 {
 "id": "2874",
 "n": "Miomir Kecmanovic",
 "pais": "República Serbia",
 "gano": null,
-"sets": []
+"sets": [
+6
+]
 }
 ]
 },
@@ -4327,9 +4409,9 @@ null
 "id": "187385",
 "gira": "WTA",
 "torneo": "FAGE WTA Finals Indian Wells",
-"utc": "2026-11-11T20:00Z",
+"utc": "2026-11-11T20:10Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Group Stage",
 "pista": "Indian Wells Tennis Garden",
 "jugadores": [
@@ -4338,14 +4420,20 @@ null
 "n": "Karolina Muchova",
 "pais": "Chequia",
 "gano": null,
-"sets": []
+"sets": [
+6,
+2
+]
 },
 {
 "id": "1797",
 "n": "Elina Svitolina",
 "pais": "Ucrania",
 "gano": null,
-"sets": []
+"sets": [
+3,
+3
+]
 }
 ]
 },
@@ -4353,7 +4441,7 @@ null
 "id": "187378",
 "gira": "WTA",
 "torneo": "FAGE WTA Finals Indian Wells",
-"utc": "2026-11-11T21:30Z",
+"utc": "2026-11-11T21:45Z",
 "hora_valida": true,
 "estado": "pre",
 "ronda": "Group Stage",
@@ -4376,71 +4464,19 @@ null
 ]
 },
 {
-"id": "186551",
-"gira": "ATP",
-"torneo": "Bybit Stockholm Open",
-"utc": "2026-11-12T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Quarterfinal",
-"pista": "",
-"jugadores": [
-{
-"id": "-4",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186550",
-"gira": "ATP",
-"torneo": "Bybit Stockholm Open",
-"utc": "2026-11-12T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Quarterfinal",
-"pista": "",
-"jugadores": [
-{
-"id": "-4",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-},
-{
-"id": "3764",
-"n": "Lorenzo Musetti",
-"pais": "Italia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
 "id": "186549",
 "gira": "ATP",
 "torneo": "Bybit Stockholm Open",
-"utc": "2026-11-12T05:00Z",
-"hora_valida": false,
+"utc": "2026-11-12T12:00Z",
+"hora_valida": true,
 "estado": "pre",
 "ronda": "Quarterfinal",
-"pista": "",
+"pista": "Center Court",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "2970",
+"n": "Alejandro Tabilo",
+"pais": "Chile",
 "gano": null,
 "sets": []
 },
@@ -4457,16 +4493,16 @@ null
 "id": "186548",
 "gira": "ATP",
 "torneo": "Bybit Stockholm Open",
-"utc": "2026-11-12T05:00Z",
-"hora_valida": false,
+"utc": "2026-11-12T14:00Z",
+"hora_valida": true,
 "estado": "pre",
 "ronda": "Quarterfinal",
-"pista": "",
+"pista": "Center Court",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "8710",
+"n": "Aleksandr Shevchenko",
+"pais": "Kazajistán",
 "gano": null,
 "sets": []
 },
@@ -4480,26 +4516,26 @@ null
 ]
 },
 {
-"id": "186768",
+"id": "186770",
 "gira": "WTA",
 "torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-12T05:00Z",
-"hora_valida": false,
+"utc": "2026-11-12T15:00Z",
+"hora_valida": true,
 "estado": "pre",
 "ronda": "Quarterfinal",
-"pista": "",
+"pista": "Court 1",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "4291",
+"n": "Andrea Lazaro Garcia",
+"pais": "España",
 "gano": null,
 "sets": []
 },
 {
-"id": "-3",
-"n": "TBD",
-"pais": "",
+"id": "1955",
+"n": "Elizabeth Mandlik",
+"pais": "USA",
 "gano": null,
 "sets": []
 }
@@ -4509,49 +4545,23 @@ null
 "id": "186771",
 "gira": "WTA",
 "torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-12T05:00Z",
-"hora_valida": false,
+"utc": "2026-11-12T15:00Z",
+"hora_valida": true,
 "estado": "pre",
 "ronda": "Quarterfinal",
-"pista": "",
+"pista": "Main Court",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "4546",
+"n": "Irene Burillo",
+"pais": "España",
 "gano": null,
 "sets": []
 },
 {
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186770",
-"gira": "WTA",
-"torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-12T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Quarterfinal",
-"pista": "",
-"jugadores": [
-{
-"id": "-4",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
+"id": "15069",
+"n": "Laura Samson",
+"pais": "Chequia",
 "gano": null,
 "sets": []
 }
@@ -4561,11 +4571,63 @@ null
 "id": "186769",
 "gira": "WTA",
 "torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-12T05:00Z",
-"hora_valida": false,
+"utc": "2026-11-12T16:30Z",
+"hora_valida": true,
 "estado": "pre",
 "ronda": "Quarterfinal",
-"pista": "",
+"pista": "Court 1",
+"jugadores": [
+{
+"id": "1095",
+"n": "Polona Hercog",
+"pais": "Eslovenia",
+"gano": null,
+"sets": []
+},
+{
+"id": "5161",
+"n": "Alice Tubello",
+"pais": "Francia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186768",
+"gira": "WTA",
+"torneo": "DIRECTV Open Presentado por Compesar",
+"utc": "2026-11-12T16:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Quarterfinal",
+"pista": "Main Court",
+"jugadores": [
+{
+"id": "8690",
+"n": "Marina Bassols Ribera",
+"pais": "España",
+"gano": null,
+"sets": []
+},
+{
+"id": "2979",
+"n": "Bianca Andreescu",
+"pais": "Canadá",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186551",
+"gira": "ATP",
+"torneo": "Bybit Stockholm Open",
+"utc": "2026-11-12T17:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Quarterfinal",
+"pista": "Center Court",
 "jugadores": [
 {
 "id": "-4",
@@ -4575,9 +4637,35 @@ null
 "sets": []
 },
 {
-"id": "-3",
-"n": "TBD",
-"pais": "",
+"id": "2946",
+"n": "Taylor Fritz",
+"pais": "USA",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186550",
+"gira": "ATP",
+"torneo": "Bybit Stockholm Open",
+"utc": "2026-11-12T19:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Quarterfinal",
+"pista": "Center Court",
+"jugadores": [
+{
+"id": "3085",
+"n": "Ugo Humbert",
+"pais": "Francia",
+"gano": null,
+"sets": []
+},
+{
+"id": "3764",
+"n": "Lorenzo Musetti",
+"pais": "Italia",
 "gano": null,
 "sets": []
 }
@@ -5832,8 +5920,8 @@ null
 "competicion": "Amistosos internacionales",
 "utc": "2026-11-11T12:00Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Vietnam",
 "visitante": "China Taipéi",
 "ids": [
@@ -5841,7 +5929,7 @@ null
 "14561"
 ],
 "goles": [
-"0",
+"2",
 "0"
 ],
 "es": false
@@ -5954,7 +6042,7 @@ null
 "hora_valida": true,
 "estado": "pre",
 "detalle": "Scheduled",
-"local": "Calvo Sotelo",
+"local": "CS Puertollano",
 "visitante": "Albacete",
 "ids": [
 "21291",
