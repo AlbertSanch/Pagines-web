@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}
+<link rel="preload" href="/fonts/besley-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/andika-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>{% include "main.css" %}</style>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icono-180.png">
+<meta name="theme-color" content="#f4efe3">
+<meta property="og:type" content="{% if page.url == '/' %}website{% else %}article{% endif %}">
+<meta property="og:site_name" content="{{ site.nombre }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}/og.png">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+{% for bloque in jsonld %}<script type="application/ld+json">{{ bloque | json | safe }}</script>
+{% endfor %}
+{%- if site.adsenseId %}
+{# AdSense. La plataforma de consentimiento (CMP) de Google se activa desde el panel de AdSense
+   («Privacidad y mensajes») y se sirve con este mismo script: no hace falta más código. #}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsenseId }}" crossorigin="anonymous"></script>
+{%- endif %}
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="cabecera">
+  <div class="ancho cabecera-in">
+    <a class="logo" href="/" aria-label="imprimibles.es, inicio">imprimibles<span>.es</span></a>
+    <nav aria-label="Secciones">
+      <ul>
+        {%- for s in secciones %}
+        <li><a href="{{ s.url }}"{% if page.url.indexOf(s.url) == 0 %} aria-current="{% if page.url == s.url %}page{% else %}true{% endif %}"{% endif %}>{{ s.nombre }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+{{ content | safe }}
+
+<footer class="pie">
+  <div class="ancho pie-in">
+    <div>
+      <p class="logo logo-pie">imprimibles<span>.es</span></p>
+      <p>Pasatiempos y fichas escolares en A4, generados por ordenador. Gratis para uso personal y en el aula.</p>
+    </div>
+    <nav aria-label="Secciones (pie)">
+      <ul>
+        {%- for s in secciones %}
+        <li><a href="{{ s.url }}">{{ s.nombre }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <nav aria-label="Información legal">
+      <ul>
+        <li><a href="/sobre/">Quién hace esta web</a></li>
+        <li><a href="/contacto/">Contacto</a></li>
+        <li><a href="/aviso-legal/">Aviso legal</a></li>
+        <li><a href="/privacidad/">Política de privacidad</a></li>
+        <li><a href="/cookies/">Política de cookies</a></li>
+        {%- if site.adsenseId %}
+        <li><button type="button" class="enlace" id="cookies-config">Configurar cookies</button></li>
+        {%- endif %}
+      </ul>
+    </nav>
+  </div>
+  <div class="ancho pie-nota">
+    {%- if site.amazonTag %}<p>En calidad de Afiliado de Amazon, imprimibles.es obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables.</p>{% endif %}
+    <p>© {{ site.anio }} imprimibles.es</p>
+  </div>
+</footer>
+{%- if site.adsenseId %}
+<script>
+// Reabre el mensaje de consentimiento de la CMP de Google
+document.getElementById('cookies-config').addEventListener('click', function () {
+  window.googlefc = window.googlefc || {}; googlefc.callbackQueue = googlefc.callbackQueue || [];
+  googlefc.callbackQueue.push(function () { googlefc.showRevocationMessage(); });
+});
+</script>
+{%- endif %}
+{%- if site.cfBeacon %}
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.cfBeacon }}"}'></script>
+{%- endif %}
+</body>
+</html>

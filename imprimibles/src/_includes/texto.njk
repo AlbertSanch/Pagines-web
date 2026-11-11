@@ -1,0 +1,10 @@
+---
+layout: base.njk
+---
+<div class="ancho pagina pagina-texto">
+  <main id="contenido" class="prosa">
+    <nav class="migas" aria-label="Migas de pan"><a href="/">Inicio</a> <span aria-hidden="true">/</span> {{ titulo or title }}</nav>
+    <h1>{{ titulo or title }}</h1>
+    {{ content | safe }}
+  </main>
+</div>

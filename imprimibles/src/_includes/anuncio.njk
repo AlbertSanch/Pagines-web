@@ -1,0 +1,8 @@
+{#- Hueco de anuncio con altura reservada (evita saltos de contenido). Solo se pinta si hay AdSense configurado y ese bloque tiene identificador. -#}
+{%- if site.adsenseId and site.adsSlots[hueco] %}
+<div class="anuncio anuncio-{{ hueco }}" aria-label="Publicidad">
+  <span class="anuncio-rotulo">Publicidad</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="{{ site.adsenseId }}" data-ad-slot="{{ site.adsSlots[hueco] }}" data-ad-format="{% if hueco == 'lateral' %}vertical{% else %}auto{% endif %}" data-full-width-responsive="{% if hueco == 'lateral' %}false{% else %}true{% endif %}"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{%- endif %}

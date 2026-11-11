@@ -1,0 +1,15 @@
+---
+layout: texto.njk
+permalink: /404.html
+title: "Página no encontrada | imprimibles.es"
+titulo: "Esta hoja no está en el cuaderno"
+description: "La página que buscas no existe o ha cambiado de dirección."
+noindex: true
+eleventyExcludeFromCollections: true
+---
+<p class="entrada">La dirección que has abierto no existe o ha cambiado. Prueba desde el índice:</p>
+<ol class="indice">
+{%- for s in secciones %}
+<li><a href="{{ s.url }}">{{ s.nombre }}</a><span class="puntos" aria-hidden="true"></span><span class="meta">{{ s.resumen }}</span></li>
+{%- endfor %}
+</ol>
