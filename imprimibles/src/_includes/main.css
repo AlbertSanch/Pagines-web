@@ -68,9 +68,9 @@ p{margin:.85rem 0}
 .boton{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;padding:.4rem .8rem;text-align:center;
   font:700 .88rem/1.1 var(--texto);letter-spacing:.07em;text-transform:uppercase;text-decoration:none;cursor:pointer;
   color:var(--boli);background:var(--hoja);border:2px solid var(--boli);border-radius:3px}
-.boton:hover{background:var(--boli);color:#fff}
+@media (hover:hover){.boton:hover{background:var(--boli);color:#fff}}
 .boton-tinta{background:var(--boli);color:#fff}
-.boton-tinta:hover{background:var(--boli-osc);border-color:var(--boli-osc)}
+@media (hover:hover){.boton-tinta:hover{background:var(--boli-osc);border-color:var(--boli-osc)}}
 .boton[aria-pressed=true]{background:var(--rojo);border-color:var(--rojo);color:#fff}
 .enlace{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
 .hojas{display:grid;gap:1.1rem;justify-content:center;grid-template-columns:minmax(0,38rem)}
