@@ -113,6 +113,18 @@ p{margin:.85rem 0}
 .mal .marca{color:var(--rojo)}
 .practica-botones{display:flex;flex-wrap:wrap;gap:.6rem;margin:.4rem 0 0}
 .practica-resultado{font-weight:700;margin:.8rem 0 0;min-height:1.6em}
+.solo-lector{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.prosa .ops-lista{list-style:none;margin:1rem 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem .8rem}
+@media (min-width:40rem){.prosa .ops-lista{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.prosa .ops-lista li{margin:0;display:flex;flex-direction:column;align-items:center;font:700 1.45rem/1.2 var(--texto);font-variant-numeric:tabular-nums}
+.op{display:flex;flex-direction:column;align-items:flex-end;width:5.2ch;letter-spacing:.12em}
+.op-b{border-bottom:3px solid var(--tinta);padding-bottom:.1rem;width:100%;text-align:right}
+.op-signo{float:left;font-weight:400}
+.ops-lista input{width:5.2ch;min-height:2.75rem;margin-top:.3rem;padding:.1rem .15rem;font:700 1.45rem var(--texto);letter-spacing:.12em;text-align:right;color:var(--tinta);background:#fff;border:2px solid var(--lapiz);border-radius:3px;box-sizing:content-box}
+.ops-lista input:focus{outline:3px solid var(--boli);outline-offset:1px;border-color:var(--boli)}
+.ops-lista .ok input{border-color:#2f7d32;background:#eef7ee}
+.ops-lista .mal input{border-color:var(--rojo);background:#fbeeec}
+.ops-lista .marca{min-height:1.3em;margin-top:.2rem}
 .paso-a-paso{margin:1.2rem 0 0}
 .paso-a-paso svg{display:block;width:100%;max-width:41rem;height:auto;color:var(--tinta);fill:var(--tinta);background:var(--hoja);border:1px solid var(--raya)}
 .paso-a-paso ol{padding-left:1.3rem;margin:.9rem 0 0}

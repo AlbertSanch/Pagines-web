@@ -90,6 +90,49 @@ ${t(100, 92, a[0])}${t(142, 92, a[1])}${t(68, 132, signo, { b: false })}${t(100,
 </figure>`;
 };
 
+// Ejercicio de sumas y restas en pantalla (lo corrige src/js/app.js). Las primeras seis
+// operaciones se generan aquí para que se vean sin JavaScript; las mismas reglas están en app.js.
+const llevadasDe = (a, b, resta) => {
+  const da = String(a).split('').reverse().map(Number), db = String(b).split('').reverse().map(Number);
+  let acarreo = 0, total = 0;
+  da.forEach((x, i) => {
+    const y = db[i] || 0;
+    if (resta) { if (x - acarreo < y) { acarreo = 1; total++; } else acarreo = 0; }
+    else { if (x + y + acarreo > 9) { acarreo = 1; total++; } else acarreo = 0; }
+  });
+  return total;
+};
+const opsFijas = (op, llevada, semilla) => {
+  let x = semilla; const azar = () => (x = (x * 1103515245 + 12345) % 2147483648) / 2147483648;
+  const out = [];
+  while (out.length < 6) {
+    const resta = op === 'resta' || (op === 'mixta' && out.length % 2 === 1);
+    let a = 10 + Math.floor(azar() * 90), b = 10 + Math.floor(azar() * 90);
+    if (resta && a < b) [a, b] = [b, a];
+    if (resta && a === b) continue;
+    if ((llevadasDe(a, b, resta) > 0) !== llevada) continue;
+    if (out.some((o) => o.a === a && o.b === b)) continue;
+    out.push({ a, b, resta, r: resta ? a - b : a + b });
+  }
+  return out;
+};
+const practicaOps = (op, llevada, titulo) => {
+  const id = 'o' + op + (llevada ? 'l' : 's');
+  const ops = opsFijas(op, llevada, op.length * 977 + (llevada ? 31 : 7));
+  return `
+<section class="practica practica-ops" data-op="${op}" data-llevada="${llevada ? 1 : 0}" aria-labelledby="${id}-t">
+<h2 id="${id}-t">${titulo}</h2>
+<p>Resuelve las operaciones y pulsa «Corregir». Puedes pedir otras de dos o de tres cifras.</p>
+<form>
+<ol class="ops-lista">
+${ops.map((o, i) => `<li><div class="op" aria-hidden="true"><span>${o.a}</span><span class="op-b"><span class="op-signo">${o.resta ? '−' : '+'}</span>${o.b}</span></div><label class="solo-lector" for="${id}-${i}">${o.a} ${o.resta ? 'menos' : 'más'} ${o.b}</label><input id="${id}-${i}" type="text" inputmode="numeric" autocomplete="off" maxlength="4" data-r="${o.r}"><span class="marca" aria-live="polite"></span></li>`).join('\n')}
+</ol>
+<p class="practica-botones"><button type="submit" class="boton boton-tinta">Corregir</button> <button type="button" class="boton" data-digitos="2">Otras de 2 cifras</button> <button type="button" class="boton" data-digitos="3">Otras de 3 cifras</button></p>
+<p class="practica-resultado" aria-live="polite"></p>
+</form>
+</section>`;
+};
+
 const tablasN = Object.keys(trucos).map(Number).map((n) => ({
   cat: 'tablas-de-multiplicar', slug: `tabla-del-${n}`, corto: `Tabla del ${n}`,
   title: `Tabla del ${n}: trucos, ejercicios y fichas para imprimir`,
@@ -119,7 +162,7 @@ const sr = (slug, corto, op, llevada, entrada, explicacion) => ({
   desc: `${corto} explicadas paso a paso con un ejemplo, y fichas para imprimir de dos y tres cifras con solución. PDF gratis o fichas nuevas al momento.`,
   h1: corto,
   entrada,
-  antes: llevada ? pasoAPaso(op) : '',
+  antes: (llevada ? pasoAPaso(op) : '') + practicaOps(op, llevada, `Practica ${corto.toLowerCase()} aquí`),
   hojas: [
     { tipo: 'operaciones', op, digitos: 2, llevada, titulo: `${corto} de dos cifras` },
     { tipo: 'operaciones', op, digitos: 3, llevada, titulo: `${corto} de tres cifras` }
@@ -213,6 +256,7 @@ ${practica([2, 3, 4, 5, 6, 7, 8, 9], 'Practica las tablas aquí')}
     hojas: [{ tipo: 'operaciones', op: 'mixta', digitos: 2, llevada: false, titulo: 'Sumas y restas sin llevada' }],
     copias: 4,
     cuerpo: `
+${practicaOps('mixta', false, 'Practica sumas y restas aquí')}
 <h2>Por dónde empezar</h2>
 <p>El orden habitual en el colegio es este, y conviene no saltarse pasos:</p>
 <ol>
