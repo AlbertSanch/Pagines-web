@@ -16,9 +16,9 @@ module.exports = {
 
   // --- Datos legales (obligatorios para el aviso legal) ---
   legal: {
-    titular: '',     // nombre y apellidos o razón social
-    nif: '',
-    domicilio: '',
-    email: 'hola@imprimibles.es'
+    titular: 'Albert Sanchez Guiu',
+    nif: '48167483D',
+    domicilio: 'La Roca del Vallès (Barcelona), España',
+    email: 'contacto.ahorrometro@gmail.com'
   }
 };
