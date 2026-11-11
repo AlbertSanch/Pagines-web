@@ -981,17 +981,84 @@
     return { svg: hoja({ titulo: spec.titulo, sub: spec.sub || 'Empieza por la letra negra y repasa las grises siguiendo la forma.', nombre: true }, s), sol: null };
   }
 
+  // ---------- multiplicaciones y divisiones ----------
+  function cifras(x, y, n, color, tam) {
+    tam = tam || 9.5;
+    return String(n).split('').reverse().map(function (ch, i) {
+      return txt(x - i * tam * .68, y, ch, { size: tam, anchor: 'middle', bold: true, fill: color });
+    }).join('');
+  }
+  function aleatorioCifras(r, d) { return ri(r, Math.pow(10, d - 1), Math.pow(10, d) - 1); }
+  function multiplicaciones(spec, seed) {
+    var r = rng(seed), da = spec.a || 2, db = spec.b || 1, ops = [], vistos = {}, n = db === 1 ? 20 : 12;
+    while (ops.length < n) {
+      var a = aleatorioCifras(r, da), b = db === 1 ? ri(r, 2, 9) : aleatorioCifras(r, db);
+      if (a % 10 === 0 || (db > 1 && (b % 10 < 2 || Math.floor(b / 10) % 10 < 2)) || vistos[a + 'x' + b]) continue;
+      vistos[a + 'x' + b] = 1; ops.push({ a: a, b: b });
+    }
+    var cols = 4, w = 45, alto = db === 1 ? 46 : 74, t = 9.5, paso = t * .68;
+    function dibuja(sol) {
+      var o = '';
+      ops.forEach(function (op, i) {
+        var xr = 15 + (i % cols) * w + 36, y = 60 + Math.floor(i / cols) * alto;
+        var ancho = (Math.max(String(op.a).length, String(op.b).length + 1, String(op.a * op.b).length) + .6) * paso;
+        o += cifras(xr, y, op.a) + cifras(xr, y + 11, op.b);
+        o += txt(xr - (String(op.b).length + .3) * paso, y + 11, '×', { size: t, anchor: 'middle' });
+        o += '<path d="M' + f(xr - ancho) + ' ' + (y + 14.5) + 'H' + (xr + 4) + '" stroke="' + TINTA + '" stroke-width=".5"/>';
+        if (db > 1) {
+          o += '<path d="M' + f(xr - ancho) + ' ' + (y + 39.5) + 'H' + (xr + 4) + '" stroke="' + TINTA + '" stroke-width=".35"/>';
+          if (sol) {
+            var u = op.b % 10, dd = Math.floor(op.b / 10);
+            o += cifras(xr, y + 25, op.a * u, ROJO) + cifras(xr - paso, y + 36, op.a * dd, ROJO) + cifras(xr, y + 50, op.a * op.b, ROJO);
+          }
+        } else if (sol) o += cifras(xr, y + 25, op.a * op.b, ROJO);
+      });
+      return o;
+    }
+    var o = { titulo: spec.titulo, sub: spec.sub || (db > 1 ? 'Multiplica por las unidades, luego por las decenas (un lugar a la izquierda) y suma.' : 'Resuelve las multiplicaciones. Empieza por las unidades y no olvides lo que te llevas.'), nombre: true, seed: seed };
+    return { svg: hoja(o, dibuja(false)), sol: hoja(Object.assign({}, o, { sol: true }), dibuja(true)) };
+  }
+  function divisiones(spec, seed) {
+    var r = rng(seed), dd = spec.dividendo || 3, ops = [], vistos = {};
+    while (ops.length < 12) {
+      var d = ri(r, 2, 9), D = aleatorioCifras(r, dd);
+      if (D < d * 10 || vistos[D + ':' + d]) continue;
+      if (spec.exactas && D % d) continue;
+      vistos[D + ':' + d] = 1; ops.push({ D: D, d: d, c: Math.floor(D / d), r: D % d });
+    }
+    var t = 9.5, paso = t * .68;
+    function dibuja(sol) {
+      var o = '';
+      ops.forEach(function (op, i) {
+        var x0 = 18 + (i % 3) * 61, y = 62 + Math.floor(i / 3) * 54, nD = String(op.D).length;
+        var xl = x0 + nD * paso + 2;
+        String(op.D).split('').forEach(function (ch, k) { o += txt(x0 + k * paso + paso / 2, y, ch, { size: t, anchor: 'middle', bold: true }); });
+        o += '<path d="M' + f(xl) + ' ' + (y - 9) + 'V' + (y + 4) + 'H' + f(xl + 24) + '" fill="none" stroke="' + TINTA + '" stroke-width=".5"/>';
+        o += txt(xl + 3, y, op.d, { size: t, bold: true });
+        if (sol) {
+          o += txt(xl + 3, y + 11, op.c, { size: t, bold: true, fill: ROJO });
+          o += txt(x0 + nD * paso, y + 30, op.r, { size: t, anchor: 'end', bold: true, fill: ROJO });
+          o += txt(x0, y + 30, 'resto', { size: 3, fill: ROJO });
+        }
+      });
+      return o;
+    }
+    var o = { titulo: spec.titulo, sub: spec.sub || 'Divide y escribe el cociente debajo del divisor y el resto al final, debajo del dividendo.', nombre: true, seed: seed };
+    return { svg: hoja(o, dibuja(false)), sol: hoja(Object.assign({}, o, { sol: true }), dibuja(true)) };
+  }
+
   var TIPOS = {
     sopa: sopa, sudoku: sudoku, laberinto: laberinto, bingo90: bingo90, bingo75: bingo75, 'bingo-numeros': bingoNumeros,
     tabla: tabla, 'tablas-todas': tablasTodas, pitagorica: pitagorica, 'mult-practica': multPractica,
     operaciones: operaciones, papel: papel,
     'sudoku-dibujos': sudokuDibujos, 'bingo-palabras': bingoPalabras, 'bingo-palabras-lista': bingoPalabrasLista,
     'laberinto-arbol': laberintoArbol, carta: carta, sobre: sobre, 'carta-respuesta': cartaRespuesta, crucigrama: crucigrama,
-    'caligrafia-letras': caligrafiaLetras, 'caligrafia-frases': caligrafiaFrases, 'trazos-imprenta': trazosImprenta
+    'caligrafia-letras': caligrafiaLetras, 'caligrafia-frases': caligrafiaFrases, 'trazos-imprenta': trazosImprenta,
+    multiplicaciones: multiplicaciones, divisiones: divisiones
   };
   // Tipos cuyo contenido cambia con la semilla (tienen botón «Otra distinta»)
   var ALEATORIOS = { sopa: 1, sudoku: 1, laberinto: 1, bingo90: 1, bingo75: 1, 'mult-practica': 1, operaciones: 1,
-    'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1, crucigrama: 1, 'caligrafia-frases': 1 };
+    'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1, crucigrama: 1, 'caligrafia-frases': 1, multiplicaciones: 1, divisiones: 1 };
 
   function render(spec, seed) {
     var fn = TIPOS[spec.tipo];

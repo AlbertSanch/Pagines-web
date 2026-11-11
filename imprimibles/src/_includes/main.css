@@ -126,6 +126,16 @@ p{margin:.85rem 0}
 .ops-lista .ok input{border-color:#2f7d32;background:#eef7ee}
 .ops-lista .mal input{border-color:var(--rojo);background:#fbeeec}
 .ops-lista .marca{min-height:1.3em;margin-top:.2rem}
+.casita{display:grid;grid-template-columns:auto auto;font:700 1.45rem/1.2 var(--texto);font-variant-numeric:tabular-nums;letter-spacing:.1em}
+.casita .dvd{padding:0 .35rem .2rem 0;text-align:right}
+.casita .dvs{border-left:3px solid var(--tinta);border-bottom:3px solid var(--tinta);padding:0 .5rem .2rem;min-width:3.4ch}
+.casita input{width:3.4ch;min-height:2.6rem;margin-top:.3rem;padding:.1rem .15rem;font:700 1.3rem var(--texto);text-align:right;color:var(--tinta);background:#fff;border:2px solid var(--lapiz);border-radius:3px;box-sizing:content-box}
+.casita .res{justify-self:end;margin-right:.35rem;width:2.2ch}
+.casita .coc{margin-left:.5rem;text-align:left}
+.casita input:focus{outline:3px solid var(--boli);outline-offset:1px;border-color:var(--boli)}
+.ops-lista .ok .casita input{border-color:#2f7d32;background:#eef7ee}
+.ops-lista .mal .casita input{border-color:var(--rojo);background:#fbeeec}
+.divs-lista .marca{text-align:center;font-size:.85rem}
 .paso-a-paso{margin:1.2rem 0 0}
 .paso-a-paso svg{display:block;width:100%;max-width:41rem;height:auto;color:var(--tinta);fill:var(--tinta);background:var(--hoja);border:1px solid var(--raya)}
 .paso-a-paso ol{padding-left:1.3rem;margin:.9rem 0 0}

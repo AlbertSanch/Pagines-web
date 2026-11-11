@@ -167,3 +167,70 @@
     });
   });
 })();
+
+/* Ejercicio de multiplicaciones y divisiones en pantalla. */
+(function () {
+  'use strict';
+  function entre(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+  [].forEach.call(document.querySelectorAll('.practica-md'), function (caja) {
+    var tipo = caja.getAttribute('data-tipo'), a = Number(caja.getAttribute('data-a')), b = Number(caja.getAttribute('data-b'));
+    var form = caja.querySelector('form'), lista = caja.querySelector('.ops-lista'), res = caja.querySelector('.practica-resultado');
+    var id = tipo === 'div' ? 'dv' : 'm' + a + b;
+    function nuevas() {
+      var html = [], vistos = {};
+      while (html.length < 6) {
+        var i = html.length;
+        if (tipo === 'div') {
+          var d = entre(2, 9), D = entre(20, 999);
+          if (D < d * 10 || vistos[D + ':' + d]) continue;
+          vistos[D + ':' + d] = 1;
+          html.push('<li><div class="casita"><span class="dvd" aria-hidden="true">' + D + '</span><span class="dvs" aria-hidden="true">' + d + '</span>' +
+            '<label class="solo-lector" for="' + id + '-' + i + 'r">Resto de ' + D + ' entre ' + d + '</label><input class="res" id="' + id + '-' + i + 'r" type="text" inputmode="numeric" autocomplete="off" maxlength="2" data-r="' + (D % d) + '">' +
+            '<label class="solo-lector" for="' + id + '-' + i + 'c">Cociente de ' + D + ' entre ' + d + '</label><input class="coc" id="' + id + '-' + i + 'c" type="text" inputmode="numeric" autocomplete="off" maxlength="3" data-r="' + Math.floor(D / d) + '"></div><span class="marca" aria-live="polite"></span></li>');
+        } else {
+          var x = entre(Math.pow(10, a - 1), Math.pow(10, a) - 1), y = b === 1 ? entre(2, 9) : entre(12, 98);
+          if (x % 10 === 0 || (b > 1 && (y % 10 < 2 || Math.floor(y / 10) < 2)) || vistos[x + 'x' + y]) continue;
+          vistos[x + 'x' + y] = 1;
+          html.push('<li><div class="op" aria-hidden="true"><span>' + x + '</span><span class="op-b"><span class="op-signo">×</span>' + y + '</span></div>' +
+            '<label class="solo-lector" for="' + id + '-' + i + '">' + x + ' por ' + y + '</label><input id="' + id + '-' + i + '" type="text" inputmode="numeric" autocomplete="off" maxlength="5" data-r="' + x * y + '"><span class="marca" aria-live="polite"></span></li>');
+        }
+      }
+      lista.innerHTML = html.join('');
+      res.textContent = '';
+      lista.querySelector('input').focus();
+    }
+    function corrige() {
+      var bien = 0, vacias = 0, items = [].slice.call(lista.children);
+      items.forEach(function (li) {
+        var ins = [].slice.call(li.querySelectorAll('input')), marca = li.querySelector('.marca');
+        li.classList.remove('ok', 'mal');
+        if (ins.some(function (x) { return !x.value.trim(); })) { vacias++; marca.textContent = ''; return; }
+        var ok = ins.every(function (x) { return Number(x.value) === Number(x.getAttribute('data-r')); });
+        if (ok) { bien++; li.classList.add('ok'); marca.textContent = '✓'; }
+        else {
+          li.classList.add('mal');
+          marca.textContent = tipo === 'div'
+            ? 'Cociente ' + li.querySelector('.coc').getAttribute('data-r') + ', resto ' + li.querySelector('.res').getAttribute('data-r')
+            : 'Es ' + ins[0].getAttribute('data-r');
+        }
+      });
+      var msg = 'Has acertado ' + bien + ' de ' + items.length + '.';
+      if (vacias) msg += ' Te quedan ' + vacias + ' sin terminar.';
+      else if (bien === items.length) msg += ' ¡Perfecto! Prueba con otras.';
+      else msg += tipo === 'div' ? ' Comprueba las falladas: divisor × cociente + resto tiene que dar el dividendo.' : ' Revisa las falladas paso a paso.';
+      res.textContent = msg;
+    }
+    form.addEventListener('submit', function (e) { e.preventDefault(); corrige(); });
+    lista.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' || e.target.tagName !== 'INPUT') return;
+      e.preventDefault();
+      var todas = [].slice.call(lista.querySelectorAll('input')), i = todas.indexOf(e.target);
+      if (i < todas.length - 1) todas[i + 1].focus(); else corrige();
+    });
+    lista.addEventListener('input', function (e) {
+      e.target.value = e.target.value.replace(/\D/g, '');
+      var li = e.target.closest('li'); li.classList.remove('ok', 'mal'); li.querySelector('.marca').textContent = '';
+    });
+    caja.querySelector('[data-otras]').addEventListener('click', nuevas);
+  });
+})();
