@@ -516,6 +516,19 @@ def main():
                 resto = re.search(r"Restantes municipios[^:]*:\s*([^\n]+)", txt)
                 if resto:
                     fuentes[f["ccaa"]]["resto"] = resto.group(1).strip()
+        # Si una comunidad pierde de golpe muchos municipios (un boletín que ha devuelto una página de error,
+        # un cambio de formato…), se conservan los que ya teníamos y se avisa: nunca se borran datos en silencio.
+        previo_ruta = DATA / f"festivos_{anio}.json"
+        if previo_ruta.exists():
+            previos = json.loads(previo_ruta.read_text(encoding="utf-8")).get("locales", {})
+            for ccaa in COMUNIDADES:
+                antes = {c: v for c, v in previos.items() if PROVINCIAS.get(c[:2], (None, None))[1] == ccaa}
+                ahora = sum(1 for c in locales if PROVINCIAS[c[:2]][1] == ccaa)
+                if len(antes) - ahora > max(20, len(antes) * 0.2):
+                    recuperados = {c: v for c, v in antes.items() if c not in locales}
+                    locales.update(recuperados)
+                    aviso(f"!! {anio} {ccaa}: los boletines dan {ahora} municipios y antes había {len(antes)}; "
+                          f"se conservan los {len(recuperados)} anteriores. Revisa la fuente.")
         for ccaa in COMUNIDADES:
             total = sum(1 for c in municipios() if PROVINCIAS[c[:2]][1] == ccaa)
             con = sum(1 for c in locales if PROVINCIAS[c[:2]][1] == ccaa)

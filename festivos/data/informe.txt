@@ -38,6 +38,8 @@ cantabria 2026: fecha 8 diciembre sin municipio libre (línea 50)
 cantabria 2026: fecha 25 diciembre sin municipio libre (línea 51)
 cantabria 2026: fecha 15 MAYO sin municipio libre (línea 63)
 cantabria 2026 cantabria_2026: 5 nombres sin municipio del INE (pedanías o variantes): ARENAS IGUÑA, HDAD. CAMPOO DE SUSO, RESOLUCIÓN por la que se dispone la publicación del calendario de fiestas nacionales,, ROZAS DE VALDEARROYO, TRESVISO, LA VILLA DE
+castilla-la-mancha 2026: Fuentes aparece dos veces en clm_2026; se queda la primera
+castilla-la-mancha 2026 clm_2026: 134 nombres sin municipio del INE (pedanías o variantes): Aguas Nuevas, Alares (Los), Alberche del Caudillo, Alcoba de los Montes, Aldeanueva de Atienza, Almadanejos, Amayas, Anchuela del Campo, Anchuela del Pedregal, Aragosa, Arcos de la Cantera, Arisgotas, Balbacil, Barbalimpia, Bercial (El), Bernuy, Bolliga, Bormate, Buenasbodas, Bujarrabal, Canales del Ducado, Carrascosa de Henares, Carrascosa del Campo, Casar de Talavera (El), Casas de Roldan, Casas de Santa Cruz, Casasana, Castillejo del Romeral (Eatim), Cañadajuncosa, Cendejas del Padrastro, Cereceda, Chera, Chinchilla, Clares, Codes, Collados, Colliga, Colliguilla, Concha, Corchuela, Cubillejo de la Sierra, Cubillejo del Sitio, Cuevas de Velasco, Culebras, Cívica, Córcoles, El Salobral, El cubillo, Fresneda de la Jara (La), Fuentes claras Chillaron, Fuentesbuenas, Gamonal, Garcinarro, Gargantilla, Gualda, Gualdalmez, Gárgoles de Abajo, Gárgoles de Arriba, Hinojosa, Horcajada de la Torre
 castilla-y-leon 2026: CASASOLA tiene 4 festivos locales en cyl_avila_2026
 castilla-y-leon 2026: CASILLAS tiene 4 festivos locales en cyl_avila_2026
 castilla-y-leon 2026: COLILLA (LA) tiene 4 festivos locales en cyl_avila_2026
@@ -134,7 +136,7 @@ cyl_salamanca_2026_c1: corrige o añade 0 municipios:
 == 2026 baleares: 62 de 67 municipios con fiestas locales
 == 2026 canarias: 88 de 88 municipios con fiestas locales
 == 2026 cantabria: 98 de 102 municipios con fiestas locales
-== 2026 castilla-la-mancha: 0 de 919 municipios con fiestas locales
+== 2026 castilla-la-mancha: 893 de 919 municipios con fiestas locales
 == 2026 castilla-y-leon: 1686 de 2248 municipios con fiestas locales
 == 2026 cataluna: 875 de 948 municipios con fiestas locales
 == 2026 extremadura: 385 de 388 municipios con fiestas locales
