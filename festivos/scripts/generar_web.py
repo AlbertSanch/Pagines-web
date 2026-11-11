@@ -432,7 +432,8 @@ def pagina_provincia(datos, codp, muni_prov):
     alguno = any(tiene_locales(datos, a, c) for a in ANIOS for c, _ in muni_prov)
     return pagina(RUTAS_PROV[codp], f"Festivos locales de la provincia de {nombre} {min(ANIOS)} y {max(ANIOS)}",
                   f"Fiestas locales de todos los municipios de la provincia de {nombre} en {' y '.join(map(str, ANIOS))}, según el boletín oficial.",
-                  cuerpo, [(COMUNIDADES[ccaa][0], f"/comunidad/{ccaa}/"), (nombre, None)], indexable=alguno)
+                  cuerpo, [(COMUNIDADES[ccaa][0], f"/comunidad/{ccaa}/"), (nombre, None)],
+                  indexable=alguno and len(muni_prov) > 1)  # Ceuta y Melilla: la página del municipio ya lo dice todo
 
 
 def pagina_comunidad(datos, ccaa, provs):
@@ -1341,7 +1342,13 @@ def legales():
 <p>¿Has visto un error o falta tu municipio? Escríbenos desde la página de <a href="/contacto/">contacto</a>.</p></div>"""
     contacto = f"""<h1>Contacto</h1><div class="contenido">
 <p>¿Has encontrado un error, falta alguna fiesta de tu municipio o quieres proponer una mejora? Escríbenos a <a href="mailto:{t['email']}">{t['email']}</a> y te responderemos lo antes posible.</p>
-<p>Si nos avisas de una fecha que crees que está mal, indica el municipio y el año y, si puedes, el boletín donde la has visto. Revisamos cada aviso con la publicación oficial.</p></div>"""
+<p>Si nos avisas de una fecha que crees que está mal, indica el municipio y el año y, si puedes, el boletín donde la has visto. Revisamos cada aviso con la publicación oficial.</p>
+<h2>Antes de escribir</h2>
+<ul>
+<li><strong>¿Faltan las fiestas locales del año que viene?</strong> Cada comunidad publica las de sus municipios entre octubre y enero; las añadimos en cuanto salen en su boletín. En <a href="/sobre-los-datos/">de dónde salen los datos</a> está el estado de cada comunidad.</li>
+<li><strong>¿Dudas sobre si te toca trabajar o cobrar más un festivo?</strong> Lo explicamos, con la ley citada, en las <a href="/guias/">guías</a>.</li>
+<li><strong>¿Tu empresa tiene otro calendario?</strong> Los convenios colectivos pueden añadir días libres; aquí solo aparecen los festivos oficiales.</li>
+</ul></div>"""
     guardar("/sobre-nosotros/", pagina("/sobre-nosotros/", "Sobre nosotros | festivosde.es",
                                        "Qué es festivosde.es, de dónde salen sus datos y cómo trabajamos.", nosotros, [("Sobre nosotros", None)]))
     guardar("/contacto/", pagina("/contacto/", "Contacto | festivosde.es",
