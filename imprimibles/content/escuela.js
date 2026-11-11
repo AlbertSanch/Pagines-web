@@ -23,12 +23,80 @@ const trucos = {
     'Conviene explicar por qué funciona en lugar de darlo como magia: multiplicar por 10 convierte las unidades en decenas, así que cada cifra se mueve un lugar a la izquierda.']
 };
 
+
+// Ejercicio para practicar en pantalla (lo corrige src/js/app.js). Sin JavaScript se ve igual,
+// así que Google y quien lo imprima ven las diez preguntas.
+const ordenBase = [3, 7, 1, 9, 5, 10, 2, 8, 4, 6];
+const practica = (tablas, titulo) => {
+  const pares = ordenBase.map((b, i) => [tablas[i % tablas.length], b]);
+  const id = 'p' + tablas.join('');
+  return `
+<section class="practica" data-tablas="${tablas.join(',')}" aria-labelledby="${id}-t">
+<h2 id="${id}-t">${titulo}</h2>
+<p>Escribe los resultados y pulsa «Corregir». Con «Otras 10» salen preguntas nuevas, en otro orden.</p>
+<form>
+<ol class="practica-lista">
+${pares.map(([a, b], i) => `<li><label for="${id}-${i}">${a} × ${b} =</label><input id="${id}-${i}" type="text" inputmode="numeric" autocomplete="off" maxlength="3" data-r="${a * b}"><span class="marca" aria-live="polite"></span></li>`).join('\n')}
+</ol>
+<p class="practica-botones"><button type="submit" class="boton boton-tinta">Corregir</button> <button type="button" class="boton" data-practica="otras">Otras 10</button></p>
+<p class="practica-resultado" aria-live="polite"></p>
+</form>
+</section>`;
+};
+
+const tablaLista = (n) => `
+<h2>La tabla del ${n}</h2>
+<ol class="tabla-lista" aria-label="Tabla del ${n}">
+${Array.from({ length: 10 }, (_, i) => `<li><span>${n} × ${i + 1}</span> = <strong>${n * (i + 1)}</strong></li>`).join('\n')}
+</ol>`;
+
+// Ejemplo resuelto de suma o resta con llevada, en tres pasos
+const pasoAPaso = (op) => {
+  const R = '#c42e21';
+  const t = (x, y, v, o = {}) => `<text x="${x}" y="${y}" font-size="${o.s || 34}" text-anchor="middle"${o.c ? ` fill="${o.c}"` : ''}${o.b === false ? '' : ' font-weight="700"'}>${v}</text>`;
+  const panel = (i, extra, a, b, signo) => `<g transform="translate(${i * 220} 0)">
+<text x="12" y="26" font-size="15" font-weight="700" fill="${R}">Paso ${i + 1}</text>
+${t(100, 92, a[0])}${t(142, 92, a[1])}${t(68, 132, signo, { b: false })}${t(100, 132, b[0])}${t(142, 132, b[1])}
+<path d="M54 144H162" stroke="currentColor" stroke-width="2.5"/>${extra}</g>`;
+  let paneles, pasos, alt;
+  if (op === 'suma') {
+    const lleva = t(100, 58, '1', { s: 20, c: R });
+    paneles = [
+      panel(0, '', '47', '38', '+'),
+      panel(1, lleva + t(142, 180, '5', { c: R }), '47', '38', '+'),
+      panel(2, lleva + t(100, 180, '8', { c: R }) + t(142, 180, '5', { c: R }), '47', '38', '+')
+    ];
+    pasos = ['Coloca los números en columna: unidades debajo de unidades y decenas debajo de decenas.',
+      'Suma las unidades: 7 + 8 = 15. Escribe el 5 abajo y «llévate» la decena: apunta un 1 pequeño encima de la columna de las decenas.',
+      'Suma las decenas sin olvidar la que te llevabas: 1 + 4 + 3 = 8. El resultado es 85.'];
+    alt = 'Suma 47 más 38 resuelta en tres pasos: unidades 7 más 8 igual a 15, se escribe 5 y se lleva 1; decenas 1 más 4 más 3 igual a 8; resultado 85.';
+  } else {
+    const presta = `<path d="M88 80L112 66" stroke="${R}" stroke-width="2.5"/>${t(100, 58, '4', { s: 20, c: R })}${t(125, 80, '1', { s: 19, c: R })}`;
+    paneles = [
+      panel(0, '', '52', '27', '−'),
+      panel(1, presta + t(142, 180, '5', { c: R }), '52', '27', '−'),
+      panel(2, presta + t(100, 180, '2', { c: R }) + t(142, 180, '5', { c: R }), '52', '27', '−')
+    ];
+    pasos = ['Coloca los números en columna. Empieza por las unidades: de 2 no se pueden quitar 7.',
+      'Pide prestada una decena: el 5 se queda en 4 y el 2 se convierte en 12. Ahora sí: 12 − 7 = 5.',
+      'Resta las decenas con lo que ha quedado: 4 − 2 = 2. El resultado es 25.'];
+    alt = 'Resta 52 menos 27 resuelta en tres pasos: como 2 es menor que 7 se pide una decena, el 5 pasa a 4 y el 2 a 12; 12 menos 7 igual a 5; 4 menos 2 igual a 2; resultado 25.';
+  }
+  return `
+<h2>${op === 'suma' ? 'Cómo se hace una suma con llevada' : 'Cómo se hace una resta con llevada'}: ejemplo paso a paso</h2>
+<figure class="paso-a-paso">
+<svg viewBox="0 0 660 200" role="img" aria-label="${alt}">${paneles.join('')}</svg>
+<ol>${pasos.map((p) => `<li>${p}</li>`).join('')}</ol>
+</figure>`;
+};
+
 const tablasN = Object.keys(trucos).map(Number).map((n) => ({
   cat: 'tablas-de-multiplicar', slug: `tabla-del-${n}`, corto: `Tabla del ${n}`,
-  title: `Tabla del ${n} para imprimir: lámina y ejercicios (PDF)`,
-  desc: `Tabla de multiplicar del ${n} para imprimir en A4: lámina para estudiar, hoja para rellenar y 30 multiplicaciones desordenadas con solución. PDF gratis.`,
-  h1: `Tabla del ${n} para imprimir`,
-  entrada: `Tres hojas para aprender la tabla del ${n}: la lámina con los resultados para colgar o estudiar, la misma tabla con huecos para rellenar y una ficha de 30 multiplicaciones desordenadas para comprobar que se sabe de verdad.`,
+  title: `Tabla del ${n}: trucos, ejercicios y fichas para imprimir`,
+  desc: `La tabla del ${n} completa, trucos para aprenderla, un ejercicio para practicar en pantalla con corrección y fichas para imprimir en PDF.`,
+  h1: `Tabla del ${n}`,
+  entrada: `La tabla del ${n} completa, unos trucos para memorizarla, un ejercicio para practicar aquí mismo y tres fichas para imprimir: la lámina, la tabla para rellenar y 30 multiplicaciones desordenadas.`,
+  antes: tablaLista(n) + practica([n], `Practica la tabla del ${n}`),
   hojas: [
     { tipo: 'tabla', n },
     { tipo: 'tabla', n, vacia: true, titulo: `Tabla del ${n} para rellenar` },
@@ -36,8 +104,6 @@ const tablasN = Object.keys(trucos).map(Number).map((n) => ({
   ],
   copias: 2,
   cuerpo: `
-<h2>La tabla del ${n}</h2>
-<p class="tabla-texto">${Array.from({ length: 10 }, (_, i) => `${n} × ${i + 1} = ${n * (i + 1)}`).join(' · ')}</p>
 <h2>Trucos para aprender la tabla del ${n}</h2>
 <p>${trucos[n][0]}</p>
 <p>${trucos[n][1]}</p>
@@ -49,10 +115,11 @@ const tablasN = Object.keys(trucos).map(Number).map((n) => ({
 
 const sr = (slug, corto, op, llevada, entrada, explicacion) => ({
   cat: 'sumas-y-restas', slug, corto,
-  title: `${corto} para imprimir: fichas con solución (PDF)`,
-  desc: `Fichas de ${corto.toLowerCase()} para imprimir: 20 operaciones en vertical de dos cifras y de tres cifras, con solución. PDF gratis o fichas nuevas al instante.`,
-  h1: `${corto} para imprimir`,
+  title: `${corto}: cómo se hacen y fichas para imprimir`,
+  desc: `${corto} explicadas paso a paso con un ejemplo, y fichas para imprimir de dos y tres cifras con solución. PDF gratis o fichas nuevas al momento.`,
+  h1: corto,
   entrada,
+  antes: llevada ? pasoAPaso(op) : '',
   hojas: [
     { tipo: 'operaciones', op, digitos: 2, llevada, titulo: `${corto} de dos cifras` },
     { tipo: 'operaciones', op, digitos: 3, llevada, titulo: `${corto} de tres cifras` }
@@ -76,6 +143,7 @@ module.exports = [
     hojas: [{ tipo: 'tablas-todas' }, { tipo: 'mult-practica', tablas: [2, 3, 4, 5, 6, 7, 8, 9], titulo: 'Repaso de las tablas' }],
     copias: 2,
     cuerpo: `
+${practica([2, 3, 4, 5, 6, 7, 8, 9], 'Practica las tablas aquí')}
 <h2>En qué orden aprender las tablas</h2>
 <p>No hace falta ir del 1 al 10. Muchos maestros siguen un orden que va de lo fácil a lo difícil y aprovecha lo ya aprendido:</p>
 <ol>

@@ -91,6 +91,33 @@ p{margin:.85rem 0}
 .puntos{flex:1;min-width:1.5rem;border-bottom:2px dotted var(--raya);transform:translateY(-.3em)}
 .meta{font-size:.84rem;color:var(--lapiz);white-space:nowrap}
 
+/* Tabla visible y ejercicio en pantalla */
+.antes{margin-top:1.4rem}
+.antes>h2:first-child{margin-top:1.2rem}
+.prosa .tabla-lista{list-style:none;margin:1.1rem 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.1rem 1.5rem;max-width:30rem;font-size:1.3rem;font-variant-numeric:tabular-nums}
+.tabla-lista li{padding:.3rem 0;border-bottom:1px solid var(--raya)}
+.tabla-lista span{display:inline-block;min-width:3.7em}
+.practica{margin-top:2.2rem;padding:1.1rem 1.2rem 1.2rem;background:var(--hoja);border:2px solid var(--tinta)}
+.practica h2{margin-top:0}
+.practica{padding:1rem .9rem 1.1rem}
+.prosa .practica-lista{list-style:none;margin:1rem 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem .8rem}
+@media (min-width:40rem){.practica{padding:1.1rem 1.2rem 1.2rem}.prosa .practica-lista{grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:.6rem 1.2rem}}
+.prosa .practica-lista li{margin:0;display:flex;align-items:center;gap:.2rem .45rem;flex-wrap:wrap;font-size:1.12rem;font-variant-numeric:tabular-nums}
+.practica-lista label{min-width:4.3em;font-weight:700}
+.practica-lista input{width:3em;min-height:2.75rem;padding:.2rem .4rem;font:700 1.2rem var(--texto);text-align:center;color:var(--tinta);background:#fff;border:2px solid var(--lapiz);border-radius:3px}
+.practica-lista input:focus{outline:3px solid var(--boli);outline-offset:1px;border-color:var(--boli)}
+.practica-lista .ok input{border-color:#2f7d32;background:#eef7ee}
+.practica-lista .mal input{border-color:var(--rojo);background:#fbeeec}
+.marca{font-size:.9rem;font-weight:700}
+.ok .marca{color:#2f7d32}
+.mal .marca{color:var(--rojo)}
+.practica-botones{display:flex;flex-wrap:wrap;gap:.6rem;margin:.4rem 0 0}
+.practica-resultado{font-weight:700;margin:.8rem 0 0;min-height:1.6em}
+.paso-a-paso{margin:1.2rem 0 0}
+.paso-a-paso svg{display:block;width:100%;max-width:41rem;height:auto;color:var(--tinta);fill:var(--tinta);background:var(--hoja);border:1px solid var(--raya)}
+.paso-a-paso ol{padding-left:1.3rem;margin:.9rem 0 0}
+.paso-a-paso li{margin:.4rem 0}
+
 /* Lateral */
 .lateral h2{font-size:1.15rem;margin:0}
 .lateral-lista{list-style:none;margin:.8rem 0 1.6rem;padding:0;border-top:2px solid var(--tinta)}
@@ -152,7 +179,7 @@ p{margin:.85rem 0}
 @media print{
   @page{size:A4;margin:0}
   html,body{background:#fff}
-  .cabecera,.pie,.lateral,.saltar,.anuncio,main>:not(.mesa),.mesa>:not(.hojas){display:none!important}
+  .cabecera,.pie,.lateral,.saltar,.anuncio,.practica,main>:not(.mesa),.mesa>:not(.hojas){display:none!important}
   .ancho,.pagina,.pagina>main,.mesa,.hojas{display:block!important;margin:0!important;padding:0!important;border:0!important;max-width:none!important;background:none!important}
   .hoja{box-shadow:none!important;break-after:page;break-inside:avoid;width:210mm;height:296.5mm;overflow:hidden}
   .hoja:last-child{break-after:auto}

@@ -23,6 +23,9 @@
     </nav>
     <h1>{{ p.h1 }}</h1>
     <p class="entrada">{{ p.entrada | safe }}</p>
+    {%- if p.antes %}
+    <div class="prosa antes">{{ p.antes | safe }}</div>
+    {%- endif %}
 
     {%- if p.hojas.length %}
     <section class="mesa" aria-label="Fichas para imprimir">
