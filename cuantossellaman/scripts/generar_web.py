@@ -295,7 +295,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="site-footer">
   <div class="container">
     <p><strong>{SITIO}</strong> responde cuántas personas se llaman o se apellidan de cada forma en España con los datos oficiales del Instituto Nacional de Estadística (INE).</p>
-    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/nombres/">Nombres de la A a la Z</a><a href="/apellidos/a/">Apellidos de la A a la Z</a><a href="/ideas/">Ideas para bebé</a><a href="/cuantos-se-llaman-como-tu/">Nombre y apellidos como tú</a><a href="/tu-nombre-el-ano-que-naciste/">Tu nombre el año que naciste</a><a href="/nombres-en-peligro-de-extincion/">Nombres en peligro de extinción</a><a href="/articulos/">Artículos</a><a href="/juego/">Juego diario</a><a href="/santoral/">Santoral</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="links"><a href="/">Buscar un nombre</a><a href="/apellidos/">Apellidos</a><a href="/provincias/">Provincias</a><a href="/decadas/">Décadas</a><a href="/bebes/">Bebés</a><a href="/nombres/">Nombres de la A a la Z</a><a href="/apellidos/a/">Apellidos de la A a la Z</a><a href="/ideas/">Ideas para bebé</a><a href="/cuantos-se-llaman-como-tu/">Nombre y apellidos como tú</a><a href="/tu-nombre-el-ano-que-naciste/">Tu nombre el año que naciste</a><a href="/nombres-en-peligro-de-extincion/">Nombres en peligro de extinción</a><a href="/articulos/">Artículos</a><a href="/juego/">Juego diario</a><a href="/santoral/">Santoral</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/contacto/">Contacto</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Fuente: INE. Datos reutilizados conforme a sus condiciones de uso; esta web no está vinculada al INE.</p>
   </div>
 </footer>
@@ -1107,11 +1107,32 @@ def paginas_legales(referencia, umbral):
     guardar("/sobre-los-datos/", pagina("/sobre-los-datos/", "Sobre los datos: de dónde salen y el límite de 20 personas",
                                         "De dónde salen los datos de nombres (INE), cada cuánto se actualizan y por qué no se publican los nombres con menos de 20 personas.",
                                         sobre, [("Sobre los datos", None)]))
+    nosotros = f"""<h1>Sobre nosotros</h1><div class="content">
+<p>{SITIO} es un proyecto independiente que responde a una pregunta muy sencilla: <strong>¿cuántas personas se llaman como tú?</strong> Y de paso, cuántas comparten tu apellido, en qué provincias es más frecuente, en qué década se puso de moda y qué nombres eligen hoy los padres.</p>
+<p>El Instituto Nacional de Estadística publica cada año cuántas personas llevan cada nombre y cada apellido en España, pero en tablas difíciles de consultar. Aquí las ordenamos por nombre, las comparamos por provincia y por década, y las acompañamos de artículos, ideas para elegir nombre de bebé, el santoral y un juego diario.</p>
+<h2>Cómo trabajamos</h2>
+<ul>
+<li>Solo usamos datos oficiales del INE: nombres y apellidos de la población y nombres de los bebés nacidos cada año.</li>
+<li>La web se actualiza automáticamente cuando el INE publica datos nuevos, normalmente en mayo.</li>
+<li>Si un dato no se publica (por ejemplo, los nombres que llevan menos de 20 personas), lo decimos: nunca lo estimamos ni lo inventamos. Más detalles en <a href="/sobre-los-datos/">Sobre los datos</a>.</li>
+</ul>
+<h2>Contacto</h2>
+<p>¿Has visto un error o echas algo en falta? Escríbenos desde la página de <a href="/contacto/">contacto</a>.</p></div>"""
+    contacto = f"""<h1>Contacto</h1><div class="content">
+<p>¿Has encontrado un error, quieres proponer una mejora o tienes una pregunta sobre los datos? Escríbenos a <a href="mailto:{t['email']}">{t['email']}</a> y te responderemos lo antes posible.</p>
+<h2>Antes de escribir</h2>
+<ul>
+<li><strong>¿Tu nombre sale con «menos de 20 personas»?</strong> El INE no publica los nombres que llevan menos de 20 personas en España, así que el número exacto no se conoce.</li>
+<li><strong>¿«María José» no cuenta como «María»?</strong> El INE cuenta el nombre completo tal como figura en el padrón: son nombres distintos.</li>
+<li><strong>¿Echas en falta el santo de un nombre?</strong> Indícanos el nombre y la fecha en que lo celebras y, si puedes, la fuente.</li>
+</ul></div>"""
+    guardar("/sobre-nosotros/", pagina("/sobre-nosotros/", f"Sobre nosotros | {SITIO}", f"Qué es {SITIO}, de dónde salen sus datos y cómo trabajamos.", nosotros, [("Sobre nosotros", None)]))
+    guardar("/contacto/", pagina("/contacto/", f"Contacto | {SITIO}", f"Cómo contactar con {SITIO} para avisar de un error o proponer una mejora.", contacto, [("Contacto", None)]))
     guardar("/aviso-legal/", pagina("/aviso-legal/", f"Aviso legal | {SITIO}", "Aviso legal y datos del titular de cuantossellaman.es.", aviso, [("Aviso legal", None)]))
     guardar("/privacidad/", pagina("/privacidad/", f"Política de privacidad | {SITIO}", "Política de privacidad y cookies de cuantossellaman.es.", privacidad, [("Privacidad", None)]))
     guardar("/404.html", pagina("/404.html", "Página no encontrada", "Esta página no existe.",
                                 '<h1>Página no encontrada</h1><p>Prueba a buscar el nombre desde la <a href="/">portada</a>.</p>', indexable=False))
-    return ["/sobre-los-datos/", "/aviso-legal/", "/privacidad/"]
+    return ["/sobre-nosotros/", "/contacto/", "/sobre-los-datos/", "/aviso-legal/", "/privacidad/"]
 
 
 def indices_busqueda(idx):
@@ -1503,7 +1524,7 @@ def paginas_santoral(idx):
     return ["/santoral/"] + rutas
 
 
-VERSION = "15"
+VERSION = "16"
 
 
 def main():
