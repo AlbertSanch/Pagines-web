@@ -1047,6 +1047,87 @@
     return { svg: hoja(o, dibuja(false)), sol: hoja(Object.assign({}, o, { sol: true }), dibuja(true)) };
   }
 
+  // ---------- mandalas ----------
+  var NIVEL_MANDALA = {
+    facil: { sim: [8], anillos: [3, 4], trazo: .8, detalle: 0 },
+    medio: { sim: [10, 12], anillos: [5, 6], trazo: .55, detalle: .5 },
+    dificil: { sim: [12, 16, 18], anillos: [8, 9], trazo: .4, detalle: .85 }
+  };
+  function mandala(spec, seed) {
+    var r = rng(seed), cfg = NIVEL_MANDALA[spec.nivel || 'medio'], cx = 105, cy = 160, R = 90;
+    var sim = cfg.sim[ri(r, 0, cfg.sim.length - 1)], nAn = ri(r, cfg.anillos[0], cfg.anillos[1]);
+    function P(rad, a) { return f(cx + rad * Math.cos(a - Math.PI / 2)) + ' ' + f(cy + rad * Math.sin(a - Math.PI / 2)); }
+    var d = '', i, k;
+    // radios de los anillos con anchos algo irregulares
+    var r0 = R * (spec.nivel === 'facil' ? .2 : .14), pesos = [], tot = 0;
+    for (i = 0; i < nAn; i++) { var w = .7 + r() * .8; pesos.push(w); tot += w; }
+    var radios = [r0];
+    pesos.forEach(function (w) { radios.push(radios[radios.length - 1] + (R - r0) * w / tot); });
+    // centro: flor sencilla
+    var nc = sim, rc = r0;
+    d += 'M' + P(rc * .32, 0) + 'A' + f(rc * .32) + ' ' + f(rc * .32) + ' 0 1 1 ' + P(rc * .32, Math.PI - .0001) + 'A' + f(rc * .32) + ' ' + f(rc * .32) + ' 0 1 1 ' + P(rc * .32, 0);
+    for (k = 0; k < nc; k++) d += petalo(rc * .32, rc, k * 2 * Math.PI / nc, Math.PI / nc * .85);
+    var motivos = ['petalos', 'arcos', 'hojas', 'circulos', 'zigzag', 'gotas', 'petalos', 'arcos'];
+    var anterior = '';
+    for (i = 0; i < nAn; i++) {
+      var a1 = radios[i], a2 = radios[i + 1], m;
+      do { m = motivos[ri(r, 0, motivos.length - 1)]; } while (m === anterior);
+      anterior = m;
+      var det = !!cfg.detalle && r() < cfg.detalle;
+      var mult = (cfg.detalle > r() && i > 1) ? 2 : 1, n = sim * mult, paso = 2 * Math.PI / n, desf = (i % 2) * paso / 2;
+      if (m === 'petalos' || m === 'gotas') {
+        for (k = 0; k < n; k++) {
+          var ang = k * paso + desf;
+          d += m === 'petalos' ? petalo(a1, a2, ang, paso / 2 * .92) : gota(a1, a2, ang, paso / 2 * .9);
+          if (det && m === 'petalos') d += petalo(a1, a1 + (a2 - a1) * .62, ang, paso / 2 * .5);
+        }
+      } else if (m === 'arcos') {
+        for (k = 0; k < n; k++) {
+          var b = k * paso + desf, rcp = 2 * a2 - a1 * Math.cos(paso / 2);
+          d += 'M' + P(a1, b) + 'Q' + P(rcp, b + paso / 2) + ' ' + P(a1, b + paso);
+          if (det) d += 'M' + P(a1, b + paso * .2) + 'Q' + P((rcp + a1) / 2, b + paso / 2) + ' ' + P(a1, b + paso * .8);
+        }
+      } else if (m === 'hojas') {
+        for (k = 0; k < n; k++) {
+          var c = k * paso + desf, rm = (a1 + a2) / 2;
+          d += 'M' + P(a1, c) + 'Q' + P(rm, c - paso * .55) + ' ' + P(a2, c) + 'Q' + P(rm, c + paso * .55) + ' ' + P(a1, c);
+          if (det) d += 'M' + P(a1 + (a2 - a1) * .15, c) + 'L' + P(a2 - (a2 - a1) * .15, c);
+        }
+      } else if (m === 'circulos') {
+        var rm2 = (a1 + a2) / 2, rr = Math.min((a2 - a1) / 2 * .85, rm2 * Math.sin(paso / 2) * .85);
+        for (k = 0; k < n; k++) {
+          var cc = P(rm2, k * paso + desf).split(' ').map(Number);
+          d += circulo(cc[0], cc[1], rr);
+          if (det) d += circulo(cc[0], cc[1], rr * .45);
+        }
+      } else if (m === 'zigzag') {
+        d += 'M' + P(a1, desf);
+        for (k = 0; k < n; k++) d += 'L' + P(a2, k * paso + desf + paso / 2) + 'L' + P(a1, (k + 1) * paso + desf);
+        if (det) {
+          d += 'M' + P((a1 + a2) / 2, desf);
+          for (k = 0; k < n; k++) d += 'L' + P(a2, k * paso + desf + paso / 2 - paso * .12) + 'M' + P(a2, k * paso + desf + paso / 2 + paso * .12) + 'L' + P((a1 + a2) / 2, (k + 1) * paso + desf);
+        }
+      }
+      if (i < nAn - 1 && (m === 'zigzag' || m === 'circulos' || r() < .5)) d += circulo(cx, cy, a2);
+    }
+    d += circulo(cx, cy, R);
+    function petalo(r1, r2, a, w) {
+      var h = r2 - r1;
+      return 'M' + P(r1, a - w) + 'C' + P(r1 + h * .55, a - w * 1.25) + ' ' + P(r2 - h * .12, a - w * .45) + ' ' + P(r2, a) +
+        'C' + P(r2 - h * .12, a + w * .45) + ' ' + P(r1 + h * .55, a + w * 1.25) + ' ' + P(r1, a + w);
+    }
+    function gota(r1, r2, a, w) {
+      var h = r2 - r1;
+      return 'M' + P(r1, a) + 'C' + P(r1 + h * .45, a - w * .9) + ' ' + P(r2, a - w * 1.05) + ' ' + P(r2, a) +
+        'C' + P(r2, a + w * 1.05) + ' ' + P(r1 + h * .45, a + w * .9) + ' ' + P(r1, a);
+    }
+    function circulo(x, y, rr) {
+      return 'M' + f(x - rr) + ' ' + f(y) + 'a' + f(rr) + ' ' + f(rr) + ' 0 1 0 ' + f(2 * rr) + ' 0a' + f(rr) + ' ' + f(rr) + ' 0 1 0 ' + f(-2 * rr) + ' 0';
+    }
+    var cuerpo = '<path d="' + d + '" fill="none" stroke="' + TINTA + '" stroke-width="' + cfg.trazo + '" stroke-linejoin="round"/>';
+    return { svg: hoja({ titulo: spec.titulo, sub: spec.sub || 'Colorea el mandala como quieras. Un truco: usa el mismo color en todas las piezas de cada anillo.', seed: seed }, cuerpo), sol: null };
+  }
+
   var TIPOS = {
     sopa: sopa, sudoku: sudoku, laberinto: laberinto, bingo90: bingo90, bingo75: bingo75, 'bingo-numeros': bingoNumeros,
     tabla: tabla, 'tablas-todas': tablasTodas, pitagorica: pitagorica, 'mult-practica': multPractica,
@@ -1054,11 +1135,11 @@
     'sudoku-dibujos': sudokuDibujos, 'bingo-palabras': bingoPalabras, 'bingo-palabras-lista': bingoPalabrasLista,
     'laberinto-arbol': laberintoArbol, carta: carta, sobre: sobre, 'carta-respuesta': cartaRespuesta, crucigrama: crucigrama,
     'caligrafia-letras': caligrafiaLetras, 'caligrafia-frases': caligrafiaFrases, 'trazos-imprenta': trazosImprenta,
-    multiplicaciones: multiplicaciones, divisiones: divisiones
+    multiplicaciones: multiplicaciones, divisiones: divisiones, mandala: mandala
   };
   // Tipos cuyo contenido cambia con la semilla (tienen botón «Otra distinta»)
   var ALEATORIOS = { sopa: 1, sudoku: 1, laberinto: 1, bingo90: 1, bingo75: 1, 'mult-practica': 1, operaciones: 1,
-    'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1, crucigrama: 1, 'caligrafia-frases': 1, multiplicaciones: 1, divisiones: 1 };
+    'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1, crucigrama: 1, 'caligrafia-frases': 1, multiplicaciones: 1, divisiones: 1, mandala: 1 };
 
   function render(spec, seed) {
     var fn = TIPOS[spec.tipo];

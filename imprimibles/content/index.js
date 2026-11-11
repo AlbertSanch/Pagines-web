@@ -4,6 +4,7 @@ const crudas = [
   ...require('./navidad.js'),
   ...require('./sopas.js'),
   ...require('./crucigramas.js'),
+  ...require('./mandalas.js'),
   ...require('./logica.js'),
   ...require('./escuela.js'),
   ...require('./multdiv.js'),
@@ -36,7 +37,7 @@ const paginas = crudas.map((p) => {
 });
 
 // Orden del menú y del índice de la portada (las que no estén aquí van al final)
-const ORDEN = ['navidad', 'sopas-de-letras', 'crucigramas', 'sudokus', 'laberintos', 'bingo', 'tablas-de-multiplicar', 'sumas-y-restas', 'multiplicaciones-y-divisiones', 'caligrafia', 'papel'];
+const ORDEN = ['navidad', 'sopas-de-letras', 'crucigramas', 'mandalas', 'sudokus', 'laberintos', 'bingo', 'tablas-de-multiplicar', 'sumas-y-restas', 'multiplicaciones-y-divisiones', 'caligrafia', 'papel'];
 const pos = (c) => (ORDEN.indexOf(c) + 1) || 99;
 const secciones = paginas.filter((p) => p.esHub).sort((a, b) => pos(a.cat) - pos(b.cat)).map((hub) => ({
   cat: hub.cat, nombre: hub.nav, url: hub.url, resumen: hub.resumen,
