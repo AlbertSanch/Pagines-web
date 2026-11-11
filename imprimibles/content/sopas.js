@@ -7,42 +7,60 @@ const temas = [
     palabras: ['perro', 'gato', 'caballo', 'vaca', 'oveja', 'cerdo', 'gallina', 'conejo', 'león', 'tigre', 'elefante', 'jirafa', 'cebra', 'mono', 'lobo', 'zorro', 'ciervo', 'águila', 'búho', 'delfín', 'ballena', 'tiburón', 'tortuga', 'cocodrilo', 'serpiente', 'rana', 'mariposa', 'abeja', 'hormiga', 'pingüino', 'canguro'],
     cortas: ['perro', 'gato', 'vaca', 'oveja', 'cerdo', 'león', 'tigre', 'cebra', 'mono', 'lobo', 'zorro', 'búho', 'rana', 'abeja', 'pato', 'foca'],
     entrada: 'Dos sopas de letras de animales listas para imprimir: una de 13 × 13 con 14 animales de granja, de selva y de mar, y otra más pequeña para quien está empezando a leer.',
-    nota: 'La lista mezcla animales domésticos, salvajes y marinos, así que sirve también para repasar vocabulario de Conocimiento del Medio: al terminar se puede pedir que clasifiquen los animales encontrados en mamíferos, aves, reptiles, peces e insectos.'
+    nota: 'La lista mezcla animales domésticos, salvajes y marinos, así que sirve también para repasar vocabulario de Conocimiento del Medio: al terminar se puede pedir que clasifiquen los animales encontrados en mamíferos, aves, reptiles, peces e insectos.',
+    despues: `<h2>Juegos para después de la sopa</h2>
+<p><strong>¿Dónde vive?</strong> Dibuja tres columnas en una hoja (granja, selva o sabana, y mar) y pide que coloquen en cada una los animales encontrados. Enseguida aparecen las dudas interesantes: ¿el oso es de la selva? ¿y el pingüino, de dónde es?</p>
+<p><strong>Adivina, adivinanza.</strong> Por turnos, uno elige en secreto un animal de la lista y lo describe sin decir su nombre («tiene rayas y parece un caballo»); el resto lo busca en la sopa. Es la misma mecánica que el <a href="/crucigramas/animales/">crucigrama de animales</a>, que trae treinta pistas ya escritas.</p>`
   },
   {
     slug: 'navidad', corto: 'Navidad', de: 'de Navidad',
     palabras: ['árbol', 'estrella', 'belén', 'turrón', 'polvorón', 'villancico', 'regalo', 'reyes', 'camello', 'pastor', 'ángel', 'nieve', 'trineo', 'reno', 'campana', 'guirnalda', 'mazapán', 'nochebuena', 'pandereta', 'zambomba', 'roscón', 'uvas', 'cabalgata', 'carbón'],
     cortas: ['árbol', 'belén', 'reyes', 'nieve', 'reno', 'uvas', 'regalo', 'ángel', 'turrón', 'pastor', 'roscón', 'carbón'],
     entrada: 'Sopas de letras de Navidad con vocabulario de aquí: belén, turrón, zambomba, roscón, cabalgata. Sirven para el último día de clase antes de vacaciones o para la sobremesa de Nochebuena.',
-    nota: 'Las palabras son las de una Navidad española (Reyes Magos, uvas, polvorones), no una traducción de listas en inglés llenas de «muérdago» y «elfos». Si la imprimes para una comida familiar, saca una copia por persona y cronometrad quién termina antes. Tienes más fichas para estas fechas en <a href="/navidad/">fichas de Navidad</a>.'
+    nota: 'Las palabras son las de una Navidad española (Reyes Magos, uvas, polvorones), no una traducción de listas en inglés llenas de «muérdago» y «elfos». Si la imprimes para una comida familiar, saca una copia por persona y cronometrad quién termina antes. Tienes más fichas para estas fechas en <a href="/navidad/">fichas de Navidad</a>.',
+    despues: `<h2>Las fechas de cada palabra</h2>
+<p>Muchas de las palabras de esta sopa tienen su día. Una actividad sencilla es ordenarlas en el calendario: la Nochebuena el 24 de diciembre, las uvas y las campanadas el 31, la cabalgata el 5 de enero, el roscón y el carbón el 6. Así la sopa de letras se convierte en un repaso de las fiestas.</p>
+<p>También da para hablar de lo que no todo el mundo conoce: qué es una zambomba y cómo suena, por qué el roscón lleva una figurita escondida o qué hacen los pajes reales. Para seguir con la misma temática tienes el <a href="/navidad/bingo/">bingo de Navidad</a>, con estas mismas palabras.</p>`
   },
   {
     slug: 'frutas-y-verduras', corto: 'Frutas y verduras', de: 'de frutas y verduras',
     palabras: ['manzana', 'pera', 'plátano', 'naranja', 'limón', 'fresa', 'cereza', 'sandía', 'melón', 'uva', 'piña', 'kiwi', 'melocotón', 'ciruela', 'tomate', 'lechuga', 'zanahoria', 'cebolla', 'pimiento', 'pepino', 'calabaza', 'espinaca', 'brócoli', 'berenjena', 'patata', 'ajo'],
     cortas: ['pera', 'limón', 'fresa', 'melón', 'piña', 'kiwi', 'tomate', 'pepino', 'patata', 'uvas', 'cereza', 'sandía'],
     entrada: 'Sopas de letras de frutas y verduras para imprimir, con 14 alimentos escondidos en la versión normal y 10 en la fácil. Una buena excusa para hablar de lo que hay en la frutería.',
-    nota: 'Funciona bien junto a una actividad de alimentación saludable: cada palabra encontrada se clasifica después en fruta o verdura (el tomate suele dar conversación), o se rodean las que han comido esa semana.'
+    nota: 'Funciona bien junto a una actividad de alimentación saludable: cada palabra encontrada se clasifica después en fruta o verdura (el tomate suele dar conversación), o se rodean las que han comido esa semana.',
+    despues: `<h2>De la sopa de letras a la frutería</h2>
+<p><strong>¿De qué color es?</strong> Agrupar lo encontrado por colores (rojo: fresa, cereza, tomate; verde: kiwi, lechuga, pepino; naranja: naranja, zanahoria, calabaza) es una forma fácil de hablar de comer variado: cuantos más colores en el plato, mejor.</p>
+<p><strong>¿Cuándo es su temporada?</strong> No todas se recogen a la vez. En otoño e invierno es tiempo de naranjas, calabaza y brócoli; en verano, de sandía, melón, melocotón y tomate. Se puede marcar cada palabra con una estrella si es de la temporada en que estáis y comprobarlo en la próxima visita a la frutería o al mercado.</p>`
   },
   {
     slug: 'colegio', corto: 'El colegio', de: 'del colegio',
     palabras: ['lápiz', 'goma', 'cuaderno', 'mochila', 'pizarra', 'tiza', 'regla', 'tijeras', 'pegamento', 'estuche', 'libro', 'recreo', 'maestra', 'pupitre', 'rotulador', 'sacapuntas', 'compás', 'mapa', 'patio', 'comedor', 'biblioteca', 'deberes', 'examen'],
     cortas: ['lápiz', 'goma', 'tiza', 'regla', 'libro', 'mapa', 'patio', 'recreo', 'mochila', 'estuche', 'compás', 'examen'],
     entrada: 'Sopas de letras con material escolar y rincones del colegio: estuche, pizarra, recreo, biblioteca. Pensadas para la vuelta al cole y para los primeros días de curso.',
-    nota: 'Es una ficha cómoda para la primera semana de septiembre, cuando todavía no hay libros: no necesita explicación y deja ver quién lee con soltura y quién necesita más apoyo.'
+    nota: 'Es una ficha cómoda para la primera semana de septiembre, cuando todavía no hay libros: no necesita explicación y deja ver quién lee con soltura y quién necesita más apoyo.',
+    despues: `<h2>Una ficha para los primeros días de curso</h2>
+<p>Además de buscar las palabras, se puede pedir a los alumnos que señalen en la clase cada objeto que han encontrado: la pizarra, el estuche, la regla. Para los que acaban de empezar primaria es una forma de aprender el nombre de las cosas que van a usar todo el año.</p>
+<p>Para los mayores, un reto añadido: ordenar alfabéticamente las palabras encontradas antes de entregar la hoja. «Compás», «comedor» y «cuaderno» obligan a mirar más allá de la primera letra.</p>`
   },
   {
     slug: 'halloween', corto: 'Halloween', de: 'de Halloween',
     palabras: ['bruja', 'fantasma', 'calabaza', 'murciélago', 'araña', 'esqueleto', 'vampiro', 'momia', 'zombi', 'caramelo', 'disfraz', 'escoba', 'telaraña', 'calavera', 'monstruo', 'caldero', 'susto', 'noche', 'luna', 'búho', 'cementerio', 'hechizo'],
     cortas: ['bruja', 'araña', 'momia', 'zombi', 'susto', 'noche', 'luna', 'búho', 'escoba', 'vampiro', 'disfraz', 'caldero'],
     entrada: 'Sopas de letras de Halloween para imprimir, con brujas, murciélagos y calabazas. Dan miedo lo justo: valen para clase y para una fiesta en casa.',
-    nota: 'Para una fiesta, imprime una hoja por invitado y reparte caramelos según las palabras encontradas en cinco minutos. La versión fácil evita las diagonales, así los pequeños juegan en igualdad.'
+    nota: 'Para una fiesta, imprime una hoja por invitado y reparte caramelos según las palabras encontradas en cinco minutos. La versión fácil evita las diagonales, así los pequeños juegan en igualdad.',
+    despues: `<h2>Halloween y nuestras fiestas de otoño</h2>
+<p>Halloween se celebra el 31 de octubre, la víspera de Todos los Santos. En España, esos mismos días tienen sus propias tradiciones: la castañada en Cataluña, el magosto en Galicia o los huesos de santo y los buñuelos en muchas casas. Si haces la sopa en clase, es un buen momento para preguntar qué se celebra en casa de cada uno.</p>
+<p>Un juego para después: dividir las palabras encontradas entre «dan miedo» y «no dan miedo». La araña y el murciélago suelen provocar debate; el caramelo, ninguno.</p>`
   },
   {
     slug: 'deportes', corto: 'Deportes', de: 'de deportes',
     palabras: ['fútbol', 'baloncesto', 'tenis', 'natación', 'atletismo', 'ciclismo', 'balonmano', 'voleibol', 'gimnasia', 'judo', 'kárate', 'rugby', 'golf', 'pádel', 'esquí', 'patinaje', 'remo', 'surf', 'boxeo', 'esgrima', 'hockey', 'bádminton', 'escalada'],
     cortas: ['fútbol', 'tenis', 'judo', 'rugby', 'golf', 'pádel', 'esquí', 'remo', 'surf', 'boxeo', 'hockey', 'kárate'],
     entrada: 'Sopas de letras de deportes para imprimir: de fútbol y baloncesto a esgrima y bádminton. Útiles en Educación Física los días de lluvia.',
-    nota: 'Todas las palabras se escriben en la cuadrícula sin tilde, como es costumbre en los pasatiempos: «fútbol» aparece como FUTBOL y «pádel» como PADEL. En la lista de abajo sí llevan su tilde.'
+    nota: 'Todas las palabras se escriben en la cuadrícula sin tilde, como es costumbre en los pasatiempos: «fútbol» aparece como FUTBOL y «pádel» como PADEL. En la lista de abajo sí llevan su tilde.',
+    despues: `<h2>Clasifica los deportes</h2>
+<p>Con la lista ya completa, se pueden ordenar los deportes de varias maneras: individuales o de equipo (tenis frente a balonmano), con pelota o sin ella (fútbol frente a natación), en el agua, en la nieve o en una pista. Algunos caen en más de un grupo, y explicar por qué es parte del ejercicio.</p>
+<p>Otra idea para Educación Física: que cada alumno rodee los deportes que ha practicado alguna vez y elija uno que le gustaría probar. Sirve para hablar de lo que hacen fuera del colegio y, de paso, para repasar la ortografía de palabras como «bádminton» o «esgrima».</p>`
   }
 ];
 
@@ -66,6 +84,7 @@ const paginasTema = temas.map((t) => ({
 <h2>Qué palabras hay que buscar</h2>
 <p>En cada hoja se esconden palabras tomadas al azar de esta lista, así que dos fichas distintas no repiten exactamente las mismas: ${t.palabras.join(', ')}.</p>
 <p>${t.nota}</p>
+${t.despues}
 ${comoSeHace}
 <h2>Versión normal y versión fácil</h2>
 <p>La hoja normal tiene 13 × 13 letras y 14 palabras, y va bien a partir de 8 años. La fácil tiene 10 × 10 letras, 10 palabras cortas y ninguna diagonal: es la adecuada para 6 y 7 años o para quien hace su primera sopa de letras. El PDF incluye dos fichas de cada una y sus cuatro soluciones.</p>`,
