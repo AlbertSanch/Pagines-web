@@ -32,7 +32,7 @@ WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://rentamedia.es"
 SITIO = "Renta Media"
-VERSION = "4"
+VERSION = "5"
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que Ahorrómetro y ¿Cuántos se llaman?
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
                            "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"]
@@ -244,6 +244,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
       <a href="/barrios/">Barrios</a>
       <a href="/alquiler/">Alquiler</a>
       <a href="/comparar-renta/">¿Estás por encima?</a>
+      <a href="/guias/">Guías</a>
     </nav>
   </div>
 </header>
@@ -254,7 +255,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="site-footer">
   <div class="container">
     <p><strong>{SITIO}</strong> muestra la renta media de cada municipio, provincia y barrio de España con los datos oficiales del Instituto Nacional de Estadística (INE).</p>
-    <div class="links"><a href="/">Buscar un municipio</a><a href="/municipios-mas-ricos-de-espana/">Municipios más ricos</a><a href="/municipios-mas-pobres-de-espana/">Municipios más pobres</a><a href="/ciudades-mas-ricas-de-espana/">Ciudades más ricas</a><a href="/provincias/">Provincias y comunidades</a><a href="/barrios/">Barrios de cada ciudad</a><a href="/barrios-mas-ricos-de-espana/">Barrios más ricos de España</a><a href="/alquiler/">Precio del alquiler</a><a href="/comparar-renta/">¿Estás por encima de la media?</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/contacto/">Contacto</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="links"><a href="/">Buscar un municipio</a><a href="/municipios-mas-ricos-de-espana/">Municipios más ricos</a><a href="/municipios-mas-pobres-de-espana/">Municipios más pobres</a><a href="/ciudades-mas-ricas-de-espana/">Ciudades más ricas</a><a href="/provincias/">Provincias y comunidades</a><a href="/barrios/">Barrios de cada ciudad</a><a href="/barrios-mas-ricos-de-espana/">Barrios más ricos de España</a><a href="/alquiler/">Precio del alquiler</a><a href="/comparar-renta/">¿Estás por encima de la media?</a><a href="/guias/">Guías sobre la renta</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/sobre-los-datos/">Sobre los datos</a><a href="/contacto/">Contacto</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Fuente: INE, Atlas de Distribución de Renta de los Hogares. Datos reutilizados conforme a sus condiciones de uso; esta web no está vinculada al INE.</p>
   </div>
 </footer>
@@ -994,8 +995,9 @@ def pagina_municipio(m, T, por_prov, total_es, anios, t):
     migas = [(COMUNIDADES[PROVINCIAS[p][2]], ruta_ccaa(PROVINCIAS[p][2])), (prov_nombre, ruta_prov(p)), (nombre, None)]
     if ccaa_nombre == prov_nombre:
         migas = migas[1:]
+    # sin la renta del último año (secreto estadístico) la ficha se queda corta: visible, pero fuera de Google
     return pagina(ruta, titulo, descripcion, "\n".join(cuerpo), migas, [faq_ld(preguntas)] if preguntas else None,
-                  scripts=f'<script src="/assets/comparar.js?v={VERSION}" defer></script>' if m["mediana_uc"] else "")
+                  indexable=bool(m["renta"]), scripts=f'<script src="/assets/comparar.js?v={VERSION}" defer></script>' if m["mediana_uc"] else "")
 
 
 # ---------------------------------------------------------------- rankings
@@ -1304,10 +1306,35 @@ def portada(con_dato, grandes, T, anios, n_paginas):
 <h2>Por comunidades</h2>
 <ul class="chips">{ccaa_html}</ul>
 <p><a href="/provincias/">Ver todas las provincias →</a></p>
+<h2>Guías para entender la renta</h2>
+<div class="grid">
+<a class="card" href="/guias/que-es-la-renta-neta-media/"><h3>¿Qué es la renta neta media?</h3><p>Cómo la calcula el INE y en qué se diferencia de la bruta y de la mediana.</p></a>
+<a class="card" href="/guias/renta-media-por-comunidades/"><h3>Renta por comunidades</h3><p>Las comunidades autónomas ordenadas de más a menos renta.</p></a>
+<a class="card" href="/guias/renta-y-salario/"><h3>Renta y salario</h3><p>Por qué la renta media no es tu sueldo y de dónde salen los ingresos.</p></a>
+<a class="card" href="/guias/desigualdad-de-renta/"><h3>Desigualdad</h3><p>El índice de Gini de cada comunidad y la distancia entre municipios.</p></a>
+</div>
+<div class="content">
+<h2>Qué encontrarás en cada municipio</h2>
+<p>Cada uno de los {n(n_paginas)} municipios tiene su página con la renta neta media por persona y por hogar, su evolución desde {anios[0]}, su puesto en España y en su provincia, de dónde salen los ingresos de sus vecinos (salarios, pensiones, prestaciones), su desigualdad y, en las ciudades grandes, la renta de cada barrio. Todo sale del Atlas de Distribución de Renta de los Hogares del INE y de la estadística del IRPF de la Agencia Tributaria: si una cifra no se publica, lo decimos, nunca la estimamos.</p>
+<h2>Preguntas frecuentes</h2>
+{faq_html(PREGUNTAS_PORTADA(es, agregado(T, "es", HOGAR)[-1], ultimo))}
+</div>
 <p class="fuente">Datos del INE (Atlas de Distribución de Renta de los Hogares) de {anios[0]} a {ultimo}. <a href="/sobre-los-datos/">Sobre los datos</a>.</p>"""
     return pagina("/", "Renta media de tu pueblo o ciudad: municipios más ricos de España",
                   f"Renta media por persona y por hogar de los {n(n_paginas)} municipios de España, con su evolución y ranking. Datos oficiales del INE ({ultimo}).",
-                  cuerpo, scripts=f'<script src="/assets/buscar.js?v={VERSION}" defer></script>')
+                  cuerpo, extra_ld=[faq_ld(PREGUNTAS_PORTADA(es, agregado(T, "es", HOGAR)[-1], ultimo))],
+                  scripts=f'<script src="/assets/buscar.js?v={VERSION}" defer></script>')
+
+
+def PREGUNTAS_PORTADA(persona, hogar, anio):
+    return [
+        ("¿Cuál es la renta media en España?",
+         f"La renta neta media por persona fue de {euros(persona)} en {anio} y la renta neta media por hogar, de {euros(hogar)}, según el INE."),
+        ("¿Por qué los datos son de hace dos años?",
+         "El INE calcula la renta a partir de las declaraciones del IRPF, que se presentan al año siguiente, y publica el Atlas con unos dos años de retraso."),
+        ("¿La renta media es lo mismo que el sueldo?",
+         'No: incluye pensiones y prestaciones, ya tiene restados los impuestos y se reparte entre todos los que viven en el hogar. Lo explicamos en <a href="/guias/renta-y-salario/">renta y salario</a>.'),
+    ]
 
 
 def pagina_comparador(anios):
@@ -1445,11 +1472,13 @@ def main():
         guardar("/alquiler/", pagina_alquiler(list(municipios.values())))
         rutas.append("/alquiler/")
     rutas += paginas_legales(anios)
+    import guias
+    rutas += guias.generar(sys.modules[__name__], T, con_dato, anios)
     guardar("/", portada(con_dato, grandes, T, anios, len(municipios)))
     grupos = indices_busqueda(municipios)
 
     hoy = date.today().isoformat()
-    urls = ["/"] + rutas + [ruta_mun(m) for m in sorted(municipios.values(), key=lambda x: x["slug"])]
+    urls = ["/"] + rutas + [ruta_mun(m) for m in sorted(municipios.values(), key=lambda x: x["slug"]) if m["renta"]]
     (WEB / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                      + "".join(f"  <url><loc>{DOMINIO}{u}</loc><lastmod>{lastmod(u, hoy)}</lastmod></url>\n" for u in urls) + "</urlset>\n",
                                      encoding="utf-8")
