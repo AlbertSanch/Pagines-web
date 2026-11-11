@@ -7,7 +7,7 @@ module.exports = {
   anio: new Date().getFullYear(),
 
   // --- Monetización (vacío = desactivado; no se reserva hueco ni se carga nada) ---
-  adsenseId: process.env.ADSENSE_ID || '',          // p. ej. 'ca-pub-1234567890123456'
+  adsenseId: process.env.ADSENSE_ID || 'ca-pub-8810566450749484',        // p. ej. 'ca-pub-1234567890123456'
   adsSlots: { contenido: '', lateral: '', final: '' }, // id de cada bloque creado en AdSense
   amazonTag: process.env.AMAZON_TAG || '',          // p. ej. 'imprimibles-21'
 
