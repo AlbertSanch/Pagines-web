@@ -1128,6 +1128,58 @@
     return { svg: hoja({ titulo: spec.titulo, sub: spec.sub || 'Colorea el mandala como quieras. Un truco: usa el mismo color en todas las piezas de cada anillo.', seed: seed }, cuerpo), sol: null };
   }
 
+  // ---------- grafomotricidad y horario ----------
+  function trazo(tipo, x0, x1, y, h) {
+    var d = '', x, n, w, i;
+    if (tipo === 'horizontal') { for (i = 0; i < 3; i++) d += 'M' + x0 + ' ' + f(y - h + i * h / 2) + 'H' + x1; }
+    else if (tipo === 'vertical') { for (x = x0; x <= x1; x += 9) d += 'M' + f(x) + ' ' + f(y - h) + 'V' + f(y); }
+    else if (tipo === 'diagonal') { for (x = x0; x + h * .6 <= x1; x += 9) d += 'M' + f(x) + ' ' + f(y - h) + 'L' + f(x + h * .6) + ' ' + f(y); }
+    else if (tipo === 'zigzag') { w = h * .7; d = 'M' + x0 + ' ' + y; for (x = x0; x + w <= x1; x += w) d += 'L' + f(x + w / 2) + ' ' + f(y - h) + 'L' + f(x + w) + ' ' + y; }
+    else if (tipo === 'castillo') { w = h * .8; d = 'M' + x0 + ' ' + y; for (x = x0; x + 2 * w <= x1; x += 2 * w) d += 'V' + f(y - h) + 'H' + f(x + w) + 'V' + y + 'H' + f(x + 2 * w); }
+    else if (tipo === 'ondas') { w = h * 1.6; d = 'M' + x0 + ' ' + f(y - h / 2); for (x = x0; x + w <= x1; x += w) d += 'q' + f(w / 4) + ' ' + f(-h) + ' ' + f(w / 2) + ' 0q' + f(w / 4) + ' ' + f(h) + ' ' + f(w / 2) + ' 0'; }
+    else if (tipo === 'puentes') { w = h * .9; d = 'M' + x0 + ' ' + y; for (x = x0; x + w <= x1; x += w) d += 'c0 ' + f(-h * 1.33) + ' ' + f(w) + ' ' + f(-h * 1.33) + ' ' + f(w) + ' 0'; }
+    else if (tipo === 'copas') { w = h * .9; d = 'M' + x0 + ' ' + f(y - h); for (x = x0; x + w <= x1; x += w) d += 'c0 ' + f(h * 1.33) + ' ' + f(w) + ' ' + f(h * 1.33) + ' ' + f(w) + ' 0'; }
+    else if (tipo === 'bucles') { w = h * .75; d = 'M' + x0 + ' ' + y; for (x = x0; x + w * 1.2 <= x1; x += w) d += 'c' + f(w * .9) + ' ' + f(-h * .3) + ' ' + f(w * .7) + ' ' + f(-h * 1.15) + ' ' + f(w * .3) + ' ' + f(-h) + 'c' + f(-w * .45) + ' ' + f(h * .15) + ' ' + f(-w * .1) + ' ' + f(h * .9) + ' ' + f(w * .7) + ' ' + f(h); }
+    else if (tipo === 'espirales') { n = Math.floor((x1 - x0) / (h * 1.3)); for (i = 0; i < n; i++) { var cx = x0 + h * .65 + i * h * 1.3, cy = y - h / 2; d += 'M' + f(cx) + ' ' + f(cy); for (var t = 0; t <= 3 * 2 * Math.PI; t += .3) { var rr = h * .5 * t / (6 * Math.PI); d += 'L' + f(cx + rr * Math.cos(t)) + ' ' + f(cy + rr * Math.sin(t)); } } }
+    return d;
+  }
+  function grafomotricidad(spec) {
+    var y = 80, paso = spec.paso || 36, h = spec.alto || 16, s = '';
+    spec.trazos.forEach(function (tp) {
+      var d = trazo(tp, 22, 192, y, h);
+      s += '<path d="' + d + '" fill="none" stroke="#9a9aa2" stroke-width=".7" stroke-dasharray="1.8 1.4" stroke-linecap="round" stroke-linejoin="round"/>';
+      (d.match(/M[\d.]+ [\d.]+/g) || []).forEach(function (m) {
+        var c = m.slice(1).split(' ');
+        s += '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="1.3" fill="' + TINTA + '"/>';
+      });
+      y += paso;
+    });
+    return { svg: hoja({ titulo: spec.titulo, sub: spec.sub || 'Empieza en el punto negro de cada trazo y repasa la línea de puntos sin levantar el lápiz.', nombre: true }, s), sol: null };
+  }
+  function horario(spec) {
+    var dias = spec.dias || ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'], filas = spec.filas || 7;
+    var x0 = 15, y0 = 50, ancho = 180, colH = 26, colD = (ancho - colH) / dias.length, alto = spec.altoFila || 25, cab = 11, s = '';
+    s += txt(15, 42, 'Nombre:', { size: 3.7 }) + '<path d="M31 42.5H118" stroke="' + TINTA + '" stroke-width=".2"/>' + txt(125, 42, 'Curso:', { size: 3.7 }) + '<path d="M138 42.5H195" stroke="' + TINTA + '" stroke-width=".2"/>';
+    s += '<rect x="' + x0 + '" y="' + y0 + '" width="' + ancho + '" height="' + cab + '" fill="' + TINTA + '"/>';
+    s += txt(x0 + colH / 2, y0 + 7.4, 'Hora', { size: 4, anchor: 'middle', fill: '#fff', bold: true });
+    dias.forEach(function (dd, i) { s += txt(x0 + colH + (i + .5) * colD, y0 + 7.4, dd, { size: 4.2, anchor: 'middle', fill: '#fff', bold: true }); });
+    var y = y0 + cab;
+    for (var i = 0; i < filas; i++) {
+      var recreo = spec.recreo && i === spec.recreo, hh = recreo ? 10 : alto;
+      if (recreo) {
+        s += '<rect x="' + x0 + '" y="' + f(y) + '" width="' + ancho + '" height="' + hh + '" fill="#e4e1d8" stroke="' + TINTA + '" stroke-width=".3"/>';
+        s += txt(105, y + 6.6, 'R E C R E O', { size: 4, anchor: 'middle', bold: true, fill: GRIS });
+      } else {
+        s += '<rect x="' + x0 + '" y="' + f(y) + '" width="' + colH + '" height="' + hh + '" fill="#f3f1ea" stroke="' + TINTA + '" stroke-width=".3"/>';
+        s += '<path d="M' + (x0 + 4) + ' ' + f(y + hh / 2) + 'h' + (colH - 8) + '" stroke="#b4b4ba" stroke-width=".2" stroke-dasharray="1 1"/>';
+        dias.forEach(function (dd, j) { s += '<rect x="' + f(x0 + colH + j * colD) + '" y="' + f(y) + '" width="' + f(colD) + '" height="' + hh + '" fill="#fff" stroke="' + TINTA + '" stroke-width=".3"/>'; });
+      }
+      y += hh;
+    }
+    s += '<rect x="' + x0 + '" y="' + y0 + '" width="' + ancho + '" height="' + f(y - y0) + '" fill="none" stroke="' + TINTA + '" stroke-width=".8"/>';
+    return { svg: hoja({ titulo: spec.titulo || 'Horario escolar' }, s), sol: null };
+  }
+
   var TIPOS = {
     sopa: sopa, sudoku: sudoku, laberinto: laberinto, bingo90: bingo90, bingo75: bingo75, 'bingo-numeros': bingoNumeros,
     tabla: tabla, 'tablas-todas': tablasTodas, pitagorica: pitagorica, 'mult-practica': multPractica,
@@ -1135,7 +1187,8 @@
     'sudoku-dibujos': sudokuDibujos, 'bingo-palabras': bingoPalabras, 'bingo-palabras-lista': bingoPalabrasLista,
     'laberinto-arbol': laberintoArbol, carta: carta, sobre: sobre, 'carta-respuesta': cartaRespuesta, crucigrama: crucigrama,
     'caligrafia-letras': caligrafiaLetras, 'caligrafia-frases': caligrafiaFrases, 'trazos-imprenta': trazosImprenta,
-    multiplicaciones: multiplicaciones, divisiones: divisiones, mandala: mandala
+    multiplicaciones: multiplicaciones, divisiones: divisiones, mandala: mandala,
+    grafomotricidad: grafomotricidad, horario: horario
   };
   // Tipos cuyo contenido cambia con la semilla (tienen botón «Otra distinta»)
   var ALEATORIOS = { sopa: 1, sudoku: 1, laberinto: 1, bingo90: 1, bingo75: 1, 'mult-practica': 1, operaciones: 1,

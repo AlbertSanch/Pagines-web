@@ -303,7 +303,7 @@ ${practicaOps('mixta', false, 'Practica sumas y restas aquí')}
     title: 'Papel para imprimir: milimetrado, cuadriculado, pautado',
     desc: 'Hojas de papel para imprimir en A4: milimetrado, cuadriculado de 4 y 5 mm, pautado, pentagramas y punteado. PDF gratis a tamaño real.',
     h1: 'Papel para imprimir',
-    resumen: 'Milimetrado, cuadrícula, pauta, pentagramas y puntos',
+    resumen: 'Milimetrado, cuadrícula, pauta, pentagramas y horario',
     entrada: 'Cuando se acaba el cuaderno o hace falta una sola hoja de papel milimetrado, no merece la pena comprar un bloc entero. Estas plantillas en A4 están dibujadas a tamaño real: si imprimes al 100 %, un milímetro en la hoja es un milímetro de verdad.',
     hojas: [{ tipo: 'papel', clase: 'cuadriculado', paso: 5, alt: 'Papel cuadriculado de 5 mm' }],
     copias: 1,
@@ -318,6 +318,7 @@ ${practicaOps('mixta', false, 'Practica sumas y restas aquí')}
 <li><a href="/papel/pautado/">Pautado</a>: caligrafía y primeros cursos de primaria.</li>
 <li><a href="/papel/pentagramas/">Pentagramas</a>: lenguaje musical y composición.</li>
 <li><a href="/papel/puntos/">Punteado</a>: agendas tipo bullet journal, bocetos y diagramas.</li>
+<li><a href="/papel/horario-escolar/">Horario escolar</a>: plantilla de lunes a viernes para rellenar.</li>
 </ul>
 <h2>Papel y tinta</h2>
 <p>Con folio normal de 80 gramos basta. Si vas a escribir con pluma o rotulador, un papel de 90 o 100 gramos evita que la tinta traspase. Las líneas son finas y de color suave para que no compitan con lo que escribas; si tu impresora es en blanco y negro, saldrán en gris claro.</p>`,
@@ -326,6 +327,26 @@ ${practicaOps('mixta', false, 'Practica sumas y restas aquí')}
       ['¿Puedo imprimir por las dos caras?', 'Sí. Activa la impresión a doble cara en tu impresora o imprime una cara, da la vuelta al papel y vuelve a imprimir.']
     ],
     amazon: [['Papel A4 de 100 gramos', 'papel A4 100 g 500 hojas']]
+  },
+  {
+    cat: 'papel', slug: 'horario-escolar', corto: 'Horario escolar',
+    title: 'Horario escolar para imprimir y rellenar (PDF gratis)',
+    desc: 'Horario escolar para imprimir y rellenar: de lunes a viernes con la franja del recreo, y otro de diez horas para secundaria o extraescolares. PDF gratis.',
+    h1: 'Horario escolar para imprimir',
+    entrada: 'Dos plantillas de horario de lunes a viernes para rellenar a mano: una de seis sesiones con la franja del recreo, como la de primaria, y otra de diez filas para secundaria, para quien tiene clases por la tarde o para apuntar también las extraescolares.',
+    hojas: [
+      { tipo: 'horario', filas: 7, recreo: 3, altoFila: 30, titulo: 'Horario escolar' },
+      { tipo: 'horario', filas: 10, altoFila: 21, titulo: 'Horario de clases' }
+    ],
+    copias: 1,
+    cuerpo: `
+<h2>Cómo rellenarlo</h2>
+<p>En la primera columna van las horas: la de inicio arriba y la de final debajo de la línea de puntos (por ejemplo, 9:00 y 9:45). En cada casilla, el nombre de la asignatura y, si cabe, el aula o el profesor. Las casillas son grandes para que se pueda escribir con letra de niño.</p>
+<p>Un truco que ayuda a los pequeños: asignar un color a cada asignatura (azul para Lengua, rojo para Matemáticas, verde para Ciencias) y colorear de ese color el borde de la casilla. Así reconocen el día de un vistazo, antes incluso de saber leer bien.</p>
+<h2>Dónde ponerlo</h2>
+<p>Pegado en la primera hoja de la agenda, en la puerta del armario o junto al escritorio. Para preparar la mochila la noche anterior, que es lo que más evita olvidos, conviene que esté a la vista en el sitio donde se hace.</p>
+<p>Si lo quieres reutilizar todo el curso, plastifícalo o mételo en una funda y escribe con rotulador borrable; así se puede corregir cuando cambie una hora o una extraescolar.</p>`,
+    amazon: [['Fundas para plastificar A4', 'fundas plastificar A4'], ['Rotuladores borrables de punta fina', 'rotuladores borrables punta fina']]
   },
   {
     cat: 'papel', slug: 'milimetrado', corto: 'Papel milimetrado',

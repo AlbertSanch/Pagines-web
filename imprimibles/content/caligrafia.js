@@ -26,7 +26,7 @@ const letraLigada = `
 module.exports = [
   {
     cat: 'caligrafia', slug: '', corto: 'Caligrafía', nav: 'Caligrafía',
-    resumen: 'Letra ligada, mayúsculas y números para repasar',
+    resumen: 'Grafomotricidad, letra ligada, mayúsculas y números',
     title: 'Fichas de caligrafía para imprimir: letra ligada (PDF)',
     desc: 'Fichas de caligrafía para imprimir: frases para repasar y copiar en letra ligada, con pauta de primaria. Abecedario, mayúsculas y números. PDF gratis.',
     h1: 'Fichas de caligrafía para imprimir',
@@ -42,7 +42,7 @@ ${letraLigada}
 <h2>Por dónde empezar</h2>
 <ul>
 <li>Si todavía no escribe en ligada, empieza por el <a href="/caligrafia/abecedario/">abecedario en letra ligada</a>, letra a letra.</li>
-<li>En infantil, antes de la ligada, se suele aprender la <a href="/caligrafia/letras-mayusculas/">letra de imprenta en mayúsculas</a>.</li>
+<li>En infantil, primero los <a href="/caligrafia/grafomotricidad/">trazos de grafomotricidad</a> y después la <a href="/caligrafia/letras-mayusculas/">letra de imprenta en mayúsculas</a>.</li>
 <li>Para los números, tienes los <a href="/caligrafia/numeros/">números del 0 al 9 para repasar</a>.</li>
 </ul>
 <p>Si solo necesitas la hoja con pauta, sin modelos, la tienes en <a href="/papel/pautado/">papel pautado</a>.</p>`,
@@ -51,6 +51,33 @@ ${letraLigada}
       ['¿A qué edad se empieza la letra ligada?', 'Depende del colegio: algunos la introducen en infantil, a los 5 años, y otros en primero de primaria. Antes conviene que el niño domine los trazos básicos y la letra de imprenta.']
     ],
     amazon: [['Lápices triangulares para niños', 'lapices triangulares niños'], ['Cuadernillos de caligrafía', 'cuadernillo caligrafia']]
+  },
+  {
+    cat: 'caligrafia', slug: 'grafomotricidad', corto: 'Grafomotricidad',
+    title: 'Fichas de grafomotricidad para imprimir: infantil (PDF)',
+    desc: 'Fichas de grafomotricidad para infantil: trazos rectos, quebrados y curvos para repasar con punto de inicio. Zigzag, ondas, bucles y espirales. PDF gratis.',
+    h1: 'Fichas de grafomotricidad',
+    entrada: 'Trazos para repasar antes de aprender a escribir: rectas, diagonales, zigzag y almenas en la primera hoja; ondas, puentes, copas, bucles y espirales en la segunda. Cada trazo tiene un punto negro que marca dónde empezar.',
+    hojas: [
+      { tipo: 'grafomotricidad', titulo: 'Grafomotricidad: trazos rectos', trazos: ['horizontal', 'vertical', 'diagonal', 'zigzag', 'castillo', 'zigzag'] },
+      { tipo: 'grafomotricidad', titulo: 'Grafomotricidad: trazos curvos', trazos: ['ondas', 'puentes', 'copas', 'bucles', 'espirales', 'ondas'] }
+    ],
+    copias: 1,
+    cuerpo: `
+<h2>Qué es la grafomotricidad</h2>
+<p>Es el trabajo de los movimientos de la mano que después se usarán para escribir. Cada letra está hecha de unos pocos trazos básicos: la «m» y la «n» son puentes, la «u» es una copa, la «l» y la «e» son bucles, la «v» y la «w» son zigzag. Si el niño domina esos trazos sueltos, aprender las letras le resulta mucho más fácil.</p>
+<h2>En qué orden trabajar los trazos</h2>
+<ol>
+<li><strong>Verticales y horizontales</strong>, siempre de arriba abajo y de izquierda a derecha.</li>
+<li><strong>Diagonales y zigzag</strong>, que exigen cambiar de dirección sin levantar el lápiz.</li>
+<li><strong>Almenas</strong> (el trazo de castillo), con ángulos rectos.</li>
+<li><strong>Ondas, puentes y copas</strong>, las primeras curvas.</li>
+<li><strong>Bucles y espirales</strong>, los más difíciles, que preparan la letra ligada.</li>
+</ol>
+<h2>Consejos para hacerlas</h2>
+<p>Antes de coger el lápiz, que el niño recorra el trazo con el dedo. Después, que lo repase despacio, empezando siempre en el punto negro: el sentido del movimiento importa tanto como la forma. Si se sale, no pasa nada; la precisión llega con la repetición.</p>
+<p>Para los más pequeños, de 3 y 4 años, funcionan mejor las ceras gruesas o un lápiz triangular; plastificar la hoja y usar rotulador borrable permite repetirla muchas veces. Cuando los trazos salgan solos, el siguiente paso son las <a href="/caligrafia/letras-mayusculas/">letras mayúsculas para repasar</a>.</p>`,
+    amazon: [['Lápices triangulares para niños', 'lapices triangulares niños'], ['Fundas para plastificar A4', 'fundas plastificar A4'], ['Rotuladores borrables', 'rotuladores borrables niños']]
   },
   {
     cat: 'caligrafia', slug: 'abecedario', corto: 'Abecedario en letra ligada',
