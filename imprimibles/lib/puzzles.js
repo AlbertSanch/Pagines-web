@@ -934,16 +934,63 @@
     return { celdas: celdas, puestas: puestas, cruces: cruces };
   }
 
+  // ---------- caligrafía ----------
+  var GRIS_REPASO = '#b4b4ba';
+  function letraLigada(x, y, texto, fs, color, ancho) {
+    return '<text x="' + f(x) + '" y="' + f(y) + '" font-family="\'Playwrite ES\',cursive" font-weight="300" font-size="' + f(fs) + '" fill="' + color + '"' +
+      (ancho ? ' textLength="' + f(ancho) + '" lengthAdjust="spacing"' : '') + '>' + esc(texto) + '</text>';
+  }
+  function pautaLigada(y, h) {
+    return '<path d="M15 ' + f(y - h * 1.96) + 'H195M15 ' + f(y + h) + 'H195" stroke="#c9c9d2" stroke-width=".2" stroke-dasharray="1 1"/>' +
+      '<path d="M15 ' + f(y - h) + 'H195M15 ' + f(y) + 'H195" stroke="#7f93b8" stroke-width=".28"/>';
+  }
+  function caligrafiaLetras(spec) {
+    var h = 5, fs = h / .52, y = 61, paso = 19, s = '';
+    spec.letras.forEach(function (l) {
+      [l, l.toUpperCase()].forEach(function (forma) {
+        s += pautaLigada(y, h) + letraLigada(17, y, forma, fs, TINTA);
+        s += letraLigada(36, y, Array(forma === l ? 9 : 7).fill(forma).join(' '), fs, GRIS_REPASO, 155);
+        y += paso;
+        s += pautaLigada(y, h);
+        y += paso;
+      });
+    });
+    var nombre = spec.letras.join(', ').replace(/, ([^,]*)$/, ' y $1');
+    return { svg: hoja({ titulo: spec.titulo || 'Caligrafía: ' + nombre, sub: 'Repasa las letras grises sin salirte y luego escríbelas tú en el renglón de abajo.', nombre: true }, s), sol: null };
+  }
+  function caligrafiaFrases(spec, seed) {
+    var r = rng(seed), h = 4.5, fs = h / .52, y = 60, paso = 17.5, s = '';
+    shuffle(r, spec.frases).slice(0, 4).forEach(function (fr) {
+      s += pautaLigada(y, h) + letraLigada(17, y, fr, fs, GRIS_REPASO);
+      y += paso;
+      for (var i = 0; i < 2; i++) { s += pautaLigada(y, h); y += paso; }
+    });
+    return { svg: hoja({ titulo: spec.titulo || 'Caligrafía: frases para copiar', sub: 'Repasa la frase gris y cópiala dos veces en los renglones de debajo.', nombre: true, seed: seed }, s), sol: null };
+  }
+  function trazosImprenta(spec) {
+    var H = spec.alto || 14, fs = H / .72, y = 56 + H, paso = spec.paso || 30, s = '';
+    spec.letras.forEach(function (l) {
+      s += '<path d="M15 ' + f(y - H) + 'H195M15 ' + f(y) + 'H195" stroke="#7f93b8" stroke-width=".3"/>' +
+        '<path d="M15 ' + f(y - H / 2) + 'H195" stroke="#c9c9d2" stroke-width=".25" stroke-dasharray="1.2 1.2"/>';
+      s += '<text x="17" y="' + f(y) + '" font-size="' + f(fs) + '" fill="' + TINTA + '">' + esc(l) + '</text>';
+      s += '<text x="' + f(17 + fs * .95) + '" y="' + f(y) + '" font-size="' + f(fs) + '" fill="' + GRIS_REPASO + '" textLength="' + f(176 - fs * .95) + '" lengthAdjust="spacing">' +
+        esc(Array(spec.repeticiones || 6).fill(l).join(' ')) + '</text>';
+      y += paso;
+    });
+    return { svg: hoja({ titulo: spec.titulo, sub: spec.sub || 'Empieza por la letra negra y repasa las grises siguiendo la forma.', nombre: true }, s), sol: null };
+  }
+
   var TIPOS = {
     sopa: sopa, sudoku: sudoku, laberinto: laberinto, bingo90: bingo90, bingo75: bingo75, 'bingo-numeros': bingoNumeros,
     tabla: tabla, 'tablas-todas': tablasTodas, pitagorica: pitagorica, 'mult-practica': multPractica,
     operaciones: operaciones, papel: papel,
     'sudoku-dibujos': sudokuDibujos, 'bingo-palabras': bingoPalabras, 'bingo-palabras-lista': bingoPalabrasLista,
-    'laberinto-arbol': laberintoArbol, carta: carta, sobre: sobre, 'carta-respuesta': cartaRespuesta, crucigrama: crucigrama
+    'laberinto-arbol': laberintoArbol, carta: carta, sobre: sobre, 'carta-respuesta': cartaRespuesta, crucigrama: crucigrama,
+    'caligrafia-letras': caligrafiaLetras, 'caligrafia-frases': caligrafiaFrases, 'trazos-imprenta': trazosImprenta
   };
   // Tipos cuyo contenido cambia con la semilla (tienen botón «Otra distinta»)
   var ALEATORIOS = { sopa: 1, sudoku: 1, laberinto: 1, bingo90: 1, bingo75: 1, 'mult-practica': 1, operaciones: 1,
-    'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1, crucigrama: 1 };
+    'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1, crucigrama: 1, 'caligrafia-frases': 1 };
 
   function render(spec, seed) {
     var fn = TIPOS[spec.tipo];

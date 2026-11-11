@@ -14,7 +14,8 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.8",
     "@fontsource/andika": "^5.3.0",
-    "@fontsource/besley": "^5.3.0"
+    "@fontsource/besley": "^5.3.0",
+    "@fontsource/playwrite-es": "^5.3.0"
   },
   "private": true
 }

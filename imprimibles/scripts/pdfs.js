@@ -13,6 +13,7 @@ const css = `
 @font-face{font-family:Besley;src:url(${fuente('besley-800.woff2')});font-weight:800}
 @font-face{font-family:"Andika";src:url(${fuente('andika-400.woff2')});font-weight:400}
 @font-face{font-family:"Andika";src:url(${fuente('andika-700.woff2')});font-weight:700}
+@font-face{font-family:"Playwrite ES";src:url(${fuente('playwrite-es-300.woff2')});font-weight:300}
 @page{size:A4;margin:0}html,body{margin:0}
 svg{display:block;width:210mm;height:296.5mm;break-after:page}`;
 
@@ -29,7 +30,7 @@ svg{display:block;width:210mm;height:296.5mm;break-after:page}`;
     if (soloNuevos && fs.existsSync(destino)) continue;
     const fichas = [], soluciones = [];
     for (let v = 0; v < p.copias; v++) {
-      p.hojas.forEach((h) => {
+      p.hojas.concat(p.hojasExtra || []).forEach((h) => {
         if (v > 0 && !h.aleatoria) return;
         const r = P.render(h.spec, (h.seed + v * 7919) >>> 0);
         fichas.push(r.svg);
