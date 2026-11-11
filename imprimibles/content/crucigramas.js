@@ -143,6 +143,24 @@ const ingles = [
   ['seven', 'Siete'], ['twelve', 'Doce']
 ];
 
+const inglesIngles = [
+  ['dog', 'A pet that barks'], ['cat', 'A pet that says «meow»'], ['cow', 'A farm animal that gives us milk'],
+  ['elephant', 'A big grey animal with a trunk'], ['giraffe', 'The animal with the longest neck'],
+  ['banana', 'A long yellow fruit'], ['apple', 'A red or green fruit that grows on trees'],
+  ['bread', 'You use it to make a sandwich'], ['breakfast', 'The first meal of the day'],
+  ['teacher', 'The person who teaches you at school'], ['library', 'A place where you can borrow books'],
+  ['kitchen', 'The room where you cook'], ['bedroom', 'The room where you sleep'],
+  ['Monday', 'The day after Sunday'], ['Friday', 'The last school day of the week'],
+  ['December', 'The month of Christmas'], ['summer', 'The hottest season of the year'],
+  ['winter', 'The coldest season of the year'], ['umbrella', 'You open it when it rains'],
+  ['doctor', 'You visit this person when you are ill'], ['airport', 'A place where planes take off and land'],
+  ['grandmother', 'Your mother\'s mother'], ['brother', 'A boy who has the same parents as you'],
+  ['twelve', 'Ten plus two'], ['hundred', 'Ten times ten'], ['yellow', 'The colour of the sun and of lemons'],
+  ['purple', 'Red and blue make this colour'], ['moon', 'You can see it in the sky at night'],
+  ['clock', 'It tells you the time'], ['football', 'A team sport with a ball and two goals'],
+  ['happy', 'The opposite of sad'], ['tall', 'The opposite of short']
+];
+
 const comoSeHace = `
 <h2>Cómo se resuelve</h2>
 <p>Cada palabra empieza en la casilla con su número. Las <strong>horizontales</strong> se escriben de izquierda a derecha y las <strong>verticales</strong>, de arriba abajo. El número entre paréntesis al final de cada pista dice cuántas letras tiene la palabra. Como en todos los pasatiempos, se escribe en mayúsculas y sin tildes; la Ñ sí se respeta.</p>
@@ -202,12 +220,19 @@ module.exports = [
 <p>Las palabras son las de una Navidad española, no una traducción de listas en inglés: Nochebuena y Nochevieja, polvorón y mazapán, paje y cabalgata, villancico y pandereta. Cada hoja toma doce de un banco de veintiséis.</p>
 <p>Si buscas más fichas para estas fechas, en <a href="/navidad/">fichas de Navidad</a> están la carta a los Reyes Magos, el bingo de Navidad, el laberinto con forma de árbol y la <a href="/sopas-de-letras/navidad/">sopa de letras de Navidad</a>.</p>`),
   pagina('en-ingles', 'En inglés',
-    'Crucigramas en inglés para niños para imprimir (PDF)',
-    'Crucigramas en inglés para primaria: la pista está en español y la respuesta se escribe en inglés. Colores, familia, animales, días y números. Con solución.',
-    'Crucigramas en inglés para imprimir',
-    'Crucigramas para repasar vocabulario de inglés: la pista está en español («Perro», «Amarillo», «Lunes») y hay que escribir la palabra en inglés. Vocabulario básico de primaria: colores, familia, animales, días de la semana, números y el colegio.',
+    'Crucigrama en inglés para imprimir, con solución (PDF)',
+    'Crucigramas en inglés en dos niveles: pistas en español para primaria y pistas en inglés para secundaria. Vocabulario básico, con solución. PDF gratis.',
+    'Crucigrama en inglés para imprimir',
+    'Dos crucigramas para repasar vocabulario de inglés. En el primero la pista está en español («Perro», «Amarillo», «Lunes») y hay que escribir la palabra en inglés: es el de primaria. En el segundo, todo está en inglés («A pet that barks», «The first meal of the day»): para los últimos cursos de primaria y secundaria.',
     ingles, 12, `
+<h2>Dos niveles</h2>
+<p><strong>Pistas en español.</strong> Es un ejercicio de traducción directa con el vocabulario de los primeros cursos de primaria: colores, familia, animales, días de la semana, números y el colegio. Sirve a partir de tercero, cuando ya escriben en inglés con algo de soltura.</p>
+<p><strong>Pistas en inglés.</strong> Aquí hay que entender una definición sencilla en inglés y encontrar la palabra: «The room where you sleep», «Ten times ten», «The opposite of sad». Obliga a leer y a pensar en inglés, sin pasar por el español. Va bien desde quinto o sexto de primaria y en los primeros cursos de la ESO.</p>
 <h2>Cómo se usan en clase de inglés</h2>
-<p>El crucigrama obliga a escribir cada palabra letra a letra, y eso fija la ortografía mejor que una lista de vocabulario: si el niño escribe «YELOW», la palabra que cruza no encaja y se da cuenta solo. Funciona bien como repaso al final de una unidad o como tarea para casa.</p>
-<p>El vocabulario es el de los primeros cursos de primaria. Las palabras se escriben en mayúsculas, así que «Monday» aparece como MONDAY; conviene recordar que en inglés los días de la semana se escriben siempre con mayúscula inicial.</p>`)
+<p>El crucigrama obliga a escribir cada palabra letra a letra, y eso fija la ortografía mejor que una lista de vocabulario: si el alumno escribe «YELOW», la palabra que cruza no encaja y se da cuenta solo. Funciona como repaso al final de una unidad, como tarea para casa o como actividad para los cinco últimos minutos de clase.</p>
+<p>Las palabras se escriben en mayúsculas, así que «Monday» aparece como MONDAY. Conviene recordar que en inglés los días de la semana y los meses se escriben siempre con mayúscula inicial.</p>`,
+    { hojas: [
+      { tipo: 'crucigrama', titulo: 'Crucigrama en inglés', sub: 'Escribe en inglés cada palabra, una letra por casilla. Entre paréntesis, el número de letras.', palabras: ingles, n: 12 },
+      { tipo: 'crucigrama', ingles: true, titulo: 'English crossword', sub: 'Write each word in the grid, one letter per square. Brackets show the number of letters.', palabras: inglesIngles, n: 12 }
+    ], copias: 2 })
 ];

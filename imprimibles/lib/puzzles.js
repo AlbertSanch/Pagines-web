@@ -58,12 +58,12 @@
     s += '<rect width="210" height="297" fill="#fff"/>';
     if (o.titulo) {
       s += txt(15, 24, o.titulo, { size: 8, titular: true });
-      if (o.sol) s += txt(195, 24, 'Solución', { size: 5, anchor: 'end', fill: ROJO, bold: true });
+      if (o.sol) s += txt(195, 24, o.ingles ? 'Answers' : 'Solución', { size: 5, anchor: 'end', fill: ROJO, bold: true });
     }
     if (o.sub) s += txt(15, 31, o.sub, { size: 3.7, fill: GRIS });
     if (o.nombre && !o.sol) {
-      s += txt(15, 40, 'Nombre:', { size: 3.7 }) + '<path d="M31 40.5H118" stroke="' + TINTA + '" stroke-width=".2"/>';
-      s += txt(125, 40, 'Fecha:', { size: 3.7 }) + '<path d="M138 40.5H195" stroke="' + TINTA + '" stroke-width=".2"/>';
+      s += txt(15, 40, o.ingles ? 'Name:' : 'Nombre:', { size: 3.7 }) + '<path d="M31 40.5H118" stroke="' + TINTA + '" stroke-width=".2"/>';
+      s += txt(125, 40, o.ingles ? 'Date:' : 'Fecha:', { size: 3.7 }) + '<path d="M138 40.5H195" stroke="' + TINTA + '" stroke-width=".2"/>';
     }
     s += cuerpo;
     if (!o.sinPie) {
@@ -868,7 +868,7 @@
         o += txt(x0 + rc[1] * c + c * .08, y0 + rc[0] * c + c * .3, i + 1, { size: f(Math.max(2.2, c * .26)), fill: TINTA });
       });
       var yy = y0 + filas * c + 10, tam = spec.tamPista || 3.5, paso = tam * 1.45;
-      [['Horizontales', hor, 15], ['Verticales', ver, 110]].forEach(function (col) {
+      [[spec.ingles ? 'Across' : 'Horizontales', hor, 15], [spec.ingles ? 'Down' : 'Verticales', ver, 110]].forEach(function (col) {
         var y = yy;
         o += txt(col[2], y, col[0], { size: 4.4, titular: true });
         y += paso + 1.6;
@@ -880,7 +880,7 @@
       });
       return o;
     }
-    var o = { titulo: spec.titulo, sub: spec.sub || 'Escribe cada palabra en su sitio, una letra por casilla. Entre paréntesis, el número de letras.', nombre: true, seed: seed };
+    var o = { titulo: spec.titulo, sub: spec.sub || 'Escribe cada palabra en su sitio, una letra por casilla. Entre paréntesis, el número de letras.', nombre: true, ingles: !!spec.ingles, seed: seed };
     return { svg: hoja(o, dibuja(false)), sol: hoja(Object.assign({}, o, { sol: true }), dibuja(true)) };
   }
   function colocaCruzadas(banco, N, maxC, maxR, r) {
