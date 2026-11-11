@@ -7,11 +7,17 @@ const consejosCarta = (destinatario, cuando) => `
 <h2>Cómo rellenar la carta</h2>
 <p>La carta está pensada para que la complete el propio niño: su nombre y su edad arriba, una casilla para decir qué tal se ha portado, cinco renglones numerados para los regalos, tres renglones libres para contar lo que quiera y un recuadro grande para un dibujo. Al final, la despedida y la firma.</p>
 <p>Los cinco huecos para regalos no son casualidad: obligan a elegir. Si la lista es más larga, se puede pedir que marquen con una estrella el que más ilusión les hace; ayuda a ${destinatario} y también a la familia.</p>
-<h2>Normal o con pauta</h2>
-<p>La primera hoja tiene renglones sencillos, para niños que ya escriben con soltura. La segunda trae pauta de doble línea, la misma que usan en primero y segundo de primaria: las letras pequeñas van entre las dos líneas y así la carta queda más ordenada. Para los que todavía no escriben, pueden dictar la carta a un adulto y encargarse ellos del dibujo.</p>
+<h2>Tres versiones según la edad</h2>
+<ul>
+<li><strong>Con renglones</strong>, para niños que ya escriben con soltura, de 7 u 8 años en adelante.</li>
+<li><strong>Con pauta de doble línea</strong>, la misma que usan en primero y segundo de primaria: las letras pequeñas van entre las dos líneas y la carta queda más ordenada.</li>
+<li><strong>Para dibujar o pegar</strong>, con cuatro recuadros grandes en lugar de renglones. Es la de infantil: el niño recorta los juguetes del catálogo que llega a casa por estas fechas y los pega, o los dibuja. Un adulto puede escribir debajo el nombre de cada regalo.</li>
+</ul>
+<h2>El sobre</h2>
+<p>La última hoja es un sobre para recortar y montar, con la dirección ya escrita. Se recorta por la línea continua y se doblan hacia atrás los laterales y la solapa de abajo, que se pega a los laterales. La carta, doblada en cuatro, entra justa; después se cierra con la solapa de arriba. Queda sitio para que el niño ponga su nombre en «De:» y dibuje el sello.</p>
 <h2>Cuándo y cómo entregarla</h2>
 <p>${cuando}</p>
-<p>Imprímela en folio normal o en papel algo más grueso si va a llevar dibujo con rotuladores. Dobla la hoja en tres y cabe en un sobre americano; si el niño decora también el sobre, mejor.</p>`;
+<p>Imprímela en folio normal o en papel algo más grueso si va a llevar dibujo con rotuladores o recortes pegados. Si prefieres un sobre comprado, la carta doblada en tres cabe en uno americano.</p>`;
 
 module.exports = [
   {
@@ -26,7 +32,8 @@ module.exports = [
     cuerpo: `
 <h2>Qué hay en esta sección</h2>
 <ul>
-<li><a href="/navidad/carta-reyes-magos/">Carta a los Reyes Magos</a> y <a href="/navidad/carta-papa-noel/">carta a Papá Noel</a>, con renglones normales o con pauta para los que empiezan a escribir.</li>
+<li><a href="/navidad/carta-reyes-magos/">Carta a los Reyes Magos</a> y <a href="/navidad/carta-papa-noel/">carta a Papá Noel</a>, con renglones, con pauta o para pegar los recortes del catálogo, y con su sobre.</li>
+<li><a href="/navidad/carta-de-los-reyes-a-los-ninos/">Carta de los Reyes Magos a los niños</a>, la respuesta que dejan junto a los regalos.</li>
 <li><a href="/navidad/bingo/">Bingo de Navidad</a> con palabras en lugar de números, para jugar en clase o en la sobremesa.</li>
 <li><a href="/navidad/laberinto/">Laberinto con forma de árbol de Navidad</a>, en versión fácil y difícil.</li>
 <li><a href="/navidad/sudoku/">Sudokus de Navidad con dibujos</a>, para niños que todavía no han hecho ninguno.</li>
@@ -45,31 +52,35 @@ module.exports = [
   },
   {
     cat: 'navidad', slug: 'carta-reyes-magos', corto: 'Carta a los Reyes Magos',
-    title: 'Carta a los Reyes Magos para imprimir (PDF gratis)',
-    desc: 'Carta a los Reyes Magos para imprimir y rellenar: nombre, edad, cómo se ha portado, cinco regalos y espacio para un dibujo. Con renglones o con pauta.',
+    title: 'Carta a los Reyes Magos para imprimir y rellenar (PDF)',
+    desc: 'Carta a los Reyes Magos para imprimir y rellenar, con renglones, con pauta o para pegar los recortes del catálogo. Incluye sobre para montar. PDF gratis.',
     h1: 'Carta a los Reyes Magos para imprimir',
-    entrada: 'Una carta lista para rellenar a mano: «Queridos Reyes Magos», nombre y edad, cómo se ha portado este año, cinco renglones para pedir regalos y un recuadro para hacerles un dibujo. Hay una versión con renglones y otra con pauta de doble línea.',
+    entrada: 'Tres cartas para rellenar a mano y un sobre para mandarlas: con renglones para los que ya escriben, con pauta para los que están aprendiendo y con cuatro recuadros grandes para dibujar los regalos o pegar los recortes del catálogo de juguetes. Todo en un PDF.',
     hojas: [
       { tipo: 'carta', para: 'reyes' },
-      { tipo: 'carta', para: 'reyes', pauta: true }
+      { tipo: 'carta', para: 'reyes', pauta: true },
+      { tipo: 'carta', para: 'reyes', modo: 'dibujar' },
+      { tipo: 'sobre', para: 'reyes' }
     ],
     copias: 1,
     cuerpo: consejosCarta('Sus Majestades',
       'La tradición es entregarla en mano a un paje real o a los propios Reyes en alguna de sus visitas de diciembre, o echarla en uno de los buzones reales que instalan muchos ayuntamientos. El último día para que llegue a tiempo es el 5 de enero, el día de la cabalgata, aunque cuanto antes se envíe, mejor: los Reyes tienen mucho trabajo esos días.') + `
 <h2>Si hay varios hermanos</h2>
 <p>Imprime una carta para cada uno. Escribir la suya propia, aunque sea con letra de primero de primaria, forma parte de la ilusión. Si tienen edades muy distintas, el mayor puede usar la hoja con renglones y el pequeño la de pauta.</p>
-<p>¿En tu casa también viene Papá Noel? Tienes la <a href="/navidad/carta-papa-noel/">carta a Papá Noel</a> con el mismo formato.</p>`,
+<p>¿En tu casa también viene Papá Noel? Tienes la <a href="/navidad/carta-papa-noel/">carta a Papá Noel</a> con el mismo formato. Y para la mañana del 6 de enero, la <a href="/navidad/carta-de-los-reyes-a-los-ninos/">carta de respuesta de los Reyes Magos</a>, para dejar junto a los regalos.</p>`,
     amazon: [['Sobres de colores', 'sobres de colores navidad'], ['Rotuladores para niños', 'rotuladores lavables niños']]
   },
   {
     cat: 'navidad', slug: 'carta-papa-noel', corto: 'Carta a Papá Noel',
-    title: 'Carta a Papá Noel para imprimir (PDF gratis)',
-    desc: 'Carta a Papá Noel para imprimir y rellenar: nombre, edad, cómo se ha portado, cinco regalos y un recuadro para el dibujo. Con renglones o con pauta.',
+    title: 'Carta a Papá Noel para imprimir y rellenar (PDF)',
+    desc: 'Carta a Papá Noel para imprimir y rellenar, con renglones, con pauta o para pegar los recortes del catálogo de juguetes. Incluye sobre. PDF gratis.',
     h1: 'Carta a Papá Noel para imprimir',
-    entrada: 'La carta para Papá Noel, lista para que los niños la rellenen: «Querido Papá Noel», su nombre y edad, cómo se han portado, los regalos que piden y un dibujo. Con renglones sencillos o con pauta de doble línea.',
+    entrada: 'La carta para Papá Noel en tres versiones, lista para que los niños la rellenen: con renglones, con pauta de doble línea y con recuadros para dibujar los regalos o pegar los recortes del catálogo. Y un sobre «Para Papá Noel, Polo Norte» para recortar y montar.',
     hojas: [
       { tipo: 'carta', para: 'papanoel' },
-      { tipo: 'carta', para: 'papanoel', pauta: true }
+      { tipo: 'carta', para: 'papanoel', pauta: true },
+      { tipo: 'carta', para: 'papanoel', modo: 'dibujar' },
+      { tipo: 'sobre', para: 'papanoel' }
     ],
     copias: 1,
     cuerpo: consejosCarta('Papá Noel',
@@ -77,6 +88,27 @@ module.exports = [
 <h2>Papá Noel y los Reyes Magos</h2>
 <p>En muchas casas vienen los dos: Papá Noel trae algo el día de Navidad y los Reyes, el 6 de enero. Si es vuestro caso, una costumbre que ayuda a no duplicar es repartir la lista: un par de cosas en esta carta y el resto en la <a href="/navidad/carta-reyes-magos/">carta a los Reyes Magos</a>.</p>`,
     amazon: [['Sobres de colores', 'sobres de colores navidad'], ['Rotuladores para niños', 'rotuladores lavables niños']]
+  },
+  {
+    cat: 'navidad', slug: 'carta-de-los-reyes-a-los-ninos', corto: 'Carta de los Reyes a los niños',
+    title: 'Carta de los Reyes Magos a los niños para imprimir',
+    desc: 'Carta de respuesta de los Reyes Magos para dejar junto a los regalos, con hueco para el nombre y lo que ha hecho bien. Versión con carbón dulce. PDF gratis.',
+    h1: 'Carta de los Reyes Magos a los niños',
+    entrada: 'La respuesta de Melchor, Gaspar y Baltasar a la carta de tu hijo, para dejarla junto a los regalos la mañana del 6 de enero. Ya viene redactada: solo hay que escribir su nombre, en qué se ha esforzado este año y en qué puede mejorar. Hay una segunda versión que acompaña al carbón dulce.',
+    hojas: [
+      { tipo: 'carta-respuesta' },
+      { tipo: 'carta-respuesta', variante: 'carbon' }
+    ],
+    copias: 1,
+    cuerpo: `
+<h2>Cómo personalizarla</h2>
+<p>La carta tiene tres huecos. En el primero va el nombre del niño. En el segundo, dos o tres cosas concretas en las que se ha esforzado este año: «en leer cada noche», «en ayudar a poner la mesa», «en cuidar de tu hermana». Cuanto más concretas, más le sorprenderá que los Reyes lo sepan. En el tercero, una sola cosa que puede mejorar, dicha con cariño.</p>
+<p>Para que no reconozca la letra de casa, puede escribirla otro familiar, o rellenarla con letras mayúsculas y un rotulador dorado o plateado. Las firmas de Melchor, Gaspar y Baltasar quedan más creíbles con tres bolígrafos distintos.</p>
+<h2>La versión del carbón dulce</h2>
+<p>La segunda hoja cambia un párrafo: explica que los Reyes dejan un trocito de carbón dulce junto a los regalos, «no como castigo, sino como recordatorio de que el año que viene puedes hacerlo todavía mejor». Funciona para el niño que ha tenido un año con altibajos sin convertir la mañana de Reyes en un mal trago.</p>
+<h2>Dónde dejarla</h2>
+<p>Encima de los regalos, junto a los zapatos o al lado del vaso de agua vacío de los camellos. Muchas familias la meten en el mismo <a href="/navidad/carta-reyes-magos/">sobre de la carta a los Reyes</a>, como si la hubieran contestado en ella. Después suele acabar guardada en una caja de recuerdos: imprímela en papel algo más grueso si quieres que dure.</p>`,
+    amazon: [['Rotuladores dorados y plateados', 'rotuladores dorados plateados'], ['Carbón dulce de Reyes', 'carbon dulce reyes']]
   },
   {
     cat: 'navidad', slug: 'bingo', corto: 'Bingo de Navidad',

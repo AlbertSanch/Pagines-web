@@ -743,8 +743,8 @@
   function carta(spec) {
     var reyes = spec.para !== 'papanoel', pauta = !!spec.pauta, s = '', y;
     var t = reyes
-      ? { saludo: 'Queridos Reyes Magos:', pido: 'Este año os pido:', decir: 'También quiero deciros:', dibujo: 'Os he hecho este dibujo:', despedida: 'Un beso muy fuerte,' }
-      : { saludo: 'Querido Papá Noel:', pido: 'Este año te pido:', decir: 'También quiero decirte:', dibujo: 'Te he hecho este dibujo:', despedida: 'Un beso muy fuerte,' };
+      ? { saludo: 'Queridos Reyes Magos:', pido: 'Este año os pido:', pidoDibujo: 'Os pido estos regalos (dibújalos o pega aquí los recortes del catálogo):', decir: 'También quiero deciros:', dibujo: 'Os he hecho este dibujo:', despedida: 'Un beso muy fuerte,' }
+      : { saludo: 'Querido Papá Noel:', pido: 'Este año te pido:', pidoDibujo: 'Te pido estos regalos (dibújalos o pega aquí los recortes del catálogo):', decir: 'También quiero decirte:', dibujo: 'Te he hecho este dibujo:', despedida: 'Un beso muy fuerte,' };
     function renglon(x1, x2, yy) {
       if (!pauta) return '<path d="M' + x1 + ' ' + f(yy) + 'H' + x2 + '" stroke="#8a8a90" stroke-width=".25"/>';
       return '<path d="M' + x1 + ' ' + f(yy - 4) + 'H' + x2 + 'M' + x1 + ' ' + f(yy) + 'H' + x2 + '" stroke="#7f93b8" stroke-width=".25"/>';
@@ -758,6 +758,16 @@
       var x = 83 + i * 37;
       s += '<rect x="' + x + '" y="54.6" width="5" height="5" rx=".6" fill="none" stroke="' + TINTA + '" stroke-width=".4"/>' + txt(x + 7.5, 59, op, { size: 5 });
     });
+    if (spec.modo === 'dibujar') {
+      s += txt(15, 73, t.pidoDibujo, { size: 5, bold: true });
+      for (y = 0; y < 4; y++) {
+        var bx = 15 + (y % 2) * 92, by = 79 + Math.floor(y / 2) * 84;
+        s += '<rect x="' + bx + '" y="' + by + '" width="88" height="78" rx="3" fill="none" stroke="' + TINTA + '" stroke-width=".4" stroke-dasharray="2 1.5"/>';
+        s += '<circle cx="' + (bx + 7) + '" cy="' + (by + 7) + '" r="4" fill="none" stroke="' + TINTA + '" stroke-width=".4"/>' + txt(bx + 7, by + 8.7, y + 1, { size: 4.6, anchor: 'middle', bold: true });
+      }
+      s += txt(15, 264, t.despedida, { size: 5 }) + renglon(70, 140, 264);
+      return { svg: hoja({ alt: (reyes ? 'Carta a los Reyes Magos' : 'Carta a Papá Noel') + ' para dibujar o pegar los regalos' }, s), sol: null };
+    }
     s += txt(15, 73, t.pido, { size: 5, bold: true });
     for (y = 0; y < 5; y++) s += txt(17, 85 + y * 11, (y + 1) + '.', { size: 5, fill: GRIS }) + renglon(25, 195, 85 + y * 11);
     s += txt(15, 145, t.decir, { size: 5, bold: true });
@@ -769,12 +779,64 @@
     return { svg: hoja({ alt: nombre + (pauta ? ' con pauta' : '') }, s), sol: null };
   }
 
+  // Sobre para la carta: plantilla para recortar y doblar (las solapas van hacia atrás)
+  function sobre(spec) {
+    var reyes = spec.para !== 'papanoel', W = 114, H = 152, x0 = (210 - W) / 2, y0 = 52, lado = 26, sup = 42, inf = 66, s = '';
+    var corte = 'M' + x0 + ' ' + y0 + 'C' + (x0 + 8) + ' ' + (y0 - sup) + ' ' + (x0 + W - 8) + ' ' + (y0 - sup) + ' ' + (x0 + W) + ' ' + y0 +
+      'L' + (x0 + W + lado) + ' ' + (y0 + 14) + 'V' + (y0 + H - 14) + 'L' + (x0 + W) + ' ' + (y0 + H) +
+      'L' + (x0 + W - 10) + ' ' + (y0 + H + inf) + 'H' + (x0 + 10) + 'L' + x0 + ' ' + (y0 + H) +
+      'L' + (x0 - lado) + ' ' + (y0 + H - 14) + 'V' + (y0 + 14) + 'Z';
+    s += '<path d="' + corte + '" fill="none" stroke="' + TINTA + '" stroke-width=".5"/>';
+    s += '<rect x="' + x0 + '" y="' + y0 + '" width="' + W + '" height="' + H + '" fill="none" stroke="#8a8a90" stroke-width=".3" stroke-dasharray="2 1.5"/>';
+    s += '<rect x="' + (x0 + W - 26) + '" y="' + (y0 + 8) + '" width="18" height="22" fill="none" stroke="' + TINTA + '" stroke-width=".4" stroke-dasharray="1 .8"/>';
+    s += reyes ? corona(x0 + W - 24, y0 + 15) : dibujo(0, x0 + W - 17, y0 + 19, 12);
+    var lineas = reyes ? ['A Sus Majestades', 'los Reyes Magos de Oriente', 'Palacio Real', 'Oriente'] : ['Para Papá Noel', 'Casa de Papá Noel', 'Polo Norte'];
+    lineas.forEach(function (l, i) { s += txt(x0 + 12, y0 + 64 + i * 9, l, { size: i < (reyes ? 2 : 1) ? 6 : 5, titular: i < (reyes ? 2 : 1), fill: i < (reyes ? 2 : 1) ? TINTA : GRIS }); });
+    s += txt(x0 + 12, y0 + 128, 'De:', { size: 4.6 }) + '<path d="M' + (x0 + 22) + ' ' + (y0 + 128) + 'H' + (x0 + W - 12) + '" stroke="#8a8a90" stroke-width=".25"/>';
+    s += dibujo(reyes ? 0 : 3, x0 + 18, y0 + 34, 12) + dibujo(2, x0 + 34, y0 + 34, 11);
+    s += txt(105, 14, 'Recorta por la línea continua. Dobla hacia atrás por las líneas de puntos: primero los laterales,', { size: 3.3, anchor: 'middle', fill: GRIS });
+    s += txt(105, 19, 'después la solapa de abajo (pégala a los laterales) y, con la carta dentro, cierra con la de arriba.', { size: 3.3, anchor: 'middle', fill: GRIS });
+    s += txt(105, 287, 'La carta cabe doblada en cuatro.', { size: 3.3, anchor: 'middle', fill: GRIS });
+    return { svg: hoja({ alt: reyes ? 'Sobre para la carta a los Reyes Magos' : 'Sobre para la carta a Papá Noel', sinPie: true }, s), sol: null };
+  }
+
+  // Respuesta de los Reyes Magos al niño
+  function parte(texto, max) {
+    var out = [], l = '';
+    texto.split(' ').forEach(function (w) { if ((l + ' ' + w).trim().length > max) { out.push(l); l = w; } else l = (l + ' ' + w).trim(); });
+    if (l) out.push(l);
+    return out;
+  }
+  function cartaRespuesta(spec) {
+    var s = '', y = 52, carbon = spec.variante === 'carbon';
+    function linea(yy, x1) { return '<path d="M' + (x1 || 15) + ' ' + f(yy) + 'H195" stroke="#8a8a90" stroke-width=".25"/>'; }
+    function parrafo(t) { parte(t, 62).forEach(function (l) { s += txt(15, y, l, { size: 5.6 }); y += 8.6; }); y += 5; }
+    s += corona(148, 16) + corona(166, 13) + corona(184, 16);
+    s += txt(15, 32, 'Querido/a', { size: 9, titular: true }) + linea(32, 66);
+    parrafo('Hemos recibido tu carta y nos ha hecho mucha ilusión. La hemos leído despacio, con los camellos asomándose por encima de nuestros hombros para no perderse nada.');
+    parrafo('Sabemos que este año te has esforzado mucho en:');
+    y += 1; s += linea(y); y += 11; s += linea(y); y += 11; s += linea(y); y += 13;
+    parrafo('Y también sabemos que todavía puedes mejorar en:');
+    y += 1; s += linea(y); y += 11; s += linea(y); y += 13;
+    if (carbon) parrafo('Por eso, junto a tus regalos, te dejamos un trocito de carbón dulce. No es un castigo: es un recordatorio de que el año que viene puedes hacerlo todavía mejor. Confiamos mucho en ti.');
+    else parrafo('Estamos muy orgullosos de ti. Sigue así: ayudando en casa, cuidando de los demás y aprendiendo cosas nuevas cada día.');
+    parrafo('Esta noche dejaremos los regalos con mucho cuidado para no despertar a nadie. Gracias por el agua para los camellos y por el turrón: la noche del 5 de enero es muy larga.');
+    parrafo('Un abrazo muy grande desde Oriente,');
+    y += 16;
+    ['Melchor', 'Gaspar', 'Baltasar'].forEach(function (n, i) {
+      var x = 15 + i * 62;
+      s += '<path d="M' + x + ' ' + f(y) + 'h52" stroke="' + TINTA + '" stroke-width=".3"/>' + txt(x + 26, y + 6.5, n, { size: 5.4, anchor: 'middle', titular: true });
+    });
+    s += txt(15, 280, 'Oriente, 6 de enero', { size: 4, fill: GRIS });
+    return { svg: hoja({ alt: 'Carta de los Reyes Magos a los niños' + (carbon ? ' con carbón dulce' : ''), sinPie: true }, s), sol: null };
+  }
+
   var TIPOS = {
     sopa: sopa, sudoku: sudoku, laberinto: laberinto, bingo90: bingo90, bingo75: bingo75, 'bingo-numeros': bingoNumeros,
     tabla: tabla, 'tablas-todas': tablasTodas, pitagorica: pitagorica, 'mult-practica': multPractica,
     operaciones: operaciones, papel: papel,
     'sudoku-dibujos': sudokuDibujos, 'bingo-palabras': bingoPalabras, 'bingo-palabras-lista': bingoPalabrasLista,
-    'laberinto-arbol': laberintoArbol, carta: carta
+    'laberinto-arbol': laberintoArbol, carta: carta, sobre: sobre, 'carta-respuesta': cartaRespuesta
   };
   // Tipos cuyo contenido cambia con la semilla (tienen botón «Otra distinta»)
   var ALEATORIOS = { sopa: 1, sudoku: 1, laberinto: 1, bingo90: 1, bingo75: 1, 'mult-practica': 1, operaciones: 1,
