@@ -14,7 +14,7 @@ const temas = [
     palabras: ['árbol', 'estrella', 'belén', 'turrón', 'polvorón', 'villancico', 'regalo', 'reyes', 'camello', 'pastor', 'ángel', 'nieve', 'trineo', 'reno', 'campana', 'guirnalda', 'mazapán', 'nochebuena', 'pandereta', 'zambomba', 'roscón', 'uvas', 'cabalgata', 'carbón'],
     cortas: ['árbol', 'belén', 'reyes', 'nieve', 'reno', 'uvas', 'regalo', 'ángel', 'turrón', 'pastor', 'roscón', 'carbón'],
     entrada: 'Sopas de letras de Navidad con vocabulario de aquí: belén, turrón, zambomba, roscón, cabalgata. Sirven para el último día de clase antes de vacaciones o para la sobremesa de Nochebuena.',
-    nota: 'Las palabras son las de una Navidad española (Reyes Magos, uvas, polvorones), no una traducción de listas en inglés llenas de «muérdago» y «elfos». Si la imprimes para una comida familiar, saca una copia por persona y cronometrad quién termina antes.'
+    nota: 'Las palabras son las de una Navidad española (Reyes Magos, uvas, polvorones), no una traducción de listas en inglés llenas de «muérdago» y «elfos». Si la imprimes para una comida familiar, saca una copia por persona y cronometrad quién termina antes. Tienes más fichas para estas fechas en <a href="/navidad/">fichas de Navidad</a>.'
   },
   {
     slug: 'frutas-y-verduras', corto: 'Frutas y verduras', de: 'de frutas y verduras',

@@ -540,13 +540,245 @@
     return { svg: hoja({ alt: spec.alt || 'Papel para imprimir', sinPie: true }, s), sol: null };
   }
 
+  // ---------- Navidad ----------
+  // Dibujos de línea (sin relleno, para colorear) centrados en cx, cy con tamaño s
+  function dibujo(i, cx, cy, s, color, grosor) {
+    var st = ' fill="none" stroke="' + (color || TINTA) + '" stroke-width="' + f(grosor || Math.max(.35, s * .06)) + '" stroke-linejoin="round" stroke-linecap="round"';
+    var o = '', k, p = [];
+    if (i === 0) { // estrella
+      for (k = 0; k < 10; k++) {
+        var rad = k % 2 ? s * .2 : s * .48, a = -Math.PI / 2 + k * Math.PI / 5;
+        p.push(f(cx + rad * Math.cos(a)) + ',' + f(cy + rad * Math.sin(a) + s * .04));
+      }
+      o = '<polygon points="' + p.join(' ') + '"' + st + '/>';
+    } else if (i === 1) { // árbol
+      o = '<path d="M' + f(cx) + ' ' + f(cy - s * .48) + 'L' + f(cx + s * .24) + ' ' + f(cy - s * .1) + 'H' + f(cx + s * .12) +
+        'L' + f(cx + s * .4) + ' ' + f(cy + s * .3) + 'H' + f(cx - s * .4) + 'L' + f(cx - s * .12) + ' ' + f(cy - s * .1) + 'H' + f(cx - s * .24) + 'Z' +
+        'M' + f(cx - s * .08) + ' ' + f(cy + s * .3) + 'V' + f(cy + s * .48) + 'H' + f(cx + s * .08) + 'V' + f(cy + s * .3) + '"' + st + '/>';
+    } else if (i === 2) { // regalo
+      o = '<path d="M' + f(cx - s * .4) + ' ' + f(cy - s * .16) + 'h' + f(s * .8) + 'v' + f(s * .16) + 'h' + f(-s * .8) + 'z' +
+        'M' + f(cx - s * .34) + ' ' + f(cy) + 'v' + f(s * .44) + 'h' + f(s * .68) + 'v' + f(-s * .44) +
+        'M' + f(cx) + ' ' + f(cy - s * .16) + 'v' + f(s * .6) +
+        'M' + f(cx) + ' ' + f(cy - s * .16) + 'C' + f(cx - s * .1) + ' ' + f(cy - s * .48) + ' ' + f(cx - s * .38) + ' ' + f(cy - s * .36) + ' ' + f(cx) + ' ' + f(cy - s * .16) +
+        'C' + f(cx + s * .1) + ' ' + f(cy - s * .48) + ' ' + f(cx + s * .38) + ' ' + f(cy - s * .36) + ' ' + f(cx) + ' ' + f(cy - s * .16) + '"' + st + '/>';
+    } else if (i === 3) { // campana
+      o = '<path d="M' + f(cx - s * .42) + ' ' + f(cy + s * .26) + 'C' + f(cx - s * .3) + ' ' + f(cy + s * .14) + ' ' + f(cx - s * .32) + ' ' + f(cy - s * .4) +
+        ' ' + f(cx) + ' ' + f(cy - s * .4) + 'C' + f(cx + s * .32) + ' ' + f(cy - s * .4) + ' ' + f(cx + s * .3) + ' ' + f(cy + s * .14) + ' ' + f(cx + s * .42) + ' ' + f(cy + s * .26) + 'Z' +
+        'M' + f(cx) + ' ' + f(cy - s * .4) + 'V' + f(cy - s * .48) + '"' + st + '/>' +
+        '<circle cx="' + f(cx) + '" cy="' + f(cy + s * .36) + '" r="' + f(s * .09) + '"' + st + '/>';
+    } else if (i === 4) { // bola
+      o = '<circle cx="' + f(cx) + '" cy="' + f(cy + s * .06) + '" r="' + f(s * .38) + '"' + st + '/>' +
+        '<path d="M' + f(cx - s * .1) + ' ' + f(cy - s * .32) + 'v' + f(-s * .1) + 'h' + f(s * .2) + 'v' + f(s * .1) +
+        'M' + f(cx - s * .36) + ' ' + f(cy + s * .02) + 'Q' + f(cx) + ' ' + f(cy + s * .16) + ' ' + f(cx + s * .36) + ' ' + f(cy + s * .02) + '"' + st + '/>';
+    } else { // vela
+      o = '<path d="M' + f(cx - s * .16) + ' ' + f(cy - s * .1) + 'V' + f(cy + s * .48) + 'H' + f(cx + s * .16) + 'V' + f(cy - s * .1) + 'Z' +
+        'M' + f(cx) + ' ' + f(cy - s * .16) + 'C' + f(cx - s * .14) + ' ' + f(cy - s * .26) + ' ' + f(cx - s * .02) + ' ' + f(cy - s * .4) + ' ' + f(cx) + ' ' + f(cy - s * .48) +
+        'C' + f(cx + s * .02) + ' ' + f(cy - s * .4) + ' ' + f(cx + s * .14) + ' ' + f(cy - s * .26) + ' ' + f(cx) + ' ' + f(cy - s * .16) + 'Z"' + st + '/>';
+    }
+    return o;
+  }
+  var NOMBRES_DIBUJO = ['estrella', 'árbol', 'regalo', 'campana', 'bola', 'vela'];
+
+  // Sudoku con dibujos en lugar de números (4 × 4 o 6 × 6)
+  function sudokuDibujos(spec, seed) {
+    var r = rng(seed), n = spec.n || 4, nivel = spec.nivel || 'facil', lista = [], i;
+    for (i = 0; i < 4; i++) lista.push(unSudoku(n, nivel, r));
+    function rejillaD(su, x, y, lado, conSol) {
+      var br = CAJA[n][0], bc = CAJA[n][1], c = lado / n, fino = '', grueso = '', o = '';
+      for (i = 1; i < n; i++) {
+        var v = 'M' + f(x + i * c) + ' ' + y + 'v' + lado, h = 'M' + x + ' ' + f(y + i * c) + 'h' + lado;
+        if (i % bc === 0) grueso += v; else fino += v;
+        if (i % br === 0) grueso += h; else fino += h;
+      }
+      o += '<path d="' + fino + '" stroke="' + TINTA + '" stroke-width=".2" fill="none"/><path d="' + grueso + '" stroke="' + TINTA + '" stroke-width=".7" fill="none"/>';
+      o += '<rect x="' + x + '" y="' + y + '" width="' + lado + '" height="' + lado + '" fill="none" stroke="' + TINTA + '" stroke-width="1"/>';
+      for (i = 0; i < n * n; i++) {
+        var dado = su.g[i], val = dado || (conSol ? su.sol[i] : 0);
+        if (val) o += dibujo(val - 1, x + (i % n + .5) * c, y + (Math.floor(i / n) + .5) * c, c * .66, dado ? TINTA : ROJO, dado ? null : c * .05);
+      }
+      return o;
+    }
+    function dibuja(sol) {
+      var s = '', pos = [[15, 70], [110, 70], [15, 166], [110, 166]], w = 180 / n;
+      for (i = 0; i < n; i++) {
+        s += dibujo(i, 15 + (i + .5) * w, 52, 9) + txt(15 + (i + .5) * w, 62, NOMBRES_DIBUJO[i], { size: 3.4, anchor: 'middle', fill: GRIS });
+      }
+      lista.forEach(function (su, k) {
+        s += txt(pos[k][0], pos[k][1] - 2.5, 'Sudoku ' + (k + 1), { size: 3.6, fill: GRIS });
+        s += rejillaD(su, pos[k][0], pos[k][1], 85, sol);
+      });
+      s += txt(15, 264, 'En cada fila, cada columna y cada caja marcada tiene que estar cada dibujo una sola vez.', { size: 3.6, fill: GRIS });
+      s += txt(15, 270, 'Dibuja los que faltan. Al terminar, puedes colorearlos.', { size: 3.6, fill: GRIS });
+      return s;
+    }
+    var o = { titulo: spec.titulo, nombre: false, seed: seed };
+    return { svg: hoja(o, dibuja(false)), sol: hoja(Object.assign({}, o, { sol: true }), dibuja(true)) };
+  }
+
+  // Bingo de palabras: dos cartones de 4 × 4 por hoja, con casillas grandes
+  function lineasPalabra(t) {
+    var p = t.split(' ');
+    if (p.length < 2) return [t];
+    var mejor = null;
+    for (var i = 1; i < p.length; i++) {
+      var a = p.slice(0, i).join(' '), b = p.slice(i).join(' '), d = Math.max(a.length, b.length);
+      if (!mejor || d < mejor.d) mejor = { d: d, l: [a, b] };
+    }
+    return mejor.l;
+  }
+  function palabraEnCaja(t, cx, cy, ancho, max) {
+    var l = lineasPalabra(t), largo = Math.max.apply(null, l.map(function (x) { return x.length; }));
+    var size = Math.min(max, ancho / (largo * .68)), o = '';
+    l.forEach(function (x, i) { o += txt(cx, cy + size * .36 + (i - (l.length - 1) / 2) * size * 1.12, x, { size: f(size), anchor: 'middle', bold: true }); });
+    return o;
+  }
+  function bingoPalabras(spec, seed) {
+    var r = rng(seed), s = '', w = 45, h = 26;
+    [34, 160].forEach(function (y0, n) {
+      var palabras = shuffle(r, spec.palabras).slice(0, 16);
+      s += '<rect x="15" y="' + y0 + '" width="180" height="11" fill="' + TINTA + '"/>';
+      s += txt(105, y0 + 7.8, spec.cabecera || 'BINGO', { size: 6.4, anchor: 'middle', fill: '#fff', titular: true });
+      palabras.forEach(function (pal, k) {
+        var x = 15 + (k % 4) * w, y = y0 + 11 + Math.floor(k / 4) * h;
+        s += '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="#fff" stroke="' + TINTA + '" stroke-width=".3"/>';
+        s += palabraEnCaja(pal.toUpperCase(), x + w / 2, y + h / 2, w - 6, 6.6);
+      });
+      s += '<rect x="15" y="' + y0 + '" width="180" height="' + (11 + 4 * h) + '" fill="none" stroke="' + TINTA + '" stroke-width=".8"/>';
+      if (!n) s += '<path d="M10 ' + (y0 + 11 + 4 * h + 5) + 'H200" stroke="#8a8a90" stroke-width=".2" stroke-dasharray="1.5 1.5"/>';
+    });
+    return { svg: hoja({ titulo: spec.titulo, seed: seed }, s), sol: null };
+  }
+  function bingoPalabrasLista(spec) {
+    var s = '', w = 45, h = 18, lista = spec.palabras.slice().sort(function (a, b) { return a.localeCompare(b, 'es'); });
+    lista.forEach(function (pal, k) {
+      var x = 15 + (k % 4) * w, y = 42 + Math.floor(k / 4) * h;
+      s += '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="#fff" stroke="#55555c" stroke-width=".25" stroke-dasharray="1.2 1.2"/>';
+      s += palabraEnCaja(pal.toUpperCase(), x + w / 2, y + h / 2, w - 8, 5.4);
+    });
+    var yf = 42 + Math.ceil(lista.length / 4) * h + 9;
+    s += txt(15, yf, 'Recorta las palabras, dóblalas y mételas en una bolsa. Saca una cada vez y léela en voz alta.', { size: 3.4, fill: GRIS });
+    s += txt(15, yf + 6, 'Imprime otra copia sin recortar para ir marcando las que ya han salido.', { size: 3.4, fill: GRIS });
+    return { svg: hoja({ titulo: spec.titulo, sub: 'Las ' + lista.length + ' palabras que pueden salir en los cartones.' }, s), sol: null };
+  }
+
+  // Laberinto con forma de árbol de Navidad
+  function laberintoArbol(spec, seed) {
+    var r = rng(seed), C = spec.cols, R = spec.filas, cx = (C - 1) / 2, half = (C - 1) / 2;
+    var tronco = Math.max(2, Math.round(R * .12)), cuerpo = R - tronco;
+    var cortes = [0, Math.round(cuerpo * .3), Math.round(cuerpo * .63), cuerpo];
+    var ini = [0, half * .3, half * .5], fin = [half * .45, half * .75, half];
+    var anchoT = Math.max(1, Math.round(half * .12));
+    function hw(fila) {
+      if (fila >= cuerpo) return anchoT;
+      for (var t = 0; t < 3; t++) if (fila < cortes[t + 1]) {
+        var a = cortes[t], b = cortes[t + 1] - 1;
+        return Math.round(ini[t] + (fin[t] - ini[t]) * (b > a ? (fila - a) / (b - a) : 1));
+      }
+    }
+    var dentro = [], i, k;
+    for (i = 0; i < R * C; i++) dentro.push(Math.abs(i % C - cx) <= hw(Math.floor(i / C)));
+    var inicio = cx, final = (R - 1) * C + cx;
+    var paso = {}, vis = {}, pila = [inicio];
+    function clave(a, b) { return a < b ? a + '-' + b : b + '-' + a; }
+    function vecinos(u) {
+      var ur = Math.floor(u / C), uc = u % C, v = [];
+      if (ur > 0) v.push(u - C); if (ur < R - 1) v.push(u + C);
+      if (uc > 0) v.push(u - 1); if (uc < C - 1) v.push(u + 1);
+      return v.filter(function (x) { return dentro[x]; });
+    }
+    vis[inicio] = 1;
+    while (pila.length) {
+      var cur = pila[pila.length - 1], libres = vecinos(cur).filter(function (x) { return !vis[x]; });
+      if (!libres.length) { pila.pop(); continue; }
+      var nx = libres[ri(r, 0, libres.length - 1)];
+      paso[clave(cur, nx)] = 1; vis[nx] = 1; pila.push(nx);
+    }
+    var prev = {}, cola = [inicio]; prev[inicio] = inicio;
+    while (cola.length) {
+      var u = cola.shift();
+      vecinos(u).forEach(function (v) { if (prev[v] == null && paso[clave(u, v)]) { prev[v] = u; cola.push(v); } });
+    }
+    var camino = [], p = final;
+    while (p !== inicio) { camino.push(p); p = prev[p]; }
+    camino.push(inicio); camino.reverse();
+
+    var c = Math.min(180 / C, 210 / R), x0 = (210 - C * c) / 2, y0 = 60;
+    function X(col) { return x0 + col * c; } function Y(fila) { return y0 + fila * c; }
+    function dibuja(sol) {
+      var d = '';
+      for (k = 0; k < R * C; k++) {
+        if (!dentro[k]) continue;
+        var fr = Math.floor(k / C), fc = k % C;
+        var arriba = fr > 0 ? k - C : -1, izq = fc > 0 ? k - 1 : -1, der = fc < C - 1 ? k + 1 : -1, abajo = fr < R - 1 ? k + C : -1;
+        if ((arriba < 0 || !dentro[arriba]) && k !== inicio) d += 'M' + f(X(fc)) + ' ' + f(Y(fr)) + 'h' + f(c);
+        if (izq < 0 || !dentro[izq]) d += 'M' + f(X(fc)) + ' ' + f(Y(fr)) + 'v' + f(c);
+        if (der < 0 || !dentro[der] || !paso[clave(k, der)]) d += 'M' + f(X(fc + 1)) + ' ' + f(Y(fr)) + 'v' + f(c);
+        if (abajo < 0 || !dentro[abajo] ? k !== final : !paso[clave(k, abajo)]) d += 'M' + f(X(fc)) + ' ' + f(Y(fr + 1)) + 'h' + f(c);
+      }
+      var s = '';
+      if (sol) {
+        var pd = 'M' + f(X(cx + .5)) + ' ' + f(y0 - 1.5);
+        camino.forEach(function (q) { pd += 'L' + f(X(q % C + .5)) + ' ' + f(Y(Math.floor(q / C) + .5)); });
+        pd += 'L' + f(X(cx + .5)) + ' ' + f(Y(R) + 1.5);
+        s += '<path d="' + pd + '" fill="none" stroke="' + ROJO + '" stroke-width="' + f(Math.max(.6, c * .22)) + '" stroke-linejoin="round" stroke-linecap="round"/>';
+      }
+      s += '<path d="' + d + '" fill="none" stroke="' + TINTA + '" stroke-width="' + f(Math.max(.4, Math.min(.9, c * .1))) + '" stroke-linecap="square"/>';
+      s += dibujo(0, X(cx + .5), y0 - 7.5, 12, TINTA, .55);
+      s += txt(X(cx + .5) + 9, y0 - 6, 'Empieza aquí', { size: 3.4, fill: GRIS });
+      s += dibujo(2, X(cx + .5), Y(R) + 8, 11, TINTA, .55);
+      s += txt(X(cx + .5) + 9, Y(R) + 9, 'Llega al regalo', { size: 3.4, fill: GRIS });
+      return s;
+    }
+    var o = { titulo: spec.titulo, sub: 'Baja desde la estrella hasta el regalo sin atravesar ninguna pared.', nombre: true, seed: seed };
+    return { svg: hoja(o, dibuja(false)), sol: hoja(Object.assign({}, o, { sol: true }), dibuja(true)) };
+  }
+
+  // Carta a los Reyes Magos o a Papá Noel
+  function corona(x, y) {
+    return '<path d="M' + x + ' ' + (y + 9) + 'V' + y + 'l3.5 4.5 3.5-6 3.5 6 3.5-4.5V' + (y + 9) + 'Z" fill="none" stroke="' + TINTA + '" stroke-width=".5" stroke-linejoin="round"/>' +
+      '<circle cx="' + x + '" cy="' + (y - 1) + '" r="1" fill="none" stroke="' + TINTA + '" stroke-width=".4"/>' +
+      '<circle cx="' + (x + 7) + '" cy="' + (y - 2.6) + '" r="1" fill="none" stroke="' + TINTA + '" stroke-width=".4"/>' +
+      '<circle cx="' + (x + 14) + '" cy="' + (y - 1) + '" r="1" fill="none" stroke="' + TINTA + '" stroke-width=".4"/>';
+  }
+  function carta(spec) {
+    var reyes = spec.para !== 'papanoel', pauta = !!spec.pauta, s = '', y;
+    var t = reyes
+      ? { saludo: 'Queridos Reyes Magos:', pido: 'Este año os pido:', decir: 'También quiero deciros:', dibujo: 'Os he hecho este dibujo:', despedida: 'Un beso muy fuerte,' }
+      : { saludo: 'Querido Papá Noel:', pido: 'Este año te pido:', decir: 'También quiero decirte:', dibujo: 'Te he hecho este dibujo:', despedida: 'Un beso muy fuerte,' };
+    function renglon(x1, x2, yy) {
+      if (!pauta) return '<path d="M' + x1 + ' ' + f(yy) + 'H' + x2 + '" stroke="#8a8a90" stroke-width=".25"/>';
+      return '<path d="M' + x1 + ' ' + f(yy - 4) + 'H' + x2 + 'M' + x1 + ' ' + f(yy) + 'H' + x2 + '" stroke="#7f93b8" stroke-width=".25"/>';
+    }
+    if (reyes) { s += corona(148, 16) + corona(166, 13) + corona(184, 16); }
+    else { s += dibujo(0, 160, 20, 13) + dibujo(3, 176, 20, 12) + dibujo(2, 191, 20, 12); }
+    s += txt(15, 32, t.saludo, { size: 9, titular: true });
+    s += txt(15, 46, 'Me llamo', { size: 5 }) + renglon(37, 125, 46) + txt(128, 46, 'y tengo', { size: 5 }) + renglon(148, 165, 46) + txt(167, 46, 'años.', { size: 5 });
+    s += txt(15, 59, 'Este año me he portado:', { size: 5 });
+    ['muy bien', 'bien', 'regular'].forEach(function (op, i) {
+      var x = 83 + i * 37;
+      s += '<rect x="' + x + '" y="54.6" width="5" height="5" rx=".6" fill="none" stroke="' + TINTA + '" stroke-width=".4"/>' + txt(x + 7.5, 59, op, { size: 5 });
+    });
+    s += txt(15, 73, t.pido, { size: 5, bold: true });
+    for (y = 0; y < 5; y++) s += txt(17, 85 + y * 11, (y + 1) + '.', { size: 5, fill: GRIS }) + renglon(25, 195, 85 + y * 11);
+    s += txt(15, 145, t.decir, { size: 5, bold: true });
+    for (y = 0; y < 3; y++) s += renglon(15, 195, 157 + y * 11);
+    s += txt(15, 194, t.dibujo, { size: 5, bold: true });
+    s += '<rect x="15" y="198" width="180" height="62" rx="3" fill="none" stroke="' + TINTA + '" stroke-width=".4" stroke-dasharray="2 1.5"/>';
+    s += txt(15, 272, t.despedida, { size: 5 }) + renglon(70, 140, 272);
+    var nombre = reyes ? 'Carta a los Reyes Magos' : 'Carta a Papá Noel';
+    return { svg: hoja({ alt: nombre + (pauta ? ' con pauta' : '') }, s), sol: null };
+  }
+
   var TIPOS = {
     sopa: sopa, sudoku: sudoku, laberinto: laberinto, bingo90: bingo90, bingo75: bingo75, 'bingo-numeros': bingoNumeros,
     tabla: tabla, 'tablas-todas': tablasTodas, pitagorica: pitagorica, 'mult-practica': multPractica,
-    operaciones: operaciones, papel: papel
+    operaciones: operaciones, papel: papel,
+    'sudoku-dibujos': sudokuDibujos, 'bingo-palabras': bingoPalabras, 'bingo-palabras-lista': bingoPalabrasLista,
+    'laberinto-arbol': laberintoArbol, carta: carta
   };
   // Tipos cuyo contenido cambia con la semilla (tienen botón «Otra distinta»)
-  var ALEATORIOS = { sopa: 1, sudoku: 1, laberinto: 1, bingo90: 1, bingo75: 1, 'mult-practica': 1, operaciones: 1 };
+  var ALEATORIOS = { sopa: 1, sudoku: 1, laberinto: 1, bingo90: 1, bingo75: 1, 'mult-practica': 1, operaciones: 1,
+    'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1 };
 
   function render(spec, seed) {
     var fn = TIPOS[spec.tipo];

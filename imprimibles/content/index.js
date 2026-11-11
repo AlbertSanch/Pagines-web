@@ -1,6 +1,7 @@
 // Reúne todas las páginas de contenido y calcula lo que necesitan las plantillas.
 const P = require('../lib/puzzles.js');
 const crudas = [
+  ...require('./navidad.js'),
   ...require('./sopas.js'),
   ...require('./logica.js'),
   ...require('./escuela.js')
@@ -20,8 +21,8 @@ const paginas = crudas.map((p) => {
   return Object.assign({}, p, {
     url, base, hojas, pdf, aleatoria, copias,
     tieneSol: nSol > 0,
-    pdfHojas: hojas.length * copias,
-    pdfSoluciones: nSol * copias,
+    pdfHojas: hojas.reduce((n, h) => n + (h.aleatoria ? copias : 1), 0),
+    pdfSoluciones: hojas.reduce((n, h) => n + (h.tieneSol ? (h.aleatoria ? copias : 1) : 0), 0),
     esHub: !p.slug
   });
 });
