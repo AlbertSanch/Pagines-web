@@ -35,7 +35,7 @@ PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 CUANTOS_DIAS = "https://cuantosdiasfaltan.es"
 SITIO = "Festivos de"
-VERSION = "14"
+VERSION = "15"
 HOY = dt.date.fromisoformat(os.environ["FESTIVOS_HOY"]) if os.environ.get("FESTIVOS_HOY") else dt.date.today()  # FESTIVOS_HOY: para probar
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -884,9 +884,17 @@ def pagina_dia(datos, idx, mes, dia):
 <p>Mira también el <a href="/calendario-laboral-{a_prox}/">calendario laboral de {a_prox}</a>, los <a href="/puentes-{a_prox}/">puentes de {a_prox}</a> o planifica tus días libres con el <a href="/planificador-vacaciones/">planificador de vacaciones</a>.</p></section>
 <section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
     d = dt.date(a_prox, mes, dia)
-    titulo = f"¿Es festivo el {fecha_larga(d)} de {a_prox}? Dónde es festivo"
-    if len(titulo) > 65:
-        titulo = f"¿Es festivo el {fecha_larga(d)} de {a_prox}?"
+    donde_p = idx[a_prox].get(d.isoformat())
+    parcial = bool(donde_p and regiones(donde_p)) and len(regiones(donde_p)) < len(COMUNIDADES)
+    if parcial:  # «donde es festivo el 7 de diciembre de 2026» (nov. 2026): festivo solo en algunas comunidades
+        titulo = f"¿Dónde es festivo el {fecha_larga(d)} de {a_prox}? Comunidades"
+        if len(titulo) > 65:
+            titulo = f"¿Dónde es festivo el {fecha_larga(d)} de {a_prox}?"
+        cuerpo = cuerpo.replace(f"<h1>¿Es festivo el {nombre_dia}?</h1>", f"<h1>¿Dónde es festivo el {nombre_dia}?</h1>", 1)
+    else:
+        titulo = f"¿Es festivo el {fecha_larga(d)} de {a_prox}? Dónde es festivo"
+        if len(titulo) > 65:
+            titulo = f"¿Es festivo el {fecha_larga(d)} de {a_prox}?"
     desc = (f"Comprueba si el {nombre_dia} es festivo en tu comunidad o en tu municipio en {' y '.join(map(str, ANIOS))}: "
             "fiestas nacionales, autonómicas y locales según el BOE y los boletines oficiales.")
     return pagina(ruta_dia(d), titulo, desc, cuerpo, [("¿Es festivo hoy?", "/es-festivo/"), (nombre_dia.capitalize(), None)], [faq_ld(preguntas)])
@@ -898,6 +906,23 @@ def caja_dia(id_, etiqueta, d, resumen):
     texto = (("Festivo " if r.startswith("en ") else "Es ") + r) if r else "No es festivo en ninguna comunidad"
     return (f'<div class="tarjeta{" si" if r else ""}" id="{id_}"><span class="etq">{etiqueta}, {fecha_larga(d)}</span>'
             f'<p class="gran">{texto}</p><a href="{ruta_dia(d)}">Ver dónde es festivo →</a></div>')
+
+
+def seccion_donde(datos, idx, d, cuando):
+    """Dónde es festivo hoy o mañana, escrito en la página (el robot la regenera cada día). Si alguien la ve otro día
+    (la web no se ha regenerado), el script la oculta y quedan las tarjetas, que se calculan en el navegador."""
+    if d.year not in ANIOS:
+        return ""
+    donde = idx[d.year].get(d.isoformat())
+    _, texto = respuesta_dia(datos, d.year, d, donde)
+    regs = sorted(regiones(donde), key=lambda c: COMUNIDADES[c][0]) if donde else []
+    lista_cc = ""
+    if regs and len(regs) < len(COMUNIDADES):
+        lista_cc = ('<h3>Comunidades autónomas donde es festivo</h3><ul class="lista-municipios">'
+                    + "".join(f'<li><a href="/comunidad/{c}/">{escape(COMUNIDADES[c][0])}</a></li>' for c in regs) + "</ul>")
+    muni = f"<h3>Municipios donde es fiesta local</h3>{municipios_dia(donde)}" if donde and donde["mun"] else ""
+    return (f'<section class="donde-dia" data-fecha="{d.isoformat()}"><h2>¿Dónde es festivo {cuando}, {fecha_larga(d)}?</h2>'
+            f'<p>{texto}</p>{lista_cc}{muni}<p><a href="{ruta_dia(d)}">Todo sobre el {d.day} de {MESES[d.month - 1]} →</a></p></section>')
 
 
 def pagina_es_festivo(datos, idx):
@@ -918,10 +943,18 @@ def pagina_es_festivo(datos, idx):
               "<a href=\"/es-festivo/'+d.getDate()+'-de-'+M[d.getMonth()]+'/\">Ver dónde es festivo →</a>'}"
               "var p={};try{new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()).forEach(function(x){p[x.type]=+x.value})}catch(e){}"
               "var h=p.year?new Date(p.year,p.month-1,p.day):new Date();"  # el día de hoy en España, no el del reloj del visitante
-              "caja('f-hoy','Hoy',h);caja('f-manana','Mañana',new Date(h.getFullYear(),h.getMonth(),h.getDate()+1))})();</script>")
-    cuerpo = f"""<h1>¿Es festivo hoy?</h1>
-<p class="lead">Mira si hoy o mañana es festivo en España, en tu comunidad o en tu municipio, y elige cualquier día del año para ver dónde es festivo. Con los datos del BOE y de los boletines oficiales de cada comunidad.</p>
+              "caja('f-hoy','Hoy',h);caja('f-manana','Mañana',new Date(h.getFullYear(),h.getMonth(),h.getDate()+1));"
+              "var ok=[iso(h),iso(new Date(h.getFullYear(),h.getMonth(),h.getDate()+1))];"
+              "document.querySelectorAll('.donde-dia').forEach(function(s){if(ok.indexOf(s.getAttribute('data-fecha'))<0)s.hidden=true})})();</script>")
+    donde_hoy = seccion_donde(datos, idx, HOY, "hoy")
+    donde_manana = seccion_donde(datos, idx, HOY + dt.timedelta(days=1), "mañana")
+    hoy_txt = resumen.get(HOY.isoformat())
+    preguntas.insert(0, (f"¿Dónde es festivo hoy, {fecha_larga(HOY)}?",
+                         f"Hoy es festivo {hoy_txt}." if hoy_txt else "Hoy no es festivo en ninguna comunidad ni en ninguno de los municipios de los que tenemos las fiestas locales."))
+    cuerpo = f"""<h1>¿Dónde es festivo hoy?</h1>
+<p class="lead">Dónde es festivo hoy y mañana en España: en toda España, en qué comunidades autónomas y en qué municipios, con los datos del BOE y de los boletines oficiales de cada comunidad. Y elige cualquier día del año para ver dónde es festivo.</p>
 <div class="hoy">{caja_dia("f-hoy", "Hoy", HOY, resumen)}{caja_dia("f-manana", "Mañana", HOY + dt.timedelta(days=1), resumen)}</div>
+{donde_hoy}{donde_manana}
 <p>Las fiestas locales cambian en cada pueblo y ciudad: <a href="/">busca tu municipio</a> para ver exactamente sus festivos.</p>
 <section><h2>Elige un día de {a}</h2>
 <p class="leyenda"><span><span class="muestra n"></span> Festivo en toda España</span><span><span class="muestra a"></span> Festivo en alguna comunidad</span></p>
@@ -929,8 +962,10 @@ def pagina_es_festivo(datos, idx):
 <section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
     # CTR del 0,2 % con 11.800 impresiones en una semana (Search Console, nov. 2026): título y descripción que dicen qué
     # se encuentra (la respuesta de hoy y mañana, por comunidad y municipio). Sin fecha: Google guarda el título varios días.
-    return pagina("/es-festivo/", "¿Es festivo hoy? La respuesta en tu comunidad y tu municipio",
-                  "Hoy y mañana: si es festivo en toda España, en tu comunidad o solo en algunos municipios, con las fiestas locales "
+    # Nov. 2026: 20.665 impresiones en dos semanas en posición ~10 con «dónde es festivo hoy», «comunidades autónomas festivo hoy»
+    # y «mañana es festivo»: la página responde ahí mismo dónde es festivo (comunidades y municipios), sin obligar a otro clic.
+    return pagina("/es-festivo/", "¿Dónde es festivo hoy? Comunidades y municipios, hoy y mañana",
+                  "Dónde es festivo hoy y mañana en España: en qué comunidades autónomas y en qué municipios, con las fiestas locales "
                   "de cada municipio según el BOE y los boletines oficiales. Y dónde es festivo cualquier día del año.",
                   cuerpo, [("¿Es festivo hoy?", None)], [faq_ld(preguntas)], scripts=script)
 
