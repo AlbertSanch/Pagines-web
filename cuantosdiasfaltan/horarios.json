@@ -3989,9 +3989,9 @@ null
 "id": "186549",
 "gira": "ATP",
 "torneo": "Bybit Stockholm Open",
-"utc": "2026-11-12T12:00Z",
+"utc": "2026-11-12T12:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Quarterfinal",
 "pista": "Center Court",
 "jugadores": [
@@ -4000,14 +4000,18 @@ null
 "n": "Alejandro Tabilo",
 "pais": "Chile",
 "gano": null,
-"sets": []
+"sets": [
+2
+]
 },
 {
 "id": "11400",
 "n": "Alex Michelsen",
 "pais": "USA",
 "gano": null,
-"sets": []
+"sets": [
+1
+]
 }
 ]
 },
