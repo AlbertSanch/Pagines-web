@@ -205,7 +205,7 @@
  },
  "/sumas-y-restas/": {
   "fecha": "2026-11-12",
-  "huella": "10620a83f023"
+  "huella": "9c94cd1f2761"
  },
  "/sumas-y-restas/sumas-sin-llevada/": {
   "fecha": "2026-11-12",
@@ -253,7 +253,7 @@
  },
  "/multiplicaciones-y-divisiones/": {
   "fecha": "2026-11-12",
-  "huella": "d8d7dc991a93"
+  "huella": "42e6397387a8"
  },
  "/multiplicaciones-y-divisiones/multiplicaciones-por-una-cifra/": {
   "fecha": "2026-11-12",
@@ -270,6 +270,22 @@
  "/multiplicaciones-y-divisiones/divisiones-de-dos-cifras/": {
   "fecha": "2026-11-12",
   "huella": "c86947106b08"
+ },
+ "/problemas-de-matematicas/": {
+  "fecha": "2026-11-12",
+  "huella": "e9f6af00c556"
+ },
+ "/problemas-de-matematicas/sumas-y-restas/": {
+  "fecha": "2026-11-12",
+  "huella": "e8bd46b5c671"
+ },
+ "/problemas-de-matematicas/multiplicacion-y-division/": {
+  "fecha": "2026-11-12",
+  "huella": "69b7e2df2d41"
+ },
+ "/problemas-de-matematicas/dos-operaciones/": {
+  "fecha": "2026-11-12",
+  "huella": "e0e4559ec0e8"
  },
  "/caligrafia/": {
   "fecha": "2026-11-12",

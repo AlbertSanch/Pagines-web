@@ -133,6 +133,7 @@ module.exports = [
 <p>Como orientación, las multiplicaciones por una cifra y las primeras divisiones se trabajan en tercero de primaria; las multiplicaciones de dos cifras y las divisiones con dividendo de tres cifras, en cuarto.</p>
 <h2>Cómo usar las fichas</h2>
 <p>Cada ficha trae 20 multiplicaciones por una cifra o 12 operaciones más largas, en vertical y con espacio para las cuentas. La solución sale en hoja aparte; en las multiplicaciones de dos cifras incluye también los dos productos parciales, para que se vea dónde está el error si lo hay.</p>
+<p>Para aplicar las operaciones a situaciones reales, tienes los <a href="/problemas-de-matematicas/multiplicacion-y-division/">problemas de multiplicación y división</a>.</p>
 <p>Si el niño falla mucho, casi nunca es un problema de método: suele ser una tabla que no tiene bien aprendida. Apunta las multiplicaciones que falla y repasa esa tabla concreta.</p>`,
     faq: [
       ['¿En qué curso se aprende a dividir?', 'En España las divisiones de una cifra se introducen normalmente en tercero de primaria y se consolidan en cuarto, cuando se pasa a dividendos de tres y cuatro cifras. Las divisiones de dos cifras llegan en quinto.'],

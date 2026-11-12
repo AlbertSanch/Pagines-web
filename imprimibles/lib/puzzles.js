@@ -1261,6 +1261,70 @@
     return { svg: hoja({ alt: 'Calendario de ' + MESES[m].toLowerCase() + ' de ' + a }, s), sol: null };
   }
 
+  // ---------- problemas de matemáticas ----------
+  // Cada plantilla recibe el generador aleatorio y devuelve el enunciado, la operación y la solución.
+  var NOMBRES = ['Lucía', 'Hugo', 'Martina', 'Leo', 'Sofía', 'Mateo', 'Daniela', 'Pablo', 'Valeria', 'Álvaro', 'Carmen', 'Marcos', 'Julia', 'Daniel', 'Paula', 'Adrián', 'Noa', 'Mario', 'Alba', 'Iker', 'Aitana', 'Bruno', 'Vega', 'Nico'];
+  var PROBLEMAS = {
+    sumas: [
+      function (r, N) { var a = ri(r, 12, 60), b = ri(r, 5, 35); return [N + ' tiene ' + a + ' cromos y su abuela le regala ' + b + ' más. ¿Cuántos cromos tiene ahora?', a + ' + ' + b + ' = ' + (a + b), (a + b) + ' cromos']; },
+      function (r) { var a = ri(r, 25, 60), b = ri(r, 5, a - 8); return ['En el autobús van ' + a + ' personas. En la parada se bajan ' + b + '. ¿Cuántas personas quedan en el autobús?', a + ' − ' + b + ' = ' + (a - b), (a - b) + ' personas']; },
+      function (r, N) { var t = ri(r, 6, 9) * 10, a = ri(r, 15, t - 12); return [N + ' ha leído ' + a + ' páginas de un libro de ' + t + ' páginas. ¿Cuántas páginas le faltan por leer?', t + ' − ' + a + ' = ' + (t - a), (t - a) + ' páginas']; },
+      function (r) { var a = ri(r, 12, 45), b = ri(r, 12, 45); return ['En una caja hay ' + a + ' lápices rojos y ' + b + ' lápices azules. ¿Cuántos lápices hay en total?', a + ' + ' + b + ' = ' + (a + b), (a + b) + ' lápices']; },
+      function (r, N) { var a = ri(r, 20, 50), b = ri(r, 6, a - 5); return [N + ' tenía ' + a + ' euros y se ha gastado ' + b + ' euros en un libro. ¿Cuánto dinero le queda?', a + ' − ' + b + ' = ' + (a - b), (a - b) + ' euros']; },
+      function (r) { var a = ri(r, 14, 40), b = ri(r, 6, 25); return ['En el patio hay ' + a + ' niños jugando y llegan ' + b + ' más. ¿Cuántos niños hay ahora en el patio?', a + ' + ' + b + ' = ' + (a + b), (a + b) + ' niños']; },
+      function (r) { var a = ri(r, 15, 48), b = ri(r, 12, 40); return ['Un granjero recoge ' + a + ' huevos por la mañana y ' + b + ' por la tarde. ¿Cuántos huevos ha recogido en todo el día?', a + ' + ' + b + ' = ' + (a + b), (a + b) + ' huevos']; },
+      function (r, N) { var a = ri(r, 11, 16), b = ri(r, 2, 6); return [N + ' tiene ' + a + ' años y su hermana pequeña tiene ' + b + ' años menos. ¿Cuántos años tiene su hermana?', a + ' − ' + b + ' = ' + (a - b), (a - b) + ' años']; },
+      function (r) { var a = ri(r, 40, 90), b = ri(r, 12, a - 15); return ['En una estantería de la biblioteca había ' + a + ' libros y se han prestado ' + b + '. ¿Cuántos libros quedan en la estantería?', a + ' − ' + b + ' = ' + (a - b), (a - b) + ' libros']; },
+      function (r, N) { var a = ri(r, 25, 65), b = ri(r, 25, 65); return [N + ' ha hecho ' + a + ' puntos en la primera partida y ' + b + ' en la segunda. ¿Cuántos puntos ha hecho en total?', a + ' + ' + b + ' = ' + (a + b), (a + b) + ' puntos']; }
+    ],
+    mult: [
+      function (r) { var a = ri(r, 3, 9), b = ri(r, 6, 12); return ['En una caja hay ' + a + ' paquetes de ' + b + ' galletas. ¿Cuántas galletas hay en total?', a + ' × ' + b + ' = ' + a * b, a * b + ' galletas']; },
+      function (r, N) { var k = ri(r, 3, 8), q = ri(r, 4, 12); return [N + ' quiere repartir ' + k * q + ' caramelos entre ' + k + ' amigos a partes iguales. ¿Cuántos caramelos le tocan a cada uno?', k * q + ' : ' + k + ' = ' + q, q + ' caramelos']; },
+      function (r) { var f = ri(r, 9, 14), a = 4; return ['Un autobús tiene ' + f + ' filas de ' + a + ' asientos. ¿Cuántos asientos tiene el autobús?', f + ' × ' + a + ' = ' + f * a, f * a + ' asientos']; },
+      function (r) { var p = ri(r, 5, 9), k = ri(r, 3, 8); return ['Una entrada de cine cuesta ' + p + ' euros. ¿Cuánto pagan ' + k + ' amigos por sus entradas?', k + ' × ' + p + ' = ' + k * p, k * p + ' euros']; },
+      function (r) { var k = ri(r, 4, 6), q = ri(r, 4, 7), re = ri(r, 1, k - 1), t = k * q + re; return ['En una clase de educación física hay ' + t + ' alumnos y se hacen equipos de ' + k + '. ¿Cuántos equipos completos se forman? ¿Cuántos alumnos sobran?', t + ' : ' + k + ' = ' + q + ', resto ' + re, q + ' equipos y sobran ' + re + ' alumnos']; },
+      function (r) { var k = ri(r, 3, 9); return ['Una semana tiene 7 días. ¿Cuántos días hay en ' + k + ' semanas?', k + ' × 7 = ' + 7 * k, 7 * k + ' días']; },
+      function (r, N) { var a = ri(r, 3, 9) * 5, k = ri(r, 3, 9); return [N + ' ahorra ' + a + ' euros cada mes. ¿Cuánto dinero habrá ahorrado en ' + k + ' meses?', a + ' × ' + k + ' = ' + a * k, a * k + ' euros']; },
+      function (r) { var k = ri(r, 3, 9); return ['Una caja de huevos lleva 12 huevos. ¿Cuántas cajas hacen falta para guardar ' + 12 * k + ' huevos?', 12 * k + ' : 12 = ' + k, k + ' cajas']; },
+      function (r) { var v = ri(r, 6, 12) * 10, h = ri(r, 2, 5); return ['Un tren recorre ' + v + ' kilómetros cada hora. ¿Cuántos kilómetros recorre en ' + h + ' horas?', v + ' × ' + h + ' = ' + v * h, v * h + ' kilómetros']; },
+      function (r) { var f = ri(r, 4, 9), q = ri(r, 6, 12); return ['En un parque se han plantado ' + f * q + ' árboles en ' + f + ' filas iguales. ¿Cuántos árboles hay en cada fila?', f * q + ' : ' + f + ' = ' + q, q + ' árboles']; }
+    ],
+    mixto: [
+      function (r, N) { var k = ri(r, 3, 5), p = ri(r, 2, 4), B = k * p < 10 ? 10 : 20; return [N + ' compra ' + k + ' cuadernos a ' + p + ' euros cada uno y paga con un billete de ' + B + ' euros. ¿Cuánto dinero le devuelven?', k + ' × ' + p + ' = ' + k * p + '; ' + B + ' − ' + k * p + ' = ' + (B - k * p), (B - k * p) + ' euros']; },
+      function (r) { var g = ri(r, 8, 25), c = ri(r, 3, 12); return ['En una granja hay ' + g + ' gallinas y ' + c + ' vacas. ¿Cuántas patas hay en total?', g + ' × 2 = ' + 2 * g + '; ' + c + ' × 4 = ' + 4 * c + '; ' + 2 * g + ' + ' + 4 * c + ' = ' + (2 * g + 4 * c), (2 * g + 4 * c) + ' patas']; },
+      function (r, N) { var d = ri(r, 8, 15), k = ri(r, 3, 6), t = d * k + ri(r, 20, 80); return ['Un libro tiene ' + t + ' páginas. ' + N + ' lee ' + d + ' páginas cada día durante ' + k + ' días. ¿Cuántas páginas le quedan por leer?', d + ' × ' + k + ' = ' + d * k + '; ' + t + ' − ' + d * k + ' = ' + (t - d * k), (t - d * k) + ' páginas']; },
+      function (r) { var c = ri(r, 4, 6) * 10, a = ri(r, 70, 140), p = ri(r, 4, 8), tot = a + p, bus = Math.ceil(tot / c); return ['A una excursión van ' + a + ' alumnos y ' + p + ' profesores. En cada autobús caben ' + c + ' personas. ¿Cuántos autobuses hacen falta?', a + ' + ' + p + ' = ' + tot + '; ' + tot + ' : ' + c + ' = ' + Math.floor(tot / c) + (tot % c ? ', resto ' + tot % c + ' → hace falta uno más' : ''), bus + ' autobuses']; },
+      function (r, N) { var a = ri(r, 20, 60), k = ri(r, 2, 5), b = 5, g = ri(r, 5, 15); return [N + ' tenía ' + a + ' cromos. Ha comprado ' + k + ' sobres de ' + b + ' cromos y ha regalado ' + g + ' a un amigo. ¿Cuántos cromos tiene ahora?', k + ' × ' + b + ' = ' + k * b + '; ' + a + ' + ' + k * b + ' = ' + (a + k * b) + '; ' + (a + k * b) + ' − ' + g + ' = ' + (a + k * b - g), (a + k * b - g) + ' cromos']; },
+      function (r) { var a = ri(r, 25, 60), b = ri(r, 25, 60), t = a + b + ri(r, 15, 60); return ['En una tienda había ' + t + ' camisetas. Por la mañana se venden ' + a + ' y por la tarde ' + b + '. ¿Cuántas camisetas quedan?', a + ' + ' + b + ' = ' + (a + b) + '; ' + t + ' − ' + (a + b) + ' = ' + (t - a - b), (t - a - b) + ' camisetas']; },
+      function (r) { var c = ri(r, 8, 20), j = ri(r, 10, 30), k = 4; while ((c + j) % k) j++; return ['Cuatro amigos compran una pelota de ' + c + ' euros y un juego de mesa de ' + j + ' euros, y pagan entre todos a partes iguales. ¿Cuánto paga cada uno?', c + ' + ' + j + ' = ' + (c + j) + '; ' + (c + j) + ' : 4 = ' + (c + j) / 4, (c + j) / 4 + ' euros']; },
+      function (r, N) { var p = ri(r, 2, 4), k = ri(r, 3, 6), e = ri(r, 3, 8); return [N + ' compra ' + k + ' bocadillos a ' + p + ' euros cada uno y ' + k + ' zumos a 1 euro cada uno. Además, compra un postre de ' + e + ' euros. ¿Cuánto gasta en total?', k + ' × ' + p + ' = ' + k * p + '; ' + k + ' × 1 = ' + k + '; ' + k * p + ' + ' + k + ' + ' + e + ' = ' + (k * p + k + e), (k * p + k + e) + ' euros']; }
+    ]
+  };
+  function problemas(spec, seed) {
+    var r = rng(seed), lista = shuffle(r, PROBLEMAS[spec.nivel || 'sumas'].map(function (fn, i) { return i; })).slice(0, spec.n || 6);
+    var nombres = shuffle(r, NOMBRES), items = lista.map(function (i, k) { return PROBLEMAS[spec.nivel || 'sumas'][i](r, nombres[k]); });
+    var alto = spec.nivel === 'mixto' ? 47 : 39;
+    function dibuja(sol) {
+      var o = '', y = 52;
+      items.forEach(function (it, k) {
+        o += '<circle cx="19" cy="' + f(y - 1.5) + '" r="3.6" fill="' + TINTA + '"/>' + txt(19, y, k + 1, { size: 4, anchor: 'middle', bold: true, fill: '#fff' });
+        var lineas = parte(it[0], 82);
+        lineas.forEach(function (l, j) { o += txt(26, y + j * 5.6, l, { size: 4.2 }); });
+        var yo = y + lineas.length * 5.6 + 1;
+        o += txt(26, yo + 2, 'Operaciones:', { size: 3.2, fill: GRIS });
+        if (sol) o += txt(26, yo + 9, it[1], { size: 3.8, bold: true, fill: ROJO });
+        var ys = y + alto - 8;
+        o += txt(122, ys, 'Solución:', { size: 3.8, bold: true }) + '<path d="M140 ' + f(ys + .6) + 'H195" stroke="' + TINTA + '" stroke-width=".25"/>';
+        if (sol) o += txt(142, ys - .6, it[2], { size: 3.8, bold: true, fill: ROJO });
+        o += '<path d="M15 ' + f(y + alto - 4) + 'H195" stroke="' + '#c9c9d2' + '" stroke-width=".25" stroke-dasharray="1 1"/>';
+        y += alto;
+      });
+      return o;
+    }
+    var o = { titulo: spec.titulo, sub: spec.sub || 'Lee bien cada problema, haz las operaciones en el recuadro y escribe la solución con su unidad.', nombre: true, seed: seed };
+    return { svg: hoja(o, dibuja(false)), sol: hoja(Object.assign({}, o, { sol: true }), dibuja(true)) };
+  }
+
   var TIPOS = {
     sopa: sopa, sudoku: sudoku, laberinto: laberinto, bingo90: bingo90, bingo75: bingo75, 'bingo-numeros': bingoNumeros,
     tabla: tabla, 'tablas-todas': tablasTodas, pitagorica: pitagorica, 'mult-practica': multPractica,
@@ -1269,11 +1333,12 @@
     'laberinto-arbol': laberintoArbol, carta: carta, sobre: sobre, 'carta-respuesta': cartaRespuesta, crucigrama: crucigrama,
     'caligrafia-letras': caligrafiaLetras, 'caligrafia-frases': caligrafiaFrases, 'trazos-imprenta': trazosImprenta,
     multiplicaciones: multiplicaciones, divisiones: divisiones, mandala: mandala,
-    grafomotricidad: grafomotricidad, horario: horario, 'calendario-anual': calendarioAnual, 'calendario-mes': calendarioMes
+    grafomotricidad: grafomotricidad, horario: horario, 'calendario-anual': calendarioAnual, 'calendario-mes': calendarioMes,
+    problemas: problemas
   };
   // Tipos cuyo contenido cambia con la semilla (tienen botón «Otra distinta»)
   var ALEATORIOS = { sopa: 1, sudoku: 1, laberinto: 1, bingo90: 1, bingo75: 1, 'mult-practica': 1, operaciones: 1,
-    'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1, crucigrama: 1, 'caligrafia-frases': 1, multiplicaciones: 1, divisiones: 1, mandala: 1 };
+    'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1, crucigrama: 1, 'caligrafia-frases': 1, multiplicaciones: 1, divisiones: 1, mandala: 1, problemas: 1 };
 
   function render(spec, seed) {
     var fn = TIPOS[spec.tipo];

@@ -268,6 +268,7 @@ ${practicaOps('mixta', false, 'Practica sumas y restas aquí')}
 <h2>Qué significa «llevada»</h2>
 <p>En una suma, cuando las unidades suman 10 o más, se escribe solo la cifra de las unidades y la decena se añade a la columna siguiente. En 47 + 38, siete y ocho son quince: se escribe el 5 y «me llevo una», que se suma a las decenas. En la resta ocurre lo contrario: si arriba hay menos unidades que abajo, hay que tomar una decena prestada.</p>
 <h2>Cuántas hacer</h2>
+<p>Cuando las operaciones salgan bien, el paso siguiente es saber cuándo usarlas: para eso están los <a href="/problemas-de-matematicas/sumas-y-restas/">problemas de sumas y restas</a>.</p>
 <p>Una ficha de veinte operaciones al día es más que suficiente; con niños que empiezan, media ficha. Importa más la regularidad que la cantidad. Si falla más de cinco de veinte, conviene volver al paso anterior en lugar de insistir.</p>`,
     faq: [
       ['¿Para qué curso son estas fichas?', 'Las de dos cifras sin llevada, para primero de primaria; las de llevada, para segundo; las de tres cifras, para segundo y tercero. Es una orientación: cada colegio lleva su ritmo.'],
