@@ -28,6 +28,12 @@ npm run pdfs
 Regenera todos los PDF, `og.png` y los iconos. Hazlo cada vez que añadas o cambies fichas (con `-- --nuevos` solo crea los que faltan). Necesita Playwright con Chromium (`npm i -D playwright && npx playwright install chromium`).
 
 ```bash
+npm run imagenes
+```
+
+Genera una imagen PNG de cada hoja que se ve en la web (`src/img/`) y su miniatura (`src/img/mini/`). En la página la ficha se muestra como imagen, que es lo que indexan Google Imágenes y Pinterest, y se cambia sola por el SVG al imprimir o al pedir otra distinta. Ejecútalo junto con `npm run pdfs` cada vez que añadas o cambies fichas (con `-- --nuevas` solo crea las que faltan).
+
+```bash
 npm run comprobar
 ```
 
@@ -64,7 +70,7 @@ Para una **sopa de letras temática** es aún más corto: añade un bloque a la 
 
 Tipos de hoja disponibles: `sopa`, `sudoku`, `laberinto`, `bingo90`, `bingo75`, `bingo-numeros`, `tabla`, `tablas-todas`, `pitagorica`, `mult-practica`, `operaciones` y `papel`. Los parámetros de cada uno están en los ejemplos de `content/`.
 
-Después de añadir páginas: `npm run pdfs -- --nuevos`, `npm run comprobar` y publicar. El índice, las migas, el sitemap y los datos estructurados se actualizan solos.
+Después de añadir páginas: `npm run pdfs -- --nuevos`, `npm run imagenes -- --nuevas`, `npm run comprobar` y publicar. El índice, las migas, el sitemap y los datos estructurados se actualizan solos.
 
 ## Arquitectura SEO
 
