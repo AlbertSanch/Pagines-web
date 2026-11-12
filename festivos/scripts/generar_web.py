@@ -35,7 +35,7 @@ PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 CUANTOS_DIAS = "https://cuantosdiasfaltan.es"
 SITIO = "Festivos de"
-VERSION = "13"
+VERSION = "14"
 HOY = dt.date.fromisoformat(os.environ["FESTIVOS_HOY"]) if os.environ.get("FESTIVOS_HOY") else dt.date.today()  # FESTIVOS_HOY: para probar
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -478,10 +478,73 @@ def pagina_espana(datos, anio):
 <div class="tabla-envoltorio"><table class="festivos"><thead><tr><th>Fecha</th><th>Día</th><th>Fiesta</th><th>Dónde es festivo</th></tr></thead><tbody>{''.join(filas)}</tbody></table></div>
 <p class="fuente">Fuente: <a href="{datos[anio]['boe']['url']}" rel="nofollow noopener">{escape(datos[anio]['boe']['titulo'])}</a>, publicada en el BOE el {fecha_larga(datos[anio]['boe']['publicado'], False)} de {datos[anio]['boe']['publicado'][:4]}.</p>
 <p class="acciones"><a class="boton-sec" href="/calendario-laboral-para-imprimir/?a={anio}">🖨️ Calendario laboral {anio} para imprimir con tus fiestas locales</a></p>
-<section id="comunidades"><h2>Calendario laboral {anio} por comunidad</h2>{lista_comunidades()}</section>"""
-    return pagina(f"/calendario-laboral-{anio}/", f"Calendario laboral {anio}: todos los festivos de España",
-                  f"Festivos de {anio} en España según el BOE: fiestas nacionales, de cada comunidad autónoma y locales de cada municipio.",
-                  cuerpo, [(f"Calendario laboral {anio}", None)])
+<section id="comunidades"><h2>Calendario laboral {anio} por comunidad</h2>{lista_comunidades()}</section>
+{extra_espana(datos, anio, fechas, comunes)}"""
+    preguntas = preguntas_espana(datos, anio, comunes)
+    return pagina(f"/calendario-laboral-{anio}/", f"Calendario laboral {anio}: festivos de España, por comunidades y puentes",
+                  f"Festivos de {anio} en España según el BOE: las {len(comunes)} fiestas nacionales, las de cada comunidad autónoma, los puentes y las fiestas locales de cada municipio.",
+                  cuerpo + f'<section><h2>Preguntas frecuentes</h2>{faq_html(preguntas)}</section>',
+                  [(f"Calendario laboral {anio}", None)], [faq_ld(preguntas)])
+
+
+def extra_espana(datos, anio, fechas, comunes):
+    """Lo que busca quien escribe «calendario laboral {año}»: cuántos festivos tiene cada comunidad, cuáles caen
+    en fin de semana o forman puente y en qué punto están las fiestas locales. Todo sale de los datos del BOE y los boletines."""
+    d = datos[anio]["nacionales_autonomicos"]
+    filas = []
+    for ccaa in sorted(COMUNIDADES, key=lambda c: COMUNIDADES[c][0]):
+        propios = sorted((x for x in d.get(ccaa, []) if x["f"] not in comunes), key=lambda x: x["f"])
+        lista = ", ".join(f'{escape(x["n"])} ({fecha_larga(x["f"], False)})' for x in propios) or "—"
+        filas.append(f'<tr><td><a href="/comunidad/{ccaa}/">{escape(COMUNIDADES[ccaa][0])}</a></td><td class="num">{len(d.get(ccaa, []))}</td><td>{lista}</td></tr>')
+    dia = lambda f: dt.date.fromisoformat(f).weekday()
+    nombre = {f: n for (f, n), cc in fechas.items() if f in comunes}
+    largos = [f for f in sorted(comunes) if dia(f) in (0, 4)]
+    puente = [f for f in sorted(comunes) if dia(f) in (1, 3)]
+    finde = [f for f in sorted(comunes) if dia(f) in (5, 6)]
+    txt = lambda fs: ", ".join(f"{escape(nombre[f])} ({DIAS[dia(f)]} {fecha_larga(f, False)})" for f in fs)
+    partes = []
+    if largos:
+        partes.append(f"<li><strong>Fines de semana largos en toda España</strong>: {txt(largos)}.</li>")
+    if puente:
+        partes.append(f"<li><strong>Posibles puentes</strong> (festivo en martes o jueves): {txt(puente)}.</li>")
+    if finde:
+        partes.append(f"<li><strong>Caen en fin de semana</strong>: {txt(finde)}. Cuando una fiesta nacional cae en domingo, cada comunidad puede pasarla al lunes; en sábado no se traslada (lo explicamos en <a href=\"/guias/festivo-en-domingo/\">qué pasa si un festivo cae en domingo</a>).</li>")
+    n_loc = len(datos[anio].get("locales", {}))
+    total = len(municipios())
+    publicadas = sorted(COMUNIDADES[c][0] for c in datos[anio].get("fuentes", {}) if c in COMUNIDADES)
+    if n_loc >= total * 0.8:
+        estado = f"Ya están publicadas las fiestas locales de {miles(n_loc)} de los {miles(total)} municipios de España: búscalo arriba o en la página de tu comunidad."
+    else:
+        estado = (f"Las fiestas locales de {anio} se publican entre octubre y enero en el boletín de cada comunidad. De momento tenemos las de "
+                  f"{miles(n_loc)} municipios ({', '.join(publicadas) if publicadas else 'ninguna comunidad todavía'}); las demás las añadimos en cuanto salen. "
+                  f"Busca tu municipio para ver si ya están.")
+    laborables = (f' Cuántos días laborables tiene cada comunidad está en la guía de <a href="/guias/dias-laborables-{anio}/">días laborables de {anio}</a>.'
+                  if anio == max(ANIOS) else "")  # la guía de días laborables es la del año que viene
+    return f"""<section><h2>Cuántos festivos tiene cada comunidad en {anio}</h2>
+<p>Cada trabajador tiene como máximo 14 festivos al año: 12 entre nacionales y autonómicos, y 2 locales de su municipio. Estos son los festivos de cada comunidad, sin contar los locales, y los que tiene propios además de los {len(comunes)} comunes a toda España.{laborables}</p>
+<div class="tabla-envoltorio"><table class="festivos completa"><thead><tr><th>Comunidad</th><th class="num">Festivos</th><th>Propios de la comunidad</th></tr></thead><tbody>{''.join(filas)}</tbody></table></div></section>
+<section><h2>Puentes y fines de semana largos de {anio}</h2>
+<ul>{''.join(partes)}</ul>
+<p>Los puentes de cada comunidad, con los días que hay que pedir, están en <a href="/puentes-{anio}/">puentes de {anio}</a>, y puedes calcular los tuyos con el <a href="/planificador-vacaciones/">planificador de vacaciones</a>.</p></section>
+<section><h2>Fiestas locales de {anio}</h2><p>{estado}</p></section>"""
+
+
+def preguntas_espana(datos, anio, comunes):
+    d = datos[anio]["nacionales_autonomicos"]
+    cuentas = sorted({len(v) for v in d.values()})
+    lista = ", ".join(fecha_larga(f, False) for f in sorted(comunes))
+    return [
+        (f"¿Cuántos festivos hay en {anio}?",
+         f"En {anio} hay {len(comunes)} fiestas comunes a toda España ({lista}). Cada comunidad completa su calendario hasta "
+         f"{' o '.join(map(str, cuentas))} festivos, y cada municipio añade dos fiestas locales, hasta un máximo de 14."),
+        (f"¿Cuándo se publica el calendario laboral de {anio}?",
+         f"El BOE publica cada otoño la lista de fiestas nacionales y autonómicas; la de {anio} salió el {fecha_larga(datos[anio]['boe']['publicado'], False)} "
+         f"de {datos[anio]['boe']['publicado'][:4]}. Las fiestas locales las publica cada comunidad en su boletín, entre octubre y enero."),
+        (f"¿Las fiestas locales de {anio} ya están publicadas?",
+         f"Tenemos las de {miles(len(datos[anio].get('locales', {})))} municipios. Busca el tuyo en festivosde.es: si aún no están, lo indicamos y las añadimos en cuanto salen."),
+        ("¿Qué pasa si un festivo cae en domingo?",
+         'Si es una fiesta nacional, cada comunidad puede trasladarla al lunes siguiente. Lo explicamos en <a href="/guias/festivo-en-domingo/">qué pasa si un festivo cae en domingo</a>.'),
+    ]
 
 
 def pagina_puentes(datos, anio):
