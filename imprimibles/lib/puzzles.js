@@ -1020,10 +1020,12 @@
     return { svg: hoja(o, dibuja(false)), sol: hoja(Object.assign({}, o, { sol: true }), dibuja(true)) };
   }
   function divisiones(spec, seed) {
-    var r = rng(seed), dd = spec.dividendo || 3, ops = [], vistos = {};
-    while (ops.length < 12) {
-      var d = ri(r, 2, 9), D = aleatorioCifras(r, dd);
-      if (D < d * 10 || vistos[D + ':' + d]) continue;
+    var r = rng(seed), dd = spec.dividendo || 3, dos = spec.divisor === 2, ops = [], vistos = {};
+    var total = dos ? 8 : 12;
+    while (ops.length < total) {
+      var d = dos ? ri(r, 12, 98) : ri(r, 2, 9), D = aleatorioCifras(r, dd);
+      if (dos && d % 10 === 0) continue;
+      if (D < d * (dos && dd === 3 ? 2 : 10) || vistos[D + ':' + d]) continue;
       if (spec.exactas && D % d) continue;
       vistos[D + ':' + d] = 1; ops.push({ D: D, d: d, c: Math.floor(D / d), r: D % d });
     }
@@ -1031,10 +1033,10 @@
     function dibuja(sol) {
       var o = '';
       ops.forEach(function (op, i) {
-        var x0 = 18 + (i % 3) * 61, y = 62 + Math.floor(i / 3) * 54, nD = String(op.D).length;
+        var cols = dos ? 2 : 3, x0 = 18 + (i % cols) * (dos ? 95 : 61), y = 62 + Math.floor(i / cols) * 54, nD = String(op.D).length;
         var xl = x0 + nD * paso + 2;
         String(op.D).split('').forEach(function (ch, k) { o += txt(x0 + k * paso + paso / 2, y, ch, { size: t, anchor: 'middle', bold: true }); });
-        o += '<path d="M' + f(xl) + ' ' + (y - 9) + 'V' + (y + 4) + 'H' + f(xl + 24) + '" fill="none" stroke="' + TINTA + '" stroke-width=".5"/>';
+        o += '<path d="M' + f(xl) + ' ' + (y - 9) + 'V' + (y + 4) + 'H' + f(xl + (dos ? 28 : 24)) + '" fill="none" stroke="' + TINTA + '" stroke-width=".5"/>';
         o += txt(xl + 3, y, op.d, { size: t, bold: true });
         if (sol) {
           o += txt(xl + 3, y + 11, op.c, { size: t, bold: true, fill: ROJO });

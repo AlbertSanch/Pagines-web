@@ -182,15 +182,16 @@
   function entre(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
   [].forEach.call(document.querySelectorAll('.practica-md'), function (caja) {
     var tipo = caja.getAttribute('data-tipo'), a = Number(caja.getAttribute('data-a')), b = Number(caja.getAttribute('data-b'));
+    var divisor = Number(caja.getAttribute('data-divisor')) || 1;
     var form = caja.querySelector('form'), lista = caja.querySelector('.ops-lista'), res = caja.querySelector('.practica-resultado');
-    var id = tipo === 'div' ? 'dv' : 'm' + a + b;
+    var id = tipo === 'div' ? 'dv' + divisor : 'm' + a + b;
     function nuevas() {
       var html = [], vistos = {};
       while (html.length < 6) {
         var i = html.length;
         if (tipo === 'div') {
-          var d = entre(2, 9), D = entre(20, 999);
-          if (D < d * 10 || vistos[D + ':' + d]) continue;
+          var d = divisor === 2 ? entre(12, 98) : entre(2, 9), D = divisor === 2 ? entre(100, 9999) : entre(20, 999);
+          if ((divisor === 2 && d % 10 === 0) || D < d * 10 || vistos[D + ':' + d]) continue;
           vistos[D + ':' + d] = 1;
           html.push('<li><div class="casita"><span class="dvd" aria-hidden="true">' + D + '</span><span class="dvs" aria-hidden="true">' + d + '</span>' +
             '<label class="solo-lector" for="' + id + '-' + i + 'r">Resto de ' + D + ' entre ' + d + '</label><input class="res" id="' + id + '-' + i + 'r" type="text" inputmode="numeric" autocomplete="off" maxlength="2" data-r="' + (D % d) + '">' +

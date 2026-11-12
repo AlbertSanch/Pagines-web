@@ -44,6 +44,26 @@ const pasoDiv = () => {
 </figure>`;
 };
 
+const pasoDiv2 = () => {
+  // 875 : 23 en casita
+  const X = [50, 76, 102];
+  const casa = `${t(X[0], 70, 8)}${t(X[1], 70, 7)}${t(X[2], 70, 5)}<path d="M118 44V80H196" fill="none" stroke="currentColor" stroke-width="2.5"/>${t(130, 70, 23, { a: 'start' })}`;
+  const p1 = `${t(130, 108, 3, { a: 'start', c: R })}${t(X[0], 108, 1, { c: R })}${t(X[1], 108, 8, { c: R })}<path d="M38 46H90" stroke="${R}" stroke-width="2" stroke-dasharray="4 3"/>`;
+  const p2 = `${t(130, 108, 3, { a: 'start' })}${t(147, 108, 8, { a: 'start', c: R })}${t(X[0], 108, 1)}${t(X[1], 108, 8)}${t(X[2], 108, 5, { c: R })}${t(X[2], 144, 1, { c: R })}`;
+  const p3 = `${t(130, 108, 38, { a: 'start', c: R })}${t(X[0], 108, 1)}${t(X[1], 108, 8)}${t(X[2], 108, 5)}${t(X[2], 144, 1, { c: R })}<text x="12" y="186" font-size="15" fill="${R}" font-weight="700">cociente 38</text><text x="12" y="208" font-size="15" fill="${R}" font-weight="700">resto 1</text>`;
+  const panel = (i, extra) => `<g transform="translate(${i * 220} 0)"><text x="12" y="24" font-size="15" font-weight="700" fill="${R}">Paso ${i + 1}</text>${casa}${extra}</g>`;
+  return `
+<h2>Cómo se hace una división de dos cifras: ejemplo paso a paso</h2>
+<figure class="paso-a-paso">
+<svg viewBox="0 0 660 220" role="img" aria-label="División de 875 entre 23 en tres pasos: 87 entre 23 cabe a 3 y sobran 18; se baja el 5 y 185 entre 23 cabe a 8 y sobra 1; cociente 38 y resto 1.">${panel(0, p1)}${panel(1, p2)}${panel(2, p3)}</svg>
+<ol>
+<li>El 8 es menor que 23, así que se toman <strong>dos cifras</strong>: 87. Para saber cuántas veces cabe el 23, se <strong>tantea</strong> con las primeras cifras: 8 entre 2 da 4. Pero 23 × 4 = 92, que se pasa de 87, así que se prueba con 3: 23 × 3 = 69. Escribe el 3 en el cociente y lo que sobra debajo: 87 − 69 = 18.</li>
+<li><strong>Baja</strong> el 5 al lado del 18: queda 185. Se tantea otra vez: 18 entre 2 da 9, pero 23 × 9 = 207, que se pasa; con 8, 23 × 8 = 184. Escribe el 8 en el cociente y lo que sobra: 185 − 184 = 1.</li>
+<li>No quedan cifras por bajar: el <strong>cociente</strong> es 38 y el <strong>resto</strong>, 1. Prueba: 23 × 38 + 1 = 875.</li>
+</ol>
+</figure>`;
+};
+
 // Ejercicio en pantalla: genera las primeras operaciones con una semilla fija
 const azarFijo = (semilla) => { let x = semilla; return () => (x = (x * 1103515245 + 12345) % 2147483648) / 2147483648; };
 const entre = (az, a, b) => a + Math.floor(az() * (b - a + 1));
@@ -69,20 +89,20 @@ ${ops.map(([x, y], i) => `<li><div class="op" aria-hidden="true"><span>${x}</spa
 </section>`;
 };
 
-const practicaDiv = (titulo) => {
-  const az = azarFijo(4157), ops = [], id = 'dv';
+const practicaDiv = (titulo, divisor = 1) => {
+  const az = azarFijo(4157 + divisor), ops = [], id = 'dv' + divisor;
   while (ops.length < 6) {
-    const d = entre(az, 2, 9), D = entre(az, 20, 999);
-    if (D < d * 10) continue;
+    const d = divisor === 2 ? entre(az, 12, 98) : entre(az, 2, 9), D = divisor === 2 ? entre(az, 100, 9999) : entre(az, 20, 999);
+    if ((divisor === 2 && d % 10 === 0) || D < d * 10) continue;
     ops.push([D, d]);
   }
   return `
-<section class="practica practica-md" data-tipo="div" aria-labelledby="${id}-t">
+<section class="practica practica-md" data-tipo="div" data-divisor="${divisor}" aria-labelledby="${id}-t">
 <h2 id="${id}-t">${titulo}</h2>
 <p>Haz la división en un papel y escribe el cociente (debajo del divisor) y el resto (debajo del dividendo). Después pulsa «Corregir».</p>
 <form>
 <ol class="ops-lista divs-lista">
-${ops.map(([D, d], i) => `<li><div class="casita"><span class="dvd" aria-hidden="true">${D}</span><span class="dvs" aria-hidden="true">${d}</span><label class="solo-lector" for="${id}-${i}r">Resto de ${D} entre ${d}</label><input class="res" id="${id}-${i}r" type="text" inputmode="numeric" autocomplete="off" maxlength="2" data-r="${D % d}"><label class="solo-lector" for="${id}-${i}c">Cociente de ${D} entre ${d}</label><input class="coc" id="${id}-${i}c" type="text" inputmode="numeric" autocomplete="off" maxlength="3" data-r="${Math.floor(D / d)}"></div><span class="marca" aria-live="polite"></span></li>`).join('\n')}
+${ops.map(([D, d], i) => `<li><div class="casita"><span class="dvd" aria-hidden="true">${D}</span><span class="dvs" aria-hidden="true">${d}</span><label class="solo-lector" for="${id}-${i}r">Resto de ${D} entre ${d}</label><input class="res" id="${id}-${i}r" type="text" inputmode="numeric" autocomplete="off" maxlength="${divisor === 2 ? 2 : 1}" data-r="${D % d}"><label class="solo-lector" for="${id}-${i}c">Cociente de ${D} entre ${d}</label><input class="coc" id="${id}-${i}c" type="text" inputmode="numeric" autocomplete="off" maxlength="3" data-r="${Math.floor(D / d)}"></div><span class="marca" aria-live="polite"></span></li>`).join('\n')}
 </ol>
 <p class="practica-botones"><button type="submit" class="boton boton-tinta">Corregir</button> <button type="button" class="boton" data-otras>Otras 6</button></p>
 <p class="practica-resultado" aria-live="polite"></p>
@@ -93,7 +113,7 @@ ${ops.map(([D, d], i) => `<li><div class="casita"><span class="dvd" aria-hidden=
 module.exports = [
   {
     cat: 'multiplicaciones-y-divisiones', slug: '', corto: 'Multiplicar y dividir', nav: 'Multiplicar y dividir',
-    resumen: 'Por una y dos cifras, y divisiones en casita',
+    resumen: 'Multiplicaciones y divisiones de una y dos cifras',
     title: 'Multiplicaciones y divisiones para imprimir (PDF)',
     desc: 'Fichas de multiplicaciones por una y dos cifras y divisiones de una cifra para imprimir, con solución y ejercicios para practicar en pantalla. PDF gratis.',
     h1: 'Multiplicaciones y divisiones para imprimir',
@@ -108,6 +128,7 @@ module.exports = [
 <li><a href="/multiplicaciones-y-divisiones/multiplicaciones-por-una-cifra/">Multiplicaciones por una cifra</a>, primero de dos cifras arriba (34 × 6) y luego de tres (247 × 8).</li>
 <li><a href="/multiplicaciones-y-divisiones/divisiones-de-una-cifra/">Divisiones de una cifra</a>, que son la operación inversa y se apoyan en las mismas tablas.</li>
 <li><a href="/multiplicaciones-y-divisiones/multiplicaciones-de-dos-cifras/">Multiplicaciones de dos cifras</a>, que combinan multiplicar, colocar bien en columnas y sumar.</li>
+<li><a href="/multiplicaciones-y-divisiones/divisiones-de-dos-cifras/">Divisiones de dos cifras</a>, las últimas: hay que tantear cada cifra del cociente.</li>
 </ol>
 <p>Como orientación, las multiplicaciones por una cifra y las primeras divisiones se trabajan en tercero de primaria; las multiplicaciones de dos cifras y las divisiones con dividendo de tres cifras, en cuarto.</p>
 <h2>Cómo usar las fichas</h2>
@@ -183,10 +204,41 @@ module.exports = [
 <p>En el ejemplo de arriba, la resta de cada paso (15 − 12, 37 − 36) se hace de cabeza y solo se escribe lo que sobra. Es la forma habitual en España a partir de cuarto. En tercero, muchos colegios escriben la resta completa debajo del dividendo hasta que el niño se suelta. Las fichas dejan espacio para las dos formas.</p>
 <h2>Qué fichas elegir</h2>
 <p>La primera hoja tiene dividendos de dos cifras (como 78 : 3), para empezar. La segunda, de tres cifras (como 157 : 4), en las que hay que bajar cifras más veces y a veces el cociente lleva un cero en medio (como 412 : 4 = 103), que es donde más se equivocan. Hay divisiones exactas y con resto, mezcladas.</p>
+<p>Cuando estas salgan bien, el siguiente paso son las <a href="/multiplicaciones-y-divisiones/divisiones-de-dos-cifras/">divisiones de dos cifras</a>.</p>
 <p>Antes de dividir con soltura hacen falta las <a href="/tablas-de-multiplicar/">tablas de multiplicar</a>: dividir 37 entre 4 es preguntarse qué número de la tabla del 4 se acerca más a 37 sin pasarse.</p>`,
     faq: [
       ['¿Qué pasa si el primer número es menor que el divisor?', 'Se toman dos cifras del dividendo en lugar de una. En 157 : 4, como 1 es menor que 4, se empieza dividiendo 15. En el cociente no se escribe nada por ese primer 1.'],
       ['¿Cuándo sale un cero en el cociente?', 'Cuando, al bajar una cifra, el número que queda es menor que el divisor. Por ejemplo, en 412 : 4, después de 4 : 4 = 1 se baja el 1, y 1 : 4 no cabe: se escribe un 0 en el cociente y se baja la siguiente cifra.']
+    ]
+  },
+  {
+    cat: 'multiplicaciones-y-divisiones', slug: 'divisiones-de-dos-cifras', corto: 'Divisiones de dos cifras',
+    title: 'Divisiones de dos cifras: cómo se hacen y fichas',
+    desc: 'Divisiones de dos cifras explicadas paso a paso, con el truco para tantear el cociente, y fichas para imprimir con solución. Con ejercicio en pantalla.',
+    h1: 'Divisiones de dos cifras',
+    entrada: 'Divisiones en las que el divisor tiene dos cifras, como 875 : 23. Aquí tienes el método explicado paso a paso, con la parte que más cuesta, tantear cuántas veces cabe, un ejercicio con corrección al momento y fichas para imprimir con dividendos de tres y cuatro cifras.',
+    antes: pasoDiv2() + practicaDiv('Practica divisiones de dos cifras', 2),
+    hojas: [
+      { tipo: 'divisiones', dividendo: 3, divisor: 2, titulo: 'Divisiones de dos cifras' },
+      { tipo: 'divisiones', dividendo: 4, divisor: 2, titulo: 'Divisiones de dos cifras (más largas)' }
+    ],
+    copias: 2,
+    cuerpo: `
+<h2>El truco para tantear</h2>
+<p>Lo difícil de dividir entre dos cifras no es el método, que es el mismo que con una, sino adivinar cada cifra del cociente. Nadie se sabe la tabla del 23. Lo que se hace es <strong>tapar la última cifra</strong> del divisor y del número que estás dividiendo, y dividir lo que queda: para 87 : 23, se piensa 8 : 2 = 4. Esa es la primera prueba.</p>
+<p>Después se comprueba multiplicando: 23 × 4 = 92. Si se pasa, se baja una (prueba con 3). Si lo que sobra es mayor que el divisor, es que te has quedado corto y hay que subir una. Con práctica, el tanteo se afina: si la segunda cifra del divisor es grande (23 está cerca de 20, pero 28 está cerca de 30), conviene redondear el divisor antes de tantear.</p>
+<h2>Errores frecuentes</h2>
+<ul>
+<li><strong>Quedarse corto sin darse cuenta.</strong> Si el resto que escribes es mayor o igual que el divisor, el cociente puede ser una unidad más grande. Comprobarlo en cada paso evita arrastrar el error.</li>
+<li><strong>Olvidar el cero del cociente.</strong> Si al bajar una cifra el número sigue siendo menor que el divisor, hay que escribir un 0 en el cociente antes de bajar la siguiente.</li>
+<li><strong>Restar mal.</strong> Con divisores de dos cifras, las restas son más largas. En cuarto y quinto muchos colegios permiten escribirlas debajo hasta que salen de cabeza.</li>
+</ul>
+<h2>Qué fichas elegir</h2>
+<p>La primera hoja tiene dividendos de tres cifras (como 875 : 23), con cocientes de una o dos cifras. La segunda, de cuatro cifras (como 4.312 : 56), con más pasos. Hay ocho divisiones por hoja, con sitio de sobra para escribir las restas. Todas traen el cociente y el resto en la hoja de soluciones.</p>
+<p>Si todavía cuesta, conviene volver a las <a href="/multiplicaciones-y-divisiones/divisiones-de-una-cifra/">divisiones de una cifra</a>: el procedimiento es idéntico y así solo hay que pensar en una cosa a la vez.</p>`,
+    faq: [
+      ['¿En qué curso se hacen las divisiones de dos cifras?', 'En España se introducen normalmente en cuarto de primaria y se trabajan a fondo en quinto, después de dominar las de una cifra.'],
+      ['¿Cómo se comprueba una división?', 'Multiplicando el divisor por el cociente y sumando el resto: tiene que dar el dividendo. En el ejemplo, 23 × 38 + 1 = 875. Además, el resto siempre tiene que ser menor que el divisor.']
     ]
   }
 ];

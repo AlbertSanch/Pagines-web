@@ -37,6 +37,10 @@ p{margin:.85rem 0}
 .cabecera ul{display:flex;gap:.2rem 1.3rem;list-style:none;margin:0;padding:.45rem 0 .7rem;overflow-x:auto;scrollbar-width:none}
 .cabecera ul::-webkit-scrollbar{display:none}
 .cabecera li{flex:none}
+/* En el móvil el menú se desliza de lado: el degradado del borde indica que hay más secciones */
+@media (max-width:61.99rem){.cabecera nav{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}.cabecera ul{padding-right:2.5rem}}
+/* En pantallas anchas, el logo arriba y todas las secciones debajo, en una o dos líneas */
+@media (min-width:62rem){.cabecera-in{flex-direction:column;align-items:flex-start;gap:.35rem}.cabecera nav{flex:none;width:100%}.cabecera ul{flex-wrap:wrap;overflow:visible;gap:.15rem 1.5rem;padding:.2rem 0 .75rem}}
 .cabecera nav a{color:var(--tinta);text-decoration:none;font-weight:700;font-size:.97rem;padding:.1rem 0;white-space:nowrap}
 .cabecera nav a:hover,.cabecera nav a[aria-current]{box-shadow:inset 0 -.55em 0 var(--subrayador)}
 
