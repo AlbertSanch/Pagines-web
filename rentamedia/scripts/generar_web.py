@@ -45,7 +45,7 @@ CABECERA_ANUNCIOS = (
 CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};googlefc.callbackQueue=googlefc.callbackQueue||[];'
                       'googlefc.callbackQueue.push(function(){googlefc.showRevocationMessage()});return false">Configurar cookies</a>')
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
-           "email": "contacto.ahorrometro@gmail.com"}
+           "email": "contacto@rentamedia.es"}
 MIN_HAB_RANKING = 2000   # como el INE en sus notas de prensa: los pueblos muy pequeños bailan mucho de un año a otro
 MIN_HAB_CIUDAD = 50000   # «ciudades más ricas de España»
 MIN_PAGINAS = 7000       # si salen menos páginas de municipio, algo ha ido mal y no se publica
