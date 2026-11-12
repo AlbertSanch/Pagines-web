@@ -1,0 +1,55 @@
+# ¿Qué fue antes? (cronologia/): programa los días que faltan y regenera la web dos veces al día, para publicar
+# los hechos de mañana y el día de ayer en el archivo, y cada vez que cambian los datos o los scripts.
+# Cloudflare Pages publica cada commit en main (ruta de compilación: cronologia/web/*).
+name: Qué fue antes
+
+on:
+  schedule:
+    - cron: "11 10 * * *"
+    - cron: "39 18 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - cronologia/data/**
+      - cronologia/scripts/**
+      - cronologia/plantilla/**
+      - .github/workflows/cronologia.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cronologia
+  cancel-in-progress: false
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Programar los días que faltan
+        run: python -u cronologia/scripts/programar.py 45
+      - name: Generar la web
+        run: python -u cronologia/scripts/generar_web.py
+      - name: Comprobar
+        run: |
+          test -f cronologia/web/index.html
+          test -f cronologia/web/assets/juego.js
+          test -s cronologia/web/d/practica.json
+          n=$(grep -c "<loc>" cronologia/web/sitemap.xml)
+          echo "Páginas en el sitemap: $n"
+          test "$n" -gt 50
+      - name: Publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cronologia/web cronologia/data/dias.json
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Qué fue antes: actualizar web"
+          for i in 1 2 3; do git pull --rebase origin main && git push && exit 0; sleep 5; done
+          exit 1

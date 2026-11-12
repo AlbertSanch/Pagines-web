@@ -1,0 +1,33 @@
+<svg class="horizonte" viewBox="0 0 1000 150" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+ <g class="sil">
+  <!-- Prehistoria: volcán y dinosaurio (0-110) -->
+  <path d="M0 150 L22 92 L34 86 L46 92 L66 150Z"/>
+  <path class="humo" d="M34 82 q-8 -14 2 -26 q4 10 10 6 q-2 12 -12 20z"/>
+  <path d="M60 150 L63 126 Q60 112 76 109 L106 108 Q118 110 122 118 L126 92 Q128 74 137 71 Q148 69 149 75 Q144 77 139 77 Q134 80 133 92 L130 122 Q133 133 130 150 L121 150 L120 134 L108 135 L108 150 L99 150 L98 137 L80 137 L79 150 L70 150 L70 135 Q52 135 36 147 Q49 132 63 126Z"/>
+  <!-- Antiguo Egipto: pirámides (110-220) -->
+  <path d="M150 150 L190 90 L230 150Z"/><path d="M205 150 L232 110 L259 150Z"/>
+  <!-- Grecia y Roma: templo con columnas (260-330) -->
+  <path d="M262 150 v-6 h70 v6z M266 144 v-36 h8 v36z M282 144 v-36 h8 v36z M298 144 v-36 h8 v36z M314 144 v-36 h8 v36z M260 108 l37 -18 l37 18z"/>
+  <!-- Edad Media: castillo (345-440) -->
+  <path d="M346 150 V98 h9 v-9 h7 v9 h7 v-9 h7 v9 h9 V114 h22 V98 h9 v-9 h7 v9 h7 v-9 h7 v9 h9 v52 h-24 v-18 q-11 -13 -22 0 v18z"/>
+  <path d="M368 82 v-16 l14 5 l-14 5" />
+  <!-- Edad Moderna: carabela (450-545) -->
+  <path d="M452 132 h86 l-12 18 h-62z"/>
+  <path d="M476 132 V72 M500 132 V64 M522 132 V82" stroke="currentColor" stroke-width="4"/>
+  <path d="M462 124 q18 -24 14 -46 q-16 22 -14 46z M484 126 q22 -28 16 -58 q-20 28 -16 58z M508 126 q16 -18 14 -40 q-14 18 -14 40z"/>
+  <!-- Siglo XIX: locomotora de vapor (555-655) -->
+  <path d="M558 150 v-30 h40 v-16 h-8 v-10 h18 v26 h22 v-24 h14 v54z"/><path d="M640 104 v-14 h10 v14z"/>
+  <circle cx="574" cy="146" r="9"/><circle cx="602" cy="146" r="9"/><circle cx="630" cy="146" r="7"/>
+  <path class="humo" d="M645 86 q-6 -10 2 -18 q8 2 14 -4 q6 10 -2 16 q-6 8 -14 6z"/>
+  <!-- Primera mitad del XX: coche antiguo y avión (665-770) -->
+  <path d="M668 150 v-18 q0 -6 6 -6 h10 l10 -16 h30 l8 16 h14 q6 0 6 6 v18z"/>
+  <circle cx="686" cy="148" r="8"/><circle cx="738" cy="148" r="8"/>
+  <path d="M700 68 h56 q8 0 8 5 q0 5 -8 5 h-56 l-10 6 l2 -11 l-2 -11z M722 73 l-10 -14 h8 l16 14z M722 73 l-10 14 h8 l16 -14z"/>
+  <!-- Segunda mitad del XX: tele antigua y antena (780-880) -->
+  <path d="M786 150 v-8 h6 l2 -6 h52 l2 6 h6 v8z M784 136 v-44 q0 -6 6 -6 h60 q6 0 6 6 v44z"/>
+  <path d="M808 86 l-12 -18 M832 86 l12 -18" stroke="currentColor" stroke-width="3"/>
+  <!-- Siglo XXI: cohete y rascacielos (890-1000) -->
+  <path d="M900 150 v-62 h22 v62z M926 150 v-84 l12 -8 l12 8 v84z M954 150 v-48 h18 v48z"/>
+  <path d="M986 150 l-8 0 l5 -20 v-34 q7 -22 14 0 v34 l5 20 l-8 0 l-4 -8z"/>
+ </g>
+</svg>

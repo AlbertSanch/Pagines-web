@@ -1,0 +1,793 @@
+{
+ "asesinato-julio-cesar": {
+  "articulo": "Julio César",
+  "clave": "asesinato-julio-cesar|-44|Julio César",
+  "motivo": "",
+  "ok": true,
+  "veces": 37
+ },
+ "barbie": {
+  "articulo": "Barbie",
+  "clave": "barbie|1959|Barbie",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
+ },
+ "barcelona-92": {
+  "articulo": "Juegos Olímpicos de Barcelona 1992",
+  "clave": "barcelona-92|1992|Juegos Olímpicos de Barcelona 1992",
+  "motivo": "",
+  "ok": true,
+  "veces": 468
+ },
+ "biblia-gutenberg": {
+  "articulo": "Biblia de Gutenberg",
+  "clave": "biblia-gutenberg|1454|Biblia de Gutenberg",
+  "motivo": "",
+  "ok": true,
+  "veces": 1
+ },
+ "blancanieves-disney": {
+  "articulo": "Snow White and the Seven Dwarfs",
+  "clave": "blancanieves-disney|1937|Blancanieves y los siete enanitos (película de 1937)",
+  "motivo": "",
+  "ok": true,
+  "veces": 22
+ },
+ "caida-muro-berlin": {
+  "articulo": "Muro de Berlín",
+  "clave": "caida-muro-berlin|1989|Muro de Berlín",
+  "motivo": "",
+  "ok": true,
+  "veces": 27
+ },
+ "canal-suez": {
+  "articulo": "Canal de Suez",
+  "clave": "canal-suez|1869|Canal de Suez",
+  "motivo": "",
+  "ok": true,
+  "veces": 8
+ },
+ "chatgpt": {
+  "articulo": "ChatGPT",
+  "clave": "chatgpt|2022|ChatGPT",
+  "motivo": "",
+  "ok": true,
+  "veces": 69
+ },
+ "chupa-chups": {
+  "articulo": "Chupa Chups",
+  "clave": "chupa-chups|1958|Chupa Chups",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
+ "coca-cola": {
+  "articulo": "Coca-Cola",
+  "clave": "coca-cola|1886|Coca-Cola",
+  "motivo": "",
+  "ok": true,
+  "veces": 11
+ },
+ "colon-llega-america": {
+  "articulo": "Descubrimiento de América",
+  "clave": "colon-llega-america|1492|Descubrimiento de América",
+  "motivo": "",
+  "ok": true,
+  "veces": 16
+ },
+ "constitucion-1978": {
+  "articulo": "Constitución española de 1978",
+  "clave": "constitucion-1978|1978|Constitución española de 1978",
+  "motivo": "",
+  "ok": true,
+  "veces": 61
+ },
+ "constitucion-cadiz": {
+  "articulo": "Constitución española de 1812",
+  "clave": "constitucion-cadiz|1812|Constitución española de 1812",
+  "motivo": "",
+  "ok": true,
+  "veces": 74
+ },
+ "cubo-rubik": {
+  "articulo": "Cubo de Rubik",
+  "clave": "cubo-rubik|1974|Cubo de Rubik",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
+ },
+ "curiosity-marte": {
+  "articulo": "Curiosity",
+  "clave": "curiosity-marte|2012|Curiosity",
+  "motivo": "",
+  "ok": true,
+  "veces": 30
+ },
+ "descubrimiento-penicilina": {
+  "articulo": "Penicilina",
+  "clave": "descubrimiento-penicilina|1928|Penicilina",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
+ },
+ "disco-compacto": {
+  "articulo": "Disco compacto",
+  "clave": "disco-compacto|1982|Disco compacto",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
+ "disneyland": {
+  "articulo": "Disneyland",
+  "clave": "disneyland|1955|Disneyland",
+  "motivo": "",
+  "ok": true,
+  "veces": 22
+ },
+ "elcano-vuelta-al-mundo": {
+  "articulo": "Expedición de Magallanes y Elcano",
+  "clave": "elcano-vuelta-al-mundo|1522|Expedición de Magallanes-Elcano",
+  "motivo": "",
+  "ok": true,
+  "veces": 16
+ },
+ "empire-state": {
+  "articulo": "Empire State Building",
+  "clave": "empire-state|1931|Empire State Building",
+  "motivo": "",
+  "ok": true,
+  "veces": 16
+ },
+ "eniac": {
+  "articulo": "ENIAC",
+  "clave": "eniac|1946|ENIAC",
+  "motivo": "",
+  "ok": true,
+  "veces": 9
+ },
+ "erupcion-vesubio-pompeya": {
+  "articulo": "Pompeya",
+  "clave": "erupcion-vesubio-pompeya|79|Pompeya",
+  "motivo": "",
+  "ok": true,
+  "veces": 15
+ },
+ "espana-campeona-mundial-2010": {
+  "articulo": "Copa Mundial de Fútbol de 2010",
+  "clave": "espana-campeona-mundial-2010|2010|Copa Mundial de Fútbol de 2010",
+  "motivo": "",
+  "ok": true,
+  "veces": 371
+ },
+ "espana-cee": {
+  "articulo": "Adhesión de España a las Comunidades Europeas",
+  "clave": "espana-cee|1986|Adhesión de España a las Comunidades Europeas",
+  "motivo": "",
+  "ok": true,
+  "veces": 15
+ },
+ "estatua-libertad": {
+  "articulo": "Estatua de la Libertad",
+  "clave": "estatua-libertad|1886|Estatua de la Libertad",
+  "motivo": "",
+  "ok": true,
+  "veces": 18
+ },
+ "estructura-adn": {
+  "articulo": "Ácido desoxirribonucleico",
+  "clave": "estructura-adn|1953|Ácido desoxirribonucleico",
+  "motivo": "",
+  "ok": true,
+  "veces": 10
+ },
+ "eurocopa-2024": {
+  "articulo": "Eurocopa 2024",
+  "clave": "eurocopa-2024|2024|Eurocopa 2024",
+  "motivo": "",
+  "ok": true,
+  "veces": 159
+ },
+ "expo-92": {
+  "articulo": "Exposición Universal de Sevilla de 1992",
+  "clave": "expo-92|1992|Exposición Universal de Sevilla (1992)",
+  "motivo": "",
+  "ok": true,
+  "veces": 51
+ },
+ "extincion-dinosaurios": {
+  "articulo": "Extinción masiva del Cretácico-Paleógeno",
+  "clave": "extincion-dinosaurios|-66000000|Extinción masiva del Cretácico-Paleógeno",
+  "motivo": "",
+  "ok": true,
+  "veces": 5
+ },
+ "ford-modelo-t": {
+  "articulo": "Ford T",
+  "clave": "ford-modelo-t|1908|Ford Modelo T",
+  "motivo": "",
+  "ok": true,
+  "veces": 8
+ },
+ "foto-agujero-negro": {
+  "articulo": "Telescopio del Horizonte de Sucesos",
+  "clave": "foto-agujero-negro|2019|Event Horizon Telescope",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
+ "fundacion-amazon": {
+  "articulo": "Amazon",
+  "clave": "fundacion-amazon|1994|Amazon",
+  "motivo": "",
+  "ok": true,
+  "veces": 7
+ },
+ "fundacion-apple": {
+  "articulo": "Apple",
+  "clave": "fundacion-apple|1976|Apple",
+  "motivo": "",
+  "ok": true,
+  "veces": 13
+ },
+ "fundacion-disney": {
+  "articulo": "The Walt Disney Company",
+  "clave": "fundacion-disney|1923|The Walt Disney Company",
+  "motivo": "",
+  "ok": true,
+  "veces": 9
+ },
+ "fundacion-facebook": {
+  "articulo": "Facebook",
+  "clave": "fundacion-facebook|2004|Facebook",
+  "motivo": "",
+  "ok": true,
+  "veces": 7
+ },
+ "fundacion-fc-barcelona": {
+  "articulo": "Fútbol Club Barcelona",
+  "clave": "fundacion-fc-barcelona|1899|Fútbol Club Barcelona",
+  "motivo": "",
+  "ok": true,
+  "veces": 23
+ },
+ "fundacion-google": {
+  "articulo": "Google",
+  "clave": "fundacion-google|1998|Google",
+  "motivo": "",
+  "ok": true,
+  "veces": 5
+ },
+ "fundacion-microsoft": {
+  "articulo": "Microsoft",
+  "clave": "fundacion-microsoft|1975|Microsoft",
+  "motivo": "",
+  "ok": true,
+  "veces": 9
+ },
+ "fundacion-real-madrid": {
+  "articulo": "Real Madrid Club de Fútbol",
+  "clave": "fundacion-real-madrid|1902|Real Madrid Club de Fútbol",
+  "motivo": "",
+  "ok": true,
+  "veces": 40
+ },
+ "fundacion-roma": {
+  "articulo": "Fundación de Roma",
+  "clave": "fundacion-roma|-753|Fundación de Roma",
+  "motivo": "",
+  "ok": true,
+  "veces": 1
+ },
+ "gagarin-espacio": {
+  "articulo": "Yuri Gagarin",
+  "clave": "gagarin-espacio|1961|Yuri Gagarin",
+  "motivo": "",
+  "ok": true,
+  "veces": 36
+ },
+ "game-boy": {
+  "articulo": "Game Boy",
+  "clave": "game-boy|1989|Game Boy",
+  "motivo": "",
+  "ok": true,
+  "veces": 17
+ },
+ "golden-gate": {
+  "articulo": "Puente Golden Gate",
+  "clave": "golden-gate|1937|Puente Golden Gate",
+  "motivo": "",
+  "ok": true,
+  "veces": 8
+ },
+ "golpe-23f": {
+  "articulo": "Golpe de Estado en España de 1981",
+  "clave": "golpe-23f|1981|Golpe de Estado en España de 1981",
+  "motivo": "",
+  "ok": true,
+  "veces": 100
+ },
+ "gran-piramide-guiza": {
+  "articulo": "Keops",
+  "clave": "gran-piramide-guiza|-2570|Keops",
+  "motivo": "",
+  "ok": true,
+  "veces": 1
+ },
+ "guernica-picasso": {
+  "articulo": "Guernica (cuadro)",
+  "clave": "guernica-picasso|1937|Guernica (cuadro)",
+  "motivo": "",
+  "ok": true,
+  "veces": 44
+ },
+ "guggenheim-bilbao": {
+  "articulo": "Museo Guggenheim Bilbao",
+  "clave": "guggenheim-bilbao|1997|Museo Guggenheim Bilbao",
+  "motivo": "",
+  "ok": true,
+  "veces": 6
+ },
+ "harry-potter-libro": {
+  "articulo": "Harry Potter y la piedra filosofal",
+  "clave": "harry-potter-libro|1997|Harry Potter y la piedra filosofal",
+  "motivo": "",
+  "ok": true,
+  "veces": 17
+ },
+ "hundimiento-titanic": {
+  "articulo": "RMS Titanic",
+  "clave": "hundimiento-titanic|1912|RMS Titanic",
+  "motivo": "",
+  "ok": true,
+  "veces": 85
+ },
+ "independencia-estados-unidos": {
+  "articulo": "Declaración de Independencia de los Estados Unidos",
+  "clave": "independencia-estados-unidos|1776|Declaración de Independencia de los Estados Unidos",
+  "motivo": "",
+  "ok": true,
+  "veces": 70
+ },
+ "instagram": {
+  "articulo": "Instagram",
+  "clave": "instagram|2010|Instagram",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
+ "juegos-olimpicos-atenas-1896": {
+  "articulo": "Juegos Olímpicos de Atenas 1896",
+  "clave": "juegos-olimpicos-atenas-1896|1896|Juegos Olímpicos de Atenas 1896",
+  "motivo": "",
+  "ok": true,
+  "veces": 150
+ },
+ "las-meninas": {
+  "articulo": "Las meninas",
+  "clave": "las-meninas|1656|Las meninas",
+  "motivo": "",
+  "ok": true,
+  "veces": 11
+ },
+ "llegada-euro": {
+  "articulo": "Euro",
+  "clave": "llegada-euro|2002|Euro",
+  "motivo": "",
+  "ok": true,
+  "veces": 43
+ },
+ "llegada-luna": {
+  "articulo": "Apolo 11",
+  "clave": "llegada-luna|1969|Apolo 11",
+  "motivo": "",
+  "ok": true,
+  "veces": 84
+ },
+ "llegada-musulmanes-peninsula": {
+  "articulo": "Conquista omeya de Hispania",
+  "clave": "llegada-musulmanes-peninsula|711|Conquista omeya de Hispania",
+  "motivo": "",
+  "ok": true,
+  "veces": 11
+ },
+ "los-simpson": {
+  "articulo": "Los Simpson",
+  "clave": "los-simpson|1989|Los Simpson",
+  "motivo": "",
+  "ok": true,
+  "veces": 11
+ },
+ "love-me-do-beatles": {
+  "articulo": "Love Me Do",
+  "clave": "love-me-do-beatles|1962|Love Me Do",
+  "motivo": "",
+  "ok": true,
+  "veces": 19
+ },
+ "macintosh": {
+  "articulo": "Macintosh 128K",
+  "clave": "macintosh|1984|Macintosh 128K",
+  "motivo": "",
+  "ok": true,
+  "veces": 7
+ },
+ "massiel-eurovision": {
+  "articulo": "La, la, la",
+  "clave": "massiel-eurovision|1968|La, la, la",
+  "motivo": "",
+  "ok": true,
+  "veces": 19
+ },
+ "metro-londres": {
+  "articulo": "Metro de Londres",
+  "clave": "metro-londres|1863|Metro de Londres",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
+ "metro-madrid": {
+  "articulo": "Metro de Madrid",
+  "clave": "metro-madrid|1919|Metro de Madrid",
+  "motivo": "",
+  "ok": true,
+  "veces": 9
+ },
+ "mundial-espana-1982": {
+  "articulo": "Copa Mundial de Fútbol de 1982",
+  "clave": "mundial-espana-1982|1982|Copa Mundial de Fútbol de 1982",
+  "motivo": "",
+  "ok": true,
+  "veces": 300
+ },
+ "mundial-femenino-2023": {
+  "articulo": "Copa Mundial Femenina de Fútbol de 2023",
+  "clave": "mundial-femenino-2023|2023|Copa Mundial Femenina de Fútbol de 2023",
+  "motivo": "",
+  "ok": true,
+  "veces": 168
+ },
+ "mundial-uruguay-1930": {
+  "articulo": "Copa Mundial de Fútbol de 1930",
+  "clave": "mundial-uruguay-1930|1930|Copa Mundial de Fútbol de 1930",
+  "motivo": "",
+  "ok": true,
+  "veces": 102
+ },
+ "museo-prado": {
+  "articulo": "Museo del Prado",
+  "clave": "museo-prado|1819|Museo del Prado",
+  "motivo": "",
+  "ok": true,
+  "veces": 7
+ },
+ "nadal-roland-garros": {
+  "articulo": "Rafael Nadal",
+  "clave": "nadal-roland-garros|2005|Rafael Nadal",
+  "motivo": "",
+  "ok": true,
+  "veces": 67
+ },
+ "opera-sidney": {
+  "articulo": "Ópera de Sídney",
+  "clave": "opera-sidney|1973|Ópera de Sídney",
+  "motivo": "",
+  "ok": true,
+  "veces": 13
+ },
+ "operacion-triunfo": {
+  "articulo": "Operación Triunfo (España)",
+  "clave": "operacion-triunfo|2001|Operación Triunfo (España)",
+  "motivo": "",
+  "ok": true,
+  "veces": 45
+ },
+ "oveja-dolly": {
+  "articulo": "Oveja Dolly",
+  "clave": "oveja-dolly|1996|Oveja Dolly",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
+ "pac-man": {
+  "articulo": "Pac-Man",
+  "clave": "pac-man|1980|Pac-Man",
+  "motivo": "",
+  "ok": true,
+  "veces": 9
+ },
+ "pandemia-covid": {
+  "articulo": "Pandemia de COVID-19",
+  "clave": "pandemia-covid|2020|Pandemia de COVID-19",
+  "motivo": "",
+  "ok": true,
+  "veces": 261
+ },
+ "patente-telefono": {
+  "articulo": "Teléfono",
+  "clave": "patente-telefono|1876|Teléfono",
+  "motivo": "",
+  "ok": true,
+  "veces": 6
+ },
+ "pieza-lego": {
+  "articulo": "LEGO (empresa)",
+  "clave": "pieza-lego|1958|LEGO (empresa)",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
+ "pinturas-altamira": {
+  "articulo": "Cueva de Altamira",
+  "clave": "pinturas-altamira|-36500|Cueva de Altamira",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
+ "playstation": {
+  "articulo": "PlayStation (consola)",
+  "clave": "playstation|1994|PlayStation (consola)",
+  "motivo": "",
+  "ok": true,
+  "veces": 5
+ },
+ "pokemon-go": {
+  "articulo": "Pokémon GO",
+  "clave": "pokemon-go|2016|Pokémon GO",
+  "motivo": "",
+  "ok": true,
+  "veces": 169
+ },
+ "pong": {
+  "articulo": "Pong",
+  "clave": "pong|1972|Pong",
+  "motivo": "",
+  "ok": true,
+  "veces": 8
+ },
+ "primer-correo-electronico": {
+  "articulo": "Ray Tomlinson",
+  "clave": "primer-correo-electronico|1971|Ray Tomlinson",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
+ "primer-eurovision": {
+  "articulo": "Festival de la Canción de Eurovisión 1956",
+  "clave": "primer-eurovision|1956|Festival de la Canción de Eurovisión 1956",
+  "motivo": "",
+  "ok": true,
+  "veces": 57
+ },
+ "primer-iphone": {
+  "articulo": "iPhone (1.ª generación)",
+  "clave": "primer-iphone|2007|iPhone (1.ª generación)",
+  "motivo": "",
+  "ok": true,
+  "veces": 11
+ },
+ "primer-vuelo-wright": {
+  "articulo": "Hermanos Wright",
+  "clave": "primer-vuelo-wright|1903|Hermanos Wright",
+  "motivo": "",
+  "ok": true,
+  "veces": 7
+ },
+ "primera-guerra-mundial": {
+  "articulo": "Primera Guerra Mundial",
+  "clave": "primera-guerra-mundial|1914|Primera Guerra Mundial",
+  "motivo": "",
+  "ok": true,
+  "veces": 98
+ },
+ "primera-llamada-movil": {
+  "articulo": "Martin Cooper",
+  "clave": "primera-llamada-movil|1973|Martin Cooper",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
+ "primera-sesion-cine": {
+  "articulo": "Cinematógrafo",
+  "clave": "primera-sesion-cine|1895|Cinematógrafo",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
+ },
+ "primera-web": {
+  "articulo": "World Wide Web",
+  "clave": "primera-web|1991|World Wide Web",
+  "motivo": "",
+  "ok": true,
+  "veces": 7
+ },
+ "primeras-emisiones-tve": {
+  "articulo": "Televisión Española",
+  "clave": "primeras-emisiones-tve|1956|Televisión Española",
+  "motivo": "",
+  "ok": true,
+  "veces": 13
+ },
+ "primeros-juegos-olimpicos-antiguos": {
+  "articulo": "Juegos Olímpicos en la Antigüedad",
+  "clave": "primeros-juegos-olimpicos-antiguos|-776|Juegos Olímpicos antiguos",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
+ "primeros-oscar": {
+  "articulo": "Premios Óscar",
+  "clave": "primeros-oscar|1929|Premios Óscar",
+  "motivo": "",
+  "ok": true,
+  "veces": 11
+ },
+ "primeros-premios-nobel": {
+  "articulo": "Premios Nobel",
+  "clave": "primeros-premios-nobel|1901|Premio Nobel",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
+ "principia-newton": {
+  "articulo": "Philosophiæ naturalis principia mathematica",
+  "clave": "principia-newton|1687|Philosophiæ naturalis principia mathematica",
+  "motivo": "",
+  "ok": true,
+  "veces": 7
+ },
+ "quijote-primera-parte": {
+  "articulo": "Don Quijote de la Mancha",
+  "clave": "quijote-primera-parte|1605|Don Quijote de la Mancha",
+  "motivo": "",
+  "ok": true,
+  "veces": 17
+ },
+ "regreso-al-futuro": {
+  "articulo": "Back to the Future",
+  "clave": "regreso-al-futuro|1985|Back to the Future",
+  "motivo": "",
+  "ok": true,
+  "veces": 92
+ },
+ "relatividad-especial": {
+  "articulo": "Teoría de la relatividad especial",
+  "clave": "relatividad-especial|1905|Teoría de la relatividad especial",
+  "motivo": "",
+  "ok": true,
+  "veces": 10
+ },
+ "sagrada-familia-obras": {
+  "articulo": "Templo Expiatorio de la Sagrada Familia",
+  "clave": "sagrada-familia-obras|1882|Templo Expiatorio de la Sagrada Familia",
+  "motivo": "",
+  "ok": true,
+  "veces": 7
+ },
+ "seat-600": {
+  "articulo": "SEAT 600",
+  "clave": "seat-600|1957|SEAT 600",
+  "motivo": "",
+  "ok": true,
+  "veces": 9
+ },
+ "segunda-guerra-mundial": {
+  "articulo": "Segunda Guerra Mundial",
+  "clave": "segunda-guerra-mundial|1939|Segunda Guerra Mundial",
+  "motivo": "",
+  "ok": true,
+  "veces": 193
+ },
+ "segunda-republica": {
+  "articulo": "Segunda República española",
+  "clave": "segunda-republica|1931|Segunda República española",
+  "motivo": "",
+  "ok": true,
+  "veces": 144
+ },
+ "spotify": {
+  "articulo": "Spotify",
+  "clave": "spotify|2008|Spotify",
+  "motivo": "",
+  "ok": true,
+  "veces": 8
+ },
+ "sputnik": {
+  "articulo": "Sputnik 1",
+  "clave": "sputnik|1957|Sputnik 1",
+  "motivo": "",
+  "ok": true,
+  "veces": 20
+ },
+ "star-wars": {
+  "articulo": "Star Wars: Episodio IV - Una nueva esperanza",
+  "clave": "star-wars|1977|Star Wars: Episodio IV - Una nueva esperanza",
+  "motivo": "",
+  "ok": true,
+  "veces": 34
+ },
+ "super-mario-bros": {
+  "articulo": "Super Mario Bros.",
+  "clave": "super-mario-bros|1985|Super Mario Bros.",
+  "motivo": "",
+  "ok": true,
+  "veces": 21
+ },
+ "telescopio-hubble": {
+  "articulo": "Telescopio espacial Hubble",
+  "clave": "telescopio-hubble|1990|Telescopio espacial Hubble",
+  "motivo": "",
+  "ok": true,
+  "veces": 11
+ },
+ "toma-bastilla": {
+  "articulo": "Toma de la Bastilla",
+  "clave": "toma-bastilla|1789|Toma de la Bastilla",
+  "motivo": "",
+  "ok": true,
+  "veces": 38
+ },
+ "toma-granada": {
+  "articulo": "Guerra de Granada",
+  "clave": "toma-granada|1492|Guerra de Granada",
+  "motivo": "",
+  "ok": true,
+  "veces": 13
+ },
+ "torre-eiffel": {
+  "articulo": "Torre Eiffel",
+  "clave": "torre-eiffel|1889|Torre Eiffel",
+  "motivo": "",
+  "ok": true,
+  "veces": 68
+ },
+ "tren-barcelona-mataro": {
+  "articulo": "Historia del ferrocarril en España",
+  "clave": "tren-barcelona-mataro|1848|Ferrocarril Barcelona-Mataró",
+  "motivo": "",
+  "ok": true,
+  "veces": 5
+ },
+ "twitter": {
+  "articulo": "Twitter",
+  "clave": "twitter|2006|Twitter",
+  "motivo": "",
+  "ok": true,
+  "veces": 14
+ },
+ "volcan-la-palma": {
+  "articulo": "Erupción volcánica de La Palma de 2021",
+  "clave": "volcan-la-palma|2021|Erupción volcánica de La Palma de 2021",
+  "motivo": "",
+  "ok": true,
+  "veces": 299
+ },
+ "vuelo-lindbergh": {
+  "articulo": "Charles Lindbergh",
+  "clave": "vuelo-lindbergh|1927|Charles Lindbergh",
+  "motivo": "",
+  "ok": true,
+  "veces": 6
+ },
+ "walkman": {
+  "articulo": "Stereo personal",
+  "clave": "walkman|1979|Walkman",
+  "motivo": "",
+  "ok": true,
+  "veces": 6
+ },
+ "wikipedia": {
+  "articulo": "Wikipedia",
+  "clave": "wikipedia|2001|Wikipedia",
+  "motivo": "",
+  "ok": true,
+  "veces": 10
+ },
+ "youtube": {
+  "articulo": "YouTube",
+  "clave": "youtube|2005|YouTube",
+  "motivo": "",
+  "ok": true,
+  "veces": 12
+ }
+}
