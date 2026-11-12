@@ -98,7 +98,7 @@ Los textos legales son una plantilla razonable, no asesoría jurídica: revísal
 2. **Repositorio.** Sube esta carpeta a un repositorio privado de GitHub.
 3. **Hosting: Cloudflare Pages** (gratis). Crea un proyecto conectado al repositorio con orden de compilación `npm run build` y directorio de salida `_site`. Cada `git push` publica.
 4. **Dominio en Cloudflare.** En el proyecto, «Custom domains» → `imprimibles.es` y `www.imprimibles.es`; redirige `www` al dominio sin `www`.
-5. **Correo.** Ahora se usa `contacto.ahorrometro@gmail.com`, como en las otras webs. Si quieres uno propio (`contacto@imprimibles.es`), créalo con Cloudflare Email Routing y cámbialo en `src/_data/site.js`.
+5. **Correo.** `contacto@imprimibles.es`, con Cloudflare Email Routing hacia el Gmail del titular (se cambia en `src/_data/site.js`).
 6. **Google Search Console.** Añade la propiedad de dominio (verificación por DNS), envía `https://imprimibles.es/sitemap.xml` y pide la indexación de la portada y las 7 secciones.
 7. **Bing Webmaster Tools.** Importa la propiedad desde Search Console.
 

@@ -58,7 +58,7 @@ UMBRAL_INDEXABLE = 5000
 MIN_PAGINAS = 500  # si salen menos, algo ha ido mal: el script falla para no publicar una web rota
 
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
-           "email": "contacto.ahorrometro@gmail.com"}
+           "email": "contacto@cuantossellaman.es"}
 
 PROVINCIAS = {
     "01": "Álava", "02": "Albacete", "03": "Alicante", "04": "Almería", "05": "Ávila", "06": "Badajoz",
