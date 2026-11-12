@@ -25,7 +25,7 @@ module.exports = [
     title: 'Fichas de Navidad para imprimir gratis (PDF)',
     desc: 'Fichas de Navidad para imprimir: carta a los Reyes Magos y a Papá Noel, bingo, laberinto con forma de árbol, sudoku con dibujos y sopa de letras.',
     h1: 'Fichas de Navidad para imprimir',
-    resumen: 'Cartas, bingo, laberinto, sudoku y sopa de letras',
+    resumen: 'Cartas, bingo, mandalas, laberinto y sopa de letras',
     entrada: 'Todo lo que hace falta para las últimas semanas de clase y para las tardes de vacaciones: la carta a los Reyes Magos y a Papá Noel, un bingo con palabras navideñas, un laberinto con forma de árbol, sudokus con dibujos y una sopa de letras con el vocabulario de la Navidad de aquí.',
     hojas: [{ tipo: 'laberinto-arbol', titulo: 'Laberinto de Navidad', cols: 19, filas: 25 }],
     copias: 2,
@@ -36,6 +36,7 @@ module.exports = [
 <li><a href="/navidad/carta-de-los-reyes-a-los-ninos/">Carta de los Reyes Magos a los niños</a>, la respuesta que dejan junto a los regalos.</li>
 <li><a href="/navidad/bingo/">Bingo de Navidad</a> con palabras en lugar de números, para jugar en clase o en la sobremesa.</li>
 <li><a href="/navidad/laberinto/">Laberinto con forma de árbol de Navidad</a>, en versión fácil y difícil.</li>
+<li><a href="/mandalas/navidad/">Mandalas de Navidad</a> para colorear, con copos de nieve, estrellas y regalos.</li>
 <li><a href="/navidad/sudoku/">Sudokus de Navidad con dibujos</a>, para niños que todavía no han hecho ninguno.</li>
 <li><a href="/sopas-de-letras/navidad/">Sopa de letras de Navidad</a> y <a href="/crucigramas/navidad/">crucigrama de Navidad</a>, con turrón, zambomba, roscón y cabalgata.</li>
 </ul>

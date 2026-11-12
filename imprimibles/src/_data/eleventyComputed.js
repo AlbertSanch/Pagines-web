@@ -34,7 +34,7 @@ module.exports = {
         '@context': 'https://schema.org', '@type': p.esHub ? ['CollectionPage', 'LearningResource'] : 'LearningResource',
         name: p.h1, description: p.desc, url: abs(site, p.url), inLanguage: 'es-ES',
         isAccessibleForFree: true, learningResourceType: 'Ficha para imprimir',
-        dateModified: site.compilado,
+        dateModified: (d.fechas[p.url] || {}).fecha || site.compilado,
         publisher: { '@type': 'Organization', name: site.nombre, url: site.url + '/' }
       };
       if (p.imagen) obra.image = p.hojas.filter((h) => h.hayImg).map((h) => abs(site, h.img));

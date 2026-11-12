@@ -30,6 +30,7 @@ module.exports = [
 <li><strong>Mandalas medios</strong> (los de esta página): cinco o seis anillos con algún detalle interior. Para niños mayores y para adultos que quieren terminar uno en una tarde.</li>
 <li><a href="/mandalas/dificiles/">Mandalas difíciles</a>: ocho o nueve anillos, hasta dieciocho repeticiones por vuelta y trazo fino. Para adultos con paciencia y lápices bien afilados.</li>
 </ul>
+<p>Y para estas fechas, <a href="/mandalas/navidad/">mandalas de Navidad</a> con copos de nieve, estrellas y árboles.</p>
 <h2>Qué es un mandala</h2>
 <p>La palabra viene del sánscrito y significa «círculo». En el budismo y el hinduismo, los mandalas son representaciones del universo que se dibujan con gran detalle, a veces con arena de colores. Los que se colorean como pasatiempo toman de ellos la forma: un centro y anillos concéntricos en los que el mismo motivo se repite alrededor, como en un caleidoscopio.</p>
 <p>Mucha gente los colorea para desconectar un rato: el dibujo ya está hecho, no hay que decidir formas, y la repetición de las piezas hace que la mano trabaje casi sola. En clase son una buena actividad tranquila después del recreo.</p>
@@ -38,6 +39,26 @@ ${comoColorear}`,
       ['¿Se repiten los mandalas?', 'No. Cada mandala se genera combinando al azar el número de repeticiones, el ancho de los anillos y el motivo de cada uno (pétalos, hojas, arcos, círculos, zigzag o gotas). Con «Otra distinta» obtienes uno nuevo, y el PDF trae cuatro diferentes.'],
       ['¿Puedo usarlos en clase o en un taller?', 'Sí. Puedes imprimirlos y fotocopiarlos sin límite para casa, el aula, residencias o talleres. Lo único que no está permitido es venderlos o republicarlos en otra web.']
     ],
+    amazon
+  },
+  {
+    cat: 'mandalas', slug: 'navidad', corto: 'De Navidad',
+    title: 'Mandalas de Navidad para colorear e imprimir (PDF)',
+    desc: 'Mandalas de Navidad para colorear: copos de nieve, estrellas, árboles, regalos y campanas. Versión fácil para niños y otra más detallada. PDF gratis.',
+    h1: 'Mandalas de Navidad para colorear',
+    entrada: 'Mandalas con motivos navideños para colorear en estas fechas: copos de nieve, estrellas, árboles, regalos, campanas, bolas y velas, repetidos en anillos alrededor de un copo central. Hay una versión fácil, con piezas grandes, y otra más detallada para mayores. Cada vez que pulsas «Otra distinta» sale un mandala nuevo.',
+    hojas: [
+      { tipo: 'mandala', navidad: true, nivel: 'facil', titulo: 'Mandala de Navidad' },
+      { tipo: 'mandala', navidad: true, nivel: 'medio', titulo: 'Mandala de Navidad' }
+    ],
+    copias: 2,
+    cuerpo: `
+<h2>Ideas para colorearlos</h2>
+<p>Los colores clásicos de la Navidad funcionan muy bien en un mandala: rojo, verde y dorado, con algún toque de blanco (dejando piezas sin colorear). Otra opción es un mandala «de invierno» solo con azules, grises y plata, que hace destacar los copos de nieve.</p>
+<p>Si usas rotuladores metálicos o purpurina en gel en las estrellas y las bolas, el mandala sirve de adorno: recórtalo por el círculo exterior, pégalo sobre una cartulina y cuélgalo en la ventana o en el árbol.</p>
+<h2>Para clase o para casa</h2>
+<p>Los mandalas de Navidad son una actividad tranquila para las últimas semanas antes de las vacaciones, cuando cuesta concentrarse en otra cosa. El fácil tiene cuatro anillos y piezas grandes, adecuado para infantil y los primeros cursos de primaria; el detallado, seis anillos con motivos pequeños, para niños mayores y adultos.</p>
+<p>Si quieres más fichas para estas fechas, en <a href="/navidad/">fichas de Navidad</a> tienes la carta a los Reyes Magos, el bingo, el laberinto con forma de árbol y la sopa de letras.</p>`,
     amazon
   },
   {

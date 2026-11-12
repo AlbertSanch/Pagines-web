@@ -7,6 +7,7 @@
     "start": "eleventy --serve",
     "pdfs": "node scripts/pdfs.js",
     "imagenes": "node scripts/imagenes.js",
+    "fechas": "node scripts/fechas.js",
     "comprobar": "node scripts/comprobar.js"
   },
   "keywords": [],

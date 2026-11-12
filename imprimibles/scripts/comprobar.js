@@ -19,6 +19,8 @@ for (const p of paginas) {
   p.hojas.forEach((h) => { if (!h.hayImg) mal(`falta la imagen (npm run imagenes): ${h.img}`); });
 }
 
+const fechas = fs.existsSync(path.join(__dirname, '../src/_data/fechas.json')) ? require('../src/_data/fechas.json') : {};
+for (const p of paginas) if (!fechas[p.url]) mal(`sin fecha (npm run fechas): ${p.url}`);
 console.log('Enlaces internos');
 const urls = new Set(['/', '/sobre/', '/contacto/', '/aviso-legal/', '/privacidad/', '/cookies/', ...paginas.map((p) => p.url)]);
 for (const p of paginas) {

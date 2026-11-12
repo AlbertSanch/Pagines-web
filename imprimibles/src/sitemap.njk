@@ -4,11 +4,11 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>{{ site.url }}/</loc><lastmod>{{ site.compilado }}</lastmod></url>
+  <url><loc>{{ site.url }}/</loc><lastmod>{{ (fechas['/'] or {}).fecha or site.compilado }}</lastmod></url>
 {%- for p in paginas %}
-  <url><loc>{{ site.url }}{{ p.url }}</loc><lastmod>{{ site.compilado }}</lastmod>{% for h in p.hojas %}{% if h.hayImg %}<image:image><image:loc>{{ site.url }}{{ h.img }}</image:loc></image:image>{% endif %}{% endfor %}</url>
+  <url><loc>{{ site.url }}{{ p.url }}</loc><lastmod>{{ (fechas[p.url] or {}).fecha or site.compilado }}</lastmod>{% for h in p.hojas %}{% if h.hayImg %}<image:image><image:loc>{{ site.url }}{{ h.img }}</image:loc></image:image>{% endif %}{% endfor %}</url>
 {%- endfor %}
 {%- for u in ['/sobre/', '/contacto/', '/aviso-legal/', '/privacidad/', '/cookies/'] %}
-  <url><loc>{{ site.url }}{{ u }}</loc><lastmod>{{ site.compilado }}</lastmod></url>
+  <url><loc>{{ site.url }}{{ u }}</loc><lastmod>{{ (fechas[u] or {}).fecha or site.compilado }}</lastmod></url>
 {%- endfor %}
 </urlset>

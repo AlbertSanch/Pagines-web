@@ -1069,8 +1069,10 @@
     // centro: flor sencilla
     var nc = sim, rc = r0;
     d += 'M' + P(rc * .32, 0) + 'A' + f(rc * .32) + ' ' + f(rc * .32) + ' 0 1 1 ' + P(rc * .32, Math.PI - .0001) + 'A' + f(rc * .32) + ' ' + f(rc * .32) + ' 0 1 1 ' + P(rc * .32, 0);
-    for (k = 0; k < nc; k++) d += petalo(rc * .32, rc, k * 2 * Math.PI / nc, Math.PI / nc * .85);
-    var motivos = ['petalos', 'arcos', 'hojas', 'circulos', 'zigzag', 'gotas', 'petalos', 'arcos'];
+    if (spec.navidad) d += copo(rc * .95, 0);
+    else for (k = 0; k < nc; k++) d += petalo(rc * .32, rc, k * 2 * Math.PI / nc, Math.PI / nc * .85);
+    var motivos = spec.navidad ? ['iconos', 'copos', 'arcos', 'iconos', 'circulos', 'zigzag', 'petalos', 'copos'] : ['petalos', 'arcos', 'hojas', 'circulos', 'zigzag', 'gotas', 'petalos', 'arcos'];
+    var extra = '';
     var anterior = '';
     for (i = 0; i < nAn; i++) {
       var a1 = radios[i], a2 = radios[i + 1], m;
@@ -1078,7 +1080,17 @@
       anterior = m;
       var det = !!cfg.detalle && r() < cfg.detalle;
       var mult = (cfg.detalle > r() && i > 1) ? 2 : 1, n = sim * mult, paso = 2 * Math.PI / n, desf = (i % 2) * paso / 2;
-      if (m === 'petalos' || m === 'gotas') {
+      if (m === 'iconos') {
+        var nIc = Math.max(6, Math.min(sim, Math.floor(2 * Math.PI * (a1 + a2) / 2 / ((a2 - a1) * 1.05)))), pasoIc = 2 * Math.PI / nIc, tam = Math.min((a2 - a1) * .92, (a1 + a2) / 2 * pasoIc * .8);
+        var cual = ri(r, 0, 5), otro = (cual + 1 + ri(r, 0, 4)) % 6;
+        for (k = 0; k < nIc; k++) {
+          var ai = k * pasoIc, xy = P((a1 + a2) / 2, ai).split(' ').map(Number);
+          extra += '<g transform="rotate(' + f(ai * 180 / Math.PI) + ' ' + f(xy[0]) + ' ' + f(xy[1]) + ')">' + dibujo(k % 2 && nIc % 2 === 0 ? otro : cual, xy[0], xy[1], tam, TINTA, cfg.trazo) + '</g>';
+        }
+      } else if (m === 'copos') {
+        var nCo = n, rmc = (a1 + a2) / 2, rco = Math.min((a2 - a1) / 2 * .9, rmc * Math.sin(paso / 2) * .9);
+        for (k = 0; k < nCo; k++) { var cxy = P(rmc, k * paso + desf).split(' ').map(Number); d += copoEn(cxy[0], cxy[1], rco); }
+      } else if (m === 'petalos' || m === 'gotas') {
         for (k = 0; k < n; k++) {
           var ang = k * paso + desf;
           d += m === 'petalos' ? petalo(a1, a2, ang, paso / 2 * .92) : gota(a1, a2, ang, paso / 2 * .9);
@@ -1124,10 +1136,21 @@
       return 'M' + P(r1, a) + 'C' + P(r1 + h * .45, a - w * .9) + ' ' + P(r2, a - w * 1.05) + ' ' + P(r2, a) +
         'C' + P(r2, a + w * 1.05) + ' ' + P(r1 + h * .45, a + w * .9) + ' ' + P(r1, a);
     }
+    function copoEn(x, y, rr) {
+      var o = '';
+      for (var b = 0; b < 6; b++) {
+        var an = b * Math.PI / 3, ex = x + rr * Math.cos(an), ey = y + rr * Math.sin(an);
+        o += 'M' + f(x) + ' ' + f(y) + 'L' + f(ex) + ' ' + f(ey);
+        var mx = x + rr * .6 * Math.cos(an), my = y + rr * .6 * Math.sin(an), lb = rr * .3;
+        o += 'M' + f(mx + lb * Math.cos(an + .7)) + ' ' + f(my + lb * Math.sin(an + .7)) + 'L' + f(mx) + ' ' + f(my) + 'L' + f(mx + lb * Math.cos(an - .7)) + ' ' + f(my + lb * Math.sin(an - .7));
+      }
+      return o;
+    }
+    function copo(rr) { return copoEn(cx, cy, rr); }
     function circulo(x, y, rr) {
       return 'M' + f(x - rr) + ' ' + f(y) + 'a' + f(rr) + ' ' + f(rr) + ' 0 1 0 ' + f(2 * rr) + ' 0a' + f(rr) + ' ' + f(rr) + ' 0 1 0 ' + f(-2 * rr) + ' 0';
     }
-    var cuerpo = '<path d="' + d + '" fill="none" stroke="' + TINTA + '" stroke-width="' + cfg.trazo + '" stroke-linejoin="round"/>';
+    var cuerpo = '<path d="' + d + '" fill="none" stroke="' + TINTA + '" stroke-width="' + cfg.trazo + '" stroke-linejoin="round" stroke-linecap="round"/>' + extra;
     return { svg: hoja({ titulo: spec.titulo, sub: spec.sub || 'Colorea el mandala como quieras. Un truco: usa el mismo color en todas las piezas de cada anillo.', seed: seed }, cuerpo), sol: null };
   }
 
