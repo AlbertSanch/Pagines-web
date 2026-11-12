@@ -19,6 +19,6 @@ module.exports = {
     titular: 'Albert Sanchez Guiu',
     nif: '48167483D',
     domicilio: 'La Roca del Vallès (Barcelona), España',
-    email: 'contacto.ahorrometro@gmail.com'
+    email: 'contacto@imprimibles.es'
   }
 };
