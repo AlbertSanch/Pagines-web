@@ -1180,6 +1180,61 @@
     return { svg: hoja({ titulo: spec.titulo || 'Horario escolar' }, s), sol: null };
   }
 
+  // ---------- calendarios ----------
+  var MESES = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+  var INICIALES = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
+  function diasMes(a, m) { return new Date(Date.UTC(a, m + 1, 0)).getUTCDate(); }
+  function primerDia(a, m) { return (new Date(Date.UTC(a, m, 1)).getUTCDay() + 6) % 7; } // 0 = lunes
+  function claveDia(m, d) { return (m < 9 ? '0' : '') + (m + 1) + '-' + (d < 10 ? '0' : '') + d; }
+  function calendarioAnual(spec) {
+    var a = spec.anio, fest = {}, s = '';
+    (spec.festivos || []).forEach(function (x) { fest[x[0]] = x[1]; });
+    s += txt(15, 30, String(a), { size: 16, titular: true });
+    var w = 58, h = 54, x0 = 15, y0 = 44, cw = w / 7;
+    for (var m = 0; m < 12; m++) {
+      var mx = x0 + (m % 3) * (w + 3), my = y0 + Math.floor(m / 3) * h;
+      s += txt(mx + 1, my, MESES[m], { size: 4.6, titular: true });
+      INICIALES.forEach(function (l, j) { s += txt(mx + (j + .5) * cw, my + 6.5, l, { size: 2.8, anchor: 'middle', bold: true, fill: j === 6 ? ROJO : GRIS }); });
+      var p0 = primerDia(a, m), nd = diasMes(a, m);
+      for (var d = 1; d <= nd; d++) {
+        var pos = p0 + d - 1, col = pos % 7, fila = Math.floor(pos / 7), k = claveDia(m, d), rojo = col === 6 || fest[k];
+        var cx = mx + (col + .5) * cw, cy = my + 13 + fila * 6.4;
+        if (fest[k]) s += '<circle cx="' + f(cx) + '" cy="' + f(cy - 1.05) + '" r="2.55" fill="none" stroke="' + ROJO + '" stroke-width=".35"/>';
+        s += txt(cx, cy, d, { size: 3.3, anchor: 'middle', bold: !!rojo, fill: rojo ? ROJO : TINTA });
+      }
+    }
+    if (spec.festivos && spec.festivos.length) {
+      var yy = y0 + 4 * h - 1;
+      s += txt(15, yy, 'Festivos nacionales ' + a + ' (en rojo, con círculo)', { size: 3.3, bold: true });
+      var lista = spec.festivos.map(function (x) { var mm = Number(x[0].slice(0, 2)) - 1, dd = Number(x[0].slice(3)); return dd + ' ' + MESES[mm].toLowerCase() + ': ' + x[1]; });
+      var mitad = Math.ceil(lista.length / 2);
+      lista.forEach(function (l, i) { s += txt(i < mitad ? 15 : 108, yy + 5 + (i % mitad) * 4.3, l, { size: 3 }); });
+    }
+    return { svg: hoja({ alt: 'Calendario ' + a, sinPie: false }, s), sol: null };
+  }
+  function calendarioMes(spec) {
+    var a = spec.anio, m = spec.mes, fest = {}, s = '';
+    (spec.festivos || []).forEach(function (x) { fest[x[0]] = x[1]; });
+    s += txt(15, 30, MESES[m], { size: 13, titular: true }) + txt(195, 30, String(a), { size: 13, titular: true, anchor: 'end', fill: GRIS });
+    var x0 = 15, y0 = 40, cw = 180 / 7, p0 = primerDia(a, m), nd = diasMes(a, m), filas = Math.ceil((p0 + nd) / 7), ch = 236 / filas;
+    INICIALES.forEach(function (l, j) {
+      var nombre = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'][j];
+      s += '<rect x="' + f(x0 + j * cw) + '" y="' + y0 + '" width="' + f(cw) + '" height="8" fill="' + (j === 6 ? ROJO : TINTA) + '"/>';
+      s += txt(x0 + (j + .5) * cw, y0 + 5.6, nombre, { size: 3.4, anchor: 'middle', bold: true, fill: '#fff' });
+    });
+    for (var i = 0; i < filas * 7; i++) {
+      var col = i % 7, fila = Math.floor(i / 7), d = i - p0 + 1, x = x0 + col * cw, y = y0 + 8 + fila * ch;
+      var vale = d >= 1 && d <= nd, k = vale ? claveDia(m, d) : '', rojo = vale && (col === 6 || fest[k]);
+      s += '<rect x="' + f(x) + '" y="' + f(y) + '" width="' + f(cw) + '" height="' + f(ch) + '" fill="' + (vale ? '#fff' : '#f3f1ea') + '" stroke="' + TINTA + '" stroke-width=".3"/>';
+      if (vale) {
+        s += txt(x + 2.2, y + 6.2, d, { size: 5.2, bold: true, fill: rojo ? ROJO : TINTA });
+        if (fest[k]) parte(fest[k], 16).slice(0, 2).forEach(function (l, j) { s += txt(x + 2.2, y + ch - 5.2 + j * 3.2 - (parte(fest[k], 16).length > 1 ? 3.2 : 0), l, { size: 2.5, fill: ROJO }); });
+      }
+    }
+    s += '<rect x="' + x0 + '" y="' + y0 + '" width="180" height="' + f(8 + filas * ch) + '" fill="none" stroke="' + TINTA + '" stroke-width=".7"/>';
+    return { svg: hoja({ alt: 'Calendario de ' + MESES[m].toLowerCase() + ' de ' + a }, s), sol: null };
+  }
+
   var TIPOS = {
     sopa: sopa, sudoku: sudoku, laberinto: laberinto, bingo90: bingo90, bingo75: bingo75, 'bingo-numeros': bingoNumeros,
     tabla: tabla, 'tablas-todas': tablasTodas, pitagorica: pitagorica, 'mult-practica': multPractica,
@@ -1188,7 +1243,7 @@
     'laberinto-arbol': laberintoArbol, carta: carta, sobre: sobre, 'carta-respuesta': cartaRespuesta, crucigrama: crucigrama,
     'caligrafia-letras': caligrafiaLetras, 'caligrafia-frases': caligrafiaFrases, 'trazos-imprenta': trazosImprenta,
     multiplicaciones: multiplicaciones, divisiones: divisiones, mandala: mandala,
-    grafomotricidad: grafomotricidad, horario: horario
+    grafomotricidad: grafomotricidad, horario: horario, 'calendario-anual': calendarioAnual, 'calendario-mes': calendarioMes
   };
   // Tipos cuyo contenido cambia con la semilla (tienen botón «Otra distinta»)
   var ALEATORIOS = { sopa: 1, sudoku: 1, laberinto: 1, bingo90: 1, bingo75: 1, 'mult-practica': 1, operaciones: 1,
