@@ -171,8 +171,8 @@ module.exports = [
     entrada: 'Divisiones en las que el divisor tiene una sola cifra, colocadas «en casita» como se hacen en los colegios españoles. Aquí tienes un ejemplo resuelto paso a paso, un ejercicio con corrección al momento y fichas para imprimir con dividendos de dos y tres cifras.',
     antes: pasoDiv() + practicaDiv('Practica divisiones aquí'),
     hojas: [
-      { tipo: 'divisiones', dividendo: 2, titulo: 'Divisiones de una cifra (dividendo de dos cifras)' },
-      { tipo: 'divisiones', dividendo: 3, titulo: 'Divisiones de una cifra (dividendo de tres cifras)' }
+      { tipo: 'divisiones', dividendo: 2, titulo: 'Divisiones con dividendo de dos cifras' },
+      { tipo: 'divisiones', dividendo: 3, titulo: 'Divisiones con dividendo de tres cifras' }
     ],
     copias: 2,
     cuerpo: `

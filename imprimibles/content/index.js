@@ -1,5 +1,8 @@
 // Reúne todas las páginas de contenido y calcula lo que necesitan las plantillas.
+const fs = require('fs');
+const path = require('path');
 const P = require('../lib/puzzles.js');
+const slug = (t) => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ñ/g, 'n').replace(/×/g, 'x').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const crudas = [
   ...require('./navidad.js'),
   ...require('./sopas.js'),
@@ -15,9 +18,17 @@ const crudas = [
 const paginas = crudas.map((p) => {
   const url = '/' + p.cat + '/' + (p.slug ? p.slug + '/' : '');
   const base = P.hash(url);
+  const nombreBase = slug(p.h1);
   const hojas = (p.hojas || []).map((spec, i) => {
     const seed = (base + i * 101) >>> 0;
-    return { spec, seed, json: JSON.stringify(spec), aleatoria: P.esAleatorio(spec), svg: P.render(spec, seed).svg, tieneSol: !!P.render(spec, seed).sol };
+    const archivo = nombreBase + (i ? '-' + (i + 1) : '') + '.png';
+    const titulo = spec.titulo || spec.alt || p.h1;
+    return {
+      spec, seed, json: JSON.stringify(spec), aleatoria: P.esAleatorio(spec), svg: P.render(spec, seed).svg, tieneSol: !!P.render(spec, seed).sol,
+      img: '/img/' + archivo, mini: '/img/mini/' + archivo,
+      alt: (titulo === p.h1 ? p.h1 : p.h1 + ': ' + titulo.charAt(0).toLowerCase() + titulo.slice(1)) + ' (ficha para imprimir)',
+      hayImg: fs.existsSync(path.join(__dirname, '../src/img', archivo))
+    };
   });
   const extra = (p.pdfExtra || []).map((spec, i) => {
     const seed = (base + (100 + i) * 101) >>> 0;
@@ -33,7 +44,9 @@ const paginas = crudas.map((p) => {
     hojasExtra: extra,
     pdfHojas: hojas.concat(extra).reduce((n, h) => n + (h.aleatoria ? copias : 1), 0),
     pdfSoluciones: hojas.concat(extra).reduce((n, h) => n + (h.tieneSol ? (h.aleatoria ? copias : 1) : 0), 0),
-    esHub: !p.slug
+    esHub: !p.slug,
+    imagen: hojas.length && hojas[0].hayImg ? hojas[0].img : null,
+    mini: hojas.length && hojas[0].hayImg ? hojas[0].mini : null
   });
 });
 

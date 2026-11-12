@@ -37,6 +37,7 @@ module.exports = {
         dateModified: site.compilado,
         publisher: { '@type': 'Organization', name: site.nombre, url: site.url + '/' }
       };
+      if (p.imagen) obra.image = p.hojas.filter((h) => h.hayImg).map((h) => abs(site, h.img));
       if (p.pdf) obra.encoding = { '@type': 'MediaObject', encodingFormat: 'application/pdf', contentUrl: abs(site, p.pdf) };
       if (p.esHub) {
         const hub = d.secciones.find((s) => s.cat === p.cat);

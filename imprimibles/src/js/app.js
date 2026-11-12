@@ -20,11 +20,19 @@
     }
   }
 
+  // Las hojas se muestran como imagen (la indexa Google Imágenes); para imprimir se cambian por el SVG, que sale nítido
+  function aVectorial() { hojas().forEach(function (h) { if (h.querySelector('.papel img')) pinta(h); }); }
+  window.addEventListener('beforeprint', aVectorial);
+  if (hojas().some(function (h) { return h.getAttribute('data-spec').indexOf('caligrafia') >= 0; }) && document.fonts) document.fonts.load('300 16px "Playwrite ES"');
+
   mesa.addEventListener('click', function (e) {
     var b = e.target.closest('[data-accion]');
     if (!b) return;
     var accion = b.getAttribute('data-accion');
-    if (accion === 'imprimir') window.print();
+    if (accion === 'imprimir') {
+      aVectorial();
+      (document.fonts ? document.fonts.ready : Promise.resolve()).then(function () { window.print(); });
+    }
     if (accion === 'otra') {
       hojas().forEach(function (h) {
         if (!h.hasAttribute('data-aleatoria')) return;

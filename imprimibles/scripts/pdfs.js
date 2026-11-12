@@ -8,12 +8,9 @@ const P = require('../lib/puzzles.js');
 const { paginas } = require('../content/index.js');
 
 const raiz = path.join(__dirname, '..');
-const fuente = (f) => 'file://' + path.join(raiz, 'src/fonts', f);
+const fuentes = require('./fuentes.js');
 const css = `
-@font-face{font-family:Besley;src:url(${fuente('besley-800.woff2')});font-weight:800}
-@font-face{font-family:"Andika";src:url(${fuente('andika-400.woff2')});font-weight:400}
-@font-face{font-family:"Andika";src:url(${fuente('andika-700.woff2')});font-weight:700}
-@font-face{font-family:"Playwrite ES";src:url(${fuente('playwrite-es-300.woff2')});font-weight:300}
+${fuentes}
 @page{size:A4;margin:0}html,body{margin:0}
 svg{display:block;width:210mm;height:296.5mm;break-after:page}`;
 
@@ -49,10 +46,9 @@ svg{display:block;width:210mm;height:296.5mm;break-after:page}`;
   const hoja = (spec, seed) => P.render(spec, seed).svg;
   await pag.setViewportSize({ width: 1200, height: 630 });
   await pag.setContent(`<!doctype html><style>
-@font-face{font-family:Besley;src:url(${fuente('besley-800.woff2')});font-weight:800}
-@font-face{font-family:"Andika";src:url(${fuente('andika-700.woff2')});font-weight:700}
+${fuentes}
 body{margin:0;width:1200px;height:630px;background:#f4efe3;overflow:hidden;position:relative;font-family:"Andika"}
-h1{font:800 84px/1.02 Besley;margin:0;position:absolute;left:70px;top:150px;width:560px;letter-spacing:-.02em;color:#1b1b1f}
+h1{font:800 66px/1.04 Besley;margin:0;position:absolute;left:70px;top:160px;width:540px;letter-spacing:-.02em;color:#1b1b1f}
 p{position:absolute;left:70px;top:70px;margin:0;font:800 40px Besley;color:#1b1b1f}p b{color:#c42e21}
 small{position:absolute;left:70px;bottom:70px;font-size:26px;letter-spacing:.12em;text-transform:uppercase;color:#c42e21;font-weight:700}
 div{position:absolute;width:330px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.2),0 24px 30px -18px rgba(0,0,0,.6)}div svg{display:block;width:100%;height:auto}

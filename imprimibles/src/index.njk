@@ -1,6 +1,15 @@
 ---
 layout: base.njk
 title: "Pasatiempos y fichas para imprimir gratis | imprimibles.es"
+destacadas:
+  - ["/calendarios/", "Calendario 2027"]
+  - ["/tablas-de-multiplicar/tabla-del-7/", "Tabla del 7"]
+  - ["/multiplicaciones-y-divisiones/divisiones-de-una-cifra/", "Divisiones de una cifra"]
+  - ["/mandalas/", "Mandalas para colorear"]
+  - ["/tablas-de-multiplicar/tabla-del-8/", "Tabla del 8"]
+  - ["/sumas-y-restas/restas-con-llevada/", "Restas con llevada"]
+  - ["/multiplicaciones-y-divisiones/multiplicaciones-de-dos-cifras/", "Multiplicaciones de dos cifras"]
+  - ["/navidad/carta-reyes-magos/", "Carta a los Reyes Magos"]
 description: "Sopas de letras, crucigramas, mandalas, sudokus, laberintos, bingo, tablas de multiplicar y caligrafía para imprimir en A4. Gratis y con solución."
 ---
 <div class="ancho">
@@ -17,6 +26,15 @@ description: "Sopas de letras, crucigramas, mandalas, sudokus, laberintos, bingo
         <a class="monton-hoja h2" href="/sudokus/" tabindex="-1">{{ { tipo: 'sudoku', n: 9, nivel: 'facil', titulo: 'Sudokus fáciles' } | ficha(41) | safe }}</a>
         <a class="monton-hoja h3" href="/sopas-de-letras/" tabindex="-1">{{ { tipo: 'sopa', titulo: 'Sopa de letras', nivel: 'medio', tam: 11, nPalabras: 12, nombre: false, palabras: ['lápiz','goma','cuaderno','tijeras','regla','folio','carpeta','estuche','papel','tinta','ficha','hoja','sobre','grapa','sello','clip'] } | ficha(7) | safe }}</a>
       </div>
+    </section>
+
+    <section class="bloque" aria-labelledby="buscado-t">
+      <h2 id="buscado-t">Lo más buscado</h2>
+      <ul class="destacadas">
+        {%- for d in destacadas %}{% set dp = d[0] | pagina %}{% if dp %}
+        <li><a href="{{ dp.url }}">{% if dp.mini %}<img src="{{ dp.mini }}" srcset="{{ dp.mini }} 310w, {{ dp.imagen }} 1240w" sizes="(min-width: 44rem) 16rem, 45vw" width="310" height="439" alt="" loading="lazy" decoding="async">{% endif %}<span>{{ d[1] }}</span></a></li>
+        {%- endif %}{% endfor %}
+      </ul>
     </section>
 
     <section class="bloque" id="indice" aria-labelledby="indice-t">

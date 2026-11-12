@@ -57,7 +57,8 @@
       '" font-family="\'Andika\',Arial,sans-serif" fill="' + TINTA + '">';
     s += '<rect width="210" height="297" fill="#fff"/>';
     if (o.titulo) {
-      s += txt(15, 24, o.titulo, { size: 8, titular: true });
+      // los títulos largos se encogen para no chocar con el rótulo «Solución»
+      s += txt(15, 24, o.titulo, { size: f(Math.min(8, 8 * 33 / o.titulo.length)), titular: true });
       if (o.sol) s += txt(195, 24, o.ingles ? 'Answers' : 'Solución', { size: 5, anchor: 'end', fill: ROJO, bold: true });
     }
     if (o.sub) s += txt(15, 31, o.sub, { size: 3.7, fill: GRIS });

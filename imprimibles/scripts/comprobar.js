@@ -16,6 +16,7 @@ for (const p of paginas) {
   vistos[p.title] = p.url;
   if (!p.cuerpo) mal(`sin texto: ${p.url}`);
   if (p.pdf && !fs.existsSync(path.join(__dirname, '../src', p.pdf))) mal(`falta el PDF (npm run pdfs): ${p.pdf}`);
+  p.hojas.forEach((h) => { if (!h.hayImg) mal(`falta la imagen (npm run imagenes): ${h.img}`); });
 }
 
 console.log('Enlaces internos');

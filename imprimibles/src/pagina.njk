@@ -5,7 +5,8 @@
   eleventyComputed: {
     permalink: (d) => d.p.url,
     title: (d) => d.p.title,
-    description: (d) => d.p.desc
+    description: (d) => d.p.desc,
+    ogImagen: (d) => d.p.imagen
   }
 }
 ---
@@ -43,7 +44,7 @@
       <div class="hojas{% if p.hojas.length > 1 %} hojas-varias{% endif %}">
         {%- for h in p.hojas %}
         <figure class="hoja" data-spec="{{ h.json }}" data-seed="{{ h.seed }}"{% if h.aleatoria %} data-aleatoria{% endif %}>
-          <div class="papel">{{ h.svg | safe }}</div>
+          <div class="papel">{% if h.hayImg %}<img src="{{ h.img }}" width="1240" height="1754" alt="{{ h.alt }}"{% if loop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">{% else %}{{ h.svg | safe }}{% endif %}</div>
         </figure>
         {%- endfor %}
       </div>
