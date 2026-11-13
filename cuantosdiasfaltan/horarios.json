@@ -1653,7 +1653,7 @@
 ],
 "2027": []
 },
-"descargado": "2026-11-12",
+"descargado": "2026-11-13",
 "madrid": [
 {
 "id": "401898187",
@@ -4022,318 +4022,6 @@ null
 },
 "tenis_hoy": [
 {
-"id": "186549",
-"gira": "ATP",
-"torneo": "Bybit Stockholm Open",
-"utc": "2026-11-12T12:05Z",
-"hora_valida": true,
-"estado": "post",
-"ronda": "Quarterfinal",
-"pista": "Center Court",
-"jugadores": [
-{
-"id": "2970",
-"n": "Alejandro Tabilo",
-"pais": "Chile",
-"gano": true,
-"sets": [
-7,
-7
-]
-},
-{
-"id": "11400",
-"n": "Alex Michelsen",
-"pais": "USA",
-"gano": false,
-"sets": [
-5,
-6
-]
-}
-]
-},
-{
-"id": "186548",
-"gira": "ATP",
-"torneo": "Bybit Stockholm Open",
-"utc": "2026-11-12T14:20Z",
-"hora_valida": true,
-"estado": "post",
-"ronda": "Quarterfinal",
-"pista": "Center Court",
-"jugadores": [
-{
-"id": "8710",
-"n": "Aleksandr Shevchenko",
-"pais": "Kazajistán",
-"gano": false,
-"sets": [
-6,
-7,
-3
-]
-},
-{
-"id": "4010",
-"n": "Thiago Agustin Tirante",
-"pais": "Argentina",
-"gano": true,
-"sets": [
-7,
-6,
-6
-]
-}
-]
-},
-{
-"id": "186770",
-"gira": "WTA",
-"torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-12T15:05Z",
-"hora_valida": true,
-"estado": "post",
-"ronda": "Quarterfinal",
-"pista": "Court 1",
-"jugadores": [
-{
-"id": "4291",
-"n": "Andrea Lazaro Garcia",
-"pais": "España",
-"gano": false,
-"sets": [
-0,
-6
-]
-},
-{
-"id": "1955",
-"n": "Elizabeth Mandlik",
-"pais": "USA",
-"gano": true,
-"sets": [
-6,
-7
-]
-}
-]
-},
-{
-"id": "186771",
-"gira": "WTA",
-"torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-12T15:05Z",
-"hora_valida": true,
-"estado": "post",
-"ronda": "Quarterfinal",
-"pista": "Main Court",
-"jugadores": [
-{
-"id": "4546",
-"n": "Irene Burillo",
-"pais": "España",
-"gano": false,
-"sets": [
-5,
-3
-]
-},
-{
-"id": "15069",
-"n": "Laura Samson",
-"pais": "Chequia",
-"gano": true,
-"sets": [
-7,
-6
-]
-}
-]
-},
-{
-"id": "186769",
-"gira": "WTA",
-"torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-12T16:45Z",
-"hora_valida": true,
-"estado": "post",
-"ronda": "Quarterfinal",
-"pista": "Court 1",
-"jugadores": [
-{
-"id": "1095",
-"n": "Polona Hercog",
-"pais": "Eslovenia",
-"gano": true,
-"sets": [
-6,
-6
-]
-},
-{
-"id": "5161",
-"n": "Alice Tubello",
-"pais": "Francia",
-"gano": false,
-"sets": [
-2,
-3
-]
-}
-]
-},
-{
-"id": "186768",
-"gira": "WTA",
-"torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-12T17:25Z",
-"hora_valida": true,
-"estado": "post",
-"ronda": "Quarterfinal",
-"pista": "Main Court",
-"jugadores": [
-{
-"id": "8690",
-"n": "Marina Bassols Ribera",
-"pais": "España",
-"gano": false,
-"sets": [
-4,
-2
-]
-},
-{
-"id": "2979",
-"n": "Bianca Andreescu",
-"pais": "Canadá",
-"gano": true,
-"sets": [
-6,
-4
-]
-}
-]
-},
-{
-"id": "186551",
-"gira": "ATP",
-"torneo": "Bybit Stockholm Open",
-"utc": "2026-11-12T17:30Z",
-"hora_valida": true,
-"estado": "post",
-"ronda": "Quarterfinal",
-"pista": "",
-"jugadores": [
-{
-"id": "3659",
-"n": "Holger Rune",
-"pais": "Dinamarca",
-"gano": false,
-"sets": []
-},
-{
-"id": "2946",
-"n": "Taylor Fritz",
-"pais": "USA",
-"gano": true,
-"sets": []
-}
-]
-},
-{
-"id": "186550",
-"gira": "ATP",
-"torneo": "Bybit Stockholm Open",
-"utc": "2026-11-12T19:25Z",
-"hora_valida": true,
-"estado": "post",
-"ronda": "Quarterfinal",
-"pista": "Center Court",
-"jugadores": [
-{
-"id": "3085",
-"n": "Ugo Humbert",
-"pais": "Francia",
-"gano": false,
-"sets": [
-6,
-6,
-4
-]
-},
-{
-"id": "3764",
-"n": "Lorenzo Musetti",
-"pais": "Italia",
-"gano": true,
-"sets": [
-7,
-3,
-6
-]
-}
-]
-},
-{
-"id": "187371",
-"gira": "WTA",
-"torneo": "FAGE WTA Finals Indian Wells",
-"utc": "2026-11-12T20:15Z",
-"hora_valida": true,
-"estado": "post",
-"ronda": "Group Stage",
-"pista": "Indian Wells Tennis Garden",
-"jugadores": [
-{
-"id": "3626",
-"n": "Coco Gauff",
-"pais": "USA",
-"gano": true,
-"sets": [
-6,
-7
-]
-},
-{
-"id": "3382",
-"n": "Marta Kostyuk",
-"pais": "Ucrania",
-"gano": false,
-"sets": [
-4,
-5
-]
-}
-]
-},
-{
-"id": "187376",
-"gira": "WTA",
-"torneo": "FAGE WTA Finals Indian Wells",
-"utc": "2026-11-12T22:10Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Group Stage",
-"pista": "Indian Wells Tennis Garden",
-"jugadores": [
-{
-"id": "6970",
-"n": "Linda Noskova",
-"pais": "Chequia",
-"gano": null,
-"sets": []
-},
-{
-"id": "2113",
-"n": "Jessica Pegula",
-"pais": "USA",
-"gano": null,
-"sets": []
-}
-]
-},
-{
 "id": "186546",
 "gira": "ATP",
 "torneo": "Bybit Stockholm Open",
@@ -4396,9 +4084,9 @@ null
 "pista": "Center Court",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "3764",
+"n": "Lorenzo Musetti",
+"pais": "Italia",
 "gano": null,
 "sets": []
 },
@@ -4484,6 +4172,110 @@ null
 "id": "3038",
 "n": "Aryna Sabalenka",
 "pais": "Bielorrusia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186552",
+"gira": "ATP",
+"torneo": "Bybit Stockholm Open",
+"utc": "2026-11-14T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Final",
+"pista": "",
+"jugadores": [
+{
+"id": "-4",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+},
+{
+"id": "-3",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "187440",
+"gira": "WTA",
+"torneo": "FAGE WTA Finals Indian Wells",
+"utc": "2026-11-14T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Semifinal",
+"pista": "",
+"jugadores": [
+{
+"id": "-4",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+},
+{
+"id": "6970",
+"n": "Linda Noskova",
+"pais": "Chequia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "187441",
+"gira": "WTA",
+"torneo": "FAGE WTA Finals Indian Wells",
+"utc": "2026-11-14T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Semifinal",
+"pista": "",
+"jugadores": [
+{
+"id": "9820",
+"n": "Mirra Andreeva",
+"pais": "Rusia",
+"gano": null,
+"sets": []
+},
+{
+"id": "2113",
+"n": "Jessica Pegula",
+"pais": "USA",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186772",
+"gira": "WTA",
+"torneo": "DIRECTV Open Presentado por Compesar",
+"utc": "2026-11-14T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Final",
+"pista": "",
+"jugadores": [
+{
+"id": "-4",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+},
+{
+"id": "-3",
+"n": "TBD",
+"pais": "",
 "gano": null,
 "sets": []
 }
@@ -5259,21 +5051,6 @@ null
 ],
 "espana": [
 {
-"id": "723708",
-"utc": "2025-03-23T19:45Z",
-"hora_valida": true,
-"estado": "post",
-"competicion": "UEFA Nations League",
-"local": "España",
-"visitante": "Países Bajos",
-"en_casa": true,
-"estadio": "Mestalla",
-"goles": [
-"3",
-"3"
-]
-},
-{
 "id": "723736",
 "utc": "2025-06-05T19:00Z",
 "hora_valida": true,
@@ -5634,6 +5411,21 @@ null
 ]
 },
 {
+"id": "401861148",
+"utc": "2026-11-12T19:45Z",
+"hora_valida": true,
+"estado": "post",
+"competicion": "UEFA Nations League",
+"local": "Chequia",
+"visitante": "España",
+"en_casa": false,
+"estadio": "Generali Arena",
+"goles": [
+"0",
+"2"
+]
+},
+{
 "id": "401861175",
 "utc": "2026-11-15T19:45Z",
 "hora_valida": true,
@@ -5666,313 +5458,13 @@ null
 ],
 "futbol_hoy": [
 {
-"id": "401906458",
-"liga": "fifa.friendly",
-"competicion": "Amistosos internacionales",
-"utc": "2026-11-12T06:00Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "F",
-"local": "Nueva Zelanda",
-"visitante": "India",
-"ids": [
-"2666",
-"4385"
-],
-"goles": [
-"5",
-"0"
-],
-"es": false
-},
-{
-"id": "401930962",
-"liga": "fifa.friendly",
-"competicion": "Amistosos internacionales",
-"utc": "2026-11-12T15:00Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "F",
-"local": "Uzbekistán",
-"visitante": "Rusia",
-"ids": [
-"2570",
-"454"
-],
-"goles": [
-"2",
-"3"
-],
-"es": false
-},
-{
-"id": "401861146",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-12T17:00Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "F",
-"local": "Armenia",
-"visitante": "Chipre",
-"ids": [
-"579",
-"445"
-],
-"goles": [
-"1",
-"1"
-],
-"es": false
-},
-{
-"id": "401861145",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-12T17:00Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "F",
-"local": "Turquía",
-"visitante": "Bélgica",
-"ids": [
-"465",
-"459"
-],
-"goles": [
-"1",
-"2"
-],
-"es": false
-},
-{
-"id": "401933115",
-"liga": "fifa.friendly",
-"competicion": "Amistosos internacionales",
-"utc": "2026-11-12T17:00Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "F",
-"local": "Lituania",
-"visitante": "Suriname",
-"ids": [
-"460",
-"2664"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401928506",
-"liga": "esp.copa_del_rey",
-"competicion": "Copa del Rey",
-"utc": "2026-11-12T17:30Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "F",
-"local": "CS Puertollano",
-"visitante": "Albacete",
-"ids": [
-"21291",
-"2737"
-],
-"goles": [
-"0",
-"3"
-],
-"es": true
-},
-{
-"id": "401931296",
-"liga": "fifa.friendly",
-"competicion": "Amistosos internacionales",
-"utc": "2026-11-12T17:30Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "F",
-"local": "Malta",
-"visitante": "Eswatini",
-"ids": [
-"453",
-"6686"
-],
-"goles": [
-"1",
-"1"
-],
-"es": false
-},
-{
-"id": "401928551",
-"liga": "esp.copa_del_rey",
-"competicion": "Copa del Rey",
-"utc": "2026-11-12T18:00Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "AET",
-"local": "CD Artistico Navalcarnero",
-"visitante": "Real Betis",
-"ids": [
-"19288",
-"244"
-],
-"goles": [
-"2",
-"3"
-],
-"es": true
-},
-{
-"id": "401928527",
-"liga": "esp.copa_del_rey",
-"competicion": "Copa del Rey",
-"utc": "2026-11-12T18:00Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "AET",
-"local": "CD Tarancon",
-"visitante": "Levante",
-"ids": [
-"133837",
-"1538"
-],
-"goles": [
-"1",
-"2"
-],
-"es": true
-},
-{
-"id": "401861147",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-12T19:45Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "F",
-"local": "Albania",
-"visitante": "Finlandia",
-"ids": [
-"585",
-"458"
-],
-"goles": [
-"2",
-"0"
-],
-"es": false
-},
-{
-"id": "401861148",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-12T19:45Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "F",
-"local": "Chequia",
-"visitante": "España",
-"ids": [
-"450",
-"164"
-],
-"goles": [
-"0",
-"2"
-],
-"es": true
-},
-{
-"id": "401861150",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-12T19:45Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "F",
-"local": "Inglaterra",
-"visitante": "Croacia",
-"ids": [
-"448",
-"477"
-],
-"goles": [
-"2",
-"1"
-],
-"es": false
-},
-{
-"id": "401861151",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-12T19:45Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "F",
-"local": "Italia",
-"visitante": "Francia",
-"ids": [
-"162",
-"478"
-],
-"goles": [
-"3",
-"1"
-],
-"es": false
-},
-{
-"id": "401861152",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-12T19:45Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "F",
-"local": "Montenegro",
-"visitante": "Letonia",
-"ids": [
-"6775",
-"456"
-],
-"goles": [
-"2",
-"1"
-],
-"es": false
-},
-{
-"id": "401861149",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-12T19:45Z",
-"hora_valida": true,
-"estado": "post",
-"detalle": "F",
-"local": "San Marino",
-"visitante": "Bielorrusia",
-"ids": [
-"588",
-"583"
-],
-"goles": [
-"0",
-"2"
-],
-"es": false
-},
-{
 "id": "401916338",
 "liga": "fifa.friendly",
 "competicion": "Amistosos internacionales",
 "utc": "2026-11-13T12:00Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "in",
+"detalle": "3'",
 "local": "Singapur",
 "visitante": "Paraguay",
 "ids": [
@@ -5989,7 +5481,7 @@ null
 "id": "401931957",
 "liga": "fifa.friendly",
 "competicion": "Amistosos internacionales",
-"utc": "2026-11-13T14:15Z",
+"utc": "2026-11-13T14:10Z",
 "hora_valida": true,
 "estado": "pre",
 "detalle": "Scheduled",
@@ -6344,6 +5836,526 @@ null
 "0"
 ],
 "es": false
+},
+{
+"id": "401930876",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-13T23:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Argentina",
+"visitante": "Uruguay",
+"ids": [
+"202",
+"212"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401921325",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-14T00:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Colombia",
+"visitante": "Chile",
+"ids": [
+"208",
+"207"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401930898",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-14T00:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Ecuador",
+"visitante": "Costa Rica",
+"ids": [
+"209",
+"214"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401930878",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-14T01:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Perú",
+"visitante": "Bolívia",
+"ids": [
+"211",
+"204"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401933864",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-14T05:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Tahiti",
+"visitante": "Islas Cook",
+"ids": [
+"4863",
+"4884"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401930879",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-14T06:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Baréin",
+"visitante": "Yemen",
+"ids": [
+"4381",
+"6014"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401916337",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-14T10:15Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Japón",
+"visitante": "Brasil",
+"ids": [
+"627",
+"205"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401882458",
+"liga": "esp.w.1",
+"competicion": "Liga F",
+"utc": "2026-11-14T11:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Espanyol",
+"visitante": "Tenerife",
+"ids": [
+"21154",
+"131393"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401930236",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-14T12:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "China",
+"visitante": "Malasia",
+"ids": [
+"658",
+"2405"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401930243",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-14T12:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "China Taipéi",
+"visitante": "Kirguistán",
+"ids": [
+"14561",
+"6724"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401883114",
+"liga": "esp.2",
+"competicion": "Segunda División",
+"utc": "2026-11-14T13:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Real Valladolid",
+"visitante": "Castellón",
+"ids": [
+"95",
+"4438"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401861163",
+"liga": "uefa.nations",
+"competicion": "Nations League",
+"utc": "2026-11-14T14:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Kosovo",
+"visitante": "Israel",
+"ids": [
+"18272",
+"461"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401932237",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-14T15:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Palestina",
+"visitante": "Irán",
+"ids": [
+"6167",
+"469"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401883134",
+"liga": "esp.2",
+"competicion": "Segunda División",
+"utc": "2026-11-14T15:15Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Real Sociedad II",
+"visitante": "Sporting Gijón",
+"ids": [
+"20983",
+"3788"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401861164",
+"liga": "uefa.nations",
+"competicion": "Nations League",
+"utc": "2026-11-14T17:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Georgia",
+"visitante": "Hungría",
+"ids": [
+"584",
+"480"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401861165",
+"liga": "uefa.nations",
+"competicion": "Nations League",
+"utc": "2026-11-14T17:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Noruega",
+"visitante": "Gales",
+"ids": [
+"464",
+"578"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401882460",
+"liga": "esp.w.1",
+"competicion": "Liga F",
+"utc": "2026-11-14T17:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Alavés",
+"visitante": "Eibar",
+"ids": [
+"21378",
+"21376"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401883118",
+"liga": "esp.2",
+"competicion": "Segunda División",
+"utc": "2026-11-14T17:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Almería",
+"visitante": "FC Andorra",
+"ids": [
+"6832",
+"20179"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401883135",
+"liga": "esp.2",
+"competicion": "Segunda División",
+"utc": "2026-11-14T17:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Mallorca",
+"visitante": "Córdoba",
+"ids": [
+"84",
+"8447"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401882456",
+"liga": "esp.w.1",
+"competicion": "Liga F",
+"utc": "2026-11-14T19:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Real Madrid",
+"visitante": "FC Badalona",
+"ids": [
+"21128",
+"21149"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401861170",
+"liga": "uefa.nations",
+"competicion": "Nations League",
+"utc": "2026-11-14T19:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Austria",
+"visitante": "Irlanda",
+"ids": [
+"474",
+"476"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401861169",
+"liga": "uefa.nations",
+"competicion": "Nations League",
+"utc": "2026-11-14T19:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Irlanda del Norte",
+"visitante": "Ucrania",
+"ids": [
+"586",
+"457"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401861167",
+"liga": "uefa.nations",
+"competicion": "Nations League",
+"utc": "2026-11-14T19:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Portugal",
+"visitante": "Dinamarca",
+"ids": [
+"482",
+"479"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401861168",
+"liga": "uefa.nations",
+"competicion": "Nations League",
+"utc": "2026-11-14T19:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Rumania",
+"visitante": "Polonia",
+"ids": [
+"473",
+"471"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401861166",
+"liga": "uefa.nations",
+"competicion": "Nations League",
+"utc": "2026-11-14T19:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Suecia",
+"visitante": "Bosnia y Herzegovina",
+"ids": [
+"466",
+"452"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401883115",
+"liga": "esp.2",
+"competicion": "Segunda División",
+"utc": "2026-11-14T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Real Oviedo",
+"visitante": "Girona",
+"ids": [
+"92",
+"9812"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
 }
 ],
 "betis": [
