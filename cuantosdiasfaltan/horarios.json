@@ -4025,9 +4025,9 @@ null
 "id": "186546",
 "gira": "ATP",
 "torneo": "Bybit Stockholm Open",
-"utc": "2026-11-13T13:00Z",
+"utc": "2026-11-13T13:10Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Semifinal",
 "pista": "Center Court",
 "jugadores": [
@@ -4035,15 +4035,21 @@ null
 "id": "4010",
 "n": "Thiago Agustin Tirante",
 "pais": "Argentina",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+7,
+7
+]
 },
 {
 "id": "2970",
 "n": "Alejandro Tabilo",
 "pais": "Chile",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+5,
+6
+]
 }
 ]
 },
@@ -4053,7 +4059,7 @@ null
 "torneo": "DIRECTV Open Presentado por Compesar",
 "utc": "2026-11-13T15:00Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Semifinal",
 "pista": "Main Court",
 "jugadores": [
@@ -4061,15 +4067,21 @@ null
 "id": "1955",
 "n": "Elizabeth Mandlik",
 "pais": "USA",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6
+]
 },
 {
 "id": "15069",
 "n": "Laura Samson",
 "pais": "Chequia",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+3,
+3
+]
 }
 ]
 },
@@ -4077,9 +4089,9 @@ null
 "id": "186547",
 "gira": "ATP",
 "torneo": "Bybit Stockholm Open",
-"utc": "2026-11-13T16:00Z",
+"utc": "2026-11-13T16:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Semifinal",
 "pista": "Center Court",
 "jugadores": [
@@ -4087,15 +4099,21 @@ null
 "id": "3764",
 "n": "Lorenzo Musetti",
 "pais": "Italia",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+4,
+2
+]
 },
 {
 "id": "2946",
 "n": "Taylor Fritz",
 "pais": "USA",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6
+]
 }
 ]
 },
@@ -4103,9 +4121,9 @@ null
 "id": "186774",
 "gira": "WTA",
 "torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-13T16:30Z",
+"utc": "2026-11-13T16:50Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Semifinal",
 "pista": "Main Court",
 "jugadores": [
@@ -4113,15 +4131,21 @@ null
 "id": "2979",
 "n": "Bianca Andreescu",
 "pais": "Canadá",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6
+]
 },
 {
 "id": "1095",
 "n": "Polona Hercog",
 "pais": "Eslovenia",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+1,
+4
+]
 }
 ]
 },
@@ -4129,25 +4153,31 @@ null
 "id": "187384",
 "gira": "WTA",
 "torneo": "FAGE WTA Finals Indian Wells",
-"utc": "2026-11-13T20:00Z",
+"utc": "2026-11-13T20:10Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Group Stage",
 "pista": "Indian Wells Tennis Garden",
 "jugadores": [
 {
-"id": "3039",
-"n": "Karolina Muchova",
-"pais": "Chequia",
-"gano": null,
-"sets": []
+"id": "8017",
+"n": "Diana Shnaider",
+"pais": "Rusia",
+"gano": false,
+"sets": [
+2,
+1
+]
 },
 {
 "id": "9820",
 "n": "Mirra Andreeva",
 "pais": "Rusia",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6
+]
 }
 ]
 },
@@ -4157,7 +4187,7 @@ null
 "torneo": "FAGE WTA Finals Indian Wells",
 "utc": "2026-11-13T21:30Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Group Stage",
 "pista": "Indian Wells Tennis Garden",
 "jugadores": [
@@ -4166,40 +4196,18 @@ null
 "n": "Elina Svitolina",
 "pais": "Ucrania",
 "gano": null,
-"sets": []
+"sets": [
+3
+]
 },
 {
 "id": "3038",
 "n": "Aryna Sabalenka",
 "pais": "Bielorrusia",
 "gano": null,
-"sets": []
-}
+"sets": [
+2
 ]
-},
-{
-"id": "186552",
-"gira": "ATP",
-"torneo": "Bybit Stockholm Open",
-"utc": "2026-11-14T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Final",
-"pista": "",
-"jugadores": [
-{
-"id": "-4",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
 }
 ]
 },
@@ -4256,26 +4264,52 @@ null
 ]
 },
 {
-"id": "186772",
-"gira": "WTA",
-"torneo": "DIRECTV Open Presentado por Compesar",
-"utc": "2026-11-14T05:00Z",
-"hora_valida": false,
+"id": "186552",
+"gira": "ATP",
+"torneo": "Bybit Stockholm Open",
+"utc": "2026-11-14T12:00Z",
+"hora_valida": true,
 "estado": "pre",
 "ronda": "Final",
-"pista": "",
+"pista": "Center Court",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "4010",
+"n": "Thiago Agustin Tirante",
+"pais": "Argentina",
 "gano": null,
 "sets": []
 },
 {
-"id": "-3",
-"n": "TBD",
-"pais": "",
+"id": "2946",
+"n": "Taylor Fritz",
+"pais": "USA",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186772",
+"gira": "WTA",
+"torneo": "DIRECTV Open Presentado por Compesar",
+"utc": "2026-11-14T17:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Final",
+"pista": "Main Court",
+"jugadores": [
+{
+"id": "1955",
+"n": "Elizabeth Mandlik",
+"pais": "USA",
+"gano": null,
+"sets": []
+},
+{
+"id": "2979",
+"n": "Bianca Andreescu",
+"pais": "Canadá",
 "gano": null,
 "sets": []
 }
@@ -5463,8 +5497,8 @@ null
 "competicion": "Amistosos internacionales",
 "utc": "2026-11-13T12:00Z",
 "hora_valida": true,
-"estado": "in",
-"detalle": "3'",
+"estado": "post",
+"detalle": "F",
 "local": "Singapur",
 "visitante": "Paraguay",
 "ids": [
@@ -5472,8 +5506,8 @@ null
 "210"
 ],
 "goles": [
-"0",
-"0"
+"1",
+"4"
 ],
 "es": false
 },
@@ -5483,8 +5517,8 @@ null
 "competicion": "Amistosos internacionales",
 "utc": "2026-11-13T14:10Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Emiratos Árabes Unidos",
 "visitante": "Honduras",
 "ids": [
@@ -5492,8 +5526,8 @@ null
 "215"
 ],
 "goles": [
-"0",
-"0"
+"3",
+"1"
 ],
 "es": false
 },
@@ -5503,8 +5537,8 @@ null
 "competicion": "Amistosos internacionales",
 "utc": "2026-11-13T14:30Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Arabia Saudita",
 "visitante": "Corea del Sur",
 "ids": [
@@ -5512,8 +5546,8 @@ null
 "451"
 ],
 "goles": [
-"0",
-"0"
+"3",
+"2"
 ],
 "es": false
 },
@@ -5523,8 +5557,8 @@ null
 "competicion": "Amistosos internacionales",
 "utc": "2026-11-13T14:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Qatar",
 "visitante": "Australia",
 "ids": [
@@ -5533,7 +5567,7 @@ null
 ],
 "goles": [
 "0",
-"0"
+"3"
 ],
 "es": false
 },
@@ -5543,8 +5577,8 @@ null
 "competicion": "Amistosos internacionales",
 "utc": "2026-11-13T15:00Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Irak",
 "visitante": "Líbano",
 "ids": [
@@ -5563,8 +5597,8 @@ null
 "competicion": "Amistosos internacionales",
 "utc": "2026-11-13T16:30Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Kuwait",
 "visitante": "Siria",
 "ids": [
@@ -5572,7 +5606,7 @@ null
 "4380"
 ],
 "goles": [
-"0",
+"3",
 "0"
 ],
 "es": false
@@ -5583,8 +5617,8 @@ null
 "competicion": "Nations League",
 "utc": "2026-11-13T17:00Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Moldavia",
 "visitante": "Kazajistán",
 "ids": [
@@ -5592,8 +5626,8 @@ null
 "2619"
 ],
 "goles": [
-"0",
-"0"
+"2",
+"1"
 ],
 "es": false
 },
@@ -5603,8 +5637,8 @@ null
 "competicion": "Segunda División",
 "utc": "2026-11-13T19:30Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Leganés",
 "visitante": "Burgos",
 "ids": [
@@ -5612,8 +5646,8 @@ null
 "12597"
 ],
 "goles": [
-"0",
-"0"
+"3",
+"1"
 ],
 "es": true
 },
@@ -5623,8 +5657,8 @@ null
 "competicion": "Nations League",
 "utc": "2026-11-13T19:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Andorra",
 "visitante": "Gibraltar",
 "ids": [
@@ -5632,7 +5666,7 @@ null
 "16721"
 ],
 "goles": [
-"0",
+"2",
 "0"
 ],
 "es": false
@@ -5643,8 +5677,8 @@ null
 "competicion": "Nations League",
 "utc": "2026-11-13T19:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Bulgaria",
 "visitante": "Islandia",
 "ids": [
@@ -5653,7 +5687,7 @@ null
 ],
 "goles": [
 "0",
-"0"
+"5"
 ],
 "es": false
 },
@@ -5663,8 +5697,8 @@ null
 "competicion": "Nations League",
 "utc": "2026-11-13T19:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Liechtenstein",
 "visitante": "Azerbaiyán",
 "ids": [
@@ -5673,7 +5707,7 @@ null
 ],
 "goles": [
 "0",
-"0"
+"1"
 ],
 "es": false
 },
@@ -5683,8 +5717,8 @@ null
 "competicion": "Nations League",
 "utc": "2026-11-13T19:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Luxemburgo",
 "visitante": "Estonia",
 "ids": [
@@ -5693,7 +5727,7 @@ null
 ],
 "goles": [
 "0",
-"0"
+"1"
 ],
 "es": false
 },
@@ -5703,8 +5737,8 @@ null
 "competicion": "Nations League",
 "utc": "2026-11-13T19:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Países Bajos",
 "visitante": "Grecia",
 "ids": [
@@ -5712,7 +5746,7 @@ null
 "455"
 ],
 "goles": [
-"0",
+"7",
 "0"
 ],
 "es": false
@@ -5723,8 +5757,8 @@ null
 "competicion": "Nations League",
 "utc": "2026-11-13T19:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Escocia",
 "visitante": "North Macedonia",
 "ids": [
@@ -5732,8 +5766,8 @@ null
 "463"
 ],
 "goles": [
-"0",
-"0"
+"2",
+"1"
 ],
 "es": false
 },
@@ -5743,8 +5777,8 @@ null
 "competicion": "Nations League",
 "utc": "2026-11-13T19:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Serbia",
 "visitante": "Alemania",
 "ids": [
@@ -5752,8 +5786,8 @@ null
 "481"
 ],
 "goles": [
-"0",
-"0"
+"1",
+"3"
 ],
 "es": false
 },
@@ -5763,8 +5797,8 @@ null
 "competicion": "Nations League",
 "utc": "2026-11-13T19:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Eslovaquia",
 "visitante": "Islas Feroe",
 "ids": [
@@ -5772,8 +5806,8 @@ null
 "447"
 ],
 "goles": [
-"0",
-"0"
+"2",
+"2"
 ],
 "es": false
 },
@@ -5783,8 +5817,8 @@ null
 "competicion": "Nations League",
 "utc": "2026-11-13T19:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Eslovenia",
 "visitante": "Suiza",
 "ids": [
@@ -5803,8 +5837,8 @@ null
 "competicion": "Copa del Rey",
 "utc": "2026-11-13T20:00Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Salamanca UDS",
 "visitante": "Celta Vigo",
 "ids": [
@@ -5813,7 +5847,7 @@ null
 ],
 "goles": [
 "0",
-"0"
+"5"
 ],
 "es": true
 },
@@ -9838,15 +9872,15 @@ null
 "id": "401928487",
 "utc": "2026-11-13T20:00Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "competicion": "Copa del Rey",
 "local": "Salamanca UDS",
 "visitante": "Celta Vigo",
 "en_casa": false,
 "estadio": "Estadio Helmántico",
 "goles": [
-null,
-null
+"0",
+"5"
 ]
 },
 {
