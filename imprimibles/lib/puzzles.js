@@ -1655,6 +1655,101 @@
     return { svg: hoja(cabCog(spec, seed), o), sol: null };
   }
 
+  // ---------- material para dinámicas de grupo con mayores ----------
+  // Tarjetas para recortar: cada item es un texto o [texto grande, texto pequeño]
+  function tarjetas(spec, seed) {
+    var r = rng(seed), C = spec.cols || 2, F = spec.filas || 5, items = (spec.items || []).slice();
+    if (spec.pares) {  // parejas para emparejar (principio y final de un refrán): se eligen al azar y se mezclan las mitades
+      items = [];
+      shuffle(r, spec.pares).slice(0, Math.floor(C * F / 2)).forEach(function (p) { items.push(p[0] + '…', '…' + p[1]); });
+      items = shuffle(r, items);
+    } else if (spec.mezclar) items = shuffle(r, items);
+    items = items.slice(0, C * F);
+    var y0 = spec.sub ? 40 : 34, w = 180 / C, h = (282 - y0) / F, o = '', size = spec.tam || 7;
+    items.forEach(function (it, k) {
+      var x = 15 + (k % C) * w, y = y0 + Math.floor(k / C) * h, a = Array.isArray(it) ? it[0] : it, b = Array.isArray(it) ? it[1] : '';
+      o += '<rect x="' + f(x + 1.5) + '" y="' + f(y + 1.5) + '" width="' + f(w - 3) + '" height="' + f(h - 3) + '" rx="3" fill="#fff" stroke="' + GRIS + '" stroke-width=".3" stroke-dasharray="2 1.5"/>';
+      var l = parte(a, Math.floor((w - 10) / (size * .52))), t = size;
+      if (l.length > 3) { t = size * .8; l = parte(a, Math.floor((w - 10) / (t * .52))); }
+      var alto = l.length * t * 1.2 + (b ? t * 1.3 : 0), yy = y + h / 2 - alto / 2 + t * .85;
+      l.forEach(function (x2, j) { o += txt(x + w / 2, yy + j * t * 1.2, x2, { size: f(t), anchor: 'middle', bold: true }); });
+      if (b) o += txt(x + w / 2, yy + l.length * t * 1.2 + t * .2, b, { size: f(t * .8), anchor: 'middle', fill: spec.colorB || GRIS, bold: true });
+    });
+    return { svg: hoja({ titulo: spec.titulo, sub: spec.sub, seed: spec.mezclar || spec.pares ? seed : null }, o), sol: null };
+  }
+
+  // Hoja del monitor para el bingo con sumas: cada número del 1 al 90 dicho como una suma o una resta
+  function bingoSumas(spec, seed) {
+    var r = rng(seed), max = spec.max || 90, o = '', cols = 5, filas = Math.ceil(max / cols), w = 180 / cols, h = (282 - 40) / filas;
+    for (var n = 1; n <= max; n++) {
+      var x = 15 + ((n - 1) % cols) * w, y = 40 + Math.floor((n - 1) / cols) * h + h * .7, expr;
+      if (n <= 2) expr = n === 1 ? '0 + 1' : '1 + 1';
+      else if (r() < .7) { var a = ri(r, 1, n - 1); expr = a + ' + ' + (n - a); }
+      else { var b = ri(r, 1, 10); expr = (n + b) + ' − ' + b; }
+      o += txt(x + 2, y, expr, { size: 4.2 }) + txt(x + w - 4, y, '= ' + n, { size: 4.2, anchor: 'end', bold: true, fill: ROJO });
+    }
+    return { svg: hoja({ titulo: spec.titulo, sub: spec.sub || 'Lee la operación en voz alta; los jugadores calculan el número y lo buscan en su cartón.', seed: seed }, o), sol: null };
+  }
+
+  // Plantilla de receta para el recetario del grupo
+  function receta(spec) {
+    var o = '', y = 46, ln = function (yy, x0) { return '<path d="M' + (x0 || 15) + ' ' + f(yy) + 'H195" stroke="' + GRIS + '" stroke-width=".3"/>'; };
+    o += txt(15, y, 'Nombre del plato:', { size: 5.4, bold: true }) + ln(y + .8, 66); y += 12;
+    o += txt(15, y, 'La receta de:', { size: 5.4, bold: true }) + ln(y + .8, 52); y += 12;
+    o += txt(15, y, 'Para cuántas personas:', { size: 5.4, bold: true }) + ln(y + .8, 78); y += 16;
+    o += '<rect x="15" y="' + y + '" width="180" height="10" rx="2" fill="#f1efe8"/>' + txt(19, y + 7.3, 'Ingredientes', { size: 5.6, bold: true }); y += 20;
+    for (var i = 0; i < 6; i++) { o += txt(15, y, '•', { size: 5 }) + ln(y + .8, 21); y += 9; }
+    y += 4;
+    o += '<rect x="15" y="' + y + '" width="180" height="10" rx="2" fill="#f1efe8"/>' + txt(19, y + 7.3, 'Cómo se hace', { size: 5.6, bold: true }); y += 20;
+    for (i = 1; i <= 6; i++) { o += txt(15, y, i + '.', { size: 5, bold: true }) + ln(y + .8, 23); y += 9; }
+    y += 4;
+    o += '<rect x="15" y="' + y + '" width="180" height="10" rx="2" fill="#f1efe8"/>' + txt(19, y + 7.3, 'El truco de la casa y un recuerdo', { size: 5.6, bold: true }); y += 18;
+    for (i = 0; i < 3 && y < 272; i++) { o += ln(y); y += 10; }
+    return { svg: hoja({ titulo: spec.titulo }, o), sol: null };
+  }
+
+  // Lista en grupos (canciones, temas…) para quien dirige la sesión
+  function listaGrupos(spec) {
+    var o = '', y = 44, size = spec.tam || 5.2;
+    spec.grupos.forEach(function (g) {
+      o += '<rect x="15" y="' + f(y - 6.5) + '" width="180" height="9" rx="2" fill="#f1efe8"/>' + txt(19, y, g[0], { size: 5, bold: true });
+      y += size * 1.9;
+      g[1].forEach(function (it, k) {
+        var x = 15 + (k % 2) * 92, yy = y + Math.floor(k / 2) * size * 2.6;
+        o += txt(x + 2, yy, '♪ ' + it[0], { size: size, bold: true }) + txt(x + 6, yy + size * 1.05, it[1], { size: f(size * .82), fill: GRIS });
+      });
+      y += Math.ceil(g[1].length / 2) * size * 2.6 + 6;
+    });
+    return { svg: hoja({ titulo: spec.titulo, sub: spec.sub }, o), sol: null };
+  }
+
+  // Hoja de registro de una sesión de grupo
+  function sesion(spec) {
+    var o = '', y = 44, ln = function (yy, x0) { return '<path d="M' + (x0 || 15) + ' ' + f(yy) + 'H195" stroke="' + GRIS + '" stroke-width=".3"/>'; };
+    o += txt(15, y, 'Fecha:', { size: 4.6, bold: true }) + '<path d="M31 ' + f(y + .8) + 'H100" stroke="' + GRIS + '" stroke-width=".3"/>' + txt(108, y, 'Grupo / sala:', { size: 4.6, bold: true }) + ln(y + .8, 138); y += 12;
+    o += txt(15, y, 'Orientación (día, tiempo, noticia del día):', { size: 4.6, bold: true }); y += 8; o += ln(y); y += 12;
+    o += '<rect x="15" y="' + y + '" width="180" height="9" fill="' + TINTA + '"/>';
+    [['Dinámica', 15], ['Qué trabaja', 80], ['Min.', 130], ['Cómo ha ido', 148]].forEach(function (c) { o += txt(c[1] + 2, y + 6.4, c[0], { size: 4, bold: true, fill: '#fff' }); });
+    y += 9;
+    for (var i = 0; i < 5; i++) {
+      o += '<rect x="15" y="' + f(y) + '" width="180" height="16" fill="none" stroke="' + TINTA + '" stroke-width=".3"/>';
+      [80, 130, 148].forEach(function (x) { o += '<path d="M' + x + ' ' + f(y) + 'v16" stroke="' + TINTA + '" stroke-width=".3"/>'; });
+      y += 16;
+    }
+    y += 12;
+    o += txt(15, y, 'Asistentes y observaciones', { size: 4.6, bold: true }); y += 4;
+    o += '<rect x="15" y="' + y + '" width="180" height="9" fill="#f1efe8" stroke="' + TINTA + '" stroke-width=".3"/>';
+    [['Nombre', 15], ['Participa', 75], ['Ánimo', 105], ['Observaciones', 130]].forEach(function (c) { o += txt(c[1] + 2, y + 6.4, c[0], { size: 3.8, bold: true }); });
+    y += 9;
+    while (y < 270) {
+      o += '<rect x="15" y="' + f(y) + '" width="180" height="10" fill="none" stroke="' + TINTA + '" stroke-width=".25"/>';
+      [75, 105, 130].forEach(function (x) { o += '<path d="M' + x + ' ' + f(y) + 'v10" stroke="' + TINTA + '" stroke-width=".25"/>'; });
+      o += txt(78, y + 7, '☐ sí  ☐ no', { size: 3.2, fill: GRIS }) + txt(108, y + 7, '☺  ☹', { size: 4, fill: GRIS });
+      y += 10;
+    }
+    return { svg: hoja({ titulo: spec.titulo }, o), sol: null };
+  }
+
   var TIPOS = {
     sopa: sopa, sudoku: sudoku, laberinto: laberinto, bingo90: bingo90, bingo75: bingo75, 'bingo-numeros': bingoNumeros,
     tabla: tabla, 'tablas-todas': tablasTodas, pitagorica: pitagorica, 'mult-practica': multPractica,
@@ -1666,12 +1761,13 @@
     grafomotricidad: grafomotricidad, horario: horario, 'calendario-anual': calendarioAnual, 'calendario-mes': calendarioMes,
     problemas: problemas,
     cancelacion: cancelacion, refranes: refranes, series: series, compra: compra, fluidez: fluidez, orientacion: orientacion,
-    ordenar: ordenar, clasificar: clasificar, copiar: copiar, iguales: iguales, contar: contar, colorear: colorear
+    ordenar: ordenar, clasificar: clasificar, copiar: copiar, iguales: iguales, contar: contar, colorear: colorear,
+    tarjetas: tarjetas, 'bingo-sumas': bingoSumas, receta: receta, 'lista-grupos': listaGrupos, sesion: sesion
   };
   // Tipos cuyo contenido cambia con la semilla (tienen botón «Otra distinta»)
   var ALEATORIOS = { sopa: 1, sudoku: 1, laberinto: 1, bingo90: 1, bingo75: 1, 'mult-practica': 1, operaciones: 1,
     'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1, crucigrama: 1, 'caligrafia-frases': 1, multiplicaciones: 1, divisiones: 1, mandala: 1, problemas: 1,
-    cancelacion: 1, refranes: 1, series: 1, compra: 1, fluidez: 1, ordenar: 1, clasificar: 1, copiar: 1, iguales: 1, contar: 1, colorear: 1 };
+    cancelacion: 1, refranes: 1, series: 1, compra: 1, fluidez: 1, ordenar: 1, clasificar: 1, copiar: 1, iguales: 1, contar: 1, colorear: 1, 'bingo-sumas': 1 };
 
   function render(spec, seed) {
     var fn = TIPOS[spec.tipo];
@@ -1679,5 +1775,5 @@
     return fn(spec, seed >>> 0);
   }
 
-  return { render: render, hash: hash, esAleatorio: function (spec) { return !!ALEATORIOS[spec.tipo]; } };
+  return { render: render, hash: hash, esAleatorio: function (spec) { return !!ALEATORIOS[spec.tipo] || (spec.tipo === 'tarjetas' && !!(spec.mezclar || spec.pares)); } };
 });
