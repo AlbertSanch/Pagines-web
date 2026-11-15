@@ -451,6 +451,32 @@
    "anio": 2027,
    "descarga": "https://www.araba.eus/botha/Boletines/2026/116/2026_116_02851_C.pdf",
    "provincia": "01"
+  },
+  {
+   "id": "andalucia_2027",
+   "ccaa": "andalucia",
+   "anio": 2027,
+   "descarga": "https://www.juntadeandalucia.es/boja/2026/210/BOJA26-210-00021-14189-01_00345419.pdf",
+   "oficial": "https://www.juntadeandalucia.es/boja/2026/210/25"
+  },
+  {
+   "id": "galicia_2027",
+   "ccaa": "galicia",
+   "anio": 2027,
+   "descarga": "https://www.xunta.gal/dog/Publicados/2026/20261026/AnuncioG0767-161026-0001_es.html",
+   "respaldo": "https://www.laboral-social.com/sites/laboral-social.com/files/Fiestas-locales-galicia-2027.pdf"
+  },
+  {
+   "id": "extremadura_2027",
+   "ccaa": "extremadura",
+   "anio": 2027,
+   "descarga": "https://doe.juntaex.es/pdfs/doe/2026/2070o/26062650.pdf"
+  },
+  {
+   "id": "ceuta_2027",
+   "ccaa": "ceuta",
+   "anio": 2027,
+   "descarga": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-ceuta-2027.pdf"
   }
  ]
 }
