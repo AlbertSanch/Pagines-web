@@ -51,6 +51,67 @@ const ORIENTACION_MODERADO = [
   ['¿Cómo te llamas?'], ['¿Dónde estamos?']
 ];
 
+const CANCIONES = [
+  ['Boleros y coplas de siempre', [['Angelitos negros', 'Antonio Machín'], ['Toda una vida', 'Antonio Machín'], ['Soy minero', 'Antonio Molina'], ['Francisco Alegre', 'Juanita Reina'], ['Mi jaca', 'Estrellita Castro'], ['Bésame mucho', 'bolero de Consuelo Velázquez']]],
+  ['Años 60', [['Tómbola', 'Marisol'], ['La chica ye-yé', 'Concha Velasco'], ['Black is black', 'Los Bravos'], ['Yo soy aquel', 'Raphael'], ['Cuando calienta el sol', 'Los Hermanos Rigual'], ['La, la, la', 'Massiel']]],
+  ['Años 70', [['Un rayo de sol', 'Los Diablos'], ['Libre', 'Nino Bravo'], ['Eres tú', 'Mocedades'], ['Mediterráneo', 'Joan Manuel Serrat'], ['Mi querida España', 'Cecilia'], ['Soy rebelde', 'Jeanette']]],
+  ['Años 80', [['La puerta de Alcalá', 'Ana Belén y Víctor Manuel'], ['Los pajaritos', 'María Jesús y su Acordeón'], ['Hey', 'Julio Iglesias'], ['Bailando', 'Alaska y los Pegamoides'], ['Ni tú ni nadie', 'Alaska y Dinarama'], ['Cadillac solitario', 'Loquillo y los Trogloditas']]]
+];
+
+const PRECIOS = [['Pan (barra)', '1,10 €'], ['Leche (litro)', '1,05 €'], ['Huevos (docena)', '2,60 €'], ['Manzanas (kilo)', '2,20 €'], ['Aceite (litro)', '5,90 €'],
+  ['Café (paquete)', '3,40 €'], ['Arroz (kilo)', '1,50 €'], ['Galletas (paquete)', '1,80 €'], ['Queso (cuña)', '4,75 €'], ['Naranjas (kilo)', '1,95 €']];
+
+const DINAMICAS = `
+<h2>Antes de empezar</h2>
+<ul>
+<li><strong>Grupos de 6 a 12 personas</strong>, sentadas en círculo o en U para que todas se vean.</li>
+<li><strong>Sesiones de 45 a 60 minutos</strong> con dos o tres dinámicas, alternando las de estar sentado con las de moverse.</li>
+<li><strong>Siempre la misma entrada y la misma salida:</strong> al llegar, el saludo y en la pizarra la fecha, el día de la semana y el tiempo que hace (orientación); al terminar, algo agradable, como cantar una canción entre todos.</li>
+<li><strong>Nadie falla en público.</strong> Si alguien no recuerda, se le dan pistas o le ayuda el grupo. Lo importante es participar.</li>
+<li><strong>Mezclar niveles con roles:</strong> quien está mejor puede apuntar en la pizarra, hacer de tendero o leer las preguntas.</li>
+</ul>
+
+<h2>Memoria y recuerdos</h2>
+<h3>1. El baúl de los recuerdos</h3>
+<p>Una caja con objetos antiguos: un molinillo de café, una plancha de hierro, una peseta, una radio de transistores, un dedal, una cartilla escolar. Se saca uno y el grupo cuenta qué es, para qué servía y qué recuerdos le trae. <strong>Más fácil:</strong> objetos muy conocidos y preguntas de sí o no. <strong>Más difícil:</strong> guardar los objetos y, al final de la sesión, recordar entre todos los cinco que salieron.</p>
+<h3>2. Me voy de viaje y en la maleta llevo…</h3>
+<p>El primero dice «me voy de viaje y en la maleta llevo un sombrero»; el segundo repite y añade, «…un sombrero y una toalla»; y así por turnos. <strong>Más fácil:</strong> meter objetos de verdad en una maleta, que se ven. <strong>Más difícil:</strong> que vayan por orden alfabético (abanico, bañador, cepillo…).</p>
+<h3>3. La radio de antes</h3>
+<p>Suenan 15 segundos de una canción de toda la vida y el grupo adivina el título y el cantante, y canta el estribillo. La música despierta recuerdos incluso en personas con deterioro avanzado, y suele ser la sesión favorita. En las hojas de abajo tienes una lista de canciones por épocas.</p>
+<h3>4. Mi pueblo en el mapa</h3>
+<p>Un mapa grande de España en la pared. Cada persona pone una chincheta o una pegatina en su pueblo y cuenta algo de él: la fiesta, la comida típica, a qué se dedicaba la gente. Trabaja la orientación en el espacio y la memoria de la propia vida.</p>
+
+<h2>Lenguaje</h2>
+<h3>5. Refranes para emparejar</h3>
+<p>Se reparten las tarjetas de refranes de esta página, partidas por la mitad: unos tienen el principio («A quien madruga…») y otros el final («…Dios le ayuda»). Quien tiene un principio lo lee en voz alta y el grupo busca quién tiene el final. Después se comenta qué quiere decir. <strong>Más fácil:</strong> el monitor dice el principio y el grupo lo completa de memoria.</p>
+<h3>6. Palabras encadenadas</h3>
+<p>Cada palabra empieza por la última sílaba de la anterior: casa, sapo, pollo, llave… <strong>Más fácil:</strong> decir por turnos palabras que empiecen por una letra («nombres que empiecen por M»).</p>
+<h3>7. El supermercado de la A a la Z</h3>
+<p>Por turnos, cada uno dice algo que se compra en el supermercado con la letra que toca: aceite, bacalao, cebollas, dátiles… <strong>Más fácil:</strong> sin letras, solo «cosas que se compran en la frutería».</p>
+
+<h2>Atención y cálculo</h2>
+<h3>8. Bingo con sumas</h3>
+<p>Se juega con cartones normales de bingo, pero el monitor no canta «el 24», sino «el 20 más 4», y cada jugador tiene que hacer la cuenta antes de buscarlo. La hoja del monitor de esta página trae una suma o una resta para cada número del 1 al 90. Los cartones están en <a href="/bingo/">bingo para imprimir</a>; para quien no lee números, mejor el bingo de dibujos.</p>
+<h3>9. La tienda</h3>
+<p>Una mesa con productos (o envases vacíos, o fotos) y sus tarjetas de precios, que también están en esta página, y monedas y billetes de juguete. Por turnos, unos venden y otros compran: hay que pagar, dar la vuelta y comprobarla. Trabaja el cálculo con una tarea de la vida diaria y es de las dinámicas que más gustan, porque es «de verdad».</p>
+<h3>10. Palmada en el número</h3>
+<p>El monitor lee números en voz alta, despacio, y el grupo da una palmada cuando sale el elegido (por ejemplo, el 7). <strong>Más difícil:</strong> palmada en los pares y golpe en la mesa en los impares.</p>
+
+<h2>Creatividad y trabajo en equipo</h2>
+<h3>11. El mural de la estación</h3>
+<p>Un papel continuo grande en el que el grupo hace el mural de la estación del año: recortes de revistas, hojas secas en otoño, flores en primavera, dibujos y frases. Trabaja la orientación en el tiempo, la motricidad fina y la cooperación, y alegra la sala durante semanas.</p>
+<h3>12. Recetas de toda la vida</h3>
+<p>El grupo dicta entre todos la receta de un plato (tortilla, cocido, torrijas, rosquillas) y el monitor la escribe en grande: los ingredientes, los pasos en orden y los trucos de cada casa. Con la plantilla de esta página, al cabo de unas sesiones sale un recetario del grupo para que cada uno se lleve una copia.</p>
+<h3>13. Teatro de anuncios y escenas</h3>
+<p>Representar anuncios antiguos de la televisión que el grupo recuerde, o escenas de la vida diaria: en la consulta del médico, en el mercado, en la estación. Trabaja la memoria, la expresión y la risa, que también cuenta.</p>
+
+<h2>Movimiento y cerebro</h2>
+<h3>14. Gimnasia de órdenes</h3>
+<p>Sentados en círculo, el monitor da órdenes sencillas: manos arriba, toca la rodilla derecha, dos palmadas, mira a la izquierda. <strong>Más difícil:</strong> «Simón dice»: solo se obedece si la orden empieza por «Simón dice».</p>
+<h3>15. Pásala con nombre</h3>
+<p>Una pelota blanda pasa de mano en mano y quien la recibe dice su nombre y una fruta (o un color, o una ciudad). En la segunda ronda, hay que decir el nombre de quien te la pasa. Trabaja la atención, la memoria de nombres y la coordinación, y es un buen comienzo de sesión.</p>
+`;
+
 const comoUsar = `
 <h2>Cómo usar las fichas</h2>
 <ul>
@@ -70,7 +131,8 @@ const niveles = `
 <li><a href="/estimulacion-cognitiva/deterioro-leve/">Deterioro cognitivo leve</a>: para personas que hacen su vida casi con normalidad pero notan olvidos o les cuesta concentrarse. Fichas con más texto: refranes, series de números, la compra, palabras por categorías, orientación, copiar dibujos y atención.</li>
 <li><a href="/estimulacion-cognitiva/deterioro-moderado/">Deterioro cognitivo moderado</a>: para quien necesita ayuda en algunas tareas del día a día. Letra más grande, menos ejercicios por hoja y respuestas para elegir en lugar de escribir.</li>
 <li><a href="/estimulacion-cognitiva/deterioro-severo/">Deterioro cognitivo severo</a>: para personas que dependen de otros para casi todo. Dibujos grandes, una sola consigna sencilla: unir iguales, contar hasta tres, rodear un dibujo, colorear o repasar trazos.</li>
-</ul>`;
+</ul>
+<p>Y para talleres y centros, <a href="/estimulacion-cognitiva/dinamicas-grupales/">quince dinámicas de grupo</a> con su material para imprimir.</p>`;
 
 module.exports = [
   {
@@ -105,6 +167,32 @@ ${aviso}`,
       ['¿Qué nivel elijo?', 'Empieza por el que creas que encaja y observa: si la persona termina la ficha sin esfuerzo, prueba el nivel superior; si se frustra o no entiende el enunciado, baja un nivel. Lo importante es que sea un reto alcanzable.'],
       ['¿Puedo usarlas en una residencia o un centro de día?', 'Sí. Puedes imprimirlas y fotocopiarlas sin límite para casa, centros de día, residencias y talleres. Lo único que no está permitido es venderlas o republicarlas en otra web.']
     ]
+  },
+  {
+    cat: 'estimulacion-cognitiva', slug: 'dinamicas-grupales', corto: 'Dinámicas en grupo',
+    title: 'Dinámicas de estimulación cognitiva para grupos de mayores',
+    desc: '15 dinámicas de grupo para trabajar la memoria, el lenguaje y la atención con mayores, con tarjetas de refranes, bingo con sumas y plantillas para imprimir.',
+    h1: 'Dinámicas de estimulación cognitiva para grupos de mayores',
+    entrada: 'Quince dinámicas para hacer en grupo en un centro de día, una residencia o un taller de memoria: recuerdos con objetos antiguos, música de siempre, refranes, la tienda, el bingo con sumas, recetas de toda la vida y juegos de movimiento. Cada una explica cómo hacerla más fácil o más difícil, y abajo tienes el material listo para imprimir: tarjetas de refranes para emparejar, la hoja del bingo con sumas, precios para la tienda, la plantilla del recetario, canciones por épocas y una hoja para registrar cada sesión.',
+    hojas: [
+      { tipo: 'tarjetas', pares: REFRANES, cols: 2, filas: 5, tam: 6.6, titulo: 'Refranes para emparejar', sub: 'Recorta las tarjetas, repártelas y buscad entre todos las dos mitades de cada refrán.' },
+      { tipo: 'bingo-sumas', titulo: 'Bingo con sumas: hoja del monitor' },
+      { tipo: 'tarjetas', items: PRECIOS, cols: 2, filas: 5, tam: 7.4, colorB: '#d5392b', titulo: 'Precios para la tienda', sub: 'Recorta las tarjetas y ponlas junto a cada producto, su envase o su foto. Precios de ejemplo.' },
+      { tipo: 'receta', titulo: 'Recetas de toda la vida' },
+      { tipo: 'lista-grupos', grupos: CANCIONES, titulo: 'Canciones para cantar en grupo', sub: 'Pon unos segundos de cada una: el grupo adivina el título y sigue el estribillo.' },
+      { tipo: 'sesion', titulo: 'Registro de la sesión' }
+    ],
+    copias: 2,
+    cuerpo: `${DINAMICAS}
+<h2>Fichas para trabajar de forma individual</h2>
+<p>Entre dinámica y dinámica, o para quien prefiere trabajar solo, están las fichas por niveles: <a href="/estimulacion-cognitiva/deterioro-leve/">deterioro leve</a>, <a href="/estimulacion-cognitiva/deterioro-moderado/">deterioro moderado</a> y <a href="/estimulacion-cognitiva/deterioro-severo/">deterioro severo</a>.</p>
+${aviso}`,
+    faq: [
+      ['¿Cuántas personas son ideales para una dinámica?', 'Entre seis y doce. Con menos, se pierde el ambiente de grupo; con más, cuesta que todos participen y oigan bien. Si el grupo es grande, se puede partir en dos con un monitor cada uno.'],
+      ['¿Sirven para grupos con distintos niveles de deterioro?', 'Sí. Cada dinámica tiene una versión más fácil y otra más difícil, y se pueden repartir papeles según lo que pueda hacer cada persona: unos cantan, otros apuntan, otros reparten las tarjetas. Las de música y recuerdos suelen funcionar con todo el grupo.'],
+      ['¿Puedo usar el material en mi centro?', 'Sí. Puedes imprimirlo y fotocopiarlo sin límite para residencias, centros de día, asociaciones y talleres. Lo único que no está permitido es venderlo o republicarlo en otra web.']
+    ],
+    amazon: [['Pelotas blandas de espuma', 'pelotas espuma blandas'], ['Bombo de bingo con bolas', 'bombo bingo bolas'], ['Billetes y monedas de juguete', 'billetes monedas juguete euros']]
   },
   {
     cat: 'estimulacion-cognitiva', slug: 'deterioro-leve', corto: 'Deterioro cognitivo leve',
