@@ -41,6 +41,12 @@
   "sha1": "2d1a9da7846ac6919df562c91df0f64ebea43c85",
   "url": "https://www.juntadeandalucia.es/eboja/2026/79/BOJA26-079-00002-5437-01_00336674.pdf"
  },
+ "andalucia_2027": {
+  "descargado": "2026-11-15",
+  "descargado_de": "https://www.juntadeandalucia.es/boja/2026/210/BOJA26-210-00021-14189-01_00345419.pdf",
+  "sha1": "a0523c8ac00d3acdf908076aeddc1381b859e27a",
+  "url": "https://www.juntadeandalucia.es/boja/2026/210/25"
+ },
  "aragon_2026": {
   "descargado": "2026-11-14",
   "descargado_de": "https://www.laboral-social.com/sites/laboral-social.com/files/FIESTAS-LOCALES-ARAGON-2026.pdf",
@@ -90,13 +96,13 @@
   "url": "https://noticias.juridicas.com/base_datos/CCAA/1012195-r-trabajo-y-seguridad-social-12-sep-2026-bizkaia-calendario-de-fiestas-locales.html"
  },
  "boe_2026": {
-  "descargado": "2026-11-14",
+  "descargado": "2026-11-15",
   "id": "BOE-A-2025-21667",
   "sha1": "bb9ce634cbbdbe83c91f24548a484c335a7acf5b",
   "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2025-21667"
  },
  "boe_2027": {
-  "descargado": "2026-11-14",
+  "descargado": "2026-11-15",
   "id": "BOE-A-2026-21254",
   "sha1": "2ec52f1dd4dc097df235a9b681f70088d76129df",
   "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2026-21254"
@@ -136,6 +142,12 @@
   "descargado_de": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-ceuta-2026.pdf",
   "sha1": "bb5a34c41c6c61f5eb6f0c826d721d16d3822df7",
   "url": "https://www.ceuta.es/ceuta/component/jdownloads/finish/1960-septiembre/22923-bocce-6549-19-09-2025?Itemid=0"
+ },
+ "ceuta_2027": {
+  "descargado": "2026-11-15",
+  "descargado_de": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-ceuta-2027.pdf",
+  "sha1": "d4c78ec0a6e0e5391174ea3e2d758177969ecb98",
+  "url": "https://www.laboral-social.com/sites/laboral-social.com/files/fiestas-locales-ceuta-2027.pdf"
  },
  "clm_2026": {
   "descargado": "2026-11-14",
@@ -275,11 +287,23 @@
   "sha1": "86012f6927f4e67e68f0fa4e2abe68846b1ca466",
   "url": "https://www.laboral-social.com/sites/laboral-social.com/files/Calendario-fiestas-locales-extremadura-2026-8.pdf"
  },
+ "extremadura_2027": {
+  "descargado": "2026-11-15",
+  "descargado_de": "https://doe.juntaex.es/pdfs/doe/2026/2070o/26062650.pdf",
+  "sha1": "09c89fa5afb87544495f674fa7e5cd86deb21a6f",
+  "url": "https://doe.juntaex.es/pdfs/doe/2026/2070o/26062650.pdf"
+ },
  "galicia_2026": {
   "descargado": "2026-11-14",
   "descargado_de": "https://www.xunta.gal/dog/Publicados/2025/20251030/AnuncioG0767-221025-0001_es.html",
   "sha1": "27fcd1e4f521511358df95169bde442c07e6951e",
   "url": "https://www.xunta.gal/dog/Publicados/2025/20251030/AnuncioG0767-221025-0001_es.html"
+ },
+ "galicia_2027": {
+  "descargado": "2026-11-15",
+  "descargado_de": "https://www.xunta.gal/dog/Publicados/2026/20261026/AnuncioG0767-161026-0001_es.html",
+  "sha1": "eaad438218a7bc5b4f7fe5a31922b65d85811201",
+  "url": "https://www.xunta.gal/dog/Publicados/2026/20261026/AnuncioG0767-161026-0001_es.html"
  },
  "gipuzkoa_2026": {
   "descargado": "2026-11-14",

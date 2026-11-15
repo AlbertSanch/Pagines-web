@@ -87,7 +87,7 @@ def fechas_en(texto, anio):
     """«3 de mayo (San X) y 22 y 23 de julio (Y)» o «2 de abril, Jueves Santo; 13 de abril, San Vicente» -> [(fecha, nombre)]."""
     res = []
     patron = (r"(\d{1,2})((?:\s*(?:,|y|e|i)\s*\d{1,2})*)\s+(?:de\s+|del\s+)?" + RE_MES +
-              r"\b(?:\s+de\s+\d{4})?\s*(?:\(([^)\n]*)\)?|,\s*(?!\d)([^;\n]*?)(?=;|\.\s|\.$|\s+y\s+\d|\n|$))?")
+              r"\b(?:\s+de\s+\d{4})?\s*(?:\(([^)\n]*)\)?|,(?!\s*\d{1,2}\s+(?:de\s+|del\s+)?(?:" + "|".join(MESES) + r"))\s*([^;\n]*?)(?=;|\.\s|\.$|\s+y\s+\d|\n|$))?")
     for m in re.finditer(patron, texto, re.I):
         anio_escrito = re.search(r"de\s+(\d{4})", m.group(0)[:40])
         if anio_escrito and int(anio_escrito.group(1)) != anio:
