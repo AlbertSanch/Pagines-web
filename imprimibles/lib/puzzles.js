@@ -1325,6 +1325,336 @@
     return { svg: hoja(o, dibuja(false)), sol: hoja(Object.assign({}, o, { sol: true }), dibuja(true)) };
   }
 
+  // ---------- estimulación cognitiva para mayores ----------
+  // Letra grande, mucho espacio y una sola tarea por hoja. «tam» es el tamaño de la letra de los ejercicios (en mm).
+  function enunciado(texto, y, size) {
+    var o = '', l = parte(texto, Math.floor(180 / (size * .52)));
+    l.forEach(function (x, i) { o += txt(15, y + i * size * 1.3, x, { size: size, bold: true }); });
+    return { svg: o, y: y + l.length * size * 1.3 };
+  }
+  var FORMAS = ['círculo', 'cuadrado', 'triángulo', 'estrella', 'corazón', 'rombo', 'luna', 'cruz'];
+  var FORMAS_PL = ['círculos', 'cuadrados', 'triángulos', 'estrellas', 'corazones', 'rombos', 'lunas', 'cruces'];
+  function forma(k, cx, cy, s, grosor, color) {
+    var st = ' fill="none" stroke="' + (color || TINTA) + '" stroke-width="' + f(grosor || Math.max(.5, s * .05)) + '" stroke-linejoin="round" stroke-linecap="round"';
+    var h = s / 2, p = [], i;
+    if (k === 0) return '<circle cx="' + f(cx) + '" cy="' + f(cy) + '" r="' + f(h * .9) + '"' + st + '/>';
+    if (k === 1) return '<rect x="' + f(cx - h * .8) + '" y="' + f(cy - h * .8) + '" width="' + f(s * .8) + '" height="' + f(s * .8) + '"' + st + '/>';
+    if (k === 2) return '<polygon points="' + f(cx) + ',' + f(cy - h * .9) + ' ' + f(cx + h * .95) + ',' + f(cy + h * .78) + ' ' + f(cx - h * .95) + ',' + f(cy + h * .78) + '"' + st + '/>';
+    if (k === 3) {
+      for (i = 0; i < 10; i++) { var rad = i % 2 ? h * .42 : h * .98, a = -Math.PI / 2 + i * Math.PI / 5; p.push(f(cx + rad * Math.cos(a)) + ',' + f(cy + rad * Math.sin(a) + h * .08)); }
+      return '<polygon points="' + p.join(' ') + '"' + st + '/>';
+    }
+    if (k === 4) return '<path d="M' + f(cx) + ' ' + f(cy + h * .85) + 'C' + f(cx - h * 1.25) + ' ' + f(cy - h * .05) + ' ' + f(cx - h * .65) + ' ' + f(cy - h * 1.05) + ' ' + f(cx) + ' ' + f(cy - h * .42) +
+      'C' + f(cx + h * .65) + ' ' + f(cy - h * 1.05) + ' ' + f(cx + h * 1.25) + ' ' + f(cy - h * .05) + ' ' + f(cx) + ' ' + f(cy + h * .85) + 'Z"' + st + '/>';
+    if (k === 5) return '<polygon points="' + f(cx) + ',' + f(cy - h * .95) + ' ' + f(cx + h * .72) + ',' + f(cy) + ' ' + f(cx) + ',' + f(cy + h * .95) + ' ' + f(cx - h * .72) + ',' + f(cy) + '"' + st + '/>';
+    if (k === 6) { // luna creciente
+      var R = h * .9;
+      return '<path d="M' + f(cx + R * .25) + ' ' + f(cy - R) + 'A' + f(R) + ' ' + f(R) + ' 0 1 0 ' + f(cx + R * .25) + ' ' + f(cy + R) +
+        'A' + f(R * .78) + ' ' + f(R * .78) + ' 0 1 1 ' + f(cx + R * .25) + ' ' + f(cy - R) + 'Z"' + st + '/>';
+    }
+    var c = h * .3, b = h * .88;
+    return '<path d="M' + f(cx - c) + ' ' + f(cy - b) + 'H' + f(cx + c) + 'V' + f(cy - c) + 'H' + f(cx + b) + 'V' + f(cy + c) + 'H' + f(cx + c) + 'V' + f(cy + b) +
+      'H' + f(cx - c) + 'V' + f(cy + c) + 'H' + f(cx - b) + 'V' + f(cy - c) + 'H' + f(cx - c) + 'Z"' + st + '/>';
+  }
+  function marca(cx, cy, rad) { return '<circle cx="' + f(cx) + '" cy="' + f(cy) + '" r="' + f(rad) + '" fill="none" stroke="' + ROJO + '" stroke-width=".9"/>'; }
+  function euros(n) { return (Math.round(n * 100) / 100).toFixed(Number.isInteger(Math.round(n * 100) / 100) ? 0 : 2).replace('.', ',') + ' €'; }
+  function cabCog(spec, seed) { return { titulo: spec.titulo, nombre: spec.nombre !== false, seed: seed }; }
+  function dos(spec, seed, dibuja) {
+    var o = cabCog(spec, seed);
+    return { svg: hoja(o, dibuja(false)), sol: hoja(Object.assign({}, o, { sol: true }), dibuja(true)) };
+  }
+
+  // Atención: rodear todas las letras o dibujos iguales al modelo
+  function cancelacion(spec, seed) {
+    var r = rng(seed), F = spec.filas || 10, C = spec.cols || 10, formas = !!spec.formas;
+    var objs = [].concat(spec.objetivo != null ? spec.objetivo : (formas ? 4 : 'A'));
+    var pool = formas ? (spec.pool || [0, 1, 2, 3, 4, 5]) : (spec.letras || 'ABCDEFGHIJLMNOPRSTUV').split('');
+    var otros = pool.filter(function (x) { return objs.indexOf(x) < 0; }), celdas = [], i;
+    for (i = 0; i < F * C; i++) celdas.push(r() < (spec.prop || .2) ? objs[ri(r, 0, objs.length - 1)] : otros[ri(r, 0, otros.length - 1)]);
+    var minimo = Math.max(1, Math.round(F * C * (spec.prop || .2) * .7));
+    for (var t = 0; t < 500 && celdas.filter(function (v) { return objs.indexOf(v) >= 0; }).length < minimo; t++) celdas[ri(r, 0, celdas.length - 1)] = objs[ri(r, 0, objs.length - 1)];
+    var nombreObj = formas ? objs.map(function (k) { return 'todos los ' + FORMAS_PL[k]; }).join(' y ').replace('todos los estrellas', 'todas las estrellas').replace('todos los lunas', 'todas las lunas').replace('todos los cruces', 'todas las cruces')
+      : 'todas las letras ' + objs.join(' y ');
+    var total = celdas.filter(function (v) { return objs.indexOf(v) >= 0; }).length;
+    return dos(spec, seed, function (sol) {
+      var e = enunciado(spec.instr || ('Rodea ' + nombreObj + '.'), 52, spec.tamInstr || 6.4), o = e.svg;
+      var y0 = e.y + 4, xm = 15;
+      o += txt(xm, y0 + 6, 'Modelo:', { size: 5, fill: GRIS });
+      objs.forEach(function (v, k) {
+        var cx = xm + 34 + k * 22;
+        o += '<rect x="' + f(cx - 9) + '" y="' + f(y0 - 2) + '" width="18" height="18" rx="2" fill="none" stroke="' + TINTA + '" stroke-width=".6"/>';
+        o += formas ? forma(v, cx, y0 + 7, 13, 1) : txt(cx, y0 + 12, v, { size: 12, anchor: 'middle', bold: true });
+      });
+      var top = y0 + 24, w = 180 / C, h = Math.min(w * 1.15, (280 - top) / F), size = Math.min(w, h) * (formas ? .72 : .62);
+      celdas.forEach(function (v, k) {
+        var cx = 15 + (k % C + .5) * w, cy = top + (Math.floor(k / C) + .5) * h;
+        o += formas ? forma(v, cx, cy, size, Math.max(.6, size * .06)) : txt(cx, cy + size * .36, v, { size: f(size), anchor: 'middle', bold: true });
+        if (sol && objs.indexOf(v) >= 0) o += marca(cx, cy, Math.min(w, h) * .46);
+      });
+      if (sol) o += txt(195, top - 4, 'Hay ' + total, { size: 5, anchor: 'end', bold: true, fill: ROJO });
+      return o;
+    });
+  }
+
+  // Lenguaje y memoria: completar refranes (escribiendo o eligiendo entre tres finales)
+  function refranes(spec, seed) {
+    var r = rng(seed), n = spec.n || 6, lista = shuffle(r, spec.lista).slice(0, n), size = spec.tam || 5.6;
+    var opciones = lista.map(function (rf) {
+      if (!spec.opciones) return null;
+      var otros = shuffle(r, spec.lista.filter(function (x) { return x !== rf; })).slice(0, 2).map(function (x) { return x[1]; });
+      return shuffle(r, [rf[1]].concat(otros));
+    });
+    return dos(spec, seed, function (sol) {
+      var e = enunciado(spec.instr || (spec.opciones ? 'Lee el principio de cada refrán y rodea el final correcto.' : 'Completa cada refrán con el final que falta.'), 52, 6.2), o = e.svg, y = e.y + 8;
+      var alto = (280 - y) / n;
+      lista.forEach(function (rf, k) {
+        o += txt(15, y, (k + 1) + '. ' + rf[0] + '…', { size: size, bold: true });
+        if (opciones[k]) {
+          opciones[k].forEach(function (op, j) {
+            var yy = y + size * 1.55 * (j + 1);
+            o += '<circle cx="24" cy="' + f(yy - size * .32) + '" r="' + f(size * .32) + '" fill="none" stroke="' + TINTA + '" stroke-width=".4"/>' + txt(29, yy, '…' + op, { size: f(size * .92) });
+            if (sol && op === rf[1]) o += marca(24, yy - size * .32, size * .6) + '<circle cx="24" cy="' + f(yy - size * .32) + '" r="' + f(size * .2) + '" fill="' + ROJO + '"/>';
+          });
+        } else {
+          var yl = y + size * 1.9;
+          o += '<path d="M24 ' + f(yl) + 'H195" stroke="' + GRIS + '" stroke-width=".3"/>';
+          if (sol) o += txt(26, yl - 1.2, '…' + rf[1], { size: size, fill: ROJO, bold: true });
+        }
+        y += alto;
+      });
+      return o;
+    });
+  }
+
+  // Cálculo y razonamiento: series de números en las que faltan uno o dos
+  function series(spec, seed) {
+    var r = rng(seed), n = spec.n || 6, largo = spec.largo || 6, huecos = spec.huecos || 2, pasos = spec.pasos || [2, 3, 5, 10, -2, -5, 'x2'], lista = [], k;
+    for (k = 0; k < n; k++) {
+      var paso = pasos[ri(r, 0, pasos.length - 1)], ini, nums = [], i;
+      if (paso === 'x2') { ini = ri(r, 1, 3); for (i = 0; i < largo; i++) nums.push(ini * Math.pow(2, i)); }
+      else { ini = paso < 0 ? ri(r, -paso * largo + 2, -paso * largo + 30) : ri(r, 1, spec.max || 20); for (i = 0; i < largo; i++) nums.push(ini + paso * i); }
+      var pos = spec.alFinal ? [largo - 1] : shuffle(r, Array.from({ length: largo - 2 }, function (_, j) { return j + 2; })).slice(0, huecos);
+      lista.push({ nums: nums, huecos: pos });
+    }
+    return dos(spec, seed, function (sol) {
+      var e = enunciado(spec.instr || 'Mira cómo cambian los números y escribe los que faltan en los recuadros.', 52, 6.2), o = e.svg, y = e.y + 10;
+      var alto = (282 - y) / n, w = 180 / largo, lado = Math.min(w - 4, alto - 8, 26);
+      lista.forEach(function (s, k) {
+        s.nums.forEach(function (v, i) {
+          var cx = 15 + (i + .5) * w, cy = y + lado / 2, hueco = s.huecos.indexOf(i) >= 0;
+          o += '<rect x="' + f(cx - lado / 2) + '" y="' + f(y) + '" width="' + f(lado) + '" height="' + f(lado) + '" rx="2" fill="' + (hueco ? '#fff' : '#f1efe8') + '" stroke="' + TINTA + '" stroke-width="' + (hueco ? .8 : .3) + '"/>';
+          if (!hueco || sol) o += txt(cx, cy + lado * .17, v, { size: f(lado * .46), anchor: 'middle', bold: true, fill: hueco ? ROJO : TINTA });
+        });
+        y += alto;
+      });
+      return o;
+    });
+  }
+
+  // Cálculo de la vida diaria: la compra
+  // [nombre, unidad del precio, dos unidades, precio mínimo y máximo orientativos en euros]
+  var PRODUCTOS = [['pan', 'barra', 'dos barras de pan', .8, 1.5], ['leche', 'litro', 'dos litros de leche', .9, 1.4], ['huevos', 'docena', 'dos docenas de huevos', 2, 3.5],
+    ['manzanas', 'kilo', 'dos kilos de manzanas', 1.5, 3], ['aceite', 'litro', 'dos litros de aceite', 4, 9], ['café', 'paquete', 'dos paquetes de café', 2, 5],
+    ['arroz', 'kilo', 'dos kilos de arroz', 1, 2], ['tomates', 'kilo', 'dos kilos de tomates', 1.5, 3], ['queso', 'cuña', 'dos cuñas de queso', 3, 6],
+    ['galletas', 'paquete', 'dos paquetes de galletas', 1, 2.5], ['yogures', 'pack', 'dos packs de yogures', 1.5, 3], ['azúcar', 'kilo', 'dos kilos de azúcar', 1, 1.6],
+    ['naranjas', 'kilo', 'dos kilos de naranjas', 1.2, 2.5]];
+  function compra(spec, seed) {
+    var r = rng(seed), enteros = !!spec.enteros, prods = shuffle(r, PRODUCTOS).slice(0, 6).map(function (p) {
+      var v = p[3] + r() * (p[4] - p[3]);
+      return { p: p[0], u: p[1], dos: p[2], v: enteros ? Math.max(1, Math.round(v)) : Math.round(v * 10) / 10 };
+    });
+    function suma(ix) { return ix.reduce(function (a, i) { return a + prods[i].v; }, 0); }
+    var q = [];
+    var a = shuffle(r, [0, 1, 2, 3, 4, 5]);
+    q.push(['Compras ' + prods[a[0]].p + ' y ' + prods[a[1]].p + '. ¿Cuánto pagas?', suma([a[0], a[1]])]);
+    var billete = enteros ? (suma([a[2], a[3]]) < 5 ? 5 : 10) : (suma([a[2], a[3]]) < 10 ? 10 : 20);
+    q.push(['Compras ' + prods[a[2]].p + ' y ' + prods[a[3]].p + ' y pagas con un billete de ' + billete + ' €. ¿Cuánto te devuelven?', billete - suma([a[2], a[3]])]);
+    q.push(['¿Cuánto cuestan ' + prods[a[4]].dos + '?', prods[a[4]].v * 2]);
+    if (!enteros) q.push(['Compras ' + prods[a[5]].p + ', ' + prods[a[0]].p + ' y ' + prods[a[1]].p + '. ¿Cuánto pagas en total?', suma([a[5], a[0], a[1]])]);
+    return dos(spec, seed, function (sol) {
+      var e = enunciado('Mira los precios de la tienda y responde a las preguntas.', 52, 6.2), o = e.svg, y = e.y + 4;
+      o += '<rect x="15" y="' + f(y) + '" width="180" height="' + (enteros ? 52 : 46) + '" rx="3" fill="#f6f4ee" stroke="' + TINTA + '" stroke-width=".5"/>';
+      o += txt(105, y + 9, 'PRECIOS', { size: 5.4, anchor: 'middle', bold: true, fill: GRIS });
+      prods.forEach(function (p, k) {
+        var x = 25 + (k % 2) * 90, yy = y + 20 + Math.floor(k / 2) * (enteros ? 12 : 10);
+        o += txt(x, yy, p.p.charAt(0).toUpperCase() + p.p.slice(1) + ' (' + p.u + ')', { size: enteros ? 6.2 : 5.6, bold: true }) + txt(x + 76, yy, euros(p.v), { size: enteros ? 6.6 : 5.8, bold: true, anchor: 'end' });
+      });
+      y += (enteros ? 52 : 46) + 12;
+      var alto = (282 - y) / q.length, size = enteros ? 6.2 : 5.4;
+      q.forEach(function (it, k) {
+        var l = parte((k + 1) + '. ' + it[0], Math.floor(180 / (size * .5)));
+        l.forEach(function (x, j) { o += txt(15, y + j * size * 1.3, x, { size: size }); });
+        var ys = y + l.length * size * 1.3 + 8;
+        o += txt(110, ys, 'Respuesta:', { size: size * .9, bold: true }) + '<path d="M' + (enteros ? 146 : 140) + ' ' + f(ys + .6) + 'H195" stroke="' + TINTA + '" stroke-width=".3"/>';
+        if (sol) o += txt(150, ys - .8, euros(it[1]), { size: size, bold: true, fill: ROJO });
+        y += alto;
+      });
+      return o;
+    });
+  }
+
+  // Fluidez verbal: escribir palabras de una categoría o que empiecen por una letra
+  function fluidez(spec, seed) {
+    var r = rng(seed), items = shuffle(r, spec.pool).slice(0, spec.n || 3), lineas = spec.lineas || 8;
+    var s = enunciado(spec.instr || 'Escribe todas las palabras que se te ocurran de cada grupo.', 52, 6.2), o = s.svg, y = s.y + 6;
+    var alto = (282 - y) / items.length;
+    items.forEach(function (it) {
+      o += '<rect x="15" y="' + f(y) + '" width="180" height="10" rx="2" fill="#f1efe8"/>' + txt(19, y + 7.4, it, { size: 6, bold: true });
+      var fil = Math.ceil(lineas / 2), paso = (alto - 16) / fil;
+      for (var i = 0; i < lineas; i++) {
+        var x = 15 + (i % 2) * 92, yy = y + 14 + (Math.floor(i / 2) + 1) * paso - 2;
+        o += txt(x, yy, (i + 1) + '.', { size: 4.6, fill: GRIS }) + '<path d="M' + (x + 8) + ' ' + f(yy + .6) + 'H' + (x + 86) + '" stroke="' + GRIS + '" stroke-width=".3"/>';
+      }
+      y += alto;
+    });
+    return { svg: hoja(cabCog(spec, seed), o), sol: null };
+  }
+
+  // Orientación: preguntas sobre el día, el lugar y la persona (con o sin opciones para rodear)
+  function orientacion(spec) {
+    var e = enunciado(spec.instr || 'Responde a estas preguntas. Si no sabes alguna, puedes mirar un calendario o preguntar.', 52, 6.2), o = e.svg, y = e.y + 8;
+    var alto = (282 - y) / spec.preguntas.length, size = spec.tam || 5.8;
+    spec.preguntas.forEach(function (q) {
+      o += txt(15, y, q[0], { size: size, bold: true });
+      if (q[1]) {
+        var x = 18;
+        q[1].forEach(function (op) { var ancho = op.length * size * .52 + 10; if (x + ancho > 195) { x = 18; y += size * 1.8; } o += txt(x, y + size * 1.8, op, { size: f(size * .95) }); x += ancho; });
+      } else {
+        o += '<path d="M15 ' + f(y + size * 2.2) + 'H195" stroke="' + GRIS + '" stroke-width=".3"/>';
+      }
+      y += alto;
+    });
+    return { svg: hoja({ titulo: spec.titulo, nombre: spec.nombre !== false }, o), sol: null };
+  }
+
+  // Funciones ejecutivas: numerar los pasos de una tarea en orden
+  function ordenar(spec, seed) {
+    var r = rng(seed), listas = shuffle(r, spec.listas).slice(0, spec.n || 2).map(function (l) {
+      return { t: l[0], pasos: l[1], orden: shuffle(r, l[1].map(function (_, i) { return i; })) };
+    }), size = spec.tam || 5.6;
+    return dos(spec, seed, function (sol) {
+      var e = enunciado(spec.instr || 'Escribe en cada recuadro el número del orden: 1 para lo primero, 2 para lo siguiente…', 52, 6.2), o = e.svg, y = e.y + 8;
+      listas.forEach(function (l) {
+        o += txt(15, y, l.t, { size: size * 1.1, bold: true, fill: GRIS });
+        y += size * 1.6;
+        l.orden.forEach(function (i) {
+          o += '<rect x="15" y="' + f(y - size * 1.05) + '" width="' + f(size * 1.6) + '" height="' + f(size * 1.6) + '" rx="1.5" fill="#fff" stroke="' + TINTA + '" stroke-width=".6"/>';
+          if (sol) o += txt(15 + size * .8, y + size * .12, i + 1, { size: f(size), anchor: 'middle', bold: true, fill: ROJO });
+          o += txt(15 + size * 2.4, y, l.pasos[i], { size: size });
+          y += size * 2.15;
+        });
+        y += size * 1.4;
+      });
+      return o;
+    });
+  }
+
+  // Categorización: escribir cada palabra en su grupo
+  function clasificar(spec, seed) {
+    var r = rng(seed), grupos = shuffle(r, Object.keys(spec.grupos)).slice(0, spec.ngrupos || 2), por = spec.porGrupo || 4;
+    var elegidas = grupos.map(function (g) { return shuffle(r, spec.grupos[g]).slice(0, por); });
+    var palabras = shuffle(r, [].concat.apply([], elegidas)), size = spec.tam || 6;
+    return dos(spec, seed, function (sol) {
+      var e = enunciado(spec.instr || 'Lee las palabras y escribe cada una debajo del grupo al que pertenece.', 52, 6.2), o = e.svg, y = e.y + 4;
+      var cols = 3, fil = Math.ceil(palabras.length / cols), alto = size * 1.9;
+      o += '<rect x="15" y="' + f(y) + '" width="180" height="' + f(fil * alto + 8) + '" rx="3" fill="#f6f4ee" stroke="' + TINTA + '" stroke-width=".4"/>';
+      palabras.forEach(function (p, k) { o += txt(15 + (k % cols + .5) * 60, y + 4 + (Math.floor(k / cols) + .75) * alto, p, { size: size, anchor: 'middle', bold: true }); });
+      y += fil * alto + 18;
+      var w = 180 / grupos.length;
+      grupos.forEach(function (g, j) {
+        var x = 15 + j * w;
+        o += '<rect x="' + f(x + 2) + '" y="' + f(y) + '" width="' + f(w - 4) + '" height="12" rx="2" fill="' + TINTA + '"/>' + txt(x + w / 2, y + 8.4, g.toUpperCase(), { size: 5.4, anchor: 'middle', bold: true, fill: '#fff' });
+        for (var i = 0; i < por; i++) {
+          var yy = y + 30 + i * 20;
+          o += '<path d="M' + f(x + 6) + ' ' + f(yy) + 'H' + f(x + w - 6) + '" stroke="' + GRIS + '" stroke-width=".35"/>';
+          if (sol) o += txt(x + w / 2, yy - 1.5, elegidas[j][i], { size: size, anchor: 'middle', bold: true, fill: ROJO });
+        }
+      });
+      return o;
+    });
+  }
+
+  // Praxias y atención visual: copiar un dibujo uniendo puntos
+  function copiar(spec, seed) {
+    var r = rng(seed), N = spec.puntos || 4, n = spec.n || 3, segs = spec.segs || N + 2, figuras = [], k;
+    var M = [[0, 1], [1, 0], [0, -1], [-1, 0]].concat(spec.diagonales === false ? [] : [[1, 1], [1, -1], [-1, 1], [-1, -1]]);
+    for (k = 0; k < n; k++) {
+      var p = [ri(r, 0, N - 1), ri(r, 0, N - 1)], camino = [p.slice()], usadas = {};
+      for (var t = 0; t < 400 && camino.length <= segs; t++) {
+        var m = M[ri(r, 0, M.length - 1)], q = [p[0] + m[0], p[1] + m[1]];
+        if (q[0] < 0 || q[1] < 0 || q[0] >= N || q[1] >= N) continue;
+        var clave = [p.join(), q.join()].sort().join('|');
+        if (usadas[clave]) continue;
+        usadas[clave] = 1; camino.push(q); p = q;
+      }
+      figuras.push(camino);
+    }
+    var e = enunciado(spec.instr || 'Copia cada dibujo en la cuadrícula de puntos de la derecha.', 52, 6.2), o = e.svg, y = e.y + 6;
+    var alto = (282 - y) / n, lado = Math.min(alto - 10, 80), paso = lado / (N - 1);
+    figuras.forEach(function (c) {
+      [24, 115].forEach(function (x0, lado2) {
+        for (var i = 0; i < N; i++) for (var j = 0; j < N; j++) o += '<circle cx="' + f(x0 + i * paso) + '" cy="' + f(y + j * paso) + '" r="' + f(Math.max(1, paso * .07)) + '" fill="' + TINTA + '"/>';
+        if (!lado2) o += '<path d="M' + c.map(function (pt) { return f(x0 + pt[0] * paso) + ' ' + f(y + pt[1] * paso); }).join('L') + '" fill="none" stroke="' + TINTA + '" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>';
+      });
+      o += '<path d="M105 ' + f(y - 4) + 'V' + f(y + lado + 4) + '" stroke="#c9c9d2" stroke-width=".3" stroke-dasharray="1.5 1.5"/>';
+      y += alto;
+    });
+    return { svg: hoja(cabCog(spec, seed), o), sol: null };
+  }
+
+  // Unir con una línea cada dibujo con su igual
+  function iguales(spec, seed) {
+    var r = rng(seed), n = spec.n || 4, elegidas = shuffle(r, spec.pool || [0, 1, 2, 3, 4, 5, 6, 7]).slice(0, n), dcha = shuffle(r, elegidas);
+    for (var t = 0; t < 50 && dcha.some(function (v, i) { return v === elegidas[i]; }); t++) dcha = shuffle(r, elegidas);  // ninguno enfrente de su igual
+    return dos(spec, seed, function (sol) {
+      var e = enunciado(spec.instr || 'Une con una línea cada dibujo con el que es igual.', 52, spec.tamInstr || 7), o = e.svg, y0 = e.y + 8;
+      var alto = (284 - y0) / n, s = Math.min(alto * .7, spec.max || 34);
+      elegidas.forEach(function (v, i) {
+        var y = y0 + (i + .5) * alto, j = dcha.indexOf(v), y2 = y0 + (j + .5) * alto;
+        o += forma(v, 45, y, s, Math.max(1, s * .06)) + forma(dcha[i], 165, y0 + (i + .5) * alto, s, Math.max(1, s * .06));
+        o += '<circle cx="' + f(45 + s * .65) + '" cy="' + f(y) + '" r="1.6" fill="' + TINTA + '"/><circle cx="' + f(165 - s * .65) + '" cy="' + f(y0 + (i + .5) * alto) + '" r="1.6" fill="' + TINTA + '"/>';
+        if (sol) o += '<path d="M' + f(45 + s * .65) + ' ' + f(y) + 'L' + f(165 - s * .65) + ' ' + f(y2) + '" stroke="' + ROJO + '" stroke-width="1"/>';
+      });
+      return o;
+    });
+  }
+
+  // Contar dibujos y rodear el número
+  function contar(spec, seed) {
+    var r = rng(seed), n = spec.n || 4, max = spec.max || 5, filas = [];
+    for (var i = 0; i < n; i++) filas.push({ k: ri(r, 0, 5), c: ri(r, 1, max) });
+    return dos(spec, seed, function (sol) {
+      var e = enunciado(spec.instr || 'Cuenta los dibujos de cada fila y rodea el número.', 52, spec.tamInstr || 7), o = e.svg, y0 = e.y + 6;
+      var alto = (284 - y0) / n, s = Math.min(alto * .55, 120 / max - 3);
+      filas.forEach(function (fl, i) {
+        var cy = y0 + (i + .5) * alto;
+        for (var j = 0; j < fl.c; j++) o += forma(fl.k, 18 + s / 2 + j * (s + 3), cy, s, Math.max(.9, s * .06));
+        o += '<path d="M15 ' + f(y0 + (i + 1) * alto) + 'H195" stroke="#c9c9d2" stroke-width=".3"/>';
+        for (j = 1; j <= max; j++) {
+          var cx = 140 + (j - 1) * (55 / max) + 55 / max / 2;
+          var tn = Math.min(16, 55 / max * .8);
+          o += txt(cx, cy + tn * .36, j, { size: f(tn), anchor: 'middle', bold: true });
+          if (sol && j === fl.c) o += marca(cx, cy, tn * .62);
+        }
+      });
+      return o;
+    });
+  }
+
+  // Colorear figuras grandes, con una consigna sencilla
+  var COLORES = ['rojo', 'azul', 'amarillo', 'verde', 'naranja', 'morado'];
+  function colorear(spec, seed) {
+    var r = rng(seed), n = spec.n || 2, ks = shuffle(r, spec.pool || [0, 1, 2, 3, 4, 5, 6, 7]).slice(0, n), cols = shuffle(r, COLORES);
+    var e = enunciado(spec.instr || 'Colorea cada dibujo del color que se indica.', 52, 7.2), o = e.svg, y0 = e.y + 4;
+    var alto = (284 - y0) / n, s = Math.min(alto - 20, 150);
+    ks.forEach(function (k, i) {
+      var cy = y0 + i * alto + (alto - 14) / 2;
+      o += forma(k, 105, cy, s, 1.6);
+      o += txt(105, y0 + (i + 1) * alto - 4, 'El ' + FORMAS[k] + ', de color ' + cols[i] + '.', { size: 7, anchor: 'middle', bold: true }).replace('El estrella', 'La estrella').replace('El luna', 'La luna').replace('El cruz', 'La cruz');
+    });
+    return { svg: hoja(cabCog(spec, seed), o), sol: null };
+  }
+
   var TIPOS = {
     sopa: sopa, sudoku: sudoku, laberinto: laberinto, bingo90: bingo90, bingo75: bingo75, 'bingo-numeros': bingoNumeros,
     tabla: tabla, 'tablas-todas': tablasTodas, pitagorica: pitagorica, 'mult-practica': multPractica,
@@ -1334,11 +1664,14 @@
     'caligrafia-letras': caligrafiaLetras, 'caligrafia-frases': caligrafiaFrases, 'trazos-imprenta': trazosImprenta,
     multiplicaciones: multiplicaciones, divisiones: divisiones, mandala: mandala,
     grafomotricidad: grafomotricidad, horario: horario, 'calendario-anual': calendarioAnual, 'calendario-mes': calendarioMes,
-    problemas: problemas
+    problemas: problemas,
+    cancelacion: cancelacion, refranes: refranes, series: series, compra: compra, fluidez: fluidez, orientacion: orientacion,
+    ordenar: ordenar, clasificar: clasificar, copiar: copiar, iguales: iguales, contar: contar, colorear: colorear
   };
   // Tipos cuyo contenido cambia con la semilla (tienen botón «Otra distinta»)
   var ALEATORIOS = { sopa: 1, sudoku: 1, laberinto: 1, bingo90: 1, bingo75: 1, 'mult-practica': 1, operaciones: 1,
-    'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1, crucigrama: 1, 'caligrafia-frases': 1, multiplicaciones: 1, divisiones: 1, mandala: 1, problemas: 1 };
+    'sudoku-dibujos': 1, 'bingo-palabras': 1, 'laberinto-arbol': 1, crucigrama: 1, 'caligrafia-frases': 1, multiplicaciones: 1, divisiones: 1, mandala: 1, problemas: 1,
+    cancelacion: 1, refranes: 1, series: 1, compra: 1, fluidez: 1, ordenar: 1, clasificar: 1, copiar: 1, iguales: 1, contar: 1, colorear: 1 };
 
   function render(spec, seed) {
     var fn = TIPOS[spec.tipo];

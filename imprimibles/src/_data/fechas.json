@@ -315,6 +315,22 @@
   "fecha": "2026-11-12",
   "huella": "35e9753e5c14"
  },
+ "/estimulacion-cognitiva/": {
+  "fecha": "2026-11-15",
+  "huella": "be4144c10c0a"
+ },
+ "/estimulacion-cognitiva/deterioro-leve/": {
+  "fecha": "2026-11-15",
+  "huella": "a0a5059b06b7"
+ },
+ "/estimulacion-cognitiva/deterioro-moderado/": {
+  "fecha": "2026-11-15",
+  "huella": "9bce7971df27"
+ },
+ "/estimulacion-cognitiva/deterioro-severo/": {
+  "fecha": "2026-11-15",
+  "huella": "75664f731f7f"
+ },
  "/sobre/": {
   "fecha": "2026-11-12",
   "huella": "ace95d1b8973"
