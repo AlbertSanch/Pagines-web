@@ -486,12 +486,14 @@ def pagina_evento(e, eventos):
         if len(desc) < 135:
             desc += " Añádelo a tu calendario."
     elif d:
-        cab = f"¿Cuánto hace de {t}?"
+        tf = e.get("en_frase") or t  # «la llegada de Hera a Didymos», no «La sonda Hera llega…»
+        cab = f"¿Cuánto hace de {tf}?"
         sub = f'Fue el <strong>{fecha_larga(d)}</strong>'
         bloque = contador(d, pasado=True)
-        titulo = (f"¿Cuánto hace de {t}? Fecha de lanzamiento" if e["categoria"] in ("videojuegos", "tecnologia")
-                  else f"¿Cuándo fue {e.get('en_frase') or t}? Fecha y cuánto hace")
-        desc = f"{t} salió el {fecha_larga(d)}: hace {texto_tiempo(d, HOY)}."
+        titulo = (f"¿Cuánto hace de {tf}? Fecha de lanzamiento" if e["categoria"] in ("videojuegos", "tecnologia")
+                  else f"¿Cuándo fue {tf}? Fecha y cuánto hace")
+        desc = (f"{t} salió el {fecha_larga(d)}: hace {texto_tiempo(d, HOY)}." if e["categoria"] in ("videojuegos", "tecnologia")
+                else f"{tf[0].upper()}{tf[1:]} fue el {fecha_larga(d)}: hace {texto_tiempo(d, HOY)}.")
         if e["categoria"] in ("series", "anime"):  # quien busca una temporada ya estrenada quiere saber desde cuándo y dónde verla
             cab = f"¿Cuándo se estrenó {t}?"
             sub = f'Se estrenó el <strong>{fecha_larga(d)}</strong>'

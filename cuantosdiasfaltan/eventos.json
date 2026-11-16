@@ -707,7 +707,7 @@
   "fuente_url": "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
   "fuente_nombre": "Rockstar Games",
   "fuente_tipo": "oficial",
-  "comprobado": "2026-11-09",
+  "comprobado": "2026-11-16",
   "plataformas": "PS5 y Xbox Series X|S",
   "retrasos": [
    "2025",
@@ -737,6 +737,29 @@
   }
  },
  {
+  "titulo": "The Game Awards 2027",
+  "slug": "the-game-awards-2027",
+  "categoria": "videojuegos",
+  "fecha": null,
+  "precision": "mes",
+  "fuente_url": "https://thegameawards.com/",
+  "fuente_nombre": "The Game Awards",
+  "fuente_tipo": "oficial",
+  "comprobado": "2026-11-16",
+  "en_frase": "The Game Awards 2027",
+  "serie": "the-game-awards",
+  "ventana": "diciembre de 2027",
+  "rango": [
+   "2027-12-01",
+   "2027-12-31"
+  ],
+  "estimacion": "La gala se celebra cada año en diciembre; la fecha de 2027 aún no se ha anunciado",
+  "organizador": {
+   "nombre": "The Game Awards",
+   "url": "https://thegameawards.com"
+  }
+ },
+ {
   "titulo": "Dragon Quest Monsters: The Withered World",
   "slug": "dragon-quest-monsters-withered-world",
   "categoria": "videojuegos",
@@ -745,7 +768,7 @@
   "fuente_url": "https://na.store.square-enix-games.com/dragon-quest-monsters-the-withered-world",
   "fuente_nombre": "Square Enix",
   "fuente_tipo": "oficial",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-16",
   "plataformas": "Switch 2, Switch, PS5, Xbox Series y PC"
  },
  {
@@ -769,7 +792,7 @@
   "fuente_url": "https://www.layton.jp/jouki/en/",
   "fuente_nombre": "Level-5",
   "fuente_tipo": "oficial",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-16",
   "plataformas": "Switch 2, Switch, PS5 y PC"
  },
  {
@@ -793,7 +816,7 @@
   "fuente_url": "https://www.sega.co.jp/en/release/260608_3.html",
   "fuente_nombre": "SEGA",
   "fuente_tipo": "oficial",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-16",
   "plataformas": "PS5, Xbox Series X|S y PC"
  },
  {
@@ -2510,18 +2533,12 @@
   "titulo": "La sonda Hera llega al asteroide Didymos",
   "slug": "hera-didymos",
   "categoria": "espacio",
-  "fecha": null,
-  "precision": "mes",
-  "fuente_url": "https://www.esa.int/Space_Safety/Hera/ESA_s_Hera_targets_early_arrival_at_Didymos_asteroids",
-  "fuente_nombre": "ESA",
-  "fuente_tipo": "oficial",
-  "comprobado": "2026-11-09",
-  "ventana": "noviembre de 2026",
-  "rango": [
-   "2026-11-01",
-   "2026-11-30"
-  ],
-  "estimacion": "La ESA ha anunciado la llegada para noviembre de 2026, sin día concreto",
+  "fecha": "2026-11-04",
+  "precision": "dia",
+  "fuente_url": "https://web.ua.es/es/actualidad-universitaria/2026/noviembre2026/02-08/la-mision-hera-llega-a-didymos-el-primer-asteroide-desviado-por-la-humanidad.html",
+  "fuente_nombre": "Universidad de Alicante (participa en la misión)",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-11-16",
   "en_frase": "la llegada de Hera a Didymos"
  },
  {
@@ -2742,7 +2759,7 @@
   "fuente_url": "https://automaton-media.com/en/news/danganronpa-2x2-gets-january-14-release-date/",
   "fuente_nombre": "Automaton (Spike Chunsoft)",
   "fuente_tipo": "medio",
-  "comprobado": "2026-10-25",
+  "comprobado": "2026-11-16",
   "plataformas": "Switch 2, Switch, PS5, Xbox Series y PC"
  },
  {
@@ -3521,7 +3538,7 @@
   "fuente_url": "https://myanimelist.net/anime/61338/",
   "fuente_nombre": "MyAnimeList (fecha de estreno en Japón)",
   "fuente_tipo": "medio",
-  "comprobado": "2026-11-09",
+  "comprobado": "2026-11-16",
   "plataformas": "Crunchyroll",
   "ambito": "Japón",
   "hora": "09:00",
@@ -3533,19 +3550,13 @@
   "titulo": "Mashle temporada 3",
   "slug": "mashle-temporada-3",
   "categoria": "anime",
-  "fecha": null,
-  "precision": "mes",
-  "fuente_url": "https://offmodel.media/articles/2027-anime-confirmed-releases/",
-  "fuente_nombre": "OffModel",
+  "fecha": "2027-01-10",
+  "precision": "dia",
+  "fuente_url": "https://myanimelist.net/anime/58934/",
+  "fuente_nombre": "MyAnimeList",
   "fuente_tipo": "medio",
-  "comprobado": "2026-11-02",
-  "plataformas": "Crunchyroll",
-  "ventana": "enero de 2027",
-  "rango": [
-   "2027-01-01",
-   "2027-01-31"
-  ],
-  "estimacion": "El anime lo ha anunciado para enero de 2027, sin día concreto todavía"
+  "comprobado": "2026-11-16",
+  "plataformas": "Crunchyroll"
  },
  {
   "titulo": "The One Piece (el remake de One Piece)",
