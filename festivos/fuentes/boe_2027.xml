@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<documento fecha_actualizacion="20261013115601">
+<documento fecha_actualizacion="20261116095601">
   <metadatos>
     <identificador>BOE-A-2026-21254</identificador>
     <origen_legislativo codigo="1">Estatal</origen_legislativo>
@@ -118,7 +118,12 @@
           <texto>el art. 45.4 del Real Decreto 2001/1983, de 28 de julio</texto>
         </anterior>
       </anteriores>
-      <posteriores/>
+      <posteriores>
+        <posterior referencia="BOE-A-2026-23826" orden="">
+          <palabra codigo="331">SE DICTA EN RELACIÓN</palabra>
+          <texto>y establece el calendario de días inhábiles para la AGE para el año 2027: Resolución de 5 de noviembre de 2026</texto>
+        </posterior>
+      </posteriores>
     </referencias>
     <alertas>
       <alerta codigo="131" orden="1">Trabajo y empleo</alerta>
