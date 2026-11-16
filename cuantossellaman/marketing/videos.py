@@ -295,6 +295,13 @@ VIDEOS = {
                      ("fila", "Annabelle", "132"), ("fila", "Jason", "754"), ("fila", "Freddy", "926")]),
         (4.8, 0.6, [("texto", "Y Hannibal…"), ("cifra", "77"), ("texto", "con una edad media de 14 años"), ("web",)]),
     ],
+    "19-navidad": [
+        (5.8, 0.7, [("gancho", "¿Cuántos se llaman como la Navidad?"), ("fila", "Belén", "34.039"), ("fila", "Natividad", "25.928"),
+                    ("fila", "Nieves", "22.970"), ("fila", "Estrella", "18.091"), ("fila", "Noel", "6.928")]),
+        (4.6, 0.6, [("titulo", "¿Y los Reyes Magos?"), ("fila", "Gaspar", "5.899"), ("fila", "Baltasar", "3.829"), ("fila", "Melchor", "3.016")]),
+        (4.0, 0.6, [("texto", "Y hay mujeres que se llaman Navidad:"), ("cifra", "39"), ("texto", "con una edad media de 68 años")]),
+        CIERRE("¿Conoces a alguna Belén o a algún Noel?"),
+    ],
     "10-nombres-que-suben": [
         (3.0, 0.0, [("gancho", "Los nombres de niña que están arrasando")]),
         (6.5, 0.55, [("texto", "Nuevos en el top 100 de bebés:"), ("fila", "Alaia", ""), ("fila", "Catalina", ""), ("fila", "Violeta", ""),
@@ -386,6 +393,12 @@ VOCES = {
     "18-halloween": [
         "¿Cuántos se llaman como un personaje de terror? Carrie, veinticinco. Merlina, cuarenta y cuatro. Jason, setecientos cincuenta y cuatro. Freddy, novecientos veintiséis.",
         f"Y Hannibal... ¡setenta y siete, con catorce años de media! Busca el tuyo en {WEB_DICHA}.",
+    ],
+    "19-navidad": [
+        "¿Cuántos se llaman como la Navidad? Belén, treinta y cuatro mil. Natividad, casi veintiséis mil. Nieves, veintitrés mil. Estrella, dieciocho mil. Y Noel, casi siete mil.",
+        "¿Y los Reyes Magos? Gaspar, casi seis mil. Baltasar, tres mil ochocientos. Y Melchor, tres mil.",
+        "Y hay treinta y nueve mujeres que se llaman Navidad, con sesenta y ocho años de media.",
+        f"¿Conoces a alguna Belén o a algún Noel? Busca el tuyo en {WEB_DICHA}.",
     ],
     "10-nombres-que-suben": [
         "Estos son los nombres de niña que están arrasando.",
