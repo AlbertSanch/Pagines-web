@@ -1653,7 +1653,7 @@
 ],
 "2027": []
 },
-"descargado": "2026-11-16",
+"descargado": "2026-11-17",
 "madrid": [
 {
 "id": "401898187",
@@ -3689,36 +3689,45 @@ null
 },
 {
 "torneo": "Nitto ATP Finals",
-"utc": "2026-11-16T13:00Z",
+"utc": "2026-11-16T13:10Z",
+"hora_valida": true,
+"estado": "post",
+"ronda": "Group Stage",
+"pista": "Inalpi Arena",
+"rival": "Frances Tiafoe",
+"descanso": false,
+"gano": true,
+"sets": [
+[
+6,
+2
+],
+[
+6,
+2
+]
+]
+},
+{
+"torneo": "Nitto ATP Finals",
+"utc": "2026-11-18T13:00Z",
 "hora_valida": true,
 "estado": "pre",
 "ronda": "Group Stage",
 "pista": "Inalpi Arena",
-"rival": "Frances Tiafoe",
+"rival": "Daniil Medvedev",
 "descanso": false,
 "gano": null,
 "sets": []
 },
 {
 "torneo": "Nitto ATP Finals",
-"utc": "2026-11-18T05:00Z",
+"utc": "2026-11-19T05:00Z",
 "hora_valida": false,
 "estado": "pre",
 "ronda": "Group Stage",
 "pista": "",
 "rival": "Flavio Cobolli",
-"descanso": false,
-"gano": null,
-"sets": []
-},
-{
-"torneo": "Nitto ATP Finals",
-"utc": "2026-11-18T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Group Stage",
-"pista": "",
-"rival": "Daniil Medvedev",
 "descanso": false,
 "gano": null,
 "sets": []
@@ -4022,526 +4031,6 @@ null
 },
 "tenis_hoy": [
 {
-"id": "187511",
-"gira": "ATP",
-"torneo": "Nitto ATP Finals",
-"utc": "2026-11-16T13:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Group Stage",
-"pista": "Inalpi Arena",
-"jugadores": [
-{
-"id": "2708",
-"n": "Frances Tiafoe",
-"pais": "USA",
-"gano": null,
-"sets": []
-},
-{
-"id": "3782",
-"n": "Carlos Alcaraz",
-"pais": "España",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186789",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-16T14:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Grandstand",
-"jugadores": [
-{
-"id": "6209",
-"n": "Anastasia Zolotareva",
-"pais": "Rusia",
-"gano": null,
-"sets": []
-},
-{
-"id": "7812",
-"n": "Katrina Scott",
-"pais": "USA",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186792",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-16T14:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Center Court",
-"jugadores": [
-{
-"id": "11455",
-"n": "Diletta Cherubini",
-"pais": "Italia",
-"gano": null,
-"sets": []
-},
-{
-"id": "2984",
-"n": "Rebeka Masarova",
-"pais": "Suiza",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186797",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-16T15:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Center Court",
-"jugadores": [
-{
-"id": "1374",
-"n": "Martina Trevisan",
-"pais": "Italia",
-"gano": null,
-"sets": []
-},
-{
-"id": "12957",
-"n": "Guiomar Maristany Zuleta De Reales",
-"pais": "España",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186796",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-16T15:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Grandstand",
-"jugadores": [
-{
-"id": "5168",
-"n": "Nuria Brancaccio",
-"pais": "Italia",
-"gano": null,
-"sets": []
-},
-{
-"id": "14562",
-"n": "Sofia Costoulas",
-"pais": "Bélgica",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186784",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-16T17:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Grandstand",
-"jugadores": [
-{
-"id": "5299",
-"n": "Carole Monnet",
-"pais": "Francia",
-"gano": null,
-"sets": []
-},
-{
-"id": "7778",
-"n": "Victoria Jimenez Kasintseva",
-"pais": "Andorra",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186793",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-16T17:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Center Court",
-"jugadores": [
-{
-"id": "10197",
-"n": "Ipek Oz",
-"pais": "Turquía",
-"gano": null,
-"sets": []
-},
-{
-"id": "10676",
-"n": "Leyre Romero Gormaz",
-"pais": "España",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "187512",
-"gira": "ATP",
-"torneo": "Nitto ATP Finals",
-"utc": "2026-11-16T19:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Group Stage",
-"pista": "Inalpi Arena",
-"jugadores": [
-{
-"id": "7602",
-"n": "Flavio Cobolli",
-"pais": "Italia",
-"gano": null,
-"sets": []
-},
-{
-"id": "2383",
-"n": "Daniil Medvedev",
-"pais": "Rusia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186783",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-16T21:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Grandstand",
-"jugadores": [
-{
-"id": "5626",
-"n": "Anastasia Tikhonova",
-"pais": "Rusia",
-"gano": null,
-"sets": []
-},
-{
-"id": "3042",
-"n": "Valeriya Strakhova",
-"pais": "Ucrania",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186788",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-16T22:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Center Court",
-"jugadores": [
-{
-"id": "14607",
-"n": "Ariana Geerlings",
-"pais": "España",
-"gano": null,
-"sets": []
-},
-{
-"id": "13950",
-"n": "Luisina Giovannini",
-"pais": "Argentina",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "187513",
-"gira": "ATP",
-"torneo": "Nitto ATP Finals",
-"utc": "2026-11-17T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Group Stage",
-"pista": "",
-"jugadores": [
-{
-"id": "2708",
-"n": "Frances Tiafoe",
-"pais": "USA",
-"gano": null,
-"sets": []
-},
-{
-"id": "2383",
-"n": "Daniil Medvedev",
-"pais": "Rusia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "187514",
-"gira": "ATP",
-"torneo": "Nitto ATP Finals",
-"utc": "2026-11-17T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Group Stage",
-"pista": "",
-"jugadores": [
-{
-"id": "2708",
-"n": "Frances Tiafoe",
-"pais": "USA",
-"gano": null,
-"sets": []
-},
-{
-"id": "7602",
-"n": "Flavio Cobolli",
-"pais": "Italia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186794",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-17T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "4291",
-"n": "Andrea Lazaro Garcia",
-"pais": "España",
-"gano": null,
-"sets": []
-},
-{
-"id": "3291",
-"n": "Barbara Gatica",
-"pais": "Chile",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186782",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-17T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "5878",
-"n": "Veronika Erjavec",
-"pais": "Eslovenia",
-"gano": null,
-"sets": []
-},
-{
-"id": "3220",
-"n": "Maria Lourdes Carle",
-"pais": "Argentina",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186785",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-17T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "4629",
-"n": "Alicia Herrero Linana",
-"pais": "España",
-"gano": null,
-"sets": []
-},
-{
-"id": "4666",
-"n": "Lucia Bronzetti",
-"pais": "Italia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186786",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-17T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "15069",
-"n": "Laura Samson",
-"pais": "Chequia",
-"gano": null,
-"sets": []
-},
-{
-"id": "8068",
-"n": "Despina Papamichail",
-"pais": "Grecia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186787",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-17T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "6769",
-"n": "Darja Semenistaja",
-"pais": "Letonia",
-"gano": null,
-"sets": []
-},
-{
-"id": "4546",
-"n": "Irene Burillo",
-"pais": "España",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186791",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-17T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "423",
-"n": "Varvara Lepchenko",
-"pais": "USA",
-"gano": null,
-"sets": []
-},
-{
-"id": "3256",
-"n": "Nadia Podoroska",
-"pais": "Argentina",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186795",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-17T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "13874",
-"n": "Antonia Vergara Rivera",
-"pais": "Chile",
-"gano": null,
-"sets": []
-},
-{
-"id": "11971",
-"n": "Fernanda Labrana",
-"pais": "Chile",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186790",
-"gira": "WTA",
-"torneo": "LP Open by IND",
-"utc": "2026-11-17T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "3568",
-"n": "Miriam Bulgaru",
-"pais": "Rumania",
-"gano": null,
-"sets": []
-},
-{
-"id": "1095",
-"n": "Polona Hercog",
-"pais": "Eslovenia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
 "id": "187508",
 "gira": "ATP",
 "torneo": "Nitto ATP Finals",
@@ -4568,6 +4057,136 @@ null
 ]
 },
 {
+"id": "186787",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-17T14:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Grandstand",
+"jugadores": [
+{
+"id": "6769",
+"n": "Darja Semenistaja",
+"pais": "Letonia",
+"gano": null,
+"sets": []
+},
+{
+"id": "4546",
+"n": "Irene Burillo",
+"pais": "España",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186791",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-17T14:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Center Court",
+"jugadores": [
+{
+"id": "423",
+"n": "Varvara Lepchenko",
+"pais": "USA",
+"gano": null,
+"sets": []
+},
+{
+"id": "3256",
+"n": "Nadia Podoroska",
+"pais": "Argentina",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186790",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-17T15:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Center Court",
+"jugadores": [
+{
+"id": "3568",
+"n": "Miriam Bulgaru",
+"pais": "Rumania",
+"gano": null,
+"sets": []
+},
+{
+"id": "1095",
+"n": "Polona Hercog",
+"pais": "Eslovenia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186785",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-17T15:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Grandstand",
+"jugadores": [
+{
+"id": "4629",
+"n": "Alicia Herrero Linana",
+"pais": "España",
+"gano": null,
+"sets": []
+},
+{
+"id": "4666",
+"n": "Lucia Bronzetti",
+"pais": "Italia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186782",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-17T17:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Center Court",
+"jugadores": [
+{
+"id": "5878",
+"n": "Veronika Erjavec",
+"pais": "Eslovenia",
+"gano": null,
+"sets": []
+},
+{
+"id": "3220",
+"n": "Maria Lourdes Carle",
+"pais": "Argentina",
+"gano": null,
+"sets": []
+}
+]
+},
+{
 "id": "187503",
 "gira": "ATP",
 "torneo": "Nitto ATP Finals",
@@ -4588,6 +4207,344 @@ null
 "id": "2375",
 "n": "Alexander Zverev",
 "pais": "Alemania",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186786",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-17T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Grandstand",
+"jugadores": [
+{
+"id": "15069",
+"n": "Laura Samson",
+"pais": "Chequia",
+"gano": null,
+"sets": []
+},
+{
+"id": "8068",
+"n": "Despina Papamichail",
+"pais": "Grecia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186794",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-17T20:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Center Court",
+"jugadores": [
+{
+"id": "4291",
+"n": "Andrea Lazaro Garcia",
+"pais": "España",
+"gano": null,
+"sets": []
+},
+{
+"id": "3291",
+"n": "Barbara Gatica",
+"pais": "Chile",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186795",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-17T22:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Center Court",
+"jugadores": [
+{
+"id": "13874",
+"n": "Antonia Vergara Rivera",
+"pais": "Chile",
+"gano": null,
+"sets": []
+},
+{
+"id": "11971",
+"n": "Fernanda Labrana",
+"pais": "Chile",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186803",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-18T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "-4",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+},
+{
+"id": "2984",
+"n": "Rebeka Masarova",
+"pais": "Suiza",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186809",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-18T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "5299",
+"n": "Carole Monnet",
+"pais": "Francia",
+"gano": null,
+"sets": []
+},
+{
+"id": "-3",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186808",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-18T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "-4",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+},
+{
+"id": "3042",
+"n": "Valeriya Strakhova",
+"pais": "Ucrania",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186807",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-18T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "-4",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+},
+{
+"id": "10676",
+"n": "Leyre Romero Gormaz",
+"pais": "España",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186806",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-18T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "-4",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+},
+{
+"id": "6209",
+"n": "Anastasia Zolotareva",
+"pais": "Rusia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186805",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-18T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "14562",
+"n": "Sofia Costoulas",
+"pais": "Bélgica",
+"gano": null,
+"sets": []
+},
+{
+"id": "12957",
+"n": "Guiomar Maristany Zuleta De Reales",
+"pais": "España",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186804",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-18T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "-4",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+},
+{
+"id": "-3",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186802",
+"gira": "WTA",
+"torneo": "LP Open by IND",
+"utc": "2026-11-18T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "-4",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+},
+{
+"id": "14607",
+"n": "Ariana Geerlings",
+"pais": "España",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "187509",
+"gira": "ATP",
+"torneo": "Nitto ATP Finals",
+"utc": "2026-11-18T13:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Group Stage",
+"pista": "Inalpi Arena",
+"jugadores": [
+{
+"id": "2383",
+"n": "Daniil Medvedev",
+"pais": "Rusia",
+"gano": null,
+"sets": []
+},
+{
+"id": "3782",
+"n": "Carlos Alcaraz",
+"pais": "España",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "187514",
+"gira": "ATP",
+"torneo": "Nitto ATP Finals",
+"utc": "2026-11-18T19:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Group Stage",
+"pista": "Inalpi Arena",
+"jugadores": [
+{
+"id": "2708",
+"n": "Frances Tiafoe",
+"pais": "USA",
+"gano": null,
+"sets": []
+},
+{
+"id": "7602",
+"n": "Flavio Cobolli",
+"pais": "Italia",
 "gano": null,
 "sets": []
 }
@@ -5755,246 +5712,6 @@ null
 ],
 "futbol_hoy": [
 {
-"id": "401861180",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-16T15:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Islas Feroe",
-"visitante": "Moldavia",
-"ids": [
-"447",
-"483"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401861181",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-16T15:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Kazajistán",
-"visitante": "Eslovaquia",
-"ids": [
-"2619",
-"468"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401861183",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-16T17:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Estonia",
-"visitante": "Bulgaria",
-"ids": [
-"444",
-"462"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401861182",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-16T17:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Islandia",
-"visitante": "Luxemburgo",
-"ids": [
-"470",
-"582"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401861184",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-16T17:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Lituania",
-"visitante": "Liechtenstein",
-"ids": [
-"460",
-"589"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401914292",
-"liga": "fifa.friendly",
-"competicion": "Amistosos internacionales",
-"utc": "2026-11-16T18:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Andorra",
-"visitante": "Azerbaiyán",
-"ids": [
-"587",
-"581"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401883305",
-"liga": "esp.2",
-"competicion": "Segunda División",
-"utc": "2026-11-16T19:30Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Albacete",
-"visitante": "RC Celta Fortuna",
-"ids": [
-"2737",
-"131858"
-],
-"goles": [
-"0",
-"0"
-],
-"es": true
-},
-{
-"id": "401861185",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-16T19:45Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Alemania",
-"visitante": "Países Bajos",
-"ids": [
-"481",
-"449"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401861179",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-16T19:45Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Gibraltar",
-"visitante": "Malta",
-"ids": [
-"16721",
-"453"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401861188",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-16T19:45Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Grecia",
-"visitante": "Serbia",
-"ids": [
-"455",
-"6757"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401861187",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-16T19:45Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "North Macedonia",
-"visitante": "Eslovenia",
-"ids": [
-"463",
-"472"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401861186",
-"liga": "uefa.nations",
-"competicion": "Nations League",
-"utc": "2026-11-16T19:45Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Suiza",
-"visitante": "Escocia",
-"ids": [
-"475",
-"580"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
 "id": "401933879",
 "liga": "fifa.friendly",
 "competicion": "Amistosos internacionales",
@@ -6433,6 +6150,206 @@ null
 "0"
 ],
 "es": false
+},
+{
+"id": "401930895",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-17T23:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Argentina",
+"visitante": "Costa Rica",
+"ids": [
+"202",
+"214"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401921304",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-17T23:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Chile",
+"visitante": "Colombia",
+"ids": [
+"207",
+"208"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401930899",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-17T23:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Ecuador",
+"visitante": "Bolívia",
+"ids": [
+"209",
+"204"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401932215",
+"liga": "fifa.friendly",
+"competicion": "Amistosos internacionales",
+"utc": "2026-11-17T23:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Uruguay",
+"visitante": "República Dominicana",
+"ids": [
+"212",
+"2649"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401928518",
+"liga": "esp.copa_del_rey",
+"competicion": "Copa del Rey",
+"utc": "2026-11-18T18:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Portugalete",
+"visitante": "Real Unión Irun",
+"ids": [
+"5464",
+"8678"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401928497",
+"liga": "esp.copa_del_rey",
+"competicion": "Copa del Rey",
+"utc": "2026-11-18T18:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Utebo",
+"visitante": "CD Sabadell",
+"ids": [
+"21723",
+"11487"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401928505",
+"liga": "esp.copa_del_rey",
+"competicion": "Copa del Rey",
+"utc": "2026-11-18T19:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Alcoyano",
+"visitante": "Mallorca",
+"ids": [
+"6827",
+"84"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401928532",
+"liga": "esp.copa_del_rey",
+"competicion": "Copa del Rey",
+"utc": "2026-11-18T19:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Badajoz",
+"visitante": "Tenerife",
+"ids": [
+"5535",
+"245"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401928524",
+"liga": "esp.copa_del_rey",
+"competicion": "Copa del Rey",
+"utc": "2026-11-18T19:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "CD Minera",
+"visitante": "FC Cartagena",
+"ids": [
+"22437",
+"5419"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401928500",
+"liga": "esp.copa_del_rey",
+"competicion": "Copa del Rey",
+"utc": "2026-11-18T19:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Reus FC Reddis",
+"visitante": "Barakaldo",
+"ids": [
+"131470",
+"5421"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
 }
 ],
 "betis": [
