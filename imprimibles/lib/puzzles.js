@@ -1211,30 +1211,43 @@
   var INICIALES = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
   function diasMes(a, m) { return new Date(Date.UTC(a, m + 1, 0)).getUTCDate(); }
   function primerDia(a, m) { return (new Date(Date.UTC(a, m, 1)).getUTCDay() + 6) % 7; } // 0 = lunes
+  // Número de semana ISO 8601 (la semana 1 es la que contiene el primer jueves del año)
+  function semanaISO(a, m, d) { var t = new Date(Date.UTC(a, m, d)), dia = (t.getUTCDay() + 6) % 7; t.setUTCDate(t.getUTCDate() - dia + 3); var j = new Date(Date.UTC(t.getUTCFullYear(), 0, 4)); return 1 + Math.round(((t - j) / 864e5 - 3 + ((j.getUTCDay() + 6) % 7)) / 7); }
   function claveDia(m, d) { return (m < 9 ? '0' : '') + (m + 1) + '-' + (d < 10 ? '0' : '') + d; }
   function calendarioAnual(spec) {
     var a = spec.anio, fest = {}, s = '';
     (spec.festivos || []).forEach(function (x) { fest[x[0]] = x[1]; });
     s += txt(15, 30, String(a), { size: 16, titular: true });
-    var w = 58, h = 54, x0 = 15, y0 = 44, cw = w / 7;
+    if (spec.region) s += txt(195, 30, spec.region, { size: spec.region.length > 18 ? 6.5 : 8, titular: true, anchor: 'end', fill: GRIS });
+    // Con números de semana (ISO 8601) cada mes tiene una columna más a la izquierda
+    var sem = !!spec.semanas, w = 58, h = 54, x0 = 15, y0 = 44, cw = w / (sem ? 8 : 7), dx = sem ? cw : 0;
     for (var m = 0; m < 12; m++) {
       var mx = x0 + (m % 3) * (w + 3), my = y0 + Math.floor(m / 3) * h;
       s += txt(mx + 1, my, MESES[m], { size: 4.6, titular: true });
-      INICIALES.forEach(function (l, j) { s += txt(mx + (j + .5) * cw, my + 6.5, l, { size: 2.8, anchor: 'middle', bold: true, fill: j === 6 ? ROJO : GRIS }); });
+      if (sem) s += txt(mx + cw * .5, my + 6.5, 'S', { size: 2.4, anchor: 'middle', fill: GRIS });
+      INICIALES.forEach(function (l, j) { s += txt(mx + dx + (j + .5) * cw, my + 6.5, l, { size: 2.8, anchor: 'middle', bold: true, fill: j === 6 ? ROJO : GRIS }); });
       var p0 = primerDia(a, m), nd = diasMes(a, m);
       for (var d = 1; d <= nd; d++) {
         var pos = p0 + d - 1, col = pos % 7, fila = Math.floor(pos / 7), k = claveDia(m, d), rojo = col === 6 || fest[k];
-        var cx = mx + (col + .5) * cw, cy = my + 13 + fila * 6.4;
-        if (fest[k]) s += '<circle cx="' + f(cx) + '" cy="' + f(cy - 1.05) + '" r="2.55" fill="none" stroke="' + ROJO + '" stroke-width=".35"/>';
-        s += txt(cx, cy, d, { size: 3.3, anchor: 'middle', bold: !!rojo, fill: rojo ? ROJO : TINTA });
+        var cx = mx + dx + (col + .5) * cw, cy = my + 13 + fila * 6.4;
+        if (sem && (col === 0 || d === 1)) {
+          s += '<rect x="' + f(mx + .4) + '" y="' + f(cy - 3.6) + '" width="' + f(cw - .8) + '" height="4.6" rx=".8" fill="#f1efe8"/>';
+          s += txt(mx + cw * .5, cy - .2, semanaISO(a, m, d), { size: 2.5, anchor: 'middle', fill: GRIS });
+        }
+        if (fest[k]) s += '<circle cx="' + f(cx) + '" cy="' + f(cy - 1.05) + '" r="' + (sem ? 2.3 : 2.55) + '" fill="none" stroke="' + ROJO + '" stroke-width=".35"/>';
+        s += txt(cx, cy, d, { size: sem ? 3.1 : 3.3, anchor: 'middle', bold: !!rojo, fill: rojo ? ROJO : TINTA });
       }
     }
     if (spec.festivos && spec.festivos.length) {
-      var yy = y0 + 4 * h - 1;
-      s += txt(15, yy, 'Festivos nacionales ' + a + ' (en rojo, con círculo)', { size: 3.3, bold: true });
-      var lista = spec.festivos.map(function (x) { var mm = Number(x[0].slice(0, 2)) - 1, dd = Number(x[0].slice(3)); return dd + ' ' + MESES[mm].toLowerCase() + ': ' + x[1]; });
-      var mitad = Math.ceil(lista.length / 2);
-      lista.forEach(function (l, i) { s += txt(i < mitad ? 15 : 108, yy + 5 + (i % mitad) * 4.3, l, { size: 3 }); });
+      var yy = y0 + 4 * h - 1, n = spec.festivos.length, cols = n > 10 ? 3 : 2, corto = cols === 3;
+      s += txt(15, yy, (spec.leyenda || 'Festivos nacionales ' + a) + ' (en rojo, con círculo)', { size: 3.3, bold: true });
+      var lista = spec.festivos.map(function (x) { var mm = Number(x[0].slice(0, 2)) - 1, dd = Number(x[0].slice(3)); return dd + ' ' + (corto ? MESES[mm].slice(0, 3).toLowerCase() : MESES[mm].toLowerCase()) + ': ' + x[1]; });
+      var porCol = Math.ceil(n / cols);
+      lista.forEach(function (l, i) {
+        var c = Math.floor(i / porCol), tam = corto ? 2.7 : 3, max = corto ? 40 : 60;
+        if (l.length > max) l = l.slice(0, max - 1) + '…';
+        s += txt(15 + c * (corto ? 61 : 93), yy + 5 + (i % porCol) * 4.3, l, { size: tam });
+      });
     }
     return { svg: hoja({ alt: 'Calendario ' + a, sinPie: false }, s), sol: null };
   }

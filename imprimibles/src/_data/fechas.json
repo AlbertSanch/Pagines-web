@@ -308,12 +308,92 @@
   "huella": "9afe08ae0b1c"
  },
  "/calendarios/": {
-  "fecha": "2026-11-12",
-  "huella": "6187f28983ed"
+  "fecha": "2026-11-17",
+  "huella": "ac13fd6808c4"
  },
  "/calendarios/mensual-2027/": {
-  "fecha": "2026-11-12",
-  "huella": "35e9753e5c14"
+  "fecha": "2026-11-17",
+  "huella": "ae6eff7a41d5"
+ },
+ "/calendarios/2027-con-semanas/": {
+  "fecha": "2026-11-17",
+  "huella": "7c72b9909226"
+ },
+ "/calendarios/2027-andalucia/": {
+  "fecha": "2026-11-17",
+  "huella": "5a81ab9a1b4f"
+ },
+ "/calendarios/2027-aragon/": {
+  "fecha": "2026-11-17",
+  "huella": "2fc81bf6e4a6"
+ },
+ "/calendarios/2027-asturias/": {
+  "fecha": "2026-11-17",
+  "huella": "662092bae2dd"
+ },
+ "/calendarios/2027-baleares/": {
+  "fecha": "2026-11-17",
+  "huella": "0529f514a1b1"
+ },
+ "/calendarios/2027-canarias/": {
+  "fecha": "2026-11-17",
+  "huella": "492e1de00729"
+ },
+ "/calendarios/2027-cantabria/": {
+  "fecha": "2026-11-17",
+  "huella": "276f8801345a"
+ },
+ "/calendarios/2027-castilla-la-mancha/": {
+  "fecha": "2026-11-17",
+  "huella": "56915c9e6561"
+ },
+ "/calendarios/2027-castilla-y-leon/": {
+  "fecha": "2026-11-17",
+  "huella": "55c5e50b6ea3"
+ },
+ "/calendarios/2027-cataluna/": {
+  "fecha": "2026-11-17",
+  "huella": "8491a120e15f"
+ },
+ "/calendarios/2027-extremadura/": {
+  "fecha": "2026-11-17",
+  "huella": "cd07badb46d0"
+ },
+ "/calendarios/2027-galicia/": {
+  "fecha": "2026-11-17",
+  "huella": "4c9e1a223c71"
+ },
+ "/calendarios/2027-madrid/": {
+  "fecha": "2026-11-17",
+  "huella": "5ca75b2c677d"
+ },
+ "/calendarios/2027-murcia/": {
+  "fecha": "2026-11-17",
+  "huella": "068219134da1"
+ },
+ "/calendarios/2027-navarra/": {
+  "fecha": "2026-11-17",
+  "huella": "7cc487e4c4c3"
+ },
+ "/calendarios/2027-pais-vasco/": {
+  "fecha": "2026-11-17",
+  "huella": "27bac0da606e"
+ },
+ "/calendarios/2027-la-rioja/": {
+  "fecha": "2026-11-17",
+  "huella": "bd001e45ee86"
+ },
+ "/calendarios/2027-valenciana/": {
+  "fecha": "2026-11-17",
+  "huella": "7552c9a7814b"
+ },
+ "/calendarios/2027-ceuta/": {
+  "fecha": "2026-11-17",
+  "huella": "f409ee07d334"
+ },
+ "/calendarios/2027-melilla/": {
+  "fecha": "2026-11-17",
+  "huella": "8ab2d0b8c518"
  },
  "/estimulacion-cognitiva/": {
   "fecha": "2026-11-15",

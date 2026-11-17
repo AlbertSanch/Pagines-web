@@ -33,6 +33,7 @@
       <div class="barra">
         <button type="button" class="boton boton-tinta" data-accion="imprimir">Imprimir</button>
         <a class="boton" href="{{ p.pdf }}" download>Descargar PDF</a>
+        {%- if p.excel %}<a class="boton" href="{{ p.excel }}" download>Descargar Excel</a>{% endif %}
         {%- if p.aleatoria %}<button type="button" class="boton" data-accion="otra">Otra distinta</button>{% endif %}
         {%- if p.tieneSol %}<button type="button" class="boton" data-accion="solucion" aria-pressed="false">Ver solución</button>{% endif %}
       </div>
