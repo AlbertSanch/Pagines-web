@@ -1,0 +1,1321 @@
+{
+ "anio": 2027,
+ "boe": {
+  "id": "BOE-A-2026-21254",
+  "titulo": "Resolución de 8 de octubre de 2026, de la Dirección General de Trabajo, por la que se publica relación de fiestas laborales para el año 2027.",
+  "publicado": "2026-10-13",
+  "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2026-21254"
+ },
+ "nacional": [
+  [
+   "01-01",
+   "Año Nuevo"
+  ],
+  [
+   "01-06",
+   "Reyes"
+  ],
+  [
+   "03-26",
+   "Viernes Santo"
+  ],
+  [
+   "05-01",
+   "Fiesta del Trabajo"
+  ],
+  [
+   "10-12",
+   "Fiesta Nacional de España"
+  ],
+  [
+   "11-01",
+   "Todos los Santos"
+  ],
+  [
+   "12-06",
+   "Día de la Constitución"
+  ],
+  [
+   "12-08",
+   "Inmaculada Concepción"
+  ],
+  [
+   "12-25",
+   "Navidad"
+  ]
+ ],
+ "comunidades": {
+  "andalucia": {
+   "nombre": "Andalucía",
+   "con_articulo": "Andalucía",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-01",
+     "Día de Andalucía",
+     "propio"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "08-16",
+     "Lunes tras la Asunción",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "aragon": {
+   "nombre": "Aragón",
+   "con_articulo": "Aragón",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "04-23",
+     "San Jorge, Día de Aragón",
+     "propio"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "08-16",
+     "Lunes tras la Asunción",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "asturias": {
+   "nombre": "Asturias",
+   "con_articulo": "Asturias",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "08-16",
+     "Lunes tras la Asunción",
+     "propio"
+    ],
+    [
+     "09-08",
+     "Día de Asturias",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "baleares": {
+   "nombre": "Illes Balears",
+   "con_articulo": "las Illes Balears",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-01",
+     "Día de les Illes Balears",
+     "propio"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "03-29",
+     "Lunes de Pascua",
+     "propio"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "canarias": {
+   "nombre": "Canarias",
+   "con_articulo": "Canarias",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "08-16",
+     "Lunes tras la Asunción",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": [
+    "En la Comunidad Autónoma de Canarias, el Decreto 115/2026, de 29 de junio, por el que se determina el calendario de fiestas laborales de la Comunidad Autónoma de Canarias para el año 2027 (BOC de 3 de julio de 2026) dispone que: «En las islas de El Hierro, Fuerteventura, Gran Canaria, La Gomera, La Palma, Lanzarote y La Graciosa, y Tenerife, las fiestas laborales serán, además, las siguientes: en El Hierro: el 24 de septiembre, festividad de Nuestra Señora de los Reyes; en Fuerteventura: el 17 de septiembre, festividad de Nuestra Señora de la Peña; en Gran Canaria: el 8 de septiembre, festividad de Nuestra Señora del Pino; en La Gomera: el 4 de octubre, festividad de Nuestra Señora de Guadalupe; en La Palma: el 5 de agosto, festividad de Nuestra Señora de Las Nieves; en Lanzarote y La Graciosa: el 15 de septiembre, festividad de Nuestra Señora de los Volcanes; en Tenerife: el 2 de febrero, festividad de la Virgen de la Candelaria»."
+   ]
+  },
+  "cantabria": {
+   "nombre": "Cantabria",
+   "con_articulo": "Cantabria",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "07-28",
+     "Día de las Instituciones de Cantabria",
+     "propio"
+    ],
+    [
+     "09-15",
+     "La Bien Aparecida",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "castilla-la-mancha": {
+   "nombre": "Castilla-La Mancha",
+   "con_articulo": "Castilla-La Mancha",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "05-27",
+     "Corpus Christi",
+     "propio"
+    ],
+    [
+     "05-31",
+     "Día de Castilla-La Mancha",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "castilla-y-leon": {
+   "nombre": "Castilla y León",
+   "con_articulo": "Castilla y León",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "04-23",
+     "Fiesta de Castilla y León",
+     "propio"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "08-16",
+     "Lunes tras la Asunción",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "cataluna": {
+   "nombre": "Cataluña",
+   "con_articulo": "Cataluña",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "03-29",
+     "Lunes de Pascua",
+     "propio"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "06-24",
+     "Día de San Juan",
+     "propio"
+    ],
+    [
+     "09-11",
+     "Fiesta Nacional de Cataluña",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": [
+    "En la Comunidad Autónoma de Cataluña, la Orden EMT/52/2026, de 25 de marzo, por la que se establece el calendario oficial de fiestas laborales en Cataluña para el año 2027 (DOGC de 1 de abril de 2026) dispone que: «En el territorio de Arán, la fiesta del día 29 de marzo (Pasqua Florida) queda sustituida por la de 17 de junio (Fiesta de Arán), jueves»."
+   ]
+  },
+  "extremadura": {
+   "nombre": "Extremadura",
+   "con_articulo": "Extremadura",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "09-08",
+     "Día de Extremadura",
+     "propio"
+    ],
+    [
+     "10-11",
+     "Traslado del 15 de agosto",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "galicia": {
+   "nombre": "Galicia",
+   "con_articulo": "Galicia",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-19",
+     "San José",
+     "propio"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "05-17",
+     "Día de las Letras Gallegas",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "madrid": {
+   "nombre": "Comunidad de Madrid",
+   "con_articulo": "la Comunidad de Madrid",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-19",
+     "San José",
+     "propio"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "08-16",
+     "Lunes tras la Asunción",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "murcia": {
+   "nombre": "Región de Murcia",
+   "con_articulo": "la Región de Murcia",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-19",
+     "San José",
+     "propio"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "06-09",
+     "Día de la Región de Murcia",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "navarra": {
+   "nombre": "Navarra",
+   "con_articulo": "Navarra",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-19",
+     "San José",
+     "propio"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "03-29",
+     "Lunes de Pascua",
+     "propio"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "pais-vasco": {
+   "nombre": "País Vasco",
+   "con_articulo": "el País Vasco",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "03-29",
+     "Lunes de Pascua",
+     "propio"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "10-07",
+     "Aniversario 1.er Gobierno vasco",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "la-rioja": {
+   "nombre": "La Rioja",
+   "con_articulo": "La Rioja",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "03-29",
+     "Lunes de Pascua",
+     "propio"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "06-09",
+     "Día de La Rioja",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "valenciana": {
+   "nombre": "Comunitat Valenciana",
+   "con_articulo": "la Comunitat Valenciana",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-19",
+     "San José",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "03-29",
+     "Lunes de Pascua",
+     "propio"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "10-09",
+     "Día de la Comunitat Valenciana",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "ceuta": {
+   "nombre": "Ceuta",
+   "con_articulo": "Ceuta",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "05-17",
+     "Fiesta del Sacrificio",
+     "propio"
+    ],
+    [
+     "08-05",
+     "Nuestra Señora de África",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  },
+  "melilla": {
+   "nombre": "Melilla",
+   "con_articulo": "Melilla",
+   "festivos": [
+    [
+     "01-01",
+     "Año Nuevo",
+     "comun"
+    ],
+    [
+     "01-06",
+     "Reyes",
+     "comun"
+    ],
+    [
+     "03-10",
+     "Fiesta del Eid al-Fitr",
+     "propio"
+    ],
+    [
+     "03-25",
+     "Jueves Santo",
+     "propio"
+    ],
+    [
+     "03-26",
+     "Viernes Santo",
+     "comun"
+    ],
+    [
+     "05-01",
+     "Fiesta del Trabajo",
+     "comun"
+    ],
+    [
+     "05-17",
+     "Fiesta del Sacrificio",
+     "propio"
+    ],
+    [
+     "10-12",
+     "Fiesta Nacional de España",
+     "comun"
+    ],
+    [
+     "11-01",
+     "Todos los Santos",
+     "comun"
+    ],
+    [
+     "12-06",
+     "Día de la Constitución",
+     "comun"
+    ],
+    [
+     "12-08",
+     "Inmaculada Concepción",
+     "comun"
+    ],
+    [
+     "12-25",
+     "Navidad",
+     "comun"
+    ]
+   ],
+   "notas": []
+  }
+ }
+}
