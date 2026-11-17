@@ -844,6 +844,29 @@ def anio_proximo(mes, dia):
     return next((a for a in ANIOS if dt.date(a, mes, dia) >= HOY), max(ANIOS))
 
 
+def descripcion_dia(d, donde, nombre_dia):
+    """Descripción para Google con la respuesta ya dentro («Sí, en 10 comunidades: …»), que es lo que hace clicar."""
+    cuando = f"el {fecha_larga(d)} de {d.year}"
+    r = regiones(donde) if donde else set()
+    n_mun = sum(len(v) for v in donde["mun"].values()) if donde else 0
+    if len(r) == len(COMUNIDADES):
+        fiesta = next(f for f, cc in donde["ccaa"].items() if len(cc) == len(COMUNIDADES))
+        texto = f"Sí: {cuando} es festivo en toda España ({fiesta}). Fuente: BOE. Mira también los puentes y las fiestas locales de tu municipio."
+    elif r:
+        nombres = sorted((COMUNIDADES[c][0] for c in r), key=slug)
+        texto = f"Sí, pero no en toda España: {cuando} es festivo en {lista_y(nombres)}"
+        if len(texto) > 140:
+            texto = f"Sí, pero no en toda España: {cuando} es festivo en {len(nombres)} comunidades: {', '.join(nombres[:4])} y {len(nombres) - 4} más"
+        texto += "." + (f" Y fiesta local en {plural(n_mun, 'municipio', 'municipios')}." if n_mun else "")
+    elif n_mun:
+        texto = (f"{cuando[0].upper()}{cuando[1:]} no es festivo nacional ni autonómico, pero es fiesta local en "
+                 f"{plural(n_mun, 'municipio', 'municipios')}. Mira si el tuyo es uno de ellos.")
+    else:
+        texto = (f"Comprueba si el {nombre_dia} es festivo en tu comunidad o en tu municipio en {' y '.join(map(str, ANIOS))}: "
+                 "fiestas nacionales, autonómicas y locales según el BOE y los boletines oficiales.")
+    return texto
+
+
 def pagina_dia(datos, idx, mes, dia):
     nombre_dia = f"{dia} de {MESES[mes - 1]}"
     a_prox = anio_proximo(mes, dia)
@@ -895,8 +918,7 @@ def pagina_dia(datos, idx, mes, dia):
         titulo = f"¿Es festivo el {fecha_larga(d)} de {a_prox}? Dónde es festivo"
         if len(titulo) > 65:
             titulo = f"¿Es festivo el {fecha_larga(d)} de {a_prox}?"
-    desc = (f"Comprueba si el {nombre_dia} es festivo en tu comunidad o en tu municipio en {' y '.join(map(str, ANIOS))}: "
-            "fiestas nacionales, autonómicas y locales según el BOE y los boletines oficiales.")
+    desc = descripcion_dia(d, donde_p, nombre_dia)
     return pagina(ruta_dia(d), titulo, desc, cuerpo, [("¿Es festivo hoy?", "/es-festivo/"), (nombre_dia.capitalize(), None)], [faq_ld(preguntas)])
 
 
