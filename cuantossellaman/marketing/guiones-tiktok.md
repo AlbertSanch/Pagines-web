@@ -123,3 +123,12 @@ Las cifras de cualquier nombre salen en un segundo en cuantossellaman.es.
 **Pantalla:** son el nombre de mujer nº1 o nº2 de su provincia; en el resto casi siempre gana MARÍA CARMEN (nº1 en 35 de las 52 provincias)
 **Cierre:** ¿Cuál es el nombre típico de tu tierra? · cuantossellaman.es
 **Descripción:** Nombres que delatan de dónde eres 👀 #nombres #provincias #españa #curiosidades #sabiasque
+
+## 19. «¿Cuántos se llaman como la Navidad?» (publicar entre finales de noviembre y Reyes)
+
+**Pantalla (0–2 s):** ¿CUÁNTOS SE LLAMAN COMO LA NAVIDAD?
+**Pantalla, uno a uno:** BELÉN 34.039 · NATIVIDAD 25.928 · NIEVES 22.970 · ESTRELLA 18.091 · NOEL 6.928
+**Pantalla:** ¿Y LOS REYES MAGOS? GASPAR 5.899 · BALTASAR 3.829 · MELCHOR 3.016
+**Pantalla:** Y hay 39 mujeres que se llaman NAVIDAD, con una edad media de 68 años.
+**Cierre:** ¿Conoces a alguna Belén o a algún Noel? · cuantossellaman.es
+**Descripción:** Los nombres más navideños de España 🎄 Datos del INE #navidad #nombres #reyesmagos #curiosidades #sabiasque
