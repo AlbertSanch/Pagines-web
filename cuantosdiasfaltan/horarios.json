@@ -5757,8 +5757,8 @@ null
 "competicion": "Amistosos internacionales",
 "utc": "2026-11-17T10:00Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Singapur",
 "visitante": "Brasil",
 "ids": [
@@ -5767,7 +5767,7 @@ null
 ],
 "goles": [
 "0",
-"0"
+"7"
 ],
 "es": false
 },
@@ -5777,8 +5777,8 @@ null
 "competicion": "Amistosos internacionales",
 "utc": "2026-11-17T12:00Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "in",
+"detalle": "47'",
 "local": "China",
 "visitante": "Baréin",
 "ids": [
@@ -5786,8 +5786,8 @@ null
 "4381"
 ],
 "goles": [
-"0",
-"0"
+"1",
+"2"
 ],
 "es": false
 },
