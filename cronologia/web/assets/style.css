@@ -138,3 +138,9 @@ pre.ejemplo{background:rgba(0,0,0,.25);padding:10px 14px;border-radius:12px;font
 .pie a{color:#ffd2b8}
 .aviso{background:rgba(255,207,107,.15);border:2px solid var(--oro);border-radius:16px;padding:12px 14px;text-align:center}
 @media (min-width:700px){.tic{width:80px;margin-left:-40px}.bocadillo{bottom:104px}}
+
+/* práctica: elegir 5 o 10 tarjetas */
+.tam{display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;margin:0 0 10px}
+.tam button{font:inherit;font-weight:900;color:#fff;background:rgba(255,255,255,.14);border:0;border-radius:999px;padding:5px 14px;cursor:pointer}
+.tam button[aria-pressed="true"]{background:var(--oro);color:var(--tinta)}
+.marcador.largo i{width:13px}
