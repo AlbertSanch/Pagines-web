@@ -302,6 +302,15 @@ VIDEOS = {
         (4.0, 0.6, [("texto", "Y hay mujeres que se llaman Navidad:"), ("cifra", "39"), ("texto", "con una edad media de 68 años")]),
         CIERRE("¿Conoces a alguna Belén o a algún Noel?"),
     ],
+    "20-gta": [
+        (3.2, 0.0, [("gancho", "Los protagonistas de GTA 6 se llaman Jason y Lucía")]),
+        (4.6, 0.7, [("texto", "¿Cuántos hay en España?"), ("fila", "Lucía", "222.807"), ("fila", "Jason", "754"),
+                    ("texto", "Por cada Jason hay casi 300 Lucías")]),
+        (5.4, 0.6, [("titulo", "¿Y los de otros GTA?"), ("fila", "Michael", "5.877"), ("fila", "Niko", "894"),
+                    ("fila", "Franklin", "646"), ("fila", "Tommy", "171"), ("fila", "Carl", "112")]),
+        (4.0, 0.6, [("texto", "Y los Niko de España tienen de media…"), ("cifra", "9 años"), ("texto", "GTA IV salió en 2008. ¿Casualidad?")]),
+        CIERRE("¿Cómo se llamaría tu personaje?"),
+    ],
     "10-nombres-que-suben": [
         (3.0, 0.0, [("gancho", "Los nombres de niña que están arrasando")]),
         (6.5, 0.55, [("texto", "Nuevos en el top 100 de bebés:"), ("fila", "Alaia", ""), ("fila", "Catalina", ""), ("fila", "Violeta", ""),
@@ -399,6 +408,13 @@ VOCES = {
         "¿Y los Reyes Magos? Gaspar, casi seis mil. Baltasar, tres mil ochocientos. Y Melchor, tres mil.",
         "Y hay treinta y nueve mujeres que se llaman Navidad, con sesenta y ocho años de media.",
         f"¿Conoces a alguna Belén o a algún Noel? Busca el tuyo en {WEB_DICHA}.",
+    ],
+    "20-gta": [
+        "Los protagonistas de GTA seis se llaman Jason y Lucía.",
+        "En España hay doscientas veintidós mil Lucías... y solo setecientos cincuenta y cuatro Jason. Casi trescientas Lucías por cada Jason.",
+        "¿Y los de otros GTA? Michael, casi seis mil. Niko, ochocientos noventa y cuatro. Franklin, seiscientos cuarenta y seis. Tommy, ciento setenta y uno. Y Carl, ciento doce.",
+        "Y los Niko de España tienen de media nueve años. GTA cuatro salió en 2008. ¿Casualidad?",
+        f"¿Cómo se llamaría tu personaje? Busca tu nombre en {WEB_DICHA}.",
     ],
     "10-nombres-que-suben": [
         "Estos son los nombres de niña que están arrasando.",
