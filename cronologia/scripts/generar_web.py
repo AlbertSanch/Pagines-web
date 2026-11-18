@@ -31,7 +31,7 @@ DATOS = RAIZ / "data"
 PLANTILLA = RAIZ / "plantilla"
 WEB = RAIZ / "web"
 
-DOMINIO = "https://quefueantes.es"  # provisional: cámbialo cuando esté decidido el nombre
+DOMINIO = "https://quefueantes.es"
 SITIO = "¿Qué fue antes?"
 LANZAMIENTO = dt.date(2026, 11, 23)  # día #1
 DOMINIO_ACTIVO = False  # True cuando el dominio funcione: la dirección .pages.dev redirigirá a él
@@ -51,7 +51,7 @@ CABECERA_ANUNCIOS = (
 CONFIGURAR_COOKIES = ('<a href="#" onclick="window.googlefc=window.googlefc||{};googlefc.callbackQueue=googlefc.callbackQueue||[];'
                       'googlefc.callbackQueue.push(function(){googlefc.showRevocationMessage()});return false">Configurar cookies</a>')
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
-           "email": "contacto.ahorrometro@gmail.com"}  # provisional, hasta tener el correo del dominio
+           "email": "contacto@quefueantes.es"}
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 CATEGORIAS = {"historia": "Historia", "ciencia": "Ciencia", "inventos": "Inventos", "tecnologia": "Tecnología", "espacio": "Espacio",
               "arte": "Arte y monumentos", "literatura": "Literatura", "musica": "Música", "cine": "Cine", "television": "Televisión",
