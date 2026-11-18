@@ -44,7 +44,7 @@
   // ---------- escena: altura del cielo y Tic
   function ajustarEscena() {
     var fin = raiz.getBoundingClientRect().bottom + window.scrollY;
-    document.body.style.setProperty('--escena', Math.max(window.innerHeight, fin) + 'px');
+    document.body.style.setProperty('--escena', fin + 'px');  // el juego deja sitio abajo para el horizonte y Tic
   }
   window.addEventListener('resize', ajustarEscena);
   function posTic(anio) {
