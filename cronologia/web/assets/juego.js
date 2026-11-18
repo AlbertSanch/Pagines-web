@@ -114,11 +114,12 @@
     var t = tarjetas[st.sig];
     var html = '<div class="marcador-linea"><span>Tarjeta ' + st.sig + ' de 5</span>' + marcador(st) + '</div>'
       + '<div class="nueva' + (ultimaNueva !== st.sig ? ' entra' : '') + '"><p class="q">¿Dónde va esta?</p><div class="t"><span>' + esc(t.e) + '</span>' + esc(t.t) + '</div></div>'
-      + '<p class="ayuda">Toca el hueco donde encaja en el tiempo</p><div class="tl">';
-    for (var p = 0; p <= st.orden.length; p++) {
+      + '<p class="ayuda">Toca el hueco donde encaja en el tiempo · lo más reciente, arriba</p><div class="tl">';
+    // La línea se dibuja de arriba (lo más reciente) abajo (lo más antiguo); p sigue contando desde lo más antiguo
+    for (var p = st.orden.length; p >= 0; p--) {
       var etiqueta = p === 0 ? 'Antes' : p === st.orden.length ? 'Después' : 'Entre medias';
       html += '<button type="button" class="hueco' + (seleccion === p ? ' sel' : '') + '" data-p="' + p + '">' + etiqueta + (seleccion === p ? ' ✓' : '') + '</button>';
-      if (p < st.orden.length) html += puesta(tarjetas[st.orden[p]], st.orden[p], st, st.orden[p] === recienPuesta ? ' nuevo' : '');
+      if (p > 0) html += puesta(tarjetas[st.orden[p - 1]], st.orden[p - 1], st, st.orden[p - 1] === recienPuesta ? ' nuevo' : '');
     }
     html += '</div><button type="button" class="btn btn-bloque" id="colocar"' + (seleccion == null ? ' disabled' : '') + '>Colocar</button>';
     tablero.innerHTML = html;
@@ -157,8 +158,8 @@
   function pintarFin(st) {
     var aciertos = st.res.filter(function (r) { return r === 'v'; }).length;
     var titulo = aciertos === 5 ? '¡Línea del tiempo perfecta!' : aciertos >= 3 ? '¡Muy bien!' : aciertos >= 1 ? '¡Buen intento!' : 'La historia es traicionera…';
-    var linea = '<div class="tl">' + st.orden.map(function (i) { return puesta(tarjetas[i], i, st, ''); }).join('<div style="height:8px"></div>') + '</div>';
-    var expl = '<div class="explicaciones">' + st.orden.map(function (i) {
+    var linea = '<div class="tl">' + st.orden.slice().reverse().map(function (i) { return puesta(tarjetas[i], i, st, ''); }).join('<div style="height:8px"></div>') + '</div>';
+    var expl = '<div class="explicaciones">' + st.orden.slice().reverse().map(function (i) {
       var t = tarjetas[i];
       return '<details><summary>' + esc(t.e) + ' <b>' + esc(t.y) + '</b> · ' + esc(t.t) + '</summary><p>' + esc(t.x) + ' <a href="/hechos/' + esc(t.s) + '/">Leer más</a></p></details>';
     }).join('') + '</div>';

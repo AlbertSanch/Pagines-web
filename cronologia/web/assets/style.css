@@ -96,7 +96,7 @@ h2{color:var(--oro2);font-size:24px;margin:1.4em 0 .5em}
 .tic .cejas-triste,.tic .boca-triste{display:none}
 .tic.triste .cejas-triste,.tic.triste .boca-triste{display:inline}
 .tic.triste .cejas-normal,.tic.triste .boca-feliz{display:none}
-.bocadillo{position:absolute;bottom:92px;left:var(--tic-x,50%);transform:translateX(-50%);background:var(--crema);color:var(--tinta);font-size:13px;font-weight:800;padding:7px 12px;border-radius:14px;white-space:nowrap;transition:left 1.4s cubic-bezier(.45,.05,.3,1);box-shadow:0 3px 0 rgba(0,0,0,.15)}
+.bocadillo{position:absolute;bottom:92px;left:clamp(105px,var(--tic-x,50%),calc(100% - 105px));transform:translateX(-50%);background:var(--crema);color:var(--tinta);font-size:13px;font-weight:800;padding:7px 12px;border-radius:14px;white-space:nowrap;transition:left 1.4s cubic-bezier(.45,.05,.3,1);box-shadow:0 3px 0 rgba(0,0,0,.15)}
 .bocadillo:after{content:"";position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-top-color:var(--crema);border-bottom:0}
 @keyframes paso{from{transform:rotate(-14deg)}to{transform:rotate(14deg)}}
 @keyframes salta{0%,100%{transform:translateY(0)}40%{transform:translateY(-22px)}}
