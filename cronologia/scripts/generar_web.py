@@ -236,7 +236,7 @@ def pagina_portada():
 <p class="etq">Juego diario · En español · Gratis</p>
 <h1>¿Qué fue antes?</h1>
 <p class="sub">Coloca cada momento de la historia en su sitio de la línea del tiempo.</p>
-<p class="dia">Día <strong class="js-numero">#{n}</strong> · <span class="js-fecha">{fecha_larga(HOY)}</span></p>
+<p class="dia">{f"Día <strong class=\"js-numero\">#{n}</strong> · <span class=\"js-fecha\">{fecha_larga(HOY)}</span>" if HOY >= LANZAMIENTO else f"Empieza el {fecha_larga(LANZAMIENTO)}"}</p>
 </section>
 {bloque_juego("diario")}
 <section class="stats-bloque" id="estadisticas-bloque" hidden><h2>Tus estadísticas</h2><div id="estadisticas"></div></section>

@@ -218,6 +218,7 @@
     if (dia < lanzamiento) {
       tablero.innerHTML = '<div class="aviso"><p><b>¡Ya casi está!</b></p><p>El primer día de ¿Qué fue antes? es el ' + larga(lanzamiento)
         + '. Mientras tanto, practica en el <a href="/practica/">modo práctica</a>.</p></div>';
+      document.querySelectorAll('.dia').forEach(function (e) { e.textContent = 'Empieza el ' + larga(lanzamiento); });
       ajustarEscena();
       return;
     }
