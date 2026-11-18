@@ -57,11 +57,18 @@ def main():
         # los que llevan más tiempo sin salir, primero (con algo de azar)
         libres.sort(key=lambda h: (ultimo_uso.get(h["slug"], dt.date.min), rnd.random()))
         candidatos = libres[: max(30, len(libres) // 2)]
-        for _ in range(5000):
-            grupo = rnd.sample(candidatos, POR_DIA)
-            if valido(grupo):
+        grupo = None
+        # primero entre los que llevan más tiempo sin salir; si no sale un día válido (p. ej. muchos hechos nuevos
+        # del mismo ámbito), entre todos los libres
+        for lista in (candidatos, libres):
+            for _ in range(5000):
+                prueba = rnd.sample(lista, POR_DIA)
+                if valido(prueba):
+                    grupo = prueba
+                    break
+            if grupo:
                 break
-        else:
+        if not grupo:
             sys.exit(f"No hay hechos suficientes para el {f}: añade más a data/hechos.json")
         # ancla: uno de los años del medio, para que haya huecos a los dos lados
         por_anio = sorted(grupo, key=lambda h: h["anio"])
