@@ -11,6 +11,7 @@ const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', '
 const DIAS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
 const fecha = (k) => { const m = Number(k.slice(0, 2)) - 1, d = Number(k.slice(3)); return `${DIAS[new Date(Date.UTC(ANIO, m, d)).getUTCDay()]} ${d} de ${MESES[m]}`; };
 const CORTO = { madrid: 'Madrid', murcia: 'Murcia', baleares: 'Baleares' };
+const AMAZON = [['Calendarios de pared 2027', 'calendario pared 2027'], ['Agendas 2027', 'agenda 2027'], ['Cartulina blanca A4 para imprimir', 'cartulina blanca A4 impresora']];
 const lista = (l) => l.length < 2 ? l.join('') : l.slice(0, -1).join(', ') + ' y ' + l[l.length - 1];
 
 const notaFestivos = `
@@ -29,6 +30,7 @@ module.exports = [
     hojas: [{ tipo: 'calendario-anual', anio: ANIO, festivos }],
     excel: `/pdf/calendario-${ANIO}.xlsx`,
     copias: 1,
+    amazon: AMAZON,
     cuerpo: notaFestivos + `
 <h2>Calendario 2027 de tu comunidad</h2>
 <p>Este calendario lleva los festivos que son fiesta en toda España. Si quieres también los de tu comunidad autónoma, tienes uno para cada una, con sus festivos marcados y en PDF y Excel: ${Object.entries(DATOS.comunidades).map(([k, c]) => `<a href="/calendarios/${ANIO}-${k}/">${c.nombre}</a>`).join(', ')}.</p>
@@ -57,6 +59,7 @@ module.exports = [
     hojas: meses(0, 2),
     pdfExtra: meses(2, 12),
     copias: 1,
+    amazon: AMAZON,
     cuerpo: `
 <h2>Para qué sirve un calendario mes a mes</h2>
 <p>Cada casilla mide unos 2,5 × 3,5 centímetros, sitio suficiente para dos o tres anotaciones a mano. Es el formato de los calendarios de cocina: se cuelga en la nevera o en un tablón y toda la familia apunta allí las citas médicas, las excursiones del colegio o los turnos de trabajo.</p>
@@ -72,6 +75,7 @@ ${notaFestivos}
     entrada: `El año ${ANIO} en una hoja A4 con el número de cada semana en la columna gris de la izquierda, como en los calendarios de oficina. Los festivos nacionales van marcados en rojo con un círculo.`,
     hojas: [{ tipo: 'calendario-anual', anio: ANIO, festivos, semanas: true }],
     copias: 1,
+    amazon: AMAZON,
     cuerpo: `
 <h2>Cómo se cuentan las semanas</h2>
 <p>Las semanas siguen la norma ISO 8601, la que se usa en España y en casi toda Europa: empiezan en lunes y la semana 1 es la que contiene el primer jueves del año. Por eso ${ANIO} no empieza en la semana 1: el viernes 1 de enero, el sábado 2 y el domingo 3 pertenecen todavía a la semana 53 de 2026, y la semana 1 de ${ANIO} empieza el lunes 4 de enero.</p>
@@ -111,6 +115,8 @@ ${notaFestivos}`,
       pdfExtra: meses(0, 12, fest),
       excel: `/pdf/calendario-${ANIO}-${clave}.xlsx`,
       copias: 1,
+      amazon: AMAZON,
+    amazon: AMAZON,
       cuerpo: `
 <h2>Los ${n} festivos de ${ANIO} ${en}</h2>
 <ul>

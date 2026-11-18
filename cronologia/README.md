@@ -1,4 +1,4 @@
-# ¿Qué fue antes? (nombre y dominio provisionales)
+# ¿Qué fue antes? (quefueantes.es)
 
 Juego diario: cada día, seis momentos de la historia. El primero sale ya colocado en la línea del tiempo y los otros
 cinco hay que colocarlos, de uno en uno, en su hueco (antes, entre medias o después). Tic, el relojito, camina por el
