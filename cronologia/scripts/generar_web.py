@@ -36,7 +36,7 @@ SITIO = "¿Qué fue antes?"
 LANZAMIENTO = dt.date(2026, 11, 23)  # día #1
 DOMINIO_ACTIVO = False  # True cuando el dominio funcione: la dirección .pages.dev redirigirá a él
 SAL = "qfa-31b7"  # la misma en plantilla/juego.js
-VERSION = "1"
+VERSION = "2"  # súbelo al cambiar plantilla/juego.js o style.css, para que los navegadores no usen la copia vieja
 HOY = dt.date.fromisoformat(os.environ["CRONO_HOY"]) if os.environ.get("CRONO_HOY") else dt.datetime.now(ZoneInfo("Europe/Madrid")).date()
 
 ADSENSE = "ca-pub-8810566450749484"
