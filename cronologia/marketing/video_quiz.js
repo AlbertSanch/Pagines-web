@@ -53,7 +53,7 @@ body{font-family:Nunito,'Noto Color Emoji',sans-serif;font-weight:800;color:#fff
  background:radial-gradient(circle,rgba(255,214,140,.95) 0%,rgba(255,170,90,.55) 32%,rgba(255,150,80,0) 68%)}
 .horizonte{position:absolute;left:-380px;bottom:40px;width:1840px;height:auto;color:var(--sil)}.horizonte .sil{fill:var(--sil)}.horizonte .humo{opacity:.45}
 .suelo{position:absolute;left:0;right:0;bottom:0;height:60px;background:var(--sil)}
-.tic{position:absolute;left:50%;bottom:70px;width:170px;margin-left:-85px}
+.tic{position:absolute;left:50%;bottom:70px;width:170px;margin-left:-85px}.tic .cejas-triste,.tic .boca-triste{display:none}
 .marca{position:absolute;top:150px;left:0;right:0;text-align:center;font:700 64px Fredoka,sans-serif;color:var(--oro)}
 .capa{position:absolute;left:80px;right:140px;top:420px;display:flex;flex-direction:column;align-items:stretch;gap:44px}
 .grande{font:700 118px/1.05 Fredoka,sans-serif;color:var(--oro);text-align:center;text-shadow:0 6px 0 rgba(0,0,0,.18)}
