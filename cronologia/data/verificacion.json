@@ -1,10 +1,45 @@
 {
+ "aire-acondicionado": {
+  "articulo": "Acondicionamiento de aire",
+  "clave": "aire-acondicionado|1902|Aire acondicionado",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
+ "ajedrecista-torres-quevedo": {
+  "articulo": "El Ajedrecista",
+  "clave": "ajedrecista-torres-quevedo|1912|El Ajedrecista",
+  "motivo": "",
+  "ok": true,
+  "veces": 1
+ },
+ "arpanet": {
+  "articulo": "ARPANET",
+  "clave": "arpanet|1969|ARPANET",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
  "asesinato-julio-cesar": {
   "articulo": "Julio César",
   "clave": "asesinato-julio-cesar|-44|Julio César",
   "motivo": "",
   "ok": true,
   "veces": 37
+ },
+ "aspirina": {
+  "articulo": "Ácido acetilsalicílico",
+  "clave": "aspirina|1897|Ácido acetilsalicílico",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
+ },
+ "autogiro-cierva": {
+  "articulo": "Juan de la Cierva",
+  "clave": "autogiro-cierva|1923|Juan de la Cierva y Codorníu",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
  },
  "barbie": {
   "articulo": "Barbie",
@@ -20,6 +55,13 @@
   "ok": true,
   "veces": 468
  },
+ "barometro-torricelli": {
+  "articulo": "Barómetro",
+  "clave": "barometro-torricelli|1643|Barómetro",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
  "biblia-gutenberg": {
   "articulo": "Biblia de Gutenberg",
   "clave": "biblia-gutenberg|1454|Biblia de Gutenberg",
@@ -27,12 +69,33 @@
   "ok": true,
   "veces": 1
  },
+ "bitcoin": {
+  "articulo": "Bitcoin",
+  "clave": "bitcoin|2009|Bitcoin",
+  "motivo": "",
+  "ok": true,
+  "veces": 7
+ },
  "blancanieves-disney": {
   "articulo": "Snow White and the Seven Dwarfs",
   "clave": "blancanieves-disney|1937|Blancanieves y los siete enanitos (película de 1937)",
   "motivo": "",
   "ok": true,
   "veces": 22
+ },
+ "boligrafo-biro": {
+  "articulo": "Bolígrafo",
+  "clave": "boligrafo-biro|1938|Bolígrafo",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
+ "bombilla-edison": {
+  "articulo": "Thomas Alva Edison",
+  "clave": "bombilla-edison|1879|Thomas Alva Edison",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
  },
  "caida-muro-berlin": {
   "articulo": "Muro de Berlín",
@@ -62,12 +125,40 @@
   "ok": true,
   "veces": 4
  },
+ "cine-sonoro": {
+  "articulo": "The Jazz Singer (película de 1927)",
+  "clave": "cine-sonoro|1927|El cantante de jazz",
+  "motivo": "",
+  "ok": true,
+  "veces": 9
+ },
+ "circuito-integrado": {
+  "articulo": "Circuito integrado",
+  "clave": "circuito-integrado|1958|Circuito integrado",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
  "coca-cola": {
   "articulo": "Coca-Cola",
   "clave": "coca-cola|1886|Coca-Cola",
   "motivo": "",
   "ok": true,
   "veces": 11
+ },
+ "coche-benz": {
+  "articulo": "Benz Patent-Motorwagen",
+  "clave": "coche-benz|1886|Benz Patent-Motorwagen",
+  "motivo": "",
+  "ok": true,
+  "veces": 8
+ },
+ "codigo-barras": {
+  "articulo": "Código Universal de Producto",
+  "clave": "codigo-barras|1974|Código Universal de Producto",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
  },
  "colon-llega-america": {
   "articulo": "Descubrimiento de América",
@@ -90,6 +181,13 @@
   "ok": true,
   "veces": 74
  },
+ "cremallera": {
+  "articulo": "Gideon Sundbäck",
+  "clave": "cremallera|1913|Gideon Sundback",
+  "motivo": "el artículo no menciona el año",
+  "ok": false,
+  "veces": 0
+ },
  "cubo-rubik": {
   "articulo": "Cubo de Rubik",
   "clave": "cubo-rubik|1974|Cubo de Rubik",
@@ -111,6 +209,13 @@
   "ok": true,
   "veces": 3
  },
+ "dinamita-nobel": {
+  "articulo": "Dinamita",
+  "clave": "dinamita-nobel|1867|Dinamita",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
  "disco-compacto": {
   "articulo": "Disco compacto",
   "clave": "disco-compacto|1982|Disco compacto",
@@ -125,6 +230,13 @@
   "ok": true,
   "veces": 22
  },
+ "draisiana": {
+  "articulo": "Draisiana",
+  "clave": "draisiana|1817|Draisiana",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
+ },
  "elcano-vuelta-al-mundo": {
   "articulo": "Expedición de Magallanes y Elcano",
   "clave": "elcano-vuelta-al-mundo|1522|Expedición de Magallanes-Elcano",
@@ -132,12 +244,26 @@
   "ok": true,
   "veces": 16
  },
+ "emoji": {
+  "articulo": "Emoji",
+  "clave": "emoji|1999|Emoji",
+  "motivo": "",
+  "ok": true,
+  "veces": 1
+ },
  "empire-state": {
   "articulo": "Empire State Building",
   "clave": "empire-state|1931|Empire State Building",
   "motivo": "",
   "ok": true,
   "veces": 16
+ },
+ "enciclopedia-mecanica": {
+  "articulo": "Ángela Ruiz Robles",
+  "clave": "enciclopedia-mecanica|1949|Ángela Ruiz Robles",
+  "motivo": "",
+  "ok": true,
+  "veces": 5
  },
  "eniac": {
   "articulo": "ENIAC",
@@ -202,6 +328,13 @@
   "ok": true,
   "veces": 5
  },
+ "fonografo-edison": {
+  "articulo": "Fonógrafo",
+  "clave": "fonografo-edison|1877|Fonógrafo",
+  "motivo": "",
+  "ok": true,
+  "veces": 6
+ },
  "ford-modelo-t": {
   "articulo": "Ford T",
   "clave": "ford-modelo-t|1908|Ford Modelo T",
@@ -215,6 +348,13 @@
   "motivo": "",
   "ok": true,
   "veces": 4
+ },
+ "fregona": {
+  "articulo": "Fregona",
+  "clave": "fregona|1956|Fregona",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
  },
  "fundacion-amazon": {
   "articulo": "Amazon",
@@ -279,6 +419,13 @@
   "ok": true,
   "veces": 1
  },
+ "futbolin": {
+  "articulo": "Futbolín",
+  "clave": "futbolin|1937|Futbolín",
+  "motivo": "",
+  "ok": true,
+  "veces": 1
+ },
  "gagarin-espacio": {
   "articulo": "Yuri Gagarin",
   "clave": "gagarin-espacio|1961|Yuri Gagarin",
@@ -293,6 +440,13 @@
   "ok": true,
   "veces": 17
  },
+ "globo-montgolfier": {
+  "articulo": "Hermanos Montgolfier",
+  "clave": "globo-montgolfier|1783|Hermanos Montgolfier",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
+ },
  "golden-gate": {
   "articulo": "Puente Golden Gate",
   "clave": "golden-gate|1937|Puente Golden Gate",
@@ -306,6 +460,13 @@
   "motivo": "",
   "ok": true,
   "veces": 100
+ },
+ "gramofono": {
+  "articulo": "Gramófono",
+  "clave": "gramofono|1887|Gramófono",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
  },
  "gran-piramide-guiza": {
   "articulo": "Keops",
@@ -342,6 +503,13 @@
   "ok": true,
   "veces": 85
  },
+ "ictineo-monturiol": {
+  "articulo": "Ictíneo I",
+  "clave": "ictineo-monturiol|1859|Ictíneo I",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
  "independencia-estados-unidos": {
   "articulo": "Declaración de Independencia de los Estados Unidos",
   "clave": "independencia-estados-unidos|1776|Declaración de Independencia de los Estados Unidos",
@@ -356,6 +524,41 @@
   "ok": true,
   "veces": 4
  },
+ "insulina": {
+  "articulo": "Insulina",
+  "clave": "insulina|1921|Insulina",
+  "motivo": "",
+  "ok": true,
+  "veces": 5
+ },
+ "invencion-papel": {
+  "articulo": "Cai Lun",
+  "clave": "invencion-papel|105|Cai Lun",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
+ },
+ "invencion-rueda": {
+  "articulo": "Rueda",
+  "clave": "invencion-rueda|-3500|Rueda",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
+ "ipad": {
+  "articulo": "iPad",
+  "clave": "ipad|2010|iPad",
+  "motivo": "",
+  "ok": true,
+  "veces": 78
+ },
+ "ipod": {
+  "articulo": "iPod",
+  "clave": "ipod|2001|iPod",
+  "motivo": "",
+  "ok": true,
+  "veces": 6
+ },
  "juegos-olimpicos-atenas-1896": {
   "articulo": "Juegos Olímpicos de Atenas 1896",
   "clave": "juegos-olimpicos-atenas-1896|1896|Juegos Olímpicos de Atenas 1896",
@@ -369,6 +572,13 @@
   "motivo": "",
   "ok": true,
   "veces": 11
+ },
+ "laser": {
+  "articulo": "Láser",
+  "clave": "laser|1960|Láser",
+  "motivo": "",
+  "ok": true,
+  "veces": 5
  },
  "llegada-euro": {
   "articulo": "Euro",
@@ -412,6 +622,20 @@
   "ok": true,
   "veces": 7
  },
+ "maquina-escribir": {
+  "articulo": "Máquina de escribir",
+  "clave": "maquina-escribir|1868|Máquina de escribir",
+  "motivo": "",
+  "ok": true,
+  "veces": 1
+ },
+ "maquina-vapor-watt": {
+  "articulo": "James Watt",
+  "clave": "maquina-vapor-watt|1769|James Watt",
+  "motivo": "",
+  "ok": true,
+  "veces": 5
+ },
  "massiel-eurovision": {
   "articulo": "La, la, la",
   "clave": "massiel-eurovision|1968|La, la, la",
@@ -432,6 +656,20 @@
   "motivo": "",
   "ok": true,
   "veces": 9
+ },
+ "microondas": {
+  "articulo": "Percy Spencer",
+  "clave": "microondas|1945|Percy Spencer",
+  "motivo": "",
+  "ok": true,
+  "veces": 1
+ },
+ "monopoly": {
+  "articulo": "Monopoly",
+  "clave": "monopoly|1935|Monopoly",
+  "motivo": "",
+  "ok": true,
+  "veces": 6
  },
  "mundial-espana-1982": {
   "articulo": "Copa Mundial de Fútbol de 1982",
@@ -467,6 +705,20 @@
   "motivo": "",
   "ok": true,
   "veces": 67
+ },
+ "nailon": {
+  "articulo": "Nailon",
+  "clave": "nailon|1935|Nailon",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
+ "nintendo-switch": {
+  "articulo": "Nintendo Switch",
+  "clave": "nintendo-switch|2017|Nintendo Switch",
+  "motivo": "",
+  "ok": true,
+  "veces": 353
  },
  "opera-sidney": {
   "articulo": "Ópera de Sídney",
@@ -510,6 +762,13 @@
   "ok": true,
   "veces": 6
  },
+ "penique-negro": {
+  "articulo": "Penny Black",
+  "clave": "penique-negro|1840|Penny Black",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
  "pieza-lego": {
   "articulo": "LEGO (empresa)",
   "clave": "pieza-lego|1958|LEGO (empresa)",
@@ -517,12 +776,26 @@
   "ok": true,
   "veces": 2
  },
+ "pila-volta": {
+  "articulo": "Celda galvánica",
+  "clave": "pila-volta|1800|Pila voltaica",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
+ },
  "pinturas-altamira": {
   "articulo": "Cueva de Altamira",
   "clave": "pinturas-altamira|-36500|Cueva de Altamira",
   "motivo": "",
   "ok": true,
   "veces": 2
+ },
+ "playmobil": {
+  "articulo": "Playmobil",
+  "clave": "playmobil|1974|Playmobil",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
  },
  "playstation": {
   "articulo": "PlayStation (consola)",
@@ -545,6 +818,13 @@
   "ok": true,
   "veces": 8
  },
+ "post-it": {
+  "articulo": "Post-it",
+  "clave": "post-it|1980|Post-it",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
+ },
  "primer-correo-electronico": {
   "articulo": "Ray Tomlinson",
   "clave": "primer-correo-electronico|1971|Ray Tomlinson",
@@ -566,12 +846,33 @@
   "ok": true,
   "veces": 11
  },
+ "primer-semaforo": {
+  "articulo": "Semáforo",
+  "clave": "primer-semaforo|1868|Semáforo",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
+ },
+ "primer-sms": {
+  "articulo": "Servicio de mensajes cortos",
+  "clave": "primer-sms|1992|Servicio de mensajes cortos",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
  "primer-vuelo-wright": {
   "articulo": "Hermanos Wright",
   "clave": "primer-vuelo-wright|1903|Hermanos Wright",
   "motivo": "",
   "ok": true,
   "veces": 7
+ },
+ "primera-fotografia": {
+  "articulo": "Joseph Nicéphore Niépce",
+  "clave": "primera-fotografia|1826|Nicéphore Niépce",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
  },
  "primera-guerra-mundial": {
   "articulo": "Primera Guerra Mundial",
@@ -643,6 +944,27 @@
   "ok": true,
   "veces": 17
  },
+ "radio-marconi-atlantico": {
+  "articulo": "Guglielmo Marconi",
+  "clave": "radio-marconi-atlantico|1901|Guglielmo Marconi",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
+ "raton-ordenador": {
+  "articulo": "Ratón (informática)",
+  "clave": "raton-ordenador|1968|Ratón (informática)",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
+ "rayos-x": {
+  "articulo": "Rayos X",
+  "clave": "rayos-x|1895|Rayos X",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
+ },
  "regreso-al-futuro": {
   "articulo": "Back to the Future",
   "clave": "regreso-al-futuro|1985|Back to the Future",
@@ -706,6 +1028,13 @@
   "ok": true,
   "veces": 34
  },
+ "submarino-peral": {
+  "articulo": "Submarino Peral",
+  "clave": "submarino-peral|1888|Submarino Peral",
+  "motivo": "",
+  "ok": true,
+  "veces": 12
+ },
  "super-mario-bros": {
   "articulo": "Super Mario Bros.",
   "clave": "super-mario-bros|1985|Super Mario Bros.",
@@ -713,12 +1042,61 @@
   "ok": true,
   "veces": 21
  },
+ "talgo": {
+  "articulo": "Alejandro Goicoechea",
+  "clave": "talgo|1942|Alejandro Goicoechea Omar",
+  "motivo": "",
+  "ok": true,
+  "veces": 1
+ },
+ "tamagotchi": {
+  "articulo": "Tamagotchi",
+  "clave": "tamagotchi|1996|Tamagotchi",
+  "motivo": "",
+  "ok": true,
+  "veces": 4
+ },
+ "tarjeta-credito": {
+  "articulo": "Diners Club",
+  "clave": "tarjeta-credito|1950|Diners Club",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
+ "telegrafo-morse": {
+  "articulo": "Samuel Morse",
+  "clave": "telegrafo-morse|1844|Samuel Morse",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
+ "telescopio-galileo": {
+  "articulo": "Galileo Galilei",
+  "clave": "telescopio-galileo|1609|Galileo Galilei",
+  "motivo": "",
+  "ok": true,
+  "veces": 2
+ },
  "telescopio-hubble": {
   "articulo": "Telescopio espacial Hubble",
   "clave": "telescopio-hubble|1990|Telescopio espacial Hubble",
   "motivo": "",
   "ok": true,
   "veces": 11
+ },
+ "television-baird": {
+  "articulo": "John Logie Baird",
+  "clave": "television-baird|1926|John Logie Baird",
+  "motivo": "",
+  "ok": true,
+  "veces": 5
+ },
+ "tetris": {
+  "articulo": "Tetris",
+  "clave": "tetris|1984|Tetris",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
  },
  "toma-bastilla": {
   "articulo": "Toma de la Bastilla",
@@ -741,6 +1119,13 @@
   "ok": true,
   "veces": 68
  },
+ "transistor": {
+  "articulo": "Transistor",
+  "clave": "transistor|1947|Transistor",
+  "motivo": "",
+  "ok": true,
+  "veces": 11
+ },
  "tren-barcelona-mataro": {
   "articulo": "Historia del ferrocarril en España",
   "clave": "tren-barcelona-mataro|1848|Ferrocarril Barcelona-Mataró",
@@ -754,6 +1139,34 @@
   "motivo": "",
   "ok": true,
   "veces": 14
+ },
+ "usb": {
+  "articulo": "Universal Serial Bus",
+  "clave": "usb|1996|Universal Serial Bus",
+  "motivo": "",
+  "ok": true,
+  "veces": 7
+ },
+ "vacuna-viruela-jenner": {
+  "articulo": "Edward Jenner",
+  "clave": "vacuna-viruela-jenner|1796|Edward Jenner",
+  "motivo": "",
+  "ok": true,
+  "veces": 3
+ },
+ "vaqueros-levis": {
+  "articulo": "Levi Strauss & Co.",
+  "clave": "vaqueros-levis|1873|Levi's",
+  "motivo": "",
+  "ok": true,
+  "veces": 1
+ },
+ "vespa": {
+  "articulo": "Vespa (motocicletas)",
+  "clave": "vespa|1946|Vespa (motocicleta)",
+  "motivo": "",
+  "ok": true,
+  "veces": 5
  },
  "volcan-la-palma": {
   "articulo": "Erupción volcánica de La Palma de 2021",
@@ -772,6 +1185,13 @@
  "walkman": {
   "articulo": "Stereo personal",
   "clave": "walkman|1979|Walkman",
+  "motivo": "",
+  "ok": true,
+  "veces": 6
+ },
+ "whatsapp": {
+  "articulo": "WhatsApp",
+  "clave": "whatsapp|2009|WhatsApp",
   "motivo": "",
   "ok": true,
   "veces": 6

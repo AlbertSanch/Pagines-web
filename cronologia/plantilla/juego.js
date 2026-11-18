@@ -101,10 +101,12 @@
     return '<div class="puesta ' + (r === 'v' ? 'ok' : r === 'r' ? 'mal' : '') + (clase || '') + '"><span class="em">' + esc(t.e) + '</span>'
       + '<span class="txt">' + esc(t.t) + '</span><b class="ano">' + esc(t.y) + '</b></div>';
   }
+  // Tarjetas por colocar: 5 en el reto diario; en la práctica, 5 o 10
+  function total() { return tarjetas.length - 1; }
   function marcador(st) {
     var h = '';
-    for (var i = 0; i < 5; i++) h += '<i class="' + (st.res[i] === 'v' ? 'v' : st.res[i] === 'r' ? 'r' : '') + '"></i>';
-    return '<span class="marcador">' + h + '</span>';
+    for (var i = 0; i < total(); i++) h += '<i class="' + (st.res[i] === 'v' ? 'v' : st.res[i] === 'r' ? 'r' : '') + '"></i>';
+    return '<span class="marcador' + (total() > 5 ? ' largo' : '') + '">' + h + '</span>';
   }
 
   var seleccion = null, recienPuesta = null, ultimaNueva = null;
@@ -112,7 +114,7 @@
     var st = estado();
     if (st.fin) return pintarFin(st);
     var t = tarjetas[st.sig];
-    var html = '<div class="marcador-linea"><span>Tarjeta ' + st.sig + ' de 5</span>' + marcador(st) + '</div>'
+    var html = (modo === 'practica' ? selectorTam() : '') + '<div class="marcador-linea"><span>Tarjeta ' + st.sig + ' de ' + total() + '</span>' + marcador(st) + '</div>'
       + '<div class="nueva' + (ultimaNueva !== st.sig ? ' entra' : '') + '"><p class="q">¿Dónde va esta?</p><div class="t"><span>' + esc(t.e) + '</span>' + esc(t.t) + '</div></div>'
       + '<p class="ayuda">Toca el hueco donde encaja en el tiempo · lo más reciente, arriba</p><div class="tl">';
     // La línea se dibuja de arriba (lo más reciente) abajo (lo más antiguo); p sigue contando desde lo más antiguo
@@ -128,6 +130,7 @@
       b.addEventListener('click', function () { seleccion = +b.dataset.p; pintar(); });
     });
     document.getElementById('colocar').addEventListener('click', colocar);
+    activarSelectorTam();
     recienPuesta = null;
     ajustarEscena();
   }
@@ -141,7 +144,7 @@
     st.orden.splice(correcta, 0, i);
     st.res.push(bien ? 'v' : 'r');
     st.sig++;
-    if (st.sig > 5) { st.fin = true; contar(st); }
+    if (st.sig > total()) { st.fin = true; contar(st); }
     guardar(claveEstado(), st);
     seleccion = null; recienPuesta = i;
     tic(a, bien ? 'ok' : 'mal', (bien ? FRASES_OK : FRASES_MAL)[st.res.length % (bien ? FRASES_OK.length : FRASES_MAL.length)] + ' ' + tarjetas[i].y);
@@ -152,12 +155,12 @@
   function compartirTexto(st) {
     var aciertos = st.res.filter(function (r) { return r === 'v'; }).length;
     var cab = modo === 'diario' ? '¿Qué fue antes? #' + numeroDia : '¿Qué fue antes? (práctica)';
-    return cab + '\n' + st.res.map(function (r) { return r === 'v' ? '🟩' : '🟥'; }).join('') + ' ' + aciertos + '/5\n' + DOMINIO;
+    return cab + '\n' + st.res.map(function (r) { return r === 'v' ? '🟩' : '🟥'; }).join('') + ' ' + aciertos + '/' + total() + '\n' + DOMINIO;
   }
 
   function pintarFin(st) {
     var aciertos = st.res.filter(function (r) { return r === 'v'; }).length;
-    var titulo = aciertos === 5 ? '¡Línea del tiempo perfecta!' : aciertos >= 3 ? '¡Muy bien!' : aciertos >= 1 ? '¡Buen intento!' : 'La historia es traicionera…';
+    var n = total(), titulo = aciertos === n ? '¡Línea del tiempo perfecta!' : aciertos >= n * .6 ? '¡Muy bien!' : aciertos >= 1 ? '¡Buen intento!' : 'La historia es traicionera…';
     var linea = '<div class="tl">' + st.orden.slice().reverse().map(function (i) { return puesta(tarjetas[i], i, st, ''); }).join('<div style="height:8px"></div>') + '</div>';
     var expl = '<div class="explicaciones">' + st.orden.slice().reverse().map(function (i) {
       var t = tarjetas[i];
@@ -166,7 +169,7 @@
     var sig = modo === 'diario'
       ? (dia === hoyMadrid() ? '<p class="dia">Mañana, seis hechos nuevos. Mientras tanto, prueba el <a href="/practica/">modo práctica</a>.</p>' : '<p class="dia"><a href="/">Volver al día de hoy</a></p>')
       : '';
-    tablero.innerHTML = linea + '<div class="resultado"><h2>' + titulo + '</h2><p class="grande">' + aciertos + '/5</p>'
+    tablero.innerHTML = linea + '<div class="resultado"><h2>' + titulo + '</h2><p class="grande">' + aciertos + '/' + n + '</p>'
       + '<p class="cuadros">' + st.res.map(function (r) { return r === 'v' ? '🟩' : '🟥'; }).join('') + '</p>'
       + '<div class="acciones"><button type="button" class="btn" id="compartir">Compartir</button>'
       + (modo === 'practica' ? '<button type="button" class="btn sec" id="otra">Otra partida</button>' : '<a class="btn sec" href="/practica/">Práctica</a>')
@@ -181,24 +184,39 @@
     });
     var otra = document.getElementById('otra');
     if (otra) otra.addEventListener('click', function () { guardar('qfa:practica', null); empezarPractica(); });
-    tic(tarjetas[st.orden[Math.floor(st.orden.length / 2)]].a, aciertos >= 3 ? 'ok' : 'mal', aciertos === 5 ? '¡Eres un reloj suizo!' : aciertos >= 3 ? '¡Bien jugado!' : '¡Mañana más!');
+    tic(tarjetas[st.orden[Math.floor(st.orden.length / 2)]].a, aciertos >= n * .6 ? 'ok' : 'mal', aciertos === n ? '¡Eres un reloj suizo!' : aciertos >= n * .6 ? '¡Bien jugado!' : '¡Mañana más!');
     ajustarEscena();
   }
 
   // ---------- carga
+  function tamPractica() { var t = leer('qfa:tam', 5); return t === 10 ? 10 : 5; }
+  function selectorTam() {
+    var t = tamPractica();
+    return '<div class="tam" role="group" aria-label="Tarjetas por partida">Tarjetas por partida:'
+      + [5, 10].map(function (n) { return '<button type="button" data-tam="' + n + '"' + (n === t ? ' aria-pressed="true"' : '') + '>' + n + '</button>'; }).join('') + '</div>';
+  }
+  function activarSelectorTam() {
+    tablero.querySelectorAll('[data-tam]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (+b.dataset.tam === tamPractica()) return;
+        guardar('qfa:tam', +b.dataset.tam); guardar('qfa:practica', null); seleccion = null; empezarPractica();
+      });
+    });
+  }
   function empezarPractica() {
     var guardada = leer('qfa:practica', null);
     if (guardada && guardada.ids) {
       tarjetas = guardada.ids.map(function (s) { return practica.filter(function (t) { return t.s === s; })[0]; }).filter(Boolean);
-      if (tarjetas.length === 6) { pintar(); return; }
+      if (tarjetas.length === guardada.ids.length && tarjetas.length >= 6) { pintar(); return; }
     }
+    var cuantas = tamPractica() + 1;
     var r = azar(Date.now() % 2147483648), elegidas = [], usados = {};
     var mezcla = practica.slice().sort(function () { return r() - 0.5; });
-    for (var i = 0; i < mezcla.length && elegidas.length < 6; i++) {
+    for (var i = 0; i < mezcla.length && elegidas.length < cuantas; i++) {
       if (!usados[mezcla[i].a]) { usados[mezcla[i].a] = 1; elegidas.push(mezcla[i]); }
     }
     var porAnio = elegidas.slice().sort(function (x, y) { return x.a - y.a; });
-    var ancla = porAnio[1 + Math.floor(r() * 4)];
+    var ancla = porAnio[1 + Math.floor(r() * (porAnio.length - 2))];
     tarjetas = [ancla].concat(elegidas.filter(function (t) { return t !== ancla; }));
     var st = nuevoEstado(); st.ids = tarjetas.map(function (t) { return t.s; });
     guardar('qfa:practica', st);

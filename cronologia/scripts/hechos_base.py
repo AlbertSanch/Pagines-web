@@ -350,8 +350,12 @@ H = [
      "Eurocopa 2024", None),
 ]
 
+import sys  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from hechos_inventos import H as INVENTOS  # noqa: E402
+
 salida = []
-for h in H:
+for h in H + INVENTOS:
     slug, anio, emoji, ambito, cat, tarjeta, pregunta, explica, wiki, texto_anio = h
     e = {"slug": slug, "anio": anio, "emoji": emoji, "ambito": ambito, "categoria": cat, "tarjeta": tarjeta,
          "pregunta": pregunta, "explicacion": explica, "wiki": wiki}
