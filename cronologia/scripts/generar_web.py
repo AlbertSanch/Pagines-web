@@ -227,7 +227,7 @@ def guardar(ruta, html):
 def pagina_portada():
     n = max(numero(HOY), 1)
     preguntas = [
-        ("¿Cómo se juega?", "Cada día hay seis momentos de la historia. El primero ya está en la línea del tiempo; los otros cinco te salen de uno en uno y tienes que tocar el hueco donde encajan: antes, entre medias o después de los que ya están."),
+        ("¿Cómo se juega?", "Cada día hay seis momentos de la historia. El primero ya está en la línea del tiempo; los otros cinco te salen de uno en uno y tienes que tocar el hueco donde encajan: antes, entre medias o después de los que ya están. Lo más reciente queda arriba y lo más antiguo, abajo."),
         ("¿Cuándo cambian los hechos?", "Cada día a las 00:00, hora peninsular española. Todos los jugadores tienen los mismos seis."),
         ("¿Puedo jugar a días anteriores?", 'Sí, en el <a href="/archivo/">archivo</a>. Y si te quedas con ganas, en el <a href="/practica/">modo práctica</a> te salen hechos al azar.'),
         ("¿De dónde salen los años?", 'Cada hecho está comprobado con su artículo de Wikipedia en español, que enlazamos en su ficha. Puedes verlos todos en <a href="/hechos/">hechos</a>.'),
@@ -241,7 +241,7 @@ def pagina_portada():
 {bloque_juego("diario")}
 <section class="stats-bloque" id="estadisticas-bloque" hidden><h2>Tus estadísticas</h2><div id="estadisticas"></div></section>
 <section class="texto"><h2>Cómo se juega</h2>
-<ol><li>Mira el primer hecho: ya está en la línea del tiempo, con su año.</li><li>Te sale otro hecho. Toca el hueco donde crees que va: antes, entre medias o después.</li>
+<ol><li>Mira el primer hecho: ya está en la línea del tiempo, con su año.</li><li>Te sale otro hecho. Toca el hueco donde crees que va: antes, entre medias o después. Lo más reciente queda arriba y lo más antiguo, abajo.</li>
 <li>Si aciertas, se queda en su sitio. Si fallas, salta a su lugar correcto y se marca en rojo.</li><li>Son cinco hechos por día. Al terminar verás todos los años y podrás compartir tu resultado sin destripar nada.</li></ol>
 <p>Más detalles en <a href="/como-se-juega/">cómo se juega</a>.</p></section>
 {faq_html(preguntas)}"""
