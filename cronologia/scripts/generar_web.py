@@ -33,7 +33,7 @@ WEB = RAIZ / "web"
 
 DOMINIO = "https://quefueantes.es"
 SITIO = "¿Qué fue antes?"
-LANZAMIENTO = dt.date(2026, 11, 23)  # día #1
+LANZAMIENTO = dt.date(2026, 11, 18)  # día #1
 DOMINIO_ACTIVO = True  # la dirección .pages.dev y www redirigen a quefueantes.es
 SAL = "qfa-31b7"  # la misma en plantilla/juego.js
 VERSION = "2"  # súbelo al cambiar plantilla/juego.js o style.css, para que los navegadores no usen la copia vieja
