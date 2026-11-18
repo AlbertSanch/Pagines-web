@@ -132,3 +132,13 @@ Las cifras de cualquier nombre salen en un segundo en cuantossellaman.es.
 **Pantalla:** Y hay 39 mujeres que se llaman NAVIDAD, con una edad media de 68 años.
 **Cierre:** ¿Conoces a alguna Belén o a algún Noel? · cuantossellaman.es
 **Descripción:** Los nombres más navideños de España 🎄 Datos del INE #navidad #nombres #reyesmagos #curiosidades #sabiasque
+
+## 20. «Jason y Lucía: los nombres de GTA 6» (publicar en la semana del lanzamiento, 19 nov 2026)
+
+**Pantalla (0–2 s):** LOS PROTAGONISTAS DE GTA 6 SE LLAMAN JASON Y LUCÍA
+**Pantalla:** En España: LUCÍA 222.807 · JASON 754 → por cada Jason hay casi 300 Lucías
+**Pantalla:** ¿Y los de otros GTA? MICHAEL 5.877 · NIKO 894 · FRANKLIN 646 · TOMMY 171 · CARL 112
+**Pantalla:** Y los Niko de España tienen de media 9 años. GTA IV salió en 2008. ¿Casualidad?
+**Cierre:** ¿Cómo se llamaría tu personaje? · cuantossellaman.es
+**Descripción:** ¿Cuántos se llaman como los protas de GTA? 🎮 Datos del INE #gta6 #gtavi #gta #jasonylucia #nombres #curiosidades
+Sin imágenes ni música de Rockstar: solo texto y datos propios.
