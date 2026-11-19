@@ -2279,5 +2279,1088 @@
       "1964",
       "1968"
     ]
+  },
+  {
+    "slug": "ana-frank",
+    "apartado": "mundial",
+    "fecha": "2026-12-16",
+    "nombre": "Ana Frank",
+    "alias": [
+      "Anne Frank",
+      "Ana",
+      "Annelies Frank"
+    ],
+    "ambito": "Historia",
+    "pistas": [
+      "Nació en 1929.",
+      "Fue escritora.",
+      "Pasó dos años escondida con su familia en un anexo secreto.",
+      "Nació en Fráncfort (Alemania) y vivió en Ámsterdam.",
+      "Su diario es uno de los libros más leídos sobre el Holocausto.",
+      "Sus iniciales son A. F."
+    ],
+    "resumen": "Niña judía que escribió un diario mientras se escondía de los nazis en Ámsterdam; su libro es uno de los más leídos del mundo.",
+    "biografia": [
+      "Annelies Marie Frank nació el 12 de junio de 1929 en Fráncfort (Alemania). Su familia, judía, se trasladó a Ámsterdam cuando los nazis llegaron al poder.",
+      "En 1942, cuando los alemanes ocupaban los Países Bajos, la familia se escondió en un anexo secreto detrás de la empresa de su padre. Allí Ana escribió su diario durante más de dos años.",
+      "En 1944 fueron descubiertos y deportados. Ana murió en el campo de concentración de Bergen-Belsen a principios de 1945. Su padre, el único superviviente de la familia, publicó el diario en 1947."
+    ],
+    "curiosidades": [
+      "El diario fue un regalo por su 13.º cumpleaños.",
+      "La casa donde se escondieron es hoy un museo en Ámsterdam."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Ana_Frank",
+    "comprobar": [
+      "1929",
+      "Fráncfort",
+      "Ámsterdam",
+      "Bergen-Belsen"
+    ]
+  },
+  {
+    "slug": "johann-sebastian-bach",
+    "apartado": "mundial",
+    "fecha": "2026-12-17",
+    "nombre": "Johann Sebastian Bach",
+    "alias": [
+      "Bach",
+      "J. S. Bach",
+      "Sebastian Bach"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1685.",
+      "Se dedicó a la música.",
+      "Fue organista y maestro de capilla en Leipzig.",
+      "Nació en Eisenach (Alemania).",
+      "Compuso los «Conciertos de Brandeburgo» y la «Tocata y fuga en re menor».",
+      "Sus iniciales son J. S. B."
+    ],
+    "resumen": "Compositor alemán del Barroco, uno de los más importantes de la historia de la música.",
+    "biografia": [
+      "Johann Sebastian Bach nació en 1685 en Eisenach, en una familia de músicos. Se quedó huérfano a los diez años y aprendió música con su hermano mayor.",
+      "Trabajó como organista y músico de corte en varias ciudades alemanas y, desde 1723, fue cantor en la iglesia de Santo Tomás de Leipzig, donde compuso gran parte de su obra.",
+      "Escribió cientos de obras: cantatas, conciertos, piezas para órgano y teclado. Murió en Leipzig en 1750, y su música se volvió a popularizar casi un siglo después."
+    ],
+    "curiosidades": [
+      "Tuvo veinte hijos, y varios fueron también compositores famosos.",
+      "En su época se le conocía más como organista que como compositor."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Johann_Sebastian_Bach",
+    "comprobar": [
+      "1685",
+      "Eisenach",
+      "Leipzig",
+      "1750"
+    ]
+  },
+  {
+    "slug": "amelia-earhart",
+    "apartado": "mundial",
+    "fecha": "2026-12-18",
+    "nombre": "Amelia Earhart",
+    "alias": [
+      "Earhart",
+      "Amelia"
+    ],
+    "ambito": "Aviación",
+    "pistas": [
+      "Nació en 1897.",
+      "Fue aviadora.",
+      "Fue la primera mujer en cruzar sola el Atlántico en avión.",
+      "Nació en Atchison, Kansas (Estados Unidos).",
+      "Desapareció en 1937 en el océano Pacífico intentando dar la vuelta al mundo.",
+      "Sus iniciales son A. E."
+    ],
+    "resumen": "Aviadora estadounidense, primera mujer que cruzó el Atlántico sola en avión; desapareció en 1937 sobre el Pacífico.",
+    "biografia": [
+      "Amelia Earhart nació el 24 de julio de 1897 en Atchison, Kansas. Se enamoró de la aviación tras subir a un avión en 1920 y en poco tiempo se compró uno propio.",
+      "En 1932 se convirtió en la primera mujer en cruzar el Atlántico en solitario, de Terranova a Irlanda del Norte. Batió muchos otros récords y defendió que las mujeres podían hacer cualquier trabajo.",
+      "En 1937 intentó dar la vuelta al mundo cerca del ecuador. El 2 de julio desapareció sobre el Pacífico con su navegante, Fred Noonan, y nunca se encontraron."
+    ],
+    "curiosidades": [
+      "Su desaparición sigue siendo uno de los grandes misterios de la aviación.",
+      "Recibió la Cruz de Vuelo Distinguido de Estados Unidos."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Amelia_Earhart",
+    "comprobar": [
+      "1897",
+      "Atchison",
+      "1932",
+      "1937"
+    ]
+  },
+  {
+    "slug": "thomas-edison",
+    "apartado": "mundial",
+    "fecha": "2026-12-19",
+    "nombre": "Thomas Edison",
+    "alias": [
+      "Edison",
+      "Thomas Alva Edison"
+    ],
+    "ambito": "Ciencia",
+    "pistas": [
+      "Nació en 1847.",
+      "Fue inventor y empresario.",
+      "Registró más de mil patentes.",
+      "Nació en Milan, Ohio (Estados Unidos).",
+      "Inventó el fonógrafo y una bombilla práctica para las casas.",
+      "Sus iniciales son T. E."
+    ],
+    "resumen": "Inventor estadounidense del fonógrafo y de una bombilla eléctrica duradera, con más de mil patentes.",
+    "biografia": [
+      "Thomas Alva Edison nació el 11 de febrero de 1847 en Milan, Ohio. Fue poco a la escuela: le enseñó su madre en casa. De joven trabajó como telegrafista.",
+      "En su laboratorio de Menlo Park inventó el fonógrafo en 1877 y, en 1879, una bombilla de filamento que duraba muchas horas. También montó centrales eléctricas para llevar la luz a las ciudades.",
+      "Trabajó en el cine, las baterías y muchos otros inventos. Murió en 1931 en West Orange (Nueva Jersey)."
+    ],
+    "curiosidades": [
+      "Le llamaban «el mago de Menlo Park».",
+      "De niño perdió gran parte de la audición."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Thomas_Alva_Edison",
+    "comprobar": [
+      "1847",
+      "Milan",
+      "1877",
+      "1879"
+    ]
+  },
+  {
+    "slug": "madre-teresa-de-calcuta",
+    "apartado": "mundial",
+    "fecha": "2026-12-20",
+    "nombre": "Madre Teresa de Calcuta",
+    "alias": [
+      "Madre Teresa",
+      "Teresa de Calcuta",
+      "Santa Teresa de Calcuta"
+    ],
+    "ambito": "Religión",
+    "pistas": [
+      "Nació en 1910.",
+      "Fue monja.",
+      "Ganó el Premio Nobel de la Paz en 1979.",
+      "Nació en Skopie (hoy Macedonia del Norte).",
+      "Dedicó su vida a los pobres de la India y fundó las Misioneras de la Caridad.",
+      "Se la conoce por el nombre de una ciudad india."
+    ],
+    "resumen": "Religiosa que dedicó su vida a los más pobres de Calcuta; Premio Nobel de la Paz y santa de la Iglesia católica.",
+    "biografia": [
+      "Agnes Gonxha Bojaxhiu nació el 26 de agosto de 1910 en Skopie. A los 18 años se hizo monja y viajó a la India, donde fue profesora en un colegio de Calcuta.",
+      "En 1950 fundó las Misioneras de la Caridad para atender a enfermos, moribundos y personas sin hogar. La congregación se extendió por todo el mundo.",
+      "Recibió el Premio Nobel de la Paz en 1979. Murió en Calcuta en 1997 y en 2016 fue proclamada santa."
+    ],
+    "curiosidades": [
+      "Su sari blanco con rayas azules se convirtió en el hábito de su congregación.",
+      "Pidió que el dinero del banquete del Nobel se diera a los pobres."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Teresa_de_Calcuta",
+    "comprobar": [
+      "1910",
+      "Skopie",
+      "1979",
+      "1997"
+    ]
+  },
+  {
+    "slug": "che-guevara",
+    "apartado": "mundial",
+    "fecha": "2026-12-21",
+    "nombre": "Che Guevara",
+    "alias": [
+      "Ernesto Guevara",
+      "Ernesto Che Guevara",
+      "El Che",
+      "Che"
+    ],
+    "ambito": "Política",
+    "pistas": [
+      "Nació en 1928.",
+      "Estudió Medicina.",
+      "Fue uno de los líderes de la Revolución cubana.",
+      "Nació en Rosario (Argentina).",
+      "Su foto con boina y estrella es una de las imágenes más reproducidas del mundo.",
+      "Su apodo es una expresión argentina."
+    ],
+    "resumen": "Médico y guerrillero argentino, líder de la Revolución cubana; murió en Bolivia en 1967.",
+    "biografia": [
+      "Ernesto Guevara nació el 14 de junio de 1928 en Rosario (Argentina). Estudió Medicina en Buenos Aires y recorrió Sudamérica en moto, un viaje que le marcó.",
+      "En México conoció a Fidel Castro y se unió a su guerrilla. Tras la victoria de la Revolución cubana en 1959 fue ministro de Industria y presidente del Banco Nacional de Cuba.",
+      "Dejó Cuba para extender la guerrilla a otros países. Fue capturado y ejecutado en Bolivia el 9 de octubre de 1967."
+    ],
+    "curiosidades": [
+      "Su apodo viene de la palabra «che», muy usada en Argentina para llamar a alguien.",
+      "La película «Diarios de motocicleta» cuenta su viaje por Sudamérica."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Che_Guevara",
+    "comprobar": [
+      "1928",
+      "Rosario",
+      "1959",
+      "1967"
+    ]
+  },
+  {
+    "slug": "kobe-bryant",
+    "apartado": "mundial",
+    "fecha": "2026-12-22",
+    "nombre": "Kobe Bryant",
+    "alias": [
+      "Kobe",
+      "Bryant"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1978.",
+      "Fue jugador de baloncesto.",
+      "Ganó cinco anillos de la NBA.",
+      "Nació en Filadelfia (Estados Unidos).",
+      "Jugó toda su carrera en Los Angeles Lakers con los números 8 y 24.",
+      "Sus iniciales son K. B."
+    ],
+    "resumen": "Estrella de Los Angeles Lakers, cinco veces campeón de la NBA y doble campeón olímpico.",
+    "biografia": [
+      "Kobe Bryant nació el 23 de agosto de 1978 en Filadelfia. Pasó parte de su infancia en Italia, donde jugaba su padre, también jugador de baloncesto.",
+      "Saltó del instituto a la NBA en 1996 y jugó sus veinte temporadas en Los Angeles Lakers. Ganó cinco anillos y anotó 81 puntos en un partido, la segunda mejor marca de la historia.",
+      "Ganó el oro olímpico en 2008 y 2012. Murió el 26 de enero de 2020 en un accidente de helicóptero junto a su hija Gianna."
+    ],
+    "curiosidades": [
+      "Hablaba italiano con fluidez por su infancia en Italia.",
+      "Ganó un Óscar por el cortometraje de animación «Dear Basketball»."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Kobe_Bryant",
+    "comprobar": [
+      "1978",
+      "Filadelfia",
+      "Lakers",
+      "2020"
+    ]
+  },
+  {
+    "slug": "zinedine-zidane",
+    "apartado": "mundial",
+    "fecha": "2026-12-23",
+    "nombre": "Zinedine Zidane",
+    "alias": [
+      "Zidane",
+      "Zizou"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1972.",
+      "Es futbolista y entrenador.",
+      "Ganó el Balón de Oro en 1998.",
+      "Nació en Marsella (Francia).",
+      "Marcó dos goles de cabeza en la final del Mundial de 1998 y ganó tres Champions seguidas como entrenador del Real Madrid.",
+      "Le llaman «Zizou»."
+    ],
+    "resumen": "Mediapunta francés, campeón del mundo en 1998, y entrenador del Real Madrid de las tres Champions seguidas.",
+    "biografia": [
+      "Zinedine Zidane nació el 23 de junio de 1972 en Marsella, hijo de inmigrantes argelinos. Debutó en el Cannes y triunfó en el Burdeos y la Juventus.",
+      "Con Francia ganó el Mundial de 1998, con dos goles en la final contra Brasil, y la Eurocopa de 2000. En 2001 fichó por el Real Madrid, donde marcó una famosa volea en la final de la Champions de 2002.",
+      "Como entrenador del Real Madrid ganó tres Ligas de Campeones seguidas, de 2016 a 2018, algo que nadie había logrado."
+    ],
+    "curiosidades": [
+      "Se retiró en la final del Mundial de 2006, expulsado por un cabezazo a Materazzi.",
+      "Ganó el Balón de Oro en 1998."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Zinedine_Zidane",
+    "comprobar": [
+      "1972",
+      "Marsella",
+      "1998",
+      "2002"
+    ]
+  },
+  {
+    "slug": "lady-gaga",
+    "apartado": "mundial",
+    "fecha": "2026-12-24",
+    "nombre": "Lady Gaga",
+    "alias": [
+      "Gaga",
+      "Stefani Germanotta"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1986.",
+      "Es cantante y actriz.",
+      "Ganó un Óscar a la mejor canción por «Shallow».",
+      "Nació en Nueva York (Estados Unidos).",
+      "Se hizo famosa con «Just Dance» y «Poker Face» y vistió un vestido de carne.",
+      "Su nombre artístico viene de una canción de Queen."
+    ],
+    "resumen": "Cantante y actriz estadounidense de «Poker Face» y «Shallow», famosa por su estilo extravagante.",
+    "biografia": [
+      "Stefani Joanne Angelina Germanotta nació el 28 de marzo de 1986 en Nueva York. Aprendió piano de niña y empezó a actuar en clubes de la ciudad.",
+      "En 2008 publicó su primer disco, con los éxitos «Just Dance» y «Poker Face». Sus vestuarios imposibles, como un vestido hecho de carne, la hicieron mundialmente famosa.",
+      "También triunfó como actriz en «Ha nacido una estrella» (2018), por cuya canción «Shallow» ganó el Óscar."
+    ],
+    "curiosidades": [
+      "Su nombre artístico se inspira en la canción «Radio Ga Ga» de Queen.",
+      "Ha ganado más de una decena de premios Grammy."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Lady_Gaga",
+    "comprobar": [
+      "1986",
+      "Nueva York",
+      "Poker Face",
+      "Shallow"
+    ]
+  },
+  {
+    "slug": "madonna",
+    "apartado": "mundial",
+    "fecha": "2026-12-25",
+    "nombre": "Madonna",
+    "alias": [
+      "Madonna Ciccone",
+      "Madonna Louise Ciccone"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1958.",
+      "Es cantante.",
+      "Es una de las artistas que más discos ha vendido de la historia.",
+      "Nació en Bay City, Michigan (Estados Unidos).",
+      "Se la conoce como la «reina del pop» por éxitos como «Like a Virgin».",
+      "Se la conoce solo por su nombre de pila."
+    ],
+    "resumen": "Cantante estadounidense, la «reina del pop», autora de «Like a Virgin» y «La isla bonita».",
+    "biografia": [
+      "Madonna Louise Ciccone nació el 16 de agosto de 1958 en Bay City, Michigan. Estudió danza y en 1978 se fue a Nueva York con muy poco dinero para triunfar.",
+      "En 1983 publicó su primer disco y al año siguiente «Like a Virgin» la convirtió en una estrella mundial. Siguieron éxitos como «Material Girl», «La isla bonita» o «Vogue».",
+      "Se ha reinventado muchas veces y es la artista femenina con más discos vendidos según el Libro Guinness."
+    ],
+    "curiosidades": [
+      "Protagonizó la película «Evita» (1996).",
+      "Su madre, que murió cuando ella tenía 5 años, también se llamaba Madonna."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Madonna",
+    "comprobar": [
+      "1958",
+      "Bay City",
+      "Like a Virgin",
+      "Evita"
+    ]
+  },
+  {
+    "slug": "bill-gates",
+    "apartado": "mundial",
+    "fecha": "2026-12-26",
+    "nombre": "Bill Gates",
+    "alias": [
+      "Gates",
+      "William Gates"
+    ],
+    "ambito": "Tecnología",
+    "pistas": [
+      "Nació en 1955.",
+      "Es empresario.",
+      "Dejó la universidad de Harvard para crear su empresa.",
+      "Nació en Seattle (Estados Unidos).",
+      "Fundó Microsoft con Paul Allen y popularizó Windows.",
+      "Sus iniciales son B. G."
+    ],
+    "resumen": "Cofundador de Microsoft, la empresa de Windows, y uno de los hombres más ricos del mundo.",
+    "biografia": [
+      "William Henry Gates III nació el 28 de octubre de 1955 en Seattle. Empezó a programar en el colegio y entró en la Universidad de Harvard, que dejó sin terminar.",
+      "En 1975 fundó Microsoft con su amigo Paul Allen. Su sistema MS-DOS y, después, Windows acabaron en la mayoría de los ordenadores del mundo.",
+      "Fue durante años el hombre más rico del mundo. Con su fundación dedica gran parte de su fortuna a la salud, las vacunas y la lucha contra la pobreza."
+    ],
+    "curiosidades": [
+      "De pequeño era tan buen programador que su colegio le encargó el programa de horarios.",
+      "Harvard le dio un título honorífico en 2007, décadas después de dejarla."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Bill_Gates",
+    "comprobar": [
+      "1955",
+      "Seattle",
+      "1975",
+      "Microsoft"
+    ]
+  },
+  {
+    "slug": "mark-zuckerberg",
+    "apartado": "mundial",
+    "fecha": "2026-12-27",
+    "nombre": "Mark Zuckerberg",
+    "alias": [
+      "Zuckerberg"
+    ],
+    "ambito": "Tecnología",
+    "pistas": [
+      "Nació en 1984.",
+      "Es programador y empresario.",
+      "Creó una red social cuando estudiaba en Harvard.",
+      "Nació en White Plains, Nueva York (Estados Unidos).",
+      "Fundó Facebook y después compró Instagram y WhatsApp.",
+      "Sus iniciales son M. Z."
+    ],
+    "resumen": "Creador de Facebook y dueño de Meta, la empresa de Instagram y WhatsApp.",
+    "biografia": [
+      "Mark Zuckerberg nació el 14 de mayo de 1984 en White Plains (Nueva York). Programaba desde niño y entró en la Universidad de Harvard para estudiar Informática y Psicología.",
+      "En febrero de 2004 lanzó desde su habitación de estudiante Facebook, una red para los alumnos de Harvard que en pocos años se abrió a todo el mundo.",
+      "Su empresa compró Instagram en 2012 y WhatsApp en 2014. En 2021 la rebautizó como Meta."
+    ],
+    "curiosidades": [
+      "La película «La red social» (2010) cuenta cómo creó Facebook.",
+      "Dejó Harvard sin terminar la carrera."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Mark_Zuckerberg",
+    "comprobar": [
+      "1984",
+      "White Plains",
+      "2004",
+      "Meta"
+    ]
+  },
+  {
+    "slug": "leonardo-dicaprio",
+    "apartado": "mundial",
+    "fecha": "2026-12-28",
+    "nombre": "Leonardo DiCaprio",
+    "alias": [
+      "DiCaprio",
+      "Leo DiCaprio"
+    ],
+    "ambito": "Cine",
+    "pistas": [
+      "Nació en 1974.",
+      "Es actor.",
+      "Ganó el Óscar al mejor actor por «El renacido».",
+      "Nació en Los Ángeles (Estados Unidos).",
+      "Protagonizó «Titanic» junto a Kate Winslet.",
+      "Sus iniciales son L. D."
+    ],
+    "resumen": "Actor estadounidense de «Titanic», «Origen» y «El renacido», por la que ganó el Óscar.",
+    "biografia": [
+      "Leonardo DiCaprio nació el 11 de noviembre de 1974 en Los Ángeles. Empezó en anuncios y series de televisión y logró su primera nominación al Óscar con 19 años.",
+      "«Titanic» (1997) lo convirtió en una estrella mundial. Después trabajó con directores como Martin Scorsese en películas como «El lobo de Wall Street».",
+      "Tras varias nominaciones, ganó el Óscar al mejor actor en 2016 por «El renacido». Es conocido también por su activismo contra el cambio climático."
+    ],
+    "curiosidades": [
+      "Su nombre se debe a que su madre notó que se movía mientras miraba un cuadro de Leonardo da Vinci.",
+      "Ganó el Óscar más de veinte años después de su primera nominación."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Leonardo_DiCaprio",
+    "comprobar": [
+      "1974",
+      "Los Ángeles",
+      "Titanic",
+      "El renacido"
+    ]
+  },
+  {
+    "slug": "tom-hanks",
+    "apartado": "mundial",
+    "fecha": "2026-12-29",
+    "nombre": "Tom Hanks",
+    "alias": [
+      "Hanks",
+      "Thomas Hanks"
+    ],
+    "ambito": "Cine",
+    "pistas": [
+      "Nació en 1956.",
+      "Es actor.",
+      "Ganó dos Óscar seguidos al mejor actor.",
+      "Nació en Concord, California (Estados Unidos).",
+      "Protagonizó «Forrest Gump» y puso la voz a Woody en «Toy Story».",
+      "Sus iniciales son T. H."
+    ],
+    "resumen": "Actor estadounidense de «Forrest Gump», «Náufrago» y «Salvar al soldado Ryan», con dos Óscar.",
+    "biografia": [
+      "Tom Hanks nació el 9 de julio de 1956 en Concord, California. Empezó en el teatro y en comedias como «Big» (1988).",
+      "Ganó el Óscar al mejor actor dos años seguidos: por «Philadelphia» (1993) y por «Forrest Gump» (1994). Solo otro actor lo había conseguido antes.",
+      "Después protagonizó «Salvar al soldado Ryan», «Náufrago» o «Atrápame si puedes», y puso la voz al vaquero Woody en «Toy Story»."
+    ],
+    "curiosidades": [
+      "En «Náufrago» su compañero era un balón de voleibol llamado Wilson.",
+      "Colecciona máquinas de escribir antiguas."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Tom_Hanks",
+    "comprobar": [
+      "1956",
+      "Concord",
+      "Forrest Gump",
+      "Toy Story"
+    ]
+  },
+  {
+    "slug": "j-k-rowling",
+    "apartado": "mundial",
+    "fecha": "2026-12-30",
+    "nombre": "J. K. Rowling",
+    "alias": [
+      "JK Rowling",
+      "Rowling",
+      "Joanne Rowling"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1965.",
+      "Es escritora.",
+      "Su primer libro lo rechazaron varias editoriales.",
+      "Nació en Yate (Inglaterra).",
+      "Escribió la saga de Harry Potter.",
+      "Firma con sus iniciales: J. K."
+    ],
+    "resumen": "Escritora británica, autora de la saga de Harry Potter.",
+    "biografia": [
+      "Joanne Rowling nació el 31 de julio de 1965 en Yate, cerca de Bristol (Inglaterra). Estudió Francés y Filología Clásica y trabajó como profesora de inglés en Portugal.",
+      "La idea de Harry Potter le llegó en un tren en 1990. Escribió el primer libro como madre sola y con poco dinero; tras varios rechazos, se publicó en 1997.",
+      "Los siete libros de la saga se han traducido a decenas de idiomas, han vendido cientos de millones de ejemplares y se convirtieron en películas."
+    ],
+    "curiosidades": [
+      "La «K» de su firma viene de Kathleen, el nombre de su abuela.",
+      "Escribió parte del primer libro en cafeterías de Edimburgo."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/J._K._Rowling",
+    "comprobar": [
+      "1965",
+      "Yate",
+      "1997",
+      "Harry Potter"
+    ]
+  },
+  {
+    "slug": "miguel-angel",
+    "apartado": "mundial",
+    "fecha": "2026-12-31",
+    "nombre": "Miguel Ángel",
+    "alias": [
+      "Michelangelo",
+      "Miguel Ángel Buonarroti",
+      "Buonarroti"
+    ],
+    "ambito": "Arte",
+    "pistas": [
+      "Nació en 1475.",
+      "Fue escultor, pintor y arquitecto.",
+      "Diseñó la cúpula de la basílica de San Pedro.",
+      "Nació en Caprese (Italia).",
+      "Esculpió el David y pintó el techo de la Capilla Sixtina.",
+      "Se le conoce por sus dos nombres de pila."
+    ],
+    "resumen": "Artista del Renacimiento italiano, autor del David y de los frescos de la Capilla Sixtina.",
+    "biografia": [
+      "Michelangelo Buonarroti nació el 6 de marzo de 1475 en Caprese, cerca de Florencia. De joven aprendió en el taller de un pintor y en el jardín de esculturas de los Médici.",
+      "Con poco más de 20 años esculpió la Piedad del Vaticano, y en 1504 terminó el David, de más de cinco metros. Entre 1508 y 1512 pintó el techo de la Capilla Sixtina.",
+      "Años después pintó el Juicio Final en la misma capilla y diseñó la cúpula de San Pedro. Murió en Roma en 1564, con 88 años."
+    ],
+    "curiosidades": [
+      "Pintó el techo de la Capilla Sixtina subido a un andamio durante cuatro años.",
+      "La Piedad es la única obra que firmó."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Miguel_Ángel",
+    "comprobar": [
+      "1475",
+      "Caprese",
+      "David",
+      "Capilla Sixtina"
+    ]
+  },
+  {
+    "slug": "kylian-mbappe",
+    "apartado": "mundial",
+    "fecha": "2027-01-01",
+    "nombre": "Kylian Mbappé",
+    "alias": [
+      "Mbappé",
+      "Mbappe",
+      "Kylian Mbappe"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1998.",
+      "Es futbolista.",
+      "Marcó un triplete en una final del Mundial y aun así la perdió.",
+      "Nació en París (Francia).",
+      "Fue campeón del mundo con Francia en 2018 y fichó por el Real Madrid.",
+      "Sus iniciales son K. M."
+    ],
+    "resumen": "Delantero francés, campeón del mundo en 2018 y estrella del Real Madrid.",
+    "biografia": [
+      "Kylian Mbappé nació el 20 de diciembre de 1998 en París y creció en Bondy, a las afueras de la ciudad. Debutó muy joven en el Mónaco.",
+      "En 2017 fichó por el París Saint-Germain y en 2018 ganó el Mundial de Rusia con Francia, marcando en la final con solo 19 años.",
+      "En la final del Mundial de 2022 marcó tres goles contra Argentina, pero Francia perdió en los penaltis. En 2024 fichó por el Real Madrid."
+    ],
+    "curiosidades": [
+      "Fue el segundo adolescente que marcaba en una final del Mundial, después de Pelé.",
+      "Es uno de los delanteros más rápidos del mundo."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Kylian_Mbappé",
+    "comprobar": [
+      "1998",
+      "París",
+      "Bondy",
+      "Real Madrid"
+    ]
+  },
+  {
+    "slug": "rihanna",
+    "apartado": "mundial",
+    "fecha": "2027-01-02",
+    "nombre": "Rihanna",
+    "alias": [
+      "Robyn Rihanna Fenty",
+      "Robyn Fenty"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1988.",
+      "Es cantante y empresaria.",
+      "Creó una marca de maquillaje con decenas de tonos de piel.",
+      "Nació en Barbados.",
+      "Es famosa por canciones como «Umbrella» y «Diamonds».",
+      "Se la conoce por su segundo nombre."
+    ],
+    "resumen": "Cantante de Barbados de «Umbrella» y «Diamonds», también empresaria del maquillaje.",
+    "biografia": [
+      "Robyn Rihanna Fenty nació el 20 de febrero de 1988 en Saint Michael (Barbados). Con 16 años un productor la descubrió y se fue a Estados Unidos.",
+      "En 2007 «Umbrella» la convirtió en una estrella mundial. Siguieron éxitos como «Diamonds», «We Found Love» o «Work».",
+      "En 2017 lanzó su marca de maquillaje Fenty Beauty, que la hizo multimillonaria."
+    ],
+    "curiosidades": [
+      "Barbados la nombró heroína nacional en 2021.",
+      "Es una de las artistas con más canciones número uno en Estados Unidos."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Rihanna",
+    "comprobar": [
+      "1988",
+      "Barbados",
+      "Umbrella",
+      "Fenty"
+    ]
+  },
+  {
+    "slug": "frederic-chopin",
+    "apartado": "mundial",
+    "fecha": "2027-01-03",
+    "nombre": "Frédéric Chopin",
+    "alias": [
+      "Chopin",
+      "Federico Chopin"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1810.",
+      "Fue pianista y compositor.",
+      "Vivió en Mallorca un invierno con la escritora George Sand.",
+      "Nació en Żelazowa Wola (Polonia).",
+      "Compuso sobre todo para piano: nocturnos, valses y polonesas.",
+      "Sus iniciales son F. C."
+    ],
+    "resumen": "Compositor y pianista polaco del Romanticismo, maestro de la música para piano.",
+    "biografia": [
+      "Frédéric Chopin nació en 1810 en Żelazowa Wola, cerca de Varsovia. Fue un niño prodigio: daba conciertos con siete años.",
+      "En 1830 dejó Polonia y se instaló en París, donde se hizo famoso como pianista y profesor. Compuso casi toda su obra para piano: nocturnos, estudios, valses, mazurcas y polonesas.",
+      "Tuvo una relación con la escritora George Sand, con la que pasó el invierno de 1838 en la cartuja de Valldemossa (Mallorca). Murió en París en 1849, con 39 años."
+    ],
+    "curiosidades": [
+      "Su corazón está enterrado en una iglesia de Varsovia.",
+      "En Valldemossa se conserva la celda donde vivió."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Frédéric_Chopin",
+    "comprobar": [
+      "1810",
+      "Żelazowa Wola",
+      "Mallorca",
+      "1849"
+    ]
+  },
+  {
+    "slug": "malala-yousafzai",
+    "apartado": "mundial",
+    "fecha": "2027-01-04",
+    "nombre": "Malala Yousafzai",
+    "alias": [
+      "Malala",
+      "Yousafzai"
+    ],
+    "ambito": "Activismo",
+    "pistas": [
+      "Nació en 1997.",
+      "Es activista.",
+      "Es la persona más joven que ha ganado un Premio Nobel.",
+      "Nació en Mingora (Pakistán).",
+      "Sobrevivió a un disparo por defender que las niñas pudieran ir al colegio.",
+      "Se la conoce por su nombre de pila."
+    ],
+    "resumen": "Activista paquistaní por la educación de las niñas y Premio Nobel de la Paz más joven de la historia.",
+    "biografia": [
+      "Malala Yousafzai nació el 12 de julio de 1997 en Mingora, en el valle de Swat (Pakistán). Su padre dirigía una escuela.",
+      "Con 11 años empezó a escribir un blog contando cómo los talibanes prohibían ir a clase a las niñas. En 2012 un talibán le disparó en la cabeza en el autobús escolar.",
+      "Sobrevivió tras ser operada en el Reino Unido y siguió con su lucha. En 2014, con 17 años, ganó el Premio Nobel de la Paz."
+    ],
+    "curiosidades": [
+      "La ONU declaró el 12 de julio, su cumpleaños, Día de Malala.",
+      "Estudió en la Universidad de Oxford."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Malala_Yousafzai",
+    "comprobar": [
+      "1997",
+      "Mingora",
+      "2012",
+      "2014"
+    ]
+  },
+  {
+    "slug": "charles-dickens",
+    "apartado": "mundial",
+    "fecha": "2027-01-05",
+    "nombre": "Charles Dickens",
+    "alias": [
+      "Dickens"
+    ],
+    "ambito": "Literatura",
+    "pistas": [
+      "Nació en 1812.",
+      "Fue escritor.",
+      "De niño tuvo que trabajar en una fábrica de betún.",
+      "Nació en Portsmouth (Inglaterra).",
+      "Escribió «Oliver Twist» y «Cuento de Navidad», con el avaro Scrooge.",
+      "Sus iniciales son C. D."
+    ],
+    "resumen": "Novelista británico de «Oliver Twist» y «Cuento de Navidad», que retrató la pobreza de la época victoriana.",
+    "biografia": [
+      "Charles Dickens nació el 7 de febrero de 1812 en Portsmouth. Cuando su padre fue a la cárcel por deudas, él tuvo que trabajar con 12 años en una fábrica.",
+      "Empezó como periodista y triunfó con novelas publicadas por entregas, como «Oliver Twist» u «David Copperfield», que denunciaban la pobreza y el trabajo infantil.",
+      "En 1843 publicó «Cuento de Navidad», la historia del avaro Ebenezer Scrooge. Murió en 1870 y está enterrado en la abadía de Westminster."
+    ],
+    "curiosidades": [
+      "«Cuento de Navidad» lo escribió en unas seis semanas.",
+      "Su cara salió en los billetes de 10 libras."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Charles_Dickens",
+    "comprobar": [
+      "1812",
+      "Portsmouth",
+      "1843",
+      "1870"
+    ]
+  },
+  {
+    "slug": "steven-spielberg",
+    "apartado": "mundial",
+    "fecha": "2027-01-06",
+    "nombre": "Steven Spielberg",
+    "alias": [
+      "Spielberg"
+    ],
+    "ambito": "Cine",
+    "pistas": [
+      "Nació en 1946.",
+      "Es director de cine.",
+      "Ganó el Óscar al mejor director por «La lista de Schindler».",
+      "Nació en Cincinnati, Ohio (Estados Unidos).",
+      "Dirigió «Tiburón», «E.T., el extraterrestre» y «Parque Jurásico».",
+      "Sus iniciales son S. S."
+    ],
+    "resumen": "Director estadounidense de «Tiburón», «E.T.», «Indiana Jones» y «Parque Jurásico».",
+    "biografia": [
+      "Steven Spielberg nació el 18 de diciembre de 1946 en Cincinnati. Rodaba películas caseras desde niño con la cámara de su padre.",
+      "«Tiburón» (1975) fue un éxito enorme y se considera el primer gran «taquillazo» de verano. Después llegaron «En busca del arca perdida», «E.T.» (1982) y «Parque Jurásico» (1993).",
+      "Ganó el Óscar al mejor director por «La lista de Schindler» (1993) y por «Salvar al soldado Ryan» (1998)."
+    ],
+    "curiosidades": [
+      "El tiburón mecánico de «Tiburón» se averiaba tanto que casi no aparece en la película.",
+      "Cofundó el estudio DreamWorks."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Steven_Spielberg",
+    "comprobar": [
+      "1946",
+      "Cincinnati",
+      "Tiburón",
+      "Parque Jurásico"
+    ]
+  },
+  {
+    "slug": "ronaldinho",
+    "apartado": "mundial",
+    "fecha": "2027-01-07",
+    "nombre": "Ronaldinho",
+    "alias": [
+      "Ronaldinho Gaúcho",
+      "Ronaldo de Assis Moreira"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1980.",
+      "Fue futbolista.",
+      "Ganó el Balón de Oro en 2005.",
+      "Nació en Porto Alegre (Brasil).",
+      "En el Barcelona le aplaudió el estadio del Real Madrid tras un partido.",
+      "Su apodo significa «Ronaldito»."
+    ],
+    "resumen": "Futbolista brasileño, campeón del mundo en 2002 y Balón de Oro 2005 con el FC Barcelona.",
+    "biografia": [
+      "Ronaldo de Assis Moreira nació el 21 de marzo de 1980 en Porto Alegre (Brasil). Debutó en el Grêmio y jugó después en el París Saint-Germain.",
+      "Con Brasil ganó el Mundial de 2002. En 2003 fichó por el FC Barcelona, con el que ganó dos Ligas y la Champions de 2006.",
+      "En 2005 ganó el Balón de Oro, y ese año el público del Bernabéu le aplaudió tras marcar dos goles al Real Madrid."
+    ],
+    "curiosidades": [
+      "Siempre jugaba con una sonrisa, y eso le hizo muy querido.",
+      "Su hermano mayor también fue futbolista y fue su representante."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Ronaldinho",
+    "comprobar": [
+      "1980",
+      "Porto Alegre",
+      "2002",
+      "2005"
+    ]
+  },
+  {
+    "slug": "sigmund-freud",
+    "apartado": "mundial",
+    "fecha": "2027-01-08",
+    "nombre": "Sigmund Freud",
+    "alias": [
+      "Freud"
+    ],
+    "ambito": "Ciencia",
+    "pistas": [
+      "Nació en 1856.",
+      "Fue médico neurólogo.",
+      "Escribió «La interpretación de los sueños».",
+      "Nació en Příbor (hoy República Checa) y vivió en Viena.",
+      "Es el padre del psicoanálisis.",
+      "Sus iniciales son S. F."
+    ],
+    "resumen": "Médico austriaco, padre del psicoanálisis y autor de «La interpretación de los sueños».",
+    "biografia": [
+      "Sigmund Freud nació el 6 de mayo de 1856 en Příbor, entonces parte del Imperio austriaco. Su familia se trasladó a Viena, donde estudió Medicina.",
+      "Estudiando a pacientes con problemas nerviosos desarrolló el psicoanálisis, un método para tratar la mente hablando. En 1899 publicó «La interpretación de los sueños».",
+      "Sus ideas sobre el inconsciente cambiaron la psicología. En 1938, tras la anexión de Austria por los nazis, huyó a Londres, donde murió en 1939."
+    ],
+    "curiosidades": [
+      "En su consulta, los pacientes se tumbaban en un diván, que hoy está en un museo de Londres.",
+      "Expresiones como «acto fallido» vienen de sus teorías."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Sigmund_Freud",
+    "comprobar": [
+      "1856",
+      "Příbor",
+      "Viena",
+      "1939"
+    ]
+  },
+  {
+    "slug": "rosa-parks",
+    "apartado": "mundial",
+    "fecha": "2027-01-09",
+    "nombre": "Rosa Parks",
+    "alias": [
+      "Parks"
+    ],
+    "ambito": "Activismo",
+    "pistas": [
+      "Nació en 1913.",
+      "Fue costurera y activista.",
+      "Es conocida como «la madre del movimiento por los derechos civiles».",
+      "Nació en Tuskegee, Alabama (Estados Unidos).",
+      "En 1955 se negó a ceder su asiento del autobús a un pasajero blanco.",
+      "Sus iniciales son R. P."
+    ],
+    "resumen": "Activista afroamericana que en 1955 se negó a ceder su asiento en un autobús de Montgomery.",
+    "biografia": [
+      "Rosa Louise McCauley nació el 4 de febrero de 1913 en Tuskegee, Alabama. Creció en un país donde la ley separaba a negros y blancos en escuelas, tiendas y transportes.",
+      "El 1 de diciembre de 1955, en Montgomery, se negó a dejar su asiento a un hombre blanco y fue detenida. Su gesto provocó un boicot a los autobuses de la ciudad dirigido por Martin Luther King.",
+      "El boicot duró más de un año y terminó cuando el Tribunal Supremo prohibió la segregación en los autobuses. Murió en 2005."
+    ],
+    "curiosidades": [
+      "El autobús donde viajaba está hoy en un museo de Míchigan.",
+      "Fue la primera mujer cuyo cuerpo se veló en el Capitolio de Estados Unidos."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Rosa_Parks",
+    "comprobar": [
+      "1913",
+      "Tuskegee",
+      "1955",
+      "Montgomery"
+    ]
+  },
+  {
+    "slug": "aristoteles",
+    "apartado": "mundial",
+    "fecha": "2027-01-10",
+    "nombre": "Aristóteles",
+    "alias": [
+      "Aristoteles"
+    ],
+    "ambito": "Filosofía",
+    "pistas": [
+      "Nació en el 384 a. C.",
+      "Fue filósofo.",
+      "Fundó una escuela en Atenas llamada el Liceo.",
+      "Nació en Estagira (Grecia).",
+      "Fue discípulo de Platón y maestro de Alejandro Magno.",
+      "Su nombre empieza por A y es un filósofo griego."
+    ],
+    "resumen": "Filósofo de la antigua Grecia, discípulo de Platón y maestro de Alejandro Magno.",
+    "biografia": [
+      "Aristóteles nació en el año 384 a. C. en Estagira, en el norte de Grecia. Con 17 años fue a Atenas a estudiar en la Academia de Platón, donde pasó unos veinte años.",
+      "El rey Filipo II de Macedonia lo contrató como maestro de su hijo, el futuro Alejandro Magno.",
+      "De vuelta en Atenas fundó el Liceo. Escribió sobre lógica, ética, política, biología y física, y sus ideas influyeron en el pensamiento durante siglos. Murió en el 322 a. C."
+    ],
+    "curiosidades": [
+      "Sus alumnos eran llamados «peripatéticos» porque daba clase paseando.",
+      "Clasificó cientos de animales y es considerado uno de los padres de la biología."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Aristóteles",
+    "comprobar": [
+      "384",
+      "Estagira",
+      "Liceo",
+      "Platón"
+    ]
+  },
+  {
+    "slug": "michael-schumacher",
+    "apartado": "mundial",
+    "fecha": "2027-01-11",
+    "nombre": "Michael Schumacher",
+    "alias": [
+      "Schumacher",
+      "Schumi"
+    ],
+    "ambito": "Deporte",
+    "pistas": [
+      "Nació en 1969.",
+      "Fue piloto.",
+      "Ganó siete campeonatos del mundo.",
+      "Nació en Hürth (Alemania).",
+      "Ganó cinco títulos seguidos de Fórmula 1 con Ferrari.",
+      "Le llamaban «Schumi»."
+    ],
+    "resumen": "Piloto alemán de Fórmula 1, siete veces campeón del mundo, cinco de ellas con Ferrari.",
+    "biografia": [
+      "Michael Schumacher nació el 3 de enero de 1969 en Hürth (Alemania). Su padre llevaba un circuito de karts, donde empezó a correr de niño.",
+      "Debutó en la Fórmula 1 en 1991 y ganó sus dos primeros títulos con Benetton, en 1994 y 1995. En 1996 fichó por Ferrari.",
+      "Con Ferrari ganó cinco títulos seguidos, de 2000 a 2004, y llegó a siete mundiales. En diciembre de 2013 sufrió un grave accidente de esquí."
+    ],
+    "curiosidades": [
+      "Ganó 91 Grandes Premios.",
+      "Su hijo Mick también llegó a la Fórmula 1."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Michael_Schumacher",
+    "comprobar": [
+      "1969",
+      "Hürth",
+      "Ferrari",
+      "2013"
+    ]
+  },
+  {
+    "slug": "gustave-eiffel",
+    "apartado": "mundial",
+    "fecha": "2027-01-12",
+    "nombre": "Gustave Eiffel",
+    "alias": [
+      "Eiffel"
+    ],
+    "ambito": "Ingeniería",
+    "pistas": [
+      "Nació en 1832.",
+      "Fue ingeniero.",
+      "Diseñó la estructura de hierro de la Estatua de la Libertad.",
+      "Nació en Dijon (Francia).",
+      "Su torre más famosa se construyó para la Exposición Universal de París de 1889.",
+      "Su apellido da nombre a un monumento."
+    ],
+    "resumen": "Ingeniero francés de la torre que lleva su nombre y de la estructura de la Estatua de la Libertad.",
+    "biografia": [
+      "Gustave Eiffel nació el 15 de diciembre de 1832 en Dijon. Se especializó en estructuras metálicas y construyó puentes y estaciones por todo el mundo.",
+      "Su empresa diseñó la estructura interior de hierro de la Estatua de la Libertad, inaugurada en Nueva York en 1886.",
+      "Para la Exposición Universal de París de 1889 construyó una torre de 300 metros, entonces la más alta del mundo. Murió en 1923."
+    ],
+    "curiosidades": [
+      "La torre Eiffel iba a desmontarse a los 20 años, pero se salvó por su uso como antena de radio.",
+      "Al principio muchos artistas de París la criticaron."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Gustave_Eiffel",
+    "comprobar": [
+      "1832",
+      "Dijon",
+      "1889",
+      "Libertad"
+    ]
+  },
+  {
+    "slug": "frank-sinatra",
+    "apartado": "mundial",
+    "fecha": "2027-01-13",
+    "nombre": "Frank Sinatra",
+    "alias": [
+      "Sinatra",
+      "La Voz"
+    ],
+    "ambito": "Música",
+    "pistas": [
+      "Nació en 1915.",
+      "Fue cantante y actor.",
+      "Ganó un Óscar como actor de reparto por «De aquí a la eternidad».",
+      "Nació en Hoboken, Nueva Jersey (Estados Unidos).",
+      "Cantó «My Way» y «New York, New York».",
+      "Le llamaban «La Voz»."
+    ],
+    "resumen": "Cantante y actor estadounidense de «My Way» y «New York, New York», apodado «La Voz».",
+    "biografia": [
+      "Frank Sinatra nació el 12 de diciembre de 1915 en Hoboken (Nueva Jersey), hijo de inmigrantes italianos. Empezó cantando con orquestas de swing.",
+      "En los años 40 era un ídolo de las adolescentes. En 1953 ganó el Óscar al mejor actor de reparto por «De aquí a la eternidad».",
+      "Grabó cientos de canciones, como «My Way» o «New York, New York», y vendió decenas de millones de discos. Murió en 1998."
+    ],
+    "curiosidades": [
+      "Sus ojos azules le valieron el apodo de «Ojos azules».",
+      "«My Way» es la adaptación de una canción francesa."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Frank_Sinatra",
+    "comprobar": [
+      "1915",
+      "Hoboken",
+      "My Way",
+      "1998"
+    ]
+  },
+  {
+    "slug": "diana-de-gales",
+    "apartado": "mundial",
+    "fecha": "2027-01-14",
+    "nombre": "Diana de Gales",
+    "alias": [
+      "Lady Di",
+      "Diana",
+      "Princesa Diana",
+      "Diana Spencer"
+    ],
+    "ambito": "Realeza",
+    "pistas": [
+      "Nació en 1961.",
+      "Fue princesa.",
+      "Fue muy conocida por su labor contra las minas antipersona.",
+      "Nació en Sandringham (Inglaterra).",
+      "Se casó en 1981 con el príncipe Carlos y era la madre de los príncipes Guillermo y Enrique.",
+      "La llamaban «Lady Di»."
+    ],
+    "resumen": "Princesa británica, primera esposa del rey Carlos III y madre de los príncipes Guillermo y Enrique.",
+    "biografia": [
+      "Diana Spencer nació el 1 de julio de 1961 en Sandringham (Inglaterra), en una familia aristocrática. Antes de casarse trabajó en una guardería de Londres.",
+      "El 29 de julio de 1981 se casó con el príncipe Carlos en una boda que vieron cientos de millones de personas. Tuvieron dos hijos, Guillermo y Enrique. Se divorciaron en 1996.",
+      "Se volcó en causas benéficas, como la lucha contra el sida y las minas antipersona. Murió el 31 de agosto de 1997 en un accidente de coche en París."
+    ],
+    "curiosidades": [
+      "Se la llamó «la princesa del pueblo».",
+      "La canción «Candle in the Wind 1997» de Elton John, en su homenaje, es uno de los sencillos más vendidos de la historia."
+    ],
+    "fuente": "https://es.wikipedia.org/wiki/Diana_de_Gales",
+    "comprobar": [
+      "1961",
+      "Sandringham",
+      "1981",
+      "1997"
+    ]
   }
 ]
