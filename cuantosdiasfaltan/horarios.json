@@ -3731,15 +3731,24 @@ null
 },
 {
 "torneo": "Nitto ATP Finals",
-"utc": "2026-11-20T13:00Z",
+"utc": "2026-11-20T13:10Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Group Stage",
 "pista": "Inalpi Arena",
 "rival": "Flavio Cobolli",
 "descanso": false,
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+[
+6,
+4
+],
+[
+6,
+1
+]
+]
 }
 ],
 "sinner": [],
@@ -4043,9 +4052,9 @@ null
 "id": "187510",
 "gira": "ATP",
 "torneo": "Nitto ATP Finals",
-"utc": "2026-11-20T13:00Z",
+"utc": "2026-11-20T13:10Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Group Stage",
 "pista": "Inalpi Arena",
 "jugadores": [
@@ -4053,15 +4062,21 @@ null
 "id": "7602",
 "n": "Flavio Cobolli",
 "pais": "Italia",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+4,
+1
+]
 },
 {
 "id": "3782",
 "n": "Carlos Alcaraz",
 "pais": "España",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6
+]
 }
 ]
 },
@@ -4071,7 +4086,7 @@ null
 "torneo": "LP Open by IND",
 "utc": "2026-11-20T15:00Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Quarterfinal",
 "pista": "Center Court",
 "jugadores": [
@@ -4079,15 +4094,21 @@ null
 "id": "4546",
 "n": "Irene Burillo",
 "pais": "España",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+4,
+3
+]
 },
 {
 "id": "10676",
 "n": "Leyre Romero Gormaz",
 "pais": "España",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6
+]
 }
 ]
 },
@@ -4095,9 +4116,9 @@ null
 "id": "186800",
 "gira": "WTA",
 "torneo": "LP Open by IND",
-"utc": "2026-11-20T16:30Z",
+"utc": "2026-11-20T17:25Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Quarterfinal",
 "pista": "Center Court",
 "jugadores": [
@@ -4105,15 +4126,21 @@ null
 "id": "3042",
 "n": "Valeriya Strakhova",
 "pais": "Ucrania",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+4,
+2
+]
 },
 {
 "id": "4666",
 "n": "Lucia Bronzetti",
 "pais": "Italia",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6
+]
 }
 ]
 },
@@ -4251,23 +4278,23 @@ null
 "id": "186811",
 "gira": "WTA",
 "torneo": "LP Open by IND",
-"utc": "2026-11-21T05:00Z",
-"hora_valida": false,
+"utc": "2026-11-21T20:00Z",
+"hora_valida": true,
 "estado": "pre",
 "ronda": "Semifinal",
-"pista": "",
+"pista": "Center Court",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "4666",
+"n": "Lucia Bronzetti",
+"pais": "Italia",
 "gano": null,
 "sets": []
 },
 {
-"id": "-3",
-"n": "TBD",
-"pais": "",
+"id": "10676",
+"n": "Leyre Romero Gormaz",
+"pais": "España",
 "gano": null,
 "sets": []
 }
@@ -4277,11 +4304,11 @@ null
 "id": "186810",
 "gira": "WTA",
 "torneo": "LP Open by IND",
-"utc": "2026-11-21T05:00Z",
-"hora_valida": false,
+"utc": "2026-11-21T21:30Z",
+"hora_valida": true,
 "estado": "pre",
 "ronda": "Semifinal",
-"pista": "",
+"pista": "Center Court",
 "jugadores": [
 {
 "id": "-4",
@@ -5442,6 +5469,36 @@ null
 "2",
 "3"
 ]
+},
+{
+"id": "401936104",
+"utc": "2027-03-25T19:45Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Nations League",
+"local": "España",
+"visitante": "Francia",
+"en_casa": true,
+"estadio": "",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401936101",
+"utc": "2027-03-28T18:45Z",
+"hora_valida": true,
+"estado": "pre",
+"competicion": "UEFA Nations League",
+"local": "Francia",
+"visitante": "España",
+"en_casa": false,
+"estadio": "",
+"goles": [
+null,
+null
+]
 }
 ],
 "futbol_hoy": [
@@ -5451,8 +5508,8 @@ null
 "competicion": "Segunda División",
 "utc": "2026-11-20T19:30Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "FC Andorra",
 "visitante": "Leganés",
 "ids": [
@@ -5460,8 +5517,8 @@ null
 "17534"
 ],
 "goles": [
-"0",
-"0"
+"1",
+"3"
 ],
 "es": true
 },
@@ -5471,8 +5528,8 @@ null
 "competicion": "Bundesliga",
 "utc": "2026-11-20T19:30Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "in",
+"detalle": "69'",
 "local": "Bayern München",
 "visitante": "FC Cologne",
 "ids": [
@@ -5480,8 +5537,8 @@ null
 "122"
 ],
 "goles": [
-"0",
-"0"
+"1",
+"1"
 ],
 "es": false
 },
@@ -5491,8 +5548,8 @@ null
 "competicion": "Ligue 1",
 "utc": "2026-11-20T19:45Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "in",
+"detalle": "57'",
 "local": "Troyes",
 "visitante": "Le Havre AC",
 "ids": [
@@ -5500,8 +5557,8 @@ null
 "3236"
 ],
 "goles": [
-"0",
-"0"
+"1",
+"1"
 ],
 "es": false
 },
@@ -5511,8 +5568,8 @@ null
 "competicion": "LaLiga",
 "utc": "2026-11-20T20:00Z",
 "hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
+"estado": "post",
+"detalle": "F",
 "local": "Athletic Club",
 "visitante": "Espanyol",
 "ids": [
@@ -5521,7 +5578,7 @@ null
 ],
 "goles": [
 "0",
-"0"
+"1"
 ],
 "es": true
 },
@@ -7168,15 +7225,15 @@ null
 "id": "401882805",
 "utc": "2026-11-20T20:00Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "competicion": "LALIGA",
 "local": "Athletic Club",
 "visitante": "Espanyol",
 "en_casa": true,
 "estadio": "San Mamés",
 "goles": [
-null,
-null
+"0",
+"1"
 ]
 },
 {
