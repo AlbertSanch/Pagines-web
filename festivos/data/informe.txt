@@ -6,21 +6,6 @@ andalucia_2026_c3: corrige o añade 1 municipios: Loja
 andalucia_2026_mod: corrige o añade 6 municipios: Almogía, Campana, La, Escacena del Campo, Guaro, Molares, Los, Villaverde del Río
 aragon 2026: Ilche aparece dos veces en aragon_2026; se queda la primera
 aragon 2026 aragon_2026: 102 nombres sin municipio del INE (pedanías o variantes): Algayón, Anciles, Aneto, Arascués, Arbaniés, Artasona, Asque, Asín de Broto, Bacamorta, Belsué, Binaced - Valcarca, Blecua-Torres, Buera, Buera y Huerta de Vero, Buesa, Calasanz, Callén, Campillo, Cartuja de Monegros, Castejón de Arbaniés, Cerler, Cofita, Coscujuela de Fantova, Costean, Cuatrocorz, Curbe, El Tormillo, Ena, Enate, Eresué, Eriste, Escarrilla, Espluga, Estiche de Cinca, Fraella, Gabasa, Hoz y Costean (Hoz de Barbastro), Huerta de Vero, Isabena (La Puebla de Roda), La Masadera, Lacort, Laguarres, Las Colladas, Lascasas, Lascorz, Lastanosa, Liesa, Linas de Marcuello, Lupiñén-Ortilla (Lupiñen), Marcén, Monesma de San Juan, Monesma y Cajigar (Noguero), Monflorite-Lascasas (Monflorite), Montesa, Montesusin, Montmesa, Morilla, Morillo de Liena, Navarri, Nocito
-asturias 2026: COAÑA tiene 3 festivos locales en asturias_2026
-asturias 2026: GOZÓN tiene 3 festivos locales en asturias_2026
-asturias 2026: LAVIANA tiene 3 festivos locales en asturias_2026
-asturias 2026: LLANES tiene 5 festivos locales en asturias_2026
-asturias 2026: MIERES tiene 3 festivos locales en asturias_2026
-asturias 2026: MORCÍN tiene 3 festivos locales en asturias_2026
-asturias 2026: PILOÑA tiene 4 festivos locales en asturias_2026
-asturias 2026: PONGA tiene 3 festivos locales en asturias_2026
-asturias 2026: RIBADESELLA tiene 3 festivos locales en asturias_2026
-asturias 2026: RIOSA tiene 4 festivos locales en asturias_2026
-asturias 2026: SALAS tiene 3 festivos locales en asturias_2026
-asturias 2026: VALDÉS tiene 3 festivos locales en asturias_2026
-asturias 2026: VEGADEO tiene 3 festivos locales en asturias_2026
-asturias 2026: VILLAYÓN tiene 4 festivos locales en asturias_2026
-asturias 2026 asturias_2026: 15 nombres sin municipio del INE (pedanías o variantes): ABRES, ALTA, ASTURIAS, BAJA, CASARIEGO, MIRANDA, NALÓN, NARCEA, OSCOS, PEÑAMELLERA, REY AURELIO, SALIME
 cantabria 2026: fecha 3 noviembre sin municipio libre (línea 13)
 cantabria 2026: fecha 28 julio sin municipio libre (línea 14)
 cantabria 2026: fecha 2 diciembre sin municipio libre (línea 24)
@@ -131,6 +116,7 @@ castilla-y-leon 2026 cyl_palencia_2026: 24 nombres sin municipio del INE (pedan�
 castilla-y-leon 2026 cyl_salamanca_2026: 6 nombres sin municipio del INE (pedanías o variantes): BÓVEDA DE RIO ALMAR, CRISTÓBAL DE LA SIERRA, ESCUERNAVACAS, MASUECO DE LA RIBERA, PALACIOS RUBIOS, VENTOSA DE RÍO ALMAR
 castilla-y-leon 2026 cyl_salamanca_2026_c1: 1 nombres sin municipio del INE (pedanías o variantes): Publicación
 cyl_salamanca_2026_c1: corrige o añade 0 municipios: 
+!! 2026 asturias: los boletines dan 0 municipios y antes había 73; se conservan los 73 anteriores. Revisa la fuente.
 == 2026 andalucia: 764 de 786 municipios con fiestas locales
 == 2026 aragon: 456 de 731 municipios con fiestas locales
 == 2026 asturias: 73 de 78 municipios con fiestas locales
@@ -157,26 +143,6 @@ baleares 2027: Puigpunyent aparece dos veces en baleares_2027; se queda la prime
 baleares 2027: Santa Margalida aparece dos veces en baleares_2027; se queda la primera
 baleares 2027: Selva aparece dos veces en baleares_2027; se queda la primera
 baleares 2027 baleares_2027: 53 nombres sin municipio del INE (pedanías o variantes): ANEXO, Algaida y Randa, Biniali, Biniamar                                       Santa Tecla, Bunyola                              San Mateo, Caimari                                        Dijous Bo, Cala Ferrera, Cala Figuera, Cala d'Or, Calonge, Can Picafort                            Lunes de la Beata, Cardassar, Cas Concos, Ciutadella, Colònia de Sant Jordi, Colònia de Sant Pere, Dijous Bo, Día siguiente a la fiesta patronal de San, Es Capdellà, Es Llombards, Eulària i Puig d'en Valls, Fornells, Galilea, Illes Balears, Llucmajor                            San Miguel, Moscari, Orient, Palmanyola, Parroquia de Jesús, Parroquia de Sant Antoni, Parroquia de Sant Mateu, Parroquia de Sant Rafel, Parroquia de Santa Agnès, Parroquia de Santa Gertrudis, Parroquias de Sant Jordi de, Peralta, Pina, Port d'Andratx, Port des Canonge, Porto Cristo, Portocolom, Portopetro, S'Alqueria Blanca, S'Arracó, S'Horta, S'Illot, Sant Agustí des Vedrà, Sant Llorenç de Balàfia, Sant Miquel de Balansat, Sant Vicent de sa Cala, Son Carrió, Son Serra de Marina
-asturias 2027: ALLANDE tiene 3 festivos locales en asturias_2027
-asturias 2027: AVILÉS tiene 3 festivos locales en asturias_2027
-asturias 2027: BOAL tiene 3 festivos locales en asturias_2027
-asturias 2027: CASTRILLÓN tiene 3 festivos locales en asturias_2027
-asturias 2027: DEGAÑA tiene 3 festivos locales en asturias_2027
-asturias 2027: LAVIANA tiene 3 festivos locales en asturias_2027
-asturias 2027: LLANERA tiene 3 festivos locales en asturias_2027
-asturias 2027: LLANES tiene 5 festivos locales en asturias_2027
-asturias 2027: MIERES tiene 3 festivos locales en asturias_2027
-asturias 2027: NAVA tiene 3 festivos locales en asturias_2027
-asturias 2027: PESOZ tiene 4 festivos locales en asturias_2027
-asturias 2027: PILOÑA tiene 4 festivos locales en asturias_2027
-asturias 2027: RIBADESELLA tiene 3 festivos locales en asturias_2027
-asturias 2027: RIOSA tiene 4 festivos locales en asturias_2027
-asturias 2027: SALAS tiene 3 festivos locales en asturias_2027
-asturias 2027: SARIEGO tiene 3 festivos locales en asturias_2027
-asturias 2027: TINEO tiene 3 festivos locales en asturias_2027
-asturias 2027: VALDÉS tiene 3 festivos locales en asturias_2027
-asturias 2027: VILLAYÓN tiene 4 festivos locales en asturias_2027
-asturias 2027 asturias_2027: 14 nombres sin municipio del INE (pedanías o variantes): ABRES, ALTA, ASTURIAS, BAJA, CASARIEGO, MIRANDA, NARCEA, OSCOS, PEÑAMELLERA, REY AURELIO, SALIME, SAN MARTÍN DEL
 castilla-y-leon 2027 cyl_leon_2027: 4 nombres sin municipio del INE (pedanías o variantes): Administrativo Común de las Administraciones Públicas)., Exposición de motivos, LA MAJÚA, Novena. Cese del funcionario interino.
 castilla-y-leon 2027 cyl_palencia_2027: 34 nombres sin municipio del INE (pedanías o variantes): Arroyo, BOP de Palencia                          Lunes, Barrios de la Vega, CASTRILLO DE ONIELO               no comunicado, CUARTA. - ADMISIÓN DE ASPIRANTES, Cascón de la Nava, Gañinas de la Vega, HECHOS, Hijosa de Boedo, Leg, Lobera de la Vega, Miñanes, PUEBLA DE VALDAVIA, Población de Soto, Portillejo, Quintanadiez de la Vega, Revilla de Campos, Robladillo de Ucieza, Santa Olaja de la Vega, Valdecañas de Cerrato, Valdespina, Velillas del Duque, Villacuende, Villamorco, Villantodrigo, Villanueva de los Nabos, Villaproviano, Villarmienzo, Villarrodrigo de la Vega, Villasabariego de Ucieza, Villotilla
 castilla-y-leon 2027 cyl_zamora_2027: 38 nombres sin municipio del INE (pedanías o variantes): AbeZaneS, AlMeida, BOLETÍN OFICIAL DE LA PROVINCIA DE ZAMORA, BretÓ de la ribera, CaÑiZo de caMPoS, Cód., FerrerUela de tÁbara, GranUcillo de VidrialeS, RoaleS del Pan, Verificación: https://diputaciondezamora.sedelectronica.es/
@@ -199,6 +165,7 @@ andalucia 2027: POLÍCAR tiene 4 festivos locales en andalucia_2027
 andalucia 2027 andalucia_2027: 7 nombres sin municipio del INE (pedanías o variantes): ALANÍS DE LA SIERRA, CORTELAZOR LA REAL, DOMINGO PÉREZ, HORNOS DE SEGURA, HUÉTOR SANTILLÁN, VIÑUELA, LA, ZAHARA DE LA SIERRA
 galicia 2027 galicia_2027: 6 nombres sin municipio del INE (pedanías o variantes): Cangas de Morrazo, Guntín de Pallares, Illa de Arousa, Porto do Son, O, Rúa de Valdeorras, A, Tomillo
 extremadura 2027 extremadura_2027: 58 nombres sin municipio del INE (pedanías o variantes): ALMORCHÓN, ALONSO DE OJEDA, AZABAL, BARBAÑO, BARQUILLA DE PINARES, BATÁN (EL), BAZANA (LA), BRONCO (EL), BROVALES, CASAR DE MIAJADAS, CORTEGANA, ENTRERRÍOS, ENTRÍN ALTO, GARGÁLIGAS, GARVÍN DE LA JARA, GUADAJIRA, GUADALPERALES (LOS), HELECHAL, HERNÁN CORTÉS, MAJADAS DE TIETAR, MOHEDA DE GATA (LA), NAVA (LA), NAVATRASIERRA, OBANDO, PALAZUELO, PALLARES, PIZARRO, PRADOCHANO, PUEBLA DE ALCOLLARÍN, PUERTO HURRACO, RETAMAR, RETAMOSA DE CABAÑAS, ROTURA DE CABAÑAS, RUECAS, SAN BENITO DE LA CONTIENDA, SAN FRANCISCO DE OLIVENZA, SAN GIL, SAN JORGE DE ALOR, SAN RAFAEL DE OLIVENZA, SANTA MARÍA DE LAS LOMAS, SANTA MARÍA DE NAVAS, SANTO DOMINGO DE GUZMÁN, SOLANA DE CABAÑAS, TORREFRESNEDA, TORVISCAL (EL), TREVEJO, VALDEHORNILLOS, VALDENCÍN, VALDESALOR, VALDEÍÑIGOS, VALDIVIA, VALRÍO, VALUENGO, VEGAS ALTAS, VILLARREAL, VIVARES, YELBES, ZURBARÁN
+!! 2027 asturias: los boletines dan 0 municipios y antes había 72; se conservan los 72 anteriores. Revisa la fuente.
 == 2027 andalucia: 757 de 786 municipios con fiestas locales
 == 2027 aragon: 0 de 731 municipios con fiestas locales
 == 2027 asturias: 72 de 78 municipios con fiestas locales
