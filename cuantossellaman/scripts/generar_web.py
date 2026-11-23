@@ -55,6 +55,18 @@ UMBRAL_APELLIDOS_POR_DEFECTO = 1000  # personas con ese PRIMER apellido para ten
 # Desde el 3 nov 2026 solo van a Google (y al sitemap) los nombres y apellidos de al menos 5.000 personas: tras la caída
 # del 26 oct, el resto (miles de páginas casi iguales con pocas personas) sigue existiendo pero con noindex.
 UMBRAL_INDEXABLE = 5000
+# Desde el 23 nov 2026 (sigue sin volver a Google): solo son indexables los nombres y apellidos que Google ya enseñaba
+# (data/indexables.json, al menos 20 impresiones en Search Console) y los TOP_INDEXABLES más frecuentes; las demás
+# páginas siguen existiendo para el buscador de la web, con noindex y fuera del sitemap.
+TOP_INDEXABLES = 100
+INDEXABLES_GSC = json.loads((Path(__file__).resolve().parent.parent / "data" / "indexables.json").read_text(encoding="utf-8"))
+
+
+def marcar_indexables(entradas, tipo, peso):
+    top = {id(e) for e in sorted((e for e in entradas if e["pagina"]), key=lambda e: -peso(e))[:TOP_INDEXABLES]}
+    gsc = set(INDEXABLES_GSC[tipo])
+    for e in entradas:
+        e["indexable"] = e["pagina"] and peso(e) >= UMBRAL_INDEXABLE and (id(e) in top or e["slug"] in gsc)
 MIN_PAGINAS = 500  # si salen menos, algo ha ido mal: el script falla para no publicar una web rota
 
 TITULAR = {"nombre": "Albert Sanchez Guiu", "nif": "48167483D", "domicilio": "La Roca del Vallès (Barcelona), España",
@@ -225,7 +237,7 @@ def construir_indice(nombres, provincias, decadas, bebes, umbral):
 
     for e in idx.values():
         e["pagina"] = e["total"] >= umbral or e["k"] in en_listas
-        e["indexable"] = e["pagina"] and e["total"] >= UMBRAL_INDEXABLE
+    marcar_indexables(list(idx.values()), "nombre", lambda x: x["total"])
     return idx
 
 
@@ -1172,8 +1184,8 @@ def construir_indice_apellidos(apellidos, umbral):
                     idx[k][clave].append({"cod": cod, "pos": pos, "f": f, "pm": pm[0] if pm else None})
     for e in idx.values():
         e["pagina"] = e["p1"] >= umbral or e["k"] in en_listas
-        e["indexable"] = e["pagina"] and e["p1"] >= UMBRAL_INDEXABLE
         e["total"] = (e["p1"] + e["p2"] - e["ambos"]) if e["p2"] is not None and e["ambos"] is not None else None
+    marcar_indexables(list(idx.values()), "apellido", lambda x: x["p1"])
     return idx
 
 
@@ -1589,7 +1601,7 @@ def main():
                                      encoding="utf-8")
     (WEB / "ads.txt").write_text(f"google.com, {ADSENSE.replace('ca-', '')}, DIRECT, f08c47fec0942fa0\n", encoding="utf-8")
     (WEB / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /indice/\nDisallow: /indice-apellidos/\n\nSitemap: {DOMINIO}/sitemap.xml\n", encoding="utf-8")
-    print(f"Indexables (≥{UMBRAL_INDEXABLE} personas): {sum(e['indexable'] for e in con_pagina)} nombres y {sum(e['indexable'] for e in ape_pagina)} apellidos.")
+    print(f"Indexables (Search Console o top {TOP_INDEXABLES}, ≥{UMBRAL_INDEXABLE} personas): {sum(e['indexable'] for e in con_pagina)} nombres y {sum(e['indexable'] for e in ape_pagina)} apellidos.")
     print(f"Web generada: {len(con_pagina)} páginas de nombre (umbral {args.umbral}), "
           f"{len(ape_pagina)} de apellido (umbral {args.umbral_apellidos}), {len(rutas)} páginas más, "
           f"{len(idx)} nombres en el buscador ({len(grupos)} ficheros de índice). Datos a {nombres['referencia']}.")
