@@ -95,9 +95,17 @@ madrid 2026 madrid_2026: 7 nombres sin municipio del INE (pedanías o variantes)
 madrid_2026_c1: corrige o añade 9 municipios: Brunete, Cervera de Buitrago, Colmenar de Oreja, Coslada, Lozoyuela-Navas-Sieteiglesias, Talamanca de Jarama, Torrelaguna, Valdelaguna, Villarejo de Salvanés
 madrid 2026 madrid_2026_mod: 1 nombres sin municipio del INE (pedanías o variantes): Valdetorres del Jarama
 madrid_2026_mod: corrige o añade 5 municipios: Hiruela, La, Montejo de la Sierra, Rascafría, Santa María de la Alameda, Villaconejos
-baleares 2026: FORMENTERA aparece dos veces en baleares_2026; se queda la primera
-baleares 2026: FORMENTERA aparece dos veces en baleares_2026; se queda la primera
-baleares 2026 baleares_2026: 54 nombres sin municipio del INE (pedanías o variantes): Algaida y Randa, Biniali, Biniamar, CALENDARIO, CIUTADELLA, Caimari, Cala Ferrera, Cala Figuera, Cala Millor, sa Coma i s'Illot, Cala d'Or, Calonge, Can Picafort, Cas Concos, Colònia de Sant Jordi, Colònia de Sant Pere, Debe decir:, En la versión castellana, donde dice:, Es Llombards, Fornells, Fundamentos de derecho, Moscari, Orient, Palmanyola, Parroquias de Sant Jordi de, Parroquias de Sant Josep de sa, Parròquia de Jesús, Parròquia de Sant Antoni, Parròquia de Sant Carles de Peralta, Parròquia de Sant Mateu, Parròquia de Sant Rafel, Parròquia de Santa Agnès, Parròquia de Santa Gertrudis, Parròquia de Santa Gertrudis de Fruitera, Parròquies de Santa Eulària i, Parròquies de Santa Eulària i Puig d'en Valls, Pina, Port d'Andratx, Port des Canonge, Porto Cristo, Porto Petro, Portocolom, Puig d'en Valls, S'Alqueria Blanca, Sant Llorenç de Balafia, Sant Miquel de Balansat, Sant Vicent de sa Cala, Son Carrió, Son Serra de Marina, Talaia, es Cubells y Sant Agustí des Vedrà
+baleares 2026: Banyalbufar aparece dos veces en baleares_2026; se queda la primera
+baleares 2026: Bunyola aparece dos veces en baleares_2026; se queda la primera
+baleares 2026: Felanitx aparece dos veces en baleares_2026; se queda la primera
+baleares 2026: Santa Margalida aparece dos veces en baleares_2026; se queda la primera
+baleares 2026: Santanyi aparece dos veces en baleares_2026; se queda la primera
+baleares 2026: Selva aparece dos veces en baleares_2026; se queda la primera
+baleares 2026: Sencelles aparece dos veces en baleares_2026; se queda la primera
+baleares 2026: Ses Salines aparece dos veces en baleares_2026; se queda la primera
+baleares 2026: Es Mercadal aparece dos veces en baleares_2026; se queda la primera
+baleares 2026: Sant Joan de Labritja aparece dos veces en baleares_2026; se queda la primera
+baleares 2026 baleares_2026: 47 nombres sin municipio del INE (pedanías o variantes): Algaida y Randa, Biniali, Biniamar, CALENDARIO, CIUTADELLA, Caimari, Cala Ferrera, Cala Figuera, Cala Millor, sa Coma i s'Illot, Cala d'Or, Calonge, Can Picafort, Cas Concos, Colònia de Sant Jordi, Colònia de Sant Pere, Es Capdellà, Es Llombards, Fornells, Moscari, Orient, Palmanyola, Parroquias de Sant Jordi de, Parroquias de Sant Josep de sa, Parròquia de Jesús, Parròquia de Sant Antoni, Parròquia de Sant Mateu, Parròquia de Sant Rafel, Parròquia de Santa, Parròquia de Santa Agnès, Parròquies de Santa Eulària i, Pina, Port d'Andratx, Port des Canonge, Porto Cristo, Porto Petro, Portocolom, Puig d'en Valls, S'Alqueria Blanca, S'Arracó, S'Horta, Sant Llorenç de Balafia, Sant Miquel de Balansat, Sant Vicent de sa Cala, Ses Salines y Sant Francesc de s'Estany, Son Carrió, Son Serra de Marina, Talaia, es Cubells y Sant Agustí des Vedrà
 Murcia 2026: PLIEGO 2026-02-02 figura como Viernes y es lunes
 navarra 2026 navarra_2026: 432 nombres sin municipio del INE (pedanías o variantes): ABÍNZANO, ACEDO, ADOÁIN, AGORRETA, AGUINAGA DE IZA, AINTZIALDE ARIZKUN, AIZKORBE, AIZOÁIN, AIZPÚN, AKERRETA (Esteribar), ALBIASU, ALDABA, ALDATZ, ALDUNATE, ALKOTZ (Ultzama), ALLI, ALLOZ, ALZUZA, ALZÓRRIZ, AMILLANO, ANOCIBAR, ANOZ, ANOZ (Ollo), ANTXORITZ, AOS, ARANDIGOYEN, ARAZURI (Olza), ARBONIÉS, ARDAITZ, ARDANAZ (Egüés), ARDANAZ (Izagaondoa), ARGUIÑANO, ARGUIÑÁRIZ, ARITZU, ARIZ, ARIZALA, ARIZALETA, ARLEGUI, ARRAITZ-ORKIN, ARRAIZA, ARRARATS, ARRE (Ezcabarte), ARRIBE, ARRIETA, ARRUITZ, ARTAIZ, ARTAJO, ARTEAGA, ARTETA, ARTICA, ARTIEDA, ARTOZQUI, ARTÁZCOZ, ARZOZ, ARÍSTREGUI, ARÓSTEGUI, ASIÁIN, ASPURZ, ASTITZ, ASTRÁIN
 navarra_2026: fiesta común a toda la provincia 31: [{'f': '2026-12-03', 'n': 'San Francisco Javier'}]
@@ -120,7 +128,7 @@ cyl_salamanca_2026_c1: corrige o añade 0 municipios:
 == 2026 andalucia: 764 de 786 municipios con fiestas locales
 == 2026 aragon: 456 de 731 municipios con fiestas locales
 == 2026 asturias: 73 de 78 municipios con fiestas locales
-== 2026 baleares: 62 de 67 municipios con fiestas locales
+== 2026 baleares: 65 de 67 municipios con fiestas locales
 == 2026 canarias: 88 de 88 municipios con fiestas locales
 == 2026 cantabria: 98 de 102 municipios con fiestas locales
 == 2026 castilla-la-mancha: 893 de 919 municipios con fiestas locales
