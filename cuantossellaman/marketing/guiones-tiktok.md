@@ -142,3 +142,13 @@ Las cifras de cualquier nombre salen en un segundo en cuantossellaman.es.
 **Cierre:** ¿Cómo se llamaría tu personaje? · cuantossellaman.es
 **Descripción:** ¿Cuántos se llaman como los protas de GTA? 🎮 Datos del INE #gta6 #gtavi #gta #jasonylucia #nombres #curiosidades
 Sin imágenes ni música de Rockstar: solo texto y datos propios.
+
+## 21. «¿En qué década naciste? Este es tu nombre»
+
+Nombre más común entre las personas que viven hoy en España según su década de nacimiento (INE, a 1 de enero de 2025).
+**Pantalla (0–2 s):** ¿EN QUÉ DÉCADA NACISTE? ESTE ES TU NOMBRE
+**Chicos:** 40 José · 50 Antonio · 60 Antonio · 70 David · 80 David · 90 Alejandro · 2010 Hugo
+**Chicas:** 40, 50, 60 y 70 María Carmen · 80 Laura · 90 María · 2010 Lucía
+**Pantalla:** María Carmen fue la número uno 4 décadas seguidas.
+**Cierre:** ¿Te ha tocado el de tu década? · cuantossellaman.es
+**Descripción:** ¿Acierta con tu nombre? 👀 Datos del INE #nombres #decadas #nostalgia #curiosidades #españa
