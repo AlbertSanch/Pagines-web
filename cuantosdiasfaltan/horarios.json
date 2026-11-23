@@ -2059,7 +2059,7 @@ null
 {
 "id": "401882769",
 "utc": "2026-12-13T20:00Z",
-"hora_valida": false,
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Real Madrid",
@@ -2810,8 +2810,8 @@ null
 },
 {
 "id": "401882770",
-"utc": "2026-12-13T20:00Z",
-"hora_valida": false,
+"utc": "2026-12-12T17:30Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Málaga",
@@ -4160,9 +4160,9 @@ null
 "sets": []
 },
 {
-"id": "1095",
-"n": "Polona Hercog",
-"pais": "Eslovenia",
+"id": "-3",
+"n": "TBD",
+"pais": "",
 "gano": null,
 "sets": []
 }
@@ -4368,9 +4368,9 @@ null
 "sets": []
 },
 {
-"id": "2984",
-"n": "Rebeka Masarova",
-"pais": "Suiza",
+"id": "1095",
+"n": "Polona Hercog",
+"pais": "Eslovenia",
 "gano": null,
 "sets": []
 }
@@ -4900,8 +4900,8 @@ null
 },
 {
 "id": "401882776",
-"utc": "2026-12-13T20:00Z",
-"hora_valida": false,
+"utc": "2026-12-13T13:00Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Atlético de Madrid",
@@ -6341,8 +6341,8 @@ null
 },
 {
 "id": "401882775",
-"utc": "2026-12-13T20:00Z",
-"hora_valida": false,
+"utc": "2026-12-12T20:00Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Real Betis",
@@ -6988,8 +6988,8 @@ null
 },
 {
 "id": "401882774",
-"utc": "2026-12-13T20:00Z",
-"hora_valida": false,
+"utc": "2026-12-13T15:15Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Deportivo La Coruña",
@@ -7605,8 +7605,8 @@ null
 },
 {
 "id": "401882773",
-"utc": "2026-12-13T20:00Z",
-"hora_valida": false,
+"utc": "2026-12-11T20:00Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Elche",
@@ -8207,8 +8207,8 @@ null
 },
 {
 "id": "401882776",
-"utc": "2026-12-13T20:00Z",
-"hora_valida": false,
+"utc": "2026-12-13T13:00Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Atlético de Madrid",
@@ -8839,8 +8839,8 @@ null
 },
 {
 "id": "401882770",
-"utc": "2026-12-13T20:00Z",
-"hora_valida": false,
+"utc": "2026-12-12T17:30Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Málaga",
@@ -9531,8 +9531,8 @@ null
 },
 {
 "id": "401882772",
-"utc": "2026-12-13T20:00Z",
-"hora_valida": false,
+"utc": "2026-12-14T20:00Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "LALIGA",
 "local": "Espanyol",
