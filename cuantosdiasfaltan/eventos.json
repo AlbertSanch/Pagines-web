@@ -3307,19 +3307,13 @@
   "titulo": "Sakamoto Days temporada 2",
   "slug": "sakamoto-days-temporada-2",
   "categoria": "anime",
-  "fecha": null,
-  "precision": "mes",
-  "fuente_url": "http://about.netflix.com/en/news/sakamoto-days-season-2-returns-january-2027",
-  "fuente_nombre": "Netflix",
-  "fuente_tipo": "oficial",
-  "comprobado": "2026-11-02",
-  "plataformas": "Netflix",
-  "ventana": "enero de 2027",
-  "rango": [
-   "2027-01-01",
-   "2027-01-31"
-  ],
-  "estimacion": "Netflix la ha anunciado para enero de 2027, sin día concreto todavía"
+  "fecha": "2027-01-19",
+  "precision": "dia",
+  "fuente_url": "https://myanimelist.net/anime/63139/Sakamoto_Days_2nd_Season",
+  "fuente_nombre": "MyAnimeList",
+  "fuente_tipo": "medio",
+  "comprobado": "2026-11-23",
+  "plataformas": "Netflix"
  },
  {
   "titulo": "Spy x Family temporada 4",
@@ -3439,19 +3433,13 @@
   "titulo": "One Punch Man temporada 3 (parte 2)",
   "slug": "one-punch-man-temporada-3-parte-2",
   "categoria": "anime",
-  "fecha": null,
-  "precision": "mes",
-  "fuente_url": "https://en.wikipedia.org/wiki/One-Punch_Man_season_3",
-  "fuente_nombre": "Wikipedia",
+  "fecha": "2027-01-08",
+  "precision": "dia",
+  "fuente_url": "https://myanimelist.net/anime/63193/One_Punch_Man_3_Part_2",
+  "fuente_nombre": "MyAnimeList",
   "fuente_tipo": "medio",
-  "comprobado": "2026-11-02",
-  "plataformas": "por confirmar en España",
-  "ventana": "enero de 2027",
-  "rango": [
-   "2027-01-01",
-   "2027-01-31"
-  ],
-  "estimacion": "La segunda parte de la temporada 3 se anunció al acabar la primera, para enero de 2027; la temporada 4 aún no está anunciada"
+  "comprobado": "2026-11-23",
+  "plataformas": "por confirmar en España"
  },
  {
   "titulo": "Oshi no Ko temporada 4 (final)",
@@ -3651,20 +3639,14 @@
   "titulo": "The World's Finest Assassin temporada 2 (Sekai Saikou no Ansatsusha)",
   "slug": "the-worlds-finest-assassin-temporada-2",
   "categoria": "anime",
-  "fecha": null,
-  "precision": "mes",
-  "fuente_url": "https://myanimelist.net/anime/56732/",
+  "fecha": "2027-01-10",
+  "precision": "dia",
+  "fuente_url": "https://myanimelist.net/anime/56732/Sekai_Saikou_no_Ansatsusha_Isekai_Kizoku_ni_Tensei_suru_Season_2",
   "fuente_nombre": "MyAnimeList",
   "fuente_tipo": "medio",
-  "comprobado": "2026-11-09",
+  "comprobado": "2026-11-23",
   "plataformas": "Crunchyroll",
-  "en_frase": "The World's Finest Assassin temporada 2",
-  "ventana": "enero de 2027",
-  "rango": [
-   "2027-01-01",
-   "2027-01-31"
-  ],
-  "estimacion": "Está anunciada para enero de 2027, sin día concreto todavía"
+  "en_frase": "The World's Finest Assassin temporada 2"
  },
  {
   "titulo": "Kusuriya no Hitorigoto temporada 3 (parte 2)",
