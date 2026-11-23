@@ -29,6 +29,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 WEB = RAIZ / "web"
 PLANTILLA = RAIZ / "plantilla"
 EVENTOS = RAIZ / "eventos.json"
+FESTIVOSDE = "https://festivosde.es"
 TEXTOS = RAIZ / "textos.json"
 HORARIOS = RAIZ / "horarios.json"  # F1 y MotoGP, con la hora de cada sesión (scripts/horarios.py)  # «qué se sabe»: párrafos propios por evento (clave: slug o serie)
 FUENTES = PLANTILLA / "fuentes"
@@ -1459,10 +1460,15 @@ def main():
     rutas = ["/"]
     guardar("/", pagina_portada(eventos, H))
     for c in CATEGORIAS:
-        if any(e["categoria"] == c for e in eventos):
+        if c != "fechas" and any(e["categoria"] == c for e in eventos):
             guardar(f"/{c}/", pagina_categoria(c, eventos))
             rutas.append(f"/{c}/")
+    # Desde el 23 nov 2026 las fechas señaladas (Navidad, Reyes, estaciones, cambio de hora…) viven en festivosde.es,
+    # que tiene anuncios y la confianza de Google: aquí no se generan y su URL redirige allí con un 301.
     for e in eventos:
+        if e["categoria"] == "fechas":
+            redirecciones.append((e["slug"], f"{FESTIVOSDE}/cuanto-falta/{e['slug']}/"))
+            continue
         guardar(f"/{e['slug']}/", pagina_evento(e, eventos))
         if indexable(e):
             rutas.append(f"/{e['slug']}/")
@@ -1495,7 +1501,9 @@ def main():
     hoy = HOY.isoformat()
     # fecha en que cambian de verdad los datos de cada evento (no la de cada noche), para que Google se fíe del sitemap
     modificado = {f"/{e['slug']}/": e["comprobado"] for e in eventos if e.get("comprobado")}
-    (WEB / "_redirects").write_text("".join(f"/{a}/ /{b}/ 301\n/{a} /{b}/ 301\n" for a, b in redirecciones), encoding="utf-8")
+    destino = lambda b: b if b.startswith("http") else f"/{b}/"  # noqa: E731
+    (WEB / "_redirects").write_text("".join(f"/{a}/ {destino(b)} 301\n/{a} {destino(b)} 301\n" for a, b in redirecciones)
+                                    + f"/fechas/ {FESTIVOSDE}/cuanto-falta/ 301\n/fechas {FESTIVOSDE}/cuanto-falta/ 301\n", encoding="utf-8")
     (WEB / "indice.json").write_text(json.dumps([[e["titulo"], e["slug"], CATEGORIAS[e["categoria"]][1]] for e in sorted(eventos, key=orden)],
                                                 ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     (WEB / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
