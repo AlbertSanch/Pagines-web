@@ -4096,7 +4096,7 @@ null
 "torneo": "IEB+ Argentina Open",
 "utc": "2026-11-23T14:00Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 1",
 "pista": "Cancha 3",
 "jugadores": [
@@ -4104,15 +4104,21 @@ null
 "id": "15775",
 "n": "Ayana Akli",
 "pais": "USA",
-"gano": null,
-"sets": []
+"gano": false,
+"sets": [
+1,
+2
+]
 },
 {
 "id": "1374",
 "n": "Martina Trevisan",
 "pais": "Italia",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6
+]
 }
 ]
 },
@@ -4120,9 +4126,9 @@ null
 "id": "186824",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-23T14:00Z",
+"utc": "2026-11-23T14:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "ronda": "Round 1",
 "pista": "Cancha Central",
 "jugadores": [
@@ -4130,41 +4136,21 @@ null
 "id": "5299",
 "n": "Carole Monnet",
 "pais": "Francia",
-"gano": null,
-"sets": []
+"gano": true,
+"sets": [
+6,
+6
+]
 },
 {
 "id": "17419",
 "n": "Berta Bonardi",
 "pais": "Argentina",
-"gano": null,
-"sets": []
-}
+"gano": false,
+"sets": [
+2,
+0
 ]
-},
-{
-"id": "186816",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-23T15:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Cancha 3",
-"jugadores": [
-{
-"id": "10197",
-"n": "Ipek Oz",
-"pais": "Turquía",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
 }
 ]
 },
@@ -4172,9 +4158,9 @@ null
 "id": "186817",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-23T15:30Z",
+"utc": "2026-11-23T15:20Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 1",
 "pista": "Cancha Central",
 "jugadores": [
@@ -4183,14 +4169,48 @@ null
 "n": "Ariana Geerlings",
 "pais": "España",
 "gano": null,
-"sets": []
+"sets": [
+3
+]
 },
 {
 "id": "11997",
 "n": "Josefina Estevez",
 "pais": "Argentina",
 "gano": null,
-"sets": []
+"sets": [
+1
+]
+}
+]
+},
+{
+"id": "186816",
+"gira": "WTA",
+"torneo": "IEB+ Argentina Open",
+"utc": "2026-11-23T15:25Z",
+"hora_valida": true,
+"estado": "in",
+"ronda": "Round 1",
+"pista": "Cancha 3",
+"jugadores": [
+{
+"id": "10197",
+"n": "Ipek Oz",
+"pais": "Turquía",
+"gano": null,
+"sets": [
+2
+]
+},
+{
+"id": "4484",
+"n": "Alexandra Osborne",
+"pais": "Australia",
+"gano": null,
+"sets": [
+3
+]
 }
 ]
 },
@@ -6310,6 +6330,21 @@ null
 ]
 },
 {
+"id": "401936406",
+"utc": "2026-12-02T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "Copa del Rey",
+"local": "CD Extremadura",
+"visitante": "Real Betis",
+"en_casa": false,
+"estadio": "Francisco de la Hera",
+"goles": [
+null,
+null
+]
+},
+{
 "id": "401882784",
 "utc": "2026-12-06T20:00Z",
 "hora_valida": true,
@@ -8191,6 +8226,21 @@ null
 ]
 },
 {
+"id": "401936410",
+"utc": "2026-12-02T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "Copa del Rey",
+"local": "Real Jaen CF",
+"visitante": "Valencia",
+"en_casa": false,
+"estadio": "Nuevo Estadio Municipal de La Victoria",
+"goles": [
+null,
+null
+]
+},
+{
 "id": "401882782",
 "utc": "2026-12-06T17:30Z",
 "hora_valida": true,
@@ -8817,6 +8867,21 @@ null
 "visitante": "Athletic Club",
 "en_casa": true,
 "estadio": "La Rosaleda",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401936407",
+"utc": "2026-12-02T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "Copa del Rey",
+"local": "Coria",
+"visitante": "Málaga",
+"en_casa": false,
+"estadio": "",
 "goles": [
 null,
 null
@@ -9494,6 +9559,21 @@ null
 "visitante": "Villarreal",
 "en_casa": true,
 "estadio": "Balaidos",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401936416",
+"utc": "2026-12-02T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "Copa del Rey",
+"local": "Arosa",
+"visitante": "Celta Vigo",
+"en_casa": false,
+"estadio": "Estadio de A Lomba",
 "goles": [
 null,
 null
