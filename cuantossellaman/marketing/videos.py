@@ -311,6 +311,15 @@ VIDEOS = {
         (4.0, 0.6, [("texto", "Y los Niko de España tienen de media…"), ("cifra", "9 años"), ("texto", "GTA IV salió en 2008. ¿Casualidad?")]),
         CIERRE("¿Cómo se llamaría tu personaje?"),
     ],
+    "21-decadas": [
+        (3.0, 0.0, [("gancho", "¿En qué década naciste? Este es tu nombre")]),
+        (6.2, 0.5, [("titulo", "Chicos"), ("fila", "Años 40", "José", 50), ("fila", "Años 50", "Antonio", 50), ("fila", "Años 60", "Antonio", 50),
+                    ("fila", "Años 70", "David", 50), ("fila", "Años 80", "David", 50), ("fila", "Años 90", "Alejandro", 50), ("fila", "Años 2010", "Hugo", 50)]),
+        (6.2, 0.5, [("titulo", "Chicas"), ("fila", "Años 40", "M.ª Carmen", 50), ("fila", "Años 50", "M.ª Carmen", 50), ("fila", "Años 60", "M.ª Carmen", 50),
+                    ("fila", "Años 70", "M.ª Carmen", 50), ("fila", "Años 80", "Laura", 50), ("fila", "Años 90", "María", 50), ("fila", "Años 2010", "Lucía", 50)]),
+        (3.8, 0.6, [("texto", "María Carmen fue la número uno"), ("cifra", "4"), ("texto", "décadas seguidas, de los 40 a los 70")]),
+        CIERRE("¿Te ha tocado el de tu década?"),
+    ],
     "10-nombres-que-suben": [
         (3.0, 0.0, [("gancho", "Los nombres de niña que están arrasando")]),
         (6.5, 0.55, [("texto", "Nuevos en el top 100 de bebés:"), ("fila", "Alaia", ""), ("fila", "Catalina", ""), ("fila", "Violeta", ""),
@@ -415,6 +424,13 @@ VOCES = {
         "¿Y los de otros GTA? Michael, casi seis mil. Niko, ochocientos noventa y cuatro. Franklin, seiscientos cuarenta y seis. Tommy, ciento setenta y uno. Y Carl, ciento doce.",
         "Y los Niko de España tienen de media nueve años. GTA cuatro salió en 2008. ¿Casualidad?",
         f"¿Cómo se llamaría tu personaje? Busca tu nombre en {WEB_DICHA}.",
+    ],
+    "21-decadas": [
+        "¿En qué década naciste? Este es tu nombre.",
+        "Chicos: en los cuarenta, José. En los cincuenta y sesenta, Antonio. En los setenta y ochenta, David. En los noventa, Alejandro. Y en los dos mil diez, Hugo.",
+        "Chicas: de los cuarenta a los setenta, María Carmen. En los ochenta, Laura. En los noventa, María. Y en los dos mil diez, Lucía.",
+        "María Carmen fue la número uno cuatro décadas seguidas.",
+        f"¿Te ha tocado el de tu década? Búscalo en {WEB_DICHA}.",
     ],
     "10-nombres-que-suben": [
         "Estos son los nombres de niña que están arrasando.",
