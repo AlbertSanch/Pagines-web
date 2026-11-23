@@ -25,6 +25,31 @@ const VIDEOS = {
     gancho: ['¿Qué se inventó antes?', 'Si aciertas las 4, eres un reloj suizo'],
     rondas: [['primer-semaforo', 'coche-benz'], ['fregona', 'disneyland'], ['primer-sms', 'primera-web'], ['futbolin', 'monopoly']],
     cierre: ['Un reto nuevo cada día, gratis', 'quefueantes.es']
+  },
+  '3-espana': {
+    gancho: ['¿Qué pasó antes en España?', '4 preguntas. ¿Cuántas aciertas?'],
+    rondas: [['museo-prado', 'constitucion-cadiz'], ['tren-barcelona-mataro', 'telegrafo-morse'], ['coca-cola', 'sagrada-familia-obras'], ['fundacion-real-madrid', 'fundacion-fc-barcelona']],
+    cierre: ['Un reto nuevo cada día, gratis', 'quefueantes.es']
+  },
+  '4-deporte': {
+    gancho: ['¿Qué fue antes?', 'Edición deporte y espectáculo'],
+    rondas: [['mundial-uruguay-1930', 'primeros-oscar'], ['juegos-olimpicos-atenas-1896', 'primera-sesion-cine'], ['llegada-luna', 'massiel-eurovision'], ['curiosity-marte', 'espana-campeona-mundial-2010']],
+    cierre: ['¿Cuántas has acertado? Dímelo en comentarios', 'quefueantes.es']
+  },
+  '5-tecnologia': {
+    gancho: ['¿Qué salió antes?', 'Si aciertas las 4, eres de la generación del Walkman'],
+    rondas: [['primer-iphone', 'twitter'], ['fundacion-google', 'oveja-dolly'], ['primera-web', 'game-boy'], ['pac-man', 'walkman']],
+    cierre: ['Cada día, 6 momentos de la historia para ordenar', 'quefueantes.es']
+  },
+  '6-cine-y-tele': {
+    gancho: ['¿Qué fue antes?', 'Edición cine y tele'],
+    rondas: [['constitucion-1978', 'star-wars'], ['primer-eurovision', 'disneyland'], ['barbie', 'primeras-emisiones-tve'], ['telescopio-hubble', 'los-simpson']],
+    cierre: ['Un reto nuevo cada día, gratis', 'quefueantes.es']
+  },
+  '7-antiguos': {
+    gancho: ['¿Qué fue antes?', 'Nivel difícil: historia antigua'],
+    rondas: [['gran-piramide-guiza', 'invencion-rueda'], ['fundacion-roma', 'primeros-juegos-olimpicos-antiguos'], ['erupcion-vesubio-pompeya', 'asesinato-julio-cesar'], ['invencion-papel', 'erupcion-vesubio-pompeya']],
+    cierre: ['¿Te atreves con el reto de hoy?', 'quefueantes.es']
   }
 };
 
