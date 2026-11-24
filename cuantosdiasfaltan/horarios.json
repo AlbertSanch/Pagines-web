@@ -4094,9 +4094,9 @@ null
 "id": "186819",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T14:00Z",
+"utc": "2026-11-24T14:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 1",
 "pista": "Cancha Central",
 "jugadores": [
@@ -4105,14 +4105,18 @@ null
 "n": "Laura Samson",
 "pais": "Chequia",
 "gano": null,
-"sets": []
+"sets": [
+2
+]
 },
 {
 "id": "2035",
 "n": "Victoria Bosio",
 "pais": "Argentina",
 "gano": null,
-"sets": []
+"sets": [
+3
+]
 }
 ]
 },
@@ -4120,9 +4124,9 @@ null
 "id": "186820",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T14:00Z",
+"utc": "2026-11-24T14:05Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "in",
 "ronda": "Round 1",
 "pista": "Cancha 3",
 "jugadores": [
@@ -4131,14 +4135,18 @@ null
 "n": "Veronika Erjavec",
 "pais": "Eslovenia",
 "gano": null,
-"sets": []
+"sets": [
+3
+]
 },
 {
 "id": "4926",
 "n": "Zhibek Kulambayeva",
 "pais": "Kazajistán",
 "gano": null,
-"sets": []
+"sets": [
+2
+]
 }
 ]
 },
@@ -6417,8 +6425,8 @@ null
 },
 {
 "id": "401936406",
-"utc": "2026-12-02T20:00Z",
-"hora_valida": false,
+"utc": "2026-12-01T20:00Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "Copa del Rey",
 "local": "CD Extremadura",
@@ -7094,8 +7102,8 @@ null
 },
 {
 "id": "401936399",
-"utc": "2026-12-02T20:00Z",
-"hora_valida": false,
+"utc": "2026-12-01T20:00Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "Copa del Rey",
 "local": "Numancia",
@@ -7726,8 +7734,8 @@ null
 },
 {
 "id": "401936409",
-"utc": "2026-12-02T20:00Z",
-"hora_valida": false,
+"utc": "2026-12-03T18:00Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "Copa del Rey",
 "local": "Atlético Paso",
@@ -8343,8 +8351,8 @@ null
 },
 {
 "id": "401936410",
-"utc": "2026-12-02T20:00Z",
-"hora_valida": false,
+"utc": "2026-12-03T20:00Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "Copa del Rey",
 "local": "Real Jaen CF",
@@ -8990,14 +8998,14 @@ null
 },
 {
 "id": "401936407",
-"utc": "2026-12-02T20:00Z",
-"hora_valida": false,
+"utc": "2026-12-03T20:00Z",
+"hora_valida": true,
 "estado": "pre",
 "competicion": "Copa del Rey",
 "local": "Coria",
 "visitante": "Málaga",
 "en_casa": false,
-"estadio": "",
+"estadio": "Estadio La Isla",
 "goles": [
 null,
 null
