@@ -1649,7 +1649,7 @@
 ],
 "2027": []
 },
-"descargado": "2026-11-23",
+"descargado": "2026-11-24",
 "madrid": [
 {
 "id": "401898187",
@@ -4091,202 +4091,52 @@ null
 },
 "tenis_hoy": [
 {
-"id": "186822",
+"id": "186819",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-23T14:00Z",
-"hora_valida": true,
-"estado": "post",
-"ronda": "Round 1",
-"pista": "Cancha 3",
-"jugadores": [
-{
-"id": "15775",
-"n": "Ayana Akli",
-"pais": "USA",
-"gano": false,
-"sets": [
-1,
-2
-]
-},
-{
-"id": "1374",
-"n": "Martina Trevisan",
-"pais": "Italia",
-"gano": true,
-"sets": [
-6,
-6
-]
-}
-]
-},
-{
-"id": "186824",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-23T14:05Z",
-"hora_valida": true,
-"estado": "post",
-"ronda": "Round 1",
-"pista": "Cancha Central",
-"jugadores": [
-{
-"id": "5299",
-"n": "Carole Monnet",
-"pais": "Francia",
-"gano": true,
-"sets": [
-6,
-6
-]
-},
-{
-"id": "17419",
-"n": "Berta Bonardi",
-"pais": "Argentina",
-"gano": false,
-"sets": [
-2,
-0
-]
-}
-]
-},
-{
-"id": "186817",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-23T15:20Z",
-"hora_valida": true,
-"estado": "in",
-"ronda": "Round 1",
-"pista": "Cancha Central",
-"jugadores": [
-{
-"id": "14607",
-"n": "Ariana Geerlings",
-"pais": "España",
-"gano": null,
-"sets": [
-3
-]
-},
-{
-"id": "11997",
-"n": "Josefina Estevez",
-"pais": "Argentina",
-"gano": null,
-"sets": [
-1
-]
-}
-]
-},
-{
-"id": "186816",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-23T15:25Z",
-"hora_valida": true,
-"estado": "in",
-"ronda": "Round 1",
-"pista": "Cancha 3",
-"jugadores": [
-{
-"id": "10197",
-"n": "Ipek Oz",
-"pais": "Turquía",
-"gano": null,
-"sets": [
-2
-]
-},
-{
-"id": "4484",
-"n": "Alexandra Osborne",
-"pais": "Australia",
-"gano": null,
-"sets": [
-3
-]
-}
-]
-},
-{
-"id": "186813",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-23T17:00Z",
+"utc": "2026-11-24T14:00Z",
 "hora_valida": true,
 "estado": "pre",
 "ronda": "Round 1",
 "pista": "Cancha Central",
 "jugadores": [
 {
-"id": "6209",
-"n": "Anastasia Zolotareva",
-"pais": "Rusia",
+"id": "15069",
+"n": "Laura Samson",
+"pais": "Chequia",
 "gano": null,
 "sets": []
 },
 {
-"id": "5168",
-"n": "Nuria Brancaccio",
-"pais": "Italia",
+"id": "2035",
+"n": "Victoria Bosio",
+"pais": "Argentina",
 "gano": null,
 "sets": []
 }
 ]
 },
 {
-"id": "186823",
+"id": "186820",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-23T17:00Z",
+"utc": "2026-11-24T14:00Z",
 "hora_valida": true,
 "estado": "pre",
 "ronda": "Round 1",
 "pista": "Cancha 3",
 "jugadores": [
 {
-"id": "17328",
-"n": "Abigail Rencheli",
-"pais": "USA",
+"id": "5878",
+"n": "Veronika Erjavec",
+"pais": "Eslovenia",
 "gano": null,
 "sets": []
 },
 {
-"id": "423",
-"n": "Varvara Lepchenko",
-"pais": "USA",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186815",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-23T19:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Cancha Central",
-"jugadores": [
-{
-"id": "5749",
-"n": "Julia Riera",
-"pais": "Argentina",
-"gano": null,
-"sets": []
-},
-{
-"id": "8068",
-"n": "Despina Papamichail",
-"pais": "Grecia",
+"id": "4926",
+"n": "Zhibek Kulambayeva",
+"pais": "Kazajistán",
 "gano": null,
 "sets": []
 }
@@ -4296,11 +4146,11 @@ null
 "id": "186814",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T05:00Z",
-"hora_valida": false,
+"utc": "2026-11-24T15:30Z",
+"hora_valida": true,
 "estado": "pre",
 "ronda": "Round 1",
-"pista": "",
+"pista": "Cancha Central",
 "jugadores": [
 {
 "id": "17421",
@@ -4319,10 +4169,140 @@ null
 ]
 },
 {
+"id": "186818",
+"gira": "WTA",
+"torneo": "IEB+ Argentina Open",
+"utc": "2026-11-24T15:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Cancha 3",
+"jugadores": [
+{
+"id": "4629",
+"n": "Alicia Herrero Linana",
+"pais": "España",
+"gano": null,
+"sets": []
+},
+{
+"id": "4666",
+"n": "Lucia Bronzetti",
+"pais": "Italia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186821",
+"gira": "WTA",
+"torneo": "IEB+ Argentina Open",
+"utc": "2026-11-24T18:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Cancha 3",
+"jugadores": [
+{
+"id": "4546",
+"n": "Irene Burillo",
+"pais": "España",
+"gano": null,
+"sets": []
+},
+{
+"id": "19256",
+"n": "Lourdes Ayala",
+"pais": "Argentina",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186826",
+"gira": "WTA",
+"torneo": "IEB+ Argentina Open",
+"utc": "2026-11-24T18:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Cancha Central",
+"jugadores": [
+{
+"id": "7778",
+"n": "Victoria Jimenez Kasintseva",
+"pais": "Andorra",
+"gano": null,
+"sets": []
+},
+{
+"id": "6500",
+"n": "Solana Sierra",
+"pais": "Argentina",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186827",
+"gira": "WTA",
+"torneo": "IEB+ Argentina Open",
+"utc": "2026-11-24T19:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Cancha Central",
+"jugadores": [
+{
+"id": "10676",
+"n": "Leyre Romero Gormaz",
+"pais": "España",
+"gano": null,
+"sets": []
+},
+{
+"id": "3256",
+"n": "Nadia Podoroska",
+"pais": "Argentina",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186825",
+"gira": "WTA",
+"torneo": "IEB+ Argentina Open",
+"utc": "2026-11-24T19:30Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 1",
+"pista": "Cancha 3",
+"jugadores": [
+{
+"id": "14562",
+"n": "Sofia Costoulas",
+"pais": "Bélgica",
+"gano": null,
+"sets": []
+},
+{
+"id": "1095",
+"n": "Polona Hercog",
+"pais": "Eslovenia",
+"gano": null,
+"sets": []
+}
+]
+},
+{
 "id": "186828",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T05:00Z",
+"utc": "2026-11-25T05:00Z",
 "hora_valida": false,
 "estado": "pre",
 "ronda": "Round 1",
@@ -4345,77 +4325,51 @@ null
 ]
 },
 {
-"id": "186827",
+"id": "186840",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T05:00Z",
+"utc": "2026-11-25T05:00Z",
 "hora_valida": false,
 "estado": "pre",
-"ronda": "Round 1",
+"ronda": "Round 2",
 "pista": "",
 "jugadores": [
 {
-"id": "10676",
-"n": "Leyre Romero Gormaz",
-"pais": "España",
+"id": "5299",
+"n": "Carole Monnet",
+"pais": "Francia",
 "gano": null,
 "sets": []
 },
 {
-"id": "3256",
-"n": "Nadia Podoroska",
-"pais": "Argentina",
+"id": "-3",
+"n": "TBD",
+"pais": "",
 "gano": null,
 "sets": []
 }
 ]
 },
 {
-"id": "186825",
+"id": "186839",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T05:00Z",
+"utc": "2026-11-25T05:00Z",
 "hora_valida": false,
 "estado": "pre",
-"ronda": "Round 1",
+"ronda": "Round 2",
 "pista": "",
 "jugadores": [
 {
-"id": "14562",
-"n": "Sofia Costoulas",
-"pais": "Bélgica",
+"id": "-4",
+"n": "TBD",
+"pais": "",
 "gano": null,
 "sets": []
 },
 {
-"id": "1095",
-"n": "Polona Hercog",
-"pais": "Eslovenia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186818",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "4629",
-"n": "Alicia Herrero Linana",
-"pais": "España",
-"gano": null,
-"sets": []
-},
-{
-"id": "4666",
-"n": "Lucia Bronzetti",
+"id": "1374",
+"n": "Martina Trevisan",
 "pais": "Italia",
 "gano": null,
 "sets": []
@@ -4423,104 +4377,156 @@ null
 ]
 },
 {
-"id": "186819",
+"id": "186838",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T05:00Z",
+"utc": "2026-11-25T05:00Z",
 "hora_valida": false,
 "estado": "pre",
-"ronda": "Round 1",
+"ronda": "Round 2",
 "pista": "",
 "jugadores": [
 {
-"id": "15069",
-"n": "Laura Samson",
-"pais": "Chequia",
-"gano": null,
-"sets": []
-},
-{
-"id": "2035",
-"n": "Victoria Bosio",
-"pais": "Argentina",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186820",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "5878",
-"n": "Veronika Erjavec",
-"pais": "Eslovenia",
-"gano": null,
-"sets": []
-},
-{
-"id": "4926",
-"n": "Zhibek Kulambayeva",
-"pais": "Kazajistán",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186821",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "",
-"jugadores": [
-{
-"id": "4546",
-"n": "Irene Burillo",
+"id": "14607",
+"n": "Ariana Geerlings",
 "pais": "España",
 "gano": null,
 "sets": []
 },
 {
-"id": "19256",
-"n": "Lourdes Ayala",
-"pais": "Argentina",
+"id": "-3",
+"n": "TBD",
+"pais": "",
 "gano": null,
 "sets": []
 }
 ]
 },
 {
-"id": "186826",
+"id": "186837",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T05:00Z",
+"utc": "2026-11-25T05:00Z",
 "hora_valida": false,
 "estado": "pre",
-"ronda": "Round 1",
+"ronda": "Round 2",
 "pista": "",
 "jugadores": [
 {
-"id": "7778",
-"n": "Victoria Jimenez Kasintseva",
-"pais": "Andorra",
+"id": "5749",
+"n": "Julia Riera",
+"pais": "Argentina",
 "gano": null,
 "sets": []
 },
 {
-"id": "6500",
-"n": "Solana Sierra",
-"pais": "Argentina",
+"id": "10197",
+"n": "Ipek Oz",
+"pais": "Turquía",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186836",
+"gira": "WTA",
+"torneo": "IEB+ Argentina Open",
+"utc": "2026-11-25T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "5168",
+"n": "Nuria Brancaccio",
+"pais": "Italia",
+"gano": null,
+"sets": []
+},
+{
+"id": "-3",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186835",
+"gira": "WTA",
+"torneo": "IEB+ Argentina Open",
+"utc": "2026-11-25T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "-4",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+},
+{
+"id": "-3",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186834",
+"gira": "WTA",
+"torneo": "IEB+ Argentina Open",
+"utc": "2026-11-25T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "423",
+"n": "Varvara Lepchenko",
+"pais": "USA",
+"gano": null,
+"sets": []
+},
+{
+"id": "-3",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186833",
+"gira": "WTA",
+"torneo": "IEB+ Argentina Open",
+"utc": "2026-11-25T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "-4",
+"n": "TBD",
+"pais": "",
+"gano": null,
+"sets": []
+},
+{
+"id": "-3",
+"n": "TBD",
+"pais": "",
 "gano": null,
 "sets": []
 }
@@ -5703,106 +5709,6 @@ null
 ],
 "futbol_hoy": [
 {
-"id": "401882449",
-"liga": "esp.w.1",
-"competicion": "Liga F",
-"utc": "2026-11-23T19:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Espanyol",
-"visitante": "Valencia",
-"ids": [
-"21154",
-"21374"
-],
-"goles": [
-"0",
-"0"
-],
-"es": true
-},
-{
-"id": "401883110",
-"liga": "esp.2",
-"competicion": "Segunda División",
-"utc": "2026-11-23T19:30Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Ceuta",
-"visitante": "Almería",
-"ids": [
-"5404",
-"6832"
-],
-"goles": [
-"0",
-"0"
-],
-"es": true
-},
-{
-"id": "401875009",
-"liga": "ita.1",
-"competicion": "Serie A",
-"utc": "2026-11-23T19:45Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Monza",
-"visitante": "Fiorentina",
-"ids": [
-"4007",
-"109"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401882802",
-"liga": "esp.1",
-"competicion": "LaLiga",
-"utc": "2026-11-23T20:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Levante",
-"visitante": "Elche",
-"ids": [
-"1538",
-"3751"
-],
-"goles": [
-"0",
-"0"
-],
-"es": true
-},
-{
-"id": "401879237",
-"liga": "eng.1",
-"competicion": "Premier League",
-"utc": "2026-11-23T20:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Brentford",
-"visitante": "Everton",
-"ids": [
-"337",
-"368"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
 "id": "401915380",
 "liga": "uefa.champions",
 "competicion": "Champions League",
@@ -5981,6 +5887,186 @@ null
 "0"
 ],
 "es": true
+},
+{
+"id": "401915378",
+"liga": "uefa.champions",
+"competicion": "Champions League",
+"utc": "2026-11-25T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Sabah FK",
+"visitante": "Barcelona",
+"ids": [
+"21922",
+"83"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401915293",
+"liga": "uefa.champions",
+"competicion": "Champions League",
+"utc": "2026-11-25T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Slavia Prague",
+"visitante": "Villarreal",
+"ids": [
+"494",
+"102"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401915291",
+"liga": "uefa.champions",
+"competicion": "Champions League",
+"utc": "2026-11-25T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Atlético de Madrid",
+"visitante": "Viking FK",
+"ids": [
+"1068",
+"510"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401915292",
+"liga": "uefa.champions",
+"competicion": "Champions League",
+"utc": "2026-11-25T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Club Brujas",
+"visitante": "Liverpool",
+"ids": [
+"570",
+"364"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915376",
+"liga": "uefa.champions",
+"competicion": "Champions League",
+"utc": "2026-11-25T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Internazionale",
+"visitante": "VfB Stuttgart",
+"ids": [
+"110",
+"134"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915377",
+"liga": "uefa.champions",
+"competicion": "Champions League",
+"utc": "2026-11-25T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Lille",
+"visitante": "Bayern München",
+"ids": [
+"166",
+"132"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915374",
+"liga": "uefa.champions",
+"competicion": "Champions League",
+"utc": "2026-11-25T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Paris Saint-Germain",
+"visitante": "AS Roma",
+"ids": [
+"160",
+"104"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915375",
+"liga": "uefa.champions",
+"competicion": "Champions League",
+"utc": "2026-11-25T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Shakhtar Donetsk",
+"visitante": "Fenerbahçe",
+"ids": [
+"493",
+"436"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915373",
+"liga": "uefa.champions",
+"competicion": "Champions League",
+"utc": "2026-11-25T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Sporting CP",
+"visitante": "Manchester United",
+"ids": [
+"2250",
+"360"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
 }
 ],
 "betis": [
@@ -7007,6 +7093,21 @@ null
 ]
 },
 {
+"id": "401936399",
+"utc": "2026-12-02T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "Copa del Rey",
+"local": "Numancia",
+"visitante": "Athletic Club",
+"en_casa": false,
+"estadio": "Los Pajaritos",
+"goles": [
+null,
+null
+]
+},
+{
 "id": "401882785",
 "utc": "2026-12-06T15:15Z",
 "hora_valida": true,
@@ -7618,6 +7719,21 @@ null
 "visitante": "Sevilla FC",
 "en_casa": false,
 "estadio": "Reale Arena",
+"goles": [
+null,
+null
+]
+},
+{
+"id": "401936409",
+"utc": "2026-12-02T20:00Z",
+"hora_valida": false,
+"estado": "pre",
+"competicion": "Copa del Rey",
+"local": "Atlético Paso",
+"visitante": "Sevilla FC",
+"en_casa": false,
+"estadio": "Campo Municipal de El Paso",
 "goles": [
 null,
 null
