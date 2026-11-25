@@ -21,6 +21,10 @@ const TABLEROS = {
   'estimulacion-cognitiva': { nombre: 'Estimulación cognitiva para mayores', cat: 'estimulacion-cognitiva', etiqueta: 'Mayores', desde: '2026-12-03', cada: 3, hasta: null }
 };
 
+// Pines que Albert ya programó a mano en Pinterest (25-28 nov): no van al feed para no repetirlos.
+const YA_PUBLICADOS = new Set(['/navidad/calendario-de-adviento/', '/navidad/amigo-invisible/', '/navidad/etiquetas-regalos/', '/navidad/menu-de-navidad/',
+  '/navidad/lista-de-regalos/', '/navidad/bingo/', '/navidad/carta-papa-noel/', '/navidad/carta-reyes-magos/']);
+
 const sumarDias = (iso, n) => { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
 
 function candidatos(cat) {
@@ -28,7 +32,7 @@ function candidatos(cat) {
   const ps = paginas.filter((p) => p.cat === cat);
   const rondas = [];
   ps.forEach((p) => p.hojas.forEach((h, i) => {
-    if (!h.hayImg) return;
+    if (!h.hayImg || (i === 0 && YA_PUBLICADOS.has(p.url))) return;  // su primera ficha ya está en Pinterest
     (rondas[i] = rondas[i] || []).push({ p, h, i });
   }));
   return rondas.flat();
@@ -63,7 +67,13 @@ h1{font:800 72px/1.05 Besley,serif;margin:26px 0 18px;letter-spacing:-.01em}
       if (hechos.has(id)) { pines.push(hechos.get(id)); continue; }  // los ya programados no cambian de fecha
       if (ultimas.length && fecha <= ultimas[ultimas.length - 1]) fecha = sumarDias(ultimas[ultimas.length - 1], t.cada);
       if (t.hasta && fecha > t.hasta) break;
-      const titulo = i === 0 ? p.h1 : `${p.h1}: ${(h.spec.titulo || h.alt).replace(/ \(ficha para imprimir\)$/, '')}`.slice(0, 95);
+      // título del pin: el de la página y, para las demás fichas, lo que las distingue («difícil», «con actividades»…)
+      let resto = (h.spec.titulo || '').trim();
+      for (const pre of [p.h1, p.corto || '', (p.corto || '').replace(/ para imprimir$/, '')]) {
+        if (pre && resto.toLowerCase().startsWith(pre.toLowerCase())) { resto = resto.slice(pre.length).replace(/^[\s:·-]+/, ''); break; }
+      }
+      resto = resto.replace(/^\((.*)\)$/, '$1');
+      const titulo = i === 0 ? p.h1 : resto ? `${p.h1} · ${resto}`.slice(0, 95) : `${p.h1} (modelo ${i + 1})`;
       pines.push({ id, tablero: clave, fecha, url: p.url, titulo, descripcion: p.desc, imagen: `/pines/${id}.jpg`, origen: h.img });
       ultimas.push(fecha);
       fecha = sumarDias(fecha, t.cada);
