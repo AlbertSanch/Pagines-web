@@ -46,6 +46,11 @@ const VIDEOS = {
     rondas: [['constitucion-1978', 'star-wars'], ['primer-eurovision', 'disneyland'], ['barbie', 'primeras-emisiones-tve'], ['telescopio-hubble', 'los-simpson']],
     cierre: ['Un reto nuevo cada día, gratis', 'quefueantes.es']
   },
+  '8-en-casa': {
+    gancho: ['¿Qué llegó antes a casa?', 'Inventos de todos los días'],
+    rondas: [['fregona', 'microondas'], ['bombilla-edison', 'patente-telefono'], ['coca-cola', 'vaqueros-levis'], ['tamagotchi', 'playstation']],
+    cierre: ['Un reto nuevo cada día, gratis', 'quefueantes.es']
+  },
   '7-antiguos': {
     gancho: ['¿Qué fue antes?', 'Nivel difícil: historia antigua'],
     rondas: [['gran-piramide-guiza', 'invencion-rueda'], ['fundacion-roma', 'primeros-juegos-olimpicos-antiguos'], ['erupcion-vesubio-pompeya', 'asesinato-julio-cesar'], ['invencion-papel', 'erupcion-vesubio-pompeya']],
