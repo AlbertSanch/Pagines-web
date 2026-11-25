@@ -1649,7 +1649,7 @@
 ],
 "2027": []
 },
-"descargado": "2026-11-24",
+"descargado": "2026-11-25",
 "madrid": [
 {
 "id": "401898187",
@@ -1985,15 +1985,15 @@
 "id": "401915298",
 "utc": "2026-11-24T20:00Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "competicion": "UEFA Champions League",
 "local": "Real Madrid",
 "visitante": "PSV Eindhoven",
 "en_casa": true,
 "estadio": "Santiago Bernabéu",
 "goles": [
-null,
-null
+"5",
+"1"
 ]
 },
 {
@@ -4091,230 +4091,14 @@ null
 },
 "tenis_hoy": [
 {
-"id": "186819",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T14:05Z",
-"hora_valida": true,
-"estado": "in",
-"ronda": "Round 1",
-"pista": "Cancha Central",
-"jugadores": [
-{
-"id": "15069",
-"n": "Laura Samson",
-"pais": "Chequia",
-"gano": null,
-"sets": [
-2
-]
-},
-{
-"id": "2035",
-"n": "Victoria Bosio",
-"pais": "Argentina",
-"gano": null,
-"sets": [
-3
-]
-}
-]
-},
-{
-"id": "186820",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T14:05Z",
-"hora_valida": true,
-"estado": "in",
-"ronda": "Round 1",
-"pista": "Cancha 3",
-"jugadores": [
-{
-"id": "5878",
-"n": "Veronika Erjavec",
-"pais": "Eslovenia",
-"gano": null,
-"sets": [
-3
-]
-},
-{
-"id": "4926",
-"n": "Zhibek Kulambayeva",
-"pais": "Kazajistán",
-"gano": null,
-"sets": [
-2
-]
-}
-]
-},
-{
-"id": "186814",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T15:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Cancha Central",
-"jugadores": [
-{
-"id": "17421",
-"n": "Luna Maria Cinalli",
-"pais": "Argentina",
-"gano": null,
-"sets": []
-},
-{
-"id": "12957",
-"n": "Guiomar Maristany Zuleta De Reales",
-"pais": "España",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186818",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T15:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Cancha 3",
-"jugadores": [
-{
-"id": "4629",
-"n": "Alicia Herrero Linana",
-"pais": "España",
-"gano": null,
-"sets": []
-},
-{
-"id": "4666",
-"n": "Lucia Bronzetti",
-"pais": "Italia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186821",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T18:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Cancha 3",
-"jugadores": [
-{
-"id": "4546",
-"n": "Irene Burillo",
-"pais": "España",
-"gano": null,
-"sets": []
-},
-{
-"id": "19256",
-"n": "Lourdes Ayala",
-"pais": "Argentina",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186826",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T18:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Cancha Central",
-"jugadores": [
-{
-"id": "7778",
-"n": "Victoria Jimenez Kasintseva",
-"pais": "Andorra",
-"gano": null,
-"sets": []
-},
-{
-"id": "6500",
-"n": "Solana Sierra",
-"pais": "Argentina",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186827",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T19:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Cancha Central",
-"jugadores": [
-{
-"id": "10676",
-"n": "Leyre Romero Gormaz",
-"pais": "España",
-"gano": null,
-"sets": []
-},
-{
-"id": "3256",
-"n": "Nadia Podoroska",
-"pais": "Argentina",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186825",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-24T19:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Round 1",
-"pista": "Cancha 3",
-"jugadores": [
-{
-"id": "14562",
-"n": "Sofia Costoulas",
-"pais": "Bélgica",
-"gano": null,
-"sets": []
-},
-{
-"id": "1095",
-"n": "Polona Hercog",
-"pais": "Eslovenia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
 "id": "186828",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-25T05:00Z",
-"hora_valida": false,
+"utc": "2026-11-25T18:00Z",
+"hora_valida": true,
 "estado": "pre",
 "ronda": "Round 1",
-"pista": "",
+"pista": "Cancha Central",
 "jugadores": [
 {
 "id": "3220",
@@ -4333,45 +4117,19 @@ null
 ]
 },
 {
-"id": "186840",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-25T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 2",
-"pista": "",
-"jugadores": [
-{
-"id": "5299",
-"n": "Carole Monnet",
-"pais": "Francia",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-}
-]
-},
-{
 "id": "186839",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-25T05:00Z",
-"hora_valida": false,
+"utc": "2026-11-25T18:00Z",
+"hora_valida": true,
 "estado": "pre",
 "ronda": "Round 2",
-"pista": "",
+"pista": "Cancha 3",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "5878",
+"n": "Veronika Erjavec",
+"pais": "Eslovenia",
 "gano": null,
 "sets": []
 },
@@ -4385,40 +4143,14 @@ null
 ]
 },
 {
-"id": "186838",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-25T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 2",
-"pista": "",
-"jugadores": [
-{
-"id": "14607",
-"n": "Ariana Geerlings",
-"pais": "España",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-}
-]
-},
-{
 "id": "186837",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-25T05:00Z",
-"hora_valida": false,
+"utc": "2026-11-25T19:30Z",
+"hora_valida": true,
 "estado": "pre",
 "ronda": "Round 2",
-"pista": "",
+"pista": "Cancha Central",
 "jugadores": [
 {
 "id": "5749",
@@ -4437,26 +4169,52 @@ null
 ]
 },
 {
-"id": "186836",
+"id": "186838",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-25T05:00Z",
-"hora_valida": false,
+"utc": "2026-11-25T19:30Z",
+"hora_valida": true,
 "estado": "pre",
 "ronda": "Round 2",
-"pista": "",
+"pista": "Cancha 3",
 "jugadores": [
 {
-"id": "5168",
-"n": "Nuria Brancaccio",
-"pais": "Italia",
+"id": "14607",
+"n": "Ariana Geerlings",
+"pais": "España",
 "gano": null,
 "sets": []
 },
 {
-"id": "-3",
-"n": "TBD",
-"pais": "",
+"id": "4629",
+"n": "Alicia Herrero Linana",
+"pais": "España",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186840",
+"gira": "WTA",
+"torneo": "IEB+ Argentina Open",
+"utc": "2026-11-25T21:00Z",
+"hora_valida": true,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "Cancha Central",
+"jugadores": [
+{
+"id": "5299",
+"n": "Carole Monnet",
+"pais": "Francia",
+"gano": null,
+"sets": []
+},
+{
+"id": "6500",
+"n": "Solana Sierra",
+"pais": "Argentina",
 "gano": null,
 "sets": []
 }
@@ -4466,42 +4224,16 @@ null
 "id": "186835",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-25T05:00Z",
+"utc": "2026-11-26T05:00Z",
 "hora_valida": false,
 "estado": "pre",
 "ronda": "Round 2",
 "pista": "",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186834",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-25T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Round 2",
-"pista": "",
-"jugadores": [
-{
-"id": "423",
-"n": "Varvara Lepchenko",
-"pais": "USA",
+"id": "3256",
+"n": "Nadia Podoroska",
+"pais": "Argentina",
 "gano": null,
 "sets": []
 },
@@ -4518,23 +4250,75 @@ null
 "id": "186833",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-25T05:00Z",
+"utc": "2026-11-26T05:00Z",
 "hora_valida": false,
 "estado": "pre",
 "ronda": "Round 2",
 "pista": "",
 "jugadores": [
 {
-"id": "-4",
-"n": "TBD",
-"pais": "",
+"id": "15069",
+"n": "Laura Samson",
+"pais": "Chequia",
 "gano": null,
 "sets": []
 },
 {
-"id": "-3",
-"n": "TBD",
-"pais": "",
+"id": "4546",
+"n": "Irene Burillo",
+"pais": "España",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186836",
+"gira": "WTA",
+"torneo": "IEB+ Argentina Open",
+"utc": "2026-11-26T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "5168",
+"n": "Nuria Brancaccio",
+"pais": "Italia",
+"gano": null,
+"sets": []
+},
+{
+"id": "12957",
+"n": "Guiomar Maristany Zuleta De Reales",
+"pais": "España",
+"gano": null,
+"sets": []
+}
+]
+},
+{
+"id": "186834",
+"gira": "WTA",
+"torneo": "IEB+ Argentina Open",
+"utc": "2026-11-26T05:00Z",
+"hora_valida": false,
+"estado": "pre",
+"ronda": "Round 2",
+"pista": "",
+"jugadores": [
+{
+"id": "423",
+"n": "Varvara Lepchenko",
+"pais": "USA",
+"gano": null,
+"sets": []
+},
+{
+"id": "14562",
+"n": "Sofia Costoulas",
+"pais": "Bélgica",
 "gano": null,
 "sets": []
 }
@@ -5717,186 +5501,6 @@ null
 ],
 "futbol_hoy": [
 {
-"id": "401915380",
-"liga": "uefa.champions",
-"competicion": "Champions League",
-"utc": "2026-11-24T17:45Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Bodo/Glimt",
-"visitante": "LASK Linz",
-"ids": [
-"2980",
-"4411"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401915300",
-"liga": "uefa.champions",
-"competicion": "Champions League",
-"utc": "2026-11-24T17:45Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Galatasaray",
-"visitante": "Aston Villa",
-"ids": [
-"432",
-"362"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401915295",
-"liga": "uefa.champions",
-"competicion": "Champions League",
-"utc": "2026-11-24T20:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Arsenal",
-"visitante": "Borussia Dortmund",
-"ids": [
-"359",
-"124"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401915296",
-"liga": "uefa.champions",
-"competicion": "Champions League",
-"utc": "2026-11-24T20:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Como",
-"visitante": "AEK Athens",
-"ids": [
-"2572",
-"887"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401915294",
-"liga": "uefa.champions",
-"competicion": "Champions League",
-"utc": "2026-11-24T20:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Feyenoord Rotterdam",
-"visitante": "FC Porto",
-"ids": [
-"142",
-"437"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401915379",
-"liga": "uefa.champions",
-"competicion": "Champions League",
-"utc": "2026-11-24T20:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Manchester City",
-"visitante": "Napoli",
-"ids": [
-"382",
-"114"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401915299",
-"liga": "uefa.champions",
-"competicion": "Champions League",
-"utc": "2026-11-24T20:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "RB Leipzig",
-"visitante": "Lens",
-"ids": [
-"11420",
-"175"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401915298",
-"liga": "uefa.champions",
-"competicion": "Champions League",
-"utc": "2026-11-24T20:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Real Madrid",
-"visitante": "PSV Eindhoven",
-"ids": [
-"86",
-"148"
-],
-"goles": [
-"0",
-"0"
-],
-"es": true
-},
-{
-"id": "401915297",
-"liga": "uefa.champions",
-"competicion": "Champions League",
-"utc": "2026-11-24T20:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Slovan Bratislava",
-"visitante": "Real Betis",
-"ids": [
-"521",
-"244"
-],
-"goles": [
-"0",
-"0"
-],
-"es": true
-},
-{
 "id": "401915378",
 "liga": "uefa.champions",
 "competicion": "Champions League",
@@ -6069,6 +5673,726 @@ null
 "ids": [
 "2250",
 "360"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915816",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T15:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Kairat Almaty",
+"visitante": "Mjällby AIF",
+"ids": [
+"2528",
+"20301"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915506",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Besiktas",
+"visitante": "Hapoel Be'er",
+"ids": [
+"1895",
+"13083"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915519",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Celta Vigo",
+"visitante": "AFC Bournemouth",
+"ids": [
+"85",
+"349"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401915517",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Dinamo Zagreb",
+"visitante": "Bayer Leverkusen",
+"ids": [
+"597",
+"131"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915507",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Marseille",
+"visitante": "Levski Sofia",
+"ids": [
+"176",
+"490"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915521",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Olympiacos",
+"visitante": "AC Milan",
+"ids": [
+"435",
+"103"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915520",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "RB Salzburg",
+"visitante": "Ararat-Armenia",
+"ids": [
+"2790",
+"20024"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915508",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Union St.-Gilloise",
+"visitante": "Lech Poznan",
+"ids": [
+"5807",
+"2990"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915518",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Viktoria Plzen",
+"visitante": "Benfica",
+"ids": [
+"11706",
+"1929"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915815",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Ajax Amsterdam",
+"visitante": "FC Thun",
+"ids": [
+"139",
+"3024"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915814",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Brighton & Hove Albion",
+"visitante": "CSU Craiova",
+"ids": [
+"331",
+"8089"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915810",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Egnatia",
+"visitante": "Lincoln Red Imps",
+"ids": [
+"21943",
+"17856"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915811",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Heart of Midlothian",
+"visitante": "AS Mónaco",
+"ids": [
+"262",
+"174"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915813",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Iberia 1999",
+"visitante": "Getafe",
+"ids": [
+"20025",
+"2922"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401915812",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Jablonec",
+"visitante": "FC Lugano",
+"ids": [
+"7922",
+"7672"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915739",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Kauno Zalgiris",
+"visitante": "Riga FC",
+"ids": [
+"20028",
+"19246"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915809",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Pafos",
+"visitante": "FC Midtjylland",
+"ids": [
+"22281",
+"572"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915808",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T17:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "SK Brann",
+"visitante": "Aarhus GF",
+"ids": [
+"620",
+"7853"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915504",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Crystal Palace",
+"visitante": "Real Sociedad",
+"ids": [
+"384",
+"89"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401915516",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Ferencvaros",
+"visitante": "NK Celje",
+"ids": [
+"622",
+"3362"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915502",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Juventus",
+"visitante": "Omonia Nicosia",
+"ids": [
+"111",
+"617"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915501",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Lyon",
+"visitante": "Lillestrom",
+"ids": [
+"167",
+"987"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915505",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "NEC Nijmegen",
+"visitante": "Stade Rennais",
+"ids": [
+"147",
+"169"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915503",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "OFI Crete",
+"visitante": "Anderlecht",
+"ids": [
+"1010",
+"441"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915514",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Sparta Prague",
+"visitante": "AZ Alkmaar",
+"ids": [
+"433",
+"140"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915513",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Sunderland",
+"visitante": "Jagiellonia Bialystok",
+"ids": [
+"366",
+"11505"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915512",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Torreense",
+"visitante": "Celtic",
+"ids": [
+"21615",
+"256"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915515",
+"liga": "uefa.europa",
+"competicion": "Europa League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "TSG Hoffenheim",
+"visitante": "SK Sturm Graz",
+"ids": [
+"7911",
+"3746"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915806",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Borac Banja Luka",
+"visitante": "Atalanta",
+"ids": [
+"20710",
+"105"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915802",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Braga",
+"visitante": "KuPS Kuopio",
+"ids": [
+"2994",
+"8169"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915803",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "CSKA Sofia",
+"visitante": "Trabzonspor",
+"ids": [
+"10834",
+"997"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915807",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "FC Nordsjælland",
+"visitante": "Panathinaikos",
+"ids": [
+"3101",
+"443"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915805",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Hajduk Split",
+"visitante": "Sint-Truidense",
+"ids": [
+"489",
+"936"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915738",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Inter D'Escaldes",
+"visitante": "F.C. København",
+"ids": [
+"20703",
+"909"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915804",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "KAA Gent",
+"visitante": "Red Star Belgrade",
+"ids": [
+"3611",
+"2290"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401915801",
+"liga": "uefa.europa.conf",
+"competicion": "Conference League",
+"utc": "2026-11-26T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "SC Freiburg",
+"visitante": "FC Twente",
+"ids": [
+"126",
+"152"
 ],
 "goles": [
 "0",
@@ -6397,15 +6721,15 @@ null
 "id": "401915297",
 "utc": "2026-11-24T20:00Z",
 "hora_valida": true,
-"estado": "pre",
+"estado": "post",
 "competicion": "UEFA Champions League",
 "local": "Slovan Bratislava",
 "visitante": "Real Betis",
 "en_casa": false,
 "estadio": "Národny Futbalovy Stadión",
 "goles": [
-null,
-null
+"0",
+"2"
 ]
 },
 {
@@ -9691,7 +10015,7 @@ null
 {
 "id": "401936416",
 "utc": "2026-12-02T20:00Z",
-"hora_valida": false,
+"hora_valida": true,
 "estado": "pre",
 "competicion": "Copa del Rey",
 "local": "Arosa",
