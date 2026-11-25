@@ -686,6 +686,20 @@ def pagina_puentes(datos, anio):
                   cuerpo, [(f"Puentes {anio}", None)])
 
 
+def mapa_comunidades(color_ccaa, titulo_ccaa, aria):
+    """Mapa de provincias (data/mapa_provincias.json) con un color por comunidad; cada provincia enlaza a su página."""
+    mapa = json.loads((RAIZ / "data" / "mapa_provincias.json").read_text(encoding="utf-8"))
+    x, y, w, h = mapa["canarias"]
+    svg = [f'<svg class="mapa-provincias" viewBox="0 0 {mapa["ancho"]} {mapa["alto"]}" role="img" aria-label="{escape(aria)}">',
+           f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="none" stroke="#b9ad9f" stroke-dasharray="6 4"/>']
+    for k in mapa["orden"]:
+        d, c = mapa["provincias"][k], PROVINCIAS[k][1]
+        forma = (f'<circle cx="{d["cx"]}" cy="{d["cy"]}" r="9" fill="{color_ccaa[c]}" stroke="#2b2118" stroke-width="1.5"/>' if k in ("51", "52")
+                 else f'<path d="{d["d"]}" fill="{color_ccaa[c]}" stroke="#fff" stroke-width="1.6"/>')
+        svg.append(f'<a href="{RUTAS_PROV[k]}"><title>{escape(PROVINCIAS[k][0])}: {escape(titulo_ccaa(c))}</title>{forma}</a>')
+    return '<div class="mapa-envoltorio">' + "".join(svg) + "</svg></div>"
+
+
 def pagina_puente_diciembre(datos, anio):
     """El puente de la Constitución y la Inmaculada (6 y 8 de diciembre) en cada comunidad: «puente de diciembre 2026»
     4.400 búsquedas al mes, «8 de diciembre festivo» 2.400 (Keyword Planner, noviembre de 2026)."""
@@ -728,16 +742,28 @@ def pagina_puente_diciembre(datos, anio):
         preguntas.append((f"¿Es festivo el 7 de diciembre de {anio}?", f"Sí en {lista_y(lunes7)}, que trasladan al lunes 7 el Día de la Constitución por caer en domingo. En el resto de España es laborable, salvo fiesta local."))
     preguntas.append((f"¿Es festivo el 8 de diciembre de {anio}?", f"Sí, la Inmaculada Concepción es festivo en toda España; en {anio} cae en {DIAS[ocho.weekday()]}."))
     preguntas.append(("¿Y las fiestas locales?", "Algunos municipios tienen fiesta local esos días y su puente es aún más largo: búscalo en el buscador de la portada para ver sus festivos."))
+    mapa = ""
+    if lunes7:
+        con7 = {c for c in d if any(x["f"] == f"{anio}-12-07" for x in d[c])}
+        mapa = (f'<section><h2>¿Dónde es festivo el lunes 7 de diciembre?</h2>'
+                + mapa_comunidades({c: ("#c0392b" if c in con7 else "#d9cfc3") for c in COMUNIDADES},
+                                   lambda c: "festivo el lunes 7 (puente de 4 días)" if c in con7 else "laborable el lunes 7",
+                                   f"Mapa de las comunidades con festivo el lunes 7 de diciembre de {anio}")
+                + '<p class="leyenda"><span><span class="muestra" style="background:#c0392b"></span> Festivo el lunes 7: puente de 4 días</span>'
+                  '<span><span class="muestra" style="background:#d9cfc3"></span> Laborable el lunes 7 (solo es festivo el martes 8)</span></p></section>')
     cuerpo = f"""<h1>Puente de diciembre {anio}: la Constitución y la Inmaculada en cada comunidad</h1>
 <p class="lead">{resumen}</p>
+{mapa}
 <div class="tabla-envoltorio"><table class="festivos"><thead><tr><th>Comunidad</th><th>Festivos</th><th>Sin pedir días</th><th>Pidiendo vacaciones</th></tr></thead><tbody>{''.join(filas)}</tbody></table></div>
-{f'<section><h2>Fiestas locales esos días</h2><ul class="puentes">{texto_locales}</ul><p>Busca tu municipio en la <a href="/">portada</a> para ver sus festivos.</p></section>' if texto_locales else ''}
+{f'<section><h2>Fiestas locales esos días</h2><ul class="puentes">{texto_locales}</ul></section>' if texto_locales else ''}
+{buscador("¿Tu municipio tiene más puente?", "Algunos pueblos tienen fiesta local esos días y su puente es aún más largo. Busca el tuyo para ver todos sus festivos de diciembre.")}
 <p>Todos los puentes del año en <a href="/puentes-{anio}/">puentes {anio}</a>, y qué días pedir con tus vacaciones en el <a href="/planificador-vacaciones/?a={anio}">planificador de vacaciones</a>.</p>
 <p class="fuente">Fuente: <a href="{datos[anio]['boe']['url']}" rel="nofollow noopener">{escape(datos[anio]['boe']['titulo'])}</a> y los boletines oficiales de cada comunidad.</p>
 <section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
     desc = (f"Puente de diciembre {anio}: qué comunidades tienen festivo el lunes 7 y 4 días seguidos sin pedir vacaciones, y qué día coger en el resto." if lunes7
             else f"Puente de diciembre {anio} en cada comunidad: cuándo caen la Constitución y la Inmaculada y qué días pedir para tener más días libres.")
-    return pagina(ruta, f"Puente de diciembre {anio}: festivos y días libres por comunidad", desc, cuerpo,
+    titulo = f"Puente de diciembre {anio}: ¿hay festivo el lunes 7? Por comunidades" if lunes7 else f"Puente de diciembre {anio}: festivos y días libres por comunidad"
+    return pagina(ruta, titulo, desc, cuerpo,
                   [(f"Puentes {anio}", f"/puentes-{anio}/"), ("Puente de diciembre", None)], [faq_ld(preguntas)])
 
 
