@@ -20,6 +20,11 @@ const PINES = [
   ['/navidad/carta-papa-noel/', 'Navidad', 'Carta a Papá Noel para imprimir', 'Lista para que los niños la rellenen · gratis', 'Navidad para imprimir'],
   ['/navidad/bingo/', 'Navidad', 'Bingo de Navidad para imprimir', 'Cartones con dibujos para jugar en familia · gratis', 'Navidad para imprimir'],
   ['/estimulacion-cognitiva/deterioro-leve/', 'Mayores', 'Fichas de estimulación cognitiva', 'Para mayores con deterioro cognitivo leve · PDF gratis', 'Estimulación cognitiva para mayores'],
+  ['/navidad/calendario-de-adviento/', 'Navidad', 'Calendario de Adviento para imprimir', 'Del 1 al 24 de diciembre, con actividades en familia · gratis', 'Navidad para imprimir'],
+  ['/navidad/amigo-invisible/', 'Navidad', 'Amigo invisible para imprimir', 'Papelitos para el sorteo y hoja para organizarlo · gratis', 'Navidad para imprimir'],
+  ['/navidad/etiquetas-regalos/', 'Navidad', 'Etiquetas para regalos de Navidad', '12 por hoja, para recortar y colorear · gratis', 'Navidad para imprimir'],
+  ['/navidad/menu-de-navidad/', 'Navidad', 'Menú de Nochebuena y Nochevieja', 'Plantillas para la mesa, para rellenar a mano · gratis', 'Navidad para imprimir'],
+  ['/navidad/lista-de-regalos/', 'Navidad', 'Lista de regalos de Navidad', 'Para quién, qué regalo y cuánto cuesta · gratis', 'Navidad para imprimir'],
   ['/estimulacion-cognitiva/dinamicas-grupales/', 'Mayores', 'Dinámicas de grupo para mayores', 'Juegos para trabajar la memoria en residencias y centros de día · gratis', 'Estimulación cognitiva para mayores'],
 ];
 
