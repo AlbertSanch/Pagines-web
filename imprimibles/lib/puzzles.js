@@ -1763,6 +1763,114 @@
     return { svg: hoja({ titulo: spec.titulo }, o), sol: null };
   }
 
+
+  // ---------- más Navidad: Adviento, etiquetas, menú, lista de regalos y amigo invisible ----------
+  function lineaPunteada(x1, x2, y) { return '<path d="M' + f(x1) + ' ' + f(y) + 'H' + f(x2) + '" stroke="#8a8a90" stroke-width=".25"/>'; }
+  // Calendario de Adviento: 24 casillas (desordenadas, siempre igual) o, con actividades, una propuesta para cada día
+  function adviento(spec) {
+    var s = '', cols = 4, filas = 6, w = 180 / cols, h = 236 / filas, y0 = 42, orden = [];
+    for (var k = 1; k <= 24; k++) orden.push(k);
+    if (!spec.actividades) orden = shuffle(rng(2412), orden);
+    orden.forEach(function (dia, i) {
+      var x = 15 + (i % cols) * w, y = y0 + Math.floor(i / cols) * h;
+      s += '<rect x="' + f(x + 1.5) + '" y="' + f(y + 1.5) + '" width="' + f(w - 3) + '" height="' + f(h - 3) + '" rx="3" fill="#fff" stroke="' + (dia === 24 ? ROJO : TINTA) + '" stroke-width="' + (dia === 24 ? .8 : .4) + '"/>';
+      if (spec.actividades) {
+        s += txt(x + 6, y + 11, dia, { size: 8, titular: true, fill: dia === 24 ? ROJO : TINTA });
+        s += dibujo(dia % 6, x + w - 9, y + 9, 8, GRIS);
+        parte(spec.actividades[dia - 1], 22).slice(0, 4).forEach(function (l, j) { s += txt(x + 5, y + 20 + j * 4.6, l, { size: 3.5 }); });
+      } else {
+        s += dibujo(dia % 6, x + w / 2, y + h / 2 + 5, 15, '#b4b4ba');
+        s += txt(x + w / 2, y + 15, dia, { size: 11, titular: true, anchor: 'middle', fill: dia === 24 ? ROJO : TINTA });
+      }
+    });
+    return { svg: hoja({ titulo: spec.titulo, sub: spec.sub }, s), sol: null };
+  }
+
+  // Etiquetas para regalos: 12 por hoja, para recortar, con agujero para la cinta
+  function etiquetas(spec) {
+    var s = '', cols = 3, filas = 4, w = 180 / cols, h = 236 / filas, y0 = 38;
+    for (var i = 0; i < cols * filas; i++) {
+      var x = 15 + (i % cols) * w, y = y0 + Math.floor(i / cols) * h, cx = x + w / 2;
+      s += '<path d="M' + f(x + 12) + ' ' + f(y + 3) + 'H' + f(x + w - 4) + 'V' + f(y + h - 3) + 'H' + f(x + 12) + 'L' + f(x + 3) + ' ' + f(y + h / 2) + 'Z" fill="none" stroke="' + TINTA + '" stroke-width=".4" stroke-dasharray="2 1.4"/>';
+      s += '<circle cx="' + f(x + 10) + '" cy="' + f(y + h / 2) + '" r="1.6" fill="none" stroke="' + TINTA + '" stroke-width=".4"/>';
+      s += dibujo(i % 6, cx + 4, y + 13, 11, i % 2 ? ROJO : TINTA);
+      if (spec.texto) s += txt(cx + 4, y + 27, spec.texto, { size: 4.6, anchor: 'middle', titular: true });
+      var yy = y + (spec.texto ? 38 : 32);
+      s += txt(x + 16, yy, 'Para:', { size: 4 }) + lineaPunteada(x + 27, x + w - 8, yy);
+      s += txt(x + 16, yy + 10, 'De:', { size: 4 }) + lineaPunteada(x + 25, x + w - 8, yy + 10);
+    }
+    return { svg: hoja({ titulo: spec.titulo, sub: 'Recorta por la línea de puntos y haz un agujero en el círculo para pasar la cinta. Mejor en cartulina.' }, s), sol: null };
+  }
+
+  // Menú para la mesa (Nochebuena, Navidad, Nochevieja…)
+  function menuFiesta(spec) {
+    var s = '', y = 58;
+    s += dibujo(0, 105, 22, 16, ROJO) + dibujo(1, 70, 26, 13) + dibujo(1, 140, 26, 13);
+    s += txt(105, 46, spec.cabecera, { size: 13, titular: true, anchor: 'middle' });
+    s += txt(105, 54, 'Fecha: ......................................................', { size: 4, anchor: 'middle', fill: GRIS });
+    (spec.secciones || ['Para picar', 'Primer plato', 'Segundo plato', 'Postre', 'Para brindar']).forEach(function (sec) {
+      y += 16;
+      s += txt(105, y, sec, { size: 7, titular: true, anchor: 'middle', fill: ROJO });
+      s += '<path d="M85 ' + f(y + 2.5) + 'H125" stroke="' + ROJO + '" stroke-width=".3"/>';
+      for (var j = 0; j < 2; j++) { y += 10; s += lineaPunteada(40, 170, y); }
+      y += 4;
+    });
+    if (spec.pie) s += txt(105, Math.min(y + 14, 276), spec.pie, { size: 4.4, anchor: 'middle', fill: GRIS });
+    s += '<rect x="9" y="8" width="192" height="276" rx="4" fill="none" stroke="' + TINTA + '" stroke-width=".6"/><rect x="11.5" y="10.5" width="187" height="271" rx="3" fill="none" stroke="' + ROJO + '" stroke-width=".3"/>';
+    return { svg: hoja({ alt: spec.cabecera, sinPie: false }, s), sol: null };
+  }
+
+  // Lista de regalos: para quién, qué, presupuesto y si ya está comprado
+  function listaRegalos(spec) {
+    var s = '', y = 44, cols = [['Para quién', 15], ['Regalo', 62], ['Presupuesto', 140], ['Comprado', 172]], filas = spec.filas || 18;
+    s += '<rect x="15" y="' + y + '" width="180" height="9" fill="' + TINTA + '"/>';
+    cols.forEach(function (c) { s += txt(c[1] + 2, y + 6.3, c[0], { size: 4, bold: true, fill: '#fff' }); });
+    y += 9;
+    for (var i = 0; i < filas; i++) {
+      s += '<rect x="15" y="' + f(y) + '" width="180" height="11" fill="' + (i % 2 ? '#f7f5ef' : '#fff') + '" stroke="' + TINTA + '" stroke-width=".25"/>';
+      [62, 140, 172].forEach(function (x) { s += '<path d="M' + x + ' ' + f(y) + 'v11" stroke="' + TINTA + '" stroke-width=".25"/>'; });
+      s += '<rect x="181" y="' + f(y + 3) + '" width="5" height="5" rx=".6" fill="none" stroke="' + TINTA + '" stroke-width=".35"/>';
+      s += txt(169, y + 7.5, '€', { size: 3.6, anchor: 'end', fill: GRIS });
+      y += 11;
+    }
+    s += txt(140, y + 9, 'Total:', { size: 4.6, bold: true, anchor: 'end' }) + '<rect x="142" y="' + f(y + 3) + '" width="30" height="9" fill="none" stroke="' + TINTA + '" stroke-width=".35"/>' + txt(169, y + 9.3, '€', { size: 3.6, anchor: 'end', fill: GRIS });
+    s += txt(15, y + 21, 'Presupuesto total que me he puesto:', { size: 4.2 }) + lineaPunteada(78, 120, y + 21);
+    return { svg: hoja({ titulo: spec.titulo, sub: spec.sub }, s), sol: null };
+  }
+
+  // Amigo invisible: papelitos para el sorteo y hoja de quien organiza
+  function amigoInvisible(spec) {
+    var s = '';
+    if (spec.modo === 'organiza') {
+      var y = 46;
+      s += txt(15, y, 'Fecha del intercambio:', { size: 4.4 }) + lineaPunteada(58, 110, y) + txt(115, y, 'Presupuesto:', { size: 4.4 }) + lineaPunteada(139, 195, y);
+      y += 10;
+      s += txt(15, y, 'Lugar:', { size: 4.4 }) + lineaPunteada(28, 195, y);
+      y += 10;
+      s += '<rect x="15" y="' + y + '" width="180" height="9" fill="' + TINTA + '"/>';
+      [['Participante', 15], ['Le regala a…', 75], ['Ideas o gustos', 128]].forEach(function (c) { s += txt(c[1] + 2, y + 6.3, c[0], { size: 4, bold: true, fill: '#fff' }); });
+      y += 9;
+      for (var i = 0; i < 16; i++) {
+        s += '<rect x="15" y="' + f(y) + '" width="180" height="12" fill="none" stroke="' + TINTA + '" stroke-width=".25"/>';
+        [75, 128].forEach(function (x) { s += '<path d="M' + x + ' ' + f(y) + 'v12" stroke="' + TINTA + '" stroke-width=".25"/>'; });
+        s += txt(19, y + 8, (i + 1) + '.', { size: 3.6, fill: GRIS });
+        y += 12;
+      }
+      s += txt(15, y + 9, 'Consejo: si haces el sorteo a mano, que nadie se saque a sí mismo; si pasa, se repite el sorteo.', { size: 3.6, fill: GRIS });
+      return { svg: hoja({ titulo: spec.titulo, sub: spec.sub }, s), sol: null };
+    }
+    var cols = 2, filas = 5, w = 180 / cols, h = 240 / filas, y0 = 36;
+    for (var k = 0; k < cols * filas; k++) {
+      var x = 15 + (k % cols) * w, yy = y0 + Math.floor(k / cols) * h;
+      s += '<rect x="' + f(x + 1.5) + '" y="' + f(yy + 1.5) + '" width="' + f(w - 3) + '" height="' + f(h - 3) + '" rx="3" fill="none" stroke="' + TINTA + '" stroke-width=".35" stroke-dasharray="2 1.4"/>';
+      s += dibujo(2, x + 11, yy + 12, 11, ROJO);
+      s += txt(x + 20, yy + 13, 'Amigo invisible', { size: 5.2, titular: true });
+      s += txt(x + 6, yy + 25, 'Te ha tocado regalar a:', { size: 4 }) + lineaPunteada(x + 6, x + w - 6, yy + 34);
+      s += txt(x + 6, yy + 43, 'Presupuesto:', { size: 3.6, fill: GRIS }) + lineaPunteada(x + 27, x + w - 6, yy + 43);
+    }
+    return { svg: hoja({ titulo: spec.titulo, sub: 'Escribe un nombre en cada papelito, recórtalos, dóblalos y que cada uno saque uno al azar.' }, s), sol: null };
+  }
+
   var TIPOS = {
     sopa: sopa, sudoku: sudoku, laberinto: laberinto, bingo90: bingo90, bingo75: bingo75, 'bingo-numeros': bingoNumeros,
     tabla: tabla, 'tablas-todas': tablasTodas, pitagorica: pitagorica, 'mult-practica': multPractica,
@@ -1775,7 +1883,7 @@
     problemas: problemas,
     cancelacion: cancelacion, refranes: refranes, series: series, compra: compra, fluidez: fluidez, orientacion: orientacion,
     ordenar: ordenar, clasificar: clasificar, copiar: copiar, iguales: iguales, contar: contar, colorear: colorear,
-    tarjetas: tarjetas, 'bingo-sumas': bingoSumas, receta: receta, 'lista-grupos': listaGrupos, sesion: sesion
+    tarjetas: tarjetas, 'bingo-sumas': bingoSumas, adviento: adviento, etiquetas: etiquetas, 'menu-fiesta': menuFiesta, 'lista-regalos': listaRegalos, 'amigo-invisible': amigoInvisible, receta: receta, 'lista-grupos': listaGrupos, sesion: sesion
   };
   // Tipos cuyo contenido cambia con la semilla (tienen botón «Otra distinta»)
   var ALEATORIOS = { sopa: 1, sudoku: 1, laberinto: 1, bingo90: 1, bingo75: 1, 'mult-practica': 1, operaciones: 1,

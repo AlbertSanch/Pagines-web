@@ -181,5 +181,109 @@ module.exports = [
 <p>Si dibujar les cuesta, que pongan solo la inicial (E, Á, R, C) o un punto de color distinto para cada dibujo: un rotulador amarillo para las estrellas, verde para los árboles y así. Cuando terminen, pueden colorear la hoja entera.</p>
 <p>Cuando dominen estos, el siguiente paso son los <a href="/sudokus/para-ninos/">sudokus para niños con números</a>, de 4 × 4 y 6 × 6.</p>`,
     amazon: [['Lápices de colores', 'lapices de colores niños']]
+  },
+  {
+    cat: 'navidad', slug: 'calendario-de-adviento', corto: 'Calendario de Adviento',
+    title: 'Calendario de Adviento para imprimir (PDF gratis)',
+    desc: 'Calendario de Adviento para imprimir: 24 casillas para tachar o colorear del 1 al 24 de diciembre, y otro con una actividad en familia para cada día.',
+    h1: 'Calendario de Adviento para imprimir',
+    entrada: 'La cuenta atrás hasta Nochebuena en papel: una hoja con 24 casillas desordenadas para buscar, tachar o colorear cada día de diciembre, y otra con una pequeña actividad en familia para cada día, del 1 al 24.',
+    hojas: [
+      { tipo: 'adviento', titulo: 'Calendario de Adviento', sub: 'Cada día de diciembre, busca su número, táchalo y colorea el dibujo. El 24 es Nochebuena.' },
+      { tipo: 'adviento', titulo: 'Calendario de Adviento con actividades', sub: 'Una cosa que hacer juntos cada día, del 1 al 24 de diciembre.', actividades: [
+        'Pon música de villancicos mientras cenáis', 'Escribe la carta a los Reyes o a Papá Noel', 'Haz un dibujo navideño para la nevera', 'Busca una estrella en el cielo antes de dormir',
+        'Prepara chocolate caliente', 'Monta el belén o el árbol entre todos', 'Llama a un abuelo o a una abuela', 'Elige un juguete para regalar a quien lo necesite',
+        'Cuenta un cuento de Navidad', 'Haz una guirnalda de papel', 'Aprende un villancico nuevo', 'Haz una felicitación para alguien de la familia',
+        'Juega a un juego de mesa todos juntos', 'Mira una película de Navidad', 'Recorta copos de nieve de papel', 'Da las gracias por tres cosas del año',
+        'Sal a ver las luces de la calle', 'Haz galletas o polvorones', 'Juega al bingo de Navidad', 'Haz una sopa de letras de Navidad',
+        'Escribe qué te gustaría hacer el año que viene', 'Escucha el sorteo de la Lotería en la radio', 'Prepara la mesa para Nochebuena', '¡Es Nochebuena! A disfrutar de la cena en familia'] }
+    ],
+    copias: 1,
+    cuerpo: `
+<h2>Cómo usarlo</h2>
+<p>El Adviento son los días que preceden a la Navidad, y en muchas casas se cuentan con un calendario de casillas que se abren o se tachan una cada día, del 1 al 24 de diciembre. Esta versión para imprimir es la más sencilla: cuélgala en la nevera o en la puerta de la habitación y, cada mañana, el niño busca el número del día (están desordenados a propósito), lo tacha y colorea el dibujo de esa casilla.</p>
+<p>La segunda hoja cambia los dibujos por una actividad para hacer en familia cada día: cosas pequeñas, sin gastar dinero, como escribir la carta a los Reyes, montar el belén o salir a ver las luces. Si algún día no cuadra, se cambia por otro; lo importante es la costumbre de hacer algo juntos.</p>
+<h2>Ideas para que dure todo el mes</h2>
+<ul>
+<li>Imprímelo en cartulina para que aguante 24 días en la nevera.</li>
+<li>Pega encima de cada casilla un trocito de papel o un pósit para «abrirla» cada día.</li>
+<li>Combínalo con el resto de <a href="/navidad/">fichas de Navidad</a>: el día del bingo, el de la sopa de letras o el de la carta a los Reyes.</li>
+</ul>`,
+    amazon: [['Cartulina blanca A4', 'cartulina blanca A4'], ['Pegatinas de Navidad', 'pegatinas navidad niños']]
+  },
+  {
+    cat: 'navidad', slug: 'etiquetas-regalos', corto: 'Etiquetas para regalos',
+    title: 'Etiquetas para regalos de Navidad para imprimir (PDF)',
+    desc: 'Etiquetas para regalos de Navidad para imprimir y recortar: 12 por hoja, con «Para» y «De» y agujero para la cinta. En blanco o con «Feliz Navidad».',
+    h1: 'Etiquetas para regalos de Navidad',
+    entrada: 'Doce etiquetas por hoja con forma de etiqueta de regalo, un dibujo navideño, los huecos de «Para» y «De» y el círculo para pasar la cinta. Una hoja lleva «Feliz Navidad» y la otra solo el dibujo, para escribir lo que quieras.',
+    hojas: [
+      { tipo: 'etiquetas', titulo: 'Etiquetas para regalos de Navidad', texto: 'Feliz Navidad' },
+      { tipo: 'etiquetas', titulo: 'Etiquetas para regalos' }
+    ],
+    copias: 1,
+    cuerpo: `
+<h2>Cómo hacerlas</h2>
+<p>Imprímelas en cartulina fina (de 160 a 200 gramos) o en papel normal pegado a una cartulina de color. Recorta por la línea de puntos, haz el agujero con un perforador o con la punta de un lápiz y pasa un trozo de cinta o de cordel para atarlas al paquete.</p>
+<p>Las etiquetas salen en blanco y negro para que los niños las coloreen: es una buena tarea para los días de vacaciones, y los regalos quedan mucho más personales. La hoja sin «Feliz Navidad» sirve también para Reyes, cumpleaños o el amigo invisible.</p>
+<p>Para el sorteo del <a href="/navidad/amigo-invisible/">amigo invisible</a> tienes los papelitos y la hoja de quien organiza.</p>`,
+    amazon: [['Cinta de regalo', 'cinta regalo navidad'], ['Perforadora de un agujero', 'perforadora un agujero']]
+  },
+  {
+    cat: 'navidad', slug: 'menu-de-navidad', corto: 'Menú de Navidad',
+    title: 'Menú de Navidad para imprimir: Nochebuena y Nochevieja',
+    desc: 'Menú de Navidad para imprimir y rellenar: plantillas para la mesa de Nochebuena, Navidad y Nochevieja, con entrantes, platos, postre y brindis.',
+    h1: 'Menú de Navidad para imprimir',
+    entrada: 'Tres plantillas de menú para poner en la mesa: Nochebuena, comida de Navidad y Nochevieja. Escribe los platos a mano y deja una copia en cada sitio o una en el centro de la mesa.',
+    hojas: [
+      { tipo: 'menu-fiesta', cabecera: 'Menú de Nochebuena' },
+      { tipo: 'menu-fiesta', cabecera: 'Menú de Navidad' },
+      { tipo: 'menu-fiesta', cabecera: 'Menú de Nochevieja', secciones: ['Para picar', 'Primer plato', 'Segundo plato', 'Postre', 'Uvas y brindis'], pie: 'Doce uvas, doce campanadas y un deseo para cada mes.' }
+    ],
+    copias: 1,
+    cuerpo: `
+<h2>Ideas para usarlo</h2>
+<p>Escribe los platos con un rotulador fino, mejor con letra grande, y pon una copia en cada plato o en el centro de la mesa. Si los niños se aburren antes de la cena, pídeles que lo decoren: coloreando las estrellas y los árboles del borde ya tienen entretenimiento para un rato.</p>
+<p>En la plantilla de Nochevieja el último apartado es para las uvas y el brindis: si a alguien le toca recibir a los invitados, puede apuntar ahí quién trae las uvas peladas para los más pequeños.</p>
+<p>Si quieres poner el menú en un marco o en una mesa larga, imprímelo en A3 con «Ajustar al papel». Y para repartir los regalos de esos días tienes las <a href="/navidad/etiquetas-regalos/">etiquetas para regalos</a>.</p>`,
+    amazon: [['Rotuladores de punta fina', 'rotuladores punta fina negro'], ['Marcos de fotos A4', 'marco fotos A4']]
+  },
+  {
+    cat: 'navidad', slug: 'lista-de-regalos', corto: 'Lista de regalos de Navidad',
+    title: 'Lista de regalos de Navidad para imprimir (PDF)',
+    desc: 'Lista de regalos de Navidad para imprimir: para quién, qué regalo, cuánto cuesta y si ya está comprado, con el total para no pasarte del presupuesto.',
+    h1: 'Lista de regalos de Navidad para imprimir',
+    entrada: 'Una tabla para organizar los regalos de Navidad y Reyes: para quién es, qué le vas a regalar, cuánto cuesta y una casilla para marcar cuando ya lo tienes. Abajo, el total y el presupuesto que te has puesto.',
+    hojas: [
+      { tipo: 'lista-regalos', titulo: 'Lista de regalos de Navidad', sub: 'Apunta cada regalo, su precio y marca la casilla cuando lo tengas.' }
+    ],
+    copias: 1,
+    cuerpo: `
+<h2>Para no pasarte del presupuesto</h2>
+<p>Lo más práctico es decidir antes cuánto quieres gastar en total, apuntarlo abajo y repartirlo entre las personas de la lista. Al ir rellenando la columna de presupuesto ves enseguida si te queda margen o si toca recortar. Si compras por internet, apunta en la misma línea dónde lo has pedido para no perder la pista de los paquetes.</p>
+<p>La lista tiene 18 líneas; si sois más, imprime dos copias. Para el intercambio de regalos en el trabajo o con los amigos tienes los papelitos del <a href="/navidad/amigo-invisible/">amigo invisible</a>.</p>`,
+    amazon: [['Agenda 2027', 'agenda 2027'], ['Papel de regalo de Navidad', 'papel regalo navidad']]
+  },
+  {
+    cat: 'navidad', slug: 'amigo-invisible', corto: 'Amigo invisible',
+    title: 'Amigo invisible para imprimir: papelitos y hoja del sorteo',
+    desc: 'Amigo invisible para imprimir: papelitos para el sorteo («te ha tocado regalar a…») y una hoja para quien organiza, con fecha, presupuesto e ideas.',
+    h1: 'Amigo invisible para imprimir',
+    entrada: 'Todo lo necesario para organizar el amigo invisible en papel: diez papelitos por hoja para el sorteo y una hoja para quien organiza, con la fecha, el presupuesto, el lugar y quién regala a quién.',
+    hojas: [
+      { tipo: 'amigo-invisible', titulo: 'Amigo invisible: papelitos para el sorteo' },
+      { tipo: 'amigo-invisible', modo: 'organiza', titulo: 'Amigo invisible: hoja de quien organiza', sub: 'Apunta aquí los participantes y, si hace falta, quién regala a quién.' }
+    ],
+    copias: 1,
+    cuerpo: `
+<h2>Cómo organizar el sorteo</h2>
+<ol>
+<li>Acordad la fecha del intercambio y un presupuesto igual para todos, y apuntadlo en la hoja de quien organiza.</li>
+<li>Escribe el nombre de cada participante en un papelito, recórtalos, dóblalos y mételos en una bolsa.</li>
+<li>Cada uno saca un papel sin enseñarlo. Si alguien se saca a sí mismo, se vuelve a sortear.</li>
+<li>El día del intercambio, cada uno entrega su regalo… o intenta adivinar quién era su amigo invisible.</li>
+</ol>
+<p>Si alguien no puede estar en el sorteo, quien organiza puede sacar su papel y decírselo en privado; por eso la hoja del organizador tiene una columna de «le regala a». Para envolver, tienes las <a href="/navidad/etiquetas-regalos/">etiquetas para regalos</a>.</p>`,
+    amazon: [['Papel de regalo de Navidad', 'papel regalo navidad'], ['Bolsas de regalo', 'bolsas regalo navidad']]
   }
 ];
