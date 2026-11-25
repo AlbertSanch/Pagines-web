@@ -1,0 +1,29 @@
+---
+pagination:
+  data: pinesFeed.tableros
+  size: 1
+  alias: tablero
+permalink: "/pinterest/{{ tablero }}.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>imprimibles.es · {{ pinesFeed.tableros[tablero] }}</title>
+<link>{{ site.url }}/</link>
+<atom:link href="{{ site.url }}/pinterest/{{ tablero }}.xml" rel="self" type="application/rss+xml"/>
+<description>Fichas para imprimir de imprimibles.es: {{ pinesFeed.tableros[tablero] }}</description>
+<language>es-es</language>
+{%- for x in pinesFeed.pines | reverse %}{% if x.tablero == tablero and x.fecha <= site.hoy %}
+<item>
+<title>{{ x.titulo }}</title>
+<link>{{ site.url }}{{ x.url }}?utm_source=pinterest</link>
+<guid isPermaLink="false">{{ x.id }}</guid>
+<pubDate>{{ x.fecha | rfc822 }}</pubDate>
+<description>{{ x.descripcion }}</description>
+<enclosure url="{{ site.url }}{{ x.imagen }}" type="image/jpeg" length="0"/>
+<media:content url="{{ site.url }}{{ x.imagen }}" medium="image" type="image/jpeg"/>
+</item>
+{%- endif %}{% endfor %}
+</channel>
+</rss>

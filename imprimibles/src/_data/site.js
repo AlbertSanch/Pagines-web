@@ -4,6 +4,8 @@ module.exports = {
   url: 'https://imprimibles.es',
   lema: 'Pasatiempos y fichas para imprimir',
   compilado: new Date().toISOString().slice(0, 10),
+  // día de hoy en España (los feeds de Pinterest solo enseñan los pines con fecha de hoy o anterior); HOY=AAAA-MM-DD para probar
+  hoy: process.env.HOY || new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Madrid' }).format(new Date()),
   anio: new Date().getFullYear(),
 
   // --- Monetización (vacío = desactivado; no se reserva hueco ni se carga nada) ---
