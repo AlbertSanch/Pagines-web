@@ -320,6 +320,14 @@ VIDEOS = {
         (3.8, 0.6, [("texto", "María Carmen fue la número uno"), ("cifra", "4"), ("texto", "décadas seguidas, de los 40 a los 70")]),
         CIERRE("¿Te ha tocado el de tu década?"),
     ],
+    "22-mas-comunes": [
+        (3.0, 0.0, [("gancho", "Los nombres más comunes de España")]),
+        (5.6, 0.55, [("titulo", "Hombres"), ("fila", "Antonio", "590.938"), ("fila", "Manuel", "525.628"), ("fila", "José", "487.678"),
+                     ("fila", "Francisco", "426.675"), ("fila", "David", "372.975")]),
+        (5.6, 0.55, [("titulo", "Mujeres"), ("fila", "María Carmen", "618.622"), ("fila", "María", "543.083"), ("fila", "Carmen", "333.187"),
+                     ("fila", "Ana María", "264.987"), ("fila", "Laura", "259.183")]),
+        CIERRE("¿Estás en el top? ¿Cuántos se llaman como tú?"),
+    ],
     "10-nombres-que-suben": [
         (3.0, 0.0, [("gancho", "Los nombres de niña que están arrasando")]),
         (6.5, 0.55, [("texto", "Nuevos en el top 100 de bebés:"), ("fila", "Alaia", ""), ("fila", "Catalina", ""), ("fila", "Violeta", ""),
@@ -431,6 +439,12 @@ VOCES = {
         "Chicas: de los cuarenta a los setenta, María Carmen. En los ochenta, Laura. En los noventa, María. Y en los dos mil diez, Lucía.",
         "María Carmen fue la número uno cuatro décadas seguidas.",
         f"¿Te ha tocado el de tu década? Búscalo en {WEB_DICHA}.",
+    ],
+    "22-mas-comunes": [
+        "Los nombres más comunes de España.",
+        "Hombres: Antonio, casi seiscientos mil. Manuel, José, Francisco y David.",
+        "Mujeres: María Carmen, más de seiscientas mil. María, Carmen, Ana María y Laura.",
+        f"¿Estás en el top? Busca cuántos se llaman como tú en {WEB_DICHA}.",
     ],
     "10-nombres-que-suben": [
         "Estos son los nombres de niña que están arrasando.",
