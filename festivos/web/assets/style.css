@@ -320,3 +320,9 @@ ul.guias span { color: var(--suave); font-size: .95rem; }
 /* tablas de guías y datos: en el móvil no se oculta ninguna columna */
 .festivos.completa th:nth-child(2), .festivos.completa td:nth-child(2) { display: table-cell; }
 .festivos.completa td, .festivos.completa th { padding: 8px 10px; }
+
+/* buscador dentro de las páginas (día, municipio) y enlaces de temporada */
+.buscar-otro { background: var(--papel); border: 1px solid var(--linea); border-radius: 14px; padding: 4px 18px 18px; margin: 24px 0; }
+.buscar-otro .buscador { margin: 12px 0 0; max-width: none; }
+.buscar-otro p { margin: 6px 0 0; }
+.temporada { margin-top: 28px; }
