@@ -27,7 +27,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from comun import COMUNIDADES, DATA, PROVINCIAS, MESES, DIAS, municipios, slug  # noqa: E402
-from cuanto_falta import EVENTOS, proxima, proximo_cambio_de_hora  # noqa: E402
+from cuanto_falta import EVENTOS, pascua, proxima, proximo_cambio_de_hora  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
 WEB = RAIZ / "web"
@@ -35,7 +35,7 @@ PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 CUANTOS_DIAS = "https://cuantosdiasfaltan.es"
 SITIO = "Festivos de"
-VERSION = "15"
+VERSION = "16"
 HOY = dt.date.fromisoformat(os.environ["FESTIVOS_HOY"]) if os.environ.get("FESTIVOS_HOY") else dt.date.today()  # FESTIVOS_HOY: para probar
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -192,6 +192,42 @@ def texto_puente(p):
 
 # ---------------------------------------------------------------- plantilla de página
 
+def buscador(titulo, texto):
+    """Buscador de municipios (el mismo de la portada: app.js lo activa por el id «q»). Uno por página como mucho."""
+    return (f'<section class="buscar-otro"><h2>{titulo}</h2><p>{texto}</p>'
+            '<form class="buscador" role="search" action="/" onsubmit="return false"><label for="q" class="oculto">Municipio</label>'
+            '<input id="q" type="search" placeholder="Escribe tu municipio: Getafe, Elche, Reus…" autocomplete="off">'
+            '<ul id="sugerencias" class="sugerencias"></ul></form></section>')
+
+
+def temporada(ruta):
+    """Enlaces de lo que más se busca según la época del año (la web se regenera cada día)."""
+    y = HOY.year
+    sig = y + 1 if HOY.month >= 10 else y
+    pascua_d = pascua(y)
+    cand = []
+    if (HOY.month == 11 and HOY.day >= 10) or (HOY.month == 12 and HOY.day <= 8):
+        cand.append(("🌉", f"Puente de diciembre {y}", f"/puente-de-diciembre-{y}/"))
+    if (HOY.month == 11 and HOY.day >= 15) or (HOY.month == 12 and HOY.day <= 25):
+        cand.append(("🎄", "¿Cuánto falta para Navidad?", "/cuanto-falta/navidad/"))
+    if (HOY.month == 12 and HOY.day >= 26) or (HOY.month == 1 and HOY.day <= 6):
+        cand.append(("👑", "¿Cuánto falta para Reyes?", "/cuanto-falta/reyes/"))
+    if HOY.month in (10, 11, 12, 1, 2) and sig in ANIOS:
+        cand.append(("📅", f"Calendario laboral {sig}", f"/calendario-laboral-{sig}/"))
+    if dt.date(y, 1, 15) <= HOY <= pascua_d:
+        cand.append(("🌸", "¿Cuánto falta para Semana Santa?", "/cuanto-falta/semana-santa/"))
+    if HOY.month in (5, 6) and HOY.year in ANIOS:
+        cand.append(("☀️", "¿Cuánto falta para las vacaciones del cole?", "/cuanto-falta/fin-de-curso/"))
+    cand += [("❓", "¿Es festivo hoy?", "/es-festivo/"), ("🌉", f"Puentes {max(ANIOS)}", f"/puentes-{max(ANIOS)}/"),
+             ("🖨️", "Calendario para imprimir", "/calendario-laboral-para-imprimir/")]
+    vistos, items = set(), []
+    for ico, t, r in cand:
+        if r != ruta and r not in vistos:
+            vistos.add(r)
+            items.append(f'<li><a href="{r}">{ico} {escape(t)}</a></li>')
+    return f'<section class="temporada"><h2>Ahora se consulta mucho</h2><ul class="chips">{"".join(items[:4])}</ul></section>'
+
+
 def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexable=True, scripts=""):
     url = DOMINIO + ruta
     migas = migas or []
@@ -249,6 +285,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <main class="contenedor">
 {migas_html}
 {cuerpo}
+{temporada(ruta) if indexable and ruta not in ("/aviso-legal/", "/privacidad/", "/contacto/") else ""}
 </main>
 <footer class="pie">
   <div class="contenedor">
@@ -394,6 +431,7 @@ def pagina_municipio(datos, cod, m, vecinos):
 <nav class="pestanas" aria-label="Año">{''.join(f'<a href="#festivos-{a}" data-anio="{a}">{a}</a>' for a in ANIOS)}<button class="boton-ics" type="button">📅 Añadir a mi calendario</button></nav>
 {''.join(secciones)}
 <section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>
+{buscador("¿Buscas otro municipio?", "Mira los festivos de donde trabajas, de tu pueblo o de donde vas de vacaciones: cada municipio tiene sus dos fiestas locales.")}
 <section><h2>Otros municipios de {escape(prov_nombre)}</h2><ul class="lista-municipios">{lista_vecinos}</ul>
 <p><a href="{RUTAS_PROV[cod[:2]]}">Todos los festivos locales de la provincia de {escape(prov_nombre)} →</a> · <a href="/comunidad/{ccaa}/">Calendario laboral {escape(de(ccaa_nombre))} →</a></p></section>
 <script type="application/json" id="datos-festivos">{json.dumps({"municipio": N, "festivos": embebido, "locales": [a for a in ANIOS if tiene_locales(datos, a, cod)]}, ensure_ascii=False, separators=(",", ":"))}</script>"""
@@ -885,6 +923,7 @@ def pagina_dia(datos, idx, mes, dia):
 <div class="hoy"><div class="tarjeta{' si' if si else ''}"><span class="etq">{fecha_larga(d)} de {anio}</span>
 <p class="gran">{('No es festivo' if len(datos[anio]["locales"]) > len(INFO) / 2 else 'No es festivo nacional ni autonómico') if not si else 'Sí, es festivo en toda España' if len(regiones(donde)) == len(COMUNIDADES) else 'Festivo en algunas comunidades' if regiones(donde) else 'Festivo solo en algunos municipios'}</p></div></div>
 <p>{texto}</p>
+{buscador("¿Y en tu municipio?", f"Escribe tu pueblo o ciudad para ver si el {nombre_dia} es festivo allí, con sus fiestas locales y todos sus festivos del año.") if anio == orden[0] else ""}
 {detalle}
 <p class="fuente">Fuente: <a href="{datos[anio]['boe']['url']}" rel="nofollow noopener">{escape(datos[anio]['boe']['titulo'])}</a> y los boletines oficiales de cada comunidad con las fiestas locales.</p></section>""")
     # Próximos festivos nacionales o autonómicos después de esta fecha
