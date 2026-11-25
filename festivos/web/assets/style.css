@@ -326,3 +326,12 @@ ul.guias span { color: var(--suave); font-size: .95rem; }
 .buscar-otro .buscador { margin: 12px 0 0; max-width: none; }
 .buscar-otro p { margin: 6px 0 0; }
 .temporada { margin-top: 28px; }
+
+/* provincias de España: mapa y leyenda */
+.mapa-envoltorio { max-width: 760px; margin: 12px auto 0; }
+.mapa-provincias { width: 100%; height: auto; display: block; }
+.mapa-provincias a:hover path, .mapa-provincias a:focus path { opacity: .75; }
+.leyenda-titulo { color: var(--suave); font-size: .9rem; text-align: center; }
+.leyenda-mapa { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .92rem; }
+.leyenda-mapa .muestra { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.tabla-provincias td.num { text-align: right; font-variant-numeric: tabular-nums; }
