@@ -16,29 +16,9 @@
    "origen": "/img/fichas-de-navidad-para-imprimir.png"
   },
   {
-   "id": "navidad-carta-a-los-reyes-magos-para-imprimir",
-   "tablero": "navidad",
-   "fecha": "2026-12-04",
-   "url": "/navidad/carta-reyes-magos/",
-   "titulo": "Carta a los Reyes Magos para imprimir",
-   "descripcion": "Carta a los Reyes Magos para imprimir y rellenar, con renglones, con pauta o para pegar los recortes del catálogo. Incluye sobre para montar. PDF gratis.",
-   "imagen": "/pines/navidad-carta-a-los-reyes-magos-para-imprimir.jpg",
-   "origen": "/img/carta-a-los-reyes-magos-para-imprimir.png"
-  },
-  {
-   "id": "navidad-carta-a-papa-noel-para-imprimir",
-   "tablero": "navidad",
-   "fecha": "2026-12-06",
-   "url": "/navidad/carta-papa-noel/",
-   "titulo": "Carta a Papá Noel para imprimir",
-   "descripcion": "Carta a Papá Noel para imprimir y rellenar, con renglones, con pauta o para pegar los recortes del catálogo de juguetes. Incluye sobre. PDF gratis.",
-   "imagen": "/pines/navidad-carta-a-papa-noel-para-imprimir.jpg",
-   "origen": "/img/carta-a-papa-noel-para-imprimir.png"
-  },
-  {
    "id": "navidad-carta-de-los-reyes-magos-a-los-ninos",
    "tablero": "navidad",
-   "fecha": "2026-12-08",
+   "fecha": "2026-12-04",
    "url": "/navidad/carta-de-los-reyes-a-los-ninos/",
    "titulo": "Carta de los Reyes Magos a los niños",
    "descripcion": "Carta de respuesta de los Reyes Magos para dejar junto a los regalos, con hueco para el nombre y lo que ha hecho bien. Versión con carbón dulce. PDF gratis.",
@@ -46,19 +26,9 @@
    "origen": "/img/carta-de-los-reyes-magos-a-los-ninos.png"
   },
   {
-   "id": "navidad-bingo-de-navidad-para-imprimir",
-   "tablero": "navidad",
-   "fecha": "2026-12-10",
-   "url": "/navidad/bingo/",
-   "titulo": "Bingo de Navidad para imprimir",
-   "descripcion": "Bingo de Navidad para imprimir: cartones con palabras navideñas en lugar de números y la lista para cantarlo. Para clase o para la sobremesa.",
-   "imagen": "/pines/navidad-bingo-de-navidad-para-imprimir.jpg",
-   "origen": "/img/bingo-de-navidad-para-imprimir.png"
-  },
-  {
    "id": "navidad-laberinto-de-navidad-para-imprimir",
    "tablero": "navidad",
-   "fecha": "2026-12-12",
+   "fecha": "2026-12-06",
    "url": "/navidad/laberinto/",
    "titulo": "Laberinto de Navidad para imprimir",
    "descripcion": "Laberinto de Navidad con forma de árbol para imprimir: entra por la estrella y llega al regalo. Versión fácil y difícil, con solución. PDF gratis.",
@@ -68,7 +38,7 @@
   {
    "id": "navidad-sudoku-de-navidad-para-ninos",
    "tablero": "navidad",
-   "fecha": "2026-12-14",
+   "fecha": "2026-12-08",
    "url": "/navidad/sudoku/",
    "titulo": "Sudoku de Navidad para niños",
    "descripcion": "Sudokus de Navidad para niños con dibujos en vez de números: estrellas, árboles, regalos y campanas. 4 × 4 desde 5 años y 6 × 6 desde 7. Con solución.",
@@ -76,61 +46,11 @@
    "origen": "/img/sudoku-de-navidad-para-ninos.png"
   },
   {
-   "id": "navidad-calendario-de-adviento-para-imprimir",
-   "tablero": "navidad",
-   "fecha": "2026-12-16",
-   "url": "/navidad/calendario-de-adviento/",
-   "titulo": "Calendario de Adviento para imprimir",
-   "descripcion": "Calendario de Adviento para imprimir: 24 casillas para tachar o colorear del 1 al 24 de diciembre, y otro con una actividad en familia para cada día.",
-   "imagen": "/pines/navidad-calendario-de-adviento-para-imprimir.jpg",
-   "origen": "/img/calendario-de-adviento-para-imprimir.png"
-  },
-  {
-   "id": "navidad-etiquetas-para-regalos-de-navidad",
-   "tablero": "navidad",
-   "fecha": "2026-12-18",
-   "url": "/navidad/etiquetas-regalos/",
-   "titulo": "Etiquetas para regalos de Navidad",
-   "descripcion": "Etiquetas para regalos de Navidad para imprimir y recortar: 12 por hoja, con «Para» y «De» y agujero para la cinta. En blanco o con «Feliz Navidad».",
-   "imagen": "/pines/navidad-etiquetas-para-regalos-de-navidad.jpg",
-   "origen": "/img/etiquetas-para-regalos-de-navidad.png"
-  },
-  {
-   "id": "navidad-menu-de-navidad-para-imprimir",
-   "tablero": "navidad",
-   "fecha": "2026-12-20",
-   "url": "/navidad/menu-de-navidad/",
-   "titulo": "Menú de Navidad para imprimir",
-   "descripcion": "Menú de Navidad para imprimir y rellenar: plantillas para la mesa de Nochebuena, Navidad y Nochevieja, con entrantes, platos, postre y brindis.",
-   "imagen": "/pines/navidad-menu-de-navidad-para-imprimir.jpg",
-   "origen": "/img/menu-de-navidad-para-imprimir.png"
-  },
-  {
-   "id": "navidad-lista-de-regalos-de-navidad-para-imprimir",
-   "tablero": "navidad",
-   "fecha": "2026-12-22",
-   "url": "/navidad/lista-de-regalos/",
-   "titulo": "Lista de regalos de Navidad para imprimir",
-   "descripcion": "Lista de regalos de Navidad para imprimir: para quién, qué regalo, cuánto cuesta y si ya está comprado, con el total para no pasarte del presupuesto.",
-   "imagen": "/pines/navidad-lista-de-regalos-de-navidad-para-imprimir.jpg",
-   "origen": "/img/lista-de-regalos-de-navidad-para-imprimir.png"
-  },
-  {
-   "id": "navidad-amigo-invisible-para-imprimir",
-   "tablero": "navidad",
-   "fecha": "2026-12-24",
-   "url": "/navidad/amigo-invisible/",
-   "titulo": "Amigo invisible para imprimir",
-   "descripcion": "Amigo invisible para imprimir: papelitos para el sorteo («te ha tocado regalar a…») y una hoja para quien organiza, con fecha, presupuesto e ideas.",
-   "imagen": "/pines/navidad-amigo-invisible-para-imprimir.jpg",
-   "origen": "/img/amigo-invisible-para-imprimir.png"
-  },
-  {
    "id": "navidad-carta-a-los-reyes-magos-para-imprimir-2",
    "tablero": "navidad",
-   "fecha": "2026-12-26",
+   "fecha": "2026-12-10",
    "url": "/navidad/carta-reyes-magos/",
-   "titulo": "Carta a los Reyes Magos para imprimir: Carta a los Reyes Magos para imprimir",
+   "titulo": "Carta a los Reyes Magos para imprimir (modelo 2)",
    "descripcion": "Carta a los Reyes Magos para imprimir y rellenar, con renglones, con pauta o para pegar los recortes del catálogo. Incluye sobre para montar. PDF gratis.",
    "imagen": "/pines/navidad-carta-a-los-reyes-magos-para-imprimir-2.jpg",
    "origen": "/img/carta-a-los-reyes-magos-para-imprimir-2.png"
@@ -138,9 +58,9 @@
   {
    "id": "navidad-carta-a-papa-noel-para-imprimir-2",
    "tablero": "navidad",
-   "fecha": "2026-12-28",
+   "fecha": "2026-12-12",
    "url": "/navidad/carta-papa-noel/",
-   "titulo": "Carta a Papá Noel para imprimir: Carta a Papá Noel para imprimir",
+   "titulo": "Carta a Papá Noel para imprimir (modelo 2)",
    "descripcion": "Carta a Papá Noel para imprimir y rellenar, con renglones, con pauta o para pegar los recortes del catálogo de juguetes. Incluye sobre. PDF gratis.",
    "imagen": "/pines/navidad-carta-a-papa-noel-para-imprimir-2.jpg",
    "origen": "/img/carta-a-papa-noel-para-imprimir-2.png"
@@ -148,9 +68,9 @@
   {
    "id": "navidad-carta-de-los-reyes-magos-a-los-ninos-2",
    "tablero": "navidad",
-   "fecha": "2026-12-30",
+   "fecha": "2026-12-14",
    "url": "/navidad/carta-de-los-reyes-a-los-ninos/",
-   "titulo": "Carta de los Reyes Magos a los niños: Carta de los Reyes Magos a los niños",
+   "titulo": "Carta de los Reyes Magos a los niños (modelo 2)",
    "descripcion": "Carta de respuesta de los Reyes Magos para dejar junto a los regalos, con hueco para el nombre y lo que ha hecho bien. Versión con carbón dulce. PDF gratis.",
    "imagen": "/pines/navidad-carta-de-los-reyes-magos-a-los-ninos-2.jpg",
    "origen": "/img/carta-de-los-reyes-magos-a-los-ninos-2.png"
@@ -158,9 +78,9 @@
   {
    "id": "navidad-bingo-de-navidad-para-imprimir-2",
    "tablero": "navidad",
-   "fecha": "2027-01-01",
+   "fecha": "2026-12-16",
    "url": "/navidad/bingo/",
-   "titulo": "Bingo de Navidad para imprimir: Bingo de Navidad: palabras para cantar",
+   "titulo": "Bingo de Navidad para imprimir · palabras para cantar",
    "descripcion": "Bingo de Navidad para imprimir: cartones con palabras navideñas en lugar de números y la lista para cantarlo. Para clase o para la sobremesa.",
    "imagen": "/pines/navidad-bingo-de-navidad-para-imprimir-2.jpg",
    "origen": "/img/bingo-de-navidad-para-imprimir-2.png"
@@ -168,9 +88,9 @@
   {
    "id": "navidad-laberinto-de-navidad-para-imprimir-2",
    "tablero": "navidad",
-   "fecha": "2027-01-03",
+   "fecha": "2026-12-18",
    "url": "/navidad/laberinto/",
-   "titulo": "Laberinto de Navidad para imprimir: Laberinto de Navidad (difícil)",
+   "titulo": "Laberinto de Navidad para imprimir · difícil",
    "descripcion": "Laberinto de Navidad con forma de árbol para imprimir: entra por la estrella y llega al regalo. Versión fácil y difícil, con solución. PDF gratis.",
    "imagen": "/pines/navidad-laberinto-de-navidad-para-imprimir-2.jpg",
    "origen": "/img/laberinto-de-navidad-para-imprimir-2.png"
@@ -178,12 +98,92 @@
   {
    "id": "navidad-sudoku-de-navidad-para-ninos-2",
    "tablero": "navidad",
-   "fecha": "2027-01-05",
+   "fecha": "2026-12-20",
    "url": "/navidad/sudoku/",
-   "titulo": "Sudoku de Navidad para niños: Sudoku de Navidad 6 × 6",
+   "titulo": "Sudoku de Navidad para niños · 6 × 6",
    "descripcion": "Sudokus de Navidad para niños con dibujos en vez de números: estrellas, árboles, regalos y campanas. 4 × 4 desde 5 años y 6 × 6 desde 7. Con solución.",
    "imagen": "/pines/navidad-sudoku-de-navidad-para-ninos-2.jpg",
    "origen": "/img/sudoku-de-navidad-para-ninos-2.png"
+  },
+  {
+   "id": "navidad-calendario-de-adviento-para-imprimir-2",
+   "tablero": "navidad",
+   "fecha": "2026-12-22",
+   "url": "/navidad/calendario-de-adviento/",
+   "titulo": "Calendario de Adviento para imprimir · con actividades",
+   "descripcion": "Calendario de Adviento para imprimir: 24 casillas para tachar o colorear del 1 al 24 de diciembre, y otro con una actividad en familia para cada día.",
+   "imagen": "/pines/navidad-calendario-de-adviento-para-imprimir-2.jpg",
+   "origen": "/img/calendario-de-adviento-para-imprimir-2.png"
+  },
+  {
+   "id": "navidad-etiquetas-para-regalos-de-navidad-2",
+   "tablero": "navidad",
+   "fecha": "2026-12-24",
+   "url": "/navidad/etiquetas-regalos/",
+   "titulo": "Etiquetas para regalos de Navidad (modelo 2)",
+   "descripcion": "Etiquetas para regalos de Navidad para imprimir y recortar: 12 por hoja, con «Para» y «De» y agujero para la cinta. En blanco o con «Feliz Navidad».",
+   "imagen": "/pines/navidad-etiquetas-para-regalos-de-navidad-2.jpg",
+   "origen": "/img/etiquetas-para-regalos-de-navidad-2.png"
+  },
+  {
+   "id": "navidad-menu-de-navidad-para-imprimir-2",
+   "tablero": "navidad",
+   "fecha": "2026-12-26",
+   "url": "/navidad/menu-de-navidad/",
+   "titulo": "Menú de Navidad para imprimir (modelo 2)",
+   "descripcion": "Menú de Navidad para imprimir y rellenar: plantillas para la mesa de Nochebuena, Navidad y Nochevieja, con entrantes, platos, postre y brindis.",
+   "imagen": "/pines/navidad-menu-de-navidad-para-imprimir-2.jpg",
+   "origen": "/img/menu-de-navidad-para-imprimir-2.png"
+  },
+  {
+   "id": "navidad-amigo-invisible-para-imprimir-2",
+   "tablero": "navidad",
+   "fecha": "2026-12-28",
+   "url": "/navidad/amigo-invisible/",
+   "titulo": "Amigo invisible para imprimir · hoja de quien organiza",
+   "descripcion": "Amigo invisible para imprimir: papelitos para el sorteo («te ha tocado regalar a…») y una hoja para quien organiza, con fecha, presupuesto e ideas.",
+   "imagen": "/pines/navidad-amigo-invisible-para-imprimir-2.jpg",
+   "origen": "/img/amigo-invisible-para-imprimir-2.png"
+  },
+  {
+   "id": "navidad-carta-a-los-reyes-magos-para-imprimir-3",
+   "tablero": "navidad",
+   "fecha": "2026-12-30",
+   "url": "/navidad/carta-reyes-magos/",
+   "titulo": "Carta a los Reyes Magos para imprimir (modelo 3)",
+   "descripcion": "Carta a los Reyes Magos para imprimir y rellenar, con renglones, con pauta o para pegar los recortes del catálogo. Incluye sobre para montar. PDF gratis.",
+   "imagen": "/pines/navidad-carta-a-los-reyes-magos-para-imprimir-3.jpg",
+   "origen": "/img/carta-a-los-reyes-magos-para-imprimir-3.png"
+  },
+  {
+   "id": "navidad-carta-a-papa-noel-para-imprimir-3",
+   "tablero": "navidad",
+   "fecha": "2027-01-01",
+   "url": "/navidad/carta-papa-noel/",
+   "titulo": "Carta a Papá Noel para imprimir (modelo 3)",
+   "descripcion": "Carta a Papá Noel para imprimir y rellenar, con renglones, con pauta o para pegar los recortes del catálogo de juguetes. Incluye sobre. PDF gratis.",
+   "imagen": "/pines/navidad-carta-a-papa-noel-para-imprimir-3.jpg",
+   "origen": "/img/carta-a-papa-noel-para-imprimir-3.png"
+  },
+  {
+   "id": "navidad-menu-de-navidad-para-imprimir-3",
+   "tablero": "navidad",
+   "fecha": "2027-01-03",
+   "url": "/navidad/menu-de-navidad/",
+   "titulo": "Menú de Navidad para imprimir (modelo 3)",
+   "descripcion": "Menú de Navidad para imprimir y rellenar: plantillas para la mesa de Nochebuena, Navidad y Nochevieja, con entrantes, platos, postre y brindis.",
+   "imagen": "/pines/navidad-menu-de-navidad-para-imprimir-3.jpg",
+   "origen": "/img/menu-de-navidad-para-imprimir-3.png"
+  },
+  {
+   "id": "navidad-carta-a-los-reyes-magos-para-imprimir-4",
+   "tablero": "navidad",
+   "fecha": "2027-01-05",
+   "url": "/navidad/carta-reyes-magos/",
+   "titulo": "Carta a los Reyes Magos para imprimir (modelo 4)",
+   "descripcion": "Carta a los Reyes Magos para imprimir y rellenar, con renglones, con pauta o para pegar los recortes del catálogo. Incluye sobre para montar. PDF gratis.",
+   "imagen": "/pines/navidad-carta-a-los-reyes-magos-para-imprimir-4.jpg",
+   "origen": "/img/carta-a-los-reyes-magos-para-imprimir-4.png"
   },
   {
    "id": "calendarios-calendario-2027-para-imprimir",
@@ -410,7 +410,7 @@
    "tablero": "calendarios",
    "fecha": "2027-01-15",
    "url": "/calendarios/mensual-2027/",
-   "titulo": "Calendario mensual 2027 para imprimir: Calendario mensual 2027 para imprimir",
+   "titulo": "Calendario mensual 2027 para imprimir (modelo 2)",
    "descripcion": "Calendario mensual 2027 para imprimir: un mes por hoja A4 con casillas grandes para apuntar y los festivos nacionales marcados. Los 12 meses en PDF.",
    "imagen": "/pines/calendarios-calendario-mensual-2027-para-imprimir-2.jpg",
    "origen": "/img/calendario-mensual-2027-para-imprimir-2.png"
@@ -470,7 +470,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2026-12-18",
    "url": "/estimulacion-cognitiva/",
-   "titulo": "Fichas de estimulación cognitiva para mayores: Busca los corazones",
+   "titulo": "Fichas de estimulación cognitiva para mayores · Busca los corazones",
    "descripcion": "Fichas de estimulación cognitiva para mayores para imprimir: deterioro leve, moderado y severo. Atención, memoria, lenguaje, cálculo y orientación.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-mayores-2.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-mayores-2.png"
@@ -480,7 +480,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2026-12-21",
    "url": "/estimulacion-cognitiva/dinamicas-grupales/",
-   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores: Bingo con sumas: hoja del monitor",
+   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores · Bingo con sumas: hoja del monitor",
    "descripcion": "15 dinámicas de grupo para trabajar la memoria, el lenguaje y la atención con mayores, con tarjetas de refranes, bingo con sumas y plantillas para imprimir.",
    "imagen": "/pines/estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-2.jpg",
    "origen": "/img/dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-2.png"
@@ -490,7 +490,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2026-12-24",
    "url": "/estimulacion-cognitiva/deterioro-leve/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Series de números",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve · Series de números",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-2.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-2.png"
@@ -500,7 +500,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2026-12-27",
    "url": "/estimulacion-cognitiva/deterioro-moderado/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: Busca las estrellas",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado · Busca las estrellas",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-2.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-2.png"
@@ -510,7 +510,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2026-12-30",
    "url": "/estimulacion-cognitiva/deterioro-severo/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro severo: ¿Cuántos hay?",
+   "titulo": "Fichas de estimulación cognitiva para deterioro severo · ¿Cuántos hay?",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo severo: dibujos grandes para unir iguales, contar, rodear, colorear y repasar trazos.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo-2.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-severo-2.png"
@@ -520,7 +520,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-01-02",
    "url": "/estimulacion-cognitiva/dinamicas-grupales/",
-   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores: Precios para la tienda",
+   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores · Precios para la tienda",
    "descripcion": "15 dinámicas de grupo para trabajar la memoria, el lenguaje y la atención con mayores, con tarjetas de refranes, bingo con sumas y plantillas para imprimir.",
    "imagen": "/pines/estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-3.jpg",
    "origen": "/img/dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-3.png"
@@ -530,7 +530,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-01-05",
    "url": "/estimulacion-cognitiva/deterioro-leve/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Las cuentas de la compra",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve · Las cuentas de la compra",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-3.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-3.png"
@@ -540,7 +540,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-01-08",
    "url": "/estimulacion-cognitiva/deterioro-moderado/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: ¿Qué número sigue?",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado · ¿Qué número sigue?",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-3.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-3.png"
@@ -550,7 +550,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-01-11",
    "url": "/estimulacion-cognitiva/deterioro-severo/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro severo: Busca los círculos",
+   "titulo": "Fichas de estimulación cognitiva para deterioro severo · Busca los círculos",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo severo: dibujos grandes para unir iguales, contar, rodear, colorear y repasar trazos.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo-3.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-severo-3.png"
@@ -560,7 +560,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-01-14",
    "url": "/estimulacion-cognitiva/dinamicas-grupales/",
-   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores: Recetas de toda la vida",
+   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores · Recetas de toda la vida",
    "descripcion": "15 dinámicas de grupo para trabajar la memoria, el lenguaje y la atención con mayores, con tarjetas de refranes, bingo con sumas y plantillas para imprimir.",
    "imagen": "/pines/estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-4.jpg",
    "origen": "/img/dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-4.png"
@@ -570,7 +570,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-01-17",
    "url": "/estimulacion-cognitiva/deterioro-leve/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Palabras por grupos",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve · Palabras por grupos",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-4.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-4.png"
@@ -580,7 +580,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-01-20",
    "url": "/estimulacion-cognitiva/deterioro-moderado/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: Vamos a la tienda",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado · Vamos a la tienda",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-4.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-4.png"
@@ -590,7 +590,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-01-23",
    "url": "/estimulacion-cognitiva/deterioro-severo/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro severo: Colorea los dibujos",
+   "titulo": "Fichas de estimulación cognitiva para deterioro severo · Colorea los dibujos",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo severo: dibujos grandes para unir iguales, contar, rodear, colorear y repasar trazos.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo-4.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-severo-4.png"
@@ -600,7 +600,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-01-26",
    "url": "/estimulacion-cognitiva/dinamicas-grupales/",
-   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores: Canciones para cantar en grupo",
+   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores · Canciones para cantar en grupo",
    "descripcion": "15 dinámicas de grupo para trabajar la memoria, el lenguaje y la atención con mayores, con tarjetas de refranes, bingo con sumas y plantillas para imprimir.",
    "imagen": "/pines/estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-5.jpg",
    "origen": "/img/dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-5.png"
@@ -610,7 +610,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-01-29",
    "url": "/estimulacion-cognitiva/deterioro-leve/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Ordena los pasos",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve · Ordena los pasos",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-5.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-5.png"
@@ -620,7 +620,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-02-01",
    "url": "/estimulacion-cognitiva/deterioro-moderado/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: Cada palabra en su grupo",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado · Cada palabra en su grupo",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-5.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-5.png"
@@ -630,7 +630,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-02-04",
    "url": "/estimulacion-cognitiva/deterioro-severo/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro severo: Repasa los trazos",
+   "titulo": "Fichas de estimulación cognitiva para deterioro severo · Repasa los trazos",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo severo: dibujos grandes para unir iguales, contar, rodear, colorear y repasar trazos.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo-5.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-severo-5.png"
@@ -640,7 +640,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-02-07",
    "url": "/estimulacion-cognitiva/dinamicas-grupales/",
-   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores: Registro de la sesión",
+   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores · Registro de la sesión",
    "descripcion": "15 dinámicas de grupo para trabajar la memoria, el lenguaje y la atención con mayores, con tarjetas de refranes, bingo con sumas y plantillas para imprimir.",
    "imagen": "/pines/estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-6.jpg",
    "origen": "/img/dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-6.png"
@@ -650,7 +650,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-02-10",
    "url": "/estimulacion-cognitiva/deterioro-leve/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Atención: busca las letras",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve · Atención: busca las letras",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-6.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-6.png"
@@ -660,7 +660,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-02-13",
    "url": "/estimulacion-cognitiva/deterioro-moderado/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: ¿Qué va primero?",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado · ¿Qué va primero?",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-6.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-6.png"
@@ -670,7 +670,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-02-16",
    "url": "/estimulacion-cognitiva/deterioro-leve/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Copia los dibujos",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve · Copia los dibujos",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-7.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-7.png"
@@ -680,7 +680,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-02-19",
    "url": "/estimulacion-cognitiva/deterioro-moderado/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: Une los dibujos iguales",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado · Une los dibujos iguales",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-7.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-7.png"
@@ -690,7 +690,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-02-22",
    "url": "/estimulacion-cognitiva/deterioro-leve/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Orientación: ¿qué día es hoy?",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve · Orientación: ¿qué día es hoy?",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-8.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-8.png"
@@ -700,7 +700,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-02-25",
    "url": "/estimulacion-cognitiva/deterioro-moderado/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: Copia los dibujos",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado · Copia los dibujos",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-8.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-8.png"
@@ -710,7 +710,7 @@
    "tablero": "estimulacion-cognitiva",
    "fecha": "2027-02-28",
    "url": "/estimulacion-cognitiva/deterioro-moderado/",
-   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: ¿Qué día es hoy?",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado · ¿Qué día es hoy?",
    "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
    "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-9.jpg",
    "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-9.png"
