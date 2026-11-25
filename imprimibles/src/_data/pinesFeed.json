@@ -1,0 +1,719 @@
+{
+ "tableros": {
+  "navidad": "Navidad para imprimir",
+  "calendarios": "Calendarios 2027",
+  "estimulacion-cognitiva": "Estimulación cognitiva para mayores"
+ },
+ "pines": [
+  {
+   "id": "navidad-fichas-de-navidad-para-imprimir",
+   "tablero": "navidad",
+   "fecha": "2026-12-02",
+   "url": "/navidad/",
+   "titulo": "Fichas de Navidad para imprimir",
+   "descripcion": "Fichas de Navidad para imprimir: carta a los Reyes Magos y a Papá Noel, bingo, laberinto con forma de árbol, sudoku con dibujos y sopa de letras.",
+   "imagen": "/pines/navidad-fichas-de-navidad-para-imprimir.jpg",
+   "origen": "/img/fichas-de-navidad-para-imprimir.png"
+  },
+  {
+   "id": "navidad-carta-a-los-reyes-magos-para-imprimir",
+   "tablero": "navidad",
+   "fecha": "2026-12-04",
+   "url": "/navidad/carta-reyes-magos/",
+   "titulo": "Carta a los Reyes Magos para imprimir",
+   "descripcion": "Carta a los Reyes Magos para imprimir y rellenar, con renglones, con pauta o para pegar los recortes del catálogo. Incluye sobre para montar. PDF gratis.",
+   "imagen": "/pines/navidad-carta-a-los-reyes-magos-para-imprimir.jpg",
+   "origen": "/img/carta-a-los-reyes-magos-para-imprimir.png"
+  },
+  {
+   "id": "navidad-carta-a-papa-noel-para-imprimir",
+   "tablero": "navidad",
+   "fecha": "2026-12-06",
+   "url": "/navidad/carta-papa-noel/",
+   "titulo": "Carta a Papá Noel para imprimir",
+   "descripcion": "Carta a Papá Noel para imprimir y rellenar, con renglones, con pauta o para pegar los recortes del catálogo de juguetes. Incluye sobre. PDF gratis.",
+   "imagen": "/pines/navidad-carta-a-papa-noel-para-imprimir.jpg",
+   "origen": "/img/carta-a-papa-noel-para-imprimir.png"
+  },
+  {
+   "id": "navidad-carta-de-los-reyes-magos-a-los-ninos",
+   "tablero": "navidad",
+   "fecha": "2026-12-08",
+   "url": "/navidad/carta-de-los-reyes-a-los-ninos/",
+   "titulo": "Carta de los Reyes Magos a los niños",
+   "descripcion": "Carta de respuesta de los Reyes Magos para dejar junto a los regalos, con hueco para el nombre y lo que ha hecho bien. Versión con carbón dulce. PDF gratis.",
+   "imagen": "/pines/navidad-carta-de-los-reyes-magos-a-los-ninos.jpg",
+   "origen": "/img/carta-de-los-reyes-magos-a-los-ninos.png"
+  },
+  {
+   "id": "navidad-bingo-de-navidad-para-imprimir",
+   "tablero": "navidad",
+   "fecha": "2026-12-10",
+   "url": "/navidad/bingo/",
+   "titulo": "Bingo de Navidad para imprimir",
+   "descripcion": "Bingo de Navidad para imprimir: cartones con palabras navideñas en lugar de números y la lista para cantarlo. Para clase o para la sobremesa.",
+   "imagen": "/pines/navidad-bingo-de-navidad-para-imprimir.jpg",
+   "origen": "/img/bingo-de-navidad-para-imprimir.png"
+  },
+  {
+   "id": "navidad-laberinto-de-navidad-para-imprimir",
+   "tablero": "navidad",
+   "fecha": "2026-12-12",
+   "url": "/navidad/laberinto/",
+   "titulo": "Laberinto de Navidad para imprimir",
+   "descripcion": "Laberinto de Navidad con forma de árbol para imprimir: entra por la estrella y llega al regalo. Versión fácil y difícil, con solución. PDF gratis.",
+   "imagen": "/pines/navidad-laberinto-de-navidad-para-imprimir.jpg",
+   "origen": "/img/laberinto-de-navidad-para-imprimir.png"
+  },
+  {
+   "id": "navidad-sudoku-de-navidad-para-ninos",
+   "tablero": "navidad",
+   "fecha": "2026-12-14",
+   "url": "/navidad/sudoku/",
+   "titulo": "Sudoku de Navidad para niños",
+   "descripcion": "Sudokus de Navidad para niños con dibujos en vez de números: estrellas, árboles, regalos y campanas. 4 × 4 desde 5 años y 6 × 6 desde 7. Con solución.",
+   "imagen": "/pines/navidad-sudoku-de-navidad-para-ninos.jpg",
+   "origen": "/img/sudoku-de-navidad-para-ninos.png"
+  },
+  {
+   "id": "navidad-calendario-de-adviento-para-imprimir",
+   "tablero": "navidad",
+   "fecha": "2026-12-16",
+   "url": "/navidad/calendario-de-adviento/",
+   "titulo": "Calendario de Adviento para imprimir",
+   "descripcion": "Calendario de Adviento para imprimir: 24 casillas para tachar o colorear del 1 al 24 de diciembre, y otro con una actividad en familia para cada día.",
+   "imagen": "/pines/navidad-calendario-de-adviento-para-imprimir.jpg",
+   "origen": "/img/calendario-de-adviento-para-imprimir.png"
+  },
+  {
+   "id": "navidad-etiquetas-para-regalos-de-navidad",
+   "tablero": "navidad",
+   "fecha": "2026-12-18",
+   "url": "/navidad/etiquetas-regalos/",
+   "titulo": "Etiquetas para regalos de Navidad",
+   "descripcion": "Etiquetas para regalos de Navidad para imprimir y recortar: 12 por hoja, con «Para» y «De» y agujero para la cinta. En blanco o con «Feliz Navidad».",
+   "imagen": "/pines/navidad-etiquetas-para-regalos-de-navidad.jpg",
+   "origen": "/img/etiquetas-para-regalos-de-navidad.png"
+  },
+  {
+   "id": "navidad-menu-de-navidad-para-imprimir",
+   "tablero": "navidad",
+   "fecha": "2026-12-20",
+   "url": "/navidad/menu-de-navidad/",
+   "titulo": "Menú de Navidad para imprimir",
+   "descripcion": "Menú de Navidad para imprimir y rellenar: plantillas para la mesa de Nochebuena, Navidad y Nochevieja, con entrantes, platos, postre y brindis.",
+   "imagen": "/pines/navidad-menu-de-navidad-para-imprimir.jpg",
+   "origen": "/img/menu-de-navidad-para-imprimir.png"
+  },
+  {
+   "id": "navidad-lista-de-regalos-de-navidad-para-imprimir",
+   "tablero": "navidad",
+   "fecha": "2026-12-22",
+   "url": "/navidad/lista-de-regalos/",
+   "titulo": "Lista de regalos de Navidad para imprimir",
+   "descripcion": "Lista de regalos de Navidad para imprimir: para quién, qué regalo, cuánto cuesta y si ya está comprado, con el total para no pasarte del presupuesto.",
+   "imagen": "/pines/navidad-lista-de-regalos-de-navidad-para-imprimir.jpg",
+   "origen": "/img/lista-de-regalos-de-navidad-para-imprimir.png"
+  },
+  {
+   "id": "navidad-amigo-invisible-para-imprimir",
+   "tablero": "navidad",
+   "fecha": "2026-12-24",
+   "url": "/navidad/amigo-invisible/",
+   "titulo": "Amigo invisible para imprimir",
+   "descripcion": "Amigo invisible para imprimir: papelitos para el sorteo («te ha tocado regalar a…») y una hoja para quien organiza, con fecha, presupuesto e ideas.",
+   "imagen": "/pines/navidad-amigo-invisible-para-imprimir.jpg",
+   "origen": "/img/amigo-invisible-para-imprimir.png"
+  },
+  {
+   "id": "navidad-carta-a-los-reyes-magos-para-imprimir-2",
+   "tablero": "navidad",
+   "fecha": "2026-12-26",
+   "url": "/navidad/carta-reyes-magos/",
+   "titulo": "Carta a los Reyes Magos para imprimir: Carta a los Reyes Magos para imprimir",
+   "descripcion": "Carta a los Reyes Magos para imprimir y rellenar, con renglones, con pauta o para pegar los recortes del catálogo. Incluye sobre para montar. PDF gratis.",
+   "imagen": "/pines/navidad-carta-a-los-reyes-magos-para-imprimir-2.jpg",
+   "origen": "/img/carta-a-los-reyes-magos-para-imprimir-2.png"
+  },
+  {
+   "id": "navidad-carta-a-papa-noel-para-imprimir-2",
+   "tablero": "navidad",
+   "fecha": "2026-12-28",
+   "url": "/navidad/carta-papa-noel/",
+   "titulo": "Carta a Papá Noel para imprimir: Carta a Papá Noel para imprimir",
+   "descripcion": "Carta a Papá Noel para imprimir y rellenar, con renglones, con pauta o para pegar los recortes del catálogo de juguetes. Incluye sobre. PDF gratis.",
+   "imagen": "/pines/navidad-carta-a-papa-noel-para-imprimir-2.jpg",
+   "origen": "/img/carta-a-papa-noel-para-imprimir-2.png"
+  },
+  {
+   "id": "navidad-carta-de-los-reyes-magos-a-los-ninos-2",
+   "tablero": "navidad",
+   "fecha": "2026-12-30",
+   "url": "/navidad/carta-de-los-reyes-a-los-ninos/",
+   "titulo": "Carta de los Reyes Magos a los niños: Carta de los Reyes Magos a los niños",
+   "descripcion": "Carta de respuesta de los Reyes Magos para dejar junto a los regalos, con hueco para el nombre y lo que ha hecho bien. Versión con carbón dulce. PDF gratis.",
+   "imagen": "/pines/navidad-carta-de-los-reyes-magos-a-los-ninos-2.jpg",
+   "origen": "/img/carta-de-los-reyes-magos-a-los-ninos-2.png"
+  },
+  {
+   "id": "navidad-bingo-de-navidad-para-imprimir-2",
+   "tablero": "navidad",
+   "fecha": "2027-01-01",
+   "url": "/navidad/bingo/",
+   "titulo": "Bingo de Navidad para imprimir: Bingo de Navidad: palabras para cantar",
+   "descripcion": "Bingo de Navidad para imprimir: cartones con palabras navideñas en lugar de números y la lista para cantarlo. Para clase o para la sobremesa.",
+   "imagen": "/pines/navidad-bingo-de-navidad-para-imprimir-2.jpg",
+   "origen": "/img/bingo-de-navidad-para-imprimir-2.png"
+  },
+  {
+   "id": "navidad-laberinto-de-navidad-para-imprimir-2",
+   "tablero": "navidad",
+   "fecha": "2027-01-03",
+   "url": "/navidad/laberinto/",
+   "titulo": "Laberinto de Navidad para imprimir: Laberinto de Navidad (difícil)",
+   "descripcion": "Laberinto de Navidad con forma de árbol para imprimir: entra por la estrella y llega al regalo. Versión fácil y difícil, con solución. PDF gratis.",
+   "imagen": "/pines/navidad-laberinto-de-navidad-para-imprimir-2.jpg",
+   "origen": "/img/laberinto-de-navidad-para-imprimir-2.png"
+  },
+  {
+   "id": "navidad-sudoku-de-navidad-para-ninos-2",
+   "tablero": "navidad",
+   "fecha": "2027-01-05",
+   "url": "/navidad/sudoku/",
+   "titulo": "Sudoku de Navidad para niños: Sudoku de Navidad 6 × 6",
+   "descripcion": "Sudokus de Navidad para niños con dibujos en vez de números: estrellas, árboles, regalos y campanas. 4 × 4 desde 5 años y 6 × 6 desde 7. Con solución.",
+   "imagen": "/pines/navidad-sudoku-de-navidad-para-ninos-2.jpg",
+   "origen": "/img/sudoku-de-navidad-para-ninos-2.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-02",
+   "url": "/calendarios/",
+   "titulo": "Calendario 2027 para imprimir",
+   "descripcion": "Calendario 2027 para imprimir en una hoja A4, con los festivos nacionales marcados y la semana empezando en lunes. También mensual, mes a mes. PDF gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-mensual-2027-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-04",
+   "url": "/calendarios/mensual-2027/",
+   "titulo": "Calendario mensual 2027 para imprimir",
+   "descripcion": "Calendario mensual 2027 para imprimir: un mes por hoja A4 con casillas grandes para apuntar y los festivos nacionales marcados. Los 12 meses en PDF.",
+   "imagen": "/pines/calendarios-calendario-mensual-2027-para-imprimir.jpg",
+   "origen": "/img/calendario-mensual-2027-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-con-numeros-de-semana",
+   "tablero": "calendarios",
+   "fecha": "2026-12-06",
+   "url": "/calendarios/2027-con-semanas/",
+   "titulo": "Calendario 2027 con números de semana",
+   "descripcion": "Calendario 2027 con el número de semana (ISO 8601) junto a cada fila, para la oficina o la planificación. Una hoja A4 con los festivos nacionales. PDF gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-con-numeros-de-semana.jpg",
+   "origen": "/img/calendario-2027-con-numeros-de-semana.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-andalucia-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-08",
+   "url": "/calendarios/2027-andalucia/",
+   "titulo": "Calendario 2027 de Andalucía para imprimir",
+   "descripcion": "Calendario 2027 de Andalucía para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-andalucia-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-andalucia-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-aragon-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-10",
+   "url": "/calendarios/2027-aragon/",
+   "titulo": "Calendario 2027 de Aragón para imprimir",
+   "descripcion": "Calendario 2027 de Aragón para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-aragon-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-aragon-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-asturias-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-12",
+   "url": "/calendarios/2027-asturias/",
+   "titulo": "Calendario 2027 de Asturias para imprimir",
+   "descripcion": "Calendario 2027 de Asturias para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-asturias-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-asturias-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-las-illes-balears-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-14",
+   "url": "/calendarios/2027-baleares/",
+   "titulo": "Calendario 2027 de las Illes Balears para imprimir",
+   "descripcion": "Calendario 2027 de las Illes Balears para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-las-illes-balears-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-las-illes-balears-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-canarias-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-16",
+   "url": "/calendarios/2027-canarias/",
+   "titulo": "Calendario 2027 de Canarias para imprimir",
+   "descripcion": "Calendario 2027 de Canarias para imprimir con sus 11 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-canarias-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-canarias-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-cantabria-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-18",
+   "url": "/calendarios/2027-cantabria/",
+   "titulo": "Calendario 2027 de Cantabria para imprimir",
+   "descripcion": "Calendario 2027 de Cantabria para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-cantabria-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-cantabria-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-castilla-la-mancha-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-20",
+   "url": "/calendarios/2027-castilla-la-mancha/",
+   "titulo": "Calendario 2027 de Castilla-La Mancha para imprimir",
+   "descripcion": "Calendario 2027 de Castilla-La Mancha para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-castilla-la-mancha-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-castilla-la-mancha-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-castilla-y-leon-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-22",
+   "url": "/calendarios/2027-castilla-y-leon/",
+   "titulo": "Calendario 2027 de Castilla y León para imprimir",
+   "descripcion": "Calendario 2027 de Castilla y León para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-castilla-y-leon-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-castilla-y-leon-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-cataluna-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-24",
+   "url": "/calendarios/2027-cataluna/",
+   "titulo": "Calendario 2027 de Cataluña para imprimir",
+   "descripcion": "Calendario 2027 de Cataluña para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-cataluna-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-cataluna-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-extremadura-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-26",
+   "url": "/calendarios/2027-extremadura/",
+   "titulo": "Calendario 2027 de Extremadura para imprimir",
+   "descripcion": "Calendario 2027 de Extremadura para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-extremadura-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-extremadura-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-galicia-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-28",
+   "url": "/calendarios/2027-galicia/",
+   "titulo": "Calendario 2027 de Galicia para imprimir",
+   "descripcion": "Calendario 2027 de Galicia para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-galicia-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-galicia-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-la-comunidad-de-madrid-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2026-12-30",
+   "url": "/calendarios/2027-madrid/",
+   "titulo": "Calendario 2027 de la Comunidad de Madrid para imprimir",
+   "descripcion": "Calendario 2027 de la Comunidad de Madrid para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-la-comunidad-de-madrid-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-la-comunidad-de-madrid-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-la-region-de-murcia-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2027-01-01",
+   "url": "/calendarios/2027-murcia/",
+   "titulo": "Calendario 2027 de la Región de Murcia para imprimir",
+   "descripcion": "Calendario 2027 de la Región de Murcia para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-la-region-de-murcia-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-la-region-de-murcia-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-navarra-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2027-01-03",
+   "url": "/calendarios/2027-navarra/",
+   "titulo": "Calendario 2027 de Navarra para imprimir",
+   "descripcion": "Calendario 2027 de Navarra para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-navarra-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-navarra-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-del-pais-vasco-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2027-01-05",
+   "url": "/calendarios/2027-pais-vasco/",
+   "titulo": "Calendario 2027 del País Vasco para imprimir",
+   "descripcion": "Calendario 2027 del País Vasco para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-del-pais-vasco-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-del-pais-vasco-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-la-rioja-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2027-01-07",
+   "url": "/calendarios/2027-la-rioja/",
+   "titulo": "Calendario 2027 de La Rioja para imprimir",
+   "descripcion": "Calendario 2027 de La Rioja para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-la-rioja-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-la-rioja-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-la-comunitat-valenciana-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2027-01-09",
+   "url": "/calendarios/2027-valenciana/",
+   "titulo": "Calendario 2027 de la Comunitat Valenciana para imprimir",
+   "descripcion": "Calendario 2027 de la Comunitat Valenciana para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-la-comunitat-valenciana-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-la-comunitat-valenciana-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-ceuta-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2027-01-11",
+   "url": "/calendarios/2027-ceuta/",
+   "titulo": "Calendario 2027 de Ceuta para imprimir",
+   "descripcion": "Calendario 2027 de Ceuta para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-ceuta-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-ceuta-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-2027-de-melilla-para-imprimir",
+   "tablero": "calendarios",
+   "fecha": "2027-01-13",
+   "url": "/calendarios/2027-melilla/",
+   "titulo": "Calendario 2027 de Melilla para imprimir",
+   "descripcion": "Calendario 2027 de Melilla para imprimir con sus 12 festivos nacionales y autonómicos. Anual en A4, mes a mes en PDF y en Excel. Gratis.",
+   "imagen": "/pines/calendarios-calendario-2027-de-melilla-para-imprimir.jpg",
+   "origen": "/img/calendario-2027-de-melilla-para-imprimir.png"
+  },
+  {
+   "id": "calendarios-calendario-mensual-2027-para-imprimir-2",
+   "tablero": "calendarios",
+   "fecha": "2027-01-15",
+   "url": "/calendarios/mensual-2027/",
+   "titulo": "Calendario mensual 2027 para imprimir: Calendario mensual 2027 para imprimir",
+   "descripcion": "Calendario mensual 2027 para imprimir: un mes por hoja A4 con casillas grandes para apuntar y los festivos nacionales marcados. Los 12 meses en PDF.",
+   "imagen": "/pines/calendarios-calendario-mensual-2027-para-imprimir-2.jpg",
+   "origen": "/img/calendario-mensual-2027-para-imprimir-2.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-mayores",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2026-12-03",
+   "url": "/estimulacion-cognitiva/",
+   "titulo": "Fichas de estimulación cognitiva para mayores",
+   "descripcion": "Fichas de estimulación cognitiva para mayores para imprimir: deterioro leve, moderado y severo. Atención, memoria, lenguaje, cálculo y orientación.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-mayores.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-mayores.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2026-12-06",
+   "url": "/estimulacion-cognitiva/dinamicas-grupales/",
+   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores",
+   "descripcion": "15 dinámicas de grupo para trabajar la memoria, el lenguaje y la atención con mayores, con tarjetas de refranes, bingo con sumas y plantillas para imprimir.",
+   "imagen": "/pines/estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores.jpg",
+   "origen": "/img/dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2026-12-09",
+   "url": "/estimulacion-cognitiva/deterioro-leve/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2026-12-12",
+   "url": "/estimulacion-cognitiva/deterioro-moderado/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2026-12-15",
+   "url": "/estimulacion-cognitiva/deterioro-severo/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro severo",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo severo: dibujos grandes para unir iguales, contar, rodear, colorear y repasar trazos.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-severo.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-mayores-2",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2026-12-18",
+   "url": "/estimulacion-cognitiva/",
+   "titulo": "Fichas de estimulación cognitiva para mayores: Busca los corazones",
+   "descripcion": "Fichas de estimulación cognitiva para mayores para imprimir: deterioro leve, moderado y severo. Atención, memoria, lenguaje, cálculo y orientación.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-mayores-2.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-mayores-2.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-2",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2026-12-21",
+   "url": "/estimulacion-cognitiva/dinamicas-grupales/",
+   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores: Bingo con sumas: hoja del monitor",
+   "descripcion": "15 dinámicas de grupo para trabajar la memoria, el lenguaje y la atención con mayores, con tarjetas de refranes, bingo con sumas y plantillas para imprimir.",
+   "imagen": "/pines/estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-2.jpg",
+   "origen": "/img/dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-2.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-2",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2026-12-24",
+   "url": "/estimulacion-cognitiva/deterioro-leve/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Series de números",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-2.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-2.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-2",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2026-12-27",
+   "url": "/estimulacion-cognitiva/deterioro-moderado/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: Busca las estrellas",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-2.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-2.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo-2",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2026-12-30",
+   "url": "/estimulacion-cognitiva/deterioro-severo/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro severo: ¿Cuántos hay?",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo severo: dibujos grandes para unir iguales, contar, rodear, colorear y repasar trazos.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo-2.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-severo-2.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-3",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-01-02",
+   "url": "/estimulacion-cognitiva/dinamicas-grupales/",
+   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores: Precios para la tienda",
+   "descripcion": "15 dinámicas de grupo para trabajar la memoria, el lenguaje y la atención con mayores, con tarjetas de refranes, bingo con sumas y plantillas para imprimir.",
+   "imagen": "/pines/estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-3.jpg",
+   "origen": "/img/dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-3.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-3",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-01-05",
+   "url": "/estimulacion-cognitiva/deterioro-leve/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Las cuentas de la compra",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-3.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-3.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-3",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-01-08",
+   "url": "/estimulacion-cognitiva/deterioro-moderado/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: ¿Qué número sigue?",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-3.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-3.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo-3",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-01-11",
+   "url": "/estimulacion-cognitiva/deterioro-severo/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro severo: Busca los círculos",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo severo: dibujos grandes para unir iguales, contar, rodear, colorear y repasar trazos.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo-3.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-severo-3.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-4",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-01-14",
+   "url": "/estimulacion-cognitiva/dinamicas-grupales/",
+   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores: Recetas de toda la vida",
+   "descripcion": "15 dinámicas de grupo para trabajar la memoria, el lenguaje y la atención con mayores, con tarjetas de refranes, bingo con sumas y plantillas para imprimir.",
+   "imagen": "/pines/estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-4.jpg",
+   "origen": "/img/dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-4.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-4",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-01-17",
+   "url": "/estimulacion-cognitiva/deterioro-leve/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Palabras por grupos",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-4.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-4.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-4",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-01-20",
+   "url": "/estimulacion-cognitiva/deterioro-moderado/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: Vamos a la tienda",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-4.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-4.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo-4",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-01-23",
+   "url": "/estimulacion-cognitiva/deterioro-severo/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro severo: Colorea los dibujos",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo severo: dibujos grandes para unir iguales, contar, rodear, colorear y repasar trazos.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo-4.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-severo-4.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-5",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-01-26",
+   "url": "/estimulacion-cognitiva/dinamicas-grupales/",
+   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores: Canciones para cantar en grupo",
+   "descripcion": "15 dinámicas de grupo para trabajar la memoria, el lenguaje y la atención con mayores, con tarjetas de refranes, bingo con sumas y plantillas para imprimir.",
+   "imagen": "/pines/estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-5.jpg",
+   "origen": "/img/dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-5.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-5",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-01-29",
+   "url": "/estimulacion-cognitiva/deterioro-leve/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Ordena los pasos",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-5.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-5.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-5",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-02-01",
+   "url": "/estimulacion-cognitiva/deterioro-moderado/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: Cada palabra en su grupo",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-5.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-5.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo-5",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-02-04",
+   "url": "/estimulacion-cognitiva/deterioro-severo/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro severo: Repasa los trazos",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo severo: dibujos grandes para unir iguales, contar, rodear, colorear y repasar trazos.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-severo-5.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-severo-5.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-6",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-02-07",
+   "url": "/estimulacion-cognitiva/dinamicas-grupales/",
+   "titulo": "Dinámicas de estimulación cognitiva para grupos de mayores: Registro de la sesión",
+   "descripcion": "15 dinámicas de grupo para trabajar la memoria, el lenguaje y la atención con mayores, con tarjetas de refranes, bingo con sumas y plantillas para imprimir.",
+   "imagen": "/pines/estimulacion-cognitiva-dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-6.jpg",
+   "origen": "/img/dinamicas-de-estimulacion-cognitiva-para-grupos-de-mayores-6.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-6",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-02-10",
+   "url": "/estimulacion-cognitiva/deterioro-leve/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Atención: busca las letras",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-6.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-6.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-6",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-02-13",
+   "url": "/estimulacion-cognitiva/deterioro-moderado/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: ¿Qué va primero?",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-6.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-6.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-7",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-02-16",
+   "url": "/estimulacion-cognitiva/deterioro-leve/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Copia los dibujos",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-7.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-7.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-7",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-02-19",
+   "url": "/estimulacion-cognitiva/deterioro-moderado/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: Une los dibujos iguales",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-7.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-7.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-8",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-02-22",
+   "url": "/estimulacion-cognitiva/deterioro-leve/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro leve: Orientación: ¿qué día es hoy?",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo leve: refranes, series, la compra, categorías, orientación y atención. Con solución.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-leve-8.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-leve-8.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-8",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-02-25",
+   "url": "/estimulacion-cognitiva/deterioro-moderado/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: Copia los dibujos",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-8.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-8.png"
+  },
+  {
+   "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-9",
+   "tablero": "estimulacion-cognitiva",
+   "fecha": "2027-02-28",
+   "url": "/estimulacion-cognitiva/deterioro-moderado/",
+   "titulo": "Fichas de estimulación cognitiva para deterioro moderado: ¿Qué día es hoy?",
+   "descripcion": "Fichas de estimulación cognitiva para mayores con deterioro cognitivo moderado: letra grande, respuestas para elegir, atención, cálculo y orientación.",
+   "imagen": "/pines/estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-deterioro-moderado-9.jpg",
+   "origen": "/img/fichas-de-estimulacion-cognitiva-para-deterioro-moderado-9.png"
+  }
+ ]
+}

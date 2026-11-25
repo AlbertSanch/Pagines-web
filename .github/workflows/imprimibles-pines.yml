@@ -1,0 +1,47 @@
+# imprimibles.es: publica en los feeds RSS de Pinterest (/pinterest/<tablero>.xml) los pines que tocan hoy.
+# Los pines y sus fechas están en imprimibles/src/_data/pinesFeed.json (los prepara scripts/pines_feed.js) y los feeds
+# solo enseñan los que ya tienen fecha. Cloudflare Pages vuelve a compilar la web con cada commit en imprimibles/,
+# así que los días que sale algún pin el robot apunta la fecha en src/_data/publicacion.json y lo sube; Pinterest
+# lee los feeds una vez al día y publica los pines nuevos.
+name: imprimibles · pines
+
+on:
+  schedule:
+    - cron: "23 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: imprimibles-pines
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apuntar los pines de hoy
+        id: hoy
+        run: |
+          python3 - <<'EOF'
+          import datetime as dt, json, os
+          from zoneinfo import ZoneInfo
+          hoy = dt.datetime.now(ZoneInfo("Europe/Madrid")).date().isoformat()
+          pines = json.load(open("imprimibles/src/_data/pinesFeed.json", encoding="utf-8"))["pines"]
+          de_hoy = [p["id"] for p in pines if p["fecha"] == hoy]
+          print(f"{hoy}: {len(de_hoy)} pines", de_hoy)
+          if de_hoy:
+              json.dump({"fecha": hoy, "pines": de_hoy}, open("imprimibles/src/_data/publicacion.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+          EOF
+      - name: Subir
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add imprimibles/src/_data/publicacion.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "Hoy no sale ningún pin"; exit 0; fi
+          git commit -m "imprimibles: pines de hoy en los feeds de Pinterest"
+          for i in 1 2 3; do git pull --rebase origin main && git push && exit 0; sleep 5; done
+          exit 1
