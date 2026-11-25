@@ -27,6 +27,26 @@
   "fecha": "2026-11-12",
   "huella": "3fd6fafda0a7"
  },
+ "/navidad/calendario-de-adviento/": {
+  "fecha": "2026-11-25",
+  "huella": "a127455a983b"
+ },
+ "/navidad/etiquetas-regalos/": {
+  "fecha": "2026-11-25",
+  "huella": "67920bfbca94"
+ },
+ "/navidad/menu-de-navidad/": {
+  "fecha": "2026-11-25",
+  "huella": "8e73da5d7ad2"
+ },
+ "/navidad/lista-de-regalos/": {
+  "fecha": "2026-11-25",
+  "huella": "7326d6a64331"
+ },
+ "/navidad/amigo-invisible/": {
+  "fecha": "2026-11-25",
+  "huella": "b1936e703f8f"
+ },
  "/sopas-de-letras/": {
   "fecha": "2026-11-12",
   "huella": "70fd0e8a9b9c"
@@ -320,80 +340,80 @@
   "huella": "7c72b9909226"
  },
  "/calendarios/2027-andalucia/": {
-  "fecha": "2026-11-17",
-  "huella": "5a81ab9a1b4f"
+  "fecha": "2026-11-25",
+  "huella": "3f18b961a1fb"
  },
  "/calendarios/2027-aragon/": {
-  "fecha": "2026-11-17",
-  "huella": "2fc81bf6e4a6"
+  "fecha": "2026-11-25",
+  "huella": "22038b4c1595"
  },
  "/calendarios/2027-asturias/": {
-  "fecha": "2026-11-17",
-  "huella": "662092bae2dd"
+  "fecha": "2026-11-25",
+  "huella": "bac510b27061"
  },
  "/calendarios/2027-baleares/": {
-  "fecha": "2026-11-17",
-  "huella": "0529f514a1b1"
+  "fecha": "2026-11-25",
+  "huella": "fde3b412798d"
  },
  "/calendarios/2027-canarias/": {
-  "fecha": "2026-11-17",
-  "huella": "492e1de00729"
+  "fecha": "2026-11-25",
+  "huella": "221f3e09210d"
  },
  "/calendarios/2027-cantabria/": {
-  "fecha": "2026-11-17",
-  "huella": "276f8801345a"
+  "fecha": "2026-11-25",
+  "huella": "981542a1d586"
  },
  "/calendarios/2027-castilla-la-mancha/": {
-  "fecha": "2026-11-17",
-  "huella": "56915c9e6561"
+  "fecha": "2026-11-25",
+  "huella": "ecb0b4b23fd9"
  },
  "/calendarios/2027-castilla-y-leon/": {
-  "fecha": "2026-11-17",
-  "huella": "55c5e50b6ea3"
+  "fecha": "2026-11-25",
+  "huella": "e82b9d6fd2e5"
  },
  "/calendarios/2027-cataluna/": {
-  "fecha": "2026-11-17",
-  "huella": "8491a120e15f"
+  "fecha": "2026-11-25",
+  "huella": "f010cca43855"
  },
  "/calendarios/2027-extremadura/": {
-  "fecha": "2026-11-17",
-  "huella": "cd07badb46d0"
+  "fecha": "2026-11-25",
+  "huella": "6152918437e4"
  },
  "/calendarios/2027-galicia/": {
-  "fecha": "2026-11-17",
-  "huella": "4c9e1a223c71"
+  "fecha": "2026-11-25",
+  "huella": "959d33bab756"
  },
  "/calendarios/2027-madrid/": {
-  "fecha": "2026-11-17",
-  "huella": "5ca75b2c677d"
+  "fecha": "2026-11-25",
+  "huella": "69451a052d1b"
  },
  "/calendarios/2027-murcia/": {
-  "fecha": "2026-11-17",
-  "huella": "068219134da1"
+  "fecha": "2026-11-25",
+  "huella": "cc4f07bee70f"
  },
  "/calendarios/2027-navarra/": {
-  "fecha": "2026-11-17",
-  "huella": "7cc487e4c4c3"
+  "fecha": "2026-11-25",
+  "huella": "35bc08e98525"
  },
  "/calendarios/2027-pais-vasco/": {
-  "fecha": "2026-11-17",
-  "huella": "27bac0da606e"
+  "fecha": "2026-11-25",
+  "huella": "f7a264cab36d"
  },
  "/calendarios/2027-la-rioja/": {
-  "fecha": "2026-11-17",
-  "huella": "bd001e45ee86"
+  "fecha": "2026-11-25",
+  "huella": "939a8d2cbd7c"
  },
  "/calendarios/2027-valenciana/": {
-  "fecha": "2026-11-17",
-  "huella": "7552c9a7814b"
+  "fecha": "2026-11-25",
+  "huella": "5f933e9b1c28"
  },
  "/calendarios/2027-ceuta/": {
-  "fecha": "2026-11-17",
-  "huella": "f409ee07d334"
+  "fecha": "2026-11-25",
+  "huella": "5fb513b5a698"
  },
  "/calendarios/2027-melilla/": {
-  "fecha": "2026-11-17",
-  "huella": "8ab2d0b8c518"
+  "fecha": "2026-11-25",
+  "huella": "4a09a0ee8766"
  },
  "/estimulacion-cognitiva/": {
   "fecha": "2026-11-15",
