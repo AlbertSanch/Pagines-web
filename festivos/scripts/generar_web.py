@@ -35,7 +35,7 @@ PLANTILLA = RAIZ / "plantilla"
 DOMINIO = "https://festivosde.es"
 CUANTOS_DIAS = "https://cuantosdiasfaltan.es"
 SITIO = "Festivos de"
-VERSION = "16"
+VERSION = "17"
 HOY = dt.date.fromisoformat(os.environ["FESTIVOS_HOY"]) if os.environ.get("FESTIVOS_HOY") else dt.date.today()  # FESTIVOS_HOY: para probar
 ADSENSE = "ca-pub-8810566450749484"  # la misma cuenta que las otras webs
 REGIONES_CONSENTIMIENTO = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT",
@@ -290,7 +290,7 @@ def pagina(ruta, titulo, descripcion, cuerpo, migas=None, extra_ld=None, indexab
 <footer class="pie">
   <div class="contenedor">
     <p><strong>festivosde.es</strong> reúne los días festivos de cada municipio de España a partir del Boletín Oficial del Estado y de los boletines oficiales de cada comunidad autónoma.</p>
-    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/es-festivo/">¿Es festivo hoy?</a><a href="/cuanto-falta/">Cuánto falta para…</a><a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/planificador-vacaciones/">Planificador de vacaciones</a><a href="/calendario-escolar/">Calendario escolar</a><a href="/calendario-laboral-para-imprimir/">Calendario para imprimir</a><a href="/guias/">Guías</a><a href="/#comunidades">Comunidades autónomas</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/contacto/">Contacto</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
+    <div class="enlaces"><a href="/">Buscar un municipio</a>{''.join(f'<a href="/calendario-laboral-{a}/">Calendario laboral {a}</a><a href="/puentes-{a}/">Puentes {a}</a>' for a in ANIOS)}<a href="/es-festivo/">¿Es festivo hoy?</a><a href="/cuanto-falta/">Cuánto falta para…</a><a href="/calculadora-dias-laborables/">Calculadora de días laborables</a><a href="/planificador-vacaciones/">Planificador de vacaciones</a><a href="/calendario-escolar/">Calendario escolar</a><a href="/calendario-laboral-para-imprimir/">Calendario para imprimir</a><a href="/guias/">Guías</a><a href="/#comunidades">Comunidades autónomas</a><a href="/provincias-de-espana/">Provincias de España</a><a href="/sobre-nosotros/">Sobre nosotros</a><a href="/sobre-los-datos/">De dónde salen los datos</a><a href="/contacto/">Contacto</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad y cookies</a>{CONFIGURAR_COOKIES}</div>
     <p>Las fechas se toman de las publicaciones oficiales. Si ves un error, escríbenos a {TITULAR['email']}.</p>
   </div>
 </footer>
@@ -450,6 +450,81 @@ def pagina_municipio(datos, cod, m, vecinos):
 
 
 # ---------------------------------------------------------------- provincias, comunidades y España
+
+# ---------------------------------------------------------------- provincias de España (mapa, capitales y población)
+CAPITALES = {"01": "Vitoria-Gasteiz", "02": "Albacete", "03": "Alicante", "04": "Almería", "05": "Ávila", "06": "Badajoz", "07": "Palma",
+             "08": "Barcelona", "09": "Burgos", "10": "Cáceres", "11": "Cádiz", "12": "Castellón de la Plana", "13": "Ciudad Real",
+             "14": "Córdoba", "15": "A Coruña", "16": "Cuenca", "17": "Girona", "18": "Granada", "19": "Guadalajara", "20": "San Sebastián",
+             "21": "Huelva", "22": "Huesca", "23": "Jaén", "24": "León", "25": "Lleida", "26": "Logroño", "27": "Lugo", "28": "Madrid",
+             "29": "Málaga", "30": "Murcia", "31": "Pamplona", "32": "Ourense", "33": "Oviedo", "34": "Palencia", "35": "Las Palmas de Gran Canaria",
+             "36": "Pontevedra", "37": "Salamanca", "38": "Santa Cruz de Tenerife", "39": "Santander", "40": "Segovia", "41": "Sevilla",
+             "42": "Soria", "43": "Tarragona", "44": "Teruel", "45": "Toledo", "46": "Valencia", "47": "Valladolid", "48": "Bilbao",
+             "49": "Zamora", "50": "Zaragoza", "51": "Ceuta", "52": "Melilla"}
+COLORES_CCAA = ["#e9c46a", "#f4a261", "#e76f51", "#2a9d8f", "#8ab17d", "#b5838d", "#6d9dc5", "#cdb4db", "#ffafcc", "#a3c4f3",
+                "#90be6d", "#f9c74f", "#f8961e", "#43aa8b", "#c9ada7", "#9a8c98", "#ffd6a5", "#bdb2ff", "#caffbf"]
+
+
+def pagina_provincias_espana():
+    pob = json.loads((RAIZ / "data" / "poblacion.json").read_text(encoding="utf-8"))
+    mapa = json.loads((RAIZ / "data" / "mapa_provincias.json").read_text(encoding="utf-8"))
+    P = pob["provincias"]
+    ccaa_de = {k: PROVINCIAS[k][1] for k in CAPITALES}
+    lista_cc = sorted(set(ccaa_de.values()), key=lambda c: COMUNIDADES[c][0])
+    color = {c: COLORES_CCAA[i % len(COLORES_CCAA)] for i, c in enumerate(lista_cc)}
+    provs = [k for k in CAPITALES if k not in ("51", "52")]
+    total = sum(P.values())
+    mas, menos = max(provs, key=lambda k: P[k]), min(provs, key=lambda k: P[k])
+    por_cc = {c: sorted((k for k in provs if ccaa_de[k] == c), key=lambda k: slug(PROVINCIAS[k][0])) for c in lista_cc if c not in ("ceuta", "melilla")}
+    uni = sorted((c for c, ks in por_cc.items() if len(ks) == 1), key=lambda c: COMUNIDADES[c][0])
+    mas_cc = max(por_cc, key=lambda c: len(por_cc[c]))
+    distinto = sorted((k for k in provs if slug(CAPITALES[k]) not in slug(PROVINCIAS[k][0]) and slug(PROVINCIAS[k][0]) not in slug(CAPITALES[k])),
+                      key=lambda k: slug(PROVINCIAS[k][0]))
+    # mapa: cada provincia enlaza a sus festivos; Ceuta y Melilla, con un punto
+    x, y, w, h = mapa["canarias"]
+    svg = [f'<svg class="mapa-provincias" viewBox="0 0 {mapa["ancho"]} {mapa["alto"]}" role="img" aria-label="Mapa de las provincias de España por comunidades autónomas">',
+           f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="none" stroke="#b9ad9f" stroke-dasharray="6 4"/>']
+    for k in mapa["orden"]:
+        d = mapa["provincias"][k]
+        nombre = f"{PROVINCIAS[k][0]} ({COMUNIDADES[ccaa_de[k]][0]})"
+        if k in ("51", "52"):
+            forma = f'<circle cx="{d["cx"]}" cy="{d["cy"]}" r="9" fill="{color[ccaa_de[k]]}" stroke="#2b2118" stroke-width="1.5"/>'
+        else:
+            forma = f'<path d="{d["d"]}" fill="{color[ccaa_de[k]]}" stroke="#fff" stroke-width="1.6"/>'
+        svg.append(f'<a href="{RUTAS_PROV[k]}"><title>{escape(nombre)}</title>{forma}</a>')
+    svg.append("</svg>")
+    leyenda = "".join(f'<li><span class="muestra" style="background:{color[c]}"></span><a href="/comunidad/{c}/">{escape(COMUNIDADES[c][0])}</a></li>' for c in lista_cc)
+    filas = "".join(
+        f'<tr><td><a href="{RUTAS_PROV[k]}">{escape(PROVINCIAS[k][0])}</a></td><td>{escape(CAPITALES[k])}</td>'
+        f'<td><a href="/comunidad/{ccaa_de[k]}/">{escape(COMUNIDADES[ccaa_de[k]][0])}</a></td><td class="num">{miles(P[k])}</td></tr>'
+        for k in sorted(CAPITALES, key=lambda k: slug(PROVINCIAS[k][0])))
+    bloques_cc = "".join(
+        f'<li><a href="/comunidad/{c}/">{escape(COMUNIDADES[c][0])}</a>: {len(ks)} {"provincia" if len(ks) == 1 else "provincias"} '
+        f'({lista_y([f"<a href=\"{RUTAS_PROV[k]}\">{escape(PROVINCIAS[k][0])}</a>" for k in ks])})</li>'
+        for c, ks in sorted(por_cc.items(), key=lambda x: (-len(x[1]), COMUNIDADES[x[0]][0])))
+    preguntas = [
+        ("¿Cuántas provincias tiene España?", f"España tiene 50 provincias, repartidas en 17 comunidades autónomas. Además están Ceuta y Melilla, que son ciudades autónomas y no forman parte de ninguna provincia."),
+        ("¿Desde cuándo hay 50 provincias?", "La división provincial actual viene del Real Decreto de 30 de noviembre de 1833, impulsado por Javier de Burgos, que creó 49 provincias. En 1927 Canarias se dividió en dos, Las Palmas y Santa Cruz de Tenerife, y desde entonces son 50."),
+        ("¿Cuál es la provincia más poblada y cuál la menos?", f"La más poblada es {PROVINCIAS[mas][0]}, con {miles(P[mas])} habitantes, y la menos poblada, {PROVINCIAS[menos][0]}, con {miles(P[menos])} (padrón a 1 de enero de {pob['anio']})."),
+        ("¿Qué comunidades tienen una sola provincia?", f"{len(uni)}: {lista_y([COMUNIDADES[c][0] for c in uni])}. En ellas la comunidad y la provincia ocupan el mismo territorio."),
+        ("¿Qué comunidad tiene más provincias?", f"{COMUNIDADES[mas_cc][0]}, con {len(por_cc[mas_cc])}: {lista_y([PROVINCIAS[k][0] for k in por_cc[mas_cc]])}."),
+        ("¿En qué provincias la capital no se llama como la provincia?", lista_y([f"{PROVINCIAS[k][0]} (capital: {CAPITALES[k]})" for k in distinto]) + "."),
+    ]
+    cuerpo = f"""<h1>Provincias de España</h1>
+<p class="lead">España tiene <strong>50 provincias</strong>, agrupadas en 17 comunidades autónomas, y dos ciudades autónomas, Ceuta y Melilla. Aquí tienes el mapa, la lista con la capital, la comunidad y la población de cada una (padrón del INE a 1 de enero de {pob['anio']}) y, al pulsar en cada provincia, sus festivos.</p>
+<section><h2>Mapa de las provincias de España</h2>
+<div class="mapa-envoltorio">{''.join(svg)}</div>
+<p class="leyenda-titulo">Colores por comunidad autónoma · Canarias, en el recuadro · Ceuta y Melilla, con un punto. Pulsa una provincia para ver sus festivos.</p>
+<ul class="leyenda-mapa">{leyenda}</ul></section>
+<section><h2>Lista de las provincias, capitales y población</h2>
+<div class="tabla-envoltorio"><table class="festivos tabla-provincias"><thead><tr><th>Provincia</th><th>Capital</th><th>Comunidad autónoma</th><th>Habitantes</th></tr></thead>
+<tbody>{filas}</tbody><tfoot><tr><td colspan="3"><strong>España</strong></td><td class="num"><strong>{miles(total)}</strong></td></tr></tfoot></table></div>
+<p class="fuente">Población: {escape(pob['fuente'])}, a 1 de enero de {pob['anio']}; el total es la suma de todos los municipios. Mapa: contornos municipales del INE unidos por provincia.</p></section>
+<section><h2>Las provincias de cada comunidad autónoma</h2><ul class="puentes">{bloques_cc}</ul></section>
+<section><h2>Preguntas frecuentes</h2><div class="faq">{faq_html(preguntas)}</div></section>"""
+    return pagina("/provincias-de-espana/", "Provincias de España: mapa, lista de las 50 y sus capitales",
+                  f"Las 50 provincias de España en un mapa por comunidades, con su capital y su población según el INE ({pob['anio']}). Y cuántas tiene cada comunidad.",
+                  cuerpo, [("Provincias de España", None)], [faq_ld(preguntas)])
+
 
 def pagina_provincia(datos, codp, muni_prov):
     nombre, ccaa = PROVINCIAS[codp]
@@ -1654,6 +1729,8 @@ def main():
     idx = {a: indice_fechas(datos, a) for a in ANIOS}
     guardar("/es-festivo/", pagina_es_festivo(datos, idx))
     rutas_sitemap.append("/es-festivo/")
+    guardar("/provincias-de-espana/", pagina_provincias_espana())
+    rutas_sitemap.append("/provincias-de-espana/")
     rutas_sitemap += generar_cuentas(datos, cargar_escolar(), idx)
     for mes in range(1, 13):
         for dia in range(1, 32):
