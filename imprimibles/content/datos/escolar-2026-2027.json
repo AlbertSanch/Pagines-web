@@ -1,0 +1,6089 @@
+{
+ "curso": "2026-2027",
+ "territorios": [
+  {
+   "id": "andalucia_almeria",
+   "slug": "andalucia-almeria",
+   "ccaa": "andalucia",
+   "comunidad": "Andalucía",
+   "nombre": "Almería",
+   "es_provincia": true,
+   "inicio": "2026-09-10",
+   "fin": "2027-06-22",
+   "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+   "otras_etapas": [
+    [
+     "ESO y Bachillerato",
+     "2026-09-15"
+    ],
+    [
+     "FP",
+     "2026-09-15"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-24",
+     "2027-01-06"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-21",
+     "2027-03-28"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2026-10-09",
+     "Día no lectivo provincial"
+    ],
+    [
+     "2026-10-30",
+     "Día no lectivo provincial"
+    ],
+    [
+     "2026-12-23",
+     "Día no lectivo provincial (víspera de vacaciones de Navidad)"
+    ],
+    [
+     "2027-02-26",
+     "Día de la Comunidad Educativa"
+    ],
+    [
+     "2027-03-29",
+     "Día no lectivo provincial (lunes de Pascua)"
+    ],
+    [
+     "2027-04-30",
+     "Día no lectivo provincial"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-01",
+     "Día de Andalucía"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-09": [
+     "nl",
+     "Día no lectivo provincial"
+    ],
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-10-30": [
+     "nl",
+     "Día no lectivo provincial"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "nl",
+     "Día no lectivo provincial (víspera de vacaciones de Navidad)"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-26": [
+     "nl",
+     "Día de la Comunidad Educativa"
+    ],
+    "2027-03-01": [
+     "fest",
+     "Día de Andalucía"
+    ],
+    "2027-03-21": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "nl",
+     "Día no lectivo provincial (lunes de Pascua)"
+    ],
+    "2027-04-30": [
+     "nl",
+     "Día no lectivo provincial"
+    ]
+   },
+   "norma": "Resolución de la Delegación Territorial de Desarrollo Educativo y Formación Profesional y de Universidad, Investigación e Innovación en Almería, por la que se aprueba el calendario escolar en los centros docentes no universitarios, a excepción de los de primer ciclo de educación infantil, de esta provincia para el curso académico 2026-2027 (firmada el 28/05/2026)",
+   "url": "https://www.juntadeandalucia.es/educacion/portales/documents/1183913/3343033/Resoluci%C3%B3n_calendario_escolar_26_27_Almer%C3%ADa(F).pdf/fb0a8b29-7d79-13a6-dd6d-caf9340047ef?t=1780046260347",
+   "locales": "Son no lectivas las fiestas locales de cada municipio. Donde las fiestas locales caigan en días lectivos, los Consejos Escolares de centro o Municipales deben solicitar a la Delegación (plazo hasta el 1 de febrero de 2027) sustituirlas por alguno de los 6 días no lectivos provinciales (9 y 30 oct, 23 dic, 26 feb, 29 mar, 30 abr)."
+  },
+  {
+   "id": "andalucia_cadiz",
+   "slug": "andalucia-cadiz",
+   "ccaa": "andalucia",
+   "comunidad": "Andalucía",
+   "nombre": "Cádiz",
+   "es_provincia": true,
+   "inicio": "2026-09-10",
+   "fin": "2027-06-23",
+   "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+   "otras_etapas": [
+    [
+     "ESO, Bachillerato y FP",
+     "2026-09-15"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-08"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-28"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2027-04-30",
+     "Día de la Comunidad Educativa"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-01",
+     "Día de Andalucía"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-08": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-03-01": [
+     "fest",
+     "Día de Andalucía"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-04-30": [
+     "nl",
+     "Día de la Comunidad Educativa"
+    ]
+   },
+   "norma": "Resolución de la Delegación Territorial de Desarrollo Educativo y Formación Profesional y de Universidad, Investigación e Innovación en Cádiz, por la que se aprueba el calendario y la jornada escolar en los centros docentes, a excepción de los universitarios, para el curso académico 2026/2027 (firmada el 29/05/2026)",
+   "url": "https://www.juntadeandalucia.es/educacion/portales/documents/1197071/0/Resoluci%C3%B3n%20calendario%20escolar%202026_2027.pdf/5c97e0d2-d79a-e80a-9433-d3f1e305f8fd",
+   "locales": "Los Ayuntamientos, previa consulta al Consejo Escolar Municipal (o a los Consejos Escolares de centro), pueden solicitar a la Delegación hasta 3 días no lectivos siempre que las fiestas locales no coincidan con el periodo lectivo; solicitud antes del 30 de septiembre de 2026."
+  },
+  {
+   "id": "andalucia_cordoba",
+   "slug": "andalucia-cordoba",
+   "ccaa": "andalucia",
+   "comunidad": "Andalucía",
+   "nombre": "Córdoba",
+   "es_provincia": true,
+   "inicio": "2026-09-10",
+   "fin": "2027-06-22",
+   "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+   "otras_etapas": [
+    [
+     "ESO, Bachillerato y FP",
+     "2026-09-15"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-06"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-28"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2027-01-07",
+     "Día no lectivo provincial"
+    ],
+    [
+     "2027-02-26",
+     "Día de la Comunidad Educativa"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-01",
+     "Día de Andalucía"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "nl",
+     "Día no lectivo provincial"
+    ],
+    "2027-02-26": [
+     "nl",
+     "Día de la Comunidad Educativa"
+    ],
+    "2027-03-01": [
+     "fest",
+     "Día de Andalucía"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ]
+   },
+   "norma": "Resolución de la fecha de su firma (21/05/2026), de la Delegación Territorial de Desarrollo Educativo y Formación Profesional y de Universidad, Investigación e Innovación en Córdoba, por la que se aprueban el calendario y la jornada escolar en los centros docentes no universitarios para el curso académico 2026/2027",
+   "url": "https://www.juntadeandalucia.es/educacion/portales/documents/1197067/4486666/Resoluci%C3%B3n%20Calendario%20Escolar%202026_2027(F).pdf/92aee8f6-6e23-e2c8-0f0e-a118ecf2e271",
+   "locales": "Los Ayuntamientos, previa consulta al Consejo Escolar Municipal (o a los de los centros), pueden solicitar a la Delegación hasta 3 días no lectivos siempre que las fiestas locales no coincidan con el periodo lectivo; solicitud antes del 1 de septiembre."
+  },
+  {
+   "id": "andalucia_granada",
+   "slug": "andalucia-granada",
+   "ccaa": "andalucia",
+   "comunidad": "Andalucía",
+   "nombre": "Granada",
+   "es_provincia": true,
+   "inicio": "2026-09-10",
+   "fin": "2027-06-22",
+   "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+   "otras_etapas": [
+    [
+     "ESO, Bachillerato y FP (grados D y E)",
+     "2026-09-15"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-06"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-28"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2027-02-26",
+     "Día de la Comunidad Educativa"
+    ],
+    [
+     "2027-05-28",
+     "Día no lectivo provincial"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-01",
+     "Día de Andalucía"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-26": [
+     "nl",
+     "Día de la Comunidad Educativa"
+    ],
+    "2027-03-01": [
+     "fest",
+     "Día de Andalucía"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-05-28": [
+     "nl",
+     "Día no lectivo provincial"
+    ]
+   },
+   "norma": "Resolución de 27 de mayo de 2026 de la Delegación Territorial de la Consejería de Desarrollo Educativo y Formación Profesional de la Junta de Andalucía en Granada por la que se dictan las normas que han de regir el calendario escolar para el curso escolar 2026/2027",
+   "url": "https://www.juntadeandalucia.es/educacion/portales/documents/1197087/4286700/Resoluci%C3%B3n%2027%20mayo%202026%20calendario%20escolar%20curso%202026-2027%20Granada%20-%20con%20anexos.pdf/f7a1efc3-e16c-b891-4179-8c29ab1288cf?version=1.0",
+   "locales": "Son no lectivas las fiestas locales (máximo 2). Además los Consejos Escolares Municipales (o, en su defecto, los de centro) pueden fijar hasta 3 días no lectivos: 3, 2 o 1 según que ninguna, una o las dos fiestas locales caigan en periodo lectivo; se graban en Séneca y se notifican a la Delegación con 15 días de antelación."
+  },
+  {
+   "id": "andalucia_huelva",
+   "slug": "andalucia-huelva",
+   "ccaa": "andalucia",
+   "comunidad": "Andalucía",
+   "nombre": "Huelva",
+   "es_provincia": true,
+   "inicio": "2026-09-10",
+   "fin": "2027-06-22",
+   "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+   "otras_etapas": [
+    [
+     "ESO, Bachillerato y FP (grado básico, grados D y E)",
+     "2026-09-15"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-07"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-28"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2027-02-26",
+     "Día de la Comunidad Educativa"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-01",
+     "Día de Andalucía"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-26": [
+     "nl",
+     "Día de la Comunidad Educativa"
+    ],
+    "2027-03-01": [
+     "fest",
+     "Día de Andalucía"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ]
+   },
+   "norma": "Resolución de 29 de mayo de 2026 de la Delegación Territorial de Educación y Deporte en Huelva, por la que se aprueba el calendario escolar en los centros docentes no universitarios para el curso académico 2026/2027",
+   "url": "https://www.juntadeandalucia.es/educacion/portales/documents/1197074/4609198/Resoluci%C3%B3n%20calendario%20Huelva%2026-27.pdf/4338f98f-b951-7f3a-7921-052dcc0a1ffb",
+   "locales": "Las fiestas locales (máximo 2 por localidad) las fija la Consejería de Empleo. Los Consejos Escolares Municipales (o, donde no existan, los Consejos Escolares de centro) pueden fijar otros días vacacionales locales, que incluyen las 2 fiestas locales si caen en periodo lectivo; los anexos prevén hasta 3 días ('Vac Local 1/2/3'), garantizando 178/175 días lectivos."
+  },
+  {
+   "id": "andalucia_malaga",
+   "slug": "andalucia-malaga",
+   "ccaa": "andalucia",
+   "comunidad": "Andalucía",
+   "nombre": "Málaga",
+   "es_provincia": true,
+   "inicio": "2026-09-10",
+   "fin": "2027-06-24",
+   "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+   "otras_etapas": [
+    [
+     "ESO, Bachillerato y FP (grado básico, grados D y E)",
+     "2026-09-15"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-06"
+    ],
+    [
+     "Semana Blanca",
+     "2027-02-22",
+     "2027-02-26"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-28"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2027-02-26",
+     "Día de la Comunidad Educativa (dentro de la Semana Blanca)"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-01",
+     "Día de Andalucía"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-22": [
+     "vac",
+     "Semana Blanca"
+    ],
+    "2027-02-23": [
+     "vac",
+     "Semana Blanca"
+    ],
+    "2027-02-24": [
+     "vac",
+     "Semana Blanca"
+    ],
+    "2027-02-25": [
+     "vac",
+     "Semana Blanca"
+    ],
+    "2027-02-26": [
+     "vac",
+     "Semana Blanca"
+    ],
+    "2027-03-01": [
+     "fest",
+     "Día de Andalucía"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ]
+   },
+   "norma": "Resolución de 20 de mayo de 2026 de la Delegación Territorial de la Consejería de Desarrollo Educativo y Formación Profesional de la Junta de Andalucía en Málaga por la que se dictan las normas que han de regir el calendario escolar para el curso escolar 2026/2027 en todos los centros docentes públicos y privados a excepción de los universitarios",
+   "url": "https://www.juntadeandalucia.es/educacion/portales/documents/2854624/4501041/RESOLUCION%20CALENDARIO%20ESCOLAR%202026_27%20MALAGA.pdf/6f0af8f4-b17b-3b67-2797-e53eb85376e9",
+   "locales": "Son no lectivas las fiestas locales (máximo 2). Si alguna fiesta local no cae en periodo lectivo, son no lectivos días fijados por la Delegación: si ninguna de las dos cae en periodo lectivo, el 29 de marzo y el 3 de mayo de 2027; si solo una, el 3 de mayo de 2027. No hay días de libre elección por consejos escolares."
+  },
+  {
+   "id": "andalucia_sevilla",
+   "slug": "andalucia-sevilla",
+   "ccaa": "andalucia",
+   "comunidad": "Andalucía",
+   "nombre": "Sevilla",
+   "es_provincia": true,
+   "inicio": "2026-09-10",
+   "fin": "2027-06-23",
+   "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+   "otras_etapas": [
+    [
+     "ESO, Bachillerato y FP",
+     "2026-09-15"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-24",
+     "2027-01-07"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-28"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2027-01-08",
+     "Día no lectivo provincial"
+    ],
+    [
+     "2027-02-26",
+     "Día de la Comunidad Educativa"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-01",
+     "Día de Andalucía"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-08": [
+     "nl",
+     "Día no lectivo provincial"
+    ],
+    "2027-02-26": [
+     "nl",
+     "Día de la Comunidad Educativa"
+    ],
+    "2027-03-01": [
+     "fest",
+     "Día de Andalucía"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ]
+   },
+   "norma": "Resolución del Ilmo. Sr. Delegado Territorial de Desarrollo Educativo y Formación Profesional y de Universidad, Investigación e Innovación en Sevilla, por la que se aprueba el calendario y la jornada escolar en los centros docentes no universitarios para el curso académico 2026/2027 (firmada el 28/05/2026)",
+   "url": "https://www.juntadeandalucia.es/educacion/portales/documents/1176698/3340178/RESOL%20CALEND%2026_27(F).pdf/8c2fd440-3e04-a1c5-d497-2170af36e265?version=1.0",
+   "locales": "Son no lectivas las fiestas locales. Los Consejos Escolares Municipales (o, en su defecto, los de centro) acuerdan hasta 2 días de libre disposición, a proponer antes del 15 de octubre de 2026; si alguna fiesta local no cae en día lectivo, pueden decidir días a cambio."
+  },
+  {
+   "id": "aragon_huesca",
+   "slug": "aragon-huesca",
+   "ccaa": "aragon",
+   "comunidad": "Aragón",
+   "nombre": "Huesca",
+   "es_provincia": true,
+   "inicio": "2026-09-08",
+   "fin": "2027-06-18",
+   "etapas": "Infantil (2.º ciclo; también 3.er curso del 1.er ciclo en CEIP, CPI y CRA), Primaria, Educación Especial y ESO",
+   "otras_etapas": [
+    [
+     "Bachillerato",
+     "2026-09-09"
+    ],
+    [
+     "FP (Grados D y E) presencial",
+     "2026-09-10"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-06"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-25",
+     "2027-04-02"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2027-02-18",
+     "Vacación de ámbito provincial"
+    ],
+    [
+     "2027-02-19",
+     "Vacación de ámbito provincial"
+    ],
+    [
+     "2027-05-03",
+     "Vacación de ámbito provincial"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-04-23",
+     "San Jorge/Día de Aragón"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-18": [
+     "nl",
+     "Vacación de ámbito provincial"
+    ],
+    "2027-02-19": [
+     "nl",
+     "Vacación de ámbito provincial"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-30": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-31": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-04-01": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-04-02": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-04-23": [
+     "fest",
+     "San Jorge/Día de Aragón"
+    ],
+    "2027-05-03": [
+     "nl",
+     "Vacación de ámbito provincial"
+    ]
+   },
+   "norma": "Resolución de 29 de abril de 2025, del Director General de Planificación, Centros y Formación Profesional, por la que se aprueban los calendarios escolares de los cursos 2025-2026 y 2026-2027 correspondientes a las enseñanzas de niveles no universitarios de la Comunidad Autónoma de Aragón (BOA n.º 88, de 12 de mayo de 2025)",
+   "url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1392479120808",
+   "locales": "Dos festividades locales del calendario laboral de cada localidad (el ayuntamiento las comunica al Servicio Provincial antes del 1/09/2026; si caen en no lectivo, señala días sustitutos oído el Consejo Escolar Municipal). Además, el ayuntamiento puede sustituir los días no lectivos provinciales por otras festividades locales o tradicionales. Los centros pueden pedir modificaciones al Servicio Provincial."
+  },
+  {
+   "id": "aragon_teruel",
+   "slug": "aragon-teruel",
+   "ccaa": "aragon",
+   "comunidad": "Aragón",
+   "nombre": "Teruel",
+   "es_provincia": true,
+   "inicio": "2026-09-08",
+   "fin": "2027-06-18",
+   "etapas": "Infantil (2.º ciclo; también 3.er curso del 1.er ciclo en CEIP, CPI y CRA), Primaria, Educación Especial y ESO",
+   "otras_etapas": [
+    [
+     "Bachillerato",
+     "2026-09-09"
+    ],
+    [
+     "FP (Grados D y E) presencial",
+     "2026-09-10"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-06"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-25",
+     "2027-04-02"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2027-02-18",
+     "Vacación de ámbito provincial"
+    ],
+    [
+     "2027-02-19",
+     "Vacación de ámbito provincial"
+    ],
+    [
+     "2027-04-26",
+     "Vacación de ámbito provincial"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-04-23",
+     "San Jorge/Día de Aragón"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-18": [
+     "nl",
+     "Vacación de ámbito provincial"
+    ],
+    "2027-02-19": [
+     "nl",
+     "Vacación de ámbito provincial"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-30": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-31": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-04-01": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-04-02": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-04-23": [
+     "fest",
+     "San Jorge/Día de Aragón"
+    ],
+    "2027-04-26": [
+     "nl",
+     "Vacación de ámbito provincial"
+    ]
+   },
+   "norma": "Resolución de 29 de abril de 2025, del Director General de Planificación, Centros y Formación Profesional, por la que se aprueban los calendarios escolares de los cursos 2025-2026 y 2026-2027 correspondientes a las enseñanzas de niveles no universitarios de la Comunidad Autónoma de Aragón (BOA n.º 88, de 12 de mayo de 2025)",
+   "url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1392479120808",
+   "locales": "Dos festividades locales del calendario laboral de cada localidad (el ayuntamiento las comunica al Servicio Provincial antes del 1/09/2026; si caen en no lectivo, señala días sustitutos oído el Consejo Escolar Municipal). Además, el ayuntamiento puede sustituir los días no lectivos provinciales por otras festividades locales o tradicionales. Los centros pueden pedir modificaciones al Servicio Provincial."
+  },
+  {
+   "id": "aragon_zaragoza",
+   "slug": "aragon-zaragoza",
+   "ccaa": "aragon",
+   "comunidad": "Aragón",
+   "nombre": "Zaragoza",
+   "es_provincia": true,
+   "inicio": "2026-09-08",
+   "fin": "2027-06-18",
+   "etapas": "Infantil (2.º ciclo; también 3.er curso del 1.er ciclo en CEIP, CPI y CRA), Primaria, Educación Especial y ESO",
+   "otras_etapas": [
+    [
+     "Bachillerato",
+     "2026-09-09"
+    ],
+    [
+     "FP (Grados D y E) presencial",
+     "2026-09-10"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-06"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-25",
+     "2027-04-02"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2026-10-13",
+     "Vacación de ámbito provincial"
+    ],
+    [
+     "2026-10-14",
+     "Vacación de ámbito provincial"
+    ],
+    [
+     "2027-05-03",
+     "Vacación de ámbito provincial"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-04-23",
+     "San Jorge/Día de Aragón"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-10-13": [
+     "nl",
+     "Vacación de ámbito provincial"
+    ],
+    "2026-10-14": [
+     "nl",
+     "Vacación de ámbito provincial"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-30": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-31": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-04-01": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-04-02": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-04-23": [
+     "fest",
+     "San Jorge/Día de Aragón"
+    ],
+    "2027-05-03": [
+     "nl",
+     "Vacación de ámbito provincial"
+    ]
+   },
+   "norma": "Resolución de 29 de abril de 2025, del Director General de Planificación, Centros y Formación Profesional, por la que se aprueban los calendarios escolares de los cursos 2025-2026 y 2026-2027 correspondientes a las enseñanzas de niveles no universitarios de la Comunidad Autónoma de Aragón (BOA n.º 88, de 12 de mayo de 2025)",
+   "url": "https://www.boa.aragon.es/cgi-bin/EBOA/BRSCGI?CMD=VEROBJ&MLKOB=1392479120808",
+   "locales": "Dos festividades locales del calendario laboral de cada localidad (el ayuntamiento las comunica al Servicio Provincial antes del 1/09/2026; si caen en no lectivo, señala días sustitutos oído el Consejo Escolar Municipal). Además, el ayuntamiento puede sustituir los días no lectivos provinciales por otras festividades locales o tradicionales. Los centros pueden pedir modificaciones al Servicio Provincial."
+  },
+  {
+   "id": "asturias",
+   "slug": "asturias",
+   "ccaa": "asturias",
+   "comunidad": "Asturias",
+   "nombre": "Asturias",
+   "es_provincia": false,
+   "inicio": "2026-09-09",
+   "fin": "2027-06-23",
+   "etapas": "Infantil (3 a 6 años), Primaria, Educación Especial, ESO y Bachillerato",
+   "otras_etapas": [
+    [
+     "Formación Profesional",
+     "2026-09-14"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-10"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-28"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2026-10-30",
+     "Día no lectivo"
+    ],
+    [
+     "2026-11-03",
+     "Día no lectivo"
+    ],
+    [
+     "2026-11-04",
+     "Día no lectivo"
+    ],
+    [
+     "2027-02-08",
+     "Día no lectivo"
+    ],
+    [
+     "2027-02-09",
+     "Día no lectivo"
+    ],
+    [
+     "2027-04-30",
+     "Día no lectivo"
+    ],
+    [
+     "2027-05-03",
+     "Día no lectivo"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-09-08",
+     "Día de Asturias"
+    ],
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-09-08": [
+     "fest",
+     "Día de Asturias"
+    ],
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-10-30": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-11-03": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2026-11-04": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-08": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-09": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-10": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-08": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2027-02-09": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-04-30": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2027-05-03": [
+     "nl",
+     "Día no lectivo"
+    ]
+   },
+   "norma": "Resolución de 13 de mayo de 2026, de la Consejería de Educación, por la que se aprueba el calendario escolar para el curso 2026-2027 y las instrucciones necesarias para su aplicación (BOPA núm. 103 de 1-VI-2026)",
+   "url": "https://www.asturias.es/bopa/2026/06/01/2026-04361.pdf",
+   "locales": "Los dos festivos locales del calendario laboral de cada municipio son no lectivos; si coinciden con días no lectivos, los Consejos Escolares de los centros de la localidad (o el Consejo Escolar Municipal) fijan de común acuerdo los días sustitutos, que no pueden ser contiguos a vacaciones ni a los no lectivos del 4.1 y deben comunicarse antes del 15/07/2026."
+  },
+  {
+   "id": "cantabria",
+   "slug": "cantabria",
+   "ccaa": "cantabria",
+   "comunidad": "Cantabria",
+   "nombre": "Cantabria",
+   "es_provincia": false,
+   "inicio": "2026-09-08",
+   "fin": "2027-06-23",
+   "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+   "otras_etapas": [
+    [
+     "ESO, Bachillerato y FP",
+     "2026-09-09"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Descanso de noviembre",
+     "2026-11-02",
+     "2026-11-06"
+    ],
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-08"
+    ],
+    [
+     "Periodo de descanso de febrero",
+     "2027-02-10",
+     "2027-02-12"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-26"
+    ],
+    [
+     "Descanso de mayo",
+     "2027-05-03",
+     "2027-05-04"
+    ]
+   ],
+   "no_lectivos": [],
+   "festivos": [
+    [
+     "2026-09-15",
+     "La Bien Aparecida"
+    ],
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-09-15": [
+     "fest",
+     "La Bien Aparecida"
+    ],
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "vac",
+     "Descanso de noviembre"
+    ],
+    "2026-11-03": [
+     "vac",
+     "Descanso de noviembre"
+    ],
+    "2026-11-04": [
+     "vac",
+     "Descanso de noviembre"
+    ],
+    "2026-11-05": [
+     "vac",
+     "Descanso de noviembre"
+    ],
+    "2026-11-06": [
+     "vac",
+     "Descanso de noviembre"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-08": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-10": [
+     "vac",
+     "Periodo de descanso de febrero"
+    ],
+    "2027-02-11": [
+     "vac",
+     "Periodo de descanso de febrero"
+    ],
+    "2027-02-12": [
+     "vac",
+     "Periodo de descanso de febrero"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-05-03": [
+     "vac",
+     "Descanso de mayo"
+    ],
+    "2027-05-04": [
+     "vac",
+     "Descanso de mayo"
+    ]
+   },
+   "norma": "Orden EDU/10/2026, de 24 de marzo, por la que se establece el calendario escolar para el curso 2026-2027 para centros docentes no universitarios",
+   "url": "https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=434226",
+   "locales": "La Orden no prevé días de libre disposición de centros ni ayuntamientos. Las fiestas locales que caigan en día lectivo se recuperan retrasando el fin de curso en junio."
+  },
+  {
+   "id": "castilla-la-mancha_albacete",
+   "slug": "castilla-la-mancha-albacete",
+   "ccaa": "castilla-la-mancha",
+   "comunidad": "Castilla-La Mancha",
+   "nombre": "Albacete",
+   "es_provincia": true,
+   "inicio": "2026-09-08",
+   "fin": "2027-06-22",
+   "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+   "otras_etapas": [
+    [
+     "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "2026-09-08"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-08"
+    ],
+    [
+     "Carnaval (días de libre disposición)",
+     "2027-02-08",
+     "2027-02-09"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-29"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2026-11-20",
+     "Día de la Enseñanza"
+    ],
+    [
+     "2026-12-07",
+     "Día sin actividad docente"
+    ],
+    [
+     "2027-05-28",
+     "Día sin actividad docente"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ],
+    [
+     "2027-05-27",
+     "Corpus Christi"
+    ],
+    [
+     "2027-05-31",
+     "Día de Castilla-La Mancha"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-11-20": [
+     "nl",
+     "Día de la Enseñanza"
+    ],
+    "2026-12-07": [
+     "nl",
+     "Día sin actividad docente"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-08": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-08": [
+     "vac",
+     "Carnaval (días de libre disposición)"
+    ],
+    "2027-02-09": [
+     "vac",
+     "Carnaval (días de libre disposición)"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-05-27": [
+     "fest",
+     "Corpus Christi"
+    ],
+    "2027-05-28": [
+     "nl",
+     "Día sin actividad docente"
+    ],
+    "2027-05-31": [
+     "fest",
+     "Día de Castilla-La Mancha"
+    ]
+   },
+   "norma": "Resolución, de 19 de junio de 2026, de la Delegación Provincial de la Consejería de Educación, Cultura y Deportes en Albacete, por la que se aprueba el calendario escolar en las enseñanzas no universitarias, vigente en la provincia de Albacete durante el curso 2026-2027 (desarrolla la Orden 79/2026, de 26 de mayo, de la Consejería de Educación, Cultura y Deportes, por la que se establece el calendario escolar para el curso 2026/2027)",
+   "url": "https://docm.jccm.es/docm/verArchivoHtml.do?ruta=2026%2F06%2F03%2Fhtml%2F2026_4106.html&tipo=rutaDocm",
+   "locales": "Dos fiestas locales fijadas por cada ayuntamiento (publicadas en el BOP). Los ayuntamientos, con informe favorable del Consejo Escolar de Localidad, pueden pedir antes del 30/11/2026 sustituir fiestas locales que caigan en periodo no lectivo y trasladar los 2 días de libre disposición (8 y 9 de febrero por defecto) a otras fechas."
+  },
+  {
+   "id": "castilla-la-mancha_ciudad_real",
+   "slug": "castilla-la-mancha-ciudad-real",
+   "ccaa": "castilla-la-mancha",
+   "comunidad": "Castilla-La Mancha",
+   "nombre": "Ciudad Real",
+   "es_provincia": true,
+   "inicio": "2026-09-08",
+   "fin": "2027-06-22",
+   "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+   "otras_etapas": [
+    [
+     "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "2026-09-08"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-08"
+    ],
+    [
+     "Días de libre disposición",
+     "2027-02-08",
+     "2027-02-09"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-29"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2026-11-20",
+     "Día de la Enseñanza"
+    ],
+    [
+     "2026-12-07",
+     "Día no lectivo"
+    ],
+    [
+     "2027-05-28",
+     "Día no lectivo"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ],
+    [
+     "2027-05-27",
+     "Corpus Christi"
+    ],
+    [
+     "2027-05-31",
+     "Día de Castilla-La Mancha"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-11-20": [
+     "nl",
+     "Día de la Enseñanza"
+    ],
+    "2026-12-07": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-08": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-08": [
+     "vac",
+     "Días de libre disposición"
+    ],
+    "2027-02-09": [
+     "vac",
+     "Días de libre disposición"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-05-27": [
+     "fest",
+     "Corpus Christi"
+    ],
+    "2027-05-28": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2027-05-31": [
+     "fest",
+     "Día de Castilla-La Mancha"
+    ]
+   },
+   "norma": "Resolución, de 25 de junio de 2026, de la Delegación Provincial de la Consejería de Educación, Cultura y Deportes en Ciudad Real, por la que se aprueba el calendario escolar en las enseñanzas no universitarias, vigente en la provincia de Ciudad Real durante el curso 2026/2027 (desarrolla la Orden 79/2026, de 26 de mayo, de la Consejería de Educación, Cultura y Deportes, por la que se establece el calendario escolar para el curso 2026/2027)",
+   "url": "https://docm.jccm.es/docm/verArchivoHtml.do?ruta=2026%2F06%2F03%2Fhtml%2F2026_4106.html&tipo=rutaDocm",
+   "locales": "Dos fiestas locales por ayuntamiento (BOP). Si caen en periodo no lectivo, el ayuntamiento puede pedir antes del 30/11/2026 otras fechas (con informe del Consejo Escolar de Localidad); si no lo hace, serán no lectivos el 22/06/2027 (una fiesta) o el 21 y 22/06/2027 (dos). Los 2 días de libre disposición pueden cambiarse vía Consejo Escolar de Localidad y pueden quedar sin efecto si hay más de 2 festivos locales en el curso."
+  },
+  {
+   "id": "castilla-la-mancha_cuenca",
+   "slug": "castilla-la-mancha-cuenca",
+   "ccaa": "castilla-la-mancha",
+   "comunidad": "Castilla-La Mancha",
+   "nombre": "Cuenca",
+   "es_provincia": true,
+   "inicio": "2026-09-08",
+   "fin": "2027-06-22",
+   "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+   "otras_etapas": [
+    [
+     "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "2026-09-08"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-08"
+    ],
+    [
+     "Días de libre disposición",
+     "2027-02-08",
+     "2027-02-09"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-29"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2026-11-20",
+     "Día de la Enseñanza"
+    ],
+    [
+     "2026-12-07",
+     "Día no lectivo"
+    ],
+    [
+     "2027-05-28",
+     "Día no lectivo"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ],
+    [
+     "2027-05-27",
+     "Corpus Christi"
+    ],
+    [
+     "2027-05-31",
+     "Día de Castilla-La Mancha"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-11-20": [
+     "nl",
+     "Día de la Enseñanza"
+    ],
+    "2026-12-07": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-08": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-08": [
+     "vac",
+     "Días de libre disposición"
+    ],
+    "2027-02-09": [
+     "vac",
+     "Días de libre disposición"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-05-27": [
+     "fest",
+     "Corpus Christi"
+    ],
+    "2027-05-28": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2027-05-31": [
+     "fest",
+     "Día de Castilla-La Mancha"
+    ]
+   },
+   "norma": "Resolución, de 24 de junio de 2026, de la Delegación Provincial de la Consejería de Educación, Cultura y Deportes en Cuenca, por la que se aprueba el calendario escolar en las enseñanzas no universitarias, vigente en la provincia de Cuenca durante el curso 2026/2027 (desarrolla la Orden 79/2026, de 26 de mayo, de la Consejería de Educación, Cultura y Deportes, por la que se establece el calendario escolar para el curso 2026/2027)",
+   "url": "https://docm.jccm.es/docm/verArchivoHtml.do?ruta=2026%2F06%2F03%2Fhtml%2F2026_4106.html&tipo=rutaDocm",
+   "locales": "Dos fiestas locales por ayuntamiento (BOP); las que caigan en periodo no lectivo se sustituyen preferentemente por fechas del 1.er o 2.º trimestre a petición municipal antes del 30/11/2026; si no se pide, serán no lectivos el 22/06/2027 (una) o el 21 y 22/06/2027 (dos). Los 2 días de libre disposición pueden modificarse vía Consejo Escolar de Localidad."
+  },
+  {
+   "id": "castilla-la-mancha_guadalajara",
+   "slug": "castilla-la-mancha-guadalajara",
+   "ccaa": "castilla-la-mancha",
+   "comunidad": "Castilla-La Mancha",
+   "nombre": "Guadalajara",
+   "es_provincia": true,
+   "inicio": "2026-09-08",
+   "fin": "2027-06-22",
+   "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+   "otras_etapas": [
+    [
+     "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "2026-09-08"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-08"
+    ],
+    [
+     "Días de libre disposición",
+     "2027-02-08",
+     "2027-02-09"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-29"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2026-11-20",
+     "Día de la Enseñanza"
+    ],
+    [
+     "2026-12-07",
+     "Día no lectivo"
+    ],
+    [
+     "2027-05-28",
+     "Día no lectivo"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ],
+    [
+     "2027-05-27",
+     "Corpus Christi"
+    ],
+    [
+     "2027-05-31",
+     "Día de Castilla-La Mancha"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-11-20": [
+     "nl",
+     "Día de la Enseñanza"
+    ],
+    "2026-12-07": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-08": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-08": [
+     "vac",
+     "Días de libre disposición"
+    ],
+    "2027-02-09": [
+     "vac",
+     "Días de libre disposición"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-05-27": [
+     "fest",
+     "Corpus Christi"
+    ],
+    "2027-05-28": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2027-05-31": [
+     "fest",
+     "Día de Castilla-La Mancha"
+    ]
+   },
+   "norma": "Resolución del 11 de junio de 2026 de la Delegación Provincial de la Consejería de Educación, Cultura y Deportes en Guadalajara por la que se aprueba el calendario escolar provincial de las enseñanzas no universitarias para el curso 2026-2027 (desarrolla la Orden 79/2026, de 26 de mayo, de la Consejería de Educación, Cultura y Deportes, por la que se establece el calendario escolar para el curso 2026/2027)",
+   "url": "https://docm.jccm.es/docm/verArchivoHtml.do?ruta=2026%2F06%2F03%2Fhtml%2F2026_4106.html&tipo=rutaDocm",
+   "locales": "Dos fiestas locales por municipio (BOP de Guadalajara), que son festivos. Si caen en periodo no lectivo o solo hay una en el curso, el ayuntamiento puede pedir (antes del 30/11/2026, con informe del Consejo Escolar de Localidad) declarar no lectivas otras celebraciones tradicionales; también puede proponer cambiar los 2 días de libre disposición."
+  },
+  {
+   "id": "castilla-la-mancha_toledo",
+   "slug": "castilla-la-mancha-toledo",
+   "ccaa": "castilla-la-mancha",
+   "comunidad": "Castilla-La Mancha",
+   "nombre": "Toledo",
+   "es_provincia": true,
+   "inicio": "2026-09-08",
+   "fin": "2027-06-22",
+   "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+   "otras_etapas": [
+    [
+     "Bachillerato y FP (Grado Básico, Grado Medio y Grado Superior)",
+     "2026-09-08"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-08"
+    ],
+    [
+     "Días de libre disposición",
+     "2027-02-08",
+     "2027-02-09"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-29"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2026-11-20",
+     "Día de la Enseñanza"
+    ],
+    [
+     "2026-12-07",
+     "Día no lectivo"
+    ],
+    [
+     "2027-05-28",
+     "Día no lectivo"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ],
+    [
+     "2027-05-27",
+     "Corpus Christi"
+    ],
+    [
+     "2027-05-31",
+     "Día de Castilla-La Mancha"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-11-20": [
+     "nl",
+     "Día de la Enseñanza"
+    ],
+    "2026-12-07": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-08": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-08": [
+     "vac",
+     "Días de libre disposición"
+    ],
+    "2027-02-09": [
+     "vac",
+     "Días de libre disposición"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-05-27": [
+     "fest",
+     "Corpus Christi"
+    ],
+    "2027-05-28": [
+     "nl",
+     "Día no lectivo"
+    ],
+    "2027-05-31": [
+     "fest",
+     "Día de Castilla-La Mancha"
+    ]
+   },
+   "norma": "Resolución, de 24 de junio de 2026, de la Delegación Provincial de la Consejería de Educación, Cultura y Deportes en Toledo, por la que se aprueba el calendario escolar en las enseñanzas no universitarias, vigente en la provincia de Toledo durante el curso 2026/2027 (desarrolla la Orden 79/2026, de 26 de mayo, de la Consejería de Educación, Cultura y Deportes, por la que se establece el calendario escolar para el curso 2026/2027)",
+   "url": "https://docm.jccm.es/docm/verArchivoHtml.do?ruta=2026%2F06%2F03%2Fhtml%2F2026_4106.html&tipo=rutaDocm",
+   "locales": "Dos fiestas locales por ayuntamiento (BOP); las que caigan en periodo no lectivo se sustituyen preferentemente por fechas del 1.er o 2.º trimestre a petición municipal antes del 30/11/2026; si no se pide, serán no lectivos el 22/06/2027 (una) o el 21 y 22/06/2027 (dos). Los 2 días de libre disposición pueden modificarse vía Consejo Escolar de Localidad y pueden quedar sin efecto si hay más de 2 festivos locales en el curso."
+  },
+  {
+   "id": "castilla-y-leon",
+   "slug": "castilla-y-leon",
+   "ccaa": "castilla-y-leon",
+   "comunidad": "Castilla y León",
+   "nombre": "Castilla y León",
+   "es_provincia": false,
+   "inicio": "2026-09-09",
+   "fin": "2027-06-24",
+   "etapas": "Infantil (2.º ciclo), Educación Especial, Primaria (y ESO escolarizada en centros de Primaria; 2.º curso de FP de grado superior presencial)",
+   "otras_etapas": [
+    [
+     "ESO, Bachillerato (ordinario y nocturno) y FP presencial",
+     "2026-09-15"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-10"
+    ],
+    [
+     "Carnaval",
+     "2027-02-08",
+     "2027-02-09"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-20",
+     "2027-03-30"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2026-10-30",
+     "Día del Docente"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-04-23",
+     "Fiesta de Castilla y León"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-10-30": [
+     "nl",
+     "Día del Docente"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-08": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-09": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-10": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-08": [
+     "vac",
+     "Carnaval"
+    ],
+    "2027-02-09": [
+     "vac",
+     "Carnaval"
+    ],
+    "2027-03-20": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-21": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-30": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-04-23": [
+     "fest",
+     "Fiesta de Castilla y León"
+    ]
+   },
+   "norma": "ORDEN EDU/478/2026, de 25 de mayo, por la que se aprueba el calendario escolar para el curso académico 2026-2027 en los centros docentes que impartan enseñanzas no universitarias en la Comunidad de Castilla y León",
+   "url": "https://www.educa.jcyl.es/es/informacion/calendario-escolar-2026-2027.ficheros/1894435-Calendario_Escolar_2026_2027.pdf",
+   "locales": "El texto (resumen gráfico del calendario y ficha de la Orden) no dice nada sobre días no lectivos locales ni de libre disposición de los centros."
+  },
+  {
+   "id": "cataluna",
+   "slug": "cataluna",
+   "ccaa": "cataluna",
+   "comunidad": "Cataluña",
+   "nombre": "Cataluña",
+   "es_provincia": false,
+   "inicio": "2026-09-08",
+   "fin": "2027-06-21",
+   "etapas": "Infantil (2.º ciclo), Primaria, ESO, Bachillerato y FP Básica",
+   "otras_etapas": [
+    [
+     "FP de grado medio y superior (no más tarde de)",
+     "2026-09-14"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-22",
+     "2027-01-07"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-20",
+     "2027-03-29"
+    ]
+   ],
+   "no_lectivos": [],
+   "festivos": [
+    [
+     "2026-09-11",
+     "Fiesta Nacional de Cataluña"
+    ],
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2026-12-26",
+     "San Esteban"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-03-29",
+     "Lunes de Pascua"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ],
+    [
+     "2027-06-24",
+     "Día de San Juan"
+    ]
+   ],
+   "marcas": {
+    "2026-09-11": [
+     "fest",
+     "Fiesta Nacional de Cataluña"
+    ],
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-22": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-03-20": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-21": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-06-24": [
+     "fest",
+     "Día de San Juan"
+    ]
+   },
+   "norma": "Orden EDF/66/2026, de 22 de abril, por la que se establece el calendario escolar de los cursos 2026-2027, 2027-2028 y 2028-2029 para los centros educativos no universitarios de Cataluña",
+   "url": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9653/2147444.pdf",
+   "locales": "Cada centro fija 4 días festivos de libre disposición (repartidos entre los tres trimestres, no en inicio/fin de curso ni en Navidad/Semana Santa); los consejos escolares municipales recomiendan los días comunes del municipio. Además, las 2 fiestas locales del municipio; si caen en día no lectivo, se pueden añadir a los de libre disposición."
+  },
+  {
+   "id": "madrid",
+   "slug": "madrid",
+   "ccaa": "madrid",
+   "comunidad": "Comunidad de Madrid",
+   "nombre": "Comunidad de Madrid",
+   "es_provincia": false,
+   "inicio": "2026-09-07",
+   "fin": "2027-06-18",
+   "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+   "otras_etapas": [
+    [
+     "ESO, Bachillerato y FP",
+     "2026-09-08"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-06"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-20",
+     "2027-03-28"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2027-01-07",
+     "Otro día no lectivo"
+    ],
+    [
+     "2027-01-08",
+     "Otro día no lectivo"
+    ],
+    [
+     "2027-02-12",
+     "Otro día no lectivo"
+    ],
+    [
+     "2027-02-15",
+     "Otro día no lectivo"
+    ],
+    [
+     "2027-03-19",
+     "Otro día no lectivo"
+    ],
+    [
+     "2027-03-29",
+     "Otro día no lectivo"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-19",
+     "San José"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "fest",
+     "Día siguiente a Todos los Santos"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "nl",
+     "Otro día no lectivo"
+    ],
+    "2027-01-08": [
+     "nl",
+     "Otro día no lectivo"
+    ],
+    "2027-02-12": [
+     "nl",
+     "Otro día no lectivo"
+    ],
+    "2027-02-15": [
+     "nl",
+     "Otro día no lectivo"
+    ],
+    "2027-03-19": [
+     "nl",
+     "Otro día no lectivo"
+    ],
+    "2027-03-20": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-21": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "nl",
+     "Otro día no lectivo"
+    ]
+   },
+   "norma": "ORDEN 2034/2026, de 25 de mayo, de la Consejera de Educación, Ciencia y Universidades, por la que se establece el calendario escolar para el curso 2026/2027 en los centros educativos no universitarios sostenidos con fondos públicos de la Comunidad de Madrid",
+   "url": "https://www.bocm.es/boletin/CM_Orden_BOCM/2026/06/04/BOCM-20260604-13.PDF",
+   "locales": "Son no lectivas las festividades locales que fije cada municipio (publicadas en el BOCM) para 2026 y 2027. Los centros concertados pueden trasladar, con acuerdo del Consejo Escolar, uno de los 'otros días no lectivos' para celebrar el patrono del centro. No hay días de libre disposición de los centros."
+  },
+  {
+   "id": "valenciana",
+   "slug": "valenciana",
+   "ccaa": "valenciana",
+   "comunidad": "Comunitat Valenciana",
+   "nombre": "Comunitat Valenciana",
+   "es_provincia": false,
+   "inicio": "2026-09-09",
+   "fin": "2027-06-18",
+   "etapas": "Infantil y Primaria",
+   "otras_etapas": [
+    [
+     "ESO y Bachillerato",
+     "2026-09-09"
+    ],
+    [
+     "FP (grado básico, medio y superior)",
+     "2026-09-09"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-22",
+     "2027-01-06"
+    ],
+    [
+     "Semana Santa (Pascua)",
+     "2027-03-25",
+     "2027-04-05"
+    ]
+   ],
+   "no_lectivos": [],
+   "festivos": [
+    [
+     "2026-10-09",
+     "Día de la Comunitat Valenciana"
+    ],
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-19",
+     "San José"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-03-29",
+     "Lunes de Pascua"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-09": [
+     "fest",
+     "Día de la Comunitat Valenciana"
+    ],
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-22": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-03-19": [
+     "fest",
+     "San José"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa (Pascua)"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa (Pascua)"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa (Pascua)"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa (Pascua)"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa (Pascua)"
+    ],
+    "2027-03-30": [
+     "vac",
+     "Semana Santa (Pascua)"
+    ],
+    "2027-03-31": [
+     "vac",
+     "Semana Santa (Pascua)"
+    ],
+    "2027-04-01": [
+     "vac",
+     "Semana Santa (Pascua)"
+    ],
+    "2027-04-02": [
+     "vac",
+     "Semana Santa (Pascua)"
+    ],
+    "2027-04-03": [
+     "vac",
+     "Semana Santa (Pascua)"
+    ],
+    "2027-04-04": [
+     "vac",
+     "Semana Santa (Pascua)"
+    ],
+    "2027-04-05": [
+     "vac",
+     "Semana Santa (Pascua)"
+    ]
+   },
+   "norma": "RESOLUCIÓ de 15 de juny de 2026, de la Direcció General de Centres Docents, per la qual es fixa el calendari escolar del curs acadèmic 2026-2027 a la Comunitat Valenciana",
+   "url": "https://portal.edu.gva.es/ceiplalbereda/wp-content/uploads/sites/933/2026/07/Calendario-Escolar-2026-2027-Val.pdf",
+   "locales": "Los ayuntamientos, previo acuerdo del consejo escolar municipal, pueden proponer hasta 3 días no lectivos de carácter local a efectos escolares."
+  },
+  {
+   "id": "extremadura",
+   "slug": "extremadura",
+   "ccaa": "extremadura",
+   "comunidad": "Extremadura",
+   "nombre": "Extremadura",
+   "es_provincia": false,
+   "inicio": "2026-09-10",
+   "fin": "2027-06-18",
+   "etapas": "Infantil (2.º ciclo), Primaria, Educación Especial y ESO",
+   "otras_etapas": [
+    [
+     "FP Grado Básico",
+     "2026-09-10"
+    ],
+    [
+     "FP Grado Medio y Grado Superior",
+     "2026-09-10"
+    ],
+    [
+     "1.º de Bachillerato",
+     "2026-09-11"
+    ],
+    [
+     "2.º de Bachillerato",
+     "2026-09-11"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-07"
+    ],
+    [
+     "Carnaval",
+     "2027-02-08",
+     "2027-02-09"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-29"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2026-11-02",
+     "Lunes siguiente al día de Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al día de la Constitución Española"
+    ],
+    [
+     "2027-01-29",
+     "Día del Docente"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-09-08",
+     "Día de Extremadura"
+    ],
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-11-02",
+     "Día siguiente a Todos los Santos"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-09-08": [
+     "fest",
+     "Día de Extremadura"
+    ],
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "nl",
+     "Lunes siguiente al día de Todos los Santos"
+    ],
+    "2026-12-07": [
+     "nl",
+     "Lunes siguiente al día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-29": [
+     "nl",
+     "Día del Docente"
+    ],
+    "2027-02-08": [
+     "vac",
+     "Carnaval"
+    ],
+    "2027-02-09": [
+     "vac",
+     "Carnaval"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa"
+    ]
+   },
+   "norma": "RESOLUCIÓN de 15 de junio de 2026, de la Secretaría General de Educación, por la que se aprueba el calendario escolar para el curso 2026/2027",
+   "url": "https://doe.juntaex.es/pdfs/doe/2026/1160o/26061567.pdf",
+   "locales": "Son no lectivas las 2 fiestas locales fijadas por cada Ayuntamiento; si coinciden con días no lectivos, los Consejos Escolares de los centros de la localidad (o el Consejo Escolar Municipal) pueden fijar de común acuerdo el día o días lectivos que las sustituyan. Además cada centro elige un Día del Centro, que es lectivo."
+  },
+  {
+   "id": "galicia",
+   "slug": "galicia",
+   "ccaa": "galicia",
+   "comunidad": "Galicia",
+   "nombre": "Galicia",
+   "es_provincia": false,
+   "inicio": "2026-09-09",
+   "fin": "2027-06-21",
+   "etapas": "Infantil, Primaria, ESO, Bachillerato y FP (todos los cursos)",
+   "otras_etapas": [],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-22",
+     "2027-01-07"
+    ],
+    [
+     "Entroido",
+     "2027-02-08",
+     "2027-02-10"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-29"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2026-12-07",
+     "Día de la Enseñanza"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-19",
+     "San José"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ],
+    [
+     "2027-05-17",
+     "Día de las Letras Gallegas"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-12-07": [
+     "nl",
+     "Día de la Enseñanza"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-22": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-08": [
+     "vac",
+     "Entroido"
+    ],
+    "2027-02-09": [
+     "vac",
+     "Entroido"
+    ],
+    "2027-02-10": [
+     "vac",
+     "Entroido"
+    ],
+    "2027-03-19": [
+     "fest",
+     "San José"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-05-17": [
+     "fest",
+     "Día de las Letras Gallegas"
+    ]
+   },
+   "norma": "ORDEN de 4 de junio de 2026 por la que se aprueba el calendario escolar para el curso 2026/27 en los centros docentes sostenidos con fondos públicos en la Comunidad Autónoma de Galicia",
+   "url": "https://www.xunta.gal/dog/Publicados/2026/20260615/AnuncioG0761-050626-0001_es.pdf",
+   "locales": "Son no lectivas las 2 fiestas laborales locales; si una o las dos no coinciden con días lectivos, los consejos escolares (o consejos sociales, o los responsables de centros de menos de tres unidades) pueden solicitar 1 o 2 días no lectivos a la dirección territorial antes del 16-10-2026."
+  },
+  {
+   "id": "baleares",
+   "slug": "baleares",
+   "ccaa": "baleares",
+   "comunidad": "Illes Balears",
+   "nombre": "Illes Balears",
+   "es_provincia": false,
+   "inicio": "2026-09-10",
+   "fin": "2027-06-18",
+   "etapas": "Infantil, Primaria, Educación Especial, ESO y Bachillerato",
+   "otras_etapas": [
+    [
+     "FP (Grado Básico, Grado Medio, Grado Superior y cursos de especialización)",
+     "2026-09-21"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-06"
+    ],
+    [
+     "Semana Santa (Pasqua)",
+     "2027-03-25",
+     "2027-04-04"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2027-02-26",
+     "Festa escolar unificada"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2026-12-26",
+     "San Esteban"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-01",
+     "Día de les Illes Balears"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-03-29",
+     "Lunes de Pascua"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-02-26": [
+     "nl",
+     "Festa escolar unificada"
+    ],
+    "2027-03-01": [
+     "fest",
+     "Día de les Illes Balears"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa (Pasqua)"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa (Pasqua)"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa (Pasqua)"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa (Pasqua)"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa (Pasqua)"
+    ],
+    "2027-03-30": [
+     "vac",
+     "Semana Santa (Pasqua)"
+    ],
+    "2027-03-31": [
+     "vac",
+     "Semana Santa (Pasqua)"
+    ],
+    "2027-04-01": [
+     "vac",
+     "Semana Santa (Pasqua)"
+    ],
+    "2027-04-02": [
+     "vac",
+     "Semana Santa (Pasqua)"
+    ],
+    "2027-04-03": [
+     "vac",
+     "Semana Santa (Pasqua)"
+    ],
+    "2027-04-04": [
+     "vac",
+     "Semana Santa (Pasqua)"
+    ]
+   },
+   "norma": "Resolució del conseller d'Educació i Universitats per la qual s'estableix el calendari escolar del curs 2026-2027 per als centres docents no universitaris de la comunitat autònoma de les Illes Balears (27 de març de 2026, BOIB núm. 41, de 31 de març de 2026), modificada por la Resolución del consejero de Educación y Universidades de 25 de junio de 2026 (BOIB núm. 82, de 30 de junio de 2026)",
+   "url": "https://www.caib.es/eboibfront/pdf/ca/2026/41/1216208",
+   "locales": "Las dos fiestas locales de cada municipio son festivas; si coinciden con días no lectivos, el centro puede fijar tantos días no lectivos sustitutos como coincidencias (máximo 2). Además, cada centro fija dos días festivos de libre disposición en su PGA (los consejos escolares municipales promueven que coincidan en el municipio)."
+  },
+  {
+   "id": "melilla",
+   "slug": "melilla",
+   "ccaa": "melilla",
+   "comunidad": "Melilla",
+   "nombre": "Melilla",
+   "es_provincia": false,
+   "inicio": "2026-09-09",
+   "fin": "2027-06-23",
+   "etapas": "Educación Especial, Infantil, Primaria, ESO, FP Grado Básico y Bachillerato (ordinario y nocturno)",
+   "otras_etapas": [
+    [
+     "Ciclos Formativos de FP presenciales (y Artes Plásticas y Diseño)",
+     "2026-09-14"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-23",
+     "2027-01-07"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-26"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2026-09-21",
+     "Día de libre disposición"
+    ],
+    [
+     "2026-11-02",
+     "Día de libre disposición"
+    ],
+    [
+     "2027-01-08",
+     "Día de libre disposición"
+    ],
+    [
+     "2027-03-29",
+     "Día de libre disposición"
+    ],
+    [
+     "2027-03-30",
+     "Día de libre disposición"
+    ],
+    [
+     "2027-03-31",
+     "Día de libre disposición"
+    ],
+    [
+     "2027-04-01",
+     "Día de libre disposición"
+    ],
+    [
+     "2027-04-02",
+     "Día de libre disposición"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-10",
+     "Fiesta del Eid Fitr"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ],
+    [
+     "2027-05-17",
+     "Fiesta Sacrificio-Aid Al Adha"
+    ]
+   ],
+   "marcas": {
+    "2026-09-21": [
+     "nl",
+     "Día de libre disposición"
+    ],
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-02": [
+     "nl",
+     "Día de libre disposición"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-07": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-08": [
+     "nl",
+     "Día de libre disposición"
+    ],
+    "2027-03-10": [
+     "fest",
+     "Fiesta del Eid Fitr"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "nl",
+     "Día de libre disposición"
+    ],
+    "2027-03-30": [
+     "nl",
+     "Día de libre disposición"
+    ],
+    "2027-03-31": [
+     "nl",
+     "Día de libre disposición"
+    ],
+    "2027-04-01": [
+     "nl",
+     "Día de libre disposición"
+    ],
+    "2027-04-02": [
+     "nl",
+     "Día de libre disposición"
+    ],
+    "2027-05-17": [
+     "fest",
+     "Fiesta Sacrificio-Aid Al Adha"
+    ]
+   },
+   "norma": "Resolución del Director General de Planificación y Gestión Educativa por la que se establece el calendario escolar para el curso 2026-2027 en los centros docentes no universitarios de la Ciudad de Melilla (firmada el 10/06/2026)",
+   "url": "https://www.educacionfpydeportes.gob.es/gl/dam/jcr:97a96fff-bae7-4388-a5ec-bb6b7e564abc/resolucion-calendario-escolar-26-27.pdf",
+   "locales": "No hay días locales por centro o ayuntamiento: la resolución fija los días de libre disposición para toda la ciudad (21-sep, 2-nov, 8-ene y 29-mar a 2-abr)."
+  },
+  {
+   "id": "pais-vasco",
+   "slug": "pais-vasco",
+   "ccaa": "pais-vasco",
+   "comunidad": "País Vasco",
+   "nombre": "País Vasco",
+   "es_provincia": false,
+   "inicio": "2026-09-07",
+   "fin": "2027-06-18",
+   "etapas": "Infantil y Primaria (centros públicos) - LÍMITE: las clases no pueden empezar antes de esta fecha; cada centro fija su primer día",
+   "otras_etapas": [],
+   "vacaciones": [
+    [
+     "Navidad (periodo mínimo obligatorio)",
+     "2026-12-24",
+     "2027-01-06"
+    ],
+    [
+     "Semana Santa (periodo mínimo obligatorio)",
+     "2027-03-25",
+     "2027-03-29"
+    ]
+   ],
+   "no_lectivos": [],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-03-29",
+     "Lunes de Pascua"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad (periodo mínimo obligatorio)"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa (periodo mínimo obligatorio)"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa (periodo mínimo obligatorio)"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa (periodo mínimo obligatorio)"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa (periodo mínimo obligatorio)"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa (periodo mínimo obligatorio)"
+    ]
+   },
+   "norma": "Resolución de la Viceconsejera de Políticas Educativas, por la que se dictan normas complementarias que han de regular la elaboración del calendario escolar para el curso 2026-2027 de los centros públicos de la Comunidad Autónoma del País Vasco, en las etapas educativas de Educación Infantil y Primaria (firmada el 21/04/2026)",
+   "url": "https://www.euskadi.eus/estructura-y-organizacion-de-los-centros-calendario-escolar-centros-publicos-y-privados/web01-a2hikast/es/",
+   "locales": "El Departamento solo fija un marco: el consejo escolar de cada centro elabora su propio calendario (inicio, fin, ampliación de vacaciones, Carnaval, etc.) dentro de esos límites y lo tramita por la aplicación informática. Son festivos además las fiestas patronales de la localidad y del territorio, y cada centro puede declarar festivo el día de la fiesta patronal de su nivel educativo. Mínimo 175 días lectivos."
+  },
+  {
+   "id": "murcia",
+   "slug": "murcia",
+   "ccaa": "murcia",
+   "comunidad": "Región de Murcia",
+   "nombre": "Región de Murcia",
+   "es_provincia": false,
+   "inicio": "2026-09-08",
+   "fin": "2027-06-22",
+   "etapas": "Infantil (2.º ciclo), Primaria y Educación Especial",
+   "otras_etapas": [
+    [
+     "ESO y FP Grado Básico",
+     "2026-09-10"
+    ],
+    [
+     "Bachillerato",
+     "2026-09-10"
+    ],
+    [
+     "FP Grado Medio y Grado Superior",
+     "2026-09-14"
+    ]
+   ],
+   "vacaciones": [
+    [
+     "Navidad",
+     "2026-12-24",
+     "2027-01-06"
+    ],
+    [
+     "Semana Santa",
+     "2027-03-22",
+     "2027-03-29"
+    ]
+   ],
+   "no_lectivos": [
+    [
+     "2026-11-27",
+     "Festividad del patrón de Infantil, Primaria y Educación Especial"
+    ],
+    [
+     "2026-12-23",
+     "Día no lectivo establecido por la D.G. de Centros Educativos e Infraestructuras"
+    ],
+    [
+     "2027-01-29",
+     "Festividad del patrón de ESO, Bachillerato (y FPGB, según la tabla)"
+    ],
+    [
+     "2027-02-01",
+     "Festividad del patrón de Formación Profesional (FPGB, FPGM, FPGS)"
+    ]
+   ],
+   "festivos": [
+    [
+     "2026-10-12",
+     "Fiesta Nacional"
+    ],
+    [
+     "2026-12-07",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    [
+     "2026-12-08",
+     "Inmaculada"
+    ],
+    [
+     "2026-12-25",
+     "Navidad"
+    ],
+    [
+     "2027-01-01",
+     "Año Nuevo"
+    ],
+    [
+     "2027-01-06",
+     "Reyes"
+    ],
+    [
+     "2027-03-19",
+     "San José"
+    ],
+    [
+     "2027-03-25",
+     "Jueves Santo"
+    ],
+    [
+     "2027-03-26",
+     "Viernes Santo"
+    ],
+    [
+     "2027-05-01",
+     "Fiesta del Trabajo"
+    ],
+    [
+     "2027-06-09",
+     "Día de la Región de Murcia"
+    ]
+   ],
+   "marcas": {
+    "2026-10-12": [
+     "fest",
+     "Fiesta Nacional"
+    ],
+    "2026-11-27": [
+     "nl",
+     "Festividad del patrón de Infantil, Primaria y Educación Especial"
+    ],
+    "2026-12-07": [
+     "fest",
+     "Lunes siguiente al Día de la Constitución Española"
+    ],
+    "2026-12-08": [
+     "fest",
+     "Inmaculada"
+    ],
+    "2026-12-23": [
+     "nl",
+     "Día no lectivo establecido por la D.G. de Centros Educativos e Infraestructuras"
+    ],
+    "2026-12-24": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-25": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-26": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-27": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-28": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-29": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-30": [
+     "vac",
+     "Navidad"
+    ],
+    "2026-12-31": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-01": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-02": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-03": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-04": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-05": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-06": [
+     "vac",
+     "Navidad"
+    ],
+    "2027-01-29": [
+     "nl",
+     "Festividad del patrón de ESO, Bachillerato (y FPGB, según la tabla)"
+    ],
+    "2027-02-01": [
+     "nl",
+     "Festividad del patrón de Formación Profesional (FPGB, FPGM, FPGS)"
+    ],
+    "2027-03-19": [
+     "fest",
+     "San José"
+    ],
+    "2027-03-22": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-23": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-24": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-25": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-26": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-27": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-28": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-03-29": [
+     "vac",
+     "Semana Santa"
+    ],
+    "2027-06-09": [
+     "fest",
+     "Día de la Región de Murcia"
+    ]
+   },
+   "norma": "Resolución de 8 de junio de 2026 de la Dirección General de Centros Educativos e Infraestructuras por la que se establece el período lectivo del curso escolar 2026-2027",
+   "url": "https://www.borm.es/services/anuncio/ano/2026/numero/2748/pdf?id=843430",
+   "locales": "Cada municipio tiene 2 días festivos locales (o trasladados a periodo lectivo si caen en días no lectivos) y 3 días no lectivos a propuesta del Consejo Escolar Municipal (a instancia de los consejos escolares de los centros), que afectan a todos los centros del municipio; se detallan por municipio en el anexo V (no copiados). Si el patrón coincide con un no lectivo municipal, se traslada según el anexo V."
+  }
+ ],
+ "nacionales": [
+  [
+   "2026-10-12",
+   "Fiesta Nacional"
+  ],
+  [
+   "2026-12-08",
+   "Inmaculada"
+  ],
+  [
+   "2026-12-25",
+   "Navidad"
+  ],
+  [
+   "2027-01-01",
+   "Año Nuevo"
+  ],
+  [
+   "2027-01-06",
+   "Reyes"
+  ],
+  [
+   "2027-03-26",
+   "Viernes Santo"
+  ],
+  [
+   "2027-05-01",
+   "Fiesta del Trabajo"
+  ]
+ ],
+ "pendientes": [
+  "Jaén",
+  "Canarias",
+  "La Rioja",
+  "Ceuta"
+ ]
+}

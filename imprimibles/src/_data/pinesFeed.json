@@ -2,6 +2,7 @@
  "tableros": {
   "navidad": "Navidad para imprimir",
   "calendarios": "Calendarios 2027",
+  "calendario-escolar": "Calendario escolar 2026-2027",
   "estimulacion-cognitiva": "Estimulación cognitiva para mayores"
  },
  "pines": [
@@ -414,6 +415,286 @@
    "descripcion": "Calendario mensual 2027 para imprimir: un mes por hoja A4 con casillas grandes para apuntar y los festivos nacionales marcados. Los 12 meses en PDF.",
    "imagen": "/pines/calendarios-calendario-mensual-2027-para-imprimir-2.jpg",
    "origen": "/img/calendario-mensual-2027-para-imprimir-2.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-02",
+   "url": "/calendarios/escolar-2026-2027/",
+   "titulo": "Calendario escolar 2026-2027 para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 para imprimir de cada comunidad: inicio de curso, vacaciones de Navidad y Semana Santa y días sin clase. PDF gratis en A4.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-la-comunidad-de-madrid-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-03",
+   "url": "/calendarios/escolar-2026-2027-madrid/",
+   "titulo": "Calendario escolar 2026-2027 de la Comunidad de Madrid para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de la Comunidad de Madrid para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-la-comunidad-de-madrid-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-la-comunidad-de-madrid-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-cataluna-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-04",
+   "url": "/calendarios/escolar-2026-2027-cataluna/",
+   "titulo": "Calendario escolar 2026-2027 de Cataluña para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Cataluña para imprimir en A4: inicio de curso, vacaciones de Navidad y Semana Santa y días sin clase marcados. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-cataluna-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-cataluna-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-la-comunitat-valenciana-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-05",
+   "url": "/calendarios/escolar-2026-2027-valenciana/",
+   "titulo": "Calendario escolar 2026-2027 de la Comunitat Valenciana para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de la Comunitat Valenciana para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-la-comunitat-valenciana-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-la-comunitat-valenciana-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-sevilla-andalucia-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-06",
+   "url": "/calendarios/escolar-2026-2027-andalucia-sevilla/",
+   "titulo": "Calendario escolar 2026-2027 de Sevilla (Andalucía) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Sevilla (Andalucía) para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-sevilla-andalucia-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-sevilla-andalucia-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-malaga-andalucia-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-07",
+   "url": "/calendarios/escolar-2026-2027-andalucia-malaga/",
+   "titulo": "Calendario escolar 2026-2027 de Málaga (Andalucía) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Málaga (Andalucía) para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-malaga-andalucia-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-malaga-andalucia-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-galicia-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-08",
+   "url": "/calendarios/escolar-2026-2027-galicia/",
+   "titulo": "Calendario escolar 2026-2027 de Galicia para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Galicia para imprimir en A4: inicio de curso, vacaciones de Navidad y Semana Santa y días sin clase marcados. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-galicia-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-galicia-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-castilla-y-leon-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-09",
+   "url": "/calendarios/escolar-2026-2027-castilla-y-leon/",
+   "titulo": "Calendario escolar 2026-2027 de Castilla y León para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Castilla y León para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-castilla-y-leon-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-castilla-y-leon-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-del-pais-vasco-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-10",
+   "url": "/calendarios/escolar-2026-2027-pais-vasco/",
+   "titulo": "Calendario escolar 2026-2027 del País Vasco para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 del País Vasco para imprimir en A4: inicio de curso, vacaciones de Navidad y Semana Santa y días sin clase marcados. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-del-pais-vasco-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-del-pais-vasco-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-la-region-de-murcia-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-11",
+   "url": "/calendarios/escolar-2026-2027-murcia/",
+   "titulo": "Calendario escolar 2026-2027 de la Región de Murcia para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de la Región de Murcia para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-la-region-de-murcia-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-la-region-de-murcia-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-cadiz-andalucia-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-12",
+   "url": "/calendarios/escolar-2026-2027-andalucia-cadiz/",
+   "titulo": "Calendario escolar 2026-2027 de Cádiz (Andalucía) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Cádiz (Andalucía) para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-cadiz-andalucia-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-cadiz-andalucia-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-toledo-castilla-la-mancha-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-13",
+   "url": "/calendarios/escolar-2026-2027-castilla-la-mancha-toledo/",
+   "titulo": "Calendario escolar 2026-2027 de Toledo (Castilla-La Mancha) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Toledo (Castilla-La Mancha) para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-toledo-castilla-la-mancha-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-toledo-castilla-la-mancha-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-zaragoza-aragon-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-14",
+   "url": "/calendarios/escolar-2026-2027-aragon-zaragoza/",
+   "titulo": "Calendario escolar 2026-2027 de Zaragoza (Aragón) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Zaragoza (Aragón) para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-zaragoza-aragon-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-zaragoza-aragon-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-illes-balears-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-15",
+   "url": "/calendarios/escolar-2026-2027-baleares/",
+   "titulo": "Calendario escolar 2026-2027 de Illes Balears para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Illes Balears para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-illes-balears-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-illes-balears-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-asturias-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-16",
+   "url": "/calendarios/escolar-2026-2027-asturias/",
+   "titulo": "Calendario escolar 2026-2027 de Asturias para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Asturias para imprimir en A4: inicio de curso, vacaciones de Navidad y Semana Santa y días sin clase marcados. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-asturias-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-asturias-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-extremadura-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-17",
+   "url": "/calendarios/escolar-2026-2027-extremadura/",
+   "titulo": "Calendario escolar 2026-2027 de Extremadura para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Extremadura para imprimir en A4: inicio de curso, vacaciones de Navidad y Semana Santa y días sin clase marcados. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-extremadura-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-extremadura-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-granada-andalucia-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-18",
+   "url": "/calendarios/escolar-2026-2027-andalucia-granada/",
+   "titulo": "Calendario escolar 2026-2027 de Granada (Andalucía) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Granada (Andalucía) para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-granada-andalucia-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-granada-andalucia-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-cordoba-andalucia-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-19",
+   "url": "/calendarios/escolar-2026-2027-andalucia-cordoba/",
+   "titulo": "Calendario escolar 2026-2027 de Córdoba (Andalucía) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Córdoba (Andalucía) para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-cordoba-andalucia-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-cordoba-andalucia-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-almeria-andalucia-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-20",
+   "url": "/calendarios/escolar-2026-2027-andalucia-almeria/",
+   "titulo": "Calendario escolar 2026-2027 de Almería (Andalucía) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Almería (Andalucía) para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-almeria-andalucia-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-almeria-andalucia-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-huelva-andalucia-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-21",
+   "url": "/calendarios/escolar-2026-2027-andalucia-huelva/",
+   "titulo": "Calendario escolar 2026-2027 de Huelva (Andalucía) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Huelva (Andalucía) para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-huelva-andalucia-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-huelva-andalucia-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-huesca-aragon-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-22",
+   "url": "/calendarios/escolar-2026-2027-aragon-huesca/",
+   "titulo": "Calendario escolar 2026-2027 de Huesca (Aragón) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Huesca (Aragón) para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-huesca-aragon-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-huesca-aragon-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-teruel-aragon-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-23",
+   "url": "/calendarios/escolar-2026-2027-aragon-teruel/",
+   "titulo": "Calendario escolar 2026-2027 de Teruel (Aragón) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Teruel (Aragón) para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-teruel-aragon-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-teruel-aragon-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-cantabria-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-24",
+   "url": "/calendarios/escolar-2026-2027-cantabria/",
+   "titulo": "Calendario escolar 2026-2027 de Cantabria para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Cantabria para imprimir en A4: inicio de curso, vacaciones de Navidad y Semana Santa y días sin clase marcados. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-cantabria-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-cantabria-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-albacete-castilla-la-mancha-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-25",
+   "url": "/calendarios/escolar-2026-2027-castilla-la-mancha-albacete/",
+   "titulo": "Calendario escolar 2026-2027 de Albacete (Castilla-La Mancha) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Albacete (Castilla-La Mancha) para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-albacete-castilla-la-mancha-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-albacete-castilla-la-mancha-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-ciudad-real-castilla-la-mancha-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-26",
+   "url": "/calendarios/escolar-2026-2027-castilla-la-mancha-ciudad-real/",
+   "titulo": "Calendario escolar 2026-2027 de Ciudad Real (Castilla-La Mancha) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Ciudad Real (Castilla-La Mancha) para imprimir en una hoja A4, con vacaciones y días sin clase marcados. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-ciudad-real-castilla-la-mancha-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-ciudad-real-castilla-la-mancha-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-cuenca-castilla-la-mancha-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-27",
+   "url": "/calendarios/escolar-2026-2027-castilla-la-mancha-cuenca/",
+   "titulo": "Calendario escolar 2026-2027 de Cuenca (Castilla-La Mancha) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Cuenca (Castilla-La Mancha) para imprimir: inicio de curso, vacaciones y días sin clase marcados en una hoja A4. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-cuenca-castilla-la-mancha-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-cuenca-castilla-la-mancha-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-guadalajara-castilla-la-mancha-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-28",
+   "url": "/calendarios/escolar-2026-2027-castilla-la-mancha-guadalajara/",
+   "titulo": "Calendario escolar 2026-2027 de Guadalajara (Castilla-La Mancha) para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Guadalajara (Castilla-La Mancha) para imprimir en una hoja A4, con vacaciones y días sin clase marcados. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-guadalajara-castilla-la-mancha-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-guadalajara-castilla-la-mancha-para-imprimir.png"
+  },
+  {
+   "id": "calendario-escolar-calendario-escolar-2026-2027-de-melilla-para-imprimir",
+   "tablero": "calendario-escolar",
+   "fecha": "2026-12-29",
+   "url": "/calendarios/escolar-2026-2027-melilla/",
+   "titulo": "Calendario escolar 2026-2027 de Melilla para imprimir",
+   "descripcion": "Calendario escolar 2026-2027 de Melilla para imprimir en A4: inicio de curso, vacaciones de Navidad y Semana Santa y días sin clase marcados. PDF gratis.",
+   "imagen": "/pines/calendario-escolar-calendario-escolar-2026-2027-de-melilla-para-imprimir.jpg",
+   "origen": "/img/calendario-escolar-2026-2027-de-melilla-para-imprimir.png"
   },
   {
    "id": "estimulacion-cognitiva-fichas-de-estimulacion-cognitiva-para-mayores",

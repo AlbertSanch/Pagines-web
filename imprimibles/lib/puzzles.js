@@ -1274,6 +1274,50 @@
     return { svg: hoja({ alt: 'Calendario de ' + MESES[m].toLowerCase() + ' de ' + a }, s), sol: null };
   }
 
+  // Calendario escolar de un curso (septiembre a junio): vacaciones, días no lectivos y festivos marcados
+  function calendarioEscolar(spec) {
+    var s = '', a0 = Number(spec.curso.slice(0, 4)), marcas = spec.marcas || {}, ini = spec.inicio, fin = spec.fin;
+    var VERDE_C = '#d8eecf', NARANJA_C = '#fbe0c2', AZUL = '#2340b0';
+    s += txt(15, 25, 'Calendario escolar ' + spec.curso, { size: 9, titular: true });
+    if (spec.region) s += txt(15, 34, spec.region, { size: 5.5, titular: true, fill: GRIS });
+    var w = 58, h = 57, x0 = 15, y0 = spec.region ? 45 : 40, cw = w / 7;
+    for (var i = 0; i < 10; i++) {
+      var m = (8 + i) % 12, a = i < 4 ? a0 : a0 + 1, mx = x0 + (i % 3) * (w + 3), my = y0 + Math.floor(i / 3) * h;
+      s += txt(mx + 1, my, MESES[m] + ' ' + a, { size: 4.2, titular: true });
+      INICIALES.forEach(function (l, j) { s += txt(mx + (j + .5) * cw, my + 6, l, { size: 2.6, anchor: 'middle', bold: true, fill: GRIS }); });
+      var p0 = primerDia(a, m), nd = diasMes(a, m);
+      for (var d = 1; d <= nd; d++) {
+        var pos = p0 + d - 1, col = pos % 7, fila = Math.floor(pos / 7), iso = a + '-' + claveDia(m, d), mk = marcas[iso];
+        var cx = mx + (col + .5) * cw, cy = my + 12 + fila * 6.3, fuera = (ini && iso < ini) || (fin && iso > fin), finde = col >= 5;
+        if (mk && !finde && !fuera) {
+          var fondo = mk[0] === 'vac' ? VERDE_C : mk[0] === 'nl' ? NARANJA_C : null;
+          if (fondo) s += '<rect x="' + f(cx - cw / 2 + .3) + '" y="' + f(cy - 4.1) + '" width="' + f(cw - .6) + '" height="5.4" rx=".8" fill="' + fondo + '"/>';
+          if (mk[0] === 'fest') s += '<circle cx="' + f(cx) + '" cy="' + f(cy - 1.1) + '" r="2.4" fill="none" stroke="' + ROJO + '" stroke-width=".35"/>';
+        }
+        if (ini && (iso === ini || iso === fin)) s += '<rect x="' + f(cx - 2.7) + '" y="' + f(cy - 3.9) + '" width="5.4" height="5" rx=".6" fill="none" stroke="' + AZUL + '" stroke-width=".55"/>';
+        var color = fuera || finde ? '#a4a4aa' : mk && mk[0] === 'fest' ? ROJO : TINTA;
+        s += txt(cx, cy, d, { size: 3.1, anchor: 'middle', bold: !fuera && !finde, fill: color });
+      }
+    }
+    // leyenda y fechas clave en los dos huecos que quedan
+    var lx = x0 + (10 % 3) * (w + 3), ly = y0 + 3 * h, ly2 = ly;
+    s += txt(lx + 1, ly, 'Leyenda', { size: 4.2, titular: true });
+    [['rect', VERDE_C, 'Vacaciones'], ['rect', NARANJA_C, 'Día no lectivo'], ['circ', ROJO, 'Festivo']].concat(ini ? [['caja', AZUL, 'Primer y último día de clase']] : []).concat([['gris', '#a4a4aa', 'Sin clase (fin de semana o fuera del curso)']]).forEach(function (l, k) {
+      var yy = ly + 7 + k * 6.2;
+      if (l[0] === 'rect') s += '<rect x="' + (lx + 1) + '" y="' + f(yy - 3.6) + '" width="6" height="4.6" rx=".8" fill="' + l[1] + '"/>';
+      else if (l[0] === 'circ') s += '<circle cx="' + (lx + 4) + '" cy="' + f(yy - 1.3) + '" r="2.3" fill="none" stroke="' + l[1] + '" stroke-width=".4"/>';
+      else if (l[0] === 'caja') s += '<rect x="' + (lx + 1.3) + '" y="' + f(yy - 3.6) + '" width="5.4" height="4.6" rx=".6" fill="none" stroke="' + l[1] + '" stroke-width=".55"/>';
+      else s += txt(lx + 4, yy, '7', { size: 3.1, anchor: 'middle', fill: l[1] });
+      parte(l[2], 30).forEach(function (t2, j) { s += txt(lx + 9, yy + j * 3.4, t2, { size: 2.9 }); });
+    });
+    var fx = x0 + (11 % 3) * (w + 3);
+    s += txt(fx + 1, ly2, 'Fechas clave', { size: 4.2, titular: true });
+    var fy = ly2 + 7;
+    (spec.clave || []).slice(0, 8).forEach(function (l) { var ls = parte(l, 34).slice(0, 3); ls.forEach(function (t2, j) { s += txt(fx + 1, fy + j * 3.4, t2, { size: 2.8 }); }); fy += 3.4 * ls.length + 2.8; });
+    if (spec.nota) s += txt(15, 282, spec.nota, { size: 2.6, fill: GRIS });
+    return { svg: hoja({ alt: 'Calendario escolar ' + spec.curso + (spec.region ? ' de ' + spec.region : '') }, s), sol: null };
+  }
+
   // ---------- problemas de matemáticas ----------
   // Cada plantilla recibe el generador aleatorio y devuelve el enunciado, la operación y la solución.
   var NOMBRES = ['Lucía', 'Hugo', 'Martina', 'Leo', 'Sofía', 'Mateo', 'Daniela', 'Pablo', 'Valeria', 'Álvaro', 'Carmen', 'Marcos', 'Julia', 'Daniel', 'Paula', 'Adrián', 'Noa', 'Mario', 'Alba', 'Iker', 'Aitana', 'Bruno', 'Vega', 'Nico'];
@@ -1879,7 +1923,7 @@
     'laberinto-arbol': laberintoArbol, carta: carta, sobre: sobre, 'carta-respuesta': cartaRespuesta, crucigrama: crucigrama,
     'caligrafia-letras': caligrafiaLetras, 'caligrafia-frases': caligrafiaFrases, 'trazos-imprenta': trazosImprenta,
     multiplicaciones: multiplicaciones, divisiones: divisiones, mandala: mandala,
-    grafomotricidad: grafomotricidad, horario: horario, 'calendario-anual': calendarioAnual, 'calendario-mes': calendarioMes,
+    grafomotricidad: grafomotricidad, horario: horario, 'calendario-anual': calendarioAnual, 'calendario-mes': calendarioMes, 'calendario-escolar': calendarioEscolar,
     problemas: problemas,
     cancelacion: cancelacion, refranes: refranes, series: series, compra: compra, fluidez: fluidez, orientacion: orientacion,
     ordenar: ordenar, clasificar: clasificar, copiar: copiar, iguales: iguales, contar: contar, colorear: colorear,
