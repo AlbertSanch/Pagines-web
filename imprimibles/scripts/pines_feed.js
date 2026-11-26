@@ -17,7 +17,9 @@ const IMGS = path.join(RAIZ, 'src/pines');
 // tablero: [categoría de la web, etiqueta de la imagen, primer día, cada cuántos días, último día (o null)]
 const TABLEROS = {
   navidad: { nombre: 'Navidad para imprimir', cat: 'navidad', etiqueta: 'Navidad', desde: '2026-12-02', cada: 2, hasta: '2027-01-05' },
-  calendarios: { nombre: 'Calendarios 2027', cat: 'calendarios', etiqueta: 'Calendario 2027', desde: '2026-12-02', cada: 2, hasta: '2027-02-28' },
+  calendarios: { nombre: 'Calendarios 2027', cat: 'calendarios', etiqueta: 'Calendario 2027', desde: '2026-12-02', cada: 2, hasta: '2027-02-28', filtro: (p) => !p.slug.startsWith('escolar-') },
+  'calendario-escolar': { nombre: 'Calendario escolar 2026-2027', cat: 'calendarios', etiqueta: 'Curso 2026-2027', desde: '2026-12-02', cada: 1, hasta: null,
+    filtro: (p) => p.slug.startsWith('escolar-'), orden: ['', 'madrid', 'cataluna', 'valenciana', 'andalucia-sevilla', 'andalucia-malaga', 'galicia', 'castilla-y-leon', 'pais-vasco', 'murcia', 'andalucia-cadiz', 'castilla-la-mancha-toledo', 'aragon-zaragoza', 'baleares', 'asturias', 'extremadura', 'andalucia-granada', 'andalucia-cordoba', 'andalucia-almeria'] },
   'estimulacion-cognitiva': { nombre: 'Estimulación cognitiva para mayores', cat: 'estimulacion-cognitiva', etiqueta: 'Mayores', desde: '2026-12-03', cada: 3, hasta: null }
 };
 
@@ -27,9 +29,13 @@ const YA_PUBLICADOS = new Set(['/navidad/calendario-de-adviento/', '/navidad/ami
 
 const sumarDias = (iso, n) => { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
 
-function candidatos(cat) {
+function candidatos(t) {
   // primero la primera ficha de cada página; después las demás
-  const ps = paginas.filter((p) => p.cat === cat);
+  const ps = paginas.filter((p) => p.cat === t.cat && (!t.filtro || t.filtro(p)));
+  if (t.orden) {  // las páginas de la lista, en ese orden, antes que el resto
+    const pos = (p) => { const i = t.orden.indexOf(p.slug.replace(/^escolar-\d{4}-\d{4}-?/, '')); return i < 0 ? 999 : i; };
+    ps.sort((a, b) => pos(a) - pos(b));
+  }
   const rondas = [];
   ps.forEach((p) => p.hojas.forEach((h, i) => {
     if (!h.hayImg || (i === 0 && YA_PUBLICADOS.has(p.url))) return;  // su primera ficha ya está en Pinterest
@@ -62,7 +68,7 @@ h1{font:800 72px/1.05 Besley,serif;margin:26px 0 18px;letter-spacing:-.01em}
   for (const [clave, t] of Object.entries(TABLEROS)) {
     let fecha = t.desde;
     const ultimas = previo.pines.filter((x) => x.tablero === clave).map((x) => x.fecha).sort();
-    for (const { p, h, i } of candidatos(t.cat)) {
+    for (const { p, h, i } of candidatos(t)) {
       const id = clave + '-' + path.basename(h.img, '.png');
       if (hechos.has(id)) { pines.push(hechos.get(id)); continue; }  // los ya programados no cambian de fecha
       if (ultimas.length && fecha <= ultimas[ultimas.length - 1]) fecha = sumarDias(ultimas[ultimas.length - 1], t.cada);
@@ -89,7 +95,7 @@ h1{font:800 72px/1.05 Besley,serif;margin:26px 0 18px;letter-spacing:-.01em}
     const t = TABLEROS[x.tablero];
     const p = paginas.find((q) => q.url === x.url);
     const html = path.join(IMGS, '_pin.html');
-    const titulo = x.titulo.length > 60 ? p.h1 : x.titulo;
+    const titulo = x.titulo.length <= 60 && x.tablero !== 'calendario-escolar' ? x.titulo : p.corto && p.corto.length <= 45 ? p.corto : p.h1;
     fs.writeFileSync(html, `<!doctype html><meta charset="utf-8"><style>${css}</style><div class="rayas"></div>
 <div class="cab"><span class="etq">${t.etiqueta}</span><h1>${titulo}</h1><div class="sub">Descárgalo gratis en PDF, listo para imprimir</div></div>
 <div class="hoja"><img src="file://${path.join(RAIZ, 'src', x.origen)}"></div><div class="pie"><b>imprimibles.es</b> · gratis para imprimir</div>`);

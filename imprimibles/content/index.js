@@ -14,6 +14,7 @@ const crudas = [
   ...require('./problemas.js'),
   ...require('./caligrafia.js'),
   ...require('./calendarios.js'),
+  ...require('./escolar.js'),
   ...require('./cognitiva.js')
 ];
 
