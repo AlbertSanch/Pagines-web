@@ -83,6 +83,17 @@ PROVINCIAS = {
     "42": "Soria", "43": "Tarragona", "44": "Teruel", "45": "Toledo", "46": "Valencia", "47": "Valladolid",
     "48": "Bizkaia", "49": "Zamora", "50": "Zaragoza", "51": "Ceuta", "52": "Melilla",
 }
+# Comunidades para los apellidos típicos: (nombre, gentilicio en plural, provincias). Solo se publican las que tienen al menos 8.
+COMUNIDADES_APE = {
+    "galicia": ("Galicia", "gallegos", ["15", "27", "32", "36"]), "pais-vasco": ("el País Vasco", "vascos", ["01", "20", "48"]),
+    "asturias": ("Asturias", "asturianos", ["33"]), "cantabria": ("Cantabria", "cántabros", ["39"]), "navarra": ("Navarra", "navarros", ["31"]),
+    "aragon": ("Aragón", "aragoneses", ["22", "44", "50"]), "canarias": ("Canarias", "canarios", ["35", "38"]),
+    "baleares": ("Baleares", "baleares", ["07"]), "valenciana": ("la Comunidad Valenciana", "valencianos", ["03", "12", "46"]),
+    "murcia": ("la Región de Murcia", "murcianos", ["30"]), "castilla-y-leon": ("Castilla y León", "castellanos y leoneses", ["05", "09", "24", "34", "37", "40", "42", "47", "49"]),
+    "la-rioja": ("La Rioja", "riojanos", ["26"]), "castilla-la-mancha": ("Castilla-La Mancha", "manchegos", ["02", "13", "16", "19", "45"]),
+    "extremadura": ("Extremadura", "extremeños", ["06", "10"]), "cataluna": ("Cataluña", "catalanes", ["08", "17", "25", "43"]),
+    "andalucia": ("Andalucía", "andaluces", ["04", "11", "14", "18", "21", "23", "29", "41"]), "madrid": ("la Comunidad de Madrid", "madrileños", ["28"]),
+}
 SEXO = {"H": ("hombre", "hombres", "niños"), "M": ("mujer", "mujeres", "niñas")}
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
@@ -908,6 +919,18 @@ def paginas_ideas(idx, decadas, bebes, referencia):
                  '<a href="/decadas/">Ver los nombres más comunes de cada década</a>.</p>',
                  ("Nombres clásicos que vuelven", "De los abuelos a los bebés de hoy."))
 
+    # Nombres con ñ: los que llevan al menos 50 personas, de niña y de niño
+    secc, ej = "", []
+    for s in "MH":
+        con = sorted((e for e in idx.values() if e[s] and simple(e) and "ñ" in e["k"] and e[s]["f"] >= 50), key=lambda e: -e[s]["f"])[:40]
+        ej += [e["mostrar"] for e in con[:2]]
+        secc += (f'<h2>Nombres con ñ de {SEXO[s][0]} ({len(con)})</h2>' + tabla_ideas(con, s, puestos(ultimo, s), ultimo))
+    guardar_idea("/ideas/nombres-con-n/", "Nombres con ñ de mujer y de hombre: cuántos se llaman así",
+                 "Los nombres con ñ más comunes en España, de mujer y de hombre: Begoña, Íñigo, Iñaki, Zuriñe… con cuántas personas se llaman así según el INE.",
+                 "Nombres con ñ", f"Los nombres con ñ que más se llevan en España: {escape(', '.join(ej))}… "
+                 "Aquí tienes los que llevan al menos 50 personas, ordenados de más a menos frecuentes.",
+                 explica + secc, ("Nombres con ñ", "Begoña, Íñigo, Zuriñe, Beñat…"))
+
     cuerpo = ('<h1>Ideas de nombres para bebé</h1><p class="lead">Listas de nombres para tu bebé hechas con los datos oficiales del INE: '
               'cuántas personas se llaman así en España, su edad media y si se están poniendo ahora. Sin inventos: solo cifras reales.</p>'
               '<div class="grid">' + "".join(f'<a class="card" href="{r}"><h3>{escape(t)}</h3><p>{escape(d)}</p></a>' for r, t, d in tarjetas) + "</div>"
@@ -1428,6 +1451,60 @@ def paginas_apellidos(idx, apellidos):
                              f"¿Cuál es el apellido más común en {nombre}? Mira los 50 apellidos más frecuentes según el INE, por provincia de residencia y de nacimiento, y busca el tuyo.",
                              cuerpo, [("Apellidos", "/apellidos/"), (nombre, None)]))
         rutas.append(ruta)
+    # Apellidos característicos de cada comunidad: de los 50 más frecuentes de sus provincias, los que allí son al menos 3 veces
+    # más comunes que en el conjunto de España. Los habitantes de cada provincia salen de las propias tasas por 1.000 del INE.
+    nac = {normalizar(x["n"]): x["p1"] for x in apellidos["lista"]}
+    hab = {c: sum(r[1] / r[2] * 1000 for r in provincias[c]["res"][:5]) / 5 for c in provincias}
+    total = sum(hab.values())
+    tipicos = {}
+    for cc, (nombre_cc, gentilicio, cods) in COMUNIDADES_APE.items():
+        hab_cc = sum(hab[c] for c in cods)
+        suma = {}
+        for c in cods:
+            for a, f, _ in provincias[c]["res"]:
+                suma[a] = suma.get(a, 0) + f
+        filas = []
+        for a, f in suma.items():
+            k = normalizar(a)
+            if k in nac and nac[k] >= f:
+                veces = (f / hab_cc) / (nac[k] / total)
+                if veces >= 3:
+                    filas.append((veces, a, f, f / nac[k]))
+        filas.sort(reverse=True)
+        if len(filas) >= 8:
+            tipicos[cc] = filas
+    tarjetas_cc = [(k, COMUNIDADES_APE[k][1]) for k in tipicos]
+    for cc, filas in tipicos.items():
+        nombre_cc, gentilicio, cods = COMUNIDADES_APE[cc]
+        de_cc = "del " + nombre_cc[3:] if nombre_cc.startswith("el ") else "de " + nombre_cc
+        ruta = f"/apellidos/comunidad/{cc}/"
+        ej = [mostrar_apellido(a) for _, a, _, _ in filas[:3]]
+        varias = len(cods) > 1
+        tabla = ('<div class="table-wrap"><table class="data"><thead><tr><th>Apellido</th><th class="num">Personas en ' + escape(nombre_cc)
+                 + '</th><th class="num">Veces más común que en España</th><th class="num">De todos los de España, viven aquí</th></tr></thead><tbody>'
+                 + "".join(f'<tr><td>{enlace_apellido(idx, a)}</td><td class="num">{"≥ " if varias else ""}{n(f)}</td>'
+                           f'<td class="num">{"≥ " if varias else ""}{dec(v)}</td><td class="num">{"≥ " if varias else ""}{round(q * 100)} %</td></tr>' for v, a, f, q in filas)
+                 + "</tbody></table></div>")
+        cuerpo = (f"<h1>Apellidos {gentilicio}: los más típicos {escape(de_cc)}</h1>"
+                  f'<p class="lead">Los apellidos mucho más frecuentes en {escape(nombre_cc)} que en el resto de España: {escape(", ".join(ej))}… '
+                  f'Son {len(filas)} apellidos que allí son al menos tres veces más comunes que en el conjunto del país.</p>'
+                  f'<p class="updated">Datos del INE a {fecha_larga(ref)}, por provincia de residencia y primer apellido.</p>'
+                  + tabla
+                  + "<h2>Cómo se ha calculado</h2>"
+                  f"<p>El INE publica los 50 apellidos más frecuentes de cada provincia. De esos, aquí salen los que en {escape(nombre_cc)} llevan, en proporción a sus habitantes, "
+                  "al menos tres veces más personas que en el conjunto de España. «Veces más común» compara esas dos proporciones; la última columna dice qué parte de todas "
+                  "las personas de España con ese primer apellido vive aquí.</p>"
+                  + (f"<p>Como {escape(nombre_cc)} tiene varias provincias y el INE solo da los 50 primeros de cada una, cuando un apellido no está en el top de alguna "
+                     "provincia no se suman sus personas de allí: por eso las cifras son mínimas (≥).</p>" if varias else "")
+                  + "<p>Que un apellido sea típico de un lugar no quiere decir que naciera allí: dice dónde vive hoy la gente que lo lleva.</p>"
+                  + "<h2>Los más comunes, provincia a provincia</h2><ul class=\"columnas\">"
+                  + "".join(f'<li><a href="/apellidos/provincia/{slug(PROVINCIAS[c])}/">Apellidos más comunes en {PROVINCIAS[c]}</a></li>' for c in cods) + "</ul>"
+                  + "<h2>Apellidos típicos de otras comunidades</h2><ul class=\"columnas\">"
+                  + "".join(f'<li><a href="/apellidos/comunidad/{k}/">Apellidos {g}</a></li>' for k, g in tarjetas_cc if k != cc) + "</ul>")
+        guardar(ruta, pagina(ruta, f"Apellidos {gentilicio}: los más típicos {de_cc}",
+                             f"Los apellidos más típicos {de_cc} según el INE: {', '.join(ej)}… Cuántas personas los llevan y cuántas veces más comunes son que en el resto de España.",
+                             cuerpo, [("Apellidos", "/apellidos/"), (f"Apellidos {gentilicio}", None)]))
+        rutas.append(ruta)
     cuerpo = ("<h1>¿Cuánta gente se apellida como tú?</h1>"
               '<p class="lead">Busca un apellido y descubre cuántas personas lo llevan en España como primer y como segundo apellido, y dónde es más común.</p>'
               f'<section class="hero" style="padding-top:8px">{formulario("apellido", ref)}</section>'
@@ -1436,7 +1513,7 @@ def paginas_apellidos(idx, apellidos):
               '<div><h2>El apellido más común de cada provincia</h2><div class="table-wrap"><table class="data"><thead><tr><th>Provincia</th><th>Apellido</th></tr></thead><tbody>'
               + "".join(f'<tr><td><a href="/apellidos/provincia/{slug(PROVINCIAS[c])}/">{PROVINCIAS[c]}</a></td>'
                         f'<td>{enlace_apellido(idx, provincias[c]["res"][0][0])}</td></tr>' for c in orden)
-              + '</tbody></table></div></div></div><h2>Todos los apellidos de la A a la Z</h2>'
+              + '</tbody></table></div></div></div><h2>Apellidos típicos de cada comunidad</h2><p>' + " · ".join(f'<a href="/apellidos/comunidad/{k}/">Apellidos {g}</a>' for k, g in tarjetas_cc) + '</p><h2>Todos los apellidos de la A a la Z</h2>'
               + "".join(f'<a class="btn-c" style="margin:0 6px 6px 0" href="/apellidos/{l}/">{l.upper()}</a>' for l in sorted({e["slug"][:1] for e in idx.values() if e["pagina"] and e["slug"][:1].isalpha() and e["slug"][:1].isascii()}))
               + f'<p class="fuente">Fuente: INE, estadística de apellidos a partir de los Censos de población anuales, datos a {fecha_larga(ref)}. '
               'Solo se publican los apellidos que llevan al menos 20 personas como primer apellido.</p>')
