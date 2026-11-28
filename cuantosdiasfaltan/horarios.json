@@ -1649,7 +1649,7 @@
 ],
 "2027": []
 },
-"descargado": "2026-11-27",
+"descargado": "2026-11-28",
 "madrid": [
 {
 "id": "401898187",
@@ -4091,71 +4091,19 @@ null
 },
 "tenis_hoy": [
 {
-"id": "186832",
+"id": "186841",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-27T18:00Z",
+"utc": "2026-11-28T15:00Z",
 "hora_valida": true,
 "estado": "pre",
-"ronda": "Quarterfinal",
+"ronda": "Semifinal",
 "pista": "Cancha Central",
 "jugadores": [
-{
-"id": "5878",
-"n": "Veronika Erjavec",
-"pais": "Eslovenia",
-"gano": null,
-"sets": []
-},
-{
-"id": "5299",
-"n": "Carole Monnet",
-"pais": "Francia",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186829",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-27T18:00Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Quarterfinal",
-"pista": "Cancha 3",
-"jugadores": [
-{
-"id": "15069",
-"n": "Laura Samson",
-"pais": "Chequia",
-"gano": null,
-"sets": []
-},
 {
 "id": "423",
 "n": "Varvara Lepchenko",
 "pais": "USA",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186830",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-27T19:30Z",
-"hora_valida": true,
-"estado": "pre",
-"ronda": "Quarterfinal",
-"pista": "Cancha Central",
-"jugadores": [
-{
-"id": "3220",
-"n": "Maria Lourdes Carle",
-"pais": "Argentina",
 "gano": null,
 "sets": []
 },
@@ -4169,13 +4117,13 @@ null
 ]
 },
 {
-"id": "186831",
+"id": "186842",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-27T21:00Z",
+"utc": "2026-11-28T17:00Z",
 "hora_valida": true,
 "estado": "pre",
-"ronda": "Quarterfinal",
+"ronda": "Semifinal",
 "pista": "Cancha Central",
 "jugadores": [
 {
@@ -4186,48 +4134,22 @@ null
 "sets": []
 },
 {
-"id": "4629",
-"n": "Alicia Herrero Linana",
-"pais": "España",
+"id": "5878",
+"n": "Veronika Erjavec",
+"pais": "Eslovenia",
 "gano": null,
 "sets": []
 }
 ]
 },
 {
-"id": "186842",
+"id": "186843",
 "gira": "WTA",
 "torneo": "IEB+ Argentina Open",
-"utc": "2026-11-28T05:00Z",
+"utc": "2026-11-29T05:00Z",
 "hora_valida": false,
 "estado": "pre",
-"ronda": "Semifinal",
-"pista": "",
-"jugadores": [
-{
-"id": "-4",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-},
-{
-"id": "-3",
-"n": "TBD",
-"pais": "",
-"gano": null,
-"sets": []
-}
-]
-},
-{
-"id": "186841",
-"gira": "WTA",
-"torneo": "IEB+ Argentina Open",
-"utc": "2026-11-28T05:00Z",
-"hora_valida": false,
-"estado": "pre",
-"ronda": "Semifinal",
+"ronda": "Final",
 "pista": "",
 "jugadores": [
 {
@@ -5423,146 +5345,6 @@ null
 ],
 "futbol_hoy": [
 {
-"id": "401883102",
-"liga": "esp.2",
-"competicion": "Segunda División",
-"utc": "2026-11-27T19:30Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Leganés",
-"visitante": "CD Sabadell",
-"ids": [
-"17534",
-"11487"
-],
-"goles": [
-"0",
-"0"
-],
-"es": true
-},
-{
-"id": "401884720",
-"liga": "ger.1",
-"competicion": "Bundesliga",
-"utc": "2026-11-27T19:30Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Werder Bremen",
-"visitante": "Borussia Monchengladbach",
-"ids": [
-"137",
-"268"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401875004",
-"liga": "ita.1",
-"competicion": "Serie A",
-"utc": "2026-11-27T19:45Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Venezia",
-"visitante": "Bolonia",
-"ids": [
-"17530",
-"107"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401876392",
-"liga": "fra.1",
-"competicion": "Ligue 1",
-"utc": "2026-11-27T19:45Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Brest",
-"visitante": "Paris FC",
-"ids": [
-"6997",
-"6851"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401882791",
-"liga": "esp.1",
-"competicion": "LaLiga",
-"utc": "2026-11-27T20:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Levante",
-"visitante": "Racing Santander",
-"ids": [
-"1538",
-"87"
-],
-"goles": [
-"0",
-"0"
-],
-"es": true
-},
-{
-"id": "401879225",
-"liga": "eng.1",
-"competicion": "Premier League",
-"utc": "2026-11-27T20:00Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Nottingham Forest",
-"visitante": "Chelsea",
-"ids": [
-"393",
-"363"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
-"id": "401885389",
-"liga": "por.1",
-"competicion": "Liga Portugal",
-"utc": "2026-11-27T20:15Z",
-"hora_valida": true,
-"estado": "pre",
-"detalle": "Scheduled",
-"local": "Maritimo",
-"visitante": "C.D. Nacional",
-"ids": [
-"552",
-"3472"
-],
-"goles": [
-"0",
-"0"
-],
-"es": false
-},
-{
 "id": "401882796",
 "liga": "esp.1",
 "competicion": "LaLiga",
@@ -6135,6 +5917,526 @@ null
 "ids": [
 "5309",
 "21610"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401875031",
+"liga": "ita.1",
+"competicion": "Serie A",
+"utc": "2026-11-29T11:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Udinese",
+"visitante": "Fiorentina",
+"ids": [
+"118",
+"109"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401879229",
+"liga": "eng.1",
+"competicion": "Premier League",
+"utc": "2026-11-29T12:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Everton",
+"visitante": "Liverpool",
+"ids": [
+"368",
+"364"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401882787",
+"liga": "esp.1",
+"competicion": "LaLiga",
+"utc": "2026-11-29T13:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Valencia",
+"visitante": "Osasuna",
+"ids": [
+"94",
+"97"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401883103",
+"liga": "esp.2",
+"competicion": "Segunda División",
+"utc": "2026-11-29T13:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Granada",
+"visitante": "Ceuta",
+"ids": [
+"3747",
+"5404"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401874992",
+"liga": "ita.1",
+"competicion": "Serie A",
+"utc": "2026-11-29T14:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Sassuolo",
+"visitante": "Napoli",
+"ids": [
+"3997",
+"114"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401876393",
+"liga": "fra.1",
+"competicion": "Ligue 1",
+"utc": "2026-11-29T14:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "AJ Auxerre",
+"visitante": "Marseille",
+"ids": [
+"172",
+"176"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401879231",
+"liga": "eng.1",
+"competicion": "Premier League",
+"utc": "2026-11-29T14:05Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Brighton & Hove Albion",
+"visitante": "Newcastle United",
+"ids": [
+"331",
+"361"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401879230",
+"liga": "eng.1",
+"competicion": "Premier League",
+"utc": "2026-11-29T14:05Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Crystal Palace",
+"visitante": "Hull City",
+"ids": [
+"384",
+"306"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401879228",
+"liga": "eng.1",
+"competicion": "Premier League",
+"utc": "2026-11-29T14:05Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Fulham",
+"visitante": "AFC Bournemouth",
+"ids": [
+"370",
+"349"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401879224",
+"liga": "eng.1",
+"competicion": "Premier League",
+"utc": "2026-11-29T14:05Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Sunderland",
+"visitante": "Tottenham Hotspur",
+"ids": [
+"366",
+"367"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401884724",
+"liga": "ger.1",
+"competicion": "Bundesliga",
+"utc": "2026-11-29T14:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "SC Freiburg",
+"visitante": "RB Leipzig",
+"ids": [
+"126",
+"11420"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401882794",
+"liga": "esp.1",
+"competicion": "LaLiga",
+"utc": "2026-11-29T15:15Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Deportivo La Coruña",
+"visitante": "Barcelona",
+"ids": [
+"90",
+"83"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401882295",
+"liga": "esp.2",
+"competicion": "Segunda División",
+"utc": "2026-11-29T15:15Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Mallorca",
+"visitante": "Castellón",
+"ids": [
+"84",
+"4438"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401876386",
+"liga": "fra.1",
+"competicion": "Ligue 1",
+"utc": "2026-11-29T16:15Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Toulouse",
+"visitante": "Stade Rennais",
+"ids": [
+"179",
+"169"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401878753",
+"liga": "eng.1",
+"competicion": "Premier League",
+"utc": "2026-11-29T16:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Arsenal",
+"visitante": "Manchester City",
+"ids": [
+"359",
+"382"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401884725",
+"liga": "ger.1",
+"competicion": "Bundesliga",
+"utc": "2026-11-29T16:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "TSG Hoffenheim",
+"visitante": "F. C. Augsburgo",
+"ids": [
+"7911",
+"3841"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401874769",
+"liga": "ita.1",
+"competicion": "Serie A",
+"utc": "2026-11-29T17:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "AS Roma",
+"visitante": "Monza",
+"ids": [
+"104",
+"4007"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401882795",
+"liga": "esp.1",
+"competicion": "LaLiga",
+"utc": "2026-11-29T17:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Celta Vigo",
+"visitante": "Villarreal",
+"ids": [
+"85",
+"102"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401883105",
+"liga": "esp.2",
+"competicion": "Segunda División",
+"utc": "2026-11-29T17:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Cádiz",
+"visitante": "Córdoba",
+"ids": [
+"3842",
+"8447"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401885390",
+"liga": "por.1",
+"competicion": "Liga Portugal",
+"utc": "2026-11-29T18:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Gil Vicente",
+"visitante": "Estoril",
+"ids": [
+"3699",
+"12216"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401884727",
+"liga": "ger.1",
+"competicion": "Bundesliga",
+"utc": "2026-11-29T18:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Borussia Dortmund",
+"visitante": "Bayer Leverkusen",
+"ids": [
+"124",
+"131"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401874994",
+"liga": "ita.1",
+"competicion": "Serie A",
+"utc": "2026-11-29T19:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Como",
+"visitante": "Juventus",
+"ids": [
+"2572",
+"111"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401876389",
+"liga": "fra.1",
+"competicion": "Ligue 1",
+"utc": "2026-11-29T19:45Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Lyon",
+"visitante": "AS Mónaco",
+"ids": [
+"167",
+"174"
+],
+"goles": [
+"0",
+"0"
+],
+"es": false
+},
+{
+"id": "401882788",
+"liga": "esp.1",
+"competicion": "LaLiga",
+"utc": "2026-11-29T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Real Sociedad",
+"visitante": "Sevilla FC",
+"ids": [
+"89",
+"243"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401883106",
+"liga": "esp.2",
+"competicion": "Segunda División",
+"utc": "2026-11-29T20:00Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "Almería",
+"visitante": "Sporting Gijón",
+"ids": [
+"6832",
+"3788"
+],
+"goles": [
+"0",
+"0"
+],
+"es": true
+},
+{
+"id": "401885387",
+"liga": "por.1",
+"competicion": "Liga Portugal",
+"utc": "2026-11-29T20:30Z",
+"hora_valida": true,
+"estado": "pre",
+"detalle": "Scheduled",
+"local": "FC Porto",
+"visitante": "Sporting CP",
+"ids": [
+"437",
+"2250"
 ],
 "goles": [
 "0",
